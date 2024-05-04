@@ -1,21 +1,21 @@
 // Sample array of projects with image, title, and description properties
 let projects = [
   { 
-      title: 'Project A', 
+      title: 'Capstone Robot', 
       date: new Date('2022-01-15'), 
-      image: 'images/neon_cat.gif', 
+      image: '../images/neon_cat.gif', 
       description: 'Description of Project A' 
   },
   { 
-      title: 'Project B', 
+      title: 'Model Rocket', 
       date: new Date('2022-03-10'), 
-      image: 'images/neon_cat.gif', 
+      image: '../images/neon_cat.gif', 
       description: 'Description of Project B' 
   },
   { 
-      title: 'Project C', 
+      title: 'Mini Solar Powered Car', 
       date: new Date('2021-12-05'), 
-      image: 'images/neon_cat.gif',
+      image: '../images/neon_cat.gif',
       description: 'Description of Project C' 
   }
 ];

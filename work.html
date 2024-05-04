@@ -8,7 +8,7 @@
     <title> Nathan Ge - work</title>
 
     <!-- stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
@@ -20,37 +20,45 @@
 <body>
 
   <nav class="navbar"> 
-      <div class="name"> <a href="work.html">nathan</a> </div>
+      <div class="name"> <a href="../work.html">nathan</a> </div>
       <ul class="nav-select">
-        <li class="nav-item"><a href="index.html">home.</a></li>
-        <li class="nav-item"><a href="about.html">about me.</a></li>
-        <li class="nav-item"><a href="work.html">work.</a></li>
-        <li class="nav-item"><a href="contact.html">contact.</a></li>
+        <li class="nav-item"><a href="../index.html">home.</a></li>
+        <li class="nav-item"><a href="../about.html">about me.</a></li>
+        <li class="nav-item"><a href="../work.html">work.</a></li>
+        <li class="nav-item"><a href="../contact.html">contact.</a></li>
       </ul>
   
       <div class="menu">menu</div>
   </nav>
 
-  <header>
-    <div class="container">
-        <h1>My Projects</h1>
-        <!-- <button class="button" onclick="sortByDate()">Sort by Date</button>
-        <button class="button" onclick="sortByName()">Sort by Name</button> -->
+  
+   <div class="container">
+      
+      <section id="projects">
 
-        <label for="sortDropdown">Sort by:</label>
-        <select id="sortDropdown" onchange="sortProjects()">
-          <option value="date">Date</option>
-          <option value="name">Name</option>
-        </select>
-    </div>
-  </header>
+          <div class="project">
+              <h2><a href="projects/class.html">Class Projects</a></h2>
+              <p>Date: January 2022</p>
+              <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+
+          <div class="project">
+              <h2><a href="projects/racing.html">Bruin Racing</a></h2>
+              <p>Date: March 2022</p>
+              <p>Description: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+
+          <div class="project">
+            <h2><a href="projects/personal.html">Personal Projects</a></h2>
+            <p>Date: March 2022</p>
+            <p>Description: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
 
 
-  <div id="projectContainer">
-    <script src="projects.js"></script>
+          
+
+      </section>
   </div>
-
-
 
   <footer>
     <div class="container">
