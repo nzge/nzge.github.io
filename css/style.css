@@ -4,11 +4,13 @@
 }
 html, body {
       margin: 0;
+      margin-top: 50px;
       padding: 0;
       width: 100%;
       height: 100%;
       font-family: "Roboto Mono" !important;
-      color: #fff !important;
+      background: #000000 !important;
+      color: #ffffff !important;
 }
 
 .whitespace {
@@ -22,50 +24,26 @@ html, body {
       }
 }
 
-/*--------------- typewriter effect --------------- */
-.line {
-  width: 24em;
-  top: 50%;
-  margin: auto;
-  border-right: 2px solid rgba(255, 255, 255, 0.75);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-60%);
+/*--------------- miscellaneous structures --------------- */
+
+header, footer {
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 20px;
 }
 
-.anim-typewriter {
-  animation: typewriter 4s steps(40) 1s 1 normal both,
-  blinkTextCussor 500ms steps(40) infinite normal;
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
 }
 
-@keyframes typewriter {
-  from {
-        width: 0;
-  }
-  to {
-        width: 18em;
-  }
+h3 {
+  background-color: transparent; /* Set the default background color to transparent */
 }
 
-@media(max-width: 768px) {
-  @keyframes typewriter {
-        from {
-              width: 0;
-        }
-        to {
-              width: 17em;
-        }
-  }
-}
-
-@keyframes blinkTextCussor {
-  from {
-        border-right-color: rgba(255, 255, 255, 0.75);
-  }
-  to {
-        border-right-color: transparent;
-  }
+p {
+  background-color: transparent; /* Set the default background color to transparent */
 }
 
 /*--------------- navigation --------------- */
@@ -73,9 +51,15 @@ html, body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-
+  
   background: black;
   color: white;
+
+  position: fixed; /* Fixed position */
+  top: 0; /* Place at the top of the viewport */
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensure it stays on top of other content */
 }
 
 .navbar a{
@@ -91,6 +75,10 @@ html, body {
   font-weight: bold;
 }
 
+.name a {
+  transition: all 0.3s ease-out;
+}
+
 .nav-select{
   list-style: none;
 }
@@ -98,6 +86,32 @@ html, body {
 .nav-item{
   display: inline-block;
   padding: 20px 10px 
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+/* Hide nav items by default */
+.nav-item {
+  opacity: 0;
+  transform: translateX(-20px); /* Start offscreen to the left */
+}
+
+/* Animate nav items to fade in from left to right */
+.nav-item {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+@keyframes fadeInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-20px); /* Start offscreen to the left */
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0); /* Move to original position */
+  }
 }
 
 .menu {
@@ -116,6 +130,20 @@ html, body {
     flex-direction: column;
 
   }
+}
+
+/*---------------about page --------------- */
+
+.about {
+  height: 500px;
+  margin-top: 120px;
+}
+
+.image {
+  /* background: url(https://images.unsplash.com/photo-1540885762261-a2ca01f290f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80) no-repeat 50% 70%; */
+  background-image: url(../images/doge.jpg);
+  background-size: cover; /* This will make sure the entire background image is covered */
+  background-position: center; /* This will center the background image */
 }
 
 /*--------------- hero section --------------- */
@@ -137,20 +165,6 @@ html, body {
   .header h1 {
         font-size: 26px;
   }
-}
-
-/*--------------- container --------------- */
-
-header, footer {
-  background-color: #000000;
-  color: #fff;
-  padding: 10px 20px;
-}
-
-.container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 0 20px;
 }
 
 /*--------------- Project --------------- */
@@ -290,4 +304,50 @@ select:hover {
 /* Show dropdown content on click */
 .dropdown-style1 .show {
   display: block;
+}
+
+/*--------------- typewriter effect --------------- */
+.line {
+  width: 24em;
+  top: 50%;
+  margin: auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-60%);
+}
+
+.anim-typewriter {
+  animation: typewriter 4s steps(40) 1s 1 normal both,
+  blinkTextCussor 500ms steps(40) infinite normal;
+}
+
+@keyframes typewriter {
+  from {
+        width: 0;
+  }
+  to {
+        width: 18em;
+  }
+}
+
+@media(max-width: 768px) {
+  @keyframes typewriter {
+        from {
+              width: 0;
+        }
+        to {
+              width: 17em;
+        }
+  }
+}
+
+@keyframes blinkTextCussor {
+  from {
+        border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+        border-right-color: transparent;
+  }
 }
