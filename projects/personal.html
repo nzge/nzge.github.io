@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Nathan Ge - class projects</title>
+    <title> Nathan Ge - personal projects</title>
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="../css/style.css">
@@ -33,25 +33,27 @@
 
   <header>
 
-    <div class="return-arrow" onclick="goBack()"></div>
-
-    <script>
-        // JavaScript function to go back to the previous page
-        function goBack() {
-            window.history.back();
-        }
-    </script>
-    
     <div class="container">
-        <h1>Class Projects</h1>
-        <!-- <button class="button" onclick="sortByDate()">Sort by Date</button>
-        <button class="button" onclick="sortByName()">Sort by Name</button> -->
 
-        <label for="sortDropdown">Sort by:</label>
-        <select id="sortDropdown" onchange="sortProjects()">
-          <option value="date">Date</option>
-          <option value="name">Name</option>
-        </select>
+      <div class="return-arrow" onclick="goBack()"></div>
+
+      <script>
+          // JavaScript function to go back to the previous page
+          function goBack() {
+              window.history.back();
+          }
+      </script>  
+
+      <h1>Personal Projects</h1>
+      <!-- <button class="button" onclick="sortByDate()">Sort by Date</button>
+      <button class="button" onclick="sortByName()">Sort by Name</button> -->
+
+      <label for="sortDropdown">Sort by:</label>
+      <select id="sortDropdown" onchange="sortProjects()">
+        <option value="date">Date</option>
+        <option value="name">Name</option>
+      </select>
+
     </div>
   </header>
 

@@ -161,6 +161,12 @@ header, footer {
   padding: 0 20px;
 }
 
+#projectContainer img {
+  max-width: 100%; /* Adjust the maximum width as needed */
+  max-height: 200px; /* Adjust the maximum height as needed */
+  /* Additional styles if necessary */
+}
+
 .project {
   border-bottom: 1px solid #000000;
   padding: 20px 0;
