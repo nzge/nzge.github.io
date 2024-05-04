@@ -162,8 +162,9 @@ header, footer {
 }
 
 #projectContainer img {
-  max-width: 100%; /* Adjust the maximum width as needed */
-  max-height: 200px; /* Adjust the maximum height as needed */
+  width: 400px; /* Set the desired width for the images */
+  height: 300px; /* Set the desired height for the images */
+  object-fit: cover; /* Maintain aspect ratio and cover container */
   /* Additional styles if necessary */
 }
 
