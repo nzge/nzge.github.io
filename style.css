@@ -1,0 +1,57 @@
+*{
+  background: #000000;
+
+}
+body{
+  font-family: "Roboto Mono" !important; 
+}
+
+/*--------------- navigation --------------- */
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background: black;
+  color: white;
+}
+
+.navbar a{
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover{
+  cursor: pointer;
+}
+
+.name{
+  font-weight: bold;
+}
+
+.nav-select{
+  list-style: none;
+}
+
+.nav-item{
+  display: inline-block;
+  padding: 20px 10px 
+}
+
+.menu {
+  display: none;
+}
+
+@media(max-width: 750px) {
+  .menu{
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+  .navbar{
+    display: block
+    flex-direction: column;
+
+  }
+}
