@@ -46,6 +46,14 @@ p {
   background-color: transparent; /* Set the default background color to transparent */
 }
 
+.horizontal-line::after {
+  content: "";
+  display: block;
+  width: 100%; /* Adjust the width of the line */
+  height: 1px; /* Adjust the height of the line */
+  background-color: #928686; /* Set the color of the line */
+}
+
 /*--------------- navigation --------------- */
 .navbar{
   display: flex;
@@ -184,6 +192,7 @@ p {
 
 .project {
   border-bottom: 1px solid #000000;
+  background: transparent;
   padding: 20px 0;
 }
 
