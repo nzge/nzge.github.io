@@ -16,7 +16,7 @@ const classProjects = [
   { 
     title: 'Solar Powered Mini Car', 
     date: new Date('2022-03-10'), 
-    image: '../images/solar_car.png', 
+    image: '../images/solar_car.PNG', 
     description: 'Description of Home Project 2' 
 }
 ];
@@ -25,19 +25,19 @@ const racingProjects = [
   { 
       title: 'CV Boot Casting', 
       date: new Date('2022-02-20'), 
-      image: '../images/CV_boot.png',  
+      image: '../images/CV_boot.PNG',  
       description: 'Description of Project 1' 
   },
   { 
       title: 'Tire Temperature Sensor Mount', 
       date: new Date('2022-04-05'), 
-      image: '../images/temp_sensor.png', 
+      image: '../images/temp_sensor.PNG', 
       description: 'Description of Project 2' 
   },
   { 
       title: 'Aerofoil', 
       date: new Date('2022-04-05'), 
-      image: '../images/temp_sensor.png', 
+      image: '../images/temp_sensor.PNG', 
       description: 'Description of Project 3' 
   }
 ];
