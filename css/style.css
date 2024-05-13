@@ -46,6 +46,10 @@ p {
   background-color: transparent; /* Set the default background color to transparent */
 }
 
+a {
+  text-decoration: none;
+}
+
 .horizontal-line::after {
   content: "";
   display: block;

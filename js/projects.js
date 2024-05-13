@@ -39,6 +39,12 @@ const racingProjects = [
       date: new Date('2022-04-05'), 
       image: '../images/placeholder.jpg', 
       description: 'Aero-package R&D via computational methods' 
+  },
+  { 
+    title: 'Laptime Simulation', 
+    date: new Date('2022-04-05'), 
+    image: '../images/placeholder.jpg', 
+    description: 'Quarter car suspension kinematics model using Simulink and Simscape' 
   }
 ];
 
@@ -77,7 +83,7 @@ function displayProjects() {
   projects.forEach(project => {
       let projectElement = document.createElement('div');
       projectElement.innerHTML = `
-          <h2>${project.title}</h2>
+          <a href="${generateProjectLink(project)}"><h2>${project.title}</h2></a>
           <img src="${project.image}" alt="${project.title}">
           <p>${project.description}</p>
       `;
@@ -85,6 +91,11 @@ function displayProjects() {
   });
 }
 
+function generateProjectLink(project) {
+    let projectIdentifier = project.title.replace(/\s+/g, '-').toLowerCase();
+    // Append a unique identifier to the URL
+    return `../projects/project_details/${projectIdentifier}.html`;
+}
 
 
 // Function to sort projects
