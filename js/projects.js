@@ -5,19 +5,19 @@ const classProjects = [
       title: 'Capstone Robot', 
       date: new Date('2024-01-15'), 
       image: '../images/capstone_robot.png', 
-      description: 'Description of Home Project 1' 
+      description: 'Fully Autonomous delivery robot.' 
   },
   { 
       title: 'Model Rocket', 
       date: new Date('2023-03-10'), 
       image: '../images/model_rocket.png', 
-      description: 'Description of Home Project 2' 
+      description: 'G-class hobby rocket with a target apogee of 2,750 ft.' 
   },
   { 
     title: 'Solar Powered Mini Car', 
     date: new Date('2022-03-10'), 
     image: '../images/solar_car.PNG', 
-    description: 'Description of Home Project 2' 
+    description: 'A solar-powered mini car featuring a front-wheel drive, a bevel gear drivetrain, and topology optimizations.' 
 }
 ];
 
@@ -26,19 +26,19 @@ const racingProjects = [
       title: 'CV Boot Casting', 
       date: new Date('2022-02-20'), 
       image: '../images/CV_boot.PNG',  
-      description: 'Description of Project 1' 
+      description: '3D-printed ribbed and ribless CV boot mold designs' 
   },
   { 
       title: 'Tire Temperature Sensor Mount', 
       date: new Date('2022-04-05'), 
       image: '../images/temp_sensor.PNG', 
-      description: 'Description of Project 2' 
+      description: 'Wheel temperature sensor mounting solution' 
   },
   { 
       title: 'Aerofoil', 
       date: new Date('2022-04-05'), 
-      image: '../images/temp_sensor.PNG', 
-      description: 'Description of Project 3' 
+      image: '../images/placeholder.jpg', 
+      description: 'Aero-package R&D via computational methods' 
   }
 ];
 
@@ -46,14 +46,14 @@ const personalProjects = [
   { 
       title: 'Macropad', 
       date: new Date('2022-02-20'), 
-      image: '../images/neon_cat.gif',  
-      description: 'Description of Projects Project 1' 
+      image: '../images/macropad.png',  
+      description: 'An investigation into the customization potential of input devices and their core functionality.' 
   },
   { 
-      title: 'Projects Project 2', 
+      title: 'Kelvin Helmholtz Instability', 
       date: new Date('2022-04-05'), 
-      image: '../images/neon_cat.gif', 
-      description: 'Description of Projects Project 2' 
+      image: '../images/placeholder.jpg', 
+      description: 'Kelvin–Helmholtz instability with a discontinuous Galerkin spectral element method on a hierarchical Cartesian mesh with ADR' 
   }
 ];
 
