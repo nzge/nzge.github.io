@@ -4,19 +4,19 @@ const classProjects = [
   { 
       title: 'Capstone Robot', 
       date: new Date('2024-01-15'), 
-      image: '../images/capstone_robot.png', 
+      image: '/assets/images/capstone_robot.png', 
       description: 'Fully Autonomous delivery robot.' 
   },
   { 
       title: 'Model Rocket', 
       date: new Date('2023-03-10'), 
-      image: '../images/model_rocket.png', 
+      image: '/assets/images/model_rocket.png', 
       description: 'G-class hobby rocket with a target apogee of 2,750 ft.' 
   },
   { 
     title: 'Solar Powered Mini Car', 
     date: new Date('2022-03-10'), 
-    image: '../images/solar_car.PNG', 
+    image: '/assets/images/solar_car.PNG', 
     description: 'A solar-powered mini car featuring a front-wheel drive, a bevel gear drivetrain, and topology optimizations.' 
 }
 ];
@@ -25,25 +25,25 @@ const racingProjects = [
   { 
       title: 'CV Boot Casting', 
       date: new Date('2022-02-20'), 
-      image: '../images/CV_boot.PNG',  
+      image: '/assets/images/CV_boot.PNG',  
       description: '3D-printed ribbed and ribless CV boot mold designs' 
   },
   { 
       title: 'Tire Temperature Sensor Mount', 
       date: new Date('2022-04-05'), 
-      image: '../images/temp_sensor.PNG', 
+      image: '/assets/images/temp_sensor.PNG', 
       description: 'Wheel temperature sensor mounting solution' 
   },
   { 
       title: 'Aerofoil', 
       date: new Date('2022-04-05'), 
-      image: '../images/placeholder.jpg', 
+      image: '/assets/images/placeholder.jpg', 
       description: 'Aero-package R&D via computational methods' 
   },
   { 
     title: 'Laptime Simulation', 
     date: new Date('2022-04-05'), 
-    image: '../images/placeholder.jpg', 
+    image: '/assets/images/placeholder.jpg', 
     description: 'Quarter car suspension kinematics model using Simulink and Simscape' 
   }
 ];
@@ -52,13 +52,13 @@ const personalProjects = [
   { 
       title: 'Macropad', 
       date: new Date('2022-02-20'), 
-      image: '../images/macropad.png',  
+      image: '/assets/images/macropad.png',  
       description: 'An investigation into the customization potential of input devices and their core functionality.' 
   },
   { 
       title: 'Kelvin Helmholtz Instability', 
       date: new Date('2022-04-05'), 
-      image: '../images/placeholder.jpg', 
+      image: '/assets/images/placeholder.jpg', 
       description: 'Kelvin–Helmholtz instability with a discontinuous Galerkin spectral element method on a hierarchical Cartesian mesh with ADR' 
   }
 ];

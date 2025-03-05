@@ -73,12 +73,10 @@ a {
   width: 100%; /* Full width */
   z-index: 1000; /* Ensure it stays on top of other content */
 }
-
 .navbar a{
   color: white;
   text-decoration: none;
 }
-
 .navbar a:hover{
   cursor: pointer;
 }
@@ -86,7 +84,6 @@ a {
 .name{
   font-weight: bold;
 }
-
 .name a {
   transition: all 0.3s ease-out;
 }
@@ -95,24 +92,13 @@ a {
   list-style: none;
 }
 
-.nav-item{
+.nav-item {
   display: inline-block;
-  padding: 20px 10px 
-}
-
-.nav-item {
+  padding: 20px 10px;
   margin-right: 20px;
-}
-
-/* Hide nav items by default */
-.nav-item {
-  opacity: 0;
+  opacity: 0; /* Hide nav items by default */
   transform: translateX(-20px); /* Start offscreen to the left */
-}
-
-/* Animate nav items to fade in from left to right */
-.nav-item {
-  animation: fadeInLeft 0.8s ease forwards;
+  animation: fadeInLeft 0.8s ease forwards; /* Animate nav items to fade in from left to right */
 }
 
 @keyframes fadeInLeft {
@@ -206,7 +192,6 @@ a {
 }
 
 /*--------------- Button --------------- */
-
 .button {
   background-color: #aa2b4b; /* Green background color */
   color: white; /* White text color */
@@ -216,14 +201,12 @@ a {
   cursor: pointer; /* Change cursor to pointer on hover */
   font-size: 16px; /* Font size */
 }
-
 /* Hover effect */
 .button:hover {
   background-color: #45a049; /* Darker green on hover */
 }
 
 /*--------------- Return Arrow --------------- */
-
 .return-arrow {
   width: 50px;
   height: 50px;
@@ -246,7 +229,6 @@ a {
 }
 
 /*--------------- Dropdown menu --------------- */
-
 .dropdown {
   margin-bottom: 20px;
 }
@@ -271,7 +253,6 @@ select {
 select::-ms-expand {
   display: none; /* Hide arrow in IE */
 }
-
 select::after {
   content: '\25BC'; /* Unicode character for downward arrow */
   position: absolute;
@@ -280,9 +261,7 @@ select::after {
   transform: translateY(-50%);
   pointer-events: none; /* Make the arrow non-clickable */
 }
-
-/* Hover effect */
-select:hover {
+select:hover { /* Hover effect */
   border-color: #999; /* Darker border on hover */
 }
 
