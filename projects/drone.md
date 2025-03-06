@@ -6,6 +6,18 @@ date: 2024-12-20
 image: "/assets/images/placeholder.jpg"
 description: "VTOL Tilt Rotor Drone"
 ---
+[Repo](https://github.com/nzge/Drone)
+
+## Schematic
+
+
+## Components
+ESC
+Motors
+Servos
+Propellors
+Teensy
+Raspberry Pi Pico
 
 ## Code
 
