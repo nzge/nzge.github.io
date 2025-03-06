@@ -14,33 +14,21 @@
   <!-- stylesheet -->
   <!-- Automatically include all CSS files in /assets/css/ -->
       <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/effects.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/interactive-elements.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/markdown.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/pages.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  
 </head>
 
 <!-- Include js -->
 <script src="/assets/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script type="text/javascript" async
-  src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" async
-  id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
+<script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    if (typeof MathJax === "undefined") {
-      console.error("MathJax is NOT loaded!");
-    } else {
-      console.log("MathJax is loaded successfully.");
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
     }
-  });
+  };
 </script>
 
 
@@ -61,16 +49,15 @@
   <div class="container">
     <div class="go-back" onclick="goBack()">Go Back</div>
     <h2>Model Rocket</h2>
+    <a href=> Repo </a>
   </div>
 </header>
 
 <div class="container">
-  <div class="row">
-    <div class="content">
-      
+  <article class="markdown-body">
+    
 
-    </div>
-  </div>
+  </article>
 </div>
 
     <footer class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s"">

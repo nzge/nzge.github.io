@@ -14,33 +14,21 @@
   <!-- stylesheet -->
   <!-- Automatically include all CSS files in /assets/css/ -->
       <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/effects.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/interactive-elements.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/markdown.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/pages.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  
 </head>
 
 <!-- Include js -->
 <script src="/assets/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script type="text/javascript" async
-  src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" async
-  id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
+<script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    if (typeof MathJax === "undefined") {
-      console.error("MathJax is NOT loaded!");
-    } else {
-      console.log("MathJax is loaded successfully.");
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
     }
-  });
+  };
 </script>
 
 
@@ -83,33 +71,33 @@
 
     
       <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="OCT Probe Mount" data-date="2024-06-20">
-        <a href="/projects/probe.html" class = "project-link">
+        <a href="/projects/probe.html" class="project-link">
           <h3>OCT Probe Mount</h3>
-          <img src="/assets/images/placeholder.jpg" alt="OCT Probe Mount">
+          <img src="/assets/media/placeholder.jpg" alt="OCT Probe Mount">
         </a>
         <p>Mechanical housing for the IRISS beam splitter to enable automated ocular surgery</p>
       </div>
     
       <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Capstone Robot" data-date="2024-01-15">
-        <a href="/projects/capstone-robot.html" class = "project-link">
+        <a href="/projects/capstone-robot.html" class="project-link">
           <h3>Capstone Robot</h3>
-          <img src="/assets/images/capstone_robot.png" alt="Capstone Robot">
+          <img src="/assets/media/capstone_robot.png" alt="Capstone Robot">
         </a>
         <p>Fully Autonomous delivery robot.</p>
       </div>
     
       <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Model Rocket" data-date="2023-03-10">
-        <a href="/projects/model-rocket.html" class = "project-link">
+        <a href="/projects/model-rocket.html" class="project-link">
           <h3>Model Rocket</h3>
-          <img src="/assets/images/model_rocket.png" alt="Model Rocket">
+          <img src="/assets/media/model_rocket.png" alt="Model Rocket">
         </a>
         <p>G-class hobby rocket with a target apogee of 2,750 ft.</p>
       </div>
     
       <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Solar Powered Mini Car" data-date="2022-03-10">
-        <a href="/projects/solar-power-car.html" class = "project-link">
+        <a href="/projects/solar-power-car.html" class="project-link">
           <h3>Solar Powered Mini Car</h3>
-          <img src="/assets/images/solar_car.PNG" alt="Solar Powered Mini Car">
+          <img src="/assets/media/solar_car.PNG" alt="Solar Powered Mini Car">
         </a>
         <p>A solar-powered mini car featuring a front-wheel drive, a bevel gear drivetrain, and topology optimizations.</p>
       </div>
