@@ -1,7 +1,4 @@
 /*--------------- basic styling --------------- */
-*{
-  background: #000000;
-}
 html, body {
       margin: 0;
       margin-top: 50px;
@@ -24,10 +21,72 @@ html, body {
       }
 }
 
+/*--------------- footer  --------------- */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #222;
+  color: white;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between name and icons */
+}
+
+.footer-line {
+  width: 100%;        /* Full width */
+  height: 1px;        /* Thin line */
+  background-color: #928686; /* Line color */
+  margin-bottom: 15px; /* Space below */
+}
+
+.social-icons a {
+  font-size: 20px;
+  margin-left: 10px; /* Space between icons */
+  text-decoration: none;
+}
+
+/* Social media icon styling */
+.social-icons a {
+  font-size: 24px;
+  margin-left: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Default icon color */
+.social-icons a {
+  color: rgb(75, 63, 139); /* Default white */
+}
+
+/* Hover effects - Change colors for each icon */
+.social-icons a:hover {
+  color: #1da1f2; /* Default Twitter blue */
+}
+
+.social-icons a[href*="github"]:hover {
+  color: #272424; /* White for GitHub */
+}
+
+.social-icons a[href*="twitter"]:hover {
+  color: #1da1f2; /* Twitter Blue */
+}
+
+.social-icons a[href*="linkedin"]:hover {
+  color: #0077b5; /* LinkedIn Blue */
+}
+
+.social-icons a[href*="instagram"]:hover {
+  color: #E1306C; /* Instagram Pink */
+}
 /*--------------- miscellaneous structures --------------- */
 
 header, footer {
-  background-color: #000000;
+  background-color: transparent;
   color: #fff;
   padding: 10px 20px;
 }
@@ -51,11 +110,12 @@ a {
 }
 
 .horizontal-line::after {
-  content: "";
-  display: block;
-  width: 100%; /* Adjust the width of the line */
-  height: 1px; /* Adjust the height of the line */
-  background-color: #928686; /* Set the color of the line */
+  content: ""; /* Required for ::after */
+  display: block; /* Makes it visible */
+  width: 100%; /* Full width */
+  height: 1px; /* Thickness of the line */
+  background-color: #d11d1d; /* Line color */
+  margin: 10px 0; /* Adds spacing */
 }
 
 /*--------------- navigation --------------- */
@@ -64,7 +124,7 @@ a {
   justify-content: space-around;
   align-items: center;
   
-  background: black;
+  background: transparent;
   color: white;
 
   position: fixed; /* Fixed position */
@@ -144,6 +204,45 @@ a {
   background-position: center; /* This will center the background image */
 }
 
+/*--------------- contact page --------------- */
+
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
 /*--------------- hero section --------------- */
 .hero {
   height: 100vh;
@@ -167,28 +266,22 @@ a {
 
 /*--------------- Project --------------- */
 
-#projectContainer {
+.project {
   max-width: 800px;
   margin: 20px auto;
-  padding: 0 20px;
-}
-
-#projectContainer img {
-  width: 400px; /* Set the desired width for the images */
-  height: 300px; /* Set the desired height for the images */
-  object-fit: cover; /* Maintain aspect ratio and cover container */
-  /* Additional styles if necessary */
-}
-
-.project {
+  padding: 20px;
   border-bottom: 1px solid #000000;
   background: transparent;
-  padding: 20px 0;
 }
 
 .project img {
   max-width: 100%;
   height: auto;
+  /* width: 400px;
+   height: 300px; */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 /*--------------- Button --------------- */
@@ -342,4 +435,18 @@ select:hover { /* Hover effect */
   to {
         border-right-color: transparent;
   }
+}
+
+
+/*--------------- effects --------------- */ 
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dynamic-bg {
+  background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
 }

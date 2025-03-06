@@ -1,0 +1,108 @@
+<html> 
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathan Ge - Class Projects</title>
+  <meta name="description" content="Projects attempted at UCLA.">
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+
+  <!-- stylesheet -->
+  <!-- Automatically include all CSS files in /assets/css/ -->
+      <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
+      <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<!-- Include js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+  <body>
+
+     <!--------------- navbar starts here --------------->
+ <nav class="navbar"> 
+  <div class="name animate__animated animate__fadeInUp"> <a href="/pages/index.html">nathan</a> </div>
+  <ul class="nav-select">
+    <li class="nav-item"><a href="/pages/index.html">home.</a></li>
+    <li class="nav-item"><a href="/pages/about.html">about me.</a></li>
+    <li class="nav-item"><a href="/pages/work.html">work.</a></li>
+    <li class="nav-item"><a href="/pages/contact.html">contact.</a></li>
+  </ul>
+</nav>
+
+    <header>
+  <div class="container">
+    <div class="return-arrow" onclick="goBack()"></div>
+    <h1>Class Projects</h1>
+    <label for="sortDropdown">Sort by:</label>
+    <select id="sortDropdown" onchange="location.href='?sort=' + this.value">
+      <option value="date" >Date</option>
+      <option value="name" >Name</option>
+    </select>
+  </div>
+</header>
+
+<div class="container">
+  <section id="projects">
+    
+    
+    
+    
+    
+      
+      
+      
+        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+          <a href="/projects/solar-power-car.html">
+            <h3>Solar Powered Mini Car</h3>
+            <img src="/assets/images/solar_car.PNG" alt="Solar Powered Mini Car">
+          </a>
+          <p>A solar-powered mini car featuring a front-wheel drive, a bevel gear drivetrain, and topology optimizations.</p>
+        </div>
+      
+        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+          <a href="/projects/model-rocket.html">
+            <h3>Model Rocket</h3>
+            <img src="/assets/images/model_rocket.png" alt="Model Rocket">
+          </a>
+          <p>G-class hobby rocket with a target apogee of 2,750 ft.</p>
+        </div>
+      
+        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+          <a href="/projects/capstone-robot.html">
+            <h3>Capstone Robot</h3>
+            <img src="/assets/images/capstone_robot.png" alt="Capstone Robot">
+          </a>
+          <p>Fully Autonomous delivery robot.</p>
+        </div>
+      
+    
+  </section>
+</div>
+
+
+
+
+<div id="projectContainer"></div>
+
+    <footer class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s"">
+  <div class="footer-line"></div>
+  <div class="footer-content">
+    <p>&copy; 2025 Nathan Ge</p>
+    <div class="social-icons">
+      <a href="https://github.com/nzge" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com/in/nzge" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/naysun_g" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

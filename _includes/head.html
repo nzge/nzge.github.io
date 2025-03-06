@@ -1,17 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} - {% endif %} Nathan Ge</title>
+  <title>Nathan Ge{% if page.title %} - {{ page.title }}{% endif %}</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Nathan Ge is a mechanical engineer and designer based in the Bay Area.{% endif %}">
-
-  <!-- stylesheet -->
-  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
 
-  <!-- animation -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
-  <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
+  <!-- stylesheet -->
+  <!-- Automatically include all CSS files in /assets/css/ -->
+  {%- for css_file in site.static_files %}
+    {%- if css_file.path contains '/assets/css/' and css_file.extname == '.css' %}
+      <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}{{ css_file.path }}">{%- endif -%}
+  {%- endfor %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 </head>
+
+<!-- Include js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/main.js"></script>
