@@ -25,7 +25,6 @@ body{
       }
 }
 
-
 /* Apply Roboto Mono only to regular text */
 body {
   font-family: 'Roboto Mono', monospace;
@@ -36,13 +35,54 @@ code, pre {
   font-family: inherit; /* Keeps Rouge/Minima's default font */
 }
 
+/*--------------- miscellaneous structures --------------- */
+
+header, footer {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  background-color: transparent; /* Set the default background color to transparent */
+}
+
+p {
+  background-color: transparent; /* Set the default background color to transparent */
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+.horizontal-line::after {
+  content: ""; /* Required for ::after */
+  display: block; /* Makes it visible */
+  width: 100%; /* Full width */
+  height: 1px; /* Thickness of the line */
+  background-color: #d11d1d; /* Line color */
+  margin: 10px 0; /* Adds spacing */
+}
+
 /*--------------- footer  --------------- */
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background: #222;
+  background: transparent;
   color: white;
 }
 
@@ -98,168 +138,7 @@ footer {
 .social-icons a[href*="instagram"]:hover {
   color: #E1306C; /* Instagram Pink */
 }
-/*--------------- miscellaneous structures --------------- */
 
-header, footer {
-  background-color: transparent;
-  color: #fff;
-  padding: 10px 20px;
-}
-
-.container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 0 20px;
-}
-
-h1 {
-  text-align: center;
-}
-
-h3 {
-  background-color: transparent; /* Set the default background color to transparent */
-}
-
-p {
-  background-color: transparent; /* Set the default background color to transparent */
-}
-
-a {
-  text-decoration: none;
-}
-
-.horizontal-line::after {
-  content: ""; /* Required for ::after */
-  display: block; /* Makes it visible */
-  width: 100%; /* Full width */
-  height: 1px; /* Thickness of the line */
-  background-color: #d11d1d; /* Line color */
-  margin: 10px 0; /* Adds spacing */
-}
-
-/*--------------- navigation --------------- */
-.navbar{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  
-  background: transparent;
-  color: white;
-
-  position: fixed; /* Fixed position */
-  top: 0; /* Place at the top of the viewport */
-  left: 0;
-  width: 100%; /* Full width */
-  z-index: 1000; /* Ensure it stays on top of other content */
-}
-.navbar a{
-  color: white;
-  text-decoration: none;
-}
-.navbar a:hover{
-  cursor: pointer;
-}
-
-.name{
-  font-weight: bold;
-}
-.name a {
-  transition: all 0.3s ease-out;
-}
-
-.nav-select{
-  list-style: none;
-}
-
-.nav-item {
-  display: inline-block;
-  padding: 20px 10px;
-  margin-right: 20px;
-  opacity: 0; /* Hide nav items by default */
-  transform: translateX(-20px); /* Start offscreen to the left */
-  animation: fadeInLeft 0.8s ease forwards; /* Animate nav items to fade in from left to right */
-}
-
-@keyframes fadeInLeft {
-  from {
-      opacity: 0;
-      transform: translateX(-20px); /* Start offscreen to the left */
-  }
-  to {
-      opacity: 1;
-      transform: translateX(0); /* Move to original position */
-  }
-}
-
-.menu {
-  display: none;
-}
-
-@media(max-width: 750px) {
-  .menu{
-    display: block;
-    position: absolute;
-    right: 15px;
-    top: 15px;
-  }
-  .navbar{
-    display: block;
-    flex-direction: column;
-
-  }
-}
-
-/*---------------about page --------------- */
-.about {
-  height: 500px;
-  margin-top: 120px;
-}
-
-.image {
-  /* background: url(https://images.unsplash.com/photo-1540885762261-a2ca01f290f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80) no-repeat 50% 70%; */
-  background-image: url(../images/neon_cat.gif);
-  background-size: cover; /* This will make sure the entire background image is covered */
-  background-position: center; /* This will center the background image */
-}
-
-/*--------------- contact page --------------- */
-form {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #333;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #0056b3;
-}
 /*--------------- hero section --------------- */
 .hero {
   height: 100vh;
@@ -279,191 +158,4 @@ button:hover {
   .header h1 {
         font-size: 26px;
   }
-}
-
-/*--------------- Project --------------- */
-
-.project {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  border-bottom: 1px solid #000000;
-  background: transparent;
-}
-
-.project img {
-  max-width: 100%;
-  height: auto;
-  /* width: 400px;
-   height: 300px; */
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
-
-/*--------------- Button --------------- */
-.button {
-  background-color: #aa2b4b; /* Green background color */
-  color: white; /* White text color */
-  padding: 10px 20px; /* Padding around the text */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  font-size: 16px; /* Font size */
-}
-/* Hover effect */
-.button:hover {
-  background-color: #45a049; /* Darker green on hover */
-}
-
-/*--------------- Return Arrow --------------- */
-.return-arrow {
-  width: 50px;
-  height: 50px;
-  /* border: 2px solid rgb(255, 255, 255);
-  border-radius: 50%; */
-  position: relative;
-  transform: rotate(-45deg);
-  cursor: pointer;
-}
-.return-arrow::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  border-top: 2px solid rgb(255, 255, 255);
-  border-right: 2px solid rgb(255, 255, 255);
-}
-
-/*--------------- Dropdown menu --------------- */
-.dropdown {
-  margin-bottom: 20px;
-}
-
-label {
-  font-weight: bold;
-}
-
-select {
-  appearance: none; /* Remove default appearance */
-  padding: 6px 12px; /* Padding around text */
-  font-size: 16px; /* Font size */
-  font-family: "Roboto Mono";
-  border: 1px solid #000000; /* Border */
-  border-radius: 1px; /* Rounded corners */
-  background-color: #000000; /* Background color */
-  color: #ffffff; /* Text color */
-  cursor: pointer; /* Cursor */
-}
-
-/* Style the dropdown arrow */
-select::-ms-expand {
-  display: none; /* Hide arrow in IE */
-}
-select::after {
-  content: '\25BC'; /* Unicode character for downward arrow */
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  pointer-events: none; /* Make the arrow non-clickable */
-}
-select:hover { /* Hover effect */
-  border-color: #999; /* Darker border on hover */
-}
-
-/*--------------- Dropdown menu --------------- */
-/* Style for dropdowns */
-.dropdown-style1 .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-style1 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
-
-.dropdown-style1 .dropdown-content a {
-  display: block;
-  padding: 10px 0;
-  text-decoration: none;
-  color: #333;
-}
-
-.dropdown-style1 .dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-/* Show dropdown content on click */
-.dropdown-style1 .show {
-  display: block;
-}
-
-/*--------------- typewriter effect --------------- */
-.line {
-  width: 24em;
-  top: 50%;
-  margin: auto;
-  border-right: 2px solid rgba(255, 255, 255, 0.75);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-60%);
-}
-
-.anim-typewriter {
-  animation: typewriter 4s steps(40) 1s 1 normal both,
-  blinkTextCussor 500ms steps(40) infinite normal;
-}
-
-@keyframes typewriter {
-  from {
-        width: 0;
-  }
-  to {
-        width: 18em;
-  }
-}
-
-@media(max-width: 768px) {
-  @keyframes typewriter {
-        from {
-              width: 0;
-        }
-        to {
-              width: 17em;
-        }
-  }
-}
-
-@keyframes blinkTextCussor {
-  from {
-        border-right-color: rgba(255, 255, 255, 0.75);
-  }
-  to {
-        border-right-color: transparent;
-  }
-}
-
-
-/*--------------- effects --------------- */ 
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.dynamic-bg {
-  background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
-  background-size: 400% 400%;
-  animation: gradientAnimation 10s ease infinite;
 }

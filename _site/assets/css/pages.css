@@ -1,0 +1,73 @@
+/*---------------about page --------------- */
+.about {
+height: 500px;
+margin-top: 120px;
+}
+
+.image {
+/* background: url(https://images.unsplash.com/photo-1540885762261-a2ca01f290f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80) no-repeat 50% 70%; */
+background-image: url(../images/neon_cat.gif);
+background-size: cover; /* This will make sure the entire background image is covered */
+background-position: center; /* This will center the background image */
+}
+
+/*--------------- contact page --------------- */
+form {
+max-width: 600px;
+margin: 20px auto;
+padding: 20px;
+background: #f9f9f9;
+border-radius: 8px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+display: block;
+font-weight: bold;
+margin-top: 10px;
+color: #333;
+}
+
+input, textarea {
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+button {
+margin-top: 10px;
+padding: 10px 15px;
+background: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+button:hover {
+background: #0056b3;
+}
+
+/*--------------- Project --------------- */
+
+.project {
+max-width: 800px;
+margin: 20px auto;
+padding: 20px;
+border-bottom: 1px solid #000000;
+background: transparent;
+}
+
+.project img {
+max-width: 100%;
+height: auto;
+/* width: 400px;
+height: 300px; */
+object-fit: cover;
+display: block;
+margin: 0 auto;
+}
+
+

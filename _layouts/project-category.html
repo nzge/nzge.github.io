@@ -4,41 +4,37 @@ layout: default
 
 <header>
   <div class="container">
-    <div class="return-arrow" onclick="goBack()"></div>
-    <h2>{{page.title}}</h2>
-    <label for="sortDropdown">Sort by:</label>
-    <select id="sortDropdown" onchange="location.href='?sort=' + this.value">
-      <option value="date" {% if page.sort == 'date' %}selected{% endif %}>Date</option>
-      <option value="name" {% if page.sort == 'name' %}selected{% endif %}>Name</option>
-    </select>
+    <div class="go-back" onclick="goBack()">Go Back</div>
+    <h2>{{ page.title }}</h2>
+    <div class="sort-container">
+      <label for="sortDropdown">Sort by:</label>
+      <select id="sortDropdown" onchange="sortProjects()">
+        <option value="date-newest">Date (Newest)</option>
+        <option value="date-oldest">Date (Oldest)</option>
+        <option value="name-first">Name (A-Z)</option>
+        <option value="name-last">Name (Z-A)</option>
+      </select>
+    </div>
   </div>
 </header>
 
 <div class="container">
   <section id="projects">
-    {% assign sort_criteria = page.sort | default: 'date' %}
     {% assign category_type = page.type %}
     {% assign projects = site.pages | where: "category", category_type %}
-    
-    {% if projects %}
-      {% if sort_criteria == 'date' %}
-        {% assign sorted_projects = projects | sort: 'date' %}
-      {% elsif sort_criteria == 'name' %}
-        {% assign sorted_projects = projects | sort: 'title' %}
-      {% endif %}
-      
-      {% for project in sorted_projects %}
-        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <a href="{{ project.url }}">
-            <h3>{{ project.title }}</h3>
-            <img src="{{ project.image }}" alt="{{ project.title }}">
-          </a>
-          <p>{{ project.description }}</p>
-        </div>
-      {% endfor %}
-    {% else %}
-      <p>No projects found in this category.</p>
-    {% endif %}
+
+    <!-- Liquid sorting based on date, from newest to oldest by default -->
+    {% assign sorted_projects = projects | sort: 'date' | reverse %}
+
+    {% for project in sorted_projects %}
+      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="{{ project.title }}" data-date="{{ project.date | date: '%Y-%m-%d' }}">
+        <a href="{{ project.url }}">
+          <h3>{{ project.title }}</h3>
+          <img src="{{ project.image }}" alt="{{ project.title }}">
+        </a>
+        <p>{{ project.description }}</p>
+      </div>
+    {% endfor %}
   </section>
 </div>
 
