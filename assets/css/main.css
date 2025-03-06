@@ -661,7 +661,7 @@ footer {
 
 /*--------------- Image Background --------------- */
 .image {
-  background-image: url(../images/AtlasRobotWave.gif);
+  background-image: url(../media/AtlasRobotWave.gif);
   background-size: cover;
   background-position: center; }
 
