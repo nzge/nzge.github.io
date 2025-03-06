@@ -6,8 +6,12 @@ html, body {
       width: 100%;
       height: 100%;
       font-family: "Roboto Mono" !important;
-      background: #000000 !important;
+      background: black;
       color: #ffffff !important;
+}
+
+body{
+  background: transparent !important;  
 }
 
 .whitespace {
@@ -19,6 +23,17 @@ html, body {
       .whitespace {
             display: none;
       }
+}
+
+
+/* Apply Roboto Mono only to regular text */
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* Let Minima/Rouge handle code block fonts */
+code, pre {
+  font-family: inherit; /* Keeps Rouge/Minima's default font */
 }
 
 /*--------------- footer  --------------- */
@@ -95,6 +110,10 @@ header, footer {
   max-width: 800px;
   margin: 20px auto;
   padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
 }
 
 h3 {
@@ -191,7 +210,6 @@ a {
 }
 
 /*---------------about page --------------- */
-
 .about {
   height: 500px;
   margin-top: 120px;
@@ -199,13 +217,12 @@ a {
 
 .image {
   /* background: url(https://images.unsplash.com/photo-1540885762261-a2ca01f290f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80) no-repeat 50% 70%; */
-  background-image: url(../images/doge.jpg);
+  background-image: url(../images/neon_cat.gif);
   background-size: cover; /* This will make sure the entire background image is covered */
   background-position: center; /* This will center the background image */
 }
 
 /*--------------- contact page --------------- */
-
 form {
   max-width: 600px;
   margin: 20px auto;

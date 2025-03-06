@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "class"
+category: "school"
 title: "Capstone Robot"
 date: 2024-01-15
 image: "/assets/images/capstone_robot.png"

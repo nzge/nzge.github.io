@@ -5,7 +5,7 @@ layout: default
 <header>
   <div class="container">
     <div class="return-arrow" onclick="goBack()"></div>
-    <h1>{{page.title}}</h1>
+    <h2>{{page.title}}</h2>
     <label for="sortDropdown">Sort by:</label>
     <select id="sortDropdown" onchange="location.href='?sort=' + this.value">
       <option value="date" {% if page.sort == 'date' %}selected{% endif %}>Date</option>

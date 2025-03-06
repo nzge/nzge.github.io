@@ -18,8 +18,24 @@
   {%- endfor %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+  
 </head>
 
 <!-- Include js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+<script type="text/javascript" async
+  src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" async
+  id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (typeof MathJax === "undefined") {
+      console.error("MathJax is NOT loaded!");
+    } else {
+      console.log("MathJax is loaded successfully.");
+    }
+  });
+</script>

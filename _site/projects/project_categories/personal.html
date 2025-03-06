@@ -1,4 +1,4 @@
-<html> 
+<html > 
   <!DOCTYPE html>
 <html lang="en">
 
@@ -17,11 +17,28 @@
       <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+  
 </head>
 
 <!-- Include js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="/assets/js/main.js"></script>
+<script type="text/javascript" async
+  src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" async
+  id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (typeof MathJax === "undefined") {
+      console.error("MathJax is NOT loaded!");
+    } else {
+      console.log("MathJax is loaded successfully.");
+    }
+  });
+</script>
+
 
   <body>
 
@@ -39,7 +56,7 @@
     <header>
   <div class="container">
     <div class="return-arrow" onclick="goBack()"></div>
-    <h1>Personal Projects</h1>
+    <h2>Personal Projects</h2>
     <label for="sortDropdown">Sort by:</label>
     <select id="sortDropdown" onchange="location.href='?sort=' + this.value">
       <option value="date" >Date</option>
@@ -75,11 +92,27 @@
         </div>
       
         <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+          <a href="/projects/e-ink-display.html">
+            <h3>E-ink Display</h3>
+            <img src="/assets/images/placeholder.jpg" alt="E-ink Display">
+          </a>
+          <p>Display</p>
+        </div>
+      
+        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
           <a href="/projects/stewart-platform.html">
             <h3>Stewart Platform</h3>
             <img src="/assets/images/placeholder.jpg" alt="Stewart Platform">
           </a>
           <p>6DOF Stewart Platform</p>
+        </div>
+      
+        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+          <a href="/projects/drone.html">
+            <h3>Drone</h3>
+            <img src="/assets/images/placeholder.jpg" alt="Drone">
+          </a>
+          <p>VTOL Tilt Rotor Drone</p>
         </div>
       
     

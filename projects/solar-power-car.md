@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "class"
+category: "school"
 title: "Solar Powered Mini Car"
 date: 2022-03-10
 image: "/assets/images/solar_car.PNG"

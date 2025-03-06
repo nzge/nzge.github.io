@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "class"
+category: "school"
 title: "Model Rocket"
 date: 2023-03-10
 image: "/assets/images/model_rocket.png"

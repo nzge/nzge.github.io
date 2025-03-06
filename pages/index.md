@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+effect: dynamic
 ---
 
 <!--------------- hero section starts here --------------->
