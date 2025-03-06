@@ -8,8 +8,10 @@ description: "6DOF Stewart Platform"
 repo: "https://github.com/nzge/Stewart-Platform"
 ---
 
-
 ## Hardware Design
+
+### Components
+
 ### Schematic
 
 

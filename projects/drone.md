@@ -35,12 +35,21 @@ This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in V
 
 ### Schematic
 
+### Frame
+
+### Aesthetics
+
+
+
 ## Software Design
 
 ### Sensor Feedback and Stability Control
 
 #### MPU6050
 The MPU6050 is a 6-axis (3-axis Gyroscope, 3-axis Accelerometer) motion tracking sensor, detecting changes in acceleration and rotation.
+
+![Alt text](/assets/media/drone_media/mpu6050.png){: style="width:200px; height:200px;display: block; margin: auto;"}
+
 
 ##### MPU6050 Source Code
 MPU6050 Class structure
