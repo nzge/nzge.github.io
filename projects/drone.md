@@ -12,20 +12,26 @@ description: "VTOL Tilt Rotor Drone"
 
 
 ## Components
-ESC
-Motors
-Servos
-Propellors
-Teensy
-Raspberry Pi Pico
+
+- LiPo Battery
+- ESC
+- Brushless Motors
+- Servos
+- Propellors
+- Teensy
+- Raspberry Pi Pico
+
 
 ## Code
-
+```cpp
+serial.print("hello world!")
+```
 
 ### Sensor Feedback and Stability Control
-MPU 6050
-Calibration
-Sensor Fusion (Madgwick)
+
+#### MPU 6050
+#### Calibration
+#### Sensor Fusion (Madgwick)
 
 ### Positional Control
 
