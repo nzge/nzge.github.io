@@ -14,6 +14,9 @@
   <!-- stylesheet -->
   <!-- Automatically include all CSS files in /assets/css/ -->
       <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
+      <link rel="stylesheet" type="text/css" href="/assets/css/effects.css">
+      <link rel="stylesheet" type="text/css" href="/assets/css/interactive-elements.css">
+      <link rel="stylesheet" type="text/css" href="/assets/css/pages.css">
       <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
@@ -21,8 +24,8 @@
 </head>
 
 <!-- Include js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="/assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script type="text/javascript" async
   src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script type="text/javascript" async
@@ -55,13 +58,17 @@
 
     <header>
   <div class="container">
-    <div class="return-arrow" onclick="goBack()"></div>
+    <div class="go-back" onclick="goBack()">Go Back</div>
     <h2>School Projects</h2>
-    <label for="sortDropdown">Sort by:</label>
-    <select id="sortDropdown" onchange="location.href='?sort=' + this.value">
-      <option value="date" >Date</option>
-      <option value="name" >Name</option>
-    </select>
+    <div class="sort-container">
+      <label for="sortDropdown">Sort by:</label>
+      <select id="sortDropdown" onchange="sortProjects()">
+        <option value="date-newest">Date (Newest)</option>
+        <option value="date-oldest">Date (Oldest)</option>
+        <option value="name-first">Name (A-Z)</option>
+        <option value="name-last">Name (Z-A)</option>
+      </select>
+    </div>
   </div>
 </header>
 
@@ -69,44 +76,42 @@
   <section id="projects">
     
     
+
+    <!-- Liquid sorting based on date, from newest to oldest by default -->
     
+
     
+      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="OCT Probe Mount" data-date="2024-06-20">
+        <a href="/projects/probe.html">
+          <h3>OCT Probe Mount</h3>
+          <img src="/assets/images/placeholder.jpg" alt="OCT Probe Mount">
+        </a>
+        <p>Mechanical housing for the IRISS beam splitter to enable automated ocular surgery</p>
+      </div>
     
-      
-      
-      
-        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <a href="/projects/solar-power-car.html">
-            <h3>Solar Powered Mini Car</h3>
-            <img src="/assets/images/solar_car.PNG" alt="Solar Powered Mini Car">
-          </a>
-          <p>A solar-powered mini car featuring a front-wheel drive, a bevel gear drivetrain, and topology optimizations.</p>
-        </div>
-      
-        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <a href="/projects/model-rocket.html">
-            <h3>Model Rocket</h3>
-            <img src="/assets/images/model_rocket.png" alt="Model Rocket">
-          </a>
-          <p>G-class hobby rocket with a target apogee of 2,750 ft.</p>
-        </div>
-      
-        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <a href="/projects/capstone-robot.html">
-            <h3>Capstone Robot</h3>
-            <img src="/assets/images/capstone_robot.png" alt="Capstone Robot">
-          </a>
-          <p>Fully Autonomous delivery robot.</p>
-        </div>
-      
-        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <a href="/projects/probe.html">
-            <h3>OCT Probe Mount</h3>
-            <img src="/assets/images/placeholder.jpg" alt="OCT Probe Mount">
-          </a>
-          <p>Mechanical housing for the IRISS beam splitter to enable automated ocular surgery</p>
-        </div>
-      
+      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Capstone Robot" data-date="2024-01-15">
+        <a href="/projects/capstone-robot.html">
+          <h3>Capstone Robot</h3>
+          <img src="/assets/images/capstone_robot.png" alt="Capstone Robot">
+        </a>
+        <p>Fully Autonomous delivery robot.</p>
+      </div>
+    
+      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Model Rocket" data-date="2023-03-10">
+        <a href="/projects/model-rocket.html">
+          <h3>Model Rocket</h3>
+          <img src="/assets/images/model_rocket.png" alt="Model Rocket">
+        </a>
+        <p>G-class hobby rocket with a target apogee of 2,750 ft.</p>
+      </div>
+    
+      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Solar Powered Mini Car" data-date="2022-03-10">
+        <a href="/projects/solar-power-car.html">
+          <h3>Solar Powered Mini Car</h3>
+          <img src="/assets/images/solar_car.PNG" alt="Solar Powered Mini Car">
+        </a>
+        <p>A solar-powered mini car featuring a front-wheel drive, a bevel gear drivetrain, and topology optimizations.</p>
+      </div>
     
   </section>
 </div>

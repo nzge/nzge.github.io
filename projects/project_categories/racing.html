@@ -14,6 +14,9 @@
   <!-- stylesheet -->
   <!-- Automatically include all CSS files in /assets/css/ -->
       <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
+      <link rel="stylesheet" type="text/css" href="/assets/css/effects.css">
+      <link rel="stylesheet" type="text/css" href="/assets/css/interactive-elements.css">
+      <link rel="stylesheet" type="text/css" href="/assets/css/pages.css">
       <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
@@ -21,8 +24,8 @@
 </head>
 
 <!-- Include js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="/assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script type="text/javascript" async
   src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script type="text/javascript" async
@@ -55,13 +58,17 @@
 
     <header>
   <div class="container">
-    <div class="return-arrow" onclick="goBack()"></div>
+    <div class="go-back" onclick="goBack()">Go Back</div>
     <h2>Bruin Racing</h2>
-    <label for="sortDropdown">Sort by:</label>
-    <select id="sortDropdown" onchange="location.href='?sort=' + this.value">
-      <option value="date" >Date</option>
-      <option value="name" >Name</option>
-    </select>
+    <div class="sort-container">
+      <label for="sortDropdown">Sort by:</label>
+      <select id="sortDropdown" onchange="sortProjects()">
+        <option value="date-newest">Date (Newest)</option>
+        <option value="date-oldest">Date (Oldest)</option>
+        <option value="name-first">Name (A-Z)</option>
+        <option value="name-last">Name (Z-A)</option>
+      </select>
+    </div>
   </div>
 </header>
 
@@ -69,44 +76,42 @@
   <section id="projects">
     
     
+
+    <!-- Liquid sorting based on date, from newest to oldest by default -->
     
+
     
+      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Laptime Simulation" data-date="2024-08-05">
+        <a href="/projects/laptime-sim.html">
+          <h3>Laptime Simulation</h3>
+          <img src="/assets/images/placeholder.jpg" alt="Laptime Simulation">
+        </a>
+        <p>Quarter car suspension kinematics model using Simulink and Simscape</p>
+      </div>
     
-      
-      
-      
-        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <a href="/projects/cv-boot.html">
-            <h3>CV Boot Casting</h3>
-            <img src="/assets/images/CV_boot.png" alt="CV Boot Casting">
-          </a>
-          <p>3D-printed ribbed and ribless CV boot mold designs</p>
-        </div>
-      
-        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <a href="/projects/aerofoil.html">
-            <h3>Aerofoil</h3>
-            <img src="/assets/images/placeholder.jpg" alt="Aerofoil">
-          </a>
-          <p>Aero-package R&D via computational methods</p>
-        </div>
-      
-        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <a href="/projects/laptime-sim.html">
-            <h3>Laptime Simulation</h3>
-            <img src="/assets/images/placeholder.jpg" alt="Laptime Simulation">
-          </a>
-          <p>Quarter car suspension kinematics model using Simulink and Simscape</p>
-        </div>
-      
-        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <a href="/projects/tire-temp-sensor-mount.html">
-            <h3>Tire Temperature Sensor Mount</h3>
-            <img src="/assets/images/temp_sensor.PNG" alt="Tire Temperature Sensor Mount">
-          </a>
-          <p>Wheel temperature sensor mounting solution</p>
-        </div>
-      
+      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Tire Temperature Sensor Mount" data-date="2022-04-05">
+        <a href="/projects/tire-temp-sensor-mount.html">
+          <h3>Tire Temperature Sensor Mount</h3>
+          <img src="/assets/images/temp_sensor.PNG" alt="Tire Temperature Sensor Mount">
+        </a>
+        <p>Wheel temperature sensor mounting solution</p>
+      </div>
+    
+      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Aerofoil" data-date="2022-04-05">
+        <a href="/projects/aerofoil.html">
+          <h3>Aerofoil</h3>
+          <img src="/assets/images/placeholder.jpg" alt="Aerofoil">
+        </a>
+        <p>Aero-package R&D via computational methods</p>
+      </div>
+    
+      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="CV Boot Casting" data-date="2022-02-20">
+        <a href="/projects/cv-boot.html">
+          <h3>CV Boot Casting</h3>
+          <img src="/assets/images/CV_boot.png" alt="CV Boot Casting">
+        </a>
+        <p>3D-printed ribbed and ribless CV boot mold designs</p>
+      </div>
     
   </section>
 </div>
