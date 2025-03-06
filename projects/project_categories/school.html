@@ -5,8 +5,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nathan Ge - Work</title>
-  <meta name="description" content="Nathan Ge is a mechanical engineer and designer based in the Bay Area.">
+  <title>Nathan Ge - School Projects</title>
+  <meta name="description" content="UCLA projects">
 
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
@@ -53,75 +53,68 @@
   </ul>
 </nav>
 
-    <div class="container">
+    <header>
+  <div class="container">
+    <div class="return-arrow" onclick="goBack()"></div>
+    <h2>School Projects</h2>
+    <label for="sortDropdown">Sort by:</label>
+    <select id="sortDropdown" onchange="location.href='?sort=' + this.value">
+      <option value="date" >Date</option>
+      <option value="name" >Name</option>
+    </select>
+  </div>
+</header>
+
+<div class="container">
   <section id="projects">
     
-      
+    
+    
+    
     
       
-    
       
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
       
         <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <h2><a href="/projects/project_categories/personal.html">Personal Projects</a></h2>
-          <p>Independent projects.</p>
+          <a href="/projects/solar-power-car.html">
+            <h3>Solar Powered Mini Car</h3>
+            <img src="/assets/images/solar_car.PNG" alt="Solar Powered Mini Car">
+          </a>
+          <p>A solar-powered mini car featuring a front-wheel drive, a bevel gear drivetrain, and topology optimizations.</p>
         </div>
-      
-    
-      
-    
       
         <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <h2><a href="/projects/project_categories/racing.html">Bruin Racing</a></h2>
-          <p>My contributions to Bruin Racing FSAE.</p>
+          <a href="/projects/model-rocket.html">
+            <h3>Model Rocket</h3>
+            <img src="/assets/images/model_rocket.png" alt="Model Rocket">
+          </a>
+          <p>G-class hobby rocket with a target apogee of 2,750 ft.</p>
         </div>
-      
-    
       
         <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <h2><a href="/projects/project_categories/school.html">School Projects</a></h2>
-          <p>UCLA projects</p>
+          <a href="/projects/capstone-robot.html">
+            <h3>Capstone Robot</h3>
+            <img src="/assets/images/capstone_robot.png" alt="Capstone Robot">
+          </a>
+          <p>Fully Autonomous delivery robot.</p>
         </div>
       
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+          <a href="/projects/probe.html">
+            <h3>OCT Probe Mount</h3>
+            <img src="/assets/images/placeholder.jpg" alt="OCT Probe Mount">
+          </a>
+          <p>Mechanical housing for the IRISS beam splitter to enable automated ocular surgery</p>
+        </div>
       
     
   </section>
 </div>
 
+
+
+
+<div id="projectContainer"></div>
 
     <footer class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s"">
   <div class="footer-line"></div>
