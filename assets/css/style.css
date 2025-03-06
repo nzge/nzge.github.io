@@ -159,3 +159,20 @@ footer {
         font-size: 26px;
   }
 }
+
+/*--------------- link styling --------------- */
+/* Default link style (for all links) */
+.project-link {
+  color: #1f5c85; /* Set the color you want for all links (e.g., blue) */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Hover effect for all links */
+.project-link:hover {
+  color: #ff6347 !important; /* Set the color you want when hovered (e.g., red) */
+}
+
+/* Visited link style (for all links) */
+.project-link:visited {
+  color: #1f5c85; /* Keep the same color as the original link after visiting */
+} 
