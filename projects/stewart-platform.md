@@ -3,13 +3,15 @@ layout: project
 category: "personal"
 title: "Stewart Platform"
 date: 2025-02-20
-image: "/assets/images/placeholder.jpg"
+image: "placeholder.jpg"
 description: "6DOF Stewart Platform"
+repo: "https://github.com/nzge/Stewart-Platform"
 ---
 
-[Repository](https://github.com/nzge/Stewart-Platform)
 
+## Hardware Design
 ### Schematic
+
 
 
 ### Web Interface

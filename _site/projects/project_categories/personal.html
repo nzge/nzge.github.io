@@ -14,33 +14,21 @@
   <!-- stylesheet -->
   <!-- Automatically include all CSS files in /assets/css/ -->
       <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/effects.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/interactive-elements.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/markdown.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/pages.css">
-      <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  
 </head>
 
 <!-- Include js -->
 <script src="/assets/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script type="text/javascript" async
-  src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" async
-  id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
+<script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    if (typeof MathJax === "undefined") {
-      console.error("MathJax is NOT loaded!");
-    } else {
-      console.log("MathJax is loaded successfully.");
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
     }
-  });
+  };
 </script>
 
 
@@ -83,41 +71,41 @@
 
     
       <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="E-ink Display" data-date="2025-03-20">
-        <a href="/projects/e-ink-display.html" class = "project-link">
+        <a href="/projects/e-ink-display.html" class="project-link">
           <h3>E-ink Display</h3>
-          <img src="/assets/images/placeholder.jpg" alt="E-ink Display">
+          <img src="/assets/media/placeholder.jpg" alt="E-ink Display">
         </a>
         <p>Display</p>
       </div>
     
       <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Stewart Platform" data-date="2025-02-20">
-        <a href="/projects/stewart-platform.html" class = "project-link">
+        <a href="/projects/stewart-platform.html" class="project-link">
           <h3>Stewart Platform</h3>
-          <img src="/assets/images/placeholder.jpg" alt="Stewart Platform">
+          <img src="/assets/media/placeholder.jpg" alt="Stewart Platform">
         </a>
         <p>6DOF Stewart Platform</p>
       </div>
     
       <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Drone" data-date="2024-12-20">
-        <a href="/projects/drone.html" class = "project-link">
+        <a href="/projects/drone.html" class="project-link">
           <h3>Drone</h3>
-          <img src="/assets/images/placeholder.jpg" alt="Drone">
+          <img src="/assets/media/placeholder.jpg" alt="Drone">
         </a>
         <p>VTOL Tilt Rotor Drone</p>
       </div>
     
       <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Kelvin Helmholtz Instability" data-date="2022-04-05">
-        <a href="/projects/kelvin-helmholtz.html" class = "project-link">
+        <a href="/projects/kelvin-helmholtz.html" class="project-link">
           <h3>Kelvin Helmholtz Instability</h3>
-          <img src="/assets/images/Kelvin-Helmholtz_Instability.png" alt="Kelvin Helmholtz Instability">
+          <img src="/assets/media/Kelvin-Helmholtz_Instability.png" alt="Kelvin Helmholtz Instability">
         </a>
         <p>Kelvin–Helmholtz instability with a discontinuous Galerkin spectral element method on a hierarchical Cartesian mesh with ADR</p>
       </div>
     
       <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Macropad" data-date="2022-02-20">
-        <a href="/projects/macropad.html" class = "project-link">
+        <a href="/projects/macropad.html" class="project-link">
           <h3>Macropad</h3>
-          <img src="/assets/images/macropad.png" alt="Macropad">
+          <img src="/assets/media/macropad.png" alt="Macropad">
         </a>
         <p>An investigation into the customization potential of input devices and their core functionality.</p>
       </div>

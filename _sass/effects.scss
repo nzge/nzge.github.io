@@ -1,4 +1,4 @@
-/*--------------- typewriter effect --------------- */
+/*--------------- Typewriter Effect --------------- */
 .line {
   width: 24em;
   top: 50%;
@@ -12,40 +12,29 @@
 
 .anim-typewriter {
   animation: typewriter 4s steps(40) 1s 1 normal both,
-  blinkTextCussor 500ms steps(40) infinite normal;
+             blinkTextCussor 500ms steps(40) infinite normal;
 }
 
+// Keyframes must remain at the root level.
 @keyframes typewriter {
-  from {
-        width: 0;
-  }
-  to {
-        width: 18em;
-  }
-}
-
-@media(max-width: 768px) {
-  @keyframes typewriter {
-        from {
-              width: 0;
-        }
-        to {
-              width: 17em;
-        }
-  }
+  from { width: 0; }
+  to { width: 18em; }
 }
 
 @keyframes blinkTextCussor {
-  from {
-        border-right-color: rgba(255, 255, 255, 0.75);
-  }
-  to {
-        border-right-color: transparent;
+  from { border-right-color: rgba(255, 255, 255, 0.75); }
+  to { border-right-color: transparent; }
+}
+
+// Using a media query to override the typewriter keyframe for smaller screens
+@media (max-width: 768px) {
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 17em; }
   }
 }
 
-
-/*--------------- effects --------------- */ 
+/*--------------- Gradient --------------- */
 @keyframes gradientAnimation {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }

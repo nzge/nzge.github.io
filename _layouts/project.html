@@ -6,13 +6,12 @@ layout: default
   <div class="container">
     <div class="go-back" onclick="goBack()">Go Back</div>
     <h2>{{page.title}}</h2>
+    <a href={{page.repo}}> Repo </a>
   </div>
 </header>
 
 <div class="container">
-  <div class="row">
-    <div class="content">
-      {{ content }}
-    </div>
-  </div>
+  <article class="markdown-body">
+    {{ content }}
+  </article>
 </div>
