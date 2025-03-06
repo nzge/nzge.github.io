@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://nzge.github.io/pages/about.html</loc>
+<loc>https://nzge.github.io/docs/about.html</loc>
 </url>
 <url>
 <loc>https://nzge.github.io/projects/aerofoil.html</loc>
@@ -10,7 +10,7 @@
 <loc>https://nzge.github.io/projects/capstone-robot.html</loc>
 </url>
 <url>
-<loc>https://nzge.github.io/pages/contact.html</loc>
+<loc>https://nzge.github.io/docs/contact.html</loc>
 </url>
 <url>
 <loc>https://nzge.github.io/projects/cv-boot.html</loc>
@@ -22,7 +22,7 @@
 <loc>https://nzge.github.io/projects/e-ink-display.html</loc>
 </url>
 <url>
-<loc>https://nzge.github.io/pages/</loc>
+<loc>https://nzge.github.io/docs/</loc>
 </url>
 <url>
 <loc>https://nzge.github.io/projects/kelvin-helmholtz.html</loc>
@@ -55,12 +55,12 @@
 <loc>https://nzge.github.io/projects/stewart-platform.html</loc>
 </url>
 <url>
-<loc>https://nzge.github.io/pages/testJekyll.html</loc>
+<loc>https://nzge.github.io/docs/testJekyll.html</loc>
 </url>
 <url>
 <loc>https://nzge.github.io/projects/tire-temp-sensor-mount.html</loc>
 </url>
 <url>
-<loc>https://nzge.github.io/pages/work.html</loc>
+<loc>https://nzge.github.io/docs/work.html</loc>
 </url>
 </urlset>
