@@ -315,8 +315,7 @@ code {
   .markdown-body p {
     margin: 1em 0; }
   .markdown-body a {
-    color: #8be9fd;
-    text-decoration: underline; }
+    color: #8be9fd; }
     .markdown-body a:hover {
       color: #50fa7b; }
   .markdown-body blockquote {
@@ -326,10 +325,10 @@ code {
     font-style: italic;
     color: #6272a4; }
   .markdown-body ul, .markdown-body ol {
-    margin: 1em 0;
+    margin: .5em 0;
     padding-left: 2em; }
     .markdown-body ul li, .markdown-body ol li {
-      margin-bottom: 0.5em; }
+      margin-bottom: 0.1em; }
   .markdown-body p code:not(.highlight code) {
     background: rgba(0, 0, 0, 0.1);
     padding: 0.2em 0.4em;
@@ -522,13 +521,8 @@ body {
       display: none; } }
 
 /*--------------- Miscellaneous Structures --------------- */
-header {
-  background-color: transparent;
-  color: #fff;
-  padding: 10px 20px; }
-
 .container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 20px auto;
   padding: 0 20px; }
 
@@ -549,67 +543,6 @@ a {
   height: 1px;
   background-color: #d11d1d;
   margin: 10px 0; }
-
-/*--------------- Footer --------------- */
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 20px;
-  background: transparent;
-  color: white; }
-
-.footer-content {
-  display: flex;
-  align-items: center;
-  gap: 10px; }
-
-.footer-line {
-  width: 100%;
-  height: 1px;
-  background-color: #928686;
-  margin-bottom: 15px; }
-
-.social-icons a {
-  font-size: 24px;
-  margin-left: 10px;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-  color: #4b3f8b; }
-  .social-icons a:hover {
-    color: #1da1f2; }
-  .social-icons a[href*="github"]:hover {
-    color: #272424; }
-  .social-icons a[href*="twitter"]:hover {
-    color: #1da1f2; }
-  .social-icons a[href*="linkedin"]:hover {
-    color: #0077b5; }
-  .social-icons a[href*="instagram"]:hover {
-    color: #E1306C; }
-
-/*--------------- Hero Section --------------- */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .hero h1 {
-    font-weight: lighter;
-    text-align: center;
-    letter-spacing: -2px;
-    line-height: 58px; }
-
-@media (max-width: 768px) {
-  .header h1 {
-    font-size: 26px; } }
-/*--------------- Link Styling --------------- */
-.project-link {
-  color: #1f5c85;
-  text-decoration: none; }
-  .project-link:hover {
-    color: #ff6347; }
-  .project-link:visited {
-    color: #1f5c85; }
 
 /*--------------- Typewriter Effect --------------- */
 .line {
@@ -709,3 +642,94 @@ form {
     object-fit: cover;
     display: block;
     margin: 0 auto; }
+
+.project-link {
+  color: #1f5c85;
+  text-decoration: none; }
+  .project-link:hover {
+    color: #ff6347; }
+  .project-link:visited {
+    color: #1f5c85; }
+
+/*--------------- TOC --------------- */
+.toc-box {
+  border: 2px solid #ccc;
+  /* Border around the TOC box */
+  padding: 15px;
+  /* Padding inside the box */
+  margin-bottom: 20px;
+  /* Space below the TOC box */
+  background-color: transparent;
+  /* Light background color */
+  border-radius: 8px;
+  /* Optional rounded corners */ }
+  .toc-box p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; }
+
+.section-nav {
+  background-color: transparent;
+  margin: 5px 0;
+  padding: 10px 30px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px; }
+
+/*--------------- Header --------------- */
+header {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 20px; }
+
+/*--------------- Footer --------------- */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  background: transparent;
+  color: white; }
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 10px; }
+
+.footer-line {
+  width: 100%;
+  height: 1px;
+  background-color: #928686;
+  margin-bottom: 15px; }
+
+.social-icons a {
+  font-size: 24px;
+  margin-left: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  color: #4b3f8b; }
+  .social-icons a:hover {
+    color: #1da1f2; }
+  .social-icons a[href*="github"]:hover {
+    color: #272424; }
+  .social-icons a[href*="twitter"]:hover {
+    color: #1da1f2; }
+  .social-icons a[href*="linkedin"]:hover {
+    color: #0077b5; }
+  .social-icons a[href*="instagram"]:hover {
+    color: #E1306C; }
+
+/*--------------- Hero Section --------------- */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .hero h1 {
+    font-weight: lighter;
+    text-align: center;
+    letter-spacing: -2px;
+    line-height: 58px; }
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 26px; } }

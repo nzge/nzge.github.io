@@ -27,7 +27,6 @@
   // Links
   a {
     color: #8be9fd;
-    text-decoration: underline;
     &:hover {
       color: #50fa7b;
     }
@@ -44,10 +43,10 @@
 
   // Lists
   ul, ol {
-    margin: 1em 0;
+    margin: .5em 0;
     padding-left: 2em;
     li {
-      margin-bottom: 0.5em;
+      margin-bottom: 0.1em;
     }
   }
 

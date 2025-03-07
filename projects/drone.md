@@ -6,6 +6,7 @@ date: 2024-12-20
 image: "placeholder.jpg"
 description: "VTOL Tilt Rotor Drone"
 repo: "https://github.com/nzge/Drone"
+toc: true
 ---
 This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in Valorant.
 

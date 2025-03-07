@@ -43,6 +43,7 @@ plugins:
   - jekyll-github-metadata
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-toc
   - jekyll-remote-theme
   - jemoji
   - htmlcompressor

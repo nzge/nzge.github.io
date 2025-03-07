@@ -1,0 +1,103 @@
+
+/*--------------- TOC --------------- */
+.toc-box {
+  border: 2px solid #ccc; /* Border around the TOC box */
+  padding: 15px; /* Padding inside the box */
+  margin-bottom: 20px; /* Space below the TOC box */
+  background-color: transparent; /* Light background color */
+  border-radius: 8px; /* Optional rounded corners */
+
+  p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; // Only center the heading
+  }
+}
+
+.section-nav {
+  background-color: transparent;
+  margin: 5px 0;
+  padding: 10px 30px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+}
+
+/*--------------- Header --------------- */
+header {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+/*--------------- Footer --------------- */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  background: transparent;
+  color: white;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-line {
+  width: 100%;
+  height: 1px;
+  background-color: #928686;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  a {
+    font-size: 24px;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    color: rgb(75, 63, 139); // Default color
+
+    &:hover {
+      color: #1da1f2; // Twitter Blue
+    }
+
+    &[href*="github"]:hover {
+      color: #272424; // GitHub White
+    }
+    &[href*="twitter"]:hover {
+      color: #1da1f2; // Twitter Blue
+    }
+    &[href*="linkedin"]:hover {
+      color: #0077b5; // LinkedIn Blue
+    }
+    &[href*="instagram"]:hover {
+      color: #E1306C; // Instagram Pink
+    }
+  }
+}
+
+/*--------------- Hero Section --------------- */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-weight: lighter;
+    text-align: center;
+    letter-spacing: -2px;
+    line-height: 58px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    h1 {
+      font-size: 26px;
+    }
+  }
+}

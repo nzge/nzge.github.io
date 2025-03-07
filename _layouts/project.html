@@ -1,5 +1,6 @@
 ---
 layout: default
+toc: true
 ---
 
 <header>
@@ -10,8 +11,15 @@ layout: default
   </div>
 </header>
 
+
 <div class="container">
-  <article class="markdown-body">
-    {{ content }}
-  </article>
+  <nav class="toc-box">
+    <p>Table of Contents</p>
+    {% include toc.html html=content %}
+  </nav>
+  <div>
+    <article class="markdown-body">
+      {{ content}}
+    </article>
+  </div>
 </div>
