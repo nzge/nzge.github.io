@@ -544,6 +544,9 @@ a {
   background-color: #d11d1d;
   margin: 10px 0; }
 
+#hidden-references {
+  display: none; }
+
 /*--------------- Typewriter Effect --------------- */
 .line {
   width: 24em;
@@ -644,12 +647,13 @@ form {
     margin: 0 auto; }
 
 .project-link {
+  font-size: 1.5rem;
   color: #1f5c85;
   text-decoration: none; }
-  .project-link:hover {
-    color: #ff6347; }
   .project-link:visited {
     color: #1f5c85; }
+  .project-link:hover {
+    color: #ff6347 !important; }
 
 /*--------------- TOC --------------- */
 .toc-box {

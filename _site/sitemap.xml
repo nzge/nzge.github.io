@@ -34,6 +34,9 @@
 <loc>http://localhost:4000/projects/macropad.html</loc>
 </url>
 <url>
+<loc>http://localhost:4000/projects/misc.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/projects/model-rocket.html</loc>
 </url>
 <url>
@@ -62,5 +65,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/pages/work.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/assets/media/solar-car_media/Ge_FinalReport.pdf</loc>
+<lastmod>2022-08-15T23:22:41-07:00</lastmod>
 </url>
 </urlset>

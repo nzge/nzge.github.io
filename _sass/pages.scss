@@ -71,13 +71,15 @@ form {
 }
 
 .project-link {
+  font-size: 1.5rem; 
   color: #1f5c85; // Default link color
   text-decoration: none;
 
-  &:hover {
-    color: #ff6347; // Hover link color
-  }
   &:visited {
     color: #1f5c85; // Visited link color
+  }
+
+  &:hover {
+    color: #ff6347 !important; // Ensure hover color applies
   }
 }

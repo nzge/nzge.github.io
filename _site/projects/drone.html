@@ -19,9 +19,9 @@
 </head>
 
 <!-- Include js -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/assets/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
   window.MathJax = {
@@ -55,10 +55,12 @@
 
 
 <div class="container">
-  <nav class="toc-box">
-    <p>Table of Contents</p>
-    <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetics">Aesthetics</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li></ul>
-  </nav>
+  
+    <nav class="toc-box">
+      <p>Table of Contents</p>
+      <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetics">Aesthetics</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul>
+    </nav>
+  
   <div>
     <article class="markdown-body">
       <p>This was my attempt at creating a tilt-rotor drone inspired by Sora’s drone in Valorant.</p>
@@ -298,6 +300,10 @@ Motor mixing varies from drone-to-drone or robot-to-robot depending on your cont
   Your browser does not support the video tag.
 </video>
 
+<h2 id="build-log">Build Log</h2>
+
+<p>2-25-25
+IMU works but experiencing gyro drift</p>
 
     </article>
   </div>

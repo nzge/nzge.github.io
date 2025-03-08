@@ -19,9 +19,9 @@
 </head>
 
 <!-- Include js -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/assets/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
   window.MathJax = {
@@ -55,34 +55,132 @@
 
 
 <div class="container">
-  <nav class="toc-box">
-    <p>Table of Contents</p>
-    <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#servo-driver">Servo Driver</a></li><li><a href="#pid-control">PID Control</a></li><li><a href="#inverse-kinematics">Inverse Kinematics</a></li><li><a href="#web-interface">Web Interface</a></li><li><a href="#ros-integration">ROS Integration</a></li></ul></li><li><a href="#progress">Progress</a></li></ul>
-  </nav>
+  
+    <nav class="toc-box">
+      <p>Table of Contents</p>
+      <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#dimensions">Dimensions</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#servo-driver">Servo Driver</a></li><li><a href="#pid-control">PID Control</a></li><li><a href="#inverse-kinematics">Inverse Kinematics</a></li><li><a href="#web-interface">Web Interface</a></li><li><a href="#ros-integration">ROS Integration</a></li></ul></li><li><a href="#build-log">Build Log</a></li><li><a href="#references">References</a><ul><li><a href="#sources">Sources</a></li></ul></li></ul>
+    </nav>
+  
   <div>
     <article class="markdown-body">
-      
-<h2 id="hardware-design">Hardware Design</h2>
+      <h2 id="hardware-design">Hardware Design</h2>
 
 <h3 id="components">Components</h3>
-<p>Tower MG996R 180 degree servo
-HiLetgo PCA9685 16 Channel 12-Bit PWM Servo Motor Driver</p>
+<p>Tower MG996R 180 degree servo</p>
+
+<p>HiLetgo PCA9685 16 Channel 12-Bit PWM Servo Motor Driver</p>
+
+<p>6V 10A Power Supply</p>
+
+<p>MPU6050</p>
+
+<p>6 Shafts with threaded ball joint</p>
+
+<p>Base plate</p>
+
+<p>Top Plate</p>
+
+<p>Teensy + Raspberry Pi Pico</p>
 
 <h3 id="schematic">Schematic</h3>
+
+<h3 id="dimensions">Dimensions</h3>
+<p>Simple base, platform, and link proportion calculations formatted in a csv file through Jupyter notebook serve as global variables to parametrize CAD model.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">timeit</span>
+<span class="nb">sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+</code></pre></div></div>
 
 <h2 id="software-design">Software Design</h2>
 
 <h3 id="servo-driver">Servo Driver</h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "servos.h"
+</span>
+<span class="n">Servos</span><span class="o">::</span><span class="n">Servos</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">pca9685</span> <span class="o">=</span> <span class="n">Adafruit_PWMServoDriver</span><span class="p">();</span>
+  <span class="n">servo_count</span> <span class="o">=</span> <span class="n">NUM_SERVOS</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Initialize the PCA9685</span>
+<span class="kt">void</span> <span class="n">Servos</span><span class="o">::</span><span class="n">init</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">pca9685</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+  <span class="n">pca9685</span><span class="p">.</span><span class="n">setOscillatorFrequency</span><span class="p">(</span><span class="mi">25000000</span><span class="p">);</span>  <span class="c1">// Set to 25 MHz (default)</span>
+  <span class="n">pca9685</span><span class="p">.</span><span class="n">setPWMFreq</span><span class="p">(</span><span class="n">PWM_FREQ</span><span class="p">);</span>  <span class="c1">// Set PWM frequency for servos (50Hz)</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Set the PWM signal on the specified channel</span>
+<span class="kt">void</span> <span class="n">Servos</span><span class="o">::</span><span class="n">setServoAngle</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">angle</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Ensure angle is in valid range</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">angle</span> <span class="o">&lt;</span> <span class="n">MIN_SERVO_ANGLE</span><span class="p">)</span> <span class="n">angle</span> <span class="o">=</span> <span class="n">MIN_SERVO_ANGLE</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">angle</span> <span class="o">&gt;</span> <span class="n">MAX_SERVO_ANGLE</span><span class="p">)</span> <span class="n">angle</span> <span class="o">=</span> <span class="n">MAX_SERVO_ANGLE</span><span class="p">;</span>
+  <span class="n">pca9685</span><span class="p">.</span><span class="n">setPWM</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">angleToPWM</span><span class="p">(</span><span class="n">angle</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Servos</span><span class="o">::</span><span class="n">setServoAngles</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">angles</span><span class="p">[])</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">servo_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">setServoAngle</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="pid-control">PID Control</h3>
 
 <h3 id="inverse-kinematics">Inverse Kinematics</h3>
+<p>$e=mc^2$</p>
 
 <h3 id="web-interface">Web Interface</h3>
+<p>Next.js webserver hosted on Raspberry Pi 5 displays control interface. ROS backend integration takes keypresses, button presses, and mouse clicks and transforms it into commands that the Stewart platform can interpret.</p>
 
 <h3 id="ros-integration">ROS Integration</h3>
+<p>Travel router provides a contained subnetwork for wireless connection between host computer, raspberry pi webserver, and raspberry pico.</p>
 
-<h2 id="progress">Progress</h2>
+<p><a href="https://nbviewer.org/github/user/repo/blob/main/notebook.ipynb">View Jupyter Notebook</a></p>
+
+<h2 id="build-log">Build Log</h2>
+
+<blockquote>
+  <p>3-8-25:</p>
+
+</blockquote>
+
+<blockquote>
+  <p>3-6-25: Servo driver code is functional</p>
+
+  <p><img src="/assets/media/stewart-platform_media/servo-test.JPG" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<p>This project was inspired by recent studies on control systems<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> and previous research on Stewart platforms<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.</p>
+
+<h3 id="sources">Sources</h3>
+
+<!-- Hidden references trigger the footnote rendering -->
+<p><span id="hidden-references"> <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup></span></p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>K. Ogata. <em>Modern Control Engineering</em>. Pearson, 2010. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://example.com">“Stewart Platform Control”</a>, Accessed March 6, 2025. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p><strong>Book:</strong> K. Ogata. <em>Modern Control Engineering</em>. Pearson, 2010. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p><strong>Website:</strong> <a href="https://example.com">“Stewart Platform Control”</a>. Accessed: March 6, 2025. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p><strong>Journal:</strong> Doe, J. <em>Optimization of Robotic Mechanisms</em>. <em>Journal of Robotics Research</em>, Vol. 25, 2023, pp. 45-60. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p><strong>Technical Report:</strong> NASA. <em>Adaptive Control for Space Robotics</em>. Tech Report No. 4567, 2022. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
     </article>
   </div>

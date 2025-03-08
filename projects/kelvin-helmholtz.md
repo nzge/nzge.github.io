@@ -12,3 +12,9 @@ Kelvin–Helmholtz instability with a discontinuous Galerkin spectral element me
 
 
 
+## Build Log
+
+> 11-22-23: 
+>
+> ![Alt text](/assets/media/rocket_media/fin-can.JPG){: 
+style="height:400px;display: block; margin: auto;"}
