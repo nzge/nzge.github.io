@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //also at the window load event
-$(window).on('load', function(){
-     new WOW().init(); 
+jQuery(window).on('load', function(){
+  new WOW().init(); 
 });
 
 // JavaScript function to go back to the previous page
