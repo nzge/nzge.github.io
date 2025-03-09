@@ -5,7 +5,7 @@ title: "Drone"
 date: 2024-12-20
 image: "placeholder.jpg"
 description: "VTOL Tilt Rotor Drone"
-repo: "https://github.com/nzge/Balisong"
+repo: "https://github.com/nzge/Drone"
 toc: true
 ---
 
@@ -36,9 +36,11 @@ This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in V
   - Data/telemetry visualization 
 
 ### Schematic
+![Drone Schematic](/assets/media/drone_media/drone_schematic.png){: style="width:200px; height:200px;display: block; margin: auto;"}
 
 ### Design Considerations
-**Basic Minimum Motor Thrust Calculations**
+
+**Basic Motor Thrust Requirement Calculations**
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb){:target="_blank"}
 
@@ -47,7 +49,7 @@ This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in V
 ### Frame
 
 ### Aesthetic Components
-
+Drone mask modeled in Blender
 
 
 ## Software Design
@@ -57,7 +59,7 @@ This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in V
 #### MPU6050
 The MPU6050 is a 6-axis (3-axis Gyroscope, 3-axis Accelerometer) motion tracking sensor, detecting changes in acceleration and rotation.
 
-![Alt text](/assets/media/drone_media/mpu6050.png){: style="width:200px; height:200px;display: block; margin: auto;"}
+![MPU6050](/assets/media/drone_media/mpu6050.png){: style="width:200px; height:200px;display: block; margin: auto;"}
 
 
 ##### MPU6050 Source Code
