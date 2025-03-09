@@ -6,11 +6,10 @@ date: 2023-03-10
 image: "model_rocket.png"
 description: "G-class hobby rocket with a target apogee of 2,750 ft."
 repo: ""
+toc: true
 ---
 
-## Active Stabilization
-
-### Gimbaled thrust
+# Basic Rocket
 
 
 
@@ -31,13 +30,26 @@ repo: ""
 > ![Alt text](/assets/media/rocket_media/fin-can.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
-
 > 11-21-23: 
 >
 > ![Alt text](/assets/media/rocket_media/fiberglass.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
+---
+# Stabilized Rocket
 
+## Active Stabilization
+
+### Gimbaled thrust
+
+## Build Log
+> 11-21-23: 
+>
+> ![Alt text](/assets/media/rocket_media/fiberglass.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+---
+## References
 
 
     

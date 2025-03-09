@@ -49,7 +49,7 @@
   <div class="container">
     <div class="go-back" onclick="goBack()">Go Back</div>
     <h2>Drone</h2>
-    <a href=https://github.com/nzge/Drone> Repo </a>
+    <a href=https://github.com/nzge/Balisong> Repo </a>
   </div>
 </header>
 
@@ -58,12 +58,13 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetics">Aesthetics</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul>
+      <ul><li><a href="#sova-drone">Sova Drone</a><ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetics">Aesthetics</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#quadcopter-race-drone">Quadcopter Race Drone</a><ul><li><a href="#build-log-1">Build Log</a></li><li><a href="#references">References</a></li></ul></li></ul>
     </nav>
   
   <div>
     <article class="markdown-body">
-      <p>This was my attempt at creating a tilt-rotor drone inspired by Sora’s drone in Valorant.</p>
+      <h1 id="sova-drone">Sova Drone</h1>
+<p>This was my attempt at creating a tilt-rotor drone inspired by Sora’s drone in Valorant.</p>
 
 <h2 id="hardware-design">Hardware Design</h2>
 
@@ -113,6 +114,12 @@
     </ul>
   </li>
 </ul>
+
+<p><strong>Basic Minimum Motor Thrust Calculations</strong></p>
+<iframe src="https://nbviewer.org/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb" width="100%" height="600px">
+</iframe>
+
+<p>xd</p>
 
 <h3 id="schematic">Schematic</h3>
 
@@ -302,8 +309,27 @@ Motor mixing varies from drone-to-drone or robot-to-robot depending on your cont
 
 <h2 id="build-log">Build Log</h2>
 
-<p>2-25-25
+<blockquote>
+  <p>2-25-25
 IMU works but experiencing gyro drift</p>
+
+</blockquote>
+
+<hr />
+
+<h1 id="quadcopter-race-drone">Quadcopter Race Drone</h1>
+
+<h2 id="build-log-1">Build Log</h2>
+
+<blockquote>
+  <p>2-25-25
+IMU works but experiencing gyro drift</p>
+
+</blockquote>
+
+<hr />
+<h2 id="references">References</h2>
+
 
     </article>
   </div>

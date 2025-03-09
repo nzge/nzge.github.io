@@ -1,23 +1,21 @@
 ---
 layout: project
 category: "personal"
-title: "Raspberry Pi Web Server"
-date: 2025-03-08
+title: "Balisong"
+date: 2025-04-15
 image: "placeholder.jpg"
-description: "Nextjs web server hosted on Raspberry Pi 5"
-repo: "https://github.com/nzge/raspi_web-app"
-toc: true
+description: "Butterfly knife"
+repo: "https://github.com/nzge/"
 ---
 
-[Link to server](https://raspi.nzge.org/)
 
 
 
 ## Build Log
 
-> 3-8-25: Website operational
+> 5-11-24: 
 >
-> ![Alt text](/assets/media/rpi-web-app_media/web-app_start.PNG){: 
+> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 
@@ -36,5 +34,3 @@ This project was inspired by recent studies on control systems[^1] and previous 
 
 <!-- Hidden references trigger the footnote rendering -->
 <span id="hidden-references"> [^3] [^4] [^5] [^6]</span>
-
-

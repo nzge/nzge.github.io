@@ -5,13 +5,14 @@ title: "Drone"
 date: 2024-12-20
 image: "placeholder.jpg"
 description: "VTOL Tilt Rotor Drone"
-repo: "https://github.com/nzge/Drone"
+repo: "https://github.com/nzge/Balisong"
 toc: true
 ---
+
+# Sova Drone
 This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in Valorant.
 
 ## Hardware Design
-
 
 ### Components
 - LiPo Battery
@@ -34,7 +35,18 @@ This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in V
   - Hosts web server that provides a gui for sending control inputs to the drone via pico
   - Data/telemetry visualization 
 
+**Basic Minimum Motor Thrust Calculations**
+<iframe src="https://nbviewer.org/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb" 
+        width="100%" 
+        height="600px">
+</iframe>
+
+xd
+
 ### Schematic
+
+
+
 
 ### Frame
 
@@ -230,5 +242,21 @@ OpenGL/WebGL
 
 ## Build Log
 
-2-25-25
-IMU works but experiencing gyro drift
+> 2-25-25
+> IMU works but experiencing gyro drift
+>
+
+---
+
+# Quadcopter Race Drone
+
+
+## Build Log
+
+> 2-25-25
+> IMU works but experiencing gyro drift
+> 
+
+---
+## References
+

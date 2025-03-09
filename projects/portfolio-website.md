@@ -1,7 +1,7 @@
 ---
 layout: project
 category: "personal"
-title: "This website"
+title: "Portfolio Site"
 date: 2025-02-05
 image: "portfolio.PNG"
 description: "Static website made with Jekyll"
@@ -9,7 +9,44 @@ repo: "https://github.com/nzge/nzge.github.io"
 toc: true
 ---
 
+
 ## Code
+
+### sass
+Dracula syntax highlighter
+Dracula text modifier
+Effects
+Interactive Elements
+Page-related Formatting
+Page section related Formatting
+General Styling
+
+### assets
+jS
+wow.js
+main.js
+
+CSS
+animate.css
+main.scss
+
+Media storage
+
+### includes
+Footer
+
+Header
+
+Navbar
+
+Table of Contents
+
+### layouts
+Default
+Project Category Page
+Project
+
+
 
 
 ## Build Log

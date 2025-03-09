@@ -36,10 +36,11 @@ Teensy + Raspberry Pi Pico
 ### Dimensions
 Simple base, platform, and link proportion calculations formatted in a csv file through Jupyter notebook serve as global variables to parametrize CAD model.
 
-```python
-%%timeit
-sum(range(1000))
-```
+**Basic Minimum Motor Thrust Calculations**
+<iframe src="https://nbviewer.org/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb" 
+        width="100%" 
+        height="600px">
+</iframe>
 
 
 ## Software Design
@@ -91,9 +92,6 @@ Travel router provides a contained subnetwork for wireless connection between ho
 
 Micro-ROS Agent
 Micro-ROS on Pico
-
-
-[View Jupyter Notebook](https://nbviewer.org/github/user/repo/blob/main/notebook.ipynb)
 
 ## Build Log
 
