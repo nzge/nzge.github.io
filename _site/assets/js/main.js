@@ -24,26 +24,26 @@ function sortProjects() {
   // Sorting logic based on the selected criteria
   if (sortCriteria === 'date-newest') {
     sortedProjects = projects.sort((a, b) => {
-      const dateA = new Date(a.getAttribute('data-date') || '1970-01-01');
-      const dateB = new Date(b.getAttribute('data-date') || '1970-01-01');
+      const dateA = new Date(a.getAttribute('data-date'));
+      const dateB = new Date(b.getAttribute('data-date'));
       return dateB - dateA; // Newest first
     });
   } else if (sortCriteria === 'date-oldest') {
     sortedProjects = projects.sort((a, b) => {
-      const dateA = new Date(a.getAttribute('data-date') || '1970-01-01');
-      const dateB = new Date(b.getAttribute('data-date') || '1970-01-01');
+      const dateA = new Date(a.getAttribute('data-date'));
+      const dateB = new Date(b.getAttribute('data-date'));
       return dateA - dateB; // Oldest first
     });
   } else if (sortCriteria === 'name-first') {
     sortedProjects = projects.sort((a, b) => {
-      const titleA = a.getAttribute('data-title') ? a.getAttribute('data-title').toLowerCase() : '';
-      const titleB = b.getAttribute('data-title') ? b.getAttribute('data-title').toLowerCase() : '';
+      const titleA = a.getAttribute('data-title').toLowerCase();
+      const titleB = b.getAttribute('data-title').toLowerCase();
       return titleA.localeCompare(titleB); // A-Z
     });
   } else if (sortCriteria === 'name-last') {
     sortedProjects = projects.sort((a, b) => {
-      const titleA = a.getAttribute('data-title') ? a.getAttribute('data-title').toLowerCase() : '';
-      const titleB = b.getAttribute('data-title') ? b.getAttribute('data-title').toLowerCase() : '';
+      const titleA = a.getAttribute('data-title').toLowerCase();
+      const titleB = b.getAttribute('data-title').toLowerCase();
       return titleB.localeCompare(titleA); // Z-A
     });
   }
