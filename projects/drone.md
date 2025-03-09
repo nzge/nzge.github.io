@@ -18,7 +18,7 @@ This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in V
 - LiPo Battery
 - ESC (electronic speed control)
   - takes desired motor inputs from teensy to control and regulate the speed of motors
-- UBEC (universa battery elimination circuit)
+- UBEC (universal battery elimination circuit)
   - Converts LiPo battery's higher source voltage into usable power for teensy and Raspberry Pi Pico
 - Brushless Motors
   - Primary source of thrust/locomotion
@@ -35,22 +35,18 @@ This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in V
   - Hosts web server that provides a gui for sending control inputs to the drone via pico
   - Data/telemetry visualization 
 
-**Basic Minimum Motor Thrust Calculations**
-<iframe src="https://nbviewer.org/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb" 
-        width="100%" 
-        height="600px">
-</iframe>
-
-xd
-
 ### Schematic
 
+### Design Considerations
+**Basic Minimum Motor Thrust Calculations**
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb){:target="_blank"}
 
 
 
 ### Frame
 
-### Aesthetics
+### Aesthetic Components
 
 
 
@@ -250,6 +246,11 @@ OpenGL/WebGL
 
 # Quadcopter Race Drone
 
+## Hardware Design
+
+### Components
+
+### Schematic
 
 ## Build Log
 
@@ -258,5 +259,6 @@ OpenGL/WebGL
 > 
 
 ---
+
 ## References
 

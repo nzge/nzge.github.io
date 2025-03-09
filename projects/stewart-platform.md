@@ -35,12 +35,9 @@ Teensy + Raspberry Pi Pico
 
 ### Dimensions
 Simple base, platform, and link proportion calculations formatted in a csv file through Jupyter notebook serve as global variables to parametrize CAD model.
-<iframe src="https://mybinder.org/v2/gh/nzge/Stewart-Platform/main?urlpath=%2Fdoc%2Ftree%2Fstewart-sizing-calcs.ipynb" 
-        width="100%" 
-        height="600px">
-</iframe>
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nzge/Stewart-Platform/main?urlpath=%2Fdoc%2Ftree%2Fstewart-sizing-calcs.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Stewart-Platform/blob/main/stewart-sizing-calcs.ipynb){:target="_blank"}
+
 
 ## Software Design
 

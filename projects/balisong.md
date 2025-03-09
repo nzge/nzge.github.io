@@ -8,7 +8,9 @@ description: "Butterfly knife"
 repo: "https://github.com/nzge/"
 ---
 
+## Hardware
 
+### Components
 
 
 ## Build Log
@@ -21,10 +23,6 @@ style="height:400px;display: block; margin: auto;"}
 
 ## References
 
-This project was inspired by recent studies on control systems[^1] and previous research on Stewart platforms[^2].
-
-### Sources
-
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
 [^2]: ["Stewart Platform Control"](https://example.com), Accessed March 6, 2025.  
 [^3]: **Book:** K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
@@ -33,4 +31,4 @@ This project was inspired by recent studies on control systems[^1] and previous 
 [^6]: **Technical Report:** NASA. *Adaptive Control for Space Robotics*. Tech Report No. 4567, 2022.  
 
 <!-- Hidden references trigger the footnote rendering -->
-<span id="hidden-references"> [^3] [^4] [^5] [^6]</span>
+<span id="hidden-references"> [^1] [^2] [^3] [^4] [^5] [^6]</span>
