@@ -89,6 +89,10 @@ Next.js webserver hosted on Raspberry Pi 5 displays control interface. ROS backe
 ### ROS Integration
 Travel router provides a contained subnetwork for wireless connection between host computer, raspberry pi webserver, and raspberry pico. 
 
+Micro-ROS Agent
+Micro-ROS on Pico
+
+
 [View Jupyter Notebook](https://nbviewer.org/github/user/repo/blob/main/notebook.ipynb)
 
 ## Build Log
