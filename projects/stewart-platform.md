@@ -35,13 +35,12 @@ Teensy + Raspberry Pi Pico
 
 ### Dimensions
 Simple base, platform, and link proportion calculations formatted in a csv file through Jupyter notebook serve as global variables to parametrize CAD model.
-
-**Basic Minimum Motor Thrust Calculations**
-<iframe src="https://nbviewer.org/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb" 
+<iframe src="https://mybinder.org/v2/gh/nzge/Stewart-Platform/main?urlpath=%2Fdoc%2Ftree%2Fstewart-sizing-calcs.ipynb" 
         width="100%" 
         height="600px">
 </iframe>
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nzge/Stewart-Platform/main?urlpath=%2Fdoc%2Ftree%2Fstewart-sizing-calcs.ipynb)
 
 ## Software Design
 
