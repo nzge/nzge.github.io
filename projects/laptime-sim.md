@@ -1,11 +1,12 @@
 ---
 layout: project
-category: "racing"
+category: "Racing"
 title: "Laptime Simulation"
-date: 2024-08-05
+date: 2024-03-08
 image: "placeholder.jpg"
 description: "Quarter car suspension kinematics model using Simulink and Simscape"
-repo: ""
+repo: "https://github.com/nzge/Lap-sim"
+toc: true
 ---
 
 ## Track Generation

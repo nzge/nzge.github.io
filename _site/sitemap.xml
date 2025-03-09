@@ -43,10 +43,16 @@
 <loc>http://localhost:4000/projects/project_categories/personal.html</loc>
 </url>
 <url>
+<loc>http://localhost:4000/projects/portfolio-website.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/projects/probe.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/projects/project_categories/racing.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/projects/rpi-web-server.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/projects/project_categories/school.html</loc>
