@@ -3,7 +3,7 @@ layout: project
 category: "personal"
 title: "Raspberry Pi Web Server"
 date: 2025-03-08
-image: "placeholder.jpg"
+image: "rpi-web-app.PNG"
 description: "Nextjs web server hosted on Raspberry Pi 5"
 repo: "https://github.com/nzge/raspi_web-app"
 toc: true

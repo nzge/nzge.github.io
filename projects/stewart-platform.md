@@ -3,7 +3,7 @@ layout: project
 category: "personal"
 title: "Stewart Platform"
 date: 2025-02-20
-image: "placeholder.jpg"
+image: "stewart-platform.PNG"
 description: "6DOF Stewart Platform"
 repo: "https://github.com/nzge/Stewart-Platform"
 toc: true
@@ -91,9 +91,10 @@ Micro-ROS on Pico
 
 ## Build Log
 
-> 3-8-25: 
+> 3-11-25: CAD prototype
 >
-> 
+> ![Alt text](/assets/media/stewart-platform_media/stewart-proto.JPG){: 
+style="height:400px;display: block; margin: auto;"}
 
 > 3-6-25: Servo driver code is functional
 >
@@ -104,10 +105,15 @@ style="height:400px;display: block; margin: auto;"}
 
 This project was inspired by recent studies on control systems[^1] and previous research on Stewart platforms[^2].
 
-### Sources
+### Inspiration
+1. [3DOF STEWART PLATFORM: ECE4760 MICROCONTROLLERS FINAL PROJECT](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/)
+2. [Stewart Platform by thiagohersan](https://www.instructables.com/Stewart-Platform/)
+3. [Ball Balancing Robot by Aaed Musa](https://www.youtube.com/watch?v=kAaYaZcpbLo&list=PLTqchMECawAp3Q6hHfBDlCq_db-DOYmcD&index=28)
+4. [6-DOF Stewart Platfor by Yichuan Wang](https://yichuan33.blogspot.com/2017/11/6-dof-stewart-platform.html)
 
-[^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
-[^2]: ["Stewart Platform Control"](https://example.com), Accessed March 6, 2025.  
+### Sources
+[^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010. 
+[^2]: ["Stewart Platform Control"](https://content.instructables.com/FFI/8ZXW/I55MMY14/FFI8ZXWI55MMY14.pdf), Accessed March 6, 2025.  
 [^3]: **Book:** K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
 [^4]: **Website:** ["Stewart Platform Control"](https://example.com). Accessed: March 6, 2025.  
 [^5]: **Journal:** Doe, J. *Optimization of Robotic Mechanisms*. *Journal of Robotics Research*, Vol. 25, 2023, pp. 45-60.  

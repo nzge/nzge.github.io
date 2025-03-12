@@ -58,7 +58,7 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#sova-drone">Sova Drone</a><ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#design-considerations">Design Considerations</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetic-components">Aesthetic Components</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#quadcopter-race-drone">Quadcopter Race Drone</a><ul><li><a href="#hardware-design-1">Hardware Design</a><ul><li><a href="#components-1">Components</a></li><li><a href="#schematic-1">Schematic</a></li></ul></li><li><a href="#build-log-1">Build Log</a></li><li><a href="#references">References</a></li></ul></li></ul>
+      <ul><li><a href="#sova-drone">Sova Drone</a><ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#design-considerations">Design Considerations</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetic-components">Aesthetic Components</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#quadcopter-race-drone">Quadcopter Race Drone</a><ul><li><a href="#hardware-design-1">Hardware Design</a><ul><li><a href="#components-1">Components</a></li><li><a href="#schematic-1">Schematic</a></li></ul></li><li><a href="#build-log-1">Build Log</a></li><li><a href="#references">References</a><ul><li><a href="#inspiration">Inspiration</a></li><li><a href="#sources">Sources</a></li></ul></li></ul></li></ul>
     </nav>
   
   <div>
@@ -71,48 +71,14 @@
 <h3 id="components">Components</h3>
 <ul>
   <li>LiPo Battery</li>
-  <li>ESC (electronic speed control)
-    <ul>
-      <li>takes desired motor inputs from teensy to control and regulate the speed of motors</li>
-    </ul>
-  </li>
-  <li>UBEC (universal battery elimination circuit)
-    <ul>
-      <li>Converts LiPo battery’s higher source voltage into usable power for teensy and Raspberry Pi Pico</li>
-    </ul>
-  </li>
-  <li>Brushless Motors
-    <ul>
-      <li>Primary source of thrust/locomotion</li>
-    </ul>
-  </li>
-  <li>Servos
-    <ul>
-      <li>Tilts the motors to enable thrust vectoring</li>
-    </ul>
-  </li>
-  <li>Propellors
-    <ul>
-      <li>Attached to the motors for thrust production</li>
-    </ul>
-  </li>
-  <li>Teensy
-    <ul>
-      <li>Low-level stabilization control</li>
-    </ul>
-  </li>
-  <li>Raspberry Pi Pico
-    <ul>
-      <li>High-level controller that feeds control inputs to the teensy from the raspberry pi web server</li>
-      <li>Relays telemetry data from the teensy back to the web server</li>
-    </ul>
-  </li>
-  <li>Raspberry Pi 5
-    <ul>
-      <li>Hosts web server that provides a gui for sending control inputs to the drone via pico</li>
-      <li>Data/telemetry visualization</li>
-    </ul>
-  </li>
+  <li>ESC (electronic speed control): takes desired motor inputs from teensy to control and regulate the speed of motors</li>
+  <li>UBEC (universal battery elimination circuit): Converts LiPo battery’s higher source voltage into usable power for teensy and Raspberry Pi Pico</li>
+  <li>Brushless Motors: Primary source of thrust/locomotion</li>
+  <li>Servos: Tilts the motors to enable thrust vectoring</li>
+  <li>Propellors: Attached to the motors for thrust production</li>
+  <li>Teensy: Low-level stabilization control</li>
+  <li>Raspberry Pi Pico: High-level controller that feeds control inputs to the teensy from the raspberry pi web server. Relays telemetry data from the teensy back to the web server</li>
+  <li>Raspberry Pi 5: Hosts web server that provides a gui for sending control inputs to the drone via pico. Data/telemetry visualization</li>
 </ul>
 
 <h3 id="schematic">Schematic</h3>
@@ -339,6 +305,12 @@ IMU works but experiencing gyro drift</p>
 
 <h2 id="references">References</h2>
 
+<h3 id="inspiration">Inspiration</h3>
+<ol>
+  <li></li>
+</ol>
+
+<h3 id="sources">Sources</h3>
 
     </article>
   </div>

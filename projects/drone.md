@@ -16,24 +16,14 @@ This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in V
 
 ### Components
 - LiPo Battery
-- ESC (electronic speed control)
-  - takes desired motor inputs from teensy to control and regulate the speed of motors
-- UBEC (universal battery elimination circuit)
-  - Converts LiPo battery's higher source voltage into usable power for teensy and Raspberry Pi Pico
-- Brushless Motors
-  - Primary source of thrust/locomotion
-- Servos
-  - Tilts the motors to enable thrust vectoring
-- Propellors
-  - Attached to the motors for thrust production
-- Teensy
-  - Low-level stabilization control
-- Raspberry Pi Pico
-  - High-level controller that feeds control inputs to the teensy from the raspberry pi web server
-  - Relays telemetry data from the teensy back to the web server
-- Raspberry Pi 5
-  - Hosts web server that provides a gui for sending control inputs to the drone via pico
-  - Data/telemetry visualization 
+- ESC (electronic speed control): takes desired motor inputs from teensy to control and regulate the speed of motors
+- UBEC (universal battery elimination circuit): Converts LiPo battery's higher source voltage into usable power for teensy and Raspberry Pi Pico
+- Brushless Motors: Primary source of thrust/locomotion
+- Servos: Tilts the motors to enable thrust vectoring
+- Propellors: Attached to the motors for thrust production
+- Teensy: Low-level stabilization control
+- Raspberry Pi Pico: High-level controller that feeds control inputs to the teensy from the raspberry pi web server. Relays telemetry data from the teensy back to the web server
+- Raspberry Pi 5: Hosts web server that provides a gui for sending control inputs to the drone via pico. Data/telemetry visualization 
 
 ### Schematic
 ![Drone Schematic](/assets/media/drone_media/drone_schematic.png){: style="width:200px; height:200px;display: block; margin: auto;"}
@@ -264,3 +254,13 @@ OpenGL/WebGL
 
 ## References
 
+### Inspiration
+1. 
+
+### Sources
+[^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010. 
+[^2]: ["Stewart Platform Control"](https://content.instructables.com/FFI/8ZXW/I55MMY14/FFI8ZXWI55MMY14.pdf), Accessed March 6, 2025.  
+[^3]: **Book:** K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
+[^4]: **Website:** ["Stewart Platform Control"](https://example.com). Accessed: March 6, 2025.  
+[^5]: **Journal:** Doe, J. *Optimization of Robotic Mechanisms*. *Journal of Robotics Research*, Vol. 25, 2023, pp. 45-60.  
+[^6]: **Technical Report:** NASA. *Adaptive Control for Space Robotics*. Tech Report No. 4567, 2022.  

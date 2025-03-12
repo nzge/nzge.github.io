@@ -49,6 +49,11 @@ style="height:400px;display: block; margin: auto;"}
 ---
 
 ## References
+
+### Macropad Inspiration
+1. [How to Build a Handwired Keyboard by Joe Scotto](https://www.youtube.com/watch?v=hjml-K-pV4E)
+
+### Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
 [^2]: ["Stewart Platform Control"](https://example.com), Accessed March 6, 2025.  
 [^3]: **Book:** K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
