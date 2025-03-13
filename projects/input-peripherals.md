@@ -13,8 +13,10 @@ toc: true
 
 ## Hardware
 
+
 ### Components
 Diodes
+Heat shrink
 Copper wire
 Switches
 Housing
@@ -29,8 +31,7 @@ Housing
 > ![Alt text](/assets/media/macropad_media/test-fit.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
-## References
-
+---
 
 # Macropad with PCB 
 
@@ -52,6 +53,7 @@ style="height:400px;display: block; margin: auto;"}
 
 ### Macropad Inspiration
 1. [How to Build a Handwired Keyboard by Joe Scotto](https://www.youtube.com/watch?v=hjml-K-pV4E)
+2. [How to Design Mechanical Keyboard Plates and Cases](https://www.youtube.com/watch?v=7azQkSu0m_U)
 
 ### Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  

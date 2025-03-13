@@ -13,21 +13,22 @@ toc: true
 ## Hardware Design
 
 ### Components
-Tower MG996R 180 degree servo
 
-HiLetgo PCA9685 16 Channel 12-Bit PWM Servo Motor Driver
-
+Teensy + Raspberry Pi Pico
+Proto Board
 6V 10A Power Supply
-
+HiLetgo PCA9685 16 Channel 12-Bit PWM Servo Motor Driver
 MPU6050
 
+Tower MG996R 180 degree servo
+25T Servo Horn
+Servo Link
 6 Shafts with threaded ball joint
 
 Base plate
-
+Base plate cover
+Platform
 Top Plate
-
-Teensy + Raspberry Pi Pico
 
 
 ### Schematic

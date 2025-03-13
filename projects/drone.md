@@ -255,7 +255,9 @@ OpenGL/WebGL
 ## References
 
 ### Inspiration
-1. 
+1. V22 Osprey by Tom Stanton
+- [Part 1](https://www.youtube.com/watch?v=55G-mwT9uCE)
+- [Part 2](https://www.youtube.com/watch?v=HitJ8r9HwBg&t=792s)
 
 ### Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010. 
