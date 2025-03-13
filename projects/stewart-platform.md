@@ -92,26 +92,28 @@ Micro-ROS on Pico
 
 ## Build Log
 
+> 3-13-25: Refined CAD for printing
+>
+> ![3-13-25 stewart proto](/assets/media/stewart-platform_media/stewart-proto_3-13-25.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
 > 3-11-25: CAD prototype
 >
-> ![Alt text](/assets/media/stewart-platform_media/stewart-proto.JPG){: 
+> ![3-11-25 stewart proto](/assets/media/stewart-platform_media/stewart-proto.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 > 3-6-25: Servo driver code is functional
 >
-> ![Alt text](/assets/media/stewart-platform_media/servo-test.JPG){: 
+> ![3-6-25 servo test](/assets/media/stewart-platform_media/servo-test.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 ## References
-
 This project was inspired by recent studies on control systems[^1] and previous research on Stewart platforms[^2].
-
 ### Inspiration
 1. [3DOF STEWART PLATFORM: ECE4760 MICROCONTROLLERS FINAL PROJECT](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/)
 2. [Stewart Platform by thiagohersan](https://www.instructables.com/Stewart-Platform/)
 3. [Ball Balancing Robot by Aaed Musa](https://www.youtube.com/watch?v=kAaYaZcpbLo&list=PLTqchMECawAp3Q6hHfBDlCq_db-DOYmcD&index=28)
 4. [6-DOF Stewart Platfor by Yichuan Wang](https://yichuan33.blogspot.com/2017/11/6-dof-stewart-platform.html)
-
 ### Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010. 
 [^2]: ["Stewart Platform Control"](https://content.instructables.com/FFI/8ZXW/I55MMY14/FFI8ZXWI55MMY14.pdf), Accessed March 6, 2025.  

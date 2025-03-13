@@ -11,6 +11,7 @@ toc: true
 
 # Hand-wired Macropad
 
+
 ## Hardware
 
 
@@ -23,7 +24,9 @@ Housing
 
 ## Code
 
+
 ### Multiplexing
+
 
 ## Build Log
 > 8-21-24: Test fit JWICK tactiles 
