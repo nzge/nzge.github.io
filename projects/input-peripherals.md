@@ -16,6 +16,7 @@ toc: true
 
 
 ### Components
+Pro Micro nrF52840
 Diodes
 Heat shrink
 Copper wire
@@ -45,6 +46,17 @@ Designed in KiCAD
 ## ZMK Firmware
 
 ## Build Log
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/macropad_media/macropad-proto_3-14-25.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/macropad_media/macropad-proto_3-14-25.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+
 > 8-21-24: Test fit JWICK tactiles 
 >
 > ![Alt text](/assets/media/macropad_media/test-fit.JPG){: 
