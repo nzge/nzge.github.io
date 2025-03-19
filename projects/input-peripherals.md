@@ -11,7 +11,6 @@ toc: true
 
 # Hand-wired Macropad
 
-
 ## Hardware
 
 

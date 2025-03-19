@@ -3,7 +3,7 @@ layout: project
 category: "personal"
 title: "Stewart Platform"
 date: 2025-02-20
-image: "stewart-platform.PNG"
+image: "stewart-platform.png"
 description: "6DOF Stewart Platform"
 repo: "https://github.com/nzge/Stewart-Platform"
 toc: true
