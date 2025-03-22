@@ -22,13 +22,24 @@ Copper wire
 Switches
 Housing
 
-## Code
-
-
 ### Multiplexing
 
+## ZMK Firmware
+![Alt text](/assets/media/input_media/promicro-nrf52840.JPG){: 
+style="height:400px;display: block; margin: auto;"}
 
 ## Build Log
+> 3-18-25: 
+>
+> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+
 > 8-21-24: Test fit JWICK tactiles 
 >
 > ![Alt text](/assets/media/macropad_media/test-fit.JPG){: 
@@ -45,10 +56,6 @@ Designed in KiCAD
 ## ZMK Firmware
 
 ## Build Log
-> 3-14-25: 
->
-> ![Alt text](/assets/media/macropad_media/macropad-proto_3-14-25.JPG){: 
-style="height:400px;display: block; margin: auto;"}
 
 > 3-14-25: 
 >
