@@ -5,7 +5,7 @@ title: "Drone"
 date: 2024-12-20
 image: "placeholder.jpg"
 description: "VTOL Tilt Rotor Drone"
-repo: "https://github.com/nzge/Drone"
+repo: "https://github.com/nzge/drone"
 toc: true
 ---
 

@@ -4,7 +4,7 @@ category: "personal"
 title: "Portfolio Site"
 date: 2025-02-05
 image: "portfolio.PNG"
-description: "Static website made with Jekyll"
+description: "Static website powered Jekyll"
 repo: "https://github.com/nzge/nzge.github.io"
 toc: true
 ---

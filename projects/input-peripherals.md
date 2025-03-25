@@ -5,7 +5,7 @@ title: "Input Peripherals"
 date: 2022-02-20
 image: "macropad.png"
 description: "An investigation into the customization potential of input devices and their core functionality."
-repo: "https://github.com/nzge/Input-Peripherals"
+repo: "https://github.com/nzge/input-peripherals"
 toc: true
 ---
 
