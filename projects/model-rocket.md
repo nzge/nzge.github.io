@@ -24,6 +24,15 @@ toc: true
 
 
 ## Build Log
+> 12-2-23: 
+>
+> ![Alt text](/assets/media/rocket_media/12-2-23.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+> 11-29-23: 
+>
+> ![Alt text](/assets/media/rocket_media/PXL_20231129_220740221.JPG){: 
+style="height:400px;display: block; margin: auto;"}
 
 > 11-22-23: 
 >
@@ -33,6 +42,13 @@ style="height:400px;display: block; margin: auto;"}
 > 11-21-23: 
 >
 > ![Alt text](/assets/media/rocket_media/fiberglass.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+> 11-7-23: 
+>
+> ![Alt text](/assets/media/rocket_media/11-7-23_boattail.png){: 
+style="height:400px;display: block; margin: auto;"}
+> ![Alt text](/assets/media/rocket_media/11-7-23_boattail2.png){: 
 style="height:400px;display: block; margin: auto;"}
 
 ---
