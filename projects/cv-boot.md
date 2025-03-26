@@ -3,7 +3,7 @@ layout: project
 category: "racing"
 title: "CV Boot Casting"
 date: 2022-02-20
-image: "cv_boot.PNG"
+image: "cv_boot_ribbed.PNG"
 description: "3D-printed ribbed and ribless CV boot mold designs"
 repo: "https://github.com/nzge/cv-boot"
 ---
