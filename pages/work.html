@@ -35,8 +35,14 @@
   <body>
 
      <!--------------- navbar starts here --------------->
- <nav class="navbar"> 
-  <div class="name animate__animated animate__fadeInUp"> <a href="/index.html">nathan <img src="/assets/media/Nathan.svg" alt="Example Image" style="width: 10px; height: auto; display: block; margin: auto;"> </a> </div>
+<nav class="navbar"> 
+  <div class="name animate__animated animate__fadeInUp" style="display: flex; align-items: center; gap: 10px;">
+    <a href="/index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+      <span>nathan</span> 
+      <img src="/assets/media/Nathan.svg" alt="Example Image" style="width: 20px; height: auto; margin-left: 5px;">
+    </a>
+  </div>
+
   <ul class="nav-select">
     <li class="nav-item"><a href="/index.html">home.</a></li>
     <li class="nav-item"><a href="/pages/about.html">about me.</a></li>
@@ -44,6 +50,7 @@
     <li class="nav-item"><a href="/pages/contact.html">contact.</a></li>
   </ul>
 </nav>
+
 
     <div class="container">
   <section id="projects">
