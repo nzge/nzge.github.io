@@ -8,6 +8,8 @@ description: "Design of balisongs, fixed blades, and more"
 repo: "https://github.com/nzge/knives"
 ---
 
+# Balisong
+
 ## Hardware
 
 ### Components
@@ -20,6 +22,7 @@ repo: "https://github.com/nzge/knives"
 > ![Alt text](/assets/media/knives_media/balisong-blade_proto1.png){: 
 style="height:400px;display: block; margin: auto;"}
 
+---
 
 ## References
 
