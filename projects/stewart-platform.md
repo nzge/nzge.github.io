@@ -91,6 +91,15 @@ Micro-ROS Agent
 Micro-ROS on Pico
 
 ## Build Log
+> 3-29-25: Refined CAD for printing
+>
+> ![3-29-25 stewart proto](/assets/media/stewart-platform_media/stewart-proto_3-13-25.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+> 3-20-25: Refined CAD for printing
+>
+> ![3-20-25 stewart test fit](/assets/media/stewart-platform_media/stewart-proto_3-13-25.JPG){: 
+style="height:400px;display: block; margin: auto;"}
 
 > 3-13-25: Refined CAD for printing
 >

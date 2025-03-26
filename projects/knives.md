@@ -1,10 +1,10 @@
 ---
 layout: project
 category: "personal"
-title: "Balisong"
+title: "Knife Design"
 date: 2025-04-15
-image: "placeholder.jpg"
-description: "Butterfly knife"
+image: "knives.png"
+description: "Design of balisongs, fixed blades, and more"
 repo: "https://github.com/nzge/knives"
 ---
 
@@ -15,9 +15,9 @@ repo: "https://github.com/nzge/knives"
 
 ## Build Log
 
-> 5-11-24: 
+> 3-20-25: 
 >
-> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+> ![Alt text](/assets/media/knives_media/balisong-blade_proto1.png){: 
 style="height:400px;display: block; margin: auto;"}
 
 
