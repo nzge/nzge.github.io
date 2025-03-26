@@ -13,7 +13,8 @@ repo: "https://github.com/nzge/knives"
 ## Hardware
 
 ### Components
-
+- Bushings
+- Tang pins
 
 ## Build Log
 

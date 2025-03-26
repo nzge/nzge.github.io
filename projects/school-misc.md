@@ -14,7 +14,7 @@ repo: ""
   <img src="/assets/media/school-misc_media/wafer-measure.JPG" alt="Example Image" style="width: 800px; height: auto; display: block; margin: auto;">
   
   <video width="800" controls muted style="display: block; margin: auto;">
-    <source src="/assets/media/school-misc_media/wafer-microscope.mp4" type="video/mp4">
+    <source src="/assets/media/school-misc_media/wafer-microscope_soundless.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>

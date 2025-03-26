@@ -70,6 +70,15 @@ style="height:400px;display: block; margin: auto;"}
 
 ---
 
+# Ergo Split
+
+
+---
+
+# HHKB
+
+
+---
 ## References
 
 ### Macropad Inspiration
