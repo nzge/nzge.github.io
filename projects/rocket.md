@@ -26,12 +26,12 @@ toc: true
 ## Build Log
 > 12-2-23: 
 >
-> ![Alt text](/assets/media/rocket_media/12-2-23.JPG){: 
+> ![Alt text](/assets/media/rocket_media/12-2-23.jpg){: 
 style="height:400px;display: block; margin: auto;"}
 
 > 11-29-23: 
 >
-> ![Alt text](/assets/media/rocket_media/PXL_20231129_220740221.JPG){: 
+> ![Alt text](/assets/media/rocket_media/PXL_20231129_220740221.jpg){: 
 style="height:400px;display: block; margin: auto;"}
 
 > 11-22-23: 
@@ -65,7 +65,7 @@ style="height:400px;display: block; margin: auto;"}
 style="height:400px;display: block; margin: auto;"}
 
 ---
-## References
+# References
 
 
     
