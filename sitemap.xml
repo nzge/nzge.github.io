@@ -37,9 +37,6 @@
 <loc>https://nzge.github.io/projects/laptime-sim.html</loc>
 </url>
 <url>
-<loc>https://nzge.github.io/projects/model-rocket.html</loc>
-</url>
-<url>
 <loc>https://nzge.github.io/projects/project_categories/personal.html</loc>
 </url>
 <url>
@@ -50,6 +47,9 @@
 </url>
 <url>
 <loc>https://nzge.github.io/projects/project_categories/racing.html</loc>
+</url>
+<url>
+<loc>https://nzge.github.io/projects/rocket.html</loc>
 </url>
 <url>
 <loc>https://nzge.github.io/projects/rpi-web-server.html</loc>
@@ -77,6 +77,6 @@
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/solar-car_media/Ge_FinalReport.pdf</loc>
-<lastmod>2025-03-26T20:36:49+00:00</lastmod>
+<lastmod>2025-03-27T22:55:35+00:00</lastmod>
 </url>
 </urlset>
