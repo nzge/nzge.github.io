@@ -14,6 +14,7 @@ This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in V
 
 ## Hardware Design
 
+
 ### Components
 - LiPo Battery
 - ESC (electronic speed control): takes desired motor inputs from teensy to control and regulate the speed of motors
