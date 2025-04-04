@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "personal"
+category: "hobby"
 title: "Knife Design"
 date: 2025-04-15
 image: "knives.png"

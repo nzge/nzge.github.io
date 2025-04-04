@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "personal"
+category: "hobby"
 title: "E-ink Display"
 date: 2025-03-20
 image: "placeholder.jpg"
