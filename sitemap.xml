@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://nzge.github.io/projects/project_categories/1personal.html</loc>
+</url>
+<url>
+<loc>https://nzge.github.io/projects/project_categories/2school.html</loc>
+</url>
+<url>
+<loc>https://nzge.github.io/projects/project_categories/3racing.html</loc>
+</url>
+<url>
+<loc>https://nzge.github.io/projects/project_categories/4hobby.html</loc>
+</url>
+<url>
 <loc>https://nzge.github.io/pages/about.html</loc>
 </url>
 <url>
@@ -22,9 +34,6 @@
 <loc>https://nzge.github.io/projects/e-ink-display.html</loc>
 </url>
 <url>
-<loc>https://nzge.github.io/projects/project_categories/hobby.html</loc>
-</url>
-<url>
 <loc>https://nzge.github.io/</loc>
 </url>
 <url>
@@ -43,16 +52,10 @@
 <loc>https://nzge.github.io/projects/parallettes.html</loc>
 </url>
 <url>
-<loc>https://nzge.github.io/projects/project_categories/personal.html</loc>
-</url>
-<url>
 <loc>https://nzge.github.io/projects/portfolio-website.html</loc>
 </url>
 <url>
 <loc>https://nzge.github.io/projects/probe.html</loc>
-</url>
-<url>
-<loc>https://nzge.github.io/projects/project_categories/racing.html</loc>
 </url>
 <url>
 <loc>https://nzge.github.io/projects/rocket.html</loc>
@@ -62,9 +65,6 @@
 </url>
 <url>
 <loc>https://nzge.github.io/projects/school-misc.html</loc>
-</url>
-<url>
-<loc>https://nzge.github.io/projects/project_categories/school.html</loc>
 </url>
 <url>
 <loc>https://nzge.github.io/projects/solar-power-car.html</loc>
@@ -83,6 +83,6 @@
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/solar-car_media/Ge_FinalReport.pdf</loc>
-<lastmod>2025-04-04T11:10:29+00:00</lastmod>
+<lastmod>2025-04-04T11:49:29+00:00</lastmod>
 </url>
 </urlset>
