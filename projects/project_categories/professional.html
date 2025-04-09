@@ -5,8 +5,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nathan Ge - Work</title>
-  <meta name="description" content="Nathan Ge is a mechanical engineer and designer based in the Bay Area.">
+  <title>Nathan Ge - Professional Work</title>
+  <meta name="description" content="Professional work.">
 
   <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/assets/media/nathan/favicon/favicon.svg" />
@@ -58,114 +58,146 @@
 </nav>
 
 
-    
+    <header>
+  <div class="container">
+    <div class="go-back" onclick="goBack()">Go Back</div>
+    <h2>Professional Work</h2>
+    <div class="sort-container">
+      <label for="sortDropdown">Sort by:</label>
+      <select id="sortDropdown" onchange="sortProjects()">
+        <option value="date-newest">Date (Newest)</option>
+        <option value="date-oldest">Date (Oldest)</option>
+        <option value="name-first">Name (A-Z)</option>
+        <option value="name-last">Name (Z-A)</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+
+<!-- Display subcategories -->
+
+
+
 <div class="container">
-  <section id="projects">
+  <section id="subcategories">
     
       
-    
-      
-    
       
     
       
-    
       
     
       
-    
       
     
       
-    
-      
-        
-        
       
     
       
-    
       
     
       
-    
       
     
       
-    
       
     
       
-    
-      
-        
-        
-          <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h2><a href="/projects/project_categories/personal.html" class="project-link">Personal Projects</a></h2>
-            <p>Technical explorations outside of academic and professional work.</p>
-          </div>
-        
       
     
       
-    
       
     
       
-        
-        
-          <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h2><a href="/projects/project_categories/professional.html" class="project-link">Professional Work</a></h2>
-            <p>Professional work.</p>
-          </div>
-        
       
     
       
-        
-        
       
     
       
-    
       
     
       
-    
-      
-        
-        
-          <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h2><a href="/projects/project_categories/school.html" class="project-link">School Projects</a></h2>
-            <p>UCLA projects.</p>
-          </div>
-        
       
     
       
-        
-        
       
     
       
-    
       
     
       
-    
       
     
       
-    
       
     
       
+      
     
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
       
     
   </section>
+
+  <hr>
 </div>
 
+<!-- Display category projects -->
+<div class="container">
+  <section id="projects">
+    
+    <!-- Liquid sorting based on date, from newest to oldest by default -->
+    
+    
+  </section>
+</div>
 
     <footer class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s"">
   <div class="footer-line"></div>
