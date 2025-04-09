@@ -19,16 +19,18 @@ layout: default
 </header>
 
 <!-- Display subcategories -->
+{% assign base_path = 'projects/project_categories/' %}
 <div class="container">
   <section id="projects">
-    {% assign category_type = page.type %}
-    {% assign category_path = 'projects/project_categories/' | append: category_type %}
     {% for project in site.pages %}
-      {% if project.path contains category_path %}
-        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <h2><a href="{{ project.url }}" class="project-link">{{ project.title }}</a></h2>
-          <p>{{ project.description }}</p>
-        </div>
+      {% if project.path contains base_path %}
+        {% assign sub_path = project.path | remove_first: base_path %}
+        {% if sub_path contains '/' %}
+          <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h2><a href="{{ project.url }}" class="project-link">{{ project.title }}</a></h2>
+            <p>{{ project.description }}</p>
+          </div>
+        {% endunless %}
       {% endif %}
     {% endfor %}
   </section>
@@ -39,10 +41,8 @@ layout: default
   <section id="projects">
     {% assign category_type = page.type %}
     {% assign projects = site.pages | where: "category", category_type %}
-
     <!-- Liquid sorting based on date, from newest to oldest by default -->
     {% assign sorted_projects = projects | sort: 'date' | reverse %}
-
     {% for project in sorted_projects %}
       <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="{{ project.title }}" data-date="{{ project.date | date: '%Y-%m-%d' }}">
         <a href="{{ project.url }}" class="project-link">
