@@ -19,10 +19,8 @@ layout: default
 
 <div class="container">
   <section id="projects">
-    {% assign category_type = page.type %}
     {% assign category_subtype = page.subtype %}
-    {% assign projects = site.pages | where: "category", category_type %}
-    {% assign sub_projects = projects | where: "subtype", category_subtype %}
+    {% assign sub_projects = site.pages | where: "category", category_subtype %}
     <!-- Liquid sorting based on date, from newest to oldest by default -->
     {% assign sorted_projects = sub_projects | sort: 'date' | reverse %}
     

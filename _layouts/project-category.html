@@ -22,11 +22,13 @@ layout: default
 
 <!-- Display subcategories -->
 {% assign base_path = 'projects/project_categories/' | append: category_type | append: '/' %}
+{% assign base_path_size = base_path | size %}
 
 <div class="container">
   <section id="projects">
     {% for project in site.pages %}
-      {% if project.path startswith base_path %}
+      {% assign path_start = project.path | slice: 0, base_path_size %}
+      {% if path_start == base_path %}
         {% assign sub_path = project.path | remove_first: base_path %}
         {% unless sub_path contains '/' %}
           <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -39,6 +41,7 @@ layout: default
   </section>
 </div>
 
+<hr>
 
 <!-- Display category projects -->
 <div class="container">
