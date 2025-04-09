@@ -4,7 +4,7 @@ category: "software"
 title: "Portfolio Site"
 date: 2025-02-05
 image: "portfolio.PNG"
-description: "Static website powered Jekyll"
+description: "Static website powered by Jekyll"
 repo: "https://github.com/nzge/nzge.github.io"
 toc: true
 ---
@@ -13,13 +13,13 @@ toc: true
 ## Code
 
 ### sass
-Dracula syntax highlighter
-Dracula text modifier
-Effects
-Interactive Elements
-Page-related Formatting
-Page section related Formatting
-General Styling
+- Dracula syntax highlighter
+- Dracula text modifier
+- Effects
+- Interactive Elements
+- Page-related Formatting
+- Page section related Formatting
+- General Styling
 
 ### assets
 jS
@@ -44,6 +44,7 @@ Table of Contents
 ### layouts
 Default
 Project Category Page
+Project Subcategory Page
 Project
 
 

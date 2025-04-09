@@ -13,7 +13,6 @@ toc: true
 
 ## Hardware
 
-
 ### Components
 Pro Micro nrF52840
 Diodes
@@ -49,6 +48,9 @@ style="height:400px;display: block; margin: auto;"}
 
 # Macropad with PCB 
 
+## Design
+
+
 ## PCB Design
 
 Designed in KiCAD
@@ -72,20 +74,60 @@ style="height:400px;display: block; margin: auto;"}
 
 # Ergo Split
 
+## Design
+## Layout
+## PCB 
+Designed in KiCAD
+
+## Build Log
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.png){: 
+style="height:400px;display: block; margin: auto;"}
+
 
 ---
 
 # 40% with Fkeys
+
+## Design
+## Layout
+## PCB 
+
+## Build Log
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.png){: 
+style="height:400px;display: block; margin: auto;"}
 
 
 ---
 
 # HHKB
 
+## Design
+## Layout
+## PCB
+
+## Build Log
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.png){: 
+style="height:400px;display: block; margin: auto;"}
+
 ---
 
 # Ultralight Mouse
 
+## Design
+## PCB
+## Firmware
+
+## Build Log
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.png){: 
+style="height:400px;display: block; margin: auto;"}
 
 ---
 ## References
