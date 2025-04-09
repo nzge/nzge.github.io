@@ -24,9 +24,9 @@ layout: default
     {% assign category_type = page.type %}
     {% assign category_subtype = page.subtype %}
     {% assign projects = site.pages | where: "category", category_type %}
-    {% assign projects = projects | where: "subtype", category_subtype % }
+    {% assign sub_projects = projects | where: "subtype", category_subtype % }
     <!-- Liquid sorting based on date, from newest to oldest by default -->
-    {% assign sorted_projects = projects | sort: 'date' | reverse %}
+    {% assign sorted_projects = sub_projects | sort: 'date' | reverse %}
     
     {% for project in sorted_projects %}
       <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="{{ project.title }}" data-date="{{ project.date | date: '%Y-%m-%d' }}">

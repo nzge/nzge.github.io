@@ -5,22 +5,6 @@ title: Personal Projects
 description: "Technical explorations outside of academic and professional work."
 ---
 
-<header>
-  <div class="container">
-    <div class="go-back" onclick="goBack()">Go Back</div>
-    <h2>{{ page.title }}</h2>
-    <div class="sort-container">
-      <label for="sortDropdown">Sort by:</label>
-      <select id="sortDropdown" onchange="sortProjects()">
-        <option value="date-newest">Date (Newest)</option>
-        <option value="date-oldest">Date (Oldest)</option>
-        <option value="name-first">Name (A-Z)</option>
-        <option value="name-last">Name (Z-A)</option>
-      </select>
-    </div>
-  </div>
-</header>
-
 <div class="container">
   <section id="projects">
     {% assign category_type = page.type %}
