@@ -32,9 +32,7 @@ Top Plate
 
 
 ### Schematic
-![Stewart Platform Schematic](/assets/media/stewart-platform_media/stewart-platform_schematic.png){: style="width:200px; height:200px;display: block; margin: auto;"}
-
-<img src="https://raw.githubusercontent.com/nzge/stewart-platform/main/stewart-schematic.svg?sanitize=true" alt="My SVG">
+<img src="https://raw.githubusercontent.com/nzge/stewart-platform/main/stewart-schematic.svg?sanitize=true" alt="Stewart Platform Schematic" style="width:400px; height:400px;display: block; margin: auto;">
 
 
 ### Dimensions
