@@ -21,22 +21,24 @@ layout: default
 {% assign category_type = page.type %}
 
 <!-- Display subcategories -->
-{% assign base_path = 'projects/project_categories/' %}
+{% assign base_path = 'projects/project_categories/' | append: category_type | append: '/' %}
+
 <div class="container">
   <section id="projects">
     {% for project in site.pages %}
-      {% if project.path contains base_path %}
+      {% if project.path startswith base_path %}
         {% assign sub_path = project.path | remove_first: base_path %}
-        {% if sub_path contains category_type %}
+        {% unless sub_path contains '/' %}
           <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
             <h2><a href="{{ project.url }}" class="project-link">{{ project.title }}</a></h2>
             <p>{{ project.description }}</p>
           </div>
-        {% endif %}
+        {% endunless %}
       {% endif %}
     {% endfor %}
   </section>
 </div>
+
 
 <!-- Display category projects -->
 <div class="container">
