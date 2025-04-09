@@ -27,8 +27,8 @@ This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in V
 - Raspberry Pi 5: Hosts web server that provides a gui for sending control inputs to the drone via pico. Data/telemetry visualization 
 
 ### Schematic
-![Drone Schematic](/assets/media/drone_media/drone_schematic.png){: style="width:200px; height:200px;display: block; margin: auto;"}
-
+<img src="https://raw.githubusercontent.com/nzge/drone/main/drone-schematic_bb.svg?sanitize=true" alt="Drone Schematic" style="width:400px; height:400px;display: block; margin: auto;">
+  
 ### Design Considerations
 
 **Basic Motor Thrust Requirement Calculations**
