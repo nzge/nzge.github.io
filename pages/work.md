@@ -11,7 +11,7 @@ title: Work
       {% if project.path contains base_path %}
         {% assign sub_path = project.path | remove_first: base_path %}
         {% unless sub_path contains '/' %}
-          <div class=" wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
             <h2><a href="{{ project.url }}" class="project-link">{{ project.title }}</a></h2>
             <p>{{ project.description }}</p>
           </div>
