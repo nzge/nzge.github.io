@@ -11,8 +11,6 @@ toc: true
 
 # Basic Rocket
 
-
-
 ## OpenRocket
 
 
@@ -52,6 +50,7 @@ style="height:400px;display: block; margin: auto;"}
 style="height:400px;display: block; margin: auto;"}
 
 ---
+
 # Stabilized Rocket
 
 ## Active Stabilization

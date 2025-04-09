@@ -22,6 +22,7 @@ repo: "https://github.com/nzge/"
 > ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
+---
 
 ## References
 
