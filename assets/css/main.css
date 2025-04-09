@@ -637,8 +637,16 @@ form {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  border-bottom: 1px solid #000;
-  background: transparent; }
+  border: 2px solid #171718;
+  /* Grey border */
+  border-radius: 10px;
+  /* Curved corners */
+  background-color: #171718;
+  /* Light background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Optional shadow for better appearance */
+  margin-bottom: 20px;
+  /* Space between projects */ }
   .project img {
     max-width: 100%;
     height: auto;
