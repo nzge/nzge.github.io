@@ -5,8 +5,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nathan Ge - Work</title>
-  <meta name="description" content="Nathan Ge is a mechanical engineer and designer based in the Bay Area.">
+  <title>Nathan Ge - Research</title>
+  <meta name="description" content="Research.">
   
   <!-- favicon -->
   <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
@@ -17,20 +17,20 @@
   
   <link type="application/atom+xml" rel="alternate" href="https://nzge.github.io/feed.xml" title="My Website" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Work | My Website</title>
+<title>Research | My Website</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="Work" />
+<meta property="og:title" content="Research" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="my personal website" />
-<meta property="og:description" content="my personal website" />
-<link rel="canonical" href="https://nzge.github.io/pages/work.html" />
-<meta property="og:url" content="https://nzge.github.io/pages/work.html" />
+<meta name="description" content="Research." />
+<meta property="og:description" content="Research." />
+<link rel="canonical" href="https://nzge.github.io/projects/project_categories/school/research.html" />
+<meta property="og:url" content="https://nzge.github.io/projects/project_categories/school/research.html" />
 <meta property="og:site_name" content="My Website" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Work" />
+<meta property="twitter:title" content="Research" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"my personal website","headline":"Work","url":"https://nzge.github.io/pages/work.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Research.","headline":"Research","url":"https://nzge.github.io/projects/project_categories/school/research.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -79,125 +79,42 @@
 </nav>
 
 
-    
+    <header>
+  <div class="container">
+    <div class="go-back" onclick="goBack()">Go Back</div>
+    <h2>Research</h2>
+    <div class="sort-container">
+      <label for="sortDropdown">Sort by:</label>
+      <select id="sortDropdown" onchange="sortProjects()">
+        <option value="date-newest">Date (Newest)</option>
+        <option value="date-oldest">Date (Oldest)</option>
+        <option value="name-first">Name (A-Z)</option>
+        <option value="name-last">Name (Z-A)</option>
+      </select>
+    </div>
+  </div>
+</header>
+
 <div class="container">
   <section id="projects">
     
-      
     
-      
+    <!-- Liquid sorting based on date, from newest to oldest by default -->
     
-      
     
-      
     
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-        
-          <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h2><a href="/projects/project_categories/personal.html" class="project-link">Personal Projects</a></h2>
-            <p>Technical explorations outside of academic and professional work.</p>
-          </div>
-        
-      
-    
-      
-    
-      
-    
-      
-        
-        
-          <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h2><a href="/projects/project_categories/professional.html" class="project-link">Professional Work</a></h2>
-            <p>Professional work.</p>
-          </div>
-        
-      
-    
-      
-        
-        
-      
-    
-      
-        
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-        
-          <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h2><a href="/projects/project_categories/school.html" class="project-link">School Projects</a></h2>
-            <p>UCLA projects.</p>
-          </div>
-        
-      
-    
-      
-        
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
+      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="OCT Probe Mount" data-date="2024-06-20">
+        <a href="/projects/probe.html" class="project-link">
+          <h3>OCT Probe Mount</h3>
+          <img src="/assets/media/oct-probe.png" alt="OCT Probe Mount">
+        </a>
+        <p>Mechanical housing for the IRISS beam splitter to enable automated ocular surgery</p>
+      </div>
     
   </section>
 </div>
 
+<div id="projectContainer"></div>
 
     <footer class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s"">
   <div class="footer-line"></div>
