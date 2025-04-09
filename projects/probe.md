@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "school"
+category: "research"
 title: "OCT Probe Mount"
 date: 2024-06-20
 image: "oct-probe.png"
