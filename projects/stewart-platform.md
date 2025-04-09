@@ -34,6 +34,9 @@ Top Plate
 ### Schematic
 ![Stewart Platform Schematic](/assets/media/stewart-platform_media/stewart-platform_schematic.png){: style="width:200px; height:200px;display: block; margin: auto;"}
 
+<img src="https://raw.githubusercontent.com/nzge/stewart-platform/main/stewart-schematic.svg?sanitize=true" alt="My SVG">
+
+
 ### Dimensions
 Simple base, platform, and link proportion calculations formatted in a csv file through Jupyter notebook serve as global variables to parametrize CAD model.
 
