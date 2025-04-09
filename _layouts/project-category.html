@@ -19,13 +19,12 @@ layout: default
 </header>
 
 {% assign category_type = page.type %}
-
 <!-- Display subcategories -->
 {% assign base_path = 'projects/project_categories/' | append: category_type | append: '/' %}
 {% assign base_path_size = base_path | size %}
 
 <div class="container">
-  <section id="projects">
+  <section id="subcategories">
     {% for project in site.pages %}
       {% assign path_start = project.path | slice: 0, base_path_size %}
       {% if path_start == base_path %}
@@ -39,9 +38,9 @@ layout: default
       {% endif %}
     {% endfor %}
   </section>
-</div>
 
-<hr>
+  <hr>
+</div>
 
 <!-- Display category projects -->
 <div class="container">
