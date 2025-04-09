@@ -637,11 +637,11 @@ form {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  border: 2px solid #151516;
+  border: 2px solid rgba(24, 22, 22, 0.6);
   /* Grey border */
   border-radius: 10px;
   /* Curved corners */
-  background-color: #151516;
+  background-color: rgba(24, 22, 22, 0.6);
   /* Light background color */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   /* Optional shadow for better appearance */
