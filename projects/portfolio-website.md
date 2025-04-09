@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "personal"
+category: "software"
 title: "Portfolio Site"
 date: 2025-02-05
 image: "portfolio.PNG"

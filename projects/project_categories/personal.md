@@ -5,22 +5,4 @@ title: Personal Projects
 description: "Technical explorations outside of academic and professional work."
 ---
 
-<div class="container">
-  <section id="projects">
-    {% assign category_type = page.type %}
-    {% assign projects = site.pages | where: "category", category_type %}
 
-    <!-- Liquid sorting based on date, from newest to oldest by default -->
-    {% assign sorted_projects = projects | sort: 'date' | reverse %}
-
-    {% for project in sorted_projects %}
-      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="{{ project.title }}" data-date="{{ project.date | date: '%Y-%m-%d' }}">
-        <a href="{{ project.url }}" class="project-link">
-          <h3>{{ project.title }}</h3>
-          <img src="/assets/media/{{ project.image }}" alt="{{ project.title }}">
-        </a>
-        <p>{{ project.description }}</p>
-      </div>
-    {% endfor %}
-  </section>
-</div>

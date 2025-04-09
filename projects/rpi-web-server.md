@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "personal"
+category: "software"
 title: "Raspberry Pi Web Server"
 date: 2025-03-08
 image: "rpi-web-app.PNG"
