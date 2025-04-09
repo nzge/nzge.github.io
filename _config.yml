@@ -26,7 +26,6 @@ twitter_username: nzge
 github_username:  nzge
 
 #remote_theme: jekyll/minima
-
 markdown: kramdown
 kramdown:
   input: GFM
@@ -52,6 +51,17 @@ plugins:
 collections:
   projects:
     output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

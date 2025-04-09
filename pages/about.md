@@ -5,7 +5,7 @@ title: About
 
 Mechanical Engineering student with an interest in robotics and industrial design, and an unbridled curiosity for the world. A true believer in open-source and open dissemination of knowledge.
 
-**Technical proficiencies:** 
+**Technical proficiencies:**  
 *CAD:* Solidworks, KiCAD, Fusion360  
 *Programming:*  
 - Computation and embedded programming: Python, C++, MATLAB, Labview
