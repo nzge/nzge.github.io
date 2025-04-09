@@ -25,24 +25,24 @@ Housing
 ### Multiplexing
 
 ## ZMK Firmware
-![Alt text](/assets/media/input_media/promicro-nrf52840.JPG){: 
+![Alt text](/assets/media/input_media/promicro-nrf52840.png){: 
 style="height:400px;display: block; margin: auto;"}
 
 ## Build Log
 > 3-18-25: 
 >
-> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.JPG){: 
+> ![Alt text](/assets/media/input_media/IMG_0783.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 > 3-14-25: 
 >
-> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.JPG){: 
+> ![Alt text](/assets/media/input_media/macro-proto_3-14-25.png){: 
 style="height:400px;display: block; margin: auto;"}
 
 
 > 8-21-24: Test fit JWICK tactiles 
 >
-> ![Alt text](/assets/media/macropad_media/test-fit.JPG){: 
+> ![Alt text](/assets/media/input_media/test-fit.jpg){: 
 style="height:400px;display: block; margin: auto;"}
 
 ---
@@ -59,13 +59,13 @@ Designed in KiCAD
 
 > 3-14-25: 
 >
-> ![Alt text](/assets/media/macropad_media/macropad-proto_3-14-25.JPG){: 
+> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.png){: 
 style="height:400px;display: block; margin: auto;"}
 
 
 > 8-21-24: Test fit JWICK tactiles 
 >
-> ![Alt text](/assets/media/macropad_media/test-fit.JPG){: 
+> ![Alt text](/assets/media/input_media/test-fit.jpg){: 
 style="height:400px;display: block; margin: auto;"}
 
 ---
@@ -75,7 +75,16 @@ style="height:400px;display: block; margin: auto;"}
 
 ---
 
+# 40% with Fkeys
+
+
+---
+
 # HHKB
+
+---
+
+# Ultralight Mouse
 
 
 ---
