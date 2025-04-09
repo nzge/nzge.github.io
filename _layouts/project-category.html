@@ -24,7 +24,7 @@ layout: default
 {% assign base_path = 'projects/project_categories/' | append: category_type | append: '/' %}
 {% assign base_path_size = base_path | size %}
 <div class="container">
-  <h2 style="text-align: center; color:rgb(95, 49, 94)0 !important;">Other</h2>
+  <h2 style="text-align: center; color:rgb(95, 49, 94) !important;">Other</h2>
   <section id="subcategories">
     {% for project in site.pages %}
       {% assign path_start = project.path | slice: 0, base_path_size %}
@@ -32,14 +32,14 @@ layout: default
         {% assign sub_path = project.path | remove_first: base_path %}
         {% unless sub_path contains '/' %}
           <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h2 style="color: #FFFF00 !important;"><a href="{{ project.url }}" class="project-link">{{ project.title }}</a></h2>
+            <h2><a href="{{ project.url }}" class="project-link" style="color: #FFFF00 !important;">{{ project.title }}< /a></h2>
             <p>{{ project.description }}</p>
           </div>
         {% endunless %}
       {% endif %}
     {% endfor %}
   </section>
-  <hr style="border: 1px solid #000; margin: 20px 0;">
+  <hr style="border: 1px solid #ffffff; margin: 20px 0;">
 </div>
 
 <!-- Display category projects -->
