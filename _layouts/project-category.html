@@ -24,6 +24,7 @@ layout: default
 {% assign base_path_size = base_path | size %}
 
 <div class="container">
+  <h2 style="text-align: center;">Other</h2>
   <section id="subcategories">
     {% for project in site.pages %}
       {% assign path_start = project.path | slice: 0, base_path_size %}
@@ -31,7 +32,7 @@ layout: default
         {% assign sub_path = project.path | remove_first: base_path %}
         {% unless sub_path contains '/' %}
           <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h2><a href="{{ project.url }}" class="project-link">{{ project.title }}</a></h2>
+            <h2 style="color: #FFFF00;"><a href="{{ project.url }}" class="project-link">{{ project.title }}</a></h2>
             <p>{{ project.description }}</p>
           </div>
         {% endunless %}
@@ -39,11 +40,12 @@ layout: default
     {% endfor %}
   </section>
 
-  <hr>
+  <hr class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
 </div>
 
 <!-- Display category projects -->
 <div class="container">
+  <h2 style="text-align: center;">Main</h2>
   <section id="projects">
     {% assign projects = site.pages | where: "category", category_type %}
     <!-- Liquid sorting based on date, from newest to oldest by default -->
