@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <header>
   <div class="container">
     <div class="go-back" onclick="goBack()">Go Back</div>
@@ -18,12 +17,14 @@ layout: default
   </div>
 </header>
 
+{{content}}
+
 <div class="container">
   <section id="projects">
     {% assign category_type = page.type %}
     {% assign category_subtype = page.subtype %}
-    {% assign projects = site.pages | where: "category", category_type | where: "subtype", category_subtype %}
-
+    {% assign projects = site.pages | where: "category", category_type %}
+    {% assign projects = projects | where: "subtype", category_subtype % }
     <!-- Liquid sorting based on date, from newest to oldest by default -->
     {% assign sorted_projects = projects | sort: 'date' | reverse %}
     
@@ -38,7 +39,5 @@ layout: default
     {% endfor %}
   </section>
 </div>
-
-{{content}}
 
 <div id="projectContainer"></div>
