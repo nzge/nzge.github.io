@@ -8,6 +8,12 @@
   <title>Nathan Ge - School Projects</title>
   <meta name="description" content="UCLA projects.">
 
+  <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/media/nathan/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/media/nathan/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/nathan/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/media/nathan/favicon/site.webmanifest" />
+  
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> 
 
@@ -39,7 +45,7 @@
   <div class="name animate__animated animate__fadeInUp" style="display: flex; align-items: center; gap: 10px;">
     <a href="/index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
       <span>nathan</span> 
-      <img src="/assets/media/Nathan-red_block.svg" alt="Example Image" style="width: 35px; height: auto; margin-left: 2px;">
+      <img src="/assets/media/nathan/Nathan-red_block.svg" alt="Example Image" style="width: 35px; height: auto; margin-left: 2px;">
     </a>
   </div>
 
@@ -53,6 +59,104 @@
 
 
     <header>
+  <div class="container">
+    <div class="go-back" onclick="goBack()">Go Back</div>
+    <h2>School Projects</h2>
+    <div class="sort-container">
+      <label for="sortDropdown">Sort by:</label>
+      <select id="sortDropdown" onchange="sortProjects()">
+        <option value="date-newest">Date (Newest)</option>
+        <option value="date-oldest">Date (Oldest)</option>
+        <option value="name-first">Name (A-Z)</option>
+        <option value="name-last">Name (Z-A)</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <section id="projects">
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+          <h2><a href="/projects/project_categories/school/racing.html" class="project-link">Bruin Racing</a></h2>
+          <p>My contributions to Bruin Racing FSAE.</p>
+        </div>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+          <h2><a href="/projects/project_categories/school.html" class="project-link">School Projects</a></h2>
+          <p>UCLA projects.</p>
+        </div>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </section>
+</div>
+
+<header>
   <div class="container">
     <div class="go-back" onclick="goBack()">Go Back</div>
     <h2>School Projects</h2>
@@ -158,90 +262,6 @@
 </div>
 
 <div id="projectContainer"></div>
-
-
-<div class="container">
-  <section id="projects">
-    
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <h2><a href="/projects/project_categories/school/racing.html" class="project-link">Bruin Racing</a></h2>
-          <p>My contributions to Bruin Racing FSAE.</p>
-        </div>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-          <h2><a href="/projects/project_categories/school.html" class="project-link">School Projects</a></h2>
-          <p>UCLA projects.</p>
-        </div>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </section>
-</div>
-
 
 
     <footer class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s"">
