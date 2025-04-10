@@ -503,14 +503,14 @@ select {
 .side-menu {
   position: fixed;
   top: 50%;
-  right: -80px;
+  right: -110px;
   transform: translateY(-80%);
-  width: 140px;
+  width: 120px;
   background-color: rgba(24, 22, 22, 0.6);
   border-radius: 10px 0 0 10px;
   transition: right 0.3s ease-in-out;
   z-index: 999;
-  padding: 20px; }
+  padding: 15px; }
   .side-menu:hover {
     right: 0; }
   .side-menu .menu-icons {
