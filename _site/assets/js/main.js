@@ -8,6 +8,8 @@ jQuery(window).on('load', function(){
   new WOW().init(); 
 });
 
+///////////////////////////////////////////////
+
 // JavaScript function to go back to the previous page
 function goBack() {
     window.history.back();
@@ -53,4 +55,21 @@ function sortProjects() {
   sortedProjects.forEach(project => {
     projectsContainer.appendChild(project);
   });
+}
+
+///////////////////////////////////////////////
+
+const sideMenu = document.getElementById('sideMenu');
+const hotspot = document.querySelector('.hotspot');
+
+hotspot.addEventListener('mouseenter', () => {
+  sideMenu.classList.add('open');
+});
+
+sideMenu.addEventListener('mouseleave', () => {
+  sideMenu.classList.remove('open');
+});
+
+function toggleLightMode() {
+  document.body.classList.toggle('light-mode');
 }
