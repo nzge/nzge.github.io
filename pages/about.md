@@ -13,3 +13,10 @@ Mechanical Engineering student with an interest in robotics and industrial desig
 - Web Dev: HTML, CSS, JS, Liquid
 
 Hobbies: interest in olympic weightlifting, wrestling, cooking, backpacking, and singing
+
+<div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+  <img src="/assets/media/_icons/PROFESSIONAL - MECHANICAL DESIGN.svg" alt="Icon 1" style="width: 60px; height: auto;">
+  <img src="/assets/media/_icons/PROFESSIONAL - DRAWING TOOLS.svg" alt="Icon 2" style="width: 60px; height: auto;">
+  <img src="/assets/media/_icons/PROFESSIONAL - SURFACING.svg" alt="Icon 3" style="width: 60px; height: auto;">
+  <img src="/assets/media/_icons/PROFESSIONAL - WELDMENTS.svg" alt="Icon 4" style="width: 60px; height: auto;">
+</div>
