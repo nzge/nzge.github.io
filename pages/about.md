@@ -15,8 +15,9 @@ Mechanical Engineering student with an interest in robotics and industrial desig
 Hobbies: interest in olympic weightlifting, wrestling, cooking, backpacking, and singing
 
 <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-  <img src="/assets/media/_icons/PROFESSIONAL - MECHANICAL DESIGN.svg" alt="Icon 1" style="width: 60px; height: auto;">
-  <img src="/assets/media/_icons/PROFESSIONAL - DRAWING TOOLS.svg" alt="Icon 2" style="width: 60px; height: auto;">
-  <img src="/assets/media/_icons/PROFESSIONAL - SURFACING.svg" alt="Icon 3" style="width: 60px; height: auto;">
-  <img src="/assets/media/_icons/PROFESSIONAL - WELDMENTS.svg" alt="Icon 4" style="width: 60px; height: auto;">
+  <img src="/assets/media/_icons/cswp_mechanical-design.svg" alt="cswp_mechanical-design" style="width: 60px; height: auto;">
+  <img src="/assets/media/_icons/cswp_drawing-tools.svg" alt="cswp_drawing-tools" style="width: 60px; height: auto;">
+  <img src="/assets/media/_icons/cswp_surfacing.svg" alt="cswp_surfacing" style="width: 60px; height: auto;">
+  <img src="/assets/media/_icons/cswp_weldments.svg" alt="cswp_weldments" style="width: 60px; height: auto;">
+  <img src="/assets/media/_icons/cswp_sheet-metal.svg" alt="cswp_sheet-metal" style="width: 60px; height: auto;">
 </div>
