@@ -217,54 +217,37 @@ select {
 
 /*--------------- Side Menu --------------- */
 
-.hover-side-menu {
+.side-menu {
   position: fixed;
-  top: 0;
-  right: -160px; // mostly hidden
-  width: 200px;
-  height: 100vh;
-  background-color: #222;
-  transition: right 0.3s ease;
-  z-index: 1000;
-
-  .menu-content {
-    padding: 20px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  button {
-    background-color: #444;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-
-    &:hover {
-      background-color: #666;
-    }
-  }
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+  width: 80px;
+  background-color: rgba(50, 50, 50, 0.9);
+  border-radius: 10px 0 0 10px;
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+  padding: 10px;
 
   &:hover {
     right: 0;
   }
-}
 
-// Light mode overrides
-body.light-mode {
-  .hover-side-menu {
-    background-color: #ddd;
+  .menu-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 
-    button {
-      background-color: #eee;
-      color: #000;
+    img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      filter: invert(1); // For white icons on dark background
+      transition: transform 0.2s;
 
       &:hover {
-        background-color: #ccc;
+        transform: scale(1.2);
       }
     }
   }

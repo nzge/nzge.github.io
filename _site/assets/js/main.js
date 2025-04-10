@@ -59,8 +59,10 @@ function sortProjects() {
 
 ///////////////////////////////////////////////
 
-document.addEventListener("DOMContentLoaded", function () {
-  window.toggleLightMode = function () {
-    document.body.classList.toggle('light-mode');
-  };
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleTheme = document.getElementById("toggleTheme");
+
+  toggleTheme.addEventListener("click", () => {
+    document.documentElement.classList.toggle("light-mode");
+  });
 });
