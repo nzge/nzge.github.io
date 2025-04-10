@@ -63,6 +63,10 @@ defaults:
     values:
       layout: "default"
 
+include:
+  - assets/media/_icons
+  - assets/media/_nathan
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
