@@ -10,6 +10,7 @@ Mechanical Engineering student with an interest in robotics and industrial desig
 *Programming:*  
 - Computation and embedded programming: Python, C++, MATLAB, Labview
 - Robotics: ROS2, Gazebo, Drake
-- Web Dev: HTML, CSS, JS, Liquid
+- Web Dev: HTML, CSS, JS, Next.js, Liquid  
+*Simulation:* ANSYS
 
 Hobbies: interest in olympic weightlifting, wrestling, cooking, backpacking, and singing

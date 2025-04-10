@@ -220,10 +220,10 @@ select {
 .side-menu {
   position: fixed;
   top: 50%;
-  right: -120px;
+  right: -135px;
   transform: translateY(-80%);
   width: 125px;
-  background-color: rgba(24, 22, 22, 0.6);
+  background-color: rgba(24, 22, 22, 0.4);
   border-radius: 10px 0 0 10px;
   transition: right 0.3s ease-in-out;
   z-index: 999;
