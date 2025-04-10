@@ -500,41 +500,32 @@ select {
     top: 2px; }
 
 /*--------------- Side Menu --------------- */
-.hover-side-menu {
+.side-menu {
   position: fixed;
-  top: 0;
-  right: -160px;
-  width: 200px;
-  height: 100vh;
-  background-color: #222;
-  transition: right 0.3s ease;
-  z-index: 1000; }
-  .hover-side-menu .menu-content {
-    padding: 20px;
-    height: 100%;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+  width: 80px;
+  background-color: rgba(50, 50, 50, 0.9);
+  border-radius: 10px 0 0 10px;
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+  padding: 10px; }
+  .side-menu:hover {
+    right: 0; }
+  .side-menu .menu-icons {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; }
-  .hover-side-menu button {
-    background-color: #444;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    cursor: pointer;
-    transition: background-color 0.3s; }
-    .hover-side-menu button:hover {
-      background-color: #666; }
-  .hover-side-menu:hover {
-    right: 0; }
-
-body.light-mode .hover-side-menu {
-  background-color: #ddd; }
-  body.light-mode .hover-side-menu button {
-    background-color: #eee;
-    color: #000; }
-    body.light-mode .hover-side-menu button:hover {
-      background-color: #ccc; }
+    align-items: center;
+    gap: 15px; }
+    .side-menu .menu-icons img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      filter: invert(1);
+      transition: transform 0.2s; }
+      .side-menu .menu-icons img:hover {
+        transform: scale(1.2); }
 
 /*--------------- Basic Styling --------------- */
 html, body {
