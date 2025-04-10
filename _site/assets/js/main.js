@@ -59,17 +59,8 @@ function sortProjects() {
 
 ///////////////////////////////////////////////
 
-const sideMenu = document.getElementById('sideMenu');
-const hotspot = document.querySelector('.hotspot');
-
-hotspot.addEventListener('mouseenter', () => {
-  sideMenu.classList.add('open');
+document.addEventListener("DOMContentLoaded", function () {
+  window.toggleLightMode = function () {
+    document.body.classList.toggle('light-mode');
+  };
 });
-
-sideMenu.addEventListener('mouseleave', () => {
-  sideMenu.classList.remove('open');
-});
-
-function toggleLightMode() {
-  document.body.classList.toggle('light-mode');
-}

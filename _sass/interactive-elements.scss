@@ -217,61 +217,55 @@ select {
 
 /*--------------- Side Menu --------------- */
 
-.side-menu {
+.hover-side-menu {
   position: fixed;
   top: 0;
-  right: -200px;
+  right: -160px; // mostly hidden
   width: 200px;
   height: 100vh;
   background-color: #222;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   transition: right 0.3s ease;
-  padding: 20px;
   z-index: 1000;
+
+  .menu-content {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #666;
+    }
+  }
+
+  &:hover {
+    right: 0;
+  }
 }
 
-.side-menu.open {
-  right: 0;
-}
-
-.side-menu button {
-  background-color: #444;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.side-menu button:hover {
-  background-color: #666;
-}
-
-/* Hotspot to trigger menu on hover */
-.hotspot {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 20px;
-  height: 100vh;
-  z-index: 999;
-}
-
+// Light mode overrides
 body.light-mode {
-  background-color: #fff;
-  color: #000;
-}
+  .hover-side-menu {
+    background-color: #ddd;
 
-body.light-mode .side-menu {
-  background-color: #ddd;
-}
+    button {
+      background-color: #eee;
+      color: #000;
 
-body.light-mode .side-menu button {
-  background-color: #eee;
-  color: #000;
-}
-
-body.light-mode .side-menu button:hover {
-  background-color: #ccc;
+      &:hover {
+        background-color: #ccc;
+      }
+    }
+  }
 }
