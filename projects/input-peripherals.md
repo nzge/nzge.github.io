@@ -30,18 +30,17 @@ style="height:400px;display: block; margin: auto;"}
 ## Build Log
 > 3-18-25: 
 >
-> ![Alt text](/assets/media/input_media/IMG_0783.JPG){: 
+> ![Alt text](/assets/media/input_media/macro/IMG_0783.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 > 3-14-25: 
 >
-> ![Alt text](/assets/media/input_media/macro-proto_3-14-25.png){: 
+> ![Alt text](/assets/media/input_media/macro/macro-proto_3-14-25.png){: 
 style="height:400px;display: block; margin: auto;"}
-
 
 > 8-21-24: Test fit JWICK tactiles 
 >
-> ![Alt text](/assets/media/input_media/test-fit.jpg){: 
+> ![Alt text](/assets/media/input_media/macro/test-fit.jpg){: 
 style="height:400px;display: block; margin: auto;"}
 
 ---
@@ -52,22 +51,14 @@ style="height:400px;display: block; margin: auto;"}
 
 
 ## PCB Design
+KiCAD
 
-Designed in KiCAD
-
-## ZMK Firmware
 
 ## Build Log
 
-> 3-14-25: 
+> 4-11-25: 
 >
-> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.png){: 
-style="height:400px;display: block; margin: auto;"}
-
-
-> 8-21-24: Test fit JWICK tactiles 
->
-> ![Alt text](/assets/media/input_media/test-fit.jpg){: 
+> ![Alt text](/assets/media/input_media/macro-pcb-proto.png){: 
 style="height:400px;display: block; margin: auto;"}
 
 ---
@@ -82,7 +73,7 @@ Designed in KiCAD
 ## Build Log
 > 3-14-25: 
 >
-> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.png){: 
+> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
 style="height:400px;display: block; margin: auto;"}
 
 
@@ -97,7 +88,7 @@ style="height:400px;display: block; margin: auto;"}
 ## Build Log
 > 3-14-25: 
 >
-> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.png){: 
+> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
 style="height:400px;display: block; margin: auto;"}
 
 
@@ -112,7 +103,7 @@ style="height:400px;display: block; margin: auto;"}
 ## Build Log
 > 3-14-25: 
 >
-> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.png){: 
+> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
 style="height:400px;display: block; margin: auto;"}
 
 ---
@@ -126,7 +117,7 @@ style="height:400px;display: block; margin: auto;"}
 ## Build Log
 > 3-14-25: 
 >
-> ![Alt text](/assets/media/input_media/macropad-proto_3-14-25.png){: 
+> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
 style="height:400px;display: block; margin: auto;"}
 
 ---
