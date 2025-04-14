@@ -9,10 +9,28 @@ repo: "https://github.com/nzge/input-peripherals"
 toc: true
 ---
 
+# General Info
+
+## MCU Selection 
+### Microcontroller
+![Alt text](/assets/media/input_media/promicro-nrf52840.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+### MCU
+
+## Keyboard Matrix: Multiplexing
+
+## Firmware
+### ZMK 
+### QMK
+
+
+
+---
 # Hand-wired Macropad
 
-## Hardware
-
+## Design
+Single body construction
 ### Components
 Pro Micro nrF52840
 Diodes
@@ -21,27 +39,30 @@ Copper wire
 Switches
 Housing
 
-### Multiplexing
-
-## ZMK Firmware
+### Pin Mapping
 ![Alt text](/assets/media/input_media/promicro-nrf52840.png){: 
-style="height:400px;display: block; margin: auto;"}
+style="height:200px;display: block; margin: auto;"}
 
 ## Build Log
+> 3-20-25: 
+>
+> ![Alt text](/assets/media/input_media/macro/IMG_0812.jpg){: 
+style="height:200px; display:block; margin: auto;"}
+
 > 3-18-25: 
 >
 > ![Alt text](/assets/media/input_media/macro/IMG_0783.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+style="height:200px;display: block; margin: auto;"}
 
 > 3-14-25: 
 >
 > ![Alt text](/assets/media/input_media/macro/macro-proto_3-14-25.png){: 
-style="height:400px;display: block; margin: auto;"}
+style="height:200px;display: block; margin: auto;"}
 
 > 8-21-24: Test fit JWICK tactiles 
 >
 > ![Alt text](/assets/media/input_media/macro/test-fit.jpg){: 
-style="height:400px;display: block; margin: auto;"}
+style="height:200px;display: block; margin: auto;"}
 
 ---
 
@@ -50,7 +71,7 @@ style="height:400px;display: block; margin: auto;"}
 ## Design
 
 
-## PCB Design
+## PCB 
 KiCAD
 
 
@@ -59,7 +80,7 @@ KiCAD
 > 4-11-25: 
 >
 > ![Alt text](/assets/media/input_media/macro-pcb-proto.png){: 
-style="height:400px;display: block; margin: auto;"}
+style="height:200px;display: block; margin: auto;"}
 
 ---
 
@@ -74,7 +95,7 @@ Designed in KiCAD
 > 3-14-25: 
 >
 > ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
-style="height:400px;display: block; margin: auto;"}
+style="height:200px;display: block; margin: auto;"}
 
 
 ---
@@ -86,10 +107,17 @@ style="height:400px;display: block; margin: auto;"}
 ## PCB 
 
 ## Build Log
-> 3-14-25: 
+> 4-12-25: 
 >
-> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
-style="height:400px;display: block; margin: auto;"}
+> ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-1.png){: 
+style="height:200px;display: block; margin: auto;"}
+> ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-2.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+> 4-10-25: 
+>
+> ![Alt text](/assets/media/input_media/40/40+_proto_rev0.png){: 
+style="height:200px;display: block; margin: auto;"}
 
 
 ---
@@ -104,7 +132,7 @@ style="height:400px;display: block; margin: auto;"}
 > 3-14-25: 
 >
 > ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
-style="height:400px;display: block; margin: auto;"}
+style="height:200px;display: block; margin: auto;"}
 
 ---
 
@@ -118,7 +146,7 @@ style="height:400px;display: block; margin: auto;"}
 > 3-14-25: 
 >
 > ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
-style="height:400px;display: block; margin: auto;"}
+style="height:200px;display: block; margin: auto;"}
 
 ---
 ## References

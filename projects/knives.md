@@ -14,6 +14,7 @@ repo: "https://github.com/nzge/knives"
 
 ### Components
 - Bushings
+- Washers
 - Tang pins
 
 ## Build Log
@@ -22,6 +23,12 @@ repo: "https://github.com/nzge/knives"
 >
 > ![Alt text](/assets/media/knives_media/balisong-blade_proto1.png){: 
 style="height:400px;display: block; margin: auto;"}
+
+---
+
+# Fixed Blade
+
+## Hardware
 
 ---
 

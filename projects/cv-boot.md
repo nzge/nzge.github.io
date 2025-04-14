@@ -9,11 +9,11 @@ repo: "https://github.com/nzge/cv-boot"
 ---
 
 ## Ribbed
-![Alt text](/assets/media/cv-boot_media/cv-boot_ribbed.png){: 
+![Ribbed CV Boot](/assets/media/cv-boot_media/cv-boot_ribbed.png){: 
 style="height:400px;display: block; margin: auto;"}
 
 ## Ribbless
-![Alt text](/assets/media/cv-boot_media/cv-boot_ribbed.png){: 
+![Ribbless CV Boot](/assets/media/cv-boot_media/cv-boot_ribbed.png){: 
 style="height:400px;display: block; margin: auto;"}
 
 

@@ -7,6 +7,7 @@ image: "placeholder.jpg"
 description: "Display"
 ---
 
+## Code
 
 
 ## Build Log
@@ -15,6 +16,8 @@ description: "Display"
 >
 > ![Alt text](/assets/media/placeholder.JPG){: 
 style="height:400px;display: block; margin: auto;"}
+
+---
 
 ## References
 

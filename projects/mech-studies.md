@@ -11,10 +11,28 @@ toc: true
 
 # FOC (Field oriented Control)
 
+## Build Log
+
+> 5-11-24: 
+>
+> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+style="height:400px;display: block; margin: auto;"}
 
 ---
 
 # Capstan Drive
+
+
+## Build Log
+
+> 5-11-24: 
+>
+> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+--- 
+
+# Harmonic Drive
 
 
 ## Build Log
@@ -39,7 +57,18 @@ style="height:400px;display: block; margin: auto;"}
 
 ---
 
-# Compliant Mechanism 
+# Compliant Mechanisms
+
+## Build Log
+
+> 5-11-24: 
+>
+> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+---
+
+# Rolling Joints
 
 ## Build Log
 

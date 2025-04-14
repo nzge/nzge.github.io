@@ -8,6 +8,10 @@ description: "Aero-package R&D via computational methods"
 repo: "https://github.com/nzge/aero-dev"
 ---
 
+# Rear Wing 
+
+# Simulation
+
 
 ## Build Log
 
@@ -16,6 +20,13 @@ repo: "https://github.com/nzge/aero-dev"
 > ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
+---
+
+# DRS
+
+## Build Log
+
+---
 
 ## References
 

@@ -11,6 +11,12 @@ toc: true
 
 [Link to server](https://raspi.nzge.org/)
 
+## Next.JS
+
+## WebGL
+
+## SQL
+
 
 
 ## Build Log
