@@ -36,6 +36,20 @@ style="height:400px;display: block; margin: auto;"}
 
 ---
 
+# Bikepacking Bag
+
+## General Specs
+
+## Materials and Construction
+
+## Build Log 
+> 5-11-24: 
+>
+> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+---
+
 # Tarp Tent
 
 ## General Specs

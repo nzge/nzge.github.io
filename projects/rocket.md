@@ -13,13 +13,9 @@ toc: true
 
 ## OpenRocket
 
-
 ## Design
 ### Tube
-
 ### Fin-can
-
-
 
 ## Build Log
 > 12-2-23: 
@@ -65,6 +61,6 @@ style="height:400px;display: block; margin: auto;"}
 
 ---
 # References
-
+1. 
 
     
