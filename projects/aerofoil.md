@@ -12,13 +12,11 @@ repo: "https://github.com/nzge/aero-dev"
 
 # Simulation
 
-
 ## Build Log
 
-> 5-11-24: 
+> 5-11-24:
 >
-> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){:style="height:400px;display: block; margin: auto;"}
 
 ---
 
