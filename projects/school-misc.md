@@ -4,7 +4,7 @@ category: "school"
 title: "Miscellaneous items"
 date: 2020-09-10
 image: "school-misc_media/circuit.jpg"
-description: "Gallery of random doohickies"
+description: "Gallery of miscellaneous class projects"
 repo: ""
 ---
 

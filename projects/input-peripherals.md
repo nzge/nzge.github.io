@@ -24,14 +24,14 @@ style="height:200px;display: block; margin: auto;"}
 ### ZMK 
 ### QMK
 
-
-
 ---
-# Hand-wired Macropad
+# Keyboards
 
-## Design
+## Hand-wired Macropad
+
+### Design
 Single body construction
-### Components
+#### Components
 Pro Micro nrF52840
 Diodes
 Heat shrink
@@ -39,11 +39,11 @@ Copper wire
 Switches
 Housing
 
-### Pin Mapping
+#### Pin Mapping
 ![Alt text](/assets/media/input_media/promicro-nrf52840.png){: 
 style="height:200px;display: block; margin: auto;"}
 
-## Build Log
+### Build Log
 > 3-20-25: 
 >
 > ![Alt text](/assets/media/input_media/macro/IMG_0812.jpg){: 
@@ -66,16 +66,15 @@ style="height:200px;display: block; margin: auto;"}
 
 ---
 
-# Macropad with PCB 
+## Macropad with PCB 
 
-## Design
+### Design
 
 
-## PCB 
+### PCB 
 KiCAD
 
-
-## Build Log
+### Build Log
 
 > 4-11-25: 
 >
@@ -84,14 +83,14 @@ style="height:200px;display: block; margin: auto;"}
 
 ---
 
-# Ergo Split
+## Ergo Split
 
-## Design
-## Layout
-## PCB 
+### Design
+### Layout
+### PCB 
 Designed in KiCAD
 
-## Build Log
+### Build Log
 > 3-14-25: 
 >
 > ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
@@ -100,13 +99,13 @@ style="height:200px;display: block; margin: auto;"}
 
 ---
 
-# 40% with Fkeys
+## 40% with Fkeys
 
-## Design
-## Layout
-## PCB 
+### Design
+### Layout
+### PCB 
 
-## Build Log
+### Build Log
 > 4-12-25: 
 >
 > ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-1.png){: 
@@ -122,13 +121,28 @@ style="height:200px;display: block; margin: auto;"}
 
 ---
 
-# HHKB
+## HHKB
 
-## Design
-## Layout
-## PCB
+### Design
+### Layout
+### PCB
 
-## Build Log
+### Build Log
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+---
+# Mice
+
+## Ultralight Mouse
+
+### Design
+### PCB
+### Firmware
+
+### Build Log
 > 3-14-25: 
 >
 > ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
@@ -136,19 +150,34 @@ style="height:200px;display: block; margin: auto;"}
 
 ---
 
-# Ultralight Mouse
+## Keyswitch Mouse
 
-## Design
-## PCB
-## Firmware
+### Design
+### PCB
+### Firmware
 
-## Build Log
+### Build Log
 > 3-14-25: 
 >
 > ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
 style="height:200px;display: block; margin: auto;"}
 
 ---
+
+## Macros Mouse
+
+### Design
+### PCB
+### Firmware
+
+### Build Log
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+---
+
 ## References
 
 ### Macropad Inspiration
