@@ -111,7 +111,7 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#general-info">General Info</a><ul><li><a href="#mcu-selection">MCU Selection</a><ul><li><a href="#microcontroller">Microcontroller</a></li><li><a href="#mcu">MCU</a></li></ul></li><li><a href="#keyboard-matrix-multiplexing">Keyboard Matrix: Multiplexing</a></li><li><a href="#firmware">Firmware</a><ul><li><a href="#zmk">ZMK</a></li><li><a href="#qmk">QMK</a></li></ul></li></ul></li><li><a href="#hand-wired-macropad">Hand-wired Macropad</a><ul><li><a href="#design">Design</a><ul><li><a href="#components">Components</a></li><li><a href="#pin-mapping">Pin Mapping</a></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#macropad-with-pcb">Macropad with PCB</a><ul><li><a href="#design-1">Design</a></li><li><a href="#pcb">PCB</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#ergo-split">Ergo Split</a><ul><li><a href="#design-2">Design</a></li><li><a href="#layout">Layout</a></li><li><a href="#pcb-1">PCB</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#40-with-fkeys">40% with Fkeys</a><ul><li><a href="#design-3">Design</a></li><li><a href="#layout-1">Layout</a></li><li><a href="#pcb-2">PCB</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#hhkb">HHKB</a><ul><li><a href="#design-4">Design</a></li><li><a href="#layout-2">Layout</a></li><li><a href="#pcb-3">PCB</a></li><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#ultralight-mouse">Ultralight Mouse</a><ul><li><a href="#design-5">Design</a></li><li><a href="#pcb-4">PCB</a></li><li><a href="#firmware-1">Firmware</a></li><li><a href="#build-log-5">Build Log</a></li><li><a href="#references">References</a><ul><li><a href="#macropad-inspiration">Macropad Inspiration</a></li><li><a href="#sources">Sources</a></li></ul></li></ul></li></ul>
+      <ul><li><a href="#general-info">General Info</a><ul><li><a href="#mcu-selection">MCU Selection</a><ul><li><a href="#microcontroller">Microcontroller</a></li><li><a href="#mcu">MCU</a></li></ul></li><li><a href="#keyboard-matrix-multiplexing">Keyboard Matrix: Multiplexing</a></li><li><a href="#firmware">Firmware</a><ul><li><a href="#zmk">ZMK</a></li><li><a href="#qmk">QMK</a></li></ul></li></ul></li><li><a href="#keyboards">Keyboards</a><ul><li><a href="#hand-wired-macropad">Hand-wired Macropad</a><ul><li><a href="#design">Design</a><ul><li><a href="#components">Components</a></li><li><a href="#pin-mapping">Pin Mapping</a></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#macropad-with-pcb">Macropad with PCB</a><ul><li><a href="#design-1">Design</a></li><li><a href="#pcb">PCB</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#ergo-split">Ergo Split</a><ul><li><a href="#design-2">Design</a></li><li><a href="#layout">Layout</a></li><li><a href="#pcb-1">PCB</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#40-with-fkeys">40% with Fkeys</a><ul><li><a href="#design-3">Design</a></li><li><a href="#layout-1">Layout</a></li><li><a href="#pcb-2">PCB</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#hhkb">HHKB</a><ul><li><a href="#design-4">Design</a></li><li><a href="#layout-2">Layout</a></li><li><a href="#pcb-3">PCB</a></li><li><a href="#build-log-4">Build Log</a></li></ul></li></ul></li><li><a href="#mice">Mice</a><ul><li><a href="#ultralight-mouse">Ultralight Mouse</a><ul><li><a href="#design-5">Design</a></li><li><a href="#pcb-4">PCB</a></li><li><a href="#firmware-1">Firmware</a></li><li><a href="#build-log-5">Build Log</a></li></ul></li><li><a href="#keyswitch-mouse">Keyswitch Mouse</a><ul><li><a href="#design-6">Design</a></li><li><a href="#pcb-5">PCB</a></li><li><a href="#firmware-2">Firmware</a></li><li><a href="#build-log-6">Build Log</a></li></ul></li><li><a href="#macros-mouse">Macros Mouse</a><ul><li><a href="#design-7">Design</a></li><li><a href="#pcb-6">PCB</a></li><li><a href="#firmware-3">Firmware</a></li><li><a href="#build-log-7">Build Log</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#macropad-inspiration">Macropad Inspiration</a></li><li><a href="#sources">Sources</a></li></ul></li></ul></li></ul>
     </nav>
   
   <div>
@@ -131,11 +131,13 @@
 <h3 id="qmk">QMK</h3>
 
 <hr />
-<h1 id="hand-wired-macropad">Hand-wired Macropad</h1>
+<h1 id="keyboards">Keyboards</h1>
 
-<h2 id="design">Design</h2>
+<h2 id="hand-wired-macropad">Hand-wired Macropad</h2>
+
+<h3 id="design">Design</h3>
 <p>Single body construction</p>
-<h3 id="components">Components</h3>
+<h4 id="components">Components</h4>
 <p>Pro Micro nrF52840
 Diodes
 Heat shrink
@@ -143,10 +145,10 @@ Copper wire
 Switches
 Housing</p>
 
-<h3 id="pin-mapping">Pin Mapping</h3>
+<h4 id="pin-mapping">Pin Mapping</h4>
 <p><img src="/assets/media/input_media/promicro-nrf52840.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
 
-<h2 id="build-log">Build Log</h2>
+<h3 id="build-log">Build Log</h3>
 <blockquote>
   <p>3-20-25:</p>
 
@@ -173,14 +175,14 @@ Housing</p>
 
 <hr />
 
-<h1 id="macropad-with-pcb">Macropad with PCB</h1>
+<h2 id="macropad-with-pcb">Macropad with PCB</h2>
 
-<h2 id="design-1">Design</h2>
+<h3 id="design-1">Design</h3>
 
-<h2 id="pcb">PCB</h2>
+<h3 id="pcb">PCB</h3>
 <p>KiCAD</p>
 
-<h2 id="build-log-1">Build Log</h2>
+<h3 id="build-log-1">Build Log</h3>
 
 <blockquote>
   <p>4-11-25:</p>
@@ -190,14 +192,14 @@ Housing</p>
 
 <hr />
 
-<h1 id="ergo-split">Ergo Split</h1>
+<h2 id="ergo-split">Ergo Split</h2>
 
-<h2 id="design-2">Design</h2>
-<h2 id="layout">Layout</h2>
-<h2 id="pcb-1">PCB</h2>
+<h3 id="design-2">Design</h3>
+<h3 id="layout">Layout</h3>
+<h3 id="pcb-1">PCB</h3>
 <p>Designed in KiCAD</p>
 
-<h2 id="build-log-2">Build Log</h2>
+<h3 id="build-log-2">Build Log</h3>
 <blockquote>
   <p>3-14-25:</p>
 
@@ -206,13 +208,13 @@ Housing</p>
 
 <hr />
 
-<h1 id="40-with-fkeys">40% with Fkeys</h1>
+<h2 id="40-with-fkeys">40% with Fkeys</h2>
 
-<h2 id="design-3">Design</h2>
-<h2 id="layout-1">Layout</h2>
-<h2 id="pcb-2">PCB</h2>
+<h3 id="design-3">Design</h3>
+<h3 id="layout-1">Layout</h3>
+<h3 id="pcb-2">PCB</h3>
 
-<h2 id="build-log-3">Build Log</h2>
+<h3 id="build-log-3">Build Log</h3>
 <blockquote>
   <p>4-12-25:</p>
 
@@ -228,13 +230,29 @@ Housing</p>
 
 <hr />
 
-<h1 id="hhkb">HHKB</h1>
+<h2 id="hhkb">HHKB</h2>
 
-<h2 id="design-4">Design</h2>
-<h2 id="layout-2">Layout</h2>
-<h2 id="pcb-3">PCB</h2>
+<h3 id="design-4">Design</h3>
+<h3 id="layout-2">Layout</h3>
+<h3 id="pcb-3">PCB</h3>
 
-<h2 id="build-log-4">Build Log</h2>
+<h3 id="build-log-4">Build Log</h3>
+<blockquote>
+  <p>3-14-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/macropad-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+<h1 id="mice">Mice</h1>
+
+<h2 id="ultralight-mouse">Ultralight Mouse</h2>
+
+<h3 id="design-5">Design</h3>
+<h3 id="pcb-4">PCB</h3>
+<h3 id="firmware-1">Firmware</h3>
+
+<h3 id="build-log-5">Build Log</h3>
 <blockquote>
   <p>3-14-25:</p>
 
@@ -243,13 +261,13 @@ Housing</p>
 
 <hr />
 
-<h1 id="ultralight-mouse">Ultralight Mouse</h1>
+<h2 id="keyswitch-mouse">Keyswitch Mouse</h2>
 
-<h2 id="design-5">Design</h2>
-<h2 id="pcb-4">PCB</h2>
-<h2 id="firmware-1">Firmware</h2>
+<h3 id="design-6">Design</h3>
+<h3 id="pcb-5">PCB</h3>
+<h3 id="firmware-2">Firmware</h3>
 
-<h2 id="build-log-5">Build Log</h2>
+<h3 id="build-log-6">Build Log</h3>
 <blockquote>
   <p>3-14-25:</p>
 
@@ -257,6 +275,22 @@ Housing</p>
 </blockquote>
 
 <hr />
+
+<h2 id="macros-mouse">Macros Mouse</h2>
+
+<h3 id="design-7">Design</h3>
+<h3 id="pcb-6">PCB</h3>
+<h3 id="firmware-3">Firmware</h3>
+
+<h3 id="build-log-7">Build Log</h3>
+<blockquote>
+  <p>3-14-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/macropad-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
 <h2 id="references">References</h2>
 
 <h3 id="macropad-inspiration">Macropad Inspiration</h3>
