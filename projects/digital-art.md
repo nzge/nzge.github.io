@@ -1,10 +1,17 @@
 ---
 layout: project
 category: "hobby"
-title: "Rendering Art"
+title: "Digital Art"
 date: 2025-03-20
-image: "placeholder.jpg"
-description: "Display"
+image: "digital_media.png"
+description: "Art expressed through digital medium"
+repo: "https://github.com/nzge/"
+toc: true
+---
+
+## Donut
+Everyone's foray into Blender begins with the donut
+
 ---
 
 ## My Desk

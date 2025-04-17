@@ -6,6 +6,7 @@ date: 2022-02-20
 image: "cv-boot.PNG"
 description: "3D-printed ribbed and ribless CV boot mold designs"
 repo: "https://github.com/nzge/cv-boot"
+toc: false
 ---
 
 ## Ribbed
