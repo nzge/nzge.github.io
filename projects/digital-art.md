@@ -3,7 +3,7 @@ layout: project
 category: "hobby"
 title: "Digital Art"
 date: 2025-03-20
-image: "digital_media.png"
+image: "digital-art_media.png"
 description: "Art expressed through digital medium"
 repo: "https://github.com/nzge/"
 toc: true
