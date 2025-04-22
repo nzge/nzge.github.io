@@ -32,7 +32,6 @@ This was my attempt at creating a tilt-rotor drone inspired by Sora's drone in V
 ### Design Considerations
 
 **Basic Motor Thrust Requirement Calculations**
-
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb){:target="_blank"}
 
 

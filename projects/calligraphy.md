@@ -3,7 +3,7 @@ layout: project
 category: "hobby"
 title: "Mega-size Calligraphy Brush"
 date: 2025-03-20
-image: "placeholder.jpg"
+image: "calligraphy.JPG"
 description: "A very large calligraphy brush for street calligraphy"
 ---
 
@@ -13,25 +13,25 @@ description: "A very large calligraphy brush for street calligraphy"
 
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
+    <div class="numbertext">1 / 4</div>
     <img src="/assets/media/calligraphy_media/IMG_5731.JPG" style="width:100%">
     <div class="text">Caption Text</div>
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
+    <div class="numbertext">2 / 4</div>
     <img src="/assets/media/calligraphy_media/IMG_5731.JPG" style="width:100%">
     <div class="text">Caption Two</div>
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
+    <div class="numbertext">3 / 4</div>
     <img src="/assets/media/calligraphy_media/IMG_5731.JPG" style="width:100%">
     <div class="text">Caption Three</div>
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
+    <div class="numbertext">4 / 4</div>
     <img src="/assets/media/calligraphy_media/IMG_5731.JPG" style="width:100%">
     <div class="text">Caption Three</div>
   </div>
@@ -47,6 +47,7 @@ description: "A very large calligraphy brush for street calligraphy"
   <span class="dot" onclick="currentSlide(1)"></span>
   <span class="dot" onclick="currentSlide(2)"></span>
   <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
 </div>
 
 ## Features
