@@ -1,0 +1,199 @@
+<html > 
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathan Ge - Model Rocket</title>
+  <meta name="description" content="G-class hobby rocket with a target apogee of 2,750 ft.">
+  
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/media/nathan/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/media/nathan/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/nathan/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/media/nathan/favicon/site.webmanifest" />
+  
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="My Website" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Model Rocket | My Website</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Model Rocket" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="G-class hobby rocket with a target apogee of 2,750 ft." />
+<meta property="og:description" content="G-class hobby rocket with a target apogee of 2,750 ft." />
+<link rel="canonical" href="http://localhost:4000/projects/rocket.html" />
+<meta property="og:url" content="http://localhost:4000/projects/rocket.html" />
+<meta property="og:site_name" content="My Website" />
+<meta property="og:image" content="http://localhost:4000/model_rocket.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-10T00:00:00-08:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/model_rocket.png" />
+<meta property="twitter:title" content="Model Rocket" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-10T00:00:00-08:00","datePublished":"2023-03-10T00:00:00-08:00","description":"G-class hobby rocket with a target apogee of 2,750 ft.","headline":"Model Rocket","image":"http://localhost:4000/model_rocket.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/rocket.html"},"url":"http://localhost:4000/projects/rocket.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> 
+
+  <!-- stylesheet -->
+  <!-- Automatically include all CSS files in /assets/css/ -->
+      <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<!-- Include js -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+
+  <body>
+
+     <!--------------- navbar starts here --------------->
+<nav class="navbar"> 
+  <div class="name animate__animated animate__fadeInUp" style="display: flex; align-items: center; gap: 10px;">
+    <a href="/index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+      <span>nathan</span> 
+      <img src="/assets/media/nathan/Nathan-red_block.svg" alt="Example Image" style="width: 35px; height: auto; margin-left: 2px;">
+    </a>
+  </div>
+
+  <ul class="nav-select">
+    <li class="nav-item"><a href="/index.html">home.</a></li>
+    <li class="nav-item"><a href="/pages/about.html">about me.</a></li>
+    <li class="nav-item"><a href="/pages/work.html">work.</a></li>
+    <li class="nav-item"><a href="/pages/blog.html">blog.</a></li>
+    <li class="nav-item"><a href="/pages/contact.html">contact.</a></li>
+  </ul>
+</nav>
+
+    
+    <!-- Side Menu -->
+<div class="side-menu">
+    <h3 style="text-align: center;"> Settings </h3>
+    <div class="menu-icons">
+      <label class="switch" alt="Light mode" id="toggleTheme">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+      <img src="/assets/icons/other-icon.svg" alt="Another action" />
+      <!-- Add more icons/buttons as needed -->
+    </div>
+
+</div>
+
+
+
+    <header>
+  <div class="container">
+    <div class="go-back" onclick="goBack()">Go Back</div>
+    <h2>Model Rocket</h2>
+    <a href=https://github.com/nzge/rocket> Repo </a>
+  </div>
+</header>
+
+
+<div class="container">
+  
+    <nav class="toc-box">
+      <p>Table of Contents</p>
+      <ul><li><a href="#basic-rocket">Basic Rocket</a><ul><li><a href="#openrocket">OpenRocket</a></li><li><a href="#design">Design</a><ul><li><a href="#tube">Tube</a></li><li><a href="#fin-can">Fin-can</a></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#stabilized-rocket">Stabilized Rocket</a><ul><li><a href="#active-stabilization">Active Stabilization</a><ul><li><a href="#gimbaled-thrust">Gimbaled thrust</a></li></ul></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#references">References</a></li></ul>
+    </nav>
+  
+  <div>
+    <article class="markdown-body">
+      <h1 id="basic-rocket">Basic Rocket</h1>
+
+<h2 id="openrocket">OpenRocket</h2>
+
+<h2 id="design">Design</h2>
+<h3 id="tube">Tube</h3>
+<h3 id="fin-can">Fin-can</h3>
+
+<h2 id="build-log">Build Log</h2>
+<blockquote>
+  <p>12-2-23:</p>
+
+  <p><img src="/assets/media/rocket_media/12-2-23.jpg" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>11-29-23:</p>
+
+  <p><img src="/assets/media/rocket_media/PXL_20231129_220740221.jpg" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>11-22-23:</p>
+
+  <p><img src="/assets/media/rocket_media/fin-can.JPG" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>11-21-23:</p>
+
+  <p><img src="/assets/media/rocket_media/fiberglass.JPG" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>11-7-23:</p>
+
+  <p><img src="/assets/media/rocket_media/11-7-23_boattail.png" alt="Alt text" style="height:400px;display: block; margin: auto;" />
+<img src="/assets/media/rocket_media/11-7-23_boattail2.png" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h1 id="stabilized-rocket">Stabilized Rocket</h1>
+
+<h2 id="active-stabilization">Active Stabilization</h2>
+
+<h3 id="gimbaled-thrust">Gimbaled thrust</h3>
+
+<h2 id="build-log-1">Build Log</h2>
+<blockquote>
+  <p>11-21-23:</p>
+
+  <p><img src="/assets/media/rocket_media/fiberglass.JPG" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+<h1 id="references">References</h1>
+<ol>
+  <li></li>
+</ol>
+
+
+    </article>
+  </div>
+</div>
+
+    <footer class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s"">
+  <div class="footer-line"></div>
+  <div class="footer-content">
+    <p>&copy; 2025 Nathan Ge</p>
+    <div class="social-icons">
+      <a href="https://github.com/nzge" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com/in/nzge" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/naysun_g" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

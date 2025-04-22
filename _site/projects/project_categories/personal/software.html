@@ -1,0 +1,157 @@
+<html > 
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathan Ge - Software Projects</title>
+  <meta name="description" content="Software focused projects">
+  
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/media/nathan/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/media/nathan/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/nathan/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/media/nathan/favicon/site.webmanifest" />
+  
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="My Website" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Software Projects | My Website</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Software Projects" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Software focused projects" />
+<meta property="og:description" content="Software focused projects" />
+<link rel="canonical" href="http://localhost:4000/projects/project_categories/personal/software.html" />
+<meta property="og:url" content="http://localhost:4000/projects/project_categories/personal/software.html" />
+<meta property="og:site_name" content="My Website" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Software Projects" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Software focused projects","headline":"Software Projects","url":"http://localhost:4000/projects/project_categories/personal/software.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> 
+
+  <!-- stylesheet -->
+  <!-- Automatically include all CSS files in /assets/css/ -->
+      <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<!-- Include js -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+
+  <body>
+
+     <!--------------- navbar starts here --------------->
+<nav class="navbar"> 
+  <div class="name animate__animated animate__fadeInUp" style="display: flex; align-items: center; gap: 10px;">
+    <a href="/index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+      <span>nathan</span> 
+      <img src="/assets/media/nathan/Nathan-red_block.svg" alt="Example Image" style="width: 35px; height: auto; margin-left: 2px;">
+    </a>
+  </div>
+
+  <ul class="nav-select">
+    <li class="nav-item"><a href="/index.html">home.</a></li>
+    <li class="nav-item"><a href="/pages/about.html">about me.</a></li>
+    <li class="nav-item"><a href="/pages/work.html">work.</a></li>
+    <li class="nav-item"><a href="/pages/blog.html">blog.</a></li>
+    <li class="nav-item"><a href="/pages/contact.html">contact.</a></li>
+  </ul>
+</nav>
+
+    
+    <!-- Side Menu -->
+<div class="side-menu">
+    <h3 style="text-align: center;"> Settings </h3>
+    <div class="menu-icons">
+      <label class="switch" alt="Light mode" id="toggleTheme">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+      <img src="/assets/icons/other-icon.svg" alt="Another action" />
+      <!-- Add more icons/buttons as needed -->
+    </div>
+
+</div>
+
+
+
+    <header>
+  <div class="container">
+    <div class="go-back" onclick="goBack()">Go Back</div>
+    <h2>Software Projects</h2>
+    <div class="sort-container">
+      <label for="sortDropdown">Sort by:</label>
+      <select id="sortDropdown" onchange="sortProjects()">
+        <option value="date-newest">Date (Newest)</option>
+        <option value="date-oldest">Date (Oldest)</option>
+        <option value="name-first">Name (A-Z)</option>
+        <option value="name-last">Name (Z-A)</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <section id="projects">
+    
+    
+    <!-- Liquid sorting based on date, from newest to oldest by default -->
+    
+    
+    
+      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Raspberry Pi Web Server" data-date="2025-03-08">
+        <a href="/projects/rpi-web-server.html" class="project-link">
+          <h3>Raspberry Pi Web Server</h3>
+          <img src="/assets/media/rpi-web-app.PNG" alt="Raspberry Pi Web Server">
+        </a>
+        <p>Nextjs web server hosted on Raspberry Pi 5</p>
+      </div>
+    
+      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="Portfolio Site" data-date="2025-02-05">
+        <a href="/projects/portfolio-site.html" class="project-link">
+          <h3>Portfolio Site</h3>
+          <img src="/assets/media/portfolio.PNG" alt="Portfolio Site">
+        </a>
+        <p>Static website powered by Jekyll</p>
+      </div>
+    
+  </section>
+</div>
+
+<div id="projectContainer"></div>
+
+    <footer class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s"">
+  <div class="footer-line"></div>
+  <div class="footer-content">
+    <p>&copy; 2025 Nathan Ge</p>
+    <div class="social-icons">
+      <a href="https://github.com/nzge" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com/in/nzge" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/naysun_g" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

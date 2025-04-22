@@ -1,0 +1,348 @@
+<html > 
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathan Ge - Input Peripherals</title>
+  <meta name="description" content="An investigation into the customization potential of input devices and their core functionality.">
+  
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/media/nathan/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/media/nathan/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/nathan/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/media/nathan/favicon/site.webmanifest" />
+  
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="My Website" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Input Peripherals | My Website</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Input Peripherals" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An investigation into the customization potential of input devices and their core functionality." />
+<meta property="og:description" content="An investigation into the customization potential of input devices and their core functionality." />
+<link rel="canonical" href="http://localhost:4000/projects/input-peripherals.html" />
+<meta property="og:url" content="http://localhost:4000/projects/input-peripherals.html" />
+<meta property="og:site_name" content="My Website" />
+<meta property="og:image" content="http://localhost:4000/macropad.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-02-20T00:00:00-08:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/macropad.png" />
+<meta property="twitter:title" content="Input Peripherals" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-20T00:00:00-08:00","datePublished":"2022-02-20T00:00:00-08:00","description":"An investigation into the customization potential of input devices and their core functionality.","headline":"Input Peripherals","image":"http://localhost:4000/macropad.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/input-peripherals.html"},"url":"http://localhost:4000/projects/input-peripherals.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> 
+
+  <!-- stylesheet -->
+  <!-- Automatically include all CSS files in /assets/css/ -->
+      <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<!-- Include js -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+
+  <body>
+
+     <!--------------- navbar starts here --------------->
+<nav class="navbar"> 
+  <div class="name animate__animated animate__fadeInUp" style="display: flex; align-items: center; gap: 10px;">
+    <a href="/index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+      <span>nathan</span> 
+      <img src="/assets/media/nathan/Nathan-red_block.svg" alt="Example Image" style="width: 35px; height: auto; margin-left: 2px;">
+    </a>
+  </div>
+
+  <ul class="nav-select">
+    <li class="nav-item"><a href="/index.html">home.</a></li>
+    <li class="nav-item"><a href="/pages/about.html">about me.</a></li>
+    <li class="nav-item"><a href="/pages/work.html">work.</a></li>
+    <li class="nav-item"><a href="/pages/blog.html">blog.</a></li>
+    <li class="nav-item"><a href="/pages/contact.html">contact.</a></li>
+  </ul>
+</nav>
+
+    
+    <!-- Side Menu -->
+<div class="side-menu">
+    <h3 style="text-align: center;"> Settings </h3>
+    <div class="menu-icons">
+      <label class="switch" alt="Light mode" id="toggleTheme">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+      <img src="/assets/icons/other-icon.svg" alt="Another action" />
+      <!-- Add more icons/buttons as needed -->
+    </div>
+
+</div>
+
+
+
+    <header>
+  <div class="container">
+    <div class="go-back" onclick="goBack()">Go Back</div>
+    <h2>Input Peripherals</h2>
+    <a href=https://github.com/nzge/input-peripherals> Repo </a>
+  </div>
+</header>
+
+
+<div class="container">
+  
+    <nav class="toc-box">
+      <p>Table of Contents</p>
+      <ul><li><a href="#general-info">General Info</a><ul><li><a href="#mcu-selection">MCU Selection</a><ul><li><a href="#microcontroller">Microcontroller</a></li><li><a href="#mcu">MCU</a></li></ul></li><li><a href="#keyboard-matrix-multiplexing">Keyboard Matrix: Multiplexing</a></li><li><a href="#firmware">Firmware</a><ul><li><a href="#zmk">ZMK</a></li><li><a href="#qmk">QMK</a></li></ul></li></ul></li><li><a href="#keyboards">Keyboards</a><ul><li><a href="#hand-wired-macropad">Hand-wired Macropad</a><ul><li><a href="#design">Design</a><ul><li><a href="#components">Components</a></li><li><a href="#pin-mapping">Pin Mapping</a></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#macropad-with-pcb">Macropad with PCB</a><ul><li><a href="#design-1">Design</a></li><li><a href="#pcb">PCB</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#ergo-split">Ergo Split</a><ul><li><a href="#design-2">Design</a></li><li><a href="#layout">Layout</a></li><li><a href="#pcb-1">PCB</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#40-with-fkeys">40% with Fkeys</a><ul><li><a href="#design-3">Design</a></li><li><a href="#layout-1">Layout</a></li><li><a href="#pcb-2">PCB</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#hhkb">HHKB</a><ul><li><a href="#design-4">Design</a></li><li><a href="#layout-2">Layout</a></li><li><a href="#pcb-3">PCB</a></li><li><a href="#build-log-4">Build Log</a></li></ul></li></ul></li><li><a href="#mice">Mice</a><ul><li><a href="#ultralight-mouse">Ultralight Mouse</a><ul><li><a href="#design-5">Design</a></li><li><a href="#pcb-4">PCB</a></li><li><a href="#firmware-1">Firmware</a></li><li><a href="#build-log-5">Build Log</a></li></ul></li><li><a href="#keyswitch-mouse">Keyswitch Mouse</a><ul><li><a href="#design-6">Design</a></li><li><a href="#pcb-5">PCB</a></li><li><a href="#firmware-2">Firmware</a></li><li><a href="#build-log-6">Build Log</a></li></ul></li><li><a href="#macros-mouse">Macros Mouse</a><ul><li><a href="#design-7">Design</a></li><li><a href="#pcb-6">PCB</a></li><li><a href="#firmware-3">Firmware</a></li><li><a href="#build-log-7">Build Log</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#macropad-inspiration">Macropad Inspiration</a></li><li><a href="#sources">Sources</a></li></ul></li></ul></li></ul>
+    </nav>
+  
+  <div>
+    <article class="markdown-body">
+      <h1 id="general-info">General Info</h1>
+
+<h2 id="mcu-selection">MCU Selection</h2>
+<h3 id="microcontroller">Microcontroller</h3>
+<p><img src="/assets/media/input_media/promicro-nrf52840.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="mcu">MCU</h3>
+
+<h2 id="keyboard-matrix-multiplexing">Keyboard Matrix: Multiplexing</h2>
+
+<h2 id="firmware">Firmware</h2>
+<h3 id="zmk">ZMK</h3>
+<h3 id="qmk">QMK</h3>
+
+<hr />
+<h1 id="keyboards">Keyboards</h1>
+
+<h2 id="hand-wired-macropad">Hand-wired Macropad</h2>
+
+<h3 id="design">Design</h3>
+<p>Single body construction</p>
+<h4 id="components">Components</h4>
+<p>Pro Micro nrF52840
+Diodes
+Heat shrink
+Copper wire
+Switches
+Housing</p>
+
+<h4 id="pin-mapping">Pin Mapping</h4>
+<p><img src="/assets/media/input_media/promicro-nrf52840.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="build-log">Build Log</h3>
+<blockquote>
+  <p>3-20-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/IMG_0812.jpg" alt="Alt text" style="height:200px; display:block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>3-18-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/IMG_0783.JPG" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>3-14-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/macro-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>8-21-24: Test fit JWICK tactiles</p>
+
+  <p><img src="/assets/media/input_media/macro/test-fit.jpg" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="macropad-with-pcb">Macropad with PCB</h2>
+
+<h3 id="design-1">Design</h3>
+
+<h3 id="pcb">PCB</h3>
+<p>KiCAD</p>
+
+<h3 id="build-log-1">Build Log</h3>
+
+<blockquote>
+  <p>4-11-25:</p>
+
+  <p><img src="/assets/media/input_media/macro-pcb-proto.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="ergo-split">Ergo Split</h2>
+
+<h3 id="design-2">Design</h3>
+<h3 id="layout">Layout</h3>
+<h3 id="pcb-1">PCB</h3>
+<p>Designed in KiCAD</p>
+
+<h3 id="build-log-2">Build Log</h3>
+<blockquote>
+  <p>3-14-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/macropad-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="40-with-fkeys">40% with Fkeys</h2>
+
+<h3 id="design-3">Design</h3>
+<h3 id="layout-1">Layout</h3>
+<h3 id="pcb-2">PCB</h3>
+
+<h3 id="build-log-3">Build Log</h3>
+<blockquote>
+  <p>4-12-25:</p>
+
+  <p><img src="/assets/media/input_media/40/40+_schematic_rev0-1.png" alt="Alt text" style="height:200px;display: block; margin: auto;" />
+<img src="/assets/media/input_media/40/40+_schematic_rev0-2.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>4-10-25:</p>
+
+  <p><img src="/assets/media/input_media/40/40+_proto_rev0.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="hhkb">HHKB</h2>
+
+<h3 id="design-4">Design</h3>
+<h3 id="layout-2">Layout</h3>
+<h3 id="pcb-3">PCB</h3>
+
+<h3 id="build-log-4">Build Log</h3>
+<blockquote>
+  <p>3-14-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/macropad-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+<h1 id="mice">Mice</h1>
+
+<h2 id="ultralight-mouse">Ultralight Mouse</h2>
+
+<h3 id="design-5">Design</h3>
+<h3 id="pcb-4">PCB</h3>
+<h3 id="firmware-1">Firmware</h3>
+
+<h3 id="build-log-5">Build Log</h3>
+<blockquote>
+  <p>3-14-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/macropad-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="keyswitch-mouse">Keyswitch Mouse</h2>
+
+<h3 id="design-6">Design</h3>
+<h3 id="pcb-5">PCB</h3>
+<h3 id="firmware-2">Firmware</h3>
+
+<h3 id="build-log-6">Build Log</h3>
+<blockquote>
+  <p>3-14-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/macropad-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="macros-mouse">Macros Mouse</h2>
+
+<h3 id="design-7">Design</h3>
+<h3 id="pcb-6">PCB</h3>
+<h3 id="firmware-3">Firmware</h3>
+
+<h3 id="build-log-7">Build Log</h3>
+<blockquote>
+  <p>3-14-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/macropad-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="references">References</h2>
+
+<h3 id="macropad-inspiration">Macropad Inspiration</h3>
+<ol>
+  <li><a href="https://www.youtube.com/watch?v=hjml-K-pV4E">How to Build a Handwired Keyboard by Joe Scotto</a></li>
+  <li><a href="https://www.youtube.com/watch?v=7azQkSu0m_U">How to Design Mechanical Keyboard Plates and Cases</a></li>
+</ol>
+
+<h3 id="sources">Sources</h3>
+
+<!-- Hidden references trigger the footnote rendering -->
+<p><span id="hidden-references"><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup></span></p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>K. Ogata. <em>Modern Control Engineering</em>. Pearson, 2010. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://example.com">“Stewart Platform Control”</a>, Accessed March 6, 2025. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p><strong>Book:</strong> K. Ogata. <em>Modern Control Engineering</em>. Pearson, 2010. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p><strong>Website:</strong> <a href="https://example.com">“Stewart Platform Control”</a>. Accessed: March 6, 2025. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p><strong>Journal:</strong> Doe, J. <em>Optimization of Robotic Mechanisms</em>. <em>Journal of Robotics Research</em>, Vol. 25, 2023, pp. 45-60. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p><strong>Technical Report:</strong> NASA. <em>Adaptive Control for Space Robotics</em>. Tech Report No. 4567, 2022. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    </article>
+  </div>
+</div>
+
+    <footer class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s"">
+  <div class="footer-line"></div>
+  <div class="footer-content">
+    <p>&copy; 2025 Nathan Ge</p>
+    <div class="social-icons">
+      <a href="https://github.com/nzge" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com/in/nzge" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/naysun_g" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

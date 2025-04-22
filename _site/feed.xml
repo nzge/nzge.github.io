@@ -1,1 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-11T18:29:56-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">My Website</title><subtitle>my personal website</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-04-22T13:28:47-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">My Website</title><subtitle>my personal website</subtitle><entry><title type="html">Test</title><link href="http://localhost:4000/2025/04/10/Test.html" rel="alternate" type="text/html" title="Test" /><published>2025-04-10T00:00:00-07:00</published><updated>2025-04-10T00:00:00-07:00</updated><id>http://localhost:4000/2025/04/10/Test</id><content type="html" xml:base="http://localhost:4000/2025/04/10/Test.html">&lt;p&gt;A banana is an edible fruit – botanically a berry – produced by several
+kinds of large herbaceous flowering plants in the genus Musa.&lt;/p&gt;
+
+&lt;p&gt;In some countries, bananas used for cooking may be called “plantains”,
+distinguishing them from dessert bananas. The fruit is variable in size,
+color, and firmness, but is usually elongated and curved, with soft
+flesh rich in starch covered with a rind, which may be green, yellow,
+red, purple, or brown when ripe.&lt;/p&gt;</content><author><name>nzge</name></author><summary type="html">A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa.</summary></entry><entry><title type="html">First post</title><link href="http://localhost:4000/2025/04/09/First-Post.html" rel="alternate" type="text/html" title="First post" /><published>2025-04-09T00:00:00-07:00</published><updated>2025-04-09T00:00:00-07:00</updated><id>http://localhost:4000/2025/04/09/First%20Post</id><content type="html" xml:base="http://localhost:4000/2025/04/09/First-Post.html">&lt;p&gt;A banana is an edible fruit – botanically a berry – produced by several
+kinds of large herbaceous flowering plants in the genus Musa.&lt;/p&gt;
+
+&lt;p&gt;In some countries, bananas used for cooking may be called “plantains”,
+distinguishing them from dessert bananas. The fruit is variable in size,
+color, and firmness, but is usually elongated and curved, with soft
+flesh rich in starch covered with a rind, which may be green, yellow,
+red, purple, or brown when ripe.&lt;/p&gt;</content><author><name>nzge</name></author><summary type="html">A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa.</summary></entry><entry><title type="html">Tested</title><link href="http://localhost:4000/2025/03/06/Tested.html" rel="alternate" type="text/html" title="Tested" /><published>2025-03-06T00:00:00-08:00</published><updated>2025-03-06T00:00:00-08:00</updated><id>http://localhost:4000/2025/03/06/Tested</id><content type="html" xml:base="http://localhost:4000/2025/03/06/Tested.html">&lt;p&gt;A banana is an edible fruit – botanically a berry – produced by several
+kinds of large herbaceous flowering plants in the genus Musa.&lt;/p&gt;
+
+&lt;p&gt;In some countries, bananas used for cooking may be called “plantains”,
+distinguishing them from dessert bananas. The fruit is variable in size,
+color, and firmness, but is usually elongated and curved, with soft
+flesh rich in starch covered with a rind, which may be green, yellow,
+red, purple, or brown when ripe.&lt;/p&gt;</content><author><name>nzge</name></author><summary type="html">A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa.</summary></entry></feed>
