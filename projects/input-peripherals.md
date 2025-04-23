@@ -40,28 +40,28 @@ Switches
 Housing
 
 #### Pin Mapping
-![Alt text](/assets/media/input_media/promicro-nrf52840.png){: 
+![Alt text](/assets/media/input_media/macro/promicro-nrf52840.png){: 
 style="height:200px;display: block; margin: auto;"}
 
 ### Build Log
 > 3-20-25: 
 >
-> ![Alt text](/assets/media/input_media/macro/IMG_0812.jpg){: 
+> ![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0812.jpg){: 
 style="height:200px; display:block; margin: auto;"}
 
 > 3-18-25: 
 >
-> ![Alt text](/assets/media/input_media/macro/IMG_0783.JPG){: 
+> ![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0783.JPG){: 
 style="height:200px;display: block; margin: auto;"}
 
 > 3-14-25: 
 >
-> ![Alt text](/assets/media/input_media/macro/macro-proto_3-14-25.png){: 
+> ![Alt text](/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png){: 
 style="height:200px;display: block; margin: auto;"}
 
 > 8-21-24: Test fit JWICK tactiles 
 >
-> ![Alt text](/assets/media/input_media/macro/test-fit.jpg){: 
+> ![Alt text](/assets/media/input_media/macro/hand-wire/test-fit.jpg){: 
 style="height:200px;display: block; margin: auto;"}
 
 ---
@@ -78,7 +78,7 @@ KiCAD
 
 > 4-11-25: 
 >
-> ![Alt text](/assets/media/input_media/macro-pcb-proto.png){: 
+> ![Alt text](/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png){: 
 style="height:200px;display: block; margin: auto;"}
 
 ---

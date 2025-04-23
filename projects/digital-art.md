@@ -21,6 +21,12 @@ Everyone's foray into Blender begins with the donut
 
 --- 
 
+## My Desk
+
+
+## Build Log
+
+--- 
 ## References
 
 This project was inspired by recent studies on control systems[^1] and previous research on Stewart platforms[^2].

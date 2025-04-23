@@ -7,6 +7,8 @@ image: "calligraphy.JPG"
 description: "A very large calligraphy brush for street calligraphy"
 ---
 
+
+
 ## Inspiration
 <!-- Slideshow container -->
 <div class="slideshow-container">
@@ -20,19 +22,19 @@ description: "A very large calligraphy brush for street calligraphy"
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 4</div>
-    <img src="/assets/media/calligraphy_media/IMG_5731.JPG" style="width:100%">
+    <img src="/assets/media/calligraphy_media/IMG_8237.JPG" style="width:100%">
     <div class="text">Caption Two</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 4</div>
-    <img src="/assets/media/calligraphy_media/IMG_5731.JPG" style="width:100%">
+    <img src="/assets/media/calligraphy_media/IMG_8225.JPG" style="width:100%">
     <div class="text">Caption Three</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">4 / 4</div>
-    <img src="/assets/media/calligraphy_media/IMG_5731.JPG" style="width:100%">
+    <img src="/assets/media/calligraphy_media/IMG_5736.JPG" style="width:100%">
     <div class="text">Caption Three</div>
   </div>
 
