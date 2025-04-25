@@ -75,11 +75,14 @@ void Servos::setServoAngles(uint16_t angles[]) {
 }
 ```
 
+### Inverse Kinematics
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Stewart-Platform/blob/main/stewart_inverse-kinematics.ipynb){:target="_blank"}
+
+
 ### PID Control
 
 
-### Inverse Kinematics
-$e=mc^2$
+
 
 ### Web Interface
 Next.js webserver hosted on Raspberry Pi 5 displays control interface. ROS backend integration takes keypresses, button presses, and mouse clicks and transforms it into commands that the Stewart platform can interpret. 

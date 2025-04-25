@@ -8,8 +8,8 @@ layout: default
     <div class="sort-container">
       <label for="sortDropdown">Sort by:</label>
       <select id="sortDropdown" onchange="sortProjects()">
-        <option value="date-newest">Date (Newest)</option>
         <option value="date-oldest">Date (Oldest)</option>
+        <option value="date-newest">Date (Newest)</option>
         <option value="name-first">Name (A-Z)</option>
         <option value="name-last">Name (Z-A)</option>
       </select>
@@ -22,7 +22,7 @@ layout: default
     {% assign category_subtype = page.subtype %}
     {% assign sub_projects = site.pages | where: "category", category_subtype %}
     <!-- Liquid sorting based on date, from newest to oldest by default -->
-    {% assign sorted_projects = sub_projects | sort: 'date' | reverse %}
+    {% assign sorted_projects = sub_projects | sort: 'date' %}
     
     {% for project in sorted_projects %}
       <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="{{ project.title }}" data-date="{{ project.date | date: '%Y-%m-%d' }}">
