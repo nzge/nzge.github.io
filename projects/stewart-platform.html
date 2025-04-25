@@ -137,12 +137,12 @@ Platform
 Top Plate</p>
 
 <h3 id="schematic">Schematic</h3>
-<p><img src="https://raw.githubusercontent.com/nzge/stewart-platform/main/stewart-schematic_bb.svg?sanitize=true" alt="Stewart Platform Schematic" style="width:400px; height:400px;display: block; margin: auto;" /></p>
+<p><img src="https://raw.githubusercontent.com/nzge/stewart-platform/main/stewart-wiring/stewart-schematic_bb.svg?sanitize=true" alt="Stewart Platform Schematic" style="width:400px; height:400px;display: block; margin: auto;" /></p>
 
 <h3 id="dimensions">Dimensions</h3>
 <p>Simple base, platform, and link proportion calculations formatted in a csv file through Jupyter notebook serve as global variables to parametrize CAD model.</p>
 
-<p><a href="https://colab.research.google.com/github/nzge/Stewart-Platform/blob/main/stewart-sizing-calcs.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" /></a></p>
+<p><a href="https://colab.research.google.com/github/nzge/Stewart-Platform/blob/main/stewart-measure/stewart-sizing-calcs.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" /></a></p>
 
 <h2 id="software-design">Software Design</h2>
 
@@ -180,7 +180,18 @@ Top Plate</p>
 <h3 id="inverse-kinematics">Inverse Kinematics</h3>
 <p><a href="https://colab.research.google.com/github/nzge/Stewart-Platform/blob/main/stewart_inverse-kinematics.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" /></a></p>
 
+<p>The inverse kinematic derivation is not incredibly complex, but not completely non-trivial. I won’t expound upon the derivation in exceptional detail here, as there are many online resources that present the derivation clearer that I am capable of. <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">1</a></sup> However, here is the general form of the angle derived from the inverse kinematic computation.</p>
+
+\[\begin{gathered}
+\alpha=\sin^{-1}{\frac{\mathrm{L}}{\sqrt{\mathrm{M}^{2}+\mathrm{N}^{2}}}}\cdot\tan^{-1}{\frac{\mathrm{N}}{\mathrm{M}}} \\
+\mathrm{where}\\
+\quad L=l^{2}-(s^{2}-a^{2}) \\
+\mathrm{M}=2\mathrm{a}\left(z_{p}-z_{b}\right) \\
+\mathrm{N}=2\mathrm{a}\left[\cos\beta\left(x_{p}-x_{b}\right)+\sin\beta\left(y_{p}-y_{b}\right)\right]
+\end{gathered}\]
+
 <h3 id="pid-control">PID Control</h3>
+<p>I employed a simple positional control PID algorithm to stabilize the position of a ball placed on top of the platform</p>
 
 <h3 id="web-interface">Web Interface</h3>
 <p>Next.js webserver hosted on Raspberry Pi 5 displays control interface. ROS backend integration takes keypresses, button presses, and mouse clicks and transforms it into commands that the Stewart platform can interpret.</p>
@@ -188,32 +199,32 @@ Top Plate</p>
 <h3 id="ros-integration">ROS Integration</h3>
 <p>Travel router provides a contained subnetwork for wireless connection between host computer, raspberry pi webserver, and raspberry pico.</p>
 
-<p>Micro-ROS Agent
+<p>Micro-ROS Agent<br />
 Micro-ROS on Pico</p>
 
 <h2 id="build-log">Build Log</h2>
 <blockquote>
   <p>3-29-25: Refined CAD for printing</p>
 
-  <p><img src="/assets/media/stewart-platform_media/stewart-proto_3-13-25.JPG" alt="3-29-25 stewart proto" style="height:400px;display: block; margin: auto;" /></p>
+  <p><img src="/assets/media/stewart-platform_media/IMG_0815.JPG" alt="3-29-25 stewart proto" style="height:400px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <blockquote>
   <p>3-20-25: Refined CAD for printing</p>
 
-  <p><img src="/assets/media/stewart-platform_media/stewart-proto_3-13-25.JPG" alt="3-20-25 stewart test fit" style="height:400px;display: block; margin: auto;" /></p>
+  <p><img src="/assets/media/stewart-platform_media/IMG_0745.jpg" alt="3-20-25 stewart test fit" style="height:400px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <blockquote>
   <p>3-13-25: Refined CAD for printing</p>
 
-  <p><img src="/assets/media/stewart-platform_media/stewart-proto_3-13-25.JPG" alt="3-13-25 stewart proto" style="height:400px;display: block; margin: auto;" /></p>
+  <p><img src="/assets/media/stewart-platform_media/stewart-proto_3-13-25.png" alt="3-13-25 stewart proto" style="height:400px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <blockquote>
   <p>3-11-25: CAD prototype</p>
 
-  <p><img src="/assets/media/stewart-platform_media/stewart-proto.JPG" alt="3-11-25 stewart proto" style="height:400px;display: block; margin: auto;" /></p>
+  <p><img src="/assets/media/stewart-platform_media/stewart-proto.png" alt="3-11-25 stewart proto" style="height:400px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <blockquote>
@@ -222,40 +233,33 @@ Micro-ROS on Pico</p>
   <p><img src="/assets/media/stewart-platform_media/servo-test.JPG" alt="3-6-25 servo test" style="height:400px;display: block; margin: auto;" /></p>
 </blockquote>
 
+<hr />
+
 <h2 id="references">References</h2>
-<p>This project was inspired by recent studies on control systems<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> and previous research on Stewart platforms<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.</p>
+
 <h3 id="inspiration">Inspiration</h3>
 <ol>
   <li><a href="https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/">3DOF STEWART PLATFORM: ECE4760 MICROCONTROLLERS FINAL PROJECT</a></li>
   <li><a href="https://www.instructables.com/Stewart-Platform/">Stewart Platform by thiagohersan</a></li>
   <li><a href="https://www.youtube.com/watch?v=kAaYaZcpbLo&amp;list=PLTqchMECawAp3Q6hHfBDlCq_db-DOYmcD&amp;index=28">Ball Balancing Robot by Aaed Musa</a></li>
-  <li><a href="https://yichuan33.blogspot.com/2017/11/6-dof-stewart-platform.html">6-DOF Stewart Platfor by Yichuan Wang</a>
-    <h3 id="sources">Sources</h3>
-  </li>
+  <li><a href="https://yichuan33.blogspot.com/2017/11/6-dof-stewart-platform.html">6-DOF Stewart Platfor by Yichuan Wang</a></li>
 </ol>
 
+<h3 id="sources">Sources</h3>
+
 <!-- Hidden references trigger the footnote rendering -->
-<p><span id="hidden-references"> <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup></span></p>
+<p><span id="hidden-references"> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">2</a></sup> <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> [^4]</span></p>
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>K. Ogata. <em>Modern Control Engineering</em>. Pearson, 2010. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
     <li id="fn:2" role="doc-endnote">
-      <p><a href="https://content.instructables.com/FFI/8ZXW/I55MMY14/FFI8ZXWI55MMY14.pdf">“Stewart Platform Control”</a>, Accessed March 6, 2025. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>Robert Eisele. <em>Inverse Kinematics of a Stewart Platform</em>. Feb 2019. <a href="https://raw.org/paper/inverse-kinematics-of-a-stewart-platform/">“Inverse Kinematics of a Stewart Platform”</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="https://content.instructables.com/FFI/8ZXW/I55MMY14/FFI8ZXWI55MMY14.pdf">“Stewart Platform Control”</a>, Accessed March 6, 2025. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:3" role="doc-endnote">
-      <p><strong>Book:</strong> K. Ogata. <em>Modern Control Engineering</em>. Pearson, 2010. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:4" role="doc-endnote">
-      <p><strong>Website:</strong> <a href="https://example.com">“Stewart Platform Control”</a>. Accessed: March 6, 2025. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:5" role="doc-endnote">
-      <p><strong>Journal:</strong> Doe, J. <em>Optimization of Robotic Mechanisms</em>. <em>Journal of Robotics Research</em>, Vol. 25, 2023, pp. 45-60. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:6" role="doc-endnote">
-      <p><strong>Technical Report:</strong> NASA. <em>Adaptive Control for Space Robotics</em>. Tech Report No. 4567, 2022. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>K. Ogata. <em>Modern Control Engineering</em>. Pearson, 2010. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
