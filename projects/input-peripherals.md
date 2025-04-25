@@ -10,19 +10,35 @@ toc: true
 ---
 
 # General Info
-
-## MCU Selection 
-### Microcontroller
+## Keyboards
+### MCU Selection 
+#### Microcontroller
+Bluetooth: nice! nano
 ![Alt text](/assets/media/input_media/promicro-nrf52840.png){: 
 style="height:200px;display: block; margin: auto;"}
+#### MCU
+nrf52480
+### Keyboard Matrix: Multiplexing
+The keyboard matrix is the fundamental idea behind the operation of any and all keyboard-adjacent input devices.
+### Firmware
+#### [QMK](https://qmk.fm/)
+[My fork of QMK](https://github.com/nzge/qmk_firmware)  
+Quantum Mechanical Keyboard (QMK) firmware is an improved version of the TMK firmware made by Hasu, with improvied programmability and microcontroller compatibility. VIA builds upon QMK by 
+offering a GUI with simplified/graphical layout firmware configuration and additional features such as plug and play (no flashing), RGB controls, switch tester, etc.
+QMK is general suitable for wired keyboard designs that employ Atmel AVR and ARM architecture.
+https://www.reddit.com/r/MechanicalKeyboards/comments/hjh61v/what_is_qmk/
+#### [ZMK](https://zmk.dev/)
+[My fork of ZMK](https://github.com/nzge/zmk-config)  
+ZMK Firmware is an open source (MIT) keyboard firmware built on the Zephyr™ Project Real Time Operating System (RTOS). ZMK's goal is to provide a modern and powerful firmware that is designed for power-efficiency, flexibility, and broad hardware support. 
+ZMK is capable of being used for both wired and wireless input devices.
+ZMK is easier to implement and support both wired(unibody) and wireless options
+ZMK is has greater compatibility, notably in wireless applications. However, users say ZMK lags slightly behind in terms of ease-of-use features.
+There is also TMK and KMK. TMK is mostly deprecated, and is a Circuit Python keyboard firmware. ZMK and QMK are the more common options.
 
-### MCU
-
-## Keyboard Matrix: Multiplexing
-
-## Firmware
-### ZMK 
-### QMK
+## Mice
+### Firmware
+The open-source support from the community is far more limited for mice.
+[https://github.com/biomurph/Mouse](https://github.com/biomurph/Mouse)
 
 ---
 # Keyboards
@@ -184,13 +200,11 @@ style="height:200px;display: block; margin: auto;"}
 1. [How to Build a Handwired Keyboard by Joe Scotto](https://www.youtube.com/watch?v=hjml-K-pV4E)
 2. [How to Design Mechanical Keyboard Plates and Cases](https://www.youtube.com/watch?v=7azQkSu0m_U)
 
+### Mice Inspiration
+1. 
+
 ### Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
-[^2]: ["Stewart Platform Control"](https://example.com), Accessed March 6, 2025.  
-[^3]: **Book:** K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
-[^4]: **Website:** ["Stewart Platform Control"](https://example.com). Accessed: March 6, 2025.  
-[^5]: **Journal:** Doe, J. *Optimization of Robotic Mechanisms*. *Journal of Robotics Research*, Vol. 25, 2023, pp. 45-60.  
-[^6]: **Technical Report:** NASA. *Adaptive Control for Space Robotics*. Tech Report No. 4567, 2022.  
 
 <!-- Hidden references trigger the footnote rendering -->
 <span id="hidden-references">[^1] [^2] [^3] [^4] [^5] [^6]</span>
