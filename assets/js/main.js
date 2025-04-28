@@ -62,8 +62,6 @@ function sortProjects() {
 }
 
 
-
-
 // Slideshow
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -93,3 +91,26 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+
+// Toggle Collapse for Code Blocks
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("highlight").forEach(block => {
+    // Create a toggle button
+    const toggleButton = document.createElement("button");
+    toggleButton.textContent = "Toggle Code";
+    toggleButton.style.marginBottom = "5px";
+    toggleButton.style.background = "#44475a";
+    toggleButton.style.color = "#f8f8f2";
+    toggleButton.style.border = "none";
+    toggleButton.style.padding = "5px 10px";
+    toggleButton.style.borderRadius = "5px";
+    toggleButton.style.cursor = "pointer";
+
+    block.parentNode.insertBefore(toggleButton, block);
+
+    toggleButton.addEventListener("click", () => {
+      block.classList.toggle("collapsed");
+    });
+  });
+});

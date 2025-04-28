@@ -158,17 +158,53 @@
 <h2 id="hardware-design">Hardware Design</h2>
 
 <h3 id="components">Components</h3>
-<ul>
-  <li>LiPo Battery</li>
-  <li>ESC (electronic speed control): takes desired motor inputs from teensy to control and regulate the speed of motors</li>
-  <li>UBEC (universal battery elimination circuit): Converts LiPo battery’s higher source voltage into usable power for teensy and Raspberry Pi Pico</li>
-  <li>Brushless Motors: Primary source of thrust/locomotion</li>
-  <li>Servos: Tilts the motors to enable thrust vectoring</li>
-  <li>Propellors: Attached to the motors for thrust production</li>
-  <li>Teensy: Low-level stabilization control</li>
-  <li>Raspberry Pi Pico: High-level controller that feeds control inputs to the teensy from the raspberry pi web server. Relays telemetry data from the teensy back to the web server</li>
-  <li>Raspberry Pi 5: Hosts web server that provides a gui for sending control inputs to the drone via pico. Data/telemetry visualization</li>
-</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="">LiPo Battery</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">ESC (electronic speed control)</a></td>
+      <td>takes desired motor inputs from teensy to control and regulate the speed of motors</td>
+    </tr>
+    <tr>
+      <td><a href="">UBEC (universal battery elimination circuit)</a></td>
+      <td>Converts LiPo battery’s higher source voltage into usable power for teensy and Raspberry Pi Pico</td>
+    </tr>
+    <tr>
+      <td><a href="">Brushless Motors</a></td>
+      <td>Primary source of thrust/locomotion</td>
+    </tr>
+    <tr>
+      <td><a href="">Servos</a></td>
+      <td>Tilts the motors to enable thrust vectoring</td>
+    </tr>
+    <tr>
+      <td><a href="">Propellors</a></td>
+      <td>Attached to the motors for thrust production</td>
+    </tr>
+    <tr>
+      <td><a href="">Teensy 4.0</a></td>
+      <td>Low-level stabilization control</td>
+    </tr>
+    <tr>
+      <td><a href="">Raspberry Pi Pico</a></td>
+      <td>High-level controller that feeds control inputs to the teensy from the raspberry pi web server. Relays telemetry data from the teensy back to the web server</td>
+    </tr>
+    <tr>
+      <td><a href="">Raspberry Pi 5</a></td>
+      <td>Hosts web server that provides a gui for sending control inputs to the drone via pico. Data/telemetry visualization</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="schematic">Schematic</h3>
 <p><img src="https://raw.githubusercontent.com/nzge/drone/main/drone-schematic_bb.svg?sanitize=true" alt="Drone Schematic" style="width:400px; height:400px;display: block; margin: auto;" /></p>

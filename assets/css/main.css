@@ -1,10 +1,30 @@
+/*
 .highlight {
   background-color: #22212C;
   border: 1px solid #22212C;
   border-radius: 7px;
   margin: 20px 0 20px 0;
   overflow: auto;
-  padding: 7px; }
+  padding: 7px;
+}
+*/
+.highlight {
+  background-color: #22212C;
+  border: 1px solid #22212C;
+  border-radius: 7px;
+  margin: 20px 0;
+  overflow: hidden;
+  padding: 7px;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  max-height: 500px;
+  position: relative; }
+  .highlight.collapsed {
+    max-height: 0;
+    padding: 0; }
+  .highlight pre {
+    margin: 0;
+    padding: 7px;
+    overflow: auto; }
 
 code {
   font-family: 'Bitstream Vera Sans Mono','Courier', monospace;
@@ -334,6 +354,25 @@ code {
     padding: 0.2em 0.4em;
     border-radius: 3px;
     font-size: 0.95em; }
+  .markdown-body table {
+    width: 100%;
+    margin: 2em auto;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid #44475a; }
+  .markdown-body th, .markdown-body td {
+    border: 1px solid #44475a;
+    padding: 12px 15px; }
+  .markdown-body th {
+    background-color: #282a36;
+    color: #f8f8f2;
+    font-weight: bold; }
+  .markdown-body td {
+    background-color: #1e1f29;
+    color: #f8f8f2; }
+  .markdown-body tr:nth-child(even) td {
+    background-color: #232531; }
 
 /*--------------- Variables --------------- */
 /*--------------- Navbar --------------- */
@@ -710,6 +749,11 @@ a {
 #hidden-references {
   display: none; }
 
+/* Center tables on the page */
+.markdown-preview-view table {
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
 /*--------------- Typewriter Effect --------------- */
 .line {
   width: 24em;
@@ -834,14 +878,24 @@ form {
   /* Padding inside the box */
   margin-bottom: 20px;
   /* Space below the TOC box */
-  background-color: transparent;
-  /* Light background color */
   border-radius: 8px;
-  /* Optional rounded corners */ }
+  /* Optional rounded corners */
+  color: teal;
+  /*background-color: transparent; */
+  background-image: url("/assets/media/random/stars.png");
+  background-repeat: repeat;
+  background-size: auto; }
   .toc-box p {
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center; }
+  .toc-box a {
+    color: inherit;
+    text-decoration: none; }
+  .toc-box a:visited {
+    color: inherit; }
+  .toc-box a:hover {
+    text-decoration: underline; }
 
 .section-nav {
   background-color: transparent;
