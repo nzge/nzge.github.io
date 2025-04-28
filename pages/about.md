@@ -6,7 +6,7 @@ title: About
 Mechanical Engineering student with an interest in robotics and industrial design, and an unbridled curiosity for the world. A proponent of open-source. 
 
 **Technical proficiencies:**  
-*CAD:* Solidworks, KiCAD, Fusion360  
+*CAD:* Solidworks, Fusion360, OnShape, KiCAD
 *Simulation:* ANSYS, Star-CCM+  
 *Programming:*
 - Computation: Python (pandas, numpy, scikit-learn), C++, MATLAB, Labview

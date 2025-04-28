@@ -10,7 +10,7 @@ toc: true
 ---
 
 # General Info
-## Keyboards
+
 ### MCU Selection 
 #### Microcontroller
 Bluetooth: nice! nano
@@ -36,6 +36,14 @@ ZMK is has greater compatibility, notably in wireless applications. However, use
 There is also TMK and KMK. TMK is mostly deprecated, and is a Circuit Python keyboard firmware. ZMK and QMK are the more common options.
 
 ## Mice
+### Motion Sensor
+Laser
+
+Optical
+mx8650
+https://github.com/styropyr0/MX8650
+pmw3360
+https://www.tindie.com/products/jkicklighter/pmw3360-motion-sensor/
 ### Firmware
 The open-source support from the community is far more limited for mice.
 [https://github.com/biomurph/Mouse](https://github.com/biomurph/Mouse)
@@ -124,10 +132,9 @@ style="height:200px;display: block; margin: auto;"}
 ### Build Log
 > 4-12-25: 
 >
-> ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-1.png){: 
-style="height:200px;display: block; margin: auto;"}
-> ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-2.png){: 
-style="height:200px;display: block; margin: auto;"}
+> MCU Schematic            |  Key Matrix
+:-------------------------:|:-------------------------:
+![Alt text](/assets/media/input_media/40/40+_schematic_rev0-1.png){: style="height:200px;display: block; margin: auto;"}   |  ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-2.png){: style="height:200px;display: block; margin: auto;"}
 
 > 4-10-25: 
 >
@@ -201,7 +208,9 @@ style="height:200px;display: block; margin: auto;"}
 2. [How to Design Mechanical Keyboard Plates and Cases](https://www.youtube.com/watch?v=7azQkSu0m_U)
 
 ### Mice Inspiration
-1. 
+1. [I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything](https://www.youtube.com/watch?v=qmX8vL-GbxU)
+2. [](https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb)
+3. [I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim](https://www.youtube.com/watch?v=9CQqasv5_qo&t=208s)
 
 ### Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  

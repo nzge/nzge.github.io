@@ -11,11 +11,13 @@ toc: true
 
 # FOC (Field oriented Control)
 
+https://simplefoc.com/
+
 ## Build Log
 
 > 5-11-24: 
 >
-> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+> ![Alt text](/assets/media/mechanism_media/prints.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 ---
@@ -27,7 +29,7 @@ style="height:400px;display: block; margin: auto;"}
 
 > 5-11-24: 
 >
-> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+> ![Alt text](/assets/media/mechanism_media/prints.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 --- 
@@ -39,19 +41,21 @@ style="height:400px;display: block; margin: auto;"}
 
 > 5-11-24: 
 >
-> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+> ![Alt text](/assets/media/mechanism_media/prints.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 --- 
 
 # Cycloidal Drive
 
+## Parametric Model
+
 
 ## Build Log
 
 > 5-11-24: 
 >
-> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+> ![Alt text](/assets/media/mechanism_media/prints.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 
@@ -63,7 +67,7 @@ style="height:400px;display: block; margin: auto;"}
 
 > 5-11-24: 
 >
-> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+> ![Alt text](/assets/media/mechanism_media/prints.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 ---
@@ -74,19 +78,41 @@ style="height:400px;display: block; margin: auto;"}
 
 > 5-11-24: 
 >
-> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+> ![Alt text](/assets/media/mechanism_media/prints.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 
 ---
 
+# Continuous Variable Transmission
+
+## Build Log
+
+> 5-11-24: 
+>
+> ![Alt text](/assets/media/mechanism_media/prints.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+
+---
 ## References
 
-This project was inspired by recent studies on control systems[^1] and previous research on Stewart platforms[^2].
+### Compliant Mechanisms
+1. [BYU CMR](https://compliantmechanisms.byu.edu/maker-resources)
+2. ["How to create effective compliant mechanisms with 3D printing" - Teaching Tech](https://www.youtube.com/watch?v=xV36ITRjP_4)
+
+### Cycloidal
+1. ["The BEST Way to Design a Cycloidal Drive in 2024" - Nelson Howe](https://www.youtube.com/watch?v=HDVCgaDknyM&t=7s)
+2. ["Parametric Cycloidal Gear Drive (Fusion 360)" - Aaed Musa](https://www.youtube.com/watch?v=qDtFj4PE3-o)
+3. ["How to Design a Cycloidal Disk in Fusion 360" - Levi Janssen](https://www.youtube.com/watch?v=jQ6LQBFZXmU&t=776s)
+4. ["Designing a cycloidal drive in Python and Fusion 360" - RoTechnic](https://www.youtube.com/live/y9vLVXjz2c0?app=desktop&t=457s)
+
+### Harmonic
+1. ["What is Strain Wave Gear a.k.a. Harmonic Drive? A Perfect Gear Set For Robotics Applications!?" - How To Mechatronics](https://www.youtube.com/watch?v=xlnNj9F37MA)
 
 ### Sources
-
-[^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
+[^1]: https://github.com/woodenCaliper/CycloidalDrive
+[^2]: https://github.com/roTechnic/CycloidalDesign
 [^2]: ["Stewart Platform Control"](https://example.com), Accessed March 6, 2025.  
 [^3]: **Book:** K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
 [^4]: **Website:** ["Stewart Platform Control"](https://example.com). Accessed: March 6, 2025.  
