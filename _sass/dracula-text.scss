@@ -59,4 +59,34 @@
     border-radius: 3px;
     font-size: 0.95em;
   }
+
+   // TABLES
+   table {
+    width: 100%;
+    margin: 2em auto;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.03); // slight highlight
+    border: 1px solid #44475a;
+  }
+
+  th, td {
+    border: 1px solid #44475a;
+    padding: 12px 15px;
+  }
+
+  th {
+    background-color: #282a36;
+    color: #f8f8f2;
+    font-weight: bold;
+  }
+
+  td {
+    background-color: #1e1f29;
+    color: #f8f8f2;
+  }
+
+  tr:nth-child(even) td {
+    background-color: #232531; // subtle alternate row color
+  }
 }

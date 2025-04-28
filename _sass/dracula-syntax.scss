@@ -1,3 +1,4 @@
+/*
 .highlight {
   background-color: #22212C;
   border: 1px solid #22212C;
@@ -6,6 +7,31 @@
   overflow: auto;
   padding: 7px;
 }
+*/
+
+.highlight {
+  background-color: #22212C;
+  border: 1px solid #22212C;
+  border-radius: 7px;
+  margin: 20px 0;
+  overflow: hidden; // changed to hidden for collapse animation
+  padding: 7px;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  max-height: 500px; // default open
+  position: relative;
+
+  &.collapsed {
+    max-height: 0;
+    padding: 0;
+  }
+
+  pre {
+    margin: 0;
+    padding: 7px;
+    overflow: auto;
+  }
+}
+
 
 code {
   font-family: 'Bitstream Vera Sans Mono','Courier', monospace;

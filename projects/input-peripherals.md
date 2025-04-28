@@ -11,8 +11,8 @@ toc: true
 
 # General Info
 
-### MCU Selection 
-#### Microcontroller
+## MCU Selection 
+### Microcontroller
 Bluetooth: nice! nano
 ![Alt text](/assets/media/input_media/promicro-nrf52840.png){: 
 style="height:200px;display: block; margin: auto;"}
@@ -23,7 +23,7 @@ The keyboard matrix is the fundamental idea behind the operation of any and all 
 ### Firmware
 #### [QMK](https://qmk.fm/)
 [My fork of QMK](https://github.com/nzge/qmk_firmware)  
-Quantum Mechanical Keyboard (QMK) firmware is an improved version of the TMK firmware made by Hasu, with improvied programmability and microcontroller compatibility. VIA builds upon QMK by 
+Quantum Mechanical Keyboard (QMK) firmware is an improved version of the TMK firmware made by Hasu, with improved programmability and microcontroller compatibility. VIA builds upon QMK by 
 offering a GUI with simplified/graphical layout firmware configuration and additional features such as plug and play (no flashing), RGB controls, switch tester, etc.
 QMK is general suitable for wired keyboard designs that employ Atmel AVR and ARM architecture.
 https://www.reddit.com/r/MechanicalKeyboards/comments/hjh61v/what_is_qmk/
@@ -54,14 +54,18 @@ The open-source support from the community is far more limited for mice.
 ## Hand-wired Macropad
 
 ### Design
-Single body construction
+Unibody construction
+For my first design, I kept it simple. 
 #### Components
-Pro Micro nrF52840
-Diodes
-Heat shrink
-Copper wire
-Switches
-Housing
+
+| Item         | Description |
+|--------------|------|
+| [Pro Micro nRF52840](https://www.aliexpress.us/item/3256807783872448.html?spm=a2g0o.productlist.main.1.7f97412cFmkPgZ&algo_pvid=6620151d-2b6a-4130-98c6-9ad4570e99f9&algo_exp_id=6620151d-2b6a-4130-98c6-9ad4570e99f9-0&pdp_ext_f=%7B%22order%22%3A%22980%22%2C%22eval%22%3A%221%22%2C%22orig_sl_item_id%22%3A%221005007970187200%22%2C%22orig_item_id%22%3A%221005008079431976%22%7D&pdp_npi=4%40dis%21USD%213.60%211.80%21%21%2126.16%2113.08%21%40210312d517458248843083517e9190%2112000043081959970%21sea%21US%214467253674%21X&curPageLogUid=U7yGAfNlG6GQ&utparam-url=scene%3Asearch%7Cquery_from%3A) | Cheap alternative to nice!nanov2. BLE and lipo charging capability |
+| [DO-35 IN4148 High-speed Switching Diodes](https://www.aliexpress.us/item/3256805848952479.html?spm=a2g0o.order_list.order_list_main.65.7ddc1802EYblLy&gatewayAdapt=glo2usa)   | Prevent ghosting (when multiple, unintended key presses register as a single press when multiple keys are pressed simultaneously. Diodes ensure that the current only flows in one direction, preventing unintended paths through the matrix when multiple switches are closed)  |
+| [Heat shrink](https://www.aliexpress.us/item/3256804442290103.html?spm=a2g0o.order_list.order_list_main.35.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Electrical isolation between rows and columns |
+| [1.5mm Bare Copper wire](https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Wiring to form rows and columns |
+| [JWK Black T1 Tactile Switches](https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457)    | Switches |
+| Housing     | 3D printed using PLA |
 
 #### Pin Mapping
 ![Alt text](/assets/media/input_media/macro/promicro-nrf52840.png){: 
@@ -134,7 +138,7 @@ style="height:200px;display: block; margin: auto;"}
 >
 > MCU Schematic            |  Key Matrix
 :-------------------------:|:-------------------------:
-![Alt text](/assets/media/input_media/40/40+_schematic_rev0-1.png){: style="height:200px;display: block; margin: auto;"}   |  ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-2.png){: style="height:200px;display: block; margin: auto;"}
+![Alt text](/assets/media/input_media/40/40+_schematic_rev0-1.png){: style="height:400px;display: block; margin: auto;"}   |  ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-2.png){: style="height:400px;display: block; margin: auto;"}
 
 > 4-10-25: 
 >
@@ -201,18 +205,18 @@ style="height:200px;display: block; margin: auto;"}
 
 ---
 
-## References
+# References
 
-### Macropad Inspiration
+## Macropad Inspiration
 1. [How to Build a Handwired Keyboard by Joe Scotto](https://www.youtube.com/watch?v=hjml-K-pV4E)
 2. [How to Design Mechanical Keyboard Plates and Cases](https://www.youtube.com/watch?v=7azQkSu0m_U)
 
-### Mice Inspiration
+## Mice Inspiration
 1. [I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything](https://www.youtube.com/watch?v=qmX8vL-GbxU)
 2. [](https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb)
 3. [I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim](https://www.youtube.com/watch?v=9CQqasv5_qo&t=208s)
 
-### Sources
+## Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
 
 <!-- Hidden references trigger the footnote rendering -->

@@ -52,15 +52,19 @@ This was my attempt at creating a tilt-rotor drone inspired by Sova's drone in V
 
 
 ### Components
-- LiPo Battery
-- ESC (electronic speed control): takes desired motor inputs from teensy to control and regulate the speed of motors
-- UBEC (universal battery elimination circuit): Converts LiPo battery's higher source voltage into usable power for teensy and Raspberry Pi Pico
-- Brushless Motors: Primary source of thrust/locomotion
-- Servos: Tilts the motors to enable thrust vectoring
-- Propellors: Attached to the motors for thrust production
-- Teensy: Low-level stabilization control
-- Raspberry Pi Pico: High-level controller that feeds control inputs to the teensy from the raspberry pi web server. Relays telemetry data from the teensy back to the web server
-- Raspberry Pi 5: Hosts web server that provides a gui for sending control inputs to the drone via pico. Data/telemetry visualization 
+
+| Item             | Link |
+|------------------|------|
+| [LiPo Battery]() |  |
+| [ESC (electronic speed control)]() |  takes desired motor inputs from teensy to control and regulate the speed of motors|
+| [UBEC (universal battery elimination circuit)]() | Converts LiPo battery's higher source voltage into usable power for teensy and Raspberry Pi Pico|
+| [Brushless Motors]() | Primary source of thrust/locomotion |
+| [Servos]() | Tilts the motors to enable thrust vectoring |
+| [Propellors]() | Attached to the motors for thrust production |
+| [Teensy 4.0]() | Low-level stabilization control |
+| [Raspberry Pi Pico]() | High-level controller that feeds control inputs to the teensy from the raspberry pi web server. Relays telemetry data from the teensy back to the web server |
+| [Raspberry Pi 5]() | Hosts web server that provides a gui for sending control inputs to the drone via pico. Data/telemetry visualization |
+ 
 
 ### Schematic
 <img src="https://raw.githubusercontent.com/nzge/drone/main/drone-schematic_bb.svg?sanitize=true" alt="Drone Schematic" style="width:400px; height:400px;display: block; margin: auto;">
