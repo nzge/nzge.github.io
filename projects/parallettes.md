@@ -33,13 +33,13 @@ Simple Wood Designs
 
   <div class="mySlides fade">
     <div class="numbertext">4 / 5</div>
-    <img src="/assets/media/parallettes_media/inspiration/simple-wood3.png" style="width:100%">
+    <img src="/assets/media/parallettes_media/inspiration/simple-wood4.png" style="width:100%">
     <div class="text">Caption Three</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">5 / 5</div>
-    <img src="/assets/media/parallettes_media/inspiration/simple-wood3.png" style="width:100%">
+    <img src="/assets/media/parallettes_media/inspiration/simple-wood5.png" style="width:100%">
     <div class="text">Caption Three</div>
   </div>
 
@@ -145,3 +145,4 @@ style="height:400px;display: block; margin: auto;"}
 
 ## References
 
+1. [12 BEST Push-Up Bars for Calisthenics | Mini Parallettes Comparison by Calisthenics Worldwide](https://www.youtube.com/watch?v=yOmqRXeuD_4)

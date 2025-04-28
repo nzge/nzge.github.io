@@ -54,7 +54,7 @@ The open-source support from the community is far more limited for mice.
 ## Hand-wired Macropad
 
 ### Design
-Unibody construction
+Unibody construction\
 For my first design, I kept it simple. 
 #### Components
 
