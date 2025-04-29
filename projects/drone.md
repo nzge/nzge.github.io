@@ -292,14 +292,14 @@ OpenGL/WebGL
 
 ---
 
-## References
+# References
 
-### Inspiration
+## Inspiration
 1. V22 Osprey by Tom Stanton
 - [Part 1](https://www.youtube.com/watch?v=55G-mwT9uCE)
 - [Part 2](https://www.youtube.com/watch?v=HitJ8r9HwBg&t=792s)
 
-### Sources
+## Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010. 
 [^2]: ["Stewart Platform Control"](https://content.instructables.com/FFI/8ZXW/I55MMY14/FFI8ZXWI55MMY14.pdf), Accessed March 6, 2025.  
 [^3]: **Book:** K. Ogata. *Modern Control Engineering*. Pearson, 2010.  

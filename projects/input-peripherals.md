@@ -17,7 +17,10 @@ Bluetooth: nice! nano
 ![Alt text](/assets/media/input_media/promicro-nrf52840.png){: 
 style="height:200px;display: block; margin: auto;"}
 #### MCU
-nrf52480
+nrf52480  
+stm  
+atmega  
+
 ### Keyboard Matrix: Multiplexing
 The keyboard matrix is the fundamental idea behind the operation of any and all keyboard-adjacent input devices.
 ### Firmware
@@ -170,10 +173,9 @@ style="height:200px;display: block; margin: auto;"}
 ### Firmware
 
 ### Build Log
-> 3-14-25: 
+> 4-29-25: 
 >
-> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
-style="height:200px;display: block; margin: auto;"}
+> ![Alt text](/assets/media/input_media/mice/ul-mouse/ul-mouse_schematic_rev0-1.png){: style="height:400px;display: block; margin: auto;"}
 
 ---
 
@@ -184,10 +186,10 @@ style="height:200px;display: block; margin: auto;"}
 ### Firmware
 
 ### Build Log
-> 3-14-25: 
+> 4-28-25: 
 >
-> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
-style="height:200px;display: block; margin: auto;"}
+> ![Alt text](/assets/media/input_media/mice/keyswitch-mouse/keyswitch-mouse_schematic_rev0-1.png){: 
+style="height:400px;display: block; margin: auto;"}
 
 ---
 
