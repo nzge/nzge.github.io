@@ -10,124 +10,53 @@ repo: ""
 
 ## Inspiration
 
+
+
 Simple Wood Designs
-<div class="slideshow-container">
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 5</div>
-    <img src="/assets/media/parallettes_media/inspiration/simple-wood.png" style="width:100%">
-    <div class="text">Caption Text</div>
-  </div>
+<div id="my-slideshow"></div>
+<script>
+  const slides = [
+    { src: "/assets/media/parallettes_media/inspiration/simple-wood.png", caption: "Caption Text" },
+    { src: "/assets/media/parallettes_media/inspiration/simple-wood2.png", caption: "Caption Two" },
+    { src: "/assets/media/parallettes_media/inspiration/simple-wood3.png", caption: "Caption Three" },
+    { src: "/assets/media/parallettes_media/inspiration/simple-wood4.png", caption: "Caption Four" },
+    { src: "/assets/media/parallettes_media/inspiration/simple-wood5.png", caption: "Caption Five" }
+  ];
+  new Slideshow(slides, 'my-slideshow');
+</script>
 
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 5</div>
-    <img src="/assets/media/parallettes_media/inspiration/simple-wood2.png" style="width:100%">
-    <div class="text">Caption Two</div>
-  </div>
+Complicated Wood Designs
+<div id="my-slideshow1"></div>
+<script>
+  const slides1 = [
+    { src: "/assets/media/parallettes_media/inspiration/wood.png", caption: "Caption Text" },
+    { src: "/assets/media/parallettes_media/inspiration/wood2.png", caption: "Caption Two" },
+    { src: "/assets/media/parallettes_media/inspiration/wood3.png", caption: "Caption Three" },
+    { src: "/assets/media/parallettes_media/inspiration/wood4.png", caption: "Caption Four" },
+  ];
+  new Slideshow(slides1, 'my-slideshow1');
+</script>
 
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 5</div>
-    <img src="/assets/media/parallettes_media/inspiration/simple-wood3.png" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
+3-D Printed Designs
+<div id="my-slideshow2"></div>
+<script>
+  const slides2 = [
+    { src: "/assets/media/parallettes_media/inspiration/3d-print.png", caption: "Caption Text" },
+    { src: "/assets/media/parallettes_media/inspiration/3d-print2.png", caption: "Caption Two" },
+    { src: "/assets/media/parallettes_media/inspiration/3d-print3.png", caption: "Caption Three" },
+  ];
+  new Slideshow(slides2, 'my-slideshow2');
+</script>
 
-  <div class="mySlides fade">
-    <div class="numbertext">4 / 5</div>
-    <img src="/assets/media/parallettes_media/inspiration/simple-wood4.png" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">5 / 5</div>
-    <img src="/assets/media/parallettes_media/inspiration/simple-wood5.png" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
-
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
-
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
-</div>
-
-More Complicated Wood Designs
-<div class="slideshow-container">
-
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 4</div>
-    <img src="/assets/media/parallettes_media/inspiration/wood.png" style="width:100%">
-    <div class="text">Caption Text</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 4</div>
-    <img src="/assets/media/parallettes_media/inspiration/wood2.png" style="width:100%">
-    <div class="text">Caption Two</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 4</div>
-    <img src="/assets/media/parallettes_media/inspiration/wood3.png" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">4 / 4</div>
-    <img src="/assets/media/parallettes_media/inspiration/wood4.png" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
-
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-</div>
-
-3D Printed Designs
-<div class="slideshow-container">
-
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="/assets/media/parallettes_media/inspiration/3d-print.png" style="width:100%">
-    <div class="text">Caption Text</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="/assets/media/parallettes_media/inspiration/3d-print2.png" style="width:100%">
-    <div class="text">Caption Two</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="/assets/media/parallettes_media/inspiration/3d-print3.png" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
-
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>
+Hardware Designs
+<div id="my-slideshow3"></div>
+<script>
+  const slides3 = [
+    { src: "/assets/media/parallettes_media/inspiration/hardware1.png", caption: "Caption Text" },
+    { src: "/assets/media/parallettes_media/inspiration/hardware2.png", caption: "Caption Two" },
+  ];
+  new Slideshow(slides3, 'my-slideshow3');
+</script>
 
 ## Features
 
@@ -145,4 +74,4 @@ style="height:400px;display: block; margin: auto;"}
 
 ## References
 
-1. [12 BEST Push-Up Bars for Calisthenics | Mini Parallettes Comparison by Calisthenics Worldwide](https://www.youtube.com/watch?v=yOmqRXeuD_4)
+1. [12 BEST Push-Up Bars for Calisthenics: Mini Parallettes Comparison by Calisthenics Worldwide](https://www.youtube.com/watch?v=yOmqRXeuD_4)

@@ -1,0 +1,123 @@
+// Slideshow
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+
+//slideshow
+document.addEventListener("DOMContentLoaded", () => {
+  const slideshows = document.querySelectorAll('.slideshow-container');
+
+  slideshows.forEach((container, index) => {
+    const slides = container.querySelectorAll('.mySlides');
+    const dots = container.parentElement.querySelectorAll('.dot');
+
+    container.dataset.slideIndex = 1;
+    showSlides(1, container, slides, dots);
+  });
+});
+
+function plusSlides(n, el) {
+  const container = el.closest('.slideshow-container');
+  const slides = container.querySelectorAll('.mySlides');
+  const dots = container.parentElement.querySelectorAll('.dot');
+  let index = +container.dataset.slideIndex;
+  showSlides(index + n, container, slides, dots);
+}
+
+function currentSlide(n, el) {
+  const container = el.closest('.slideshow-container');
+  const slides = container.querySelectorAll('.mySlides');
+  const dots = container.parentElement.querySelectorAll('.dot');
+  showSlides(n, container, slides, dots);
+}
+
+function showSlides(n, container, slides, dots) {
+  if (n > slides.length) n = 1;
+  if (n < 1) n = slides.length;
+
+  container.dataset.slideIndex = n;
+
+  slides.forEach((slide, index) => {
+    slide.style.display = "none";
+
+    // Dynamically insert the slide number text
+    const numberText = slide.querySelector(".numbertext");
+    if (numberText) {
+      numberText.textContent = `${index + 1} / ${slides.length}`;
+    }
+  });
+
+  if (dots.length) dots.forEach(dot => dot.classList.remove("active"));
+
+  slides[n - 1].style.display = "block";
+  if (dots.length) dots[n - 1].classList.add("active");
+}
+
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 4</div>
+    <img src="/assets/media/calligraphy_media/IMG_5731.JPG" style="width:100%">
+    <div class="text">Caption Text</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 4</div>
+    <img src="/assets/media/calligraphy_media/IMG_8237.JPG" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 4</div>
+    <img src="/assets/media/calligraphy_media/IMG_8225.JPG" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="/assets/media/calligraphy_media/IMG_5736.JPG" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1, this)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, this)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1, this)"></span>
+  <span class="dot" onclick="currentSlide(2, this)"></span>
+  <span class="dot" onclick="currentSlide(3, this)"></span>
+  <span class="dot" onclick="currentSlide(4, this)"></span>
+</div>
