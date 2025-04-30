@@ -1,0 +1,22 @@
+<!-- /music.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Music Player</title>
+</head>
+<body>
+  <audio id="bgMusic" autoplay loop>
+    <source src="/assets/audio/ambient.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Optional: Ensure audio starts after first gesture, for stricter browsers
+    document.addEventListener('click', () => {
+      const music = document.getElementById('bgMusic');
+      if (music.paused) music.play();
+    });
+  </script>
+</body>
+</html>

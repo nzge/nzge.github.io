@@ -11,7 +11,7 @@
   <!-- favicon -->
   <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/assets/media/nathan/favicon/favicon.svg" />
-  <link rel="shortcut icon" href="/assets/media/nathan/favicon/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/medianathan/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/nathan/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/assets/media/nathan/favicon/site.webmanifest" />
   
@@ -50,6 +50,7 @@
 <!-- Include js -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/assets/js/main.js"></script>
+<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
@@ -59,10 +60,10 @@
     }
   };
 </script>
-
+  
 
   <body>
-    
+
      <!--------------- navbar starts here --------------->
 <nav class="navbar"> 
   <div class="name animate__animated animate__fadeInUp" style="display: flex; align-items: center; gap: 10px;">
@@ -97,7 +98,15 @@
 
 
 
-    <header>
+    <div class="gif-left">
+  <img id="gif-left" alt="Left GIF">
+</div>
+
+<div class="gif-right">
+  <img id="gif-right" alt="Right GIF">
+</div>
+
+<header>
   <div class="container">
     <div class="go-back" onclick="goBack()">Go Back</div>
     <h2>Kelvin Helmholtz Instability</h2>
@@ -129,6 +138,7 @@
     <footer class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s"">
   <div class="footer-line"></div>
   <div class="footer-content">
+    <img src="/assets/media/!misc/random/wwwbutton.gif" alt="www">
     <p>&copy; 2025 Nathan Ge</p>
     <div class="social-icons">
       <a href="https://github.com/nzge" target="_blank"><i class="fab fa-github"></i></a>
@@ -138,6 +148,8 @@
     </div>
   </div>
 </footer>
-
+    
   </body>
+
 </html>
+
