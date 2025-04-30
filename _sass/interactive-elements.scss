@@ -220,9 +220,9 @@ select {
 .side-menu {
   position: fixed;
   top: 50%;
-  right: -135px;
+  right: -125px;
   transform: translateY(-80%);
-  width: 125px;
+  width: 150px;
   background-color: rgba(24, 22, 22, 0.4);
   border-radius: 10px 0 0 10px;
   transition: right 0.3s ease-in-out;
@@ -325,7 +325,7 @@ input:checked + .slider:before {
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
-  height: 400px;
+  height: 500px;
   position: relative;
   margin: auto;
 
@@ -413,3 +413,29 @@ input:checked + .slider:before {
   }
 }
 
+
+/*--------------- Back to Top --------------- */
+#backToTop {
+  display: none; // hidden by default
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 9999;
+  font-size: 24px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: opacity 0.3s, transform 0.3s;
+
+  pointer-events: auto;
+
+  &:hover {
+    background-color: #555;
+    transform: scale(1.1);
+  }
+}

@@ -9,15 +9,14 @@ jQuery(window).on('load', function(){
 });
 
 
-
+///////////////////////////////
 
 // JavaScript function to go back to the previous page
 function goBack() {
     window.history.back();
 }
 
-
-
+///////////////////////////////
 
 // Function to dynamically sort the projects based on the selected option
 function sortProjects() {
@@ -61,6 +60,7 @@ function sortProjects() {
   });
 }
 
+///////////////////////////////
 
 // Toggle Collapse for Code Blocks
 document.addEventListener("DOMContentLoaded", () => {
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
+///////////////////////////////
 
 class Slideshow {
   constructor(slidesData, targetId) {
@@ -188,5 +188,20 @@ class Slideshow {
     });
   }
 }
+
+///////////////////////////////
+
+//back to top button
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('backToTop');
+  //Show button when scrolled down
+  window.addEventListener('scroll', () => {
+    btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  //bring back to top
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
 
 

@@ -2,13 +2,15 @@
   {% include head.html %}
 
   <body>
-
-    {% include navbar.html %}
     
+    {% include navbar.html %}
+
     {% include side-menu.html %}
 
     {{ content }}
 
+    <button id="backToTop" title="Back to top">↑</button>
+    
     {% include footer.html %}
 
   </body>
