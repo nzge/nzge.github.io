@@ -33,8 +33,8 @@ This was my attempt at creating a tilt-rotor drone inspired by Sova's drone in V
 
 | Item             | Description |
 |------------------|------|
-| [LiPo Battery]() |  |
-| [ESC (electronic speed control)]() |  takes desired motor inputs from teensy to control and regulate the speed of motors|
+| [LiPo Battery]() | Power source |
+| [ESC (electronic speed control)]() |  Takes desired motor inputs from teensy to control and regulate the speed of motors|
 | [UBEC (universal battery elimination circuit)]() | Converts LiPo battery's higher source voltage into usable power for teensy and Raspberry Pi Pico|
 | [Brushless Motors]() | Primary source of thrust/locomotion |
 | [Servos]() | Tilts the motors to enable thrust vectoring |

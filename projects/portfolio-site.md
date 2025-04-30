@@ -87,12 +87,6 @@ Taken from https://github.com/allejo/jekyll-toc
 {% include footer.html %}
 ```
 
-
-
-
-
-
-
 ### layouts
 Broader scope page templates for markdown pages (about page, contact page, project pages, etc.)
 
@@ -155,7 +149,6 @@ plugins:
   - htmlcompressor
   - htmlbeautifier
   # - jekyll-toc
-
 
 collections:
   projects:
@@ -293,6 +286,12 @@ style="height:300px;display: block; margin: auto;"}
 > ![Alt text](/assets/media/portfolio_media/3-6-25.PNG){: 
 style="height:300px;display: block; margin: auto;"}
 
+> 2-29-25: Contact page
+>
+> ![Alt text](/assets/media/portfolio_media/2-29-25.PNG){: 
+style="height:300px;display: block; margin: auto;"}
+
+
 > 2-25-25: Project sorting/display structuring
 >
 > ![Alt text](/assets/media/portfolio_media/2-25-25.PNG){: 
@@ -316,10 +315,11 @@ Assets:
 - https://cyber.dabamos.de/
 - https://gifcities.org/
 
-1. https://jekyllrb.com/docs/
-2. https://sass-lang.com/documentation/at-rules/import/
-3. w3schools
-- css: https://www.w3schools.com/css/default.asp
-- html: https://www.w3schools.com/html/default.asp
-- js: https://www.w3schools.com/js/default.asp
-4. https://developer.mozilla.org/en-US/docs/Web/CSS 
+Learning Resourcess:
+- https://jekyllrb.com/docs/
+- https://sass-lang.com/documentation/at-rules/import/
+- w3schools
+  - css: https://www.w3schools.com/css/default.asp
+  - html: https://www.w3schools.com/html/default.asp
+  - js: https://www.w3schools.com/js/default.asp
+- https://developer.mozilla.org/en-US/docs/Web/CSS 
