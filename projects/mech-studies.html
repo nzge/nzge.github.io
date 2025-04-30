@@ -119,13 +119,25 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#foc-field-oriented-control">FOC (Field oriented Control)</a><ul><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#capstan-drive">Capstan Drive</a><ul><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#harmonic-drive">Harmonic Drive</a><ul><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#cycloidal-drive">Cycloidal Drive</a><ul><li><a href="#parametric-model">Parametric Model</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#compliant-mechanisms">Compliant Mechanisms</a><ul><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#rolling-joints">Rolling Joints</a><ul><li><a href="#build-log-5">Build Log</a></li></ul></li><li><a href="#continuous-variable-transmission">Continuous Variable Transmission</a><ul><li><a href="#build-log-6">Build Log</a></li><li><a href="#references">References</a><ul><li><a href="#compliant-mechanisms-1">Compliant Mechanisms</a></li><li><a href="#cycloidal">Cycloidal</a></li><li><a href="#harmonic">Harmonic</a></li><li><a href="#sources">Sources</a></li></ul></li></ul></li></ul>
+      <ul><li><a href="#foc-field-oriented-control">FOC (Field oriented Control)</a><ul><li><a href="#firmware">Firmware</a></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#capstan-drive">Capstan Drive</a><ul><li><a href="#components">Components</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#harmonic-drive">Harmonic Drive</a><ul><li><a href="#components-1">Components</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#cycloidal-drive">Cycloidal Drive</a><ul><li><a href="#parametric-model">Parametric Model</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#compliant-mechanisms">Compliant Mechanisms</a><ul><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#rolling-joints">Rolling Joints</a><ul><li><a href="#build-log-5">Build Log</a></li></ul></li><li><a href="#continuous-variable-transmission-cvt">Continuous Variable Transmission (CVT)</a><ul><li><a href="#build-log-6">Build Log</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#capstan">Capstan</a></li><li><a href="#compliant-mechanisms-1">Compliant Mechanisms</a></li><li><a href="#cycloidal">Cycloidal</a></li><li><a href="#harmonic">Harmonic</a></li><li><a href="#rolling-joint">Rolling Joint</a></li><li><a href="#cvt">CVT</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
     </nav>
   
   <div>
     <article class="markdown-body">
       <h1 id="foc-field-oriented-control">FOC (Field oriented Control)</h1>
+<p>Field Oriented Control (FOC) is a control strategy most traditionally used for AC motors (typically permanent magnet synchronous motors (PMSMs) or induction motors) that enables precise control of torque and speed by decoupling the motor’s stator currents into two orthogonal components.</p>
 
+<p>FOC transforms three-phase stator currents into a rotating reference frame aligned with the rotor’s magnetic field, allowing independent control of:<br />
+Torque-producing current $i_q$<br />
+Flux-producing current $i_d$<br />
+This approach mimics the control strategy used in DC motors, where torque and flux can be independently regulated.</p>
+
+<p>Field Oriented Control (FOC) can also be applied to Brushless DC (BLDC) motors, even though BLDCs are traditionally driven with simpler trapezoidal control (commutation-based). 
+Even though BLDC motors are often controlled using six-step trapezoidal commutation, they are structurally similar to Permanent Magnet Synchronous Motors (PMSMs), which are typically sinusoidally wound and driven with FOC. FOC can treat a BLDC motor like a PMSM by assuming sinusoidal behavior and applying the same transformations and control strategy.</p>
+
+<p>Using FOC with BLDC motors enables smoother operation, higher efficiency, quieter performance, and precise torque/speed control, especially at low speeds or in dynamic applications.</p>
+
+<h2 id="firmware">Firmware</h2>
 <p>https://simplefoc.com/</p>
 
 <h2 id="build-log">Build Log</h2>
@@ -139,6 +151,24 @@
 <hr />
 
 <h1 id="capstan-drive">Capstan Drive</h1>
+<p>A capstan drive is a transmission system that uses flexible tension members (cordage) to transmit rotary or linear motion between pulleys or drums. The term “capstan” comes from a vertical-axled rotating machine developed for sailing ships to mechanically enhance the pulling force of sailors hauling ropes (hawsers) and cables. The capstan mechanism exploits the frictional interaction between a rotating capstan and cordage, and can be leveraged in mechanical applications.</p>
+
+<h2 id="components">Components</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://dynamica-ropes.com/products/dm20/">Rope</a></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="build-log-1">Build Log</h2>
 
@@ -151,6 +181,9 @@
 <hr />
 
 <h1 id="harmonic-drive">Harmonic Drive</h1>
+<p>A harmonic drive is a type of strain wave gearing that uses the elastic mechanics of metals to create a high-precision, zero-backlash rotary actuator. It consists of three main components: a wave generator, a flex spline, and a circular spline.</p>
+
+<h2 id="components-1">Components</h2>
 
 <h2 id="build-log-2">Build Log</h2>
 
@@ -163,6 +196,7 @@
 <hr />
 
 <h1 id="cycloidal-drive">Cycloidal Drive</h1>
+<p>A cycloidal drive uses an eccentric input cam to spin a lobed cycloidal disc which rolls against a ring of fixed pins or rollers​. Because the disc has fewer lobes than housing pins, each input rotation causes only a small step of output motion (equal to the difference in lobes), yielding a high reduction ratio​. The lobes (often on rolling pins) distribute force over multiple contacts, giving the drive very high torque capacity and strong shock resistance with minimal backlash​. This robust design is commonly used in heavy-duty robotic joints and industrial actuators.</p>
 
 <h2 id="parametric-model">Parametric Model</h2>
 
@@ -200,7 +234,7 @@
 
 <hr />
 
-<h1 id="continuous-variable-transmission">Continuous Variable Transmission</h1>
+<h1 id="continuous-variable-transmission-cvt">Continuous Variable Transmission (CVT)</h1>
 
 <h2 id="build-log-6">Build Log</h2>
 
@@ -211,15 +245,21 @@
 </blockquote>
 
 <hr />
-<h2 id="references">References</h2>
+<h1 id="references">References</h1>
 
-<h3 id="compliant-mechanisms-1">Compliant Mechanisms</h3>
+<h2 id="capstan">Capstan</h2>
+<ol>
+  <li>https://www.aaedmusa.com/projects/capstandrive</li>
+  <li><a href="https://www.youtube.com/watch?v=ENMZsPwCUcA">Capstan Drive NEMA 17 Stepper Timing Belt</a></li>
+</ol>
+
+<h2 id="compliant-mechanisms-1">Compliant Mechanisms</h2>
 <ol>
   <li><a href="https://compliantmechanisms.byu.edu/maker-resources">BYU CMR</a></li>
   <li><a href="https://www.youtube.com/watch?v=xV36ITRjP_4">“How to create effective compliant mechanisms with 3D printing” - Teaching Tech</a></li>
 </ol>
 
-<h3 id="cycloidal">Cycloidal</h3>
+<h2 id="cycloidal">Cycloidal</h2>
 <ol>
   <li><a href="https://www.youtube.com/watch?v=HDVCgaDknyM&amp;t=7s">“The BEST Way to Design a Cycloidal Drive in 2024” - Nelson Howe</a></li>
   <li><a href="https://www.youtube.com/watch?v=qDtFj4PE3-o">“Parametric Cycloidal Gear Drive (Fusion 360)” - Aaed Musa</a></li>
@@ -227,12 +267,24 @@
   <li><a href="https://www.youtube.com/live/y9vLVXjz2c0?app=desktop&amp;t=457s">“Designing a cycloidal drive in Python and Fusion 360” - RoTechnic</a></li>
 </ol>
 
-<h3 id="harmonic">Harmonic</h3>
+<h2 id="harmonic">Harmonic</h2>
 <ol>
   <li><a href="https://www.youtube.com/watch?v=xlnNj9F37MA">“What is Strain Wave Gear a.k.a. Harmonic Drive? A Perfect Gear Set For Robotics Applications!?” - How To Mechatronics</a></li>
 </ol>
 
-<h3 id="sources">Sources</h3>
+<h2 id="rolling-joint">Rolling Joint</h2>
+<ol>
+  <li><a href="https://www.youtube.com/watch?v=TQiLLcumqDw">Alternative to bearings for tiny robots</a></li>
+  <li><a href="https://www.youtube.com/watch?v=utDagouxM5U">You’ve never seen the Robot Joint like this one!</a></li>
+</ol>
+
+<h2 id="cvt">CVT</h2>
+<ol>
+  <li><a href="https://www.youtube.com/watch?v=mWJHI7UHuys&amp;t=121s">This Is The World’s First Geared CVT and It Will Blow Your Mind - Ratio Zero Transmission</a></li>
+  <li><a href="https://www.youtube.com/watch?v=vc9o-O1n81E">RatioZero - the ‘world’s first geared CVT’</a></li>
+</ol>
+
+<h2 id="sources">Sources</h2>
 
 <!-- Hidden references trigger the footnote rendering -->
 <p><span id="hidden-references"> <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">2</a></sup> <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">3</a></sup> <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">4</a></sup></span></p>
@@ -263,7 +315,7 @@
   <div class="footer-line"></div>
   <div class="footer-content">
     <img src="/assets/media/!misc/random/wwwbutton.gif" alt="www">
-    <p>&copy; 2025 Nathan Ge</p>
+    <p>&copy; 2025 Nathan Ge 葛中骐</p>
     <div class="social-icons">
       <a href="https://github.com/nzge" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>

@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nathan Ge - Drone</title>
-  <meta name="description" content="VTOL Tilt Rotor Drone">
+  <meta name="description" content="Exploration of all aspects of drone design">
   
   <!-- favicon -->
   <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
@@ -21,8 +21,8 @@
 <meta name="generator" content="Jekyll v3.9.3" />
 <meta property="og:title" content="Drone" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="VTOL Tilt Rotor Drone" />
-<meta property="og:description" content="VTOL Tilt Rotor Drone" />
+<meta name="description" content="Exploration of all aspects of drone design" />
+<meta property="og:description" content="Exploration of all aspects of drone design" />
 <link rel="canonical" href="https://nzge.github.io/projects/drone.html" />
 <meta property="og:url" content="https://nzge.github.io/projects/drone.html" />
 <meta property="og:site_name" content="My Website" />
@@ -33,7 +33,7 @@
 <meta property="twitter:image" content="https://nzge.github.io/placeholder.jpg" />
 <meta property="twitter:title" content="Drone" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-20T00:00:00+00:00","datePublished":"2024-12-20T00:00:00+00:00","description":"VTOL Tilt Rotor Drone","headline":"Drone","image":"https://nzge.github.io/placeholder.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://nzge.github.io/projects/drone.html"},"url":"https://nzge.github.io/projects/drone.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-20T00:00:00+00:00","datePublished":"2024-12-20T00:00:00+00:00","description":"Exploration of all aspects of drone design","headline":"Drone","image":"https://nzge.github.io/placeholder.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://nzge.github.io/projects/drone.html"},"url":"https://nzge.github.io/projects/drone.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -119,7 +119,7 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#tilt-rotor-drone">Tilt-Rotor Drone</a><ul><li><a href="#inspiration">Inspiration</a></li><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#design-considerations">Design Considerations</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetic-components">Aesthetic Components</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#quadcopter-race-drone">Quadcopter Race Drone</a><ul><li><a href="#hardware-design-1">Hardware Design</a><ul><li><a href="#components-1">Components</a></li><li><a href="#schematic-1">Schematic</a></li></ul></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#inspiration-1">Inspiration</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
+      <ul><li><a href="#tilt-rotor-drone">Tilt-Rotor Drone</a><ul><li><a href="#inspiration">Inspiration</a></li><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#design-considerations">Design Considerations</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetic-components">Aesthetic Components</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#quadcopter-race-drone">Quadcopter Race Drone</a><ul><li><a href="#hardware-design-1">Hardware Design</a><ul><li><a href="#components-1">Components</a></li><li><a href="#schematic-1">Schematic</a></li></ul></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#inspiration-1">Inspiration</a></li><li><a href="#flight-controller">Flight Controller</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
     </nav>
   
   <div>
@@ -131,8 +131,10 @@
 <div id="my-slideshow4"></div>
 <script>
   const slides4 = [
-    { src: "/assets/media/drone_media/inspiration/tilt1.png", caption: "Caption Text" },
-    { src: "/assets/media/drone_media/inspiration/tilt2.png", caption: "Caption Two" },
+    { src: "/assets/media/drone_media/inspiration/tilt1.png", caption: "T-DRONES VA17 Tilt-Rotor VTOL Drone" },
+    { src: "/assets/media/drone_media/inspiration/tilt2.png", caption: "Tiltrotor Design and Configuration - bzig: https://www.youtube.com/watch?v=_2s-DSg2u60" },
+    { src: "/assets/media/drone_media/inspiration/tilt3.png", caption: "Courtesy of Tom Stanton: https://www.youtube.com/watch?v=HitJ8r9HwBg" },
+    { src: "/assets/media/drone_media/inspiration/sova-drone.jpg", caption: "Sova Drone (aesthetic inspiration)" },
   ];
   new Slideshow(slides4, 'my-slideshow4');
 </script>
@@ -145,7 +147,7 @@
   <thead>
     <tr>
       <th>Item</th>
-      <th>Link</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
@@ -185,6 +187,10 @@
       <td><a href="">Raspberry Pi 5</a></td>
       <td>Hosts web server that provides a gui for sending control inputs to the drone via pico. Data/telemetry visualization</td>
     </tr>
+    <tr>
+      <td><a href="">MPU 6050</a></td>
+      <td>IMU for stability control</td>
+    </tr>
   </tbody>
 </table>
 
@@ -197,7 +203,7 @@
 <a href="https://colab.research.google.com/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" /></a></p>
 
 <h3 id="frame">Frame</h3>
-
+<p><img src="/assets/media/drone_media/" alt="MPU6050" style="width:200px; height:200px;display: block; margin: auto;" /></p>
 <h3 id="aesthetic-components">Aesthetic Components</h3>
 <p>Drone mask modeled in Blender</p>
 
@@ -421,7 +427,22 @@ IMU works but experiencing gyro drift</p>
   </li>
 </ol>
 
+<h2 id="flight-controller">Flight Controller</h2>
+<ol>
+  <li><a href="https://www.youtube.com/watch?v=gPEeCjVrTBw&amp;t=190s">RC VTOL - V4 by Tom Stanton</a></li>
+</ol>
+
 <h2 id="sources">Sources</h2>
+
+<!-- Hidden references trigger the footnote rendering -->
+<p><span id="hidden-references"> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> [^4] [^5] [^6]</span></p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="https://www.youtube.com/watch?v=QJjhMan6T_E">“How I Designed a 3D Printed Wing”</a>, Accessed March 6, 2025. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
     </article>
   </div>
@@ -433,7 +454,7 @@ IMU works but experiencing gyro drift</p>
   <div class="footer-line"></div>
   <div class="footer-content">
     <img src="/assets/media/!misc/random/wwwbutton.gif" alt="www">
-    <p>&copy; 2025 Nathan Ge</p>
+    <p>&copy; 2025 Nathan Ge 葛中骐</p>
     <div class="social-icons">
       <a href="https://github.com/nzge" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
