@@ -119,7 +119,7 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#code">Code</a><ul><li><a href="#sass">sass</a></li><li><a href="#assets">assets</a><ul><li><a href="#js">jS</a></li><li><a href="#css">CSS</a></li></ul></li><li><a href="#includes">includes</a></li><li><a href="#layouts">layouts</a></li><li><a href="#configyml">Config.yml</a></li><li><a href="#gemfile">Gemfile</a></li><li><a href="#deployment">Deployment</a></li></ul></li><li><a href="#build-log">Build Log</a></li><li><a href="#references">References</a></li></ul>
+      <ul><li><a href="#code">Code</a><ul><li><a href="#sass">sass</a></li><li><a href="#assets">assets</a><ul><li><a href="#js">jS</a></li><li><a href="#css">CSS</a></li><li><a href="#media-storage">Media storage</a></li></ul></li><li><a href="#includes">includes</a></li><li><a href="#layouts">layouts</a></li><li><a href="#configyml">config.yml</a></li><li><a href="#gemfile">gemfile</a></li><li><a href="#deployment">deployment</a></li></ul></li><li><a href="#build-log">Build Log</a></li><li><a href="#references">References</a></li></ul>
     </nav>
   
   <div>
@@ -171,7 +171,7 @@
 <h3 id="assets">assets</h3>
 <h4 id="js">jS</h4>
 <p><strong>wow.js</strong><br />
-https://wowjs.uk/
+https://wowjs.uk<br />
 Scrolling animations</p>
 
 <p><strong>main.js</strong><br />
@@ -216,8 +216,9 @@ CSS library for element animations</p>
 <p><strong>main.scss</strong>
 Combines and compiles all sass files.</p>
 
-<p><strong>Media storage</strong><br />
-Media stored in folders structured based on what project page they appear in.</p>
+<h4 id="media-storage">Media storage</h4>
+<p>Media stored in folders structured based on what project page they appear in.
+Also includes storage of miscellaneous media (gifs, background images, icons/favicons, etc.)</p>
 
 <h3 id="includes">includes</h3>
 <p>Modularized HTML code sections to be added to pages using liquid templating language</p>
@@ -226,22 +227,6 @@ Media stored in folders structured based on what project page they appear in.</p
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
   <span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>test.html<span class="w"> </span><span class="p">%}</span>
 
-</code></pre></div></div>
-
-<p><strong>Footer</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">footer</span> <span class="k">class</span><span class="o">=</span><span class="s">"container wow animate__animated animate__fadeInUp"</span> <span class="n">data</span><span class="o">-</span><span class="n">wow</span><span class="o">-</span><span class="n">duration</span><span class="o">=</span><span class="s">"2s"</span> <span class="n">data</span><span class="o">-</span><span class="n">wow</span><span class="o">-</span><span class="n">delay</span><span class="o">=</span><span class="s">"0.5s""&gt;</span><span class="err">
-</span><span class="s">  &lt;div class="</span><span class="n">footer</span><span class="o">-</span><span class="n">line</span><span class="s">"&gt;&lt;/div&gt;</span><span class="err">
-</span><span class="s">  &lt;div class="</span><span class="n">footer</span><span class="o">-</span><span class="n">content</span><span class="s">"&gt;</span><span class="err">
-</span><span class="s">    &lt;img src="</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">media</span><span class="o">/!</span><span class="n">misc</span><span class="o">/</span><span class="n">random</span><span class="o">/</span><span class="n">wwwbutton</span><span class="p">.</span><span class="n">gif</span><span class="s">" alt="</span><span class="n">www</span><span class="s">"&gt;</span><span class="err">
-</span><span class="s">    &lt;p&gt;&amp;copy; 2025 Nathan Ge 葛中骐&lt;/p&gt;</span><span class="err">
-</span><span class="s">    &lt;div class="</span><span class="n">social</span><span class="o">-</span><span class="n">icons</span><span class="s">"&gt;</span><span class="err">
-</span><span class="s">      &lt;a href="</span><span class="n">https</span><span class="o">:</span><span class="c1">//github.com/nzge" target="_blank"&gt;&lt;i class="fab fa-github"&gt;&lt;/i&gt;&lt;/a&gt;</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://twitter.com/yourhandle"</span> <span class="n">target</span><span class="o">=</span><span class="s">"_blank"</span><span class="o">&gt;&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s">"fab fa-twitter"</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://linkedin.com/in/nzge"</span> <span class="n">target</span><span class="o">=</span><span class="s">"_blank"</span><span class="o">&gt;&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s">"fab fa-linkedin"</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://instagram.com/naysun_g"</span> <span class="n">target</span><span class="o">=</span><span class="s">"_blank"</span><span class="o">&gt;&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s">"fab fa-instagram"</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">footer</span><span class="o">&gt;</span>
 </code></pre></div></div>
 
 <p><strong>Header</strong></p>
@@ -330,8 +315,41 @@ Media stored in folders structured based on what project page they appear in.</p
 
 </code></pre></div></div>
 
-<p><strong>Table of Contents</strong>
+<p><strong>Table of Contents</strong><br />
 Taken from https://github.com/allejo/jekyll-toc</p>
+
+<p><strong>Side Menu</strong></p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!--</span> <span class="n">Side</span> <span class="n">Menu</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s">"side-menu"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h3</span> <span class="n">style</span><span class="o">=</span><span class="s">"text-align: center;"</span><span class="o">&gt;</span> <span class="n">Settings</span> <span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s">"menu-icons"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">label</span> <span class="k">class</span><span class="o">=</span><span class="s">"switch"</span> <span class="n">alt</span><span class="o">=</span><span class="s">"Light mode"</span> <span class="n">id</span><span class="o">=</span><span class="s">"toggleTheme"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s">"checkbox"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">span</span> <span class="k">class</span><span class="o">=</span><span class="s">"slider round"</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s">"/assets/icons/other-icon.svg"</span> <span class="n">alt</span><span class="o">=</span><span class="s">"Another action"</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;!--</span> <span class="n">Add</span> <span class="n">more</span> <span class="n">icons</span><span class="o">/</span><span class="n">buttons</span> <span class="n">as</span> <span class="n">needed</span> <span class="o">--&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+
+</code></pre></div></div>
+
+<p><strong>Footer</strong></p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">footer</span> <span class="k">class</span><span class="o">=</span><span class="s">"container wow animate__animated animate__fadeInUp"</span> <span class="n">data</span><span class="o">-</span><span class="n">wow</span><span class="o">-</span><span class="n">duration</span><span class="o">=</span><span class="s">"2s"</span> <span class="n">data</span><span class="o">-</span><span class="n">wow</span><span class="o">-</span><span class="n">delay</span><span class="o">=</span><span class="s">"0.5s""&gt;</span><span class="err">
+</span><span class="s">  &lt;div class="</span><span class="n">footer</span><span class="o">-</span><span class="n">line</span><span class="s">"&gt;&lt;/div&gt;</span><span class="err">
+</span><span class="s">  &lt;div class="</span><span class="n">footer</span><span class="o">-</span><span class="n">content</span><span class="s">"&gt;</span><span class="err">
+</span><span class="s">    &lt;img src="</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">media</span><span class="o">/!</span><span class="n">misc</span><span class="o">/</span><span class="n">random</span><span class="o">/</span><span class="n">wwwbutton</span><span class="p">.</span><span class="n">gif</span><span class="s">" alt="</span><span class="n">www</span><span class="s">"&gt;</span><span class="err">
+</span><span class="s">    &lt;p&gt;&amp;copy; 2025 Nathan Ge 葛中骐&lt;/p&gt;</span><span class="err">
+</span><span class="s">    &lt;div class="</span><span class="n">social</span><span class="o">-</span><span class="n">icons</span><span class="s">"&gt;</span><span class="err">
+</span><span class="s">      &lt;a href="</span><span class="n">https</span><span class="o">:</span><span class="c1">//github.com/nzge" target="_blank"&gt;&lt;i class="fab fa-github"&gt;&lt;/i&gt;&lt;/a&gt;</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://twitter.com/yourhandle"</span> <span class="n">target</span><span class="o">=</span><span class="s">"_blank"</span><span class="o">&gt;&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s">"fab fa-twitter"</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://linkedin.com/in/nzge"</span> <span class="n">target</span><span class="o">=</span><span class="s">"_blank"</span><span class="o">&gt;&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s">"fab fa-linkedin"</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://instagram.com/naysun_g"</span> <span class="n">target</span><span class="o">=</span><span class="s">"_blank"</span><span class="o">&gt;&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s">"fab fa-instagram"</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">footer</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <h3 id="layouts">layouts</h3>
 <p>Broader scope page templates for markdown pages (about page, contact page, project pages, etc.)</p>
@@ -345,16 +363,19 @@ Implements subcategory and project listing. Sorts the projects by date or name. 
 <p><strong>Project Subcategory Page</strong><br />
 Sorts the projects within a certain subcategory by date or name.</p>
 
-<h3 id="configyml">Config.yml</h3>
-<p>This config file is meant for settings that affect your whole blog, values which you are expected to set up once and rarely edit after that.</p>
+<p><strong>Project</strong><br />
+Template for project documentation.</p>
 
-<p>If you findyourself editing this file very often, consider using Jekyll’s data files feature for the data you need to update frequently. For technical reasons, this file is <em>NOT</em> reloaded automatically when you use ‘bundle exec jekyll serve’. If you change this file, please restart the server process.</p>
+<p><strong>Post</strong><br />
+Template for blog posts.</p>
+
+<h3 id="configyml">config.yml</h3>
+<p>This config file is meant for settings that affect your whole blog, values which you are expected to set up once and rarely edit after that. For frequent value updates, use Jekyll’s data files feature. For technical reasons, this file is <em>NOT</em> reloaded automatically when you use ‘bundle exec jekyll serve’. A restart of the server process is required to observe changes.</p>
 
 <p>https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 https://learnxinyminutes.com/docs/yaml/</p>
 
-<p>Site settings used to personalize your new site. If you look in the HTML files, accessed via My Website, nathange784@gmail.com, etc.
-You can create any custom variable you would like, and they will be accessible in the templates via .</p>
+<p>Site settings used to personalize your new site. If you look in the HTML files, accessed via { { site.title } }, { { site.email } }, etc. Custom variables are allowed, accessible in the templates via { { site.myvariable } }.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">title</span><span class="pi">:</span> <span class="s">My Website</span>
 <span class="na">email</span><span class="pi">:</span> <span class="s">nathange784@gmail.com</span>
@@ -431,7 +452,7 @@ You can create any custom variable you would like, and they will be accessible i
   <span class="pi">-</span> <span class="s">vendor/ruby/</span>
   <span class="pi">-</span> <span class="s">archive</span>
 </code></pre></div></div>
-<h3 id="gemfile">Gemfile</h3>
+<h3 id="gemfile">gemfile</h3>
 <p>Installation of bundled Jekyll plugins coded in Ruby</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
 <span class="n">source</span> <span class="s2">"https://rubygems.org"</span>
@@ -463,7 +484,7 @@ You can create any custom variable you would like, and they will be accessible i
 
 </code></pre></div></div>
 
-<h3 id="deployment">Deployment</h3>
+<h3 id="deployment">deployment</h3>
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Build and Deploy Jekyll Site</span>
 
 <span class="na">on</span><span class="pi">:</span>
@@ -536,6 +557,8 @@ You can create any custom variable you would like, and they will be accessible i
 
   <p><img src="/assets/media/portfolio_media/2-25-25.PNG" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
 </blockquote>
+
+<hr />
 
 <h2 id="references">References</h2>
 
