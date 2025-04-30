@@ -24,7 +24,7 @@ layout: default
 {% assign base_path = 'projects/project_categories/' | append: category_type | append: '/' %}
 {% assign base_path_size = base_path | size %}
 <div class="container">
-  <h1 style="text-align: center; color:rgb(95, 49, 94) !important;">Other</h1>
+  <h1 class= "wow animate__animated animate__fadeInUp" style="text-align: center; color:rgb(95, 49, 94) !important;">...</h1>
   <section id="subcategories">
     {% for project in site.pages %}
       {% assign path_start = project.path | slice: 0, base_path_size %}
@@ -44,7 +44,7 @@ layout: default
 
 <!-- Display category projects -->
 <div class="container">
-  <h1 style="text-align: center; color:rgb(95, 49, 94) !important;">Main</h1>
+  <h1 class= "wow animate__animated animate__fadeInUp" style="text-align: center; color:rgb(95, 49, 94) !important;">...</h1>
   <section id="projects">
     {% assign projects = site.pages | where: "category", category_type %}
     <!-- Liquid sorting based on date, from newest to oldest by default -->

@@ -97,6 +97,25 @@ style="height:200px;display: block; margin: auto;"}
 
 ---
 
+## Modular Keyboard
+Fully modular keyboard, with each keyswitch being a singular unit.
+### Concept
+![Modular keyboard concept sketch](/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+
+### Design
+
+
+### Build Log
+
+> 4-11-25: 
+>
+> ![macro-pcb-proto](/assets/media/input_media/modular/){: 
+style="height:200px;display: block; margin: auto;"}
+
+---
+
 ## Macropad with PCB 
 
 ### Design
@@ -109,7 +128,7 @@ KiCAD
 
 > 4-11-25: 
 >
-> ![Alt text](/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png){: 
+> ![macro-pcb-proto](/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png){: 
 style="height:200px;display: block; margin: auto;"}
 
 ---
@@ -124,7 +143,7 @@ Designed in KiCAD
 ### Build Log
 > 3-14-25: 
 >
-> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
+> ![Alt text](/assets/media/input_media/split/ergo/){: 
 style="height:200px;display: block; margin: auto;"}
 
 
@@ -137,13 +156,13 @@ style="height:200px;display: block; margin: auto;"}
 ### PCB 
 
 ### Build Log
-> 4-12-25: 
+> 4-12-25: Prototype schematic revision 0
 >
 > MCU Schematic            |  Key Matrix
 :-------------------------:|:-------------------------:
 ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-1.png){: style="height:400px;display: block; margin: auto;"}   |  ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-2.png){: style="height:400px;display: block; margin: auto;"}
 
-> 4-10-25: 
+> 4-10-25: Initial CAD prototype
 >
 > ![Alt text](/assets/media/input_media/40/40+_proto_rev0.png){: 
 style="height:200px;display: block; margin: auto;"}

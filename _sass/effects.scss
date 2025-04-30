@@ -34,6 +34,7 @@
   }
 }
 
+
 /*--------------- Gradient --------------- */
 @keyframes gradientAnimation {
   0% { background-position: 0% 50%; }
@@ -45,4 +46,5 @@
   background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
   background-size: 400% 400%;
   animation: gradientAnimation 10s ease infinite;
+  z-index: 1000;
 }

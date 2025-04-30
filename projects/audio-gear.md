@@ -8,37 +8,40 @@ description: "DIY Audio Gear"
 ---
 
 # IEM
-
+## Design
 ## Build Log
 
 > 5-29-24: 
 >
 > ![Alt text](/assets/media/capstone-robot_media/IMG_1179.JPG){: 
 style="height:400px;display: block; margin: auto;"}
+
 ---
 
 # Speakers
-
+## Design
 ## Build Log
 
 > 5-29-24: 
 >
 > ![Alt text](/assets/media/capstone-robot_media/IMG_1179.JPG){: 
 style="height:400px;display: block; margin: auto;"}
+
 ---
 
 # Electric Guitar
-
+## Design
 ## Build Log
 
 > 5-29-24: 
 >
 > ![Alt text](/assets/media/capstone-robot_media/IMG_1179.JPG){: 
 style="height:400px;display: block; margin: auto;"}
+
 ---
 
 # Pedals
-
+## Design
 ## Build Log
 
 > 5-29-24: 
@@ -47,3 +50,6 @@ style="height:400px;display: block; margin: auto;"}
 style="height:400px;display: block; margin: auto;"}
 
 ---
+
+# References
+
