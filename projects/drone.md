@@ -4,7 +4,7 @@ category: "personal"
 title: "Drone"
 date: 2024-12-20
 image: "placeholder.jpg"
-description: "VTOL Tilt Rotor Drone"
+description: "Exploration of all aspects of drone design"
 repo: "https://github.com/nzge/drone"
 toc: true
 ---
@@ -16,19 +16,21 @@ This was my attempt at creating a tilt-rotor drone inspired by Sova's drone in V
 <div id="my-slideshow4"></div>
 <script>
   const slides4 = [
-    { src: "/assets/media/drone_media/inspiration/tilt1.png", caption: "Caption Text" },
-    { src: "/assets/media/drone_media/inspiration/tilt2.png", caption: "Caption Two" },
+    { src: "/assets/media/drone_media/inspiration/tilt1.png", caption: "T-DRONES VA17 Tilt-Rotor VTOL Drone" },
+    { src: "/assets/media/drone_media/inspiration/tilt2.png", caption: "Tiltrotor Design and Configuration - bzig: https://www.youtube.com/watch?v=_2s-DSg2u60" },
+    { src: "/assets/media/drone_media/inspiration/tilt3.png", caption: "Courtesy of Tom Stanton: https://www.youtube.com/watch?v=HitJ8r9HwBg" },
+    { src: "/assets/media/drone_media/inspiration/sova-drone.jpg", caption: "Sova Drone (aesthetic inspiration)" },
   ];
   new Slideshow(slides4, 'my-slideshow4');
 </script>
 
 
-## Hardware Design
+## Hardware Design  
 
 
 ### Components
 
-| Item             | Link |
+| Item             | Description |
 |------------------|------|
 | [LiPo Battery]() |  |
 | [ESC (electronic speed control)]() |  takes desired motor inputs from teensy to control and regulate the speed of motors|
@@ -39,7 +41,8 @@ This was my attempt at creating a tilt-rotor drone inspired by Sova's drone in V
 | [Teensy 4.0]() | Low-level stabilization control |
 | [Raspberry Pi Pico]() | High-level controller that feeds control inputs to the teensy from the raspberry pi web server. Relays telemetry data from the teensy back to the web server |
 | [Raspberry Pi 5]() | Hosts web server that provides a gui for sending control inputs to the drone via pico. Data/telemetry visualization |
- 
+| [MPU 6050]() | IMU for stability control |
+
 
 ### Schematic
 <img src="https://raw.githubusercontent.com/nzge/drone/main/drone-schematic_bb.svg?sanitize=true" alt="Drone Schematic" style="width:400px; height:400px;display: block; margin: auto;">
@@ -52,7 +55,7 @@ This was my attempt at creating a tilt-rotor drone inspired by Sova's drone in V
 
 
 ### Frame
-
+![MPU6050](/assets/media/drone_media/){: style="width:200px; height:200px;display: block; margin: auto;"}
 ### Aesthetic Components
 Drone mask modeled in Blender
 
@@ -274,10 +277,11 @@ OpenGL/WebGL
 - [Part 1](https://www.youtube.com/watch?v=55G-mwT9uCE)
 - [Part 2](https://www.youtube.com/watch?v=HitJ8r9HwBg&t=792s)
 
+## Flight Controller
+1. [RC VTOL - V4 by Tom Stanton](https://www.youtube.com/watch?v=gPEeCjVrTBw&t=190s)
+
 ## Sources
-[^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010. 
-[^2]: ["Stewart Platform Control"](https://content.instructables.com/FFI/8ZXW/I55MMY14/FFI8ZXWI55MMY14.pdf), Accessed March 6, 2025.  
-[^3]: **Book:** K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
-[^4]: **Website:** ["Stewart Platform Control"](https://example.com). Accessed: March 6, 2025.  
-[^5]: **Journal:** Doe, J. *Optimization of Robotic Mechanisms*. *Journal of Robotics Research*, Vol. 25, 2023, pp. 45-60.  
-[^6]: **Technical Report:** NASA. *Adaptive Control for Space Robotics*. Tech Report No. 4567, 2022.  
+[^1]: ["How I Designed a 3D Printed Wing"](https://www.youtube.com/watch?v=QJjhMan6T_E), Accessed March 6, 2025.  
+
+<!-- Hidden references trigger the footnote rendering -->
+<span id="hidden-references"> [^1] [^4] [^5] [^6]</span>
