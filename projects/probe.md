@@ -36,9 +36,10 @@ style="height:400px;display: block; margin: auto;"}
 
 > 7-9-24: 
 >
-> ![Alt text](/assets/media/oct-holder_media/2024-07-09_120923.png){: 
-style="height:400px;display: block; margin: auto;"}
->![Alt text](/assets/media/oct-holder_media/2024-07-09_231237.png){: 
-style="height:400px;display: block; margin: auto;"}
 >![Alt text](/assets/media/oct-holder_media/2024-07-09_140748.png){: 
 style="height:400px;display: block; margin: auto;"}
+>
+> :-------------------------:|:-------------------------:
+![Alt text](/assets/media/oct-holder_media/2024-07-09_120923.png){: style="width: 400px;display: block; margin: auto;"}   |  ![Alt text](/assets/media/oct-holder_media/2024-07-09_231237.png){: style="width:400px;display: block; margin: auto;"}
+
+

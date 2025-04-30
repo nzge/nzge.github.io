@@ -119,7 +119,7 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#general-info">General Info</a><ul><li><a href="#mcu-selection">MCU Selection</a><ul><li><a href="#microcontroller">Microcontroller</a><ul><li><a href="#mcu">MCU</a></li></ul></li><li><a href="#keyboard-matrix-multiplexing">Keyboard Matrix: Multiplexing</a></li><li><a href="#firmware">Firmware</a><ul><li><a href="#qmk"><a href="https://qmk.fm/">QMK</a></a></li><li><a href="#zmk"><a href="https://zmk.dev/">ZMK</a></a></li></ul></li></ul></li><li><a href="#mice">Mice</a><ul><li><a href="#motion-sensor">Motion Sensor</a></li><li><a href="#firmware-1">Firmware</a></li></ul></li></ul></li><li><a href="#keyboards">Keyboards</a><ul><li><a href="#hand-wired-macropad">Hand-wired Macropad</a><ul><li><a href="#design">Design</a><ul><li><a href="#components">Components</a></li><li><a href="#pin-mapping">Pin Mapping</a></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#modular-keyboard">Modular Keyboard</a><ul><li><a href="#concept">Concept</a></li><li><a href="#design-1">Design</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#macropad-with-pcb">Macropad with PCB</a><ul><li><a href="#design-2">Design</a></li><li><a href="#pcb">PCB</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#ergo-split">Ergo Split</a><ul><li><a href="#design-3">Design</a></li><li><a href="#layout">Layout</a></li><li><a href="#pcb-1">PCB</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#40-with-fkeys">40% with Fkeys</a><ul><li><a href="#design-4">Design</a></li><li><a href="#layout-1">Layout</a></li><li><a href="#pcb-2">PCB</a></li><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#hhkb">HHKB</a><ul><li><a href="#design-5">Design</a></li><li><a href="#layout-2">Layout</a></li><li><a href="#pcb-3">PCB</a></li><li><a href="#build-log-5">Build Log</a></li></ul></li></ul></li><li><a href="#mice-1">Mice</a><ul><li><a href="#ultralight-mouse">Ultralight Mouse</a><ul><li><a href="#design-6">Design</a></li><li><a href="#pcb-4">PCB</a></li><li><a href="#firmware-2">Firmware</a></li><li><a href="#build-log-6">Build Log</a></li></ul></li><li><a href="#keyswitch-mouse">Keyswitch Mouse</a><ul><li><a href="#design-7">Design</a></li><li><a href="#pcb-5">PCB</a></li><li><a href="#firmware-3">Firmware</a></li><li><a href="#build-log-7">Build Log</a></li></ul></li><li><a href="#macros-mouse">Macros Mouse</a><ul><li><a href="#design-8">Design</a></li><li><a href="#pcb-6">PCB</a></li><li><a href="#firmware-4">Firmware</a></li><li><a href="#build-log-8">Build Log</a></li></ul></li></ul></li><li><a href="#references">References</a><ul><li><a href="#macropad-inspiration">Macropad Inspiration</a></li><li><a href="#mice-inspiration">Mice Inspiration</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
+      <ul><li><a href="#general-info">General Info</a><ul><li><a href="#mcu-selection">MCU Selection</a><ul><li><a href="#esp32">ESP32</a></li><li><a href="#atmega32u4-avr-family">ATmega32U4 (AVR family)</a></li><li><a href="#rp2040--rp2350">RP2040 / RP2350</a></li><li><a href="#nrf52480">nrf52480</a></li><li><a href="#stm32-family">STM32 Family</a></li><li><a href="#honorable-mention-teensy-40">Honorable Mention: Teensy 4.0</a></li></ul></li><li><a href="#keyboard">Keyboard</a><ul><li><a href="#keyboard-matrix-multiplexing">Keyboard Matrix (Multiplexing)</a></li><li><a href="#firmware">Firmware</a><ul><li><a href="#qmk"><a href="https://qmk.fm/">QMK</a></a></li><li><a href="#zmk"><a href="https://zmk.dev/">ZMK</a></a></li></ul></li></ul></li><li><a href="#mice">Mice</a><ul><li><a href="#motion-sensor">Motion Sensor</a></li><li><a href="#firmware-1">Firmware</a></li></ul></li></ul></li><li><a href="#keyboards">Keyboards</a><ul><li><a href="#hand-wired-macropad">Hand-wired Macropad</a><ul><li><a href="#design">Design</a><ul><li><a href="#components">Components</a></li><li><a href="#pin-mapping">Pin Mapping</a></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#macropad-with-pcb">Macropad with PCB</a><ul><li><a href="#design-1">Design</a></li><li><a href="#pcb">PCB</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#ergo-split">Ergo Split</a><ul><li><a href="#design-2">Design</a></li><li><a href="#layout">Layout</a></li><li><a href="#pcb-1">PCB</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#40-with-fkeys">40% with Fkeys</a><ul><li><a href="#design-3">Design</a></li><li><a href="#layout-1">Layout</a></li><li><a href="#pcb-2">PCB</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#hhkb">HHKB</a><ul><li><a href="#design-4">Design</a></li><li><a href="#layout-2">Layout</a></li><li><a href="#pcb-3">PCB</a></li><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#modular-keyboard">Modular Keyboard</a><ul><li><a href="#concept">Concept</a></li><li><a href="#design-5">Design</a></li><li><a href="#build-log-5">Build Log</a></li></ul></li></ul></li><li><a href="#mice-1">Mice</a><ul><li><a href="#ultralight-mouse">Ultralight Mouse</a><ul><li><a href="#design-6">Design</a></li><li><a href="#pcb-4">PCB</a></li><li><a href="#firmware-2">Firmware</a></li><li><a href="#build-log-6">Build Log</a></li></ul></li><li><a href="#keyswitch-mouse">Keyswitch Mouse</a><ul><li><a href="#design-7">Design</a></li><li><a href="#pcb-5">PCB</a></li><li><a href="#firmware-3">Firmware</a></li><li><a href="#build-log-7">Build Log</a></li></ul></li><li><a href="#macros-mouse">Macros Mouse</a><ul><li><a href="#design-8">Design</a></li><li><a href="#pcb-6">PCB</a></li><li><a href="#firmware-4">Firmware</a></li><li><a href="#build-log-8">Build Log</a></li></ul></li></ul></li><li><a href="#references">References</a><ul><li><a href="#macropad-inspiration">Macropad Inspiration</a></li><li><a href="#mice-inspiration">Mice Inspiration</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
     </nav>
   
   <div>
@@ -127,15 +127,258 @@
       <h1 id="general-info">General Info</h1>
 
 <h2 id="mcu-selection">MCU Selection</h2>
-<h3 id="microcontroller">Microcontroller</h3>
-<p>Bluetooth: nice! nano
-<img src="/assets/media/input_media/promicro-nrf52840.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-<h4 id="mcu">MCU</h4>
-<p>nrf52480<br />
-stm<br />
-atmega</p>
 
-<h3 id="keyboard-matrix-multiplexing">Keyboard Matrix: Multiplexing</h3>
+<p><strong>ISA (Instruction Set architecture)</strong><br />
+ARM
+RISC-V
+AVR</p>
+
+<p><strong>Framework</strong><br />
+Arduino
+Zephyr
+Tensilica Xtensa</p>
+
+<h3 id="esp32">ESP32</h3>
+<ul>
+  <li>Core: Dual-core Tensilica LX6 processor (up to 240 MHz)</li>
+  <li>Flash: Up to 16MB (depending on variant)</li>
+  <li>RAM: 520KB SRAM</li>
+  <li>GPIO: 34 digital I/O pins, with support for PWM, UART, SPI, I2C, ADC, DAC, etc.</li>
+  <li>Wireless:
+    <ul>
+      <li>Wi-Fi (802.11 b/g/n)</li>
+      <li>Bluetooth 4.2/Bluetooth LE</li>
+    </ul>
+  </li>
+  <li>Communication:
+    <ul>
+      <li>I2C, SPI, UART, CAN, SDIO</li>
+      <li>PWM, DAC, ADC (12-bit)</li>
+    </ul>
+  </li>
+  <li>Power: Multiple power modes for efficiency (can go as low as 5uA)</li>
+  <li>Extras:
+    <ul>
+      <li>Built-in touch sensors</li>
+      <li>Integrated hardware cryptographic accelerators (e.g., for secure boot, SSL)</li>
+      <li>RTC for time-keeping</li>
+    </ul>
+  </li>
+  <li>Compatibility: ESP-IDF, Arduino framework, MicroPython</li>
+</ul>
+
+<p>Built-in Wi-Fi and BLE with decent performance for wireless peripherals. Power draw is high for battery-powered designs and GPIO matrix limitations require careful planning.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Microcontroller</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Seeed Studio XIAO ESP32C3</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ESP32-DevKitC</td>
+      <td>A versatile development board with multiple I/O options.</td>
+    </tr>
+    <tr>
+      <td>ESP32-PICO-KIT</td>
+      <td>Features a small footprint with essential peripherals.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="atmega32u4-avr-family">ATmega32U4 (AVR family)</h3>
+<ul>
+  <li>8-bit AVR architecture</li>
+  <li>32KB Flash memory for program storage</li>
+  <li>2.5KB SRAM</li>
+  <li>1KB EEPROM</li>
+  <li>USB: Built-in USB support (for HID, CDC, etc.)</li>
+</ul>
+
+<p>Widely used in keyboards (e.g. Pro Micro) due to native USB HID support and strong support in QMK. Limited in RAM and speed, making it less ideal for wireless or complex peripherals.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Microcontroller</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SparkFun Pro Micro</td>
+      <td>A compact board with a 5V/16MHz configuration, widely supported in the keyboard community</td>
+    </tr>
+    <tr>
+      <td>Teensy 2.0</td>
+      <td>Known for its robust USB capabilities and compatibility with various keyboard firmware.</td>
+    </tr>
+    <tr>
+      <td>Adafruit ItsyBitsy 32u4</td>
+      <td>Offers a small footprint with additional GPIO pins, suitable for space-constrained designs.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rp2040--rp2350">RP2040 / RP2350</h3>
+<ul>
+  <li>Core: Dual-core ARM Cortex-M0+ (up to 133 MHz)</li>
+  <li>Flash: 2MB of onboard QSPI Flash</li>
+  <li>RAM: 264KB SRAM</li>
+  <li>GPIO: 26 digital I/O pins, with support for PWM, UART, SPI, I2C, ADC</li>
+  <li>Communication: I2C, SPI, UART interfaces</li>
+  <li>USB: Native USB support (can act as USB device or host)</li>
+</ul>
+
+<p>RP 2040: Dual-core, high-performance MCU with lots of GPIO and flexible PIO for custom protocols. No built-in USB HID bootloader or wireless, but great for wired designs with custom behavior.
+RP 2350: Designed to build on RP2040 strengths with better wireless and security</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Microcontroller</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Arduino Nano RP2040</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>​Waveshare RP2040-Tiny</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Raspberry Pi Pico</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="nrf52480">nrf52480</h3>
+<ul>
+  <li>Core: ARM Cortex-M4 (up to 64 MHz, with a floating-point unit)</li>
+  <li>Flash: 1MB flash memory</li>
+  <li>RAM: 256KB SRAM</li>
+  <li>GPIO: 48 digital I/O pins, with support for PWM, UART, SPI, I2C, ADC</li>
+  <li>Communication:
+    <ul>
+      <li>I2C, SPI, UART, PWM</li>
+      <li>ADC, DAC, PDM (Pulse Density Modulation)</li>
+    </ul>
+  </li>
+  <li>Power: Very low power consumption (typically in the uA range during sleep modes)</li>
+  <li>Wireless:
+    <ul>
+      <li>Bluetooth 5.0 (BLE) (supports BLE, Bluetooth mesh, and direction finding)</li>
+      <li>Thread and Zigbee</li>
+      <li>Supports 2.4 GHz proprietary protocols (e.g., for custom wireless protocols)</li>
+    </ul>
+  </li>
+  <li>Extras:
+    <ul>
+      <li>USB 2.0 device support. USB HID support</li>
+      <li>Built-in hardware encryption for secure communications (AES, ECC)</li>
+      <li>Real-Time Counter (RTC) support for time-critical applications</li>
+    </ul>
+  </li>
+  <li>Compatible Frameworks: Nordic SDK, Zephyr OS, Arduino, Mbed OS, MicroPython (community-supported)</li>
+</ul>
+
+<p>Built-in Bluetooth Low Energy (BLE) support. 
+Ideal for wireless keyboard projects requiring Bluetooth connectivity (ZMK firmware support)</p>
+
+<p><img src="/assets/media/input_media/promicro-nrf52840.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Microcontroller</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>nice!nanov2</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>​Seeed Studio XIAO nRF52840</td>
+      <td>​Compact</td>
+    </tr>
+    <tr>
+      <td>​Adafruit Feather nRF52840 Express</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>​SparkFun Pro nRF52840 Mini</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="stm32-family">STM32 Family</h3>
+<ul>
+  <li>Core: ARM Cortex-M cores (M0, M0+, M3, M4, M7, M33, etc.), with a variety of clock speeds and performance levels.</li>
+  <li>Flash Memory: Varies from small (16KB) to large (up to 2MB) flash memory options, depending on the series.</li>
+  <li>RAM: Varies from small (4KB) to large (up to 1MB) SRAM.</li>
+  <li>GPIO: A wide range of GPIO pins, usually between 16 and 100+ pins.</li>
+  <li>Communication: Supports many communication interfaces like I2C, SPI, UART, CAN, USB, and Ethernet, depending on the series.</li>
+  <li>Power: Offers various low-power modes to extend battery life in portable devices.</li>
+  <li>Extras:
+    <ul>
+      <li>Timers: Numerous general-purpose and advanced timers for PWM, motor control, and time-critical applications.</li>
+      <li>Analog: Typically includes ADC (up to 12-bit), DAC, op-amps, and comparators.</li>
+      <li>Security: Some models include cryptographic accelerators, secure boot, and hardware random number generators.</li>
+    </ul>
+  </li>
+  <li>Compatible Frameworks: STM32Cube, HAL (Hardware Abstraction Layer), Arduino (via STM32 core), FreeRTOS, and Zephyr OS.</li>
+</ul>
+
+<p>Versatile ARM-based family with options that support USB HID. Steeper learning curve and less community support for keyboards compared to ATmega/RP2040, but good for custom wired builds.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Microcontroller</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Blue Pill (STM32F103C8T6)</td>
+      <td>Affordable and widely used in DIY projects.</td>
+    </tr>
+    <tr>
+      <td>Black Pill (STM32F411CEU6)</td>
+      <td>Provides higher performance with more memory and faster processing.</td>
+    </tr>
+    <tr>
+      <td>STM32F072 Nucleo</td>
+      <td>Features native USB support, beneficial for HID devices</td>
+    </tr>
+    <tr>
+      <td>STM32 Nucleo-32</td>
+      <td>Compact board with Arduino Nano compatibility</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="honorable-mention-teensy-40">Honorable Mention: Teensy 4.0</h3>
+<p>NXP iMXRT1062 microcontroller chip
+Core: ARM Cortex-M7 processor operating at 600 MHz.</p>
+
+<p>Absolute workhorse of a microcontroller</p>
+
+<h2 id="keyboard">Keyboard</h2>
+<h3 id="keyboard-matrix-multiplexing">Keyboard Matrix (Multiplexing)</h3>
 <p>The keyboard matrix is the fundamental idea behind the operation of any and all keyboard-adjacent input devices.</p>
 <h3 id="firmware">Firmware</h3>
 <h4 id="qmk"><a href="https://qmk.fm/">QMK</a></h4>
@@ -166,6 +409,8 @@ https://www.tindie.com/products/jkicklighter/pmw3360-motion-sensor/</p>
 <a href="https://github.com/biomurph/Mouse">https://github.com/biomurph/Mouse</a></p>
 
 <hr />
+<hr />
+
 <h1 id="keyboards">Keyboards</h1>
 
 <h2 id="hand-wired-macropad">Hand-wired Macropad</h2>
@@ -211,7 +456,7 @@ For my first design, I kept it simple.</p>
 </table>
 
 <h4 id="pin-mapping">Pin Mapping</h4>
-<p><img src="/assets/media/input_media/macro/promicro-nrf52840.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+<p><img src="/assets/media/input_media/macro/promicro-nrf52840.png" alt="Alt text" style="height:350px;display: block; margin: auto;" /></p>
 
 <h3 id="build-log">Build Log</h3>
 <blockquote>
@@ -240,31 +485,14 @@ For my first design, I kept it simple.</p>
 
 <hr />
 
-<h2 id="modular-keyboard">Modular Keyboard</h2>
-<p>Fully modular keyboard, with each keyswitch being a singular unit.</p>
-<h3 id="concept">Concept</h3>
-<p><img src="/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png" alt="Modular keyboard concept sketch" style="height:200px;display: block; margin: auto;" /></p>
-
-<h3 id="design-1">Design</h3>
-
-<h3 id="build-log-1">Build Log</h3>
-
-<blockquote>
-  <p>4-11-25:</p>
-
-  <p><img src="/assets/media/input_media/modular/" alt="macro-pcb-proto" style="height:200px;display: block; margin: auto;" /></p>
-</blockquote>
-
-<hr />
-
 <h2 id="macropad-with-pcb">Macropad with PCB</h2>
 
-<h3 id="design-2">Design</h3>
+<h3 id="design-1">Design</h3>
 
 <h3 id="pcb">PCB</h3>
 <p>KiCAD</p>
 
-<h3 id="build-log-2">Build Log</h3>
+<h3 id="build-log-1">Build Log</h3>
 
 <blockquote>
   <p>4-11-25:</p>
@@ -276,12 +504,12 @@ For my first design, I kept it simple.</p>
 
 <h2 id="ergo-split">Ergo Split</h2>
 
-<h3 id="design-3">Design</h3>
+<h3 id="design-2">Design</h3>
 <h3 id="layout">Layout</h3>
 <h3 id="pcb-1">PCB</h3>
 <p>Designed in KiCAD</p>
 
-<h3 id="build-log-3">Build Log</h3>
+<h3 id="build-log-2">Build Log</h3>
 <blockquote>
   <p>3-14-25:</p>
 
@@ -292,11 +520,11 @@ For my first design, I kept it simple.</p>
 
 <h2 id="40-with-fkeys">40% with Fkeys</h2>
 
-<h3 id="design-4">Design</h3>
+<h3 id="design-3">Design</h3>
 <h3 id="layout-1">Layout</h3>
 <h3 id="pcb-2">PCB</h3>
 
-<h3 id="build-log-4">Build Log</h3>
+<h3 id="build-log-3">Build Log</h3>
 <blockquote>
   <p>4-12-25: Prototype schematic revision 0</p>
 
@@ -326,11 +554,11 @@ For my first design, I kept it simple.</p>
 
 <h2 id="hhkb">HHKB</h2>
 
-<h3 id="design-5">Design</h3>
+<h3 id="design-4">Design</h3>
 <h3 id="layout-2">Layout</h3>
 <h3 id="pcb-3">PCB</h3>
 
-<h3 id="build-log-5">Build Log</h3>
+<h3 id="build-log-4">Build Log</h3>
 <blockquote>
   <p>3-14-25:</p>
 
@@ -338,6 +566,25 @@ For my first design, I kept it simple.</p>
 </blockquote>
 
 <hr />
+
+<h2 id="modular-keyboard">Modular Keyboard</h2>
+<p>Fully modular keyboard, with each keyswitch being a singular unit.</p>
+<h3 id="concept">Concept</h3>
+<p><img src="/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png" alt="Modular keyboard concept sketch" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="design-5">Design</h3>
+
+<h3 id="build-log-5">Build Log</h3>
+
+<blockquote>
+  <p>4-11-25:</p>
+
+  <p><img src="/assets/media/input_media/modular/" alt="macro-pcb-proto" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+<hr />
+
 <h1 id="mice-1">Mice</h1>
 
 <h2 id="ultralight-mouse">Ultralight Mouse</h2>
@@ -384,6 +631,7 @@ For my first design, I kept it simple.</p>
 </blockquote>
 
 <hr />
+<hr />
 
 <h1 id="references">References</h1>
 
@@ -396,7 +644,7 @@ For my first design, I kept it simple.</p>
 <h2 id="mice-inspiration">Mice Inspiration</h2>
 <ol>
   <li><a href="https://www.youtube.com/watch?v=qmX8vL-GbxU">I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything</a></li>
-  <li><a href="https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb"></a></li>
+  <li><a href="https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb">The worlds lightest gaming mouse PCB by Patrick Schmalzried</a></li>
   <li><a href="https://www.youtube.com/watch?v=9CQqasv5_qo&amp;t=208s">I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim</a></li>
 </ol>
 

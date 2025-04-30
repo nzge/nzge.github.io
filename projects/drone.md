@@ -19,6 +19,7 @@ This was my attempt at creating a tilt-rotor drone inspired by Sova's drone in V
     { src: "/assets/media/drone_media/inspiration/tilt1.png", caption: "T-DRONES VA17 Tilt-Rotor VTOL Drone" },
     { src: "/assets/media/drone_media/inspiration/tilt2.png", caption: "Tiltrotor Design and Configuration - bzig: https://www.youtube.com/watch?v=_2s-DSg2u60" },
     { src: "/assets/media/drone_media/inspiration/tilt3.png", caption: "Courtesy of Tom Stanton: https://www.youtube.com/watch?v=HitJ8r9HwBg" },
+    { src: "/assets/media/drone_media/inspiration/tilt4.png", caption: "Courtesy of Tom Stanton: https://www.youtube.com/watch?v=HitJ8r9HwBg" },
     { src: "/assets/media/drone_media/inspiration/sova-drone.jpg", caption: "Sova Drone (aesthetic inspiration)" },
   ];
   new Slideshow(slides4, 'my-slideshow4');

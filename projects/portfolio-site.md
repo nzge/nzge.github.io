@@ -27,11 +27,11 @@ SCSS styling
 
 ### assets
 #### jS
-**wow.js**\
-https://wowjs.uk/
+**wow.js**  
+https://wowjs.uk  
 Scrolling animations
 
-**main.js**\
+**main.js**  
 A collection of javascript functions that are paired with physical buttons styled in css and instantiated in HTML.
 
 | Function         | Description |
@@ -50,8 +50,9 @@ CSS library for element animations
 **main.scss**
 Combines and compiles all sass files.
 
-**Media storage**\
+#### Media storage
 Media stored in folders structured based on what project page they appear in.
+Also includes storage of miscellaneous media (gifs, background images, icons/favicons, etc.)
 
 ### includes
 Modularized HTML code sections to be added to pages using liquid templating language
@@ -61,11 +62,6 @@ For example:
 {% raw %}
   {% include test.html %}
 {% endraw %}
-```
-
-**Footer**
-```cpp
-{% include footer.html %}
 ```
 
 **Header**
@@ -78,31 +74,50 @@ For example:
 {% include navbar.html %}
 ```
 
-**Table of Contents**
+**Table of Contents**  
 Taken from https://github.com/allejo/jekyll-toc
+
+**Side Menu**
+```cpp
+{% include side-menu.html %}
+```
+
+**Footer**
+```cpp
+{% include footer.html %}
+```
+
+
+
+
+
+
 
 ### layouts
 Broader scope page templates for markdown pages (about page, contact page, project pages, etc.)
 
-**Default**\
+**Default**  
 Includes header, footer, navbar, and side menu.
 
-**Project Category Page**\
+**Project Category Page**  
 Implements subcategory and project listing. Sorts the projects by date or name. Coded with Liquid templating
 
-**Project Subcategory Page**\
+**Project Subcategory Page**  
 Sorts the projects within a certain subcategory by date or name.
 
-### Config.yml
-This config file is meant for settings that affect your whole blog, values which you are expected to set up once and rarely edit after that. 
+**Project**  
+Template for project documentation.
 
-If you findyourself editing this file very often, consider using Jekyll's data files feature for the data you need to update frequently. For technical reasons, this file is *NOT* reloaded automatically when you use 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+**Post**  
+Template for blog posts.
+
+### config.yml
+This config file is meant for settings that affect your whole blog, values which you are expected to set up once and rarely edit after that. For frequent value updates, use Jekyll's data files feature. For technical reasons, this file is *NOT* reloaded automatically when you use 'bundle exec jekyll serve'. A restart of the server process is required to observe changes.
 
 https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 https://learnxinyminutes.com/docs/yaml/
 
-Site settings used to personalize your new site. If you look in the HTML files, accessed via {{ site.title }}, {{ site.email }}, etc.
-You can create any custom variable you would like, and they will be accessible in the templates via {{ site.myvariable }}.
+Site settings used to personalize your new site. If you look in the HTML files, accessed via { { site.title } }, { { site.email } }, etc. Custom variables are allowed, accessible in the templates via { { site.myvariable } }.
 
 ```yaml
 title: My Website
@@ -180,7 +195,7 @@ exclude:
   - vendor/ruby/
   - archive
 ```
-### Gemfile
+### gemfile
 Installation of bundled Jekyll plugins coded in Ruby
 ```ruby
 # frozen_string_literal: true
@@ -213,7 +228,7 @@ gem "rouge", "~> 3.26"
 
 ```
 
-### Deployment
+### deployment
 ```yaml
 name: Build and Deploy Jekyll Site
 
@@ -282,6 +297,8 @@ style="height:300px;display: block; margin: auto;"}
 >
 > ![Alt text](/assets/media/portfolio_media/2-25-25.PNG){: 
 style="height:400px;display: block; margin: auto;"}
+
+---
 
 ## References
 

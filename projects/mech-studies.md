@@ -18,10 +18,18 @@ Flux-producing current $i_d$
 This approach mimics the control strategy used in DC motors, where torque and flux can be independently regulated.
 
 Field Oriented Control (FOC) can also be applied to Brushless DC (BLDC) motors, even though BLDCs are traditionally driven with simpler trapezoidal control (commutation-based). 
-Even though BLDC motors are often controlled using six-step trapezoidal commutation, they are structurally similar to Permanent Magnet Synchronous Motors (PMSMs), which are typically sinusoidally wound and driven with FOC. FOC can treat a BLDC motor like a PMSM by assuming sinusoidal behavior and applying the same transformations and control strategy.
+Even though BLDC motors are often controlled using six-step trapezoidal commutation, they are structurally similar to Permanent Magnet Synchronous Motors (PMSMs), which are typically sinusoidally wound and driven with FOC. FOC can treat a BLDC motor like a PMSM by assuming sinusoidal behavior and applying the same transformations and control strategy. Using FOC with BLDC motors enables smoother operation, higher efficiency, quieter performance, and precise torque/speed control, especially at low speeds or in dynamic applications.
 
-Using FOC with BLDC motors enables smoother operation, higher efficiency, quieter performance, and precise torque/speed control, especially at low speeds or in dynamic applications.
+## Theory
 
+### How Does a BLDC Work?
+
+### The control solution of FOC
+#### 1. Rotor Position sensing/estimation
+#### 2. Clarke + Park transformation
+#### 3. Control Loop
+#### 4. Inverse Parke + Inverse Parke
+#### 5. Inverter PWM output
 
 ## Firmware
 https://simplefoc.com/
