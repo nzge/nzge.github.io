@@ -13,12 +13,12 @@ Obtain a holistic understanding of vehicle behavior.
 Capture/model fundamental vehicle physics to inform design decisions.  
 
 ## Track Generation
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Stewart-Platform/blob/main/stewart-sizing-calcs.ipynb){:target="_blank"}
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/lap-sim/blob/main/track-generation.ipynb){:target="_blank"}
 
 
 
 ## Vehicle Model
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Stewart-Platform/blob/main/stewart-sizing-calcs.ipynb){:target="_blank"}
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/lap-sim/blob/main/vehicle-model.ipynb){:target="_blank"}
 
 ### Suspension
 
