@@ -10,3 +10,6 @@ Is this forgery/thievery or the next step in human evolution? That we as a singu
 The power of open source as all-encompassing design/intellectual philosophy is one that favors an open collaboration with the world at large. An unselfish passing of information and material that doesn't ask for any favors in return.
 
 Does this promote homogeneity? The loss of self identity?
+
+Is solipsism the antithesis of this ideology? 
+Does there exist a leech that only takes from the world but does not give?
