@@ -9,6 +9,7 @@ repo: "https://github.com/nzge/nzge.github.io"
 toc: true
 ---
 
+An exploration of a funsion of minimalist and retro (y2k, early internet, geocities/angelfire) aesthetics. A place for my personal creative expression while accomplishing the task of showing my work.
 
 ## Code
 
@@ -303,7 +304,7 @@ style="height:400px;display: block; margin: auto;"}
 
 Inspiration:  
 - [Complete Responsive Web Design Tutorial - Minimal Portfolio Website by Codegrid](https://www.youtube.com/watch?v=SFVhAfRHjTo&list=PLTqchMECawAr4xC0UPulEVUqBPYgZU0xG&index=4)
-- https://www.youtube.com/watch?v=qn1tcSaJ5XQ&list=PLTqchMECawAr4xC0UPulEVUqBPYgZU0xG&index=1
+- [Full Screen Overlay Menu (SVG Path Animation) Using HTML, CSS & GSAP - Inspired By Niccolò Miranda](https://www.youtube.com/watch?v=qn1tcSaJ5XQ&list=PLTqchMECawAr4xC0UPulEVUqBPYgZU0xG&index=1)
 - [Swiss web design: simple, but it works. Here's why by Phoebe Yu](https://www.youtube.com/watch?v=qdHipyZgOTY&t=509s)
 - https://www.cameronsworld.net/
 - https://geocities.restorativland.org/Area51/Dungeon/1092/

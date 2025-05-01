@@ -7,3 +7,6 @@ image: "placeholder.jpg"
 description: "Playing around with embroidery designs."
 repo: "https://github.com/nzge/"
 ---
+
+
+Embroidery is like tatooing for clothes, at least that's how want to percieve/approach it.

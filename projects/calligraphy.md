@@ -7,7 +7,10 @@ image: "calligraphy.JPG"
 description: "A very large calligraphy brush for street calligraphy"
 ---
 
+On my most recent visit to China, I became captivated by the precise and elegant brush strokes of wise calligraphy masters at work.
+There is something to be said of the impermanence of painting with water marks. Something poetic and spiritual. It allows for creative expression without consequence, and no superficial pride or attachment to a tangible production of the mind. Like the sand mandala of Tibetan monks. 
 
+This project was a way for me to connect with my culture and understand the art of Chinese calligraphy in the process.
 
 ## Inspiration
 <div id="my-slideshow"></div>

@@ -46,6 +46,9 @@ style="height:400px;display: block; margin: auto;"}
 # Capstan Drive
 A capstan drive is a transmission system that uses flexible tension members (cordage) to transmit rotary or linear motion between pulleys or drums. The term "capstan" comes from a vertical-axled rotating machine developed for sailing ships to mechanically enhance the pulling force of sailors hauling ropes (hawsers) and cables. The capstan mechanism exploits the frictional interaction between a rotating capstan and cordage, and can be leveraged in mechanical applications.
 
+## The Capstan Equation
+https://en.wikipedia.org/wiki/Capstan_equation
+
 ## Components
 
 | Item             | Description |

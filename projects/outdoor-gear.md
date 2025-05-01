@@ -8,17 +8,26 @@ description: "Design and creation of outdoor gear"
 repo: "https://github.com/nzge/ultralight-gear-design"
 ---
 
+![Alt text](/assets/media/outdoor_media/IMG_3398.JPG){: 
+style="height:800px;display: block; margin: auto;"}
+
+I have always been a lover of nature.
+I started Boy scouts (cub scouts to be specific) in elementary school. Boy scouts was my formal introduction to the outdoors. My family has never shied away from nature either. We have been to maybe 3/4 of the US national parks, on top of countless other natural wonders like Banff. 
+Through the various outings and campouts over the years, it has imbued me with an appreciation of the beauty, solace, and simplicity of nature.
+One specific activity that has garnered my interest in recent years is backpacking. It is essentially camping on semi-hardcore mode (ultra hardcore being hunting and gathering food and building shelter I suppose). Backpacking has elevated my outdoor experience to new heights. Notable backpacking trips include Rae lakes, Mt. Hood's Timberline trail, and Big Sur.
+
+I combined my knack for design and passion for the outdoors into designing outdoor peripherals.
+
 # Ultralight Backpack
 
 ## General Specs
 - 35L
 - Roll top
 - Frameless
-- Padded waist belt
-- Adjustable Sternum strap
 ## Features
-- Zippered bottom
-- Padded waist belt
+- Floating Padded waist belt
+- Adjustable Sternum strap
+- Unique full length zipper design
 ### Compartments
 - Waist belt zippered pockets
 - Double Lycra shoulder strap pockets
@@ -31,7 +40,7 @@ repo: "https://github.com/nzge/ultralight-gear-design"
 ## Build Log 
 > 5-11-24: 
 >
-> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+> ![Alt text](/assets/media/outdoor_media/prints.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 ---
@@ -45,7 +54,7 @@ style="height:400px;display: block; margin: auto;"}
 ## Build Log 
 > 5-11-24: 
 >
-> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+> ![Alt text](/assets/media/outdoor_media/prints.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 ---
@@ -67,7 +76,7 @@ style="height:400px;display: block; margin: auto;"}
 ## Build Log 
 > 5-11-24: 
 >
-> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+> ![Alt text](/assets/media/outdoor_media/prints.JPG){: 
 style="height:400px;display: block; margin: auto;"}
 
 ---

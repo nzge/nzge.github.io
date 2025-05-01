@@ -12,16 +12,13 @@ toc: true
 # General Info
 
 ## MCU Selection 
+An MCU (Microcontroller Unit) is the computer commonly found in integrated circuits (ICs) that contains a processor core, memory, and programmable I/O peripherals. It is the brain of embedded systems, controlling various features and operations.
 
-**ISA (Instruction Set architecture)**  
-ARM
-RISC-V
-AVR
+**ISA (Instruction Set architecture)**: Defines the instruction set (the machine "language") a processor can understand.
+Examples: ARM, RISC-V, AVR
 
-**Framework**  
-Arduino
-Zephyr
-Tensilica Xtensa
+**Framework**: A collection of libraries/packages/toolchains that enable development. Framework compatibility depends on the MCU's processor core ISA and communications protocols.
+Examples: Arduino, Zephyr, Tensilica Xtensa
 
 ### ESP32
 - Core: Dual-core Tensilica LX6 processor (up to 240 MHz)
@@ -43,6 +40,9 @@ Tensilica Xtensa
 
 Built-in Wi-Fi and BLE with decent performance for wireless peripherals. Power draw is high for battery-powered designs and GPIO matrix limitations require careful planning.
 
+![Alt text](/assets/media/input_media/seeed-XIAO_ESP32C3.png){: 
+style="height:200px;display: block; margin: auto;"}
+
 | Microcontroller | Description |
 |--------------|------|
 | Seeed Studio XIAO ESP32C3 |     |
@@ -60,7 +60,7 @@ Widely used in keyboards (e.g. Pro Micro) due to native USB HID support and stro
 
 | Microcontroller | Description |
 |--------------|------|
-| SparkFun Pro Micro | A compact board with a 5V/16MHz configuration, widely supported in the keyboard community |
+| SparkFun Pro Micro | A compact board with a 5V/16MHz configuration, widely supported in the keyboard community |g
 | Teensy 2.0 | Known for its robust USB capabilities and compatibility with various keyboard firmware. |
 | Adafruit ItsyBitsy 32u4 | Offers a small footprint with additional GPIO pins, suitable for space-constrained designs. |
 
@@ -74,6 +74,9 @@ Widely used in keyboards (e.g. Pro Micro) due to native USB HID support and stro
 
 RP 2040: Dual-core, high-performance MCU with lots of GPIO and flexible PIO for custom protocols. No built-in USB HID bootloader or wireless, but great for wired designs with custom behavior.
 RP 2350: Designed to build on RP2040 strengths with better wireless and security
+
+![Alt text](/assets/media/input_media/pico2.webp){: 
+style="height:200px;display: block; margin: auto;"}
 
 | Microcontroller | Description |
 |--------------|------|
@@ -103,7 +106,7 @@ RP 2350: Designed to build on RP2040 strengths with better wireless and security
 Built-in Bluetooth Low Energy (BLE) support. 
 Ideal for wireless keyboard projects requiring Bluetooth connectivity (ZMK firmware support)
 
-![Alt text](/assets/media/input_media/promicro-nrf52840.png){: 
+![Alt text](/assets/media/input_media/nice!nanov2.avif){: 
 style="height:200px;display: block; margin: auto;"}
 
 | Microcontroller | Description |
@@ -128,6 +131,10 @@ style="height:200px;display: block; margin: auto;"}
 
 Versatile ARM-based family with options that support USB HID. Steeper learning curve and less community support for keyboards compared to ATmega/RP2040, but good for custom wired builds.
 
+![Alt text](/assets/media/input_media/STM32F103C8T6_Blue_Pill.jpg){: 
+style="height:200px;display: block; margin: auto;"}
+
+
 | Microcontroller | Description |
 |--------------|------|
 | Blue Pill (STM32F103C8T6) | Affordable and widely used in DIY projects. |
@@ -136,12 +143,17 @@ Versatile ARM-based family with options that support USB HID. Steeper learning c
 | STM32 Nucleo-32 | Compact board with Arduino Nano compatibility|
 
 ### Honorable Mention: Teensy 4.0 
-NXP iMXRT1062 microcontroller chip
-Core: ARM Cortex-M7 processor operating at 600 MHz. 
+- NXP iMXRT1062 microcontroller chip
+- Core: ARM Cortex-M7 processor operating at 600 MHz. 
+
+![Alt text](/assets/media/input_media/teensy4.png){: 
+style="height:200px;display: block; margin: auto;"}
 
 Absolute workhorse of a microcontroller
 
 ## Keyboard
+A keyboard simply converts keystrokes (user input) into input commands, usually in the form of character inputs.
+
 ### Keyboard Matrix (Multiplexing)
 The keyboard matrix is the fundamental idea behind the operation of any and all keyboard-adjacent input devices.
 ### Firmware
@@ -160,14 +172,22 @@ ZMK is has greater compatibility, notably in wireless applications. However, use
 There is also TMK and KMK. TMK is mostly deprecated, and is a Circuit Python keyboard firmware. ZMK and QMK are the more common options.
 
 ## Mice
+A mouse provides cursor control to navigate and interact with display elements.
 ### Motion Sensor
-Laser
+The motion sensor is at the core of mouse function. It converts physical mouse interaction to cursor movement.
 
-Optical
-mx8650
-https://github.com/styropyr0/MX8650
-pmw3360
-https://www.tindie.com/products/jkicklighter/pmw3360-motion-sensor/
+**Laser sensor**: motion tracking via lasers  
+Largely obsolete by modern standards.
+
+**Optical Mice**: motion tracking via LEDs
+
+| Sensor | Description |
+|--------------|------|
+| mx8650 | https://github.com/styropyr0/MX8650 |
+| pmw3360 | https://www.tindie.com/products/jkicklighter/pmw3360-motion-sensor/ |
+| Pixart paw 3395 | |
+
+
 ### Firmware
 The open-source support from the community is far more limited for mice.
 [https://github.com/biomurph/Mouse](https://github.com/biomurph/Mouse)
@@ -176,21 +196,52 @@ The open-source support from the community is far more limited for mice.
 ---
 
 # Keyboards
+I initially fell into the keyboard hobby during COVID because of the design aesthetics and boundless creative expression. My love for industrial design aesthetics and the fact that I use keyboards daily has led me on a long creative path of keyboard design.
+
+Design Inspiration
+<div id="my-slideshow"></div>
+<script>
+  const slides= [
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/derivative.png", caption: "Derivative" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/derivative-bot.PNG", caption: "Derivative bottom" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/eventhorizon.jpg", caption: "Event Horizon" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/eventhorizon-bot.PNG", caption: "Event Horizon bottom" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/kreygasm keyboard.jpg", caption: "Cool keyboard render" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/neo75-side.jpg", caption: "Neo 75 side profile" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/neo75-bot.jpg", caption: "Neo 75 bottom" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/noxary378-gray.png", caption: "Noxary 378" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/ogr.jpg", caption: "OGR" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/pangea-side.jpg", caption: "Pangea side profile" },
+  ];
+  new Slideshow(slides, 'my-slideshow');
+</script>
 
 ## Hand-wired Macropad
 
-### Design
-Unibody construction  
+### Specs
+- 4x4 Matrix  
+- Unibody construction  
+
 For my first design, I kept it simple. 
+
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="height:400px; display:block; margin: auto;"}
+
+#### Layout
+
+![Alt text](/assets/media/input_media/macro/4x4.png){: 
+style="height:200px; display:block; margin: auto;"}
+
 #### Components
 
-| Item         | Description |
-|--------------|------|
+| Component | Description |
+|---|---|
 | [Pro Micro nRF52840](https://www.aliexpress.us/item/3256807783872448.html?spm=a2g0o.productlist.main.1.7f97412cFmkPgZ&algo_pvid=6620151d-2b6a-4130-98c6-9ad4570e99f9&algo_exp_id=6620151d-2b6a-4130-98c6-9ad4570e99f9-0&pdp_ext_f=%7B%22order%22%3A%22980%22%2C%22eval%22%3A%221%22%2C%22orig_sl_item_id%22%3A%221005007970187200%22%2C%22orig_item_id%22%3A%221005008079431976%22%7D&pdp_npi=4%40dis%21USD%213.60%211.80%21%21%2126.16%2113.08%21%40210312d517458248843083517e9190%2112000043081959970%21sea%21US%214467253674%21X&curPageLogUid=U7yGAfNlG6GQ&utparam-url=scene%3Asearch%7Cquery_from%3A) | Cheap alternative to nice!nanov2. BLE and lipo charging capability |
 | [DO-35 IN4148 High-speed Switching Diodes](https://www.aliexpress.us/item/3256805848952479.html?spm=a2g0o.order_list.order_list_main.65.7ddc1802EYblLy&gatewayAdapt=glo2usa)   | Prevent ghosting (when multiple, unintended key presses register as a single press when multiple keys are pressed simultaneously. Diodes ensure that the current only flows in one direction, preventing unintended paths through the matrix when multiple switches are closed)  |
 | [Heat shrink](https://www.aliexpress.us/item/3256804442290103.html?spm=a2g0o.order_list.order_list_main.35.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Electrical isolation between rows and columns |
 | [1.5mm Bare Copper wire](https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Wiring to form rows and columns |
 | [JWK Black T1 Tactile Switches](https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457)    | Switches |
+| 250 mAh LiPo     | Rechargeability |
 | Housing     | 3D printed using PLA |
 
 #### Pin Mapping
@@ -198,6 +249,12 @@ For my first design, I kept it simple.
 style="height:350px;display: block; margin: auto;"}
 
 ### Build Log
+
+> 3-25-25: 
+>
+> ![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0829.JPG){: 
+style="height:200px; display:block; margin: auto;"}
+
 > 3-20-25: 
 >
 > ![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0812.jpg){: 
@@ -222,8 +279,7 @@ style="height:200px;display: block; margin: auto;"}
 
 ## Macropad with PCB 
 
-### Design
-
+### Specs
 
 ### PCB 
 KiCAD
@@ -239,10 +295,29 @@ style="height:200px;display: block; margin: auto;"}
 
 ## Ergo Split
 
-### Design
-### Layout
+### Specs
+- Tenting via magsafe phone stands
+- Ergonomic splayed key spacing
+
+#### Components
+
+| Component | Description |
+|---|---|
+| [Magsafe phone stand](https://www.aliexpress.us/item/3256807516374506.html?spm=a2g0o.cart.0.0.34f738daxHlmM3&mp=1&pdp_npi=5%40dis%21USD%21USD%2021.77%21USD%2010.59%21%21USD%2010.59%21%21%21%402101c5b217460555351044119eab9b%2112000041913114307%21ct%21US%214467253674%21%212%210&_gl=1*11e8ki2*_gcl_aw*R0NMLjE3NDA1NTgxMDkuQ2p3S0NBaUFsUHU5QmhBakVpd0E1TkRTQTdzMF9GdmJFOFI0LWQwMnlrcXdKem04cm9BQXBXQUxNTWkyMXZzZ2x4WUx3Tlk3OTNwMUpSb0NESW9RQXZEX0J3RQ..*_gcl_au*NjI4NjQxMDkuMTczODMwNDY3NQ..*_ga*OTY3MjMwOTg4LjE3MzgzMDQ2NzU.*_ga_VED1YSGNC7*MTc0NjA1NTUyNy4yNC4xLjE3NDYwNTU1MzYuNTEuMC4w&gatewayAdapt=glo2usa) x2 | Tenting |
+| [Magsafe ring]() x2   | Placed on keyboard to magnetically bind to stands|
+| [Choc Purple Switches](https://www.aliexpress.us/item/3256804880270570.html?spm=a2g0o.cart.0.0.34f738daxHlmM3&mp=1&pdp_npi=5%40dis%21USD%21USD%2071.55%21USD%2057.24%21%21USD%2057.24%21%21%21%402101c5b217460555351044119eab9b%2112000036200576713%21ct%21US%214467253674%21%211%210&_gl=1*1q7dg1o*_gcl_aw*R0NMLjE3NDA1NTgxMDkuQ2p3S0NBaUFsUHU5QmhBakVpd0E1TkRTQTdzMF9GdmJFOFI0LWQwMnlrcXdKem04cm9BQXBXQUxNTWkyMXZzZ2x4WUx3Tlk3OTNwMUpSb0NESW9RQXZEX0J3RQ..*_gcl_au*NjI4NjQxMDkuMTczODMwNDY3NQ..*_ga*OTY3MjMwOTg4LjE3MzgzMDQ2NzU.*_ga_VED1YSGNC7*MTc0NjA1NTUyNy4yNC4xLjE3NDYwNTU1NTcuMzAuMC4w&gatewayAdapt=glo2usa)    | Switches |
+| [250 mAh LiPo Battery]()  x2  | Rechargeability |
+| Housing     | 3D printed using PLA |
+
+#### Layout
+![Alt text](/assets/media/input_media/split/ergo/ergo-split.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+
 ### PCB 
 Designed in KiCAD
+![Alt text](/assets/media/input_media/split/ergo/ergo-split.png){: 
+style="height:200px;display: block; margin: auto;"}
 
 ### Build Log
 > 3-14-25: 
@@ -254,10 +329,36 @@ style="height:200px;display: block; margin: auto;"}
 ---
 
 ## 40% with Fkeys
+A 40% keyboard with extra flare. 
 
-### Design
-### Layout
+### Specs
+- Layout: 40% with function keys left side
+- PCB: mill max sockets
+- Case
+  - thin side bezels
+  - 2 piece construction
+  - top mount
+  - rectangular rubber feet 
+  - low front height (cherry lip)
+
+#### Components
+
+| Component | Description |
+|---|---|
+| [1.5mm Bare Copper wire](https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Wiring to form rows and columns |
+| [JWK Black T1 Tactile Switches](https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457)    | Switches |
+| [250 mAh LiPo Battery]()     | Rechargeability |
+| Housing     | 3D printed using PLA |
+
+#### Layout
+
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
+
 ### PCB 
+Designed in KiCAD
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
 
 ### Build Log
 > 4-12-25: Prototype schematic revision 0
@@ -275,9 +376,23 @@ style="height:200px;display: block; margin: auto;"}
 ---
 
 ## HHKB
+My take on the classic HHKB layout
 
-### Design
-### Layout
+### Specs
+
+#### Components
+
+| Component | Description |
+|---|---|
+| [1.5mm Bare Copper wire](https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Wiring to form rows and columns |
+| [JWK Black T1 Tactile Switches](https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457)    | Switches |
+| 250 mAh LiPo     | Rechargeability |
+| Housing     | 3D printed using PLA |
+
+#### Layout
+![Alt text](/assets/media/input_media/hhkb/hhkb-default.png){: 
+style="height:200px;display: block; margin: auto;"}
+
 ### PCB
 
 ### Build Log
@@ -294,8 +409,7 @@ Fully modular keyboard, with each keyswitch being a singular unit.
 ![Modular keyboard concept sketch](/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png){: 
 style="height:200px;display: block; margin: auto;"}
 
-
-### Design
+### Specs
 
 
 ### Build Log
@@ -311,8 +425,9 @@ style="height:200px;display: block; margin: auto;"}
 # Mice
 
 ## Ultralight Mouse
+Chasing performance.
 
-### Design
+### Specs
 ### PCB
 ### Firmware
 
@@ -324,8 +439,11 @@ style="height:200px;display: block; margin: auto;"}
 ---
 
 ## Keyswitch Mouse
+Injecting keyboard functionality into the mouse peripheral
 
-### Design
+### Specs
+4 choc keyswitches 
+
 ### PCB
 ### Firmware
 
@@ -338,8 +456,8 @@ style="height:400px;display: block; margin: auto;"}
 ---
 
 ## Macros Mouse
-
-### Design
+Buttons galore
+### Specs
 ### PCB
 ### Firmware
 
@@ -354,11 +472,23 @@ style="height:200px;display: block; margin: auto;"}
 
 # References
 
-## Macropad Inspiration
+## Keyboard
+### Design Language
+1. [Endgame Never Felt So Close - My TGR Jane V2 ME Experience by Wongsquared](https://www.youtube.com/watch?v=0sqF46vm8yY)
+2. [Gehirn / Keyboard Preview by Markchun](https://www.youtube.com/watch?v=IK7r_d62QXA)
+
+### Split
+1. [“The REAL Ergonomic Keyboard Endgame!” - How To Design & Make A Totally Custom Keyboard](https://www.youtube.com/watch?v=UKfeJrRIcxw&t=895s)
+2. [My favorite ergo split keyboard so far by EIGA](https://www.youtube.com/watch?v=riqmW3UHqPY)
+3. [The TOTEM wireless keyboard by EIGA](https://www.youtube.com/watch?v=YwsutNf1WRA)
+4. [I Built My Dream Keyboard from Absolute Scratch by Christian Selig](https://www.youtube.com/watch?v=7UXsD7nSfDY)
+
+### Macropad
 1. [How to Build a Handwired Keyboard by Joe Scotto](https://www.youtube.com/watch?v=hjml-K-pV4E)
 2. [How to Design Mechanical Keyboard Plates and Cases](https://www.youtube.com/watch?v=7azQkSu0m_U)
+3. [Statial Macropad by PyottDesign](https://www.youtube.com/watch?v=nhJiCa46weE)
 
-## Mice Inspiration
+## Mice
 1. [I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything](https://www.youtube.com/watch?v=qmX8vL-GbxU)
 2. [The worlds lightest gaming mouse PCB by Patrick Schmalzried](https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb)
 3. [I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim](https://www.youtube.com/watch?v=9CQqasv5_qo&t=208s)

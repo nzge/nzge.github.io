@@ -11,7 +11,7 @@
   <!-- favicon -->
   <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/assets/media/nathan/favicon/favicon.svg" />
-  <link rel="shortcut icon" href="/assets/medianathan/favicon/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/media/nathan/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/nathan/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/assets/media/nathan/favicon/site.webmanifest" />
   
@@ -91,7 +91,7 @@
         <input type="checkbox">
         <span class="slider round"></span>
       </label>
-      <img src="/assets/icons/other-icon.svg" alt="Another action" />
+      <img src="/assets/media/!misc/icons/other-icon.svg" alt="Another action" />
       <!-- Add more icons/buttons as needed -->
     </div>
 </div>
@@ -119,7 +119,7 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#foc-field-oriented-control">FOC (Field oriented Control)</a><ul><li><a href="#theory">Theory</a><ul><li><a href="#how-does-a-bldc-work">How Does a BLDC Work?</a></li><li><a href="#the-control-solution-of-foc">The control solution of FOC</a><ul><li><a href="#1-rotor-position-sensingestimation">1. Rotor Position sensing/estimation</a></li><li><a href="#2-clarke--park-transformation">2. Clarke + Park transformation</a></li><li><a href="#3-control-loop">3. Control Loop</a></li><li><a href="#4-inverse-parke--inverse-parke">4. Inverse Parke + Inverse Parke</a></li><li><a href="#5-inverter-pwm-output">5. Inverter PWM output</a></li></ul></li></ul></li><li><a href="#firmware">Firmware</a></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#capstan-drive">Capstan Drive</a><ul><li><a href="#components">Components</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#harmonic-drive">Harmonic Drive</a><ul><li><a href="#components-1">Components</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#cycloidal-drive">Cycloidal Drive</a><ul><li><a href="#parametric-model">Parametric Model</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#compliant-mechanisms">Compliant Mechanisms</a><ul><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#rolling-joints">Rolling Joints</a><ul><li><a href="#build-log-5">Build Log</a></li></ul></li><li><a href="#continuous-variable-transmission-cvt">Continuous Variable Transmission (CVT)</a><ul><li><a href="#build-log-6">Build Log</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#capstan">Capstan</a></li><li><a href="#compliant-mechanisms-1">Compliant Mechanisms</a></li><li><a href="#cycloidal">Cycloidal</a></li><li><a href="#harmonic">Harmonic</a></li><li><a href="#rolling-joint">Rolling Joint</a></li><li><a href="#cvt">CVT</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
+      <ul><li><a href="#foc-field-oriented-control">FOC (Field oriented Control)</a><ul><li><a href="#theory">Theory</a><ul><li><a href="#how-does-a-bldc-work">How Does a BLDC Work?</a></li><li><a href="#the-control-solution-of-foc">The control solution of FOC</a><ul><li><a href="#1-rotor-position-sensingestimation">1. Rotor Position sensing/estimation</a></li><li><a href="#2-clarke--park-transformation">2. Clarke + Park transformation</a></li><li><a href="#3-control-loop">3. Control Loop</a></li><li><a href="#4-inverse-parke--inverse-parke">4. Inverse Parke + Inverse Parke</a></li><li><a href="#5-inverter-pwm-output">5. Inverter PWM output</a></li></ul></li></ul></li><li><a href="#firmware">Firmware</a></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#capstan-drive">Capstan Drive</a><ul><li><a href="#the-capstan-equation">The Capstan Equation</a></li><li><a href="#components">Components</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#harmonic-drive">Harmonic Drive</a><ul><li><a href="#components-1">Components</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#cycloidal-drive">Cycloidal Drive</a><ul><li><a href="#parametric-model">Parametric Model</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#compliant-mechanisms">Compliant Mechanisms</a><ul><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#rolling-joints">Rolling Joints</a><ul><li><a href="#build-log-5">Build Log</a></li></ul></li><li><a href="#continuous-variable-transmission-cvt">Continuous Variable Transmission (CVT)</a><ul><li><a href="#build-log-6">Build Log</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#capstan">Capstan</a></li><li><a href="#compliant-mechanisms-1">Compliant Mechanisms</a></li><li><a href="#cycloidal">Cycloidal</a></li><li><a href="#harmonic">Harmonic</a></li><li><a href="#rolling-joint">Rolling Joint</a></li><li><a href="#cvt">CVT</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
     </nav>
   
   <div>
@@ -161,6 +161,9 @@ Even though BLDC motors are often controlled using six-step trapezoidal commutat
 
 <h1 id="capstan-drive">Capstan Drive</h1>
 <p>A capstan drive is a transmission system that uses flexible tension members (cordage) to transmit rotary or linear motion between pulleys or drums. The term “capstan” comes from a vertical-axled rotating machine developed for sailing ships to mechanically enhance the pulling force of sailors hauling ropes (hawsers) and cables. The capstan mechanism exploits the frictional interaction between a rotating capstan and cordage, and can be leveraged in mechanical applications.</p>
+
+<h2 id="the-capstan-equation">The Capstan Equation</h2>
+<p>https://en.wikipedia.org/wiki/Capstan_equation</p>
 
 <h2 id="components">Components</h2>
 

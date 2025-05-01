@@ -8,9 +8,12 @@ description: "Design and creation of paralletes for calisthenics movements"
 repo: ""
 ---
 
+Since I was young, I have always been a fan of personal fitness. I played lots of sports growing up.
+
+This long fitness journey led me to calisthenics. I was captivated by the gravity-defying feats of strength and the aesthetic, muscular, and proportioned physiques that epitomize the ideal physique of most guys.
+
+
 ## Inspiration
-
-
 
 Simple Wood Designs
 <div id="my-slideshow"></div>
