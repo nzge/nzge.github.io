@@ -26,10 +26,15 @@ Even though BLDC motors are often controlled using six-step trapezoidal commutat
 
 ### The control solution of FOC
 #### 1. Rotor Position sensing/estimation
+
 #### 2. Clarke + Park transformation
+
 #### 3. Control Loop
+
 #### 4. Inverse Parke + Inverse Parke
+
 #### 5. Inverter PWM output
+
 
 ## Firmware
 https://simplefoc.com/
@@ -129,6 +134,9 @@ style="height:400px;display: block; margin: auto;"}
 
 ---
 # References
+
+## FOC
+1. 
 
 ## Capstan 
 1. https://www.aaedmusa.com/projects/capstandrive
