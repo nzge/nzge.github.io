@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://nzge.github.io/2025/03/06/Tested.html</loc>
+<loc>https://nzge.github.io/2025/03/06/Test.html</loc>
 <lastmod>2025-03-06T00:00:00+00:00</lastmod>
 </url>
 <url>
@@ -9,8 +9,16 @@
 <lastmod>2025-04-09T00:00:00+00:00</lastmod>
 </url>
 <url>
-<loc>https://nzge.github.io/2025/04/10/Test.html</loc>
+<loc>https://nzge.github.io/2025/04/10/Open-Source.html</loc>
 <lastmod>2025-04-10T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://nzge.github.io/2025/04/15/Inspiration.html</loc>
+<lastmod>2025-04-15T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://nzge.github.io/2025/04/30/Creative-Spill.html</loc>
+<lastmod>2025-04-30T00:00:00+00:00</lastmod>
 </url>
 <url>
 <loc>https://nzge.github.io/pages/about.html</loc>
@@ -134,10 +142,10 @@
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/solar-car_media/Ge_FinalReport.pdf</loc>
-<lastmod>2025-04-30T11:04:27+00:00</lastmod>
+<lastmod>2025-05-01T00:24:32+00:00</lastmod>
 </url>
 <url>
 <loc>https://nzge.github.io/music.html</loc>
-<lastmod>2025-04-30T11:04:27+00:00</lastmod>
+<lastmod>2025-05-01T00:24:32+00:00</lastmod>
 </url>
 </urlset>
