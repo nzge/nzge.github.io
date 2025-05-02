@@ -82,6 +82,11 @@ style="height:400px;display: block; margin: auto;"}
 ---
 
 ## Reference
+
+### General Knowledge
+1. [how to ACTUALLY start sewing in 2025 by Glory Allen](https://www.youtube.com/watch?v=gMYn_3uXBTc)
+
+### Ice Axe
 1. ["Homemade pair of ice axes - reddit"](https://www.reddit.com/r/myog/comments/1igxyxl/homemade_pair_of_ice_axes/). Accessed: March 6, 2025. 
 2. https://steemit.com/mountaineering/@imagimara.rocks/homemade-ice-and-snow-axes-for-mountaineering
 3. ["Petzl Glacier Ice Axe"](https://www.amazon.com/Petzl-Glacier-ice-Axe-50cm/dp/B0DDMNLJX6?gQT=1&th=1)

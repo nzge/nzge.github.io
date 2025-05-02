@@ -12,21 +12,21 @@
     margin: 1em 0 0.5em;
     font-weight: bold;
   }
-  h1 { font-size: 2.5em; color: #ff79c6; }
-  h2 { font-size: 2em;   color: #bd93f9; }
-  h3 { font-size: 1.75em; color: #50fa7b; }
-  h4 { font-size: 1.5em;  color: #8be9fd; }
-  h5 { font-size: 1.2em;  color: #8be9fd; }
-  h6 { font-size: 1em;    color: #8be9fd; }
+  h1 { font-size: 2.5em; margin: 1em 0 0.5em; color: #ff79c6; }
+  h2 { font-size: 2.5em; margin: 2em 0 0.5em; color: #bd93f9; }
+  h3 { font-size: 2em; margin: 1em 0 0.5em; color: #50fa7b; }
+  h4 { font-size: 1.5em; margin: 1.5em 0 0.5em; color: #8be9fd; }
+  h5 { font-size: 1.2em; margin: 1em 0 0.5em; color: #fdec8b; }
+  h6 { font-size: 1em; margin: 0.25em 0 0.25em; color: #fda58b; }
 
   // Paragraphs
   p {
-    margin: 1em 0;
+    margin: .75em 0;
   }
 
   // Links
   a {
-    color: #8be9fd;
+    color: #50838f;
     &:hover {
       color: #50fa7b;
     }
@@ -34,16 +34,38 @@
 
   // Blockquotes
   blockquote {
+    background: rgba(255, 255, 255, 0.03); // slight highlight
     border-left: 4px solid #44475a;
     padding-left: 1em;
     margin: 1em 0;
     font-style: italic;
     color: #6272a4;
-  }
 
+    &::before {
+      content: '';
+    }
+  
+    &.callout-warn {
+      border-left: 4px solid red;
+      background: #fff2f2;
+      color: #6272a4;
+      margin: 1em 2em;
+      padding: .5em;
+    }
+
+    &.callout-info {
+      border-left: 4px solid blue;
+      background: rgb(178, 178, 197);
+      color: #1c1f29;
+      margin: 1em 2em;
+      padding: .5em;
+    }
+  }
+  
+  
   // Lists
   ul, ol {
-    margin: .5em 0;
+    margin: .2em 0;
     padding-left: 2em;
     li {
       margin-bottom: 0.1em;

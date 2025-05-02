@@ -3,7 +3,7 @@ layout: default
 title: Blog
 ---
 
-<h1>Latest Posts</h1>
+<h1>Posts</h1>
 <div class="container">
     <ul>
     {% for post in site.posts %}
@@ -12,6 +12,7 @@ title: Blog
         <h3>{{ post.date | date_to_string }}</h3>
         {{ post.excerpt }}
         </li>
+        <br>
     {% endfor %}
     </ul>
 </div>
