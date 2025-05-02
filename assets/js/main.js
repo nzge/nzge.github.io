@@ -13,16 +13,9 @@ jQuery(window).on('load', function(){
 
 // JavaScript function to go back to the previous page
 function goBack() {
-  const currentNoHash = window.location.href.split('#')[0];
-  const referrerNoHash = document.referrer.split('#')[0];
-
-  if (referrerNoHash && referrerNoHash !== currentNoHash) {
-    window.location.href = document.referrer;
-  } else {
-    // Optional fallback: redirect to home or a default page
-    window.location.href = '/';
-  }
+  window.history.back();
 }
+
 ///////////////////////////////
 
 // Function to dynamically sort the projects based on the selected option
