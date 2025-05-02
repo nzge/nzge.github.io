@@ -9,7 +9,7 @@ repo: "https://github.com/nzge/nzge.github.io"
 toc: true
 ---
 
-An exploration of a funsion of minimalist and retro (y2k, early internet, geocities/angelfire) aesthetics. A place for my personal creative expression while accomplishing the task of showing my work.
+A fusion of minimalist and retro (y2k, early internet, geocities/angelfire) aesthetics. A place for my personal creative expression while accomplishing the task of showing my work.
 
 ## Code
 
@@ -303,24 +303,24 @@ style="height:400px;display: block; margin: auto;"}
 ## References
 
 Inspiration:  
-- [Complete Responsive Web Design Tutorial - Minimal Portfolio Website by Codegrid](https://www.youtube.com/watch?v=SFVhAfRHjTo&list=PLTqchMECawAr4xC0UPulEVUqBPYgZU0xG&index=4)
-- [Full Screen Overlay Menu (SVG Path Animation) Using HTML, CSS & GSAP - Inspired By Niccolò Miranda](https://www.youtube.com/watch?v=qn1tcSaJ5XQ&list=PLTqchMECawAr4xC0UPulEVUqBPYgZU0xG&index=1)
-- [Swiss web design: simple, but it works. Here's why by Phoebe Yu](https://www.youtube.com/watch?v=qdHipyZgOTY&t=509s)
-- https://www.cameronsworld.net/
-- https://geocities.restorativland.org/Area51/Dungeon/1092/
-- https://goblin-heart.net/sadgrl/cyberspace/webrings
-- https://zj.neocities.org/
+- ["Complete Responsive Web Design Tutorial - Minimal Portfolio Website" by Codegrid](https://www.youtube.com/watch?v=SFVhAfRHjTo&list=PLTqchMECawAr4xC0UPulEVUqBPYgZU0xG&index=4){:target="_blank"}
+- ["Full Screen Overlay Menu (SVG Path Animation) Using HTML, CSS & GSAP" - Inspired By Niccolò Miranda](https://www.youtube.com/watch?v=qn1tcSaJ5XQ&list=PLTqchMECawAr4xC0UPulEVUqBPYgZU0xG&index=1){:target="_blank"}
+- ["Swiss web design: simple, but it works. Here's why" by Phoebe Yu](https://www.youtube.com/watch?v=qdHipyZgOTY&t=509s){:target="_blank"}
+- [Cameronsworld](https://www.cameronsworld.net/){:target="_blank"}
+- [restorativland](https://geocities.restorativland.org/Area51/Dungeon/1092/){:target="_blank"}
+- [Sadgrl webring](https://goblin-heart.net/sadgrl/cyberspace/webrings){:target="_blank"}
+- [ZJ neocities](https://zj.neocities.org/){:target="_blank"}
 
 Assets: 
-- https://geocities.restorativland.org/
-- https://cyber.dabamos.de/
-- https://gifcities.org/
+- [https://geocities.restorativland.org/](https://geocities.restorativland.org/)
+- [https://cyber.dabamos.de/](https://cyber.dabamos.de/)
+- [https://gifcities.org/](https://gifcities.org/)
 
 Learning Resourcess:
-- https://jekyllrb.com/docs/
-- https://sass-lang.com/documentation/at-rules/import/
+- [https://jekyllrb.com/docs/](https://jekyllrb.com/docs/){:target="_blank"}
+- [https://sass-lang.com/documentation/at-rules/import/](https://sass-lang.com/documentation/at-rules/import/){:target="_blank"}
 - w3schools
-  - css: https://www.w3schools.com/css/default.asp
-  - html: https://www.w3schools.com/html/default.asp
-  - js: https://www.w3schools.com/js/default.asp
-- https://developer.mozilla.org/en-US/docs/Web/CSS 
+  - css: [https://www.w3schools.com/css/default.asp](https://www.w3schools.com/css/default.asp){:target="_blank"}
+  - html: [https://www.w3schools.com/html/default.asp](https://www.w3schools.com/html/default.asp){:target="_blank"}
+  - js: [https://www.w3schools.com/js/default.asp](https://www.w3schools.com/js/default.asp){:target="_blank"}
+- [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS){:target="_blank"}

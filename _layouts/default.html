@@ -1,16 +1,16 @@
 <html {% if page.effect == "dynamic" %}class="dynamic-bg"{% endif %}> 
   {% include head.html %}
 
-  <body>
+  <button id="backToTop" title="Back to top">↑</button>
+  
+  {% include menu.html %}
+
+  <body>  
 
     {% include navbar.html %}
 
-    {% include side-menu.html %}
-
     {{ content }}
 
-    <button id="backToTop" title="Back to top">↑</button>
-    
     {% include footer.html %}
     
   </body>

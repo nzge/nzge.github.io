@@ -56,12 +56,11 @@ https://en.wikipedia.org/wiki/Capstan_equation
 
 ## Components
 
-| Item             | Description |
-|------------------|------|
-| [Rope](https://dynamica-ropes.com/products/dm20/) |  |
-Vectran
-Kevlar
-DM20
+| Item | Description |
+|---|---|
+| [Rope](https://dynamica-ropes.com/products/dm20/) | Vectran, Kevlar, DM20 |
+
+
 
 ## Build Log
 

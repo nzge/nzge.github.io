@@ -59,10 +59,6 @@ $dropdown-text: #ffffff;
   }
 }
 
-.menu {
-  display: none;
-}
-
 @media (max-width: 750px) {
   .menu {
     display: block;
@@ -76,63 +72,23 @@ $dropdown-text: #ffffff;
   }
 }
 
-/*--------------- Button --------------- */
-.button {
-  background-color: $button-bg;
-  color: $primary-color;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  &:hover {
-    background-color: $hover-color;
-  }
-}
-
-/*--------------- Go Back --------------- */
-.go-back {
-  color: $go-back-color;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  padding-left: 20px;
-  position: relative;
-  display: inline-flex;
+/*--------------- Sort Container --------------- */
+.sort-container {
+  display: flex;
   align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.1s ease-in-out;
+  gap: 2px;
 
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0px;
-    top: 50%;
-    transition: transform 0.1s ease-in-out;
+  label {
+    font-size: 16px;
+    line-height: 1;
   }
-
-  &::before {
-    border-color: $go-back-color;
-    border-style: solid;
-    border-width: 0 0 2px 2px;
-    height: 6px;
-    margin-top: -3px;
-    width: 6px;
-    transform: rotate(45deg);
-  }
-
-  &::after {
-    background: $go-back-color;
-    height: 2px;
-    width: 11px;
-    margin-top: -1px;
-  }
-
-  &:hover {
-    transform: translateX(-3px);
+  select {
+    font-size: 16px;
+    padding: 4px 8px;
+    height: 28px;
+    vertical-align: middle;
+    position: relative;
+    top: 2px;
   }
 }
 
@@ -195,26 +151,6 @@ select {
   }
 }
 
-/*--------------- Sort Container --------------- */
-.sort-container {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-
-  label {
-    font-size: 16px;
-    line-height: 1;
-  }
-  select {
-    font-size: 16px;
-    padding: 4px 8px;
-    height: 28px;
-    vertical-align: middle;
-    position: relative;
-    top: 2px;
-  }
-}
-
 /*--------------- Side Menu --------------- */
 
 .side-menu {
@@ -253,6 +189,89 @@ select {
   }
 }
 
+/*--------------- Menu --------------- */
+
+#toggle-btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#hamburger{
+  position:relative;
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+
+  span{
+    position: absolute;
+    top: 10%;
+    transform: translateY(-10%);
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background-color: #e5e3dc;
+    transition: transform 0.25s;
+
+    &::before{
+      position: absolute;
+      right: 0;
+      display: inline-block;
+      content: '';
+      width: 22px;
+      height: 2px;
+      background: #e5e3dc;
+      transform: translateY(-5px);
+      transition: transform 0.25s;
+    }  
+  }
+}
+
+#hamburger .active {
+  transform: rotate(45deg);
+}
+
+#hamburger .active span::before{
+  top: unset;
+  width: 24px;
+  transform: rotate(-90deg);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  a {
+    position: relative;
+    top: 120px;
+    line-height: 70%;
+    text-decoration: none;
+    color: red;
+
+    span {
+      font-size: 20px;
+      margin-right: 2em;
+      font-family: "Ayer";
+
+    }
+  }
+}
+
+.menu > div {
+  position: relative; 
+  display: flex;
+}
 
 /*--------------- Slider --------------- */
 
@@ -437,5 +456,51 @@ input:checked + .slider:before {
   &:hover {
     background-color: #555;
     transform: scale(1.1);
+  }
+}
+
+/*--------------- Go Back --------------- */
+.go-back {
+  color: $go-back-color;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 20px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.1s ease-in-out;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transition: transform 0.1s ease-in-out;
+  }
+
+  &::before {
+    border-color: $go-back-color;
+    border-style: solid;
+    border-width: 0 0 2px 2px;
+    height: 6px;
+    margin-top: -3px;
+    width: 6px;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    background: $go-back-color;
+    height: 2px;
+    width: 11px;
+    margin-top: -1px;
+  }
+
+  &:hover {
+    transform: translateX(-3px);
   }
 }

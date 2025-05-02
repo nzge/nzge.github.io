@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/2025/04/02/Thoughts.html</loc>
-<lastmod>2025-04-02T00:00:00-07:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/2025/04/06/Identity.html</loc>
-<lastmod>2025-04-06T00:00:00-07:00</lastmod>
+<loc>http://localhost:4000/2025/03/06/Test.html</loc>
+<lastmod>2025-03-06T00:00:00-08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/2025/04/09/First-Post.html</loc>
@@ -21,12 +17,20 @@
 <lastmod>2025-04-12T00:00:00-07:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2025/04/13/Thoughts.html</loc>
+<lastmod>2025-04-13T00:00:00-07:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/2025/04/15/Inspiration.html</loc>
 <lastmod>2025-04-15T00:00:00-07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/2025/04/16/Normality.html</loc>
 <lastmod>2025-04-16T00:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2025/04/20/Identity.html</loc>
+<lastmod>2025-04-20T00:00:00-07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/2025/04/25/Questions.html</loc>

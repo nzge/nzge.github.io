@@ -101,7 +101,7 @@ A popular switch in the 80s and 90s. They became obsolete as Cherry rose in popu
 - SKCM (Tactile, Clicky): 
   - Tactile: orange, salmon, black, cream/ivory, brown, neon green (rare)
   - Clicky: blue, amber, white
-- Clones: Matias
+- Clones: [Matias](https://matias.ca/switches/click/)
 <div style="clear: both;"></div>
 
 ###### Hall effect
@@ -155,7 +155,7 @@ Modifications on existing components to improve sound and feel.
 Modding as an idea rose in popularity around 2020-22. In more recent times, most mods, specifically ones that add foam/dampeners, are often rejected as a cheap/shoddy remedy to the many pitfalls of a poor design or keyboard configuration. People are returning to a more purist approach to keyboard builds by perfecting the basics (little to no foam, properly tuned stabilizers)
 
 ##### Switch Mods
-**Lube**: Not so much a mod as lubrication is standard procedure, and many switches come pre-lubed. However, people do prefer to lube their own switches. Common lube choices include Krytox 205G0, Tribosys 3203, or a proprietary blend of lubes.  
+**Lube**: Not so much a mod as lubrication is standard procedure, and many switches come pre-lubed. However, people do prefer to lube their own switches. Common lube choices include Krytox 205G0 (thicker, for linear switches), Tribosys 3203 (thinner, for tactile switches), or a proprietary blend of lubes.  
 
 **Spring swap**: stock springs can be substituted for aftermarket options, greatly impacting key feel. Springs can vary in length, actuation force (g), and number of stages (some springs have 2 stages, creating a staged actuation curve). Common spring manufacturers include SPRiT, TX, and Geon. 
 
@@ -650,24 +650,31 @@ style="height:200px;display: block; margin: auto;"}
 ### Keyboard
 - https://www.keyboard.university/
 - https://www.deskthority.net/
+- https://www.theremingoat.com/
+- https://www.alexotos.com/category/keyboards/
 
 #### Design Language
 1. [Endgame Never Felt So Close - My TGR Jane V2 ME Experience by Wongsquared](https://www.youtube.com/watch?v=0sqF46vm8yY){:target="_blank"}
 2. [Gehirn / Keyboard Preview by Markchun](https://www.youtube.com/watch?v=IK7r_d62QXA){:target="_blank"}
 
 #### Switches
-1. https://www.theremingoat.com/
+1. 
 2. [Teardown - Alps SKCL/SKCM switches by Chyrosran22](https://www.youtube.com/watch?v=QmJ-IEEBQAI){:target="_blank"}
 3. [The Comprehensive Switch List - Official Version](https://docs.google.com/spreadsheets/d/1WCzp0ujCfmMPZ6r_oSULzEEcG4pcWDd01S09OtAf9LM/edit?gid=0#gid=0){:target="_blank"}
 4. [The Best Mechanical Keyboard Stabilizers - 2025 by Alexotos](https://www.alexotos.com/the-best-mechanical-keyboard-stabilizers-in-2025/){:target="_blank"}
 5. [Varmilo EC Switches. Better Than The Rest.](https://varmilo.com/blogs/switches/varmilo-ec-switches-better-than-the-rest){:target="_blank"}
-
+6. [Frankenswitches by AidanSmith.dev](https://www.aidansmith.dev/frankenswitches/)
+Hall Effect
+6. [Soundtest of the most popular Hall effect Switches (Wooting 80HE, Jade, Jade Pro, Jade Max, Magneto, Black Knight, Lekker V2) - reddit](https://www.reddit.com/r/MechanicalKeyboards/comments/1g87x4a/soundtest_of_the_most_popular_halleffect_switches/)
+7. [Hall Effect vs. Optical: What Mechanical Keyboard Switches Should You Choose? by Yadullah Abidi](https://www.makeuseof.com/hall-effect-vs-optical-switches/)
+8. [3D Printed Maglev Switch](https://github.com/famichu/MagLev_Switch_MX)
 
 #### Split
 1. [“The REAL Ergonomic Keyboard Endgame!” - How To Design & Make A Totally Custom Keyboard](https://www.youtube.com/watch?v=UKfeJrRIcxw&t=895s){:target="_blank"}
 2. [My favorite ergo split keyboard so far by EIGA](https://www.youtube.com/watch?v=riqmW3UHqPY){:target="_blank"}
 3. [The TOTEM wireless keyboard by EIGA](https://www.youtube.com/watch?v=YwsutNf1WRA){:target="_blank"}
 4. [I Built My Dream Keyboard from Absolute Scratch by Christian Selig](https://www.youtube.com/watch?v=7UXsD7nSfDY){:target="_blank"}
+5. [mask-2.0.0 4x6 Split keyboard with Cherry MX-ULP keys](https://www.reddit.com/r/ErgoMechKeyboards/comments/zpo9h6/mask200_4x6_split_keyboard_with_cherry_mxulp_keys/#lightbox)
 
 #### Macropad
 1. [How to Build a Handwired Keyboard by Joe Scotto](https://www.youtube.com/watch?v=hjml-K-pV4E){:target="_blank"}
