@@ -119,12 +119,281 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#general-info">General Info</a><ul><li><a href="#mcu-selection">MCU Selection</a><ul><li><a href="#esp32">ESP32</a></li><li><a href="#atmega32u4-avr-family">ATmega32U4 (AVR family)</a></li><li><a href="#rp2040--rp2350">RP2040 / RP2350</a></li><li><a href="#nrf52480">nrf52480</a></li><li><a href="#stm32-family">STM32 Family</a></li><li><a href="#honorable-mention-teensy-40">Honorable Mention: Teensy 4.0</a></li></ul></li><li><a href="#keyboard">Keyboard</a><ul><li><a href="#keyboard-matrix-multiplexing">Keyboard Matrix (Multiplexing)</a></li><li><a href="#firmware">Firmware</a><ul><li><a href="#qmk"><a href="https://qmk.fm/">QMK</a></a></li><li><a href="#zmk"><a href="https://zmk.dev/">ZMK</a></a></li></ul></li></ul></li><li><a href="#mice">Mice</a><ul><li><a href="#motion-sensor">Motion Sensor</a></li><li><a href="#firmware-1">Firmware</a></li></ul></li></ul></li><li><a href="#keyboards">Keyboards</a><ul><li><a href="#hand-wired-macropad">Hand-wired Macropad</a><ul><li><a href="#specs">Specs</a><ul><li><a href="#layout">Layout</a></li><li><a href="#components">Components</a></li><li><a href="#pin-mapping">Pin Mapping</a></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#macropad-with-pcb">Macropad with PCB</a><ul><li><a href="#specs-1">Specs</a></li><li><a href="#pcb">PCB</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#ergo-split">Ergo Split</a><ul><li><a href="#specs-2">Specs</a><ul><li><a href="#components-1">Components</a></li><li><a href="#layout-1">Layout</a></li></ul></li><li><a href="#pcb-1">PCB</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#40-with-fkeys">40% with Fkeys</a><ul><li><a href="#specs-3">Specs</a><ul><li><a href="#components-2">Components</a></li><li><a href="#layout-2">Layout</a></li></ul></li><li><a href="#pcb-2">PCB</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#hhkb">HHKB</a><ul><li><a href="#specs-4">Specs</a><ul><li><a href="#components-3">Components</a></li><li><a href="#layout-3">Layout</a></li></ul></li><li><a href="#pcb-3">PCB</a></li><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#modular-keyboard">Modular Keyboard</a><ul><li><a href="#concept">Concept</a></li><li><a href="#specs-5">Specs</a></li><li><a href="#build-log-5">Build Log</a></li></ul></li></ul></li><li><a href="#mice-1">Mice</a><ul><li><a href="#ultralight-mouse">Ultralight Mouse</a><ul><li><a href="#specs-6">Specs</a></li><li><a href="#pcb-4">PCB</a></li><li><a href="#firmware-2">Firmware</a></li><li><a href="#build-log-6">Build Log</a></li></ul></li><li><a href="#keyswitch-mouse">Keyswitch Mouse</a><ul><li><a href="#specs-7">Specs</a></li><li><a href="#pcb-5">PCB</a></li><li><a href="#firmware-3">Firmware</a></li><li><a href="#build-log-7">Build Log</a></li></ul></li><li><a href="#macros-mouse">Macros Mouse</a><ul><li><a href="#specs-8">Specs</a></li><li><a href="#pcb-6">PCB</a></li><li><a href="#firmware-4">Firmware</a></li><li><a href="#build-log-8">Build Log</a></li></ul></li></ul></li><li><a href="#references">References</a><ul><li><a href="#keyboard-1">Keyboard</a><ul><li><a href="#design-language">Design Language</a></li><li><a href="#split">Split</a></li><li><a href="#macropad">Macropad</a></li></ul></li><li><a href="#mice-2">Mice</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
+      <ul><li><a href="#general-info">General Info</a><ul><li><a href="#keyboard">Keyboard</a><ul><li><a href="#keyboard-matrix-multiplexing">Keyboard Matrix (Multiplexing)</a></li><li><a href="#keyboard-anatomy">Keyboard Anatomy</a></li><li><a href="#case-design">Case Design</a><ul><li><a href="#layout">Layout</a><ul><li><a href="#traditional-layouts">Traditional Layouts</a></li><li><a href="#split">Split</a></li></ul></li><li><a href="#mounting-system">Mounting System</a><ul><li><a href="#top-mount">Top Mount</a></li><li><a href="#gasket-mount">Gasket Mount</a></li><li><a href="#sandwhich-mount">Sandwhich Mount</a></li></ul></li></ul></li><li><a href="#switches">Switches</a><ul><li><a href="#switch-types">Switch Types</a><ul><li><a href="#cherry-mx-style">Cherry MX Style</a><ul><li><a href="#switch-anatomy">Switch Anatomy</a></li><li><a href="#manufacturers-the-switch-market">Manufacturers: The Switch Market</a></li><li><a href="#frankenswitches">Frankenswitches</a></li></ul></li><li><a href="#other-switch-types">Other Switch Types</a><ul><li><a href="#low-profile">Low profile</a></li><li><a href="#alps">Alps</a></li><li><a href="#hall-effect">Hall effect</a></li><li><a href="#ec">EC</a></li></ul></li></ul></li><li><a href="#sound-profile">Sound Profile</a></li><li><a href="#switch-materials">Switch Materials</a></li><li><a href="#stabilizers">Stabilizers</a></li></ul></li><li><a href="#mods">Mods</a><ul><li><a href="#switch-mods">Switch Mods</a></li><li><a href="#stabilizer-mods">Stabilizer Mods</a></li><li><a href="#case-mods">Case Mods</a></li></ul></li></ul></li><li><a href="#firmware">Firmware</a><ul><li><a href="#qmk"><a href="https://qmk.fm/" target="_blank">QMK</a></a></li><li><a href="#zmk"><a href="https://zmk.dev/" target="_blank">ZMK</a></a></li></ul></li></ul></li><li><a href="#mouse">Mouse</a><ul><li><a href="#motion-sensor">Motion Sensor</a></li><li><a href="#switches-1">Switches</a></li><li><a href="#firmware-1">Firmware</a></li></ul></li><li><a href="#mcu-selection">MCU Selection</a><ul><li><a href="#esp32">ESP32</a></li><li><a href="#atmega32u4-avr-family">ATmega32U4 (AVR family)</a></li><li><a href="#rp2040--rp2350">RP2040 / RP2350</a></li><li><a href="#nrf52480">nrf52480</a></li><li><a href="#stm32-family">STM32 Family</a></li><li><a href="#honorable-mention-teensy-microcontrollers">Honorable Mention: Teensy microcontrollers</a></li></ul></li></ul></li></ul></li><li><a href="#keyboards">Keyboards</a><ul><li><a href="#hand-wired-macropad">Hand-wired Macropad</a><ul><li><a href="#specs">Specs</a><ul><li><a href="#layout-1">Layout</a></li><li><a href="#components">Components</a></li><li><a href="#pin-mapping">Pin Mapping</a></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#macropad-with-pcb">Macropad with PCB</a><ul><li><a href="#specs-1">Specs</a></li><li><a href="#pcb">PCB</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#ergo-split">Ergo Split</a><ul><li><a href="#specs-2">Specs</a><ul><li><a href="#components-1">Components</a></li><li><a href="#layout-2">Layout</a></li></ul></li><li><a href="#pcb-1">PCB</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#40-with-fkeys">40% with Fkeys</a><ul><li><a href="#specs-3">Specs</a><ul><li><a href="#components-2">Components</a></li><li><a href="#layout-3">Layout</a></li></ul></li><li><a href="#pcb-2">PCB</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#hhkb">HHKB</a><ul><li><a href="#specs-4">Specs</a><ul><li><a href="#components-3">Components</a></li><li><a href="#layout-4">Layout</a></li></ul></li><li><a href="#pcb-3">PCB</a></li><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#modular-keyboard">Modular Keyboard</a><ul><li><a href="#concept">Concept</a></li><li><a href="#specs-5">Specs</a></li><li><a href="#build-log-5">Build Log</a></li></ul></li></ul></li><li><a href="#mice">Mice</a><ul><li><a href="#ultralight-mouse">Ultralight Mouse</a><ul><li><a href="#specs-6">Specs</a></li><li><a href="#pcb-4">PCB</a></li><li><a href="#firmware-2">Firmware</a></li><li><a href="#build-log-6">Build Log</a></li></ul></li><li><a href="#chimera">Chimera</a><ul><li><a href="#concept-1">Concept</a></li><li><a href="#specs-7">Specs</a></li><li><a href="#pcb-5">PCB</a></li><li><a href="#firmware-3">Firmware</a></li><li><a href="#build-log-7">Build Log</a></li></ul></li><li><a href="#macros-mouse">Macros Mouse</a><ul><li><a href="#concept-2">Concept</a></li><li><a href="#specs-8">Specs</a></li><li><a href="#pcb-6">PCB</a></li><li><a href="#firmware-4">Firmware</a></li><li><a href="#build-log-8">Build Log</a></li></ul></li></ul></li><li><a href="#references">References</a><ul><li><a href="#keyboard-1">Keyboard</a><ul><li><a href="#design-language">Design Language</a></li><li><a href="#switches-2">Switches</a></li><li><a href="#split-1">Split</a></li><li><a href="#macropad">Macropad</a></li></ul></li><li><a href="#mice-1">Mice</a></li><li><a href="#sources">Sources</a></li></ul></li></ul></li></ul>
     </nav>
   
   <div>
     <article class="markdown-body">
       <h1 id="general-info">General Info</h1>
+
+<h2 id="keyboard">Keyboard</h2>
+<p>A keyboard simply converts keystrokes (user input) into input commands, usually by stringing together a collection of character inputs.</p>
+
+<p>Beyond the simple function of registering keystrokes, everything in the hobby is optimized for sound and feel. As you will see, a common theme for sound improvement comes from dampening/compression, and any form of reduction in rattle/instability.</p>
+
+<h3 id="keyboard-matrix-multiplexing">Keyboard Matrix (Multiplexing)</h3>
+<p>The keyboard matrix is the fundamental idea behind the operation of any and all keyboard-adjacent input devices.</p>
+
+<h3 id="keyboard-anatomy">Keyboard Anatomy</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#case-design">Case</a></td>
+      <td>Houses the keyboard</td>
+    </tr>
+    <tr>
+      <td>Plate</td>
+      <td>Found in most keyboard designs. It provides stability to the PCB-Switch assembly</td>
+    </tr>
+    <tr>
+      <td><a href="#switches">Keyswitch</a></td>
+      <td>The user interfaces with the keyswitch to register inputs</td>
+    </tr>
+    <tr>
+      <td>PCB</td>
+      <td>Connects the electronic components of the keyboard</td>
+    </tr>
+    <tr>
+      <td><a href="#mcu-selection">MCU</a></td>
+      <td>The brains of the keyboard. Often integrated into the PCB</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="case-design">Case Design</h3>
+
+<h4 id="layout">Layout</h4>
+<p>The layout determines the form factor of the case.</p>
+<h5 id="traditional-layouts">Traditional Layouts</h5>
+<p>Fullsize, HHKB, TKL, Ortho</p>
+<h5 id="split">Split</h5>
+<p>Ergo split, Ortho split</p>
+
+<h4 id="mounting-system">Mounting System</h4>
+<p>The way the PCB-switch assembly are housed within the case.</p>
+<h5 id="top-mount">Top Mount</h5>
+<p>The plate is secured to the case top housing. Usually a stiffer typing experience.</p>
+<h5 id="gasket-mount">Gasket Mount</h5>
+<p>Gasket material between the plate (or PCB) and keyboard housing on both top and bottom sides.  This cushions/trampolines the plate within the keyboard.</p>
+<h5 id="sandwhich-mount">Sandwhich Mount</h5>
+<p>Screws go fully through the bottom housing, plate, and top housing of the keyboard, holding the plate like the middle of a sandwich.</p>
+
+<h3 id="switches">Switches</h3>
+<p>Keyboard switches are a very intriguing corner of the keyboard hobby, filled with some of the most bizarre naming schemes out of any hobby I’ve been a part of. The Keyboard switch rabbithole is vast and deep. Switch selection may impact the design of your pcb (potentially even the case), as switches may possess a unique form factor that you need to account for.</p>
+<h4 id="switch-types">Switch Types</h4>
+
+<h5 id="cherry-mx-style">Cherry MX Style</h5>
+<p>Invented by Cherry in the 1980s, the MX style switch became the gold standard high-end switch solution. The MX style switch was a major innovation because it introduced a modular, customizable, and reliable mechanical keyboard switch. This design enabled a wide variety of tactile and auditory feedback options, and the durability of the switches allowed them to withstand millions of keystrokes. Most of the keyboard ecosystem is built around housing this style of switch.</p>
+<h6 id="switch-anatomy">Switch Anatomy</h6>
+<p><img src="/assets/media/input_media/switches/cherry.gif" alt="Alt text" style="height:200px;display: block; margin: auto;" />
+<strong>Stem</strong>: What is pushed down to trigger a key press.<br />
+<strong>Top Housing &amp; Bottom Housing</strong>: Houses the switch assembly<br />
+<strong>Spring</strong>: Dampens the keypress and allows the key to return to starting position on the upstroke<br />
+<strong>Metal Leaf</strong>: Contact leaf that triggers the key input that registers a keypress</p>
+
+<h6 id="manufacturers-the-switch-market">Manufacturers: The Switch Market</h6>
+<p><u>Cherry MX</u>: The original switch manufacturer. Cherry MX switches come with a signature scratch that people have come to know and love. In a hobby that glorifies smoothness in all aspects of the typing experience, it’s interesting that the uniquely scratchy feeling of MX switches have withstood the test of time.</p>
+<ul>
+  <li>Cherry MX Blacks: MX blacks are an iconic switch, inspiring countless spinoffs such as OP blacks, MX Hyperglide. Old MX blacks (known as “vintage blacks”) that used the 1st gen tooling of Cherry MX Blacks (1984 - 1994) are sometimes harvested from old computers and repurposed due to their improved level of smoothness by nature of being “broken-in” from constant wear. There was also an alleged 1994 retool that made the switch worse in terms of smoothness, making the older MX blacks superior/more valuable in that regard.</li>
+</ul>
+
+<p><u>Successors</u>: Since Cherry dropped their switch patent in 2004, the manufacturer market has exploded with countless switch variations from a whole host of manufacturers.</p>
+<ul>
+  <li>Gateron: probably the most notorious Cherry MX clone company
+    <ul>
+      <li>Milky Yellows, Deeping, Oil Kings, Black ink</li>
+    </ul>
+  </li>
+  <li>Other Manufacturers: Kailh, JWK/Durock, KTT, Tecsee, Outemu, SP-star, Akko, BSUN/YOK, HMX, Everglide</li>
+</ul>
+
+<blockquote class="callout-info">
+  <p>ℹ️ <strong>Honorable Mentions</strong><br />
+NK creams, Holy Pandas (Spinoffs: GOK Pandas, Glorious Pandas), Boba U4T, Tangies</p>
+</blockquote>
+
+<h6 id="frankenswitches">Frankenswitches</h6>
+<p>Combining components from various switches to create a completely unique switch<br />
+Notable examples: Black Cherry Pie, Creamsicle, Zyko, Holy Boba, Holy Panda<br />
+<br /></p>
+
+<h5 id="other-switch-types">Other Switch Types</h5>
+<p>Less popular switch types</p>
+<h6 id="low-profile">Low profile</h6>
+<p>Low profile switches are most often seen in split keyboard builds.<br />
+<img src="/assets/media/input_media/switches/choc.png" alt="Alt text" style="height:125px; margin-right: 2em; float: right;" /></p>
+<ul>
+  <li>Choc switches</li>
+  <li>Choc v2</li>
+</ul>
+
+<p>Cherry Ultra low profile<br />
+<img src="/assets/media/input_media/switches/cherry-ulp.png" alt="Alt text" style="height:125px; margin: auto; float: left;" /></p>
+<div style="clear: both;"></div>
+
+<h6 id="alps">Alps</h6>
+<p><img src="/assets/media/input_media/switches/alps.png" alt="Alt text" style="height:125px; margin-right: 2em; float: right;" />
+A popular switch in the 80s and 90s. They became obsolete as Cherry rose in popularity.</p>
+<ul>
+  <li>SKCL (Linear): green, yellow</li>
+  <li>SKCM (Tactile, Clicky):
+    <ul>
+      <li>Tactile: orange, salmon, black, cream/ivory, brown, neon green (rare)</li>
+      <li>Clicky: blue, amber, white</li>
+    </ul>
+  </li>
+  <li>Clones: Matias</li>
+</ul>
+<div style="clear: both;"></div>
+
+<h6 id="hall-effect">Hall effect</h6>
+<p><img src="/assets/media/input_media/switches/hall-effect.png" alt="Alt text" style="height:125px; margin-right: 1em; float: right;" />
+Uses a magnetic field to detect keystrokes. The switch is gaining popularity in the gaming space, as there is a lot of software configurability as to when to detect inputs depending the distance of travel of the keystroke (along the downstroke and upstroke).</p>
+
+<ul>
+  <li>Lekker Switches (V2), Black Knight Switches, TTC Magneto Switch, OG Jades, Jade Pros, &amp; Jade Max, Geon RAW HE</li>
+</ul>
+<div style="clear: both;"></div>
+
+<h6 id="ec">EC</h6>
+<p><img src="/assets/media/input_media/switches/aeboards-naevies-ec.png" alt="Alt text" style="height:125px; margin-right: 2em; float: right;" />
+The EC switch uses electrostatic capacitance to register an input. When the switch is pressed, two contact leaves are brought into close proximity. The electric field between the two contacts leaves becomes disrupted when the distance between them changes. This change in the electrostatic capacitance is measured to actuate the key.</p>
+<div style="clear: both;"></div>
+<ul>
+  <li>AEBoards: Navy switches</li>
+  <li>Varmilo: Iris, Sakura, Ivy, Daisy, Rose</li>
+</ul>
+
+<p><u>Topre</u><br />
+The Topre switch is distinctive, developing a cult following.</p>
+
+<p><img src="/assets/media/input_media/switches/topre.png" alt="Alt text" style="height:125px; margin-right: 2em; float: left;" /></p>
+<div style="clear: both;"></div>
+
+<h4 id="sound-profile">Sound Profile</h4>
+<p><strong>Linear</strong>: The stem freely moves through the switch cavity, offering a smooth consistent key press. Pretty self explanatory, and the most used form of switch.</p>
+
+<p><strong>Tactile</strong>: The signature key feel of a tactile switch is that it offers a tactile bump along the key press. The force actuation curve is nonlinear, in that at the middle of the key press, there is a noticeable point at which a large spike in actuation force is required.</p>
+
+<p><strong>Clicky</strong>: Beyond having a tactile bump along the key press, audible click sound is also produced. The click is produced when the key stem comes in contact with a click jacket or click bar along the key press.</p>
+
+<p><strong>Silent</strong>: Silent switches have dampening rubber on the feet of the stem and on the shoulders to both silence the bottom out as well as the upstroke.</p>
+
+<h4 id="switch-materials">Switch Materials</h4>
+<p>Switch material can impact the acoustic resonance of the switch upon key press. Common switch materials include POM, Nylon, HPE, and UMWHE.</p>
+
+<h4 id="stabilizers">Stabilizers</h4>
+<p>Keys larger than the typical 1u form factor require stabilizers to support the entire length of the key. Stabilizers come in a few styles.</p>
+
+<p>Plate-mount: clip into the plate<br />
+PCB-mount: mount directly to the PCB</p>
+<ul>
+  <li>Screw-in: attached to the PCB via screws.</li>
+  <li>Platemount (Clip-in): Clip into the PCB
+Screw-in stabilizers are the preferred choice as they produce less wobble. In this instance, wobble would mean a less pleasant sound and typing experience.</li>
+</ul>
+
+<p>Owlstabs, Staebies, Durock, TX, Cherry Clip-in</p>
+
+<h3 id="mods">Mods</h3>
+<p>Modifications on existing components to improve sound and feel.<br />
+Modding as an idea rose in popularity around 2020-22. In more recent times, most mods, specifically ones that add foam/dampeners, are often rejected as a cheap/shoddy remedy to the many pitfalls of a poor design or keyboard configuration. People are returning to a more purist approach to keyboard builds by perfecting the basics (little to no foam, properly tuned stabilizers)</p>
+
+<h5 id="switch-mods">Switch Mods</h5>
+<p><strong>Lube</strong>: Not so much a mod as lubrication is standard procedure, and many switches come pre-lubed. However, people do prefer to lube their own switches. Common lube choices include Krytox 205G0, Tribosys 3203, or a proprietary blend of lubes.</p>
+
+<p><strong>Spring swap</strong>: stock springs can be substituted for aftermarket options, greatly impacting key feel. Springs can vary in length, actuation force (g), and number of stages (some springs have 2 stages, creating a staged actuation curve). Common spring manufacturers include SPRiT, TX, and Geon.</p>
+
+<p><strong>Switch Films</strong>: Switch films are sandwhiched between the top and bottom housing of a switch to reduce housing wobble/vibration.</p>
+
+<p><strong>“Broken-in”</strong>: Switches can be preemptively pressed for tens of thousands of keystrokes before being sold, to physically smoothen the switch mechanical friction (like how a river stream smoothens river rocks).</p>
+
+<p><strong>Switch pads</strong>: Poron pads that are placed between the PCB and the switch to reduce key wobble. Switch pads are a less popular mod that came as a biproduct of the foam craze that seeks to dampen and deepen a keyboard’s sound signature by any means necessary.</p>
+
+<h5 id="stabilizer-mods">Stabilizer Mods</h5>
+<ul>
+  <li>Holee</li>
+  <li>Band-Aid</li>
+</ul>
+
+<h5 id="case-mods">Case Mods</h5>
+<ul>
+  <li>Forcebreak</li>
+  <li>Tempest Mod</li>
+  <li>Gasket</li>
+  <li>Silicone</li>
+</ul>
+
+<h3 id="firmware">Firmware</h3>
+<h4 id="qmk"><a href="https://qmk.fm/" target="_blank">QMK</a></h4>
+<p><a href="https://github.com/nzge/qmk_firmware" target="_blank">My fork of QMK</a><br />
+Quantum Mechanical Keyboard (QMK) firmware is an improved version of the TMK firmware made by Hasu, with improved programmability and microcontroller compatibility. VIA builds upon QMK by 
+offering a GUI with simplified/graphical layout firmware configuration and additional features such as plug and play (no flashing), RGB controls, switch tester, etc.
+QMK is general suitable for wired keyboard designs that employ Atmel AVR and ARM architecture.
+https://www.reddit.com/r/MechanicalKeyboards/comments/hjh61v/what_is_qmk/</p>
+<h4 id="zmk"><a href="https://zmk.dev/" target="_blank">ZMK</a></h4>
+<p><a href="https://github.com/nzge/zmk-config{:target=&quot;_blank&quot;}">My fork of ZMK</a><br />
+ZMK Firmware is an open source (MIT) keyboard firmware built on the Zephyr™ Project Real Time Operating System (RTOS). ZMK’s goal is to provide a modern and powerful firmware that is designed for power-efficiency, flexibility, and broad hardware support. 
+ZMK is capable of being used for both wired and wireless input devices.
+ZMK is easier to implement and support both wired(unibody) and wireless options
+ZMK is has greater compatibility, notably in wireless applications. However, users say ZMK lags slightly behind in terms of ease-of-use features.
+There is also TMK and KMK. TMK is mostly deprecated, and is a Circuit Python keyboard firmware. ZMK and QMK are the more common options.</p>
+
+<h2 id="mouse">Mouse</h2>
+<p>A mouse provides cursor control to navigate and interact with display elements.</p>
+<h3 id="motion-sensor">Motion Sensor</h3>
+<p>The motion sensor is at the core of mouse function. It converts physical mouse movement to cursor movement. The sensor tracks translational movement, polling at a high frequency.</p>
+
+<p><strong>Laser sensor</strong>: motion tracking via lasers. Largely obsolete by modern standards.</p>
+
+<p><strong>Optical Mice</strong>: motion tracking via LEDs</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sensor</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="">mx8650</a></td>
+      <td><a href="https://github.com/styropyr0/MX8650" target="_blank">Firmware</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.tindie.com/products/jkicklighter/pmw3360-motion-sensor/" target="_blank">pmw3360</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">Pixart paw3395</a></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="switches-1">Switches</h3>
+<p>Omron D2F-01<br />
+Kailh GM2.0<br />
+Huano</p>
+<ul>
+  <li>Blue Shell Pink Dot</li>
+  <li>Transparent Red dot</li>
+</ul>
+
+<p>TTC 80M, TTC gold<br />
+Zippy DF3P1<br />
+Kailong</p>
+
+<h3 id="firmware-1">Firmware</h3>
+<p>The open-source support from the community is far more limited for mice.
+<a href="https://github.com/biomurph/Mouse">https://github.com/biomurph/Mouse</a></p>
 
 <h2 id="mcu-selection">MCU Selection</h2>
 <p>An MCU (Microcontroller Unit) is the computer commonly found in integrated circuits (ICs) that contains a processor core, memory, and programmable I/O peripherals. It is the brain of embedded systems, controlling various features and operations.</p>
@@ -135,7 +404,7 @@ Examples: ARM, RISC-V, AVR</p>
 <p><strong>Framework</strong>: A collection of libraries/packages/toolchains that enable development. Framework compatibility depends on the MCU’s processor core ISA and communications protocols.
 Examples: Arduino, Zephyr, Tensilica Xtensa</p>
 
-<h3 id="esp32">ESP32</h3>
+<h4 id="esp32">ESP32</h4>
 <ul>
   <li>Core: Dual-core Tensilica LX6 processor (up to 240 MHz)</li>
   <li>Flash: Up to 16MB (depending on variant)</li>
@@ -166,7 +435,7 @@ Examples: Arduino, Zephyr, Tensilica Xtensa</p>
 
 <p>Built-in Wi-Fi and BLE with decent performance for wireless peripherals. Power draw is high for battery-powered designs and GPIO matrix limitations require careful planning.</p>
 
-<p><img src="/assets/media/input_media/seeed-XIAO_ESP32C3.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+<p><img src="/assets/media/input_media/mcu/seeed-XIAO_ESP32C3.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
 
 <table>
   <thead>
@@ -191,7 +460,7 @@ Examples: Arduino, Zephyr, Tensilica Xtensa</p>
   </tbody>
 </table>
 
-<h3 id="atmega32u4-avr-family">ATmega32U4 (AVR family)</h3>
+<h4 id="atmega32u4-avr-family">ATmega32U4 (AVR family)</h4>
 <ul>
   <li>8-bit AVR architecture</li>
   <li>32KB Flash memory for program storage</li>
@@ -229,7 +498,7 @@ Examples: Arduino, Zephyr, Tensilica Xtensa</p>
   </tbody>
 </table>
 
-<h3 id="rp2040--rp2350">RP2040 / RP2350</h3>
+<h4 id="rp2040--rp2350">RP2040 / RP2350</h4>
 <ul>
   <li>Core: Dual-core ARM Cortex-M0+ (up to 133 MHz)</li>
   <li>Flash: 2MB of onboard QSPI Flash</li>
@@ -242,7 +511,7 @@ Examples: Arduino, Zephyr, Tensilica Xtensa</p>
 <p>RP 2040: Dual-core, high-performance MCU with lots of GPIO and flexible PIO for custom protocols. No built-in USB HID bootloader or wireless, but great for wired designs with custom behavior.
 RP 2350: Designed to build on RP2040 strengths with better wireless and security</p>
 
-<p><img src="/assets/media/input_media/pico2.webp" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+<p><img src="/assets/media/input_media/mcu/pico2.webp" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
 
 <table>
   <thead>
@@ -267,7 +536,7 @@ RP 2350: Designed to build on RP2040 strengths with better wireless and security
   </tbody>
 </table>
 
-<h3 id="nrf52480">nrf52480</h3>
+<h4 id="nrf52480">nrf52480</h4>
 <ul>
   <li>Core: ARM Cortex-M4 (up to 64 MHz, with a floating-point unit)</li>
   <li>Flash: 1MB flash memory</li>
@@ -300,7 +569,7 @@ RP 2350: Designed to build on RP2040 strengths with better wireless and security
 <p>Built-in Bluetooth Low Energy (BLE) support. 
 Ideal for wireless keyboard projects requiring Bluetooth connectivity (ZMK firmware support)</p>
 
-<p><img src="/assets/media/input_media/nice!nanov2.avif" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+<p><img src="/assets/media/input_media/mcu/nice!nanov2.avif" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
 
 <table>
   <thead>
@@ -329,7 +598,7 @@ Ideal for wireless keyboard projects requiring Bluetooth connectivity (ZMK firmw
   </tbody>
 </table>
 
-<h3 id="stm32-family">STM32 Family</h3>
+<h4 id="stm32-family">STM32 Family</h4>
 <ul>
   <li>Core: ARM Cortex-M cores (M0, M0+, M3, M4, M7, M33, etc.), with a variety of clock speeds and performance levels.</li>
   <li>Flash Memory: Varies from small (16KB) to large (up to 2MB) flash memory options, depending on the series.</li>
@@ -349,7 +618,7 @@ Ideal for wireless keyboard projects requiring Bluetooth connectivity (ZMK firmw
 
 <p>Versatile ARM-based family with options that support USB HID. Steeper learning curve and less community support for keyboards compared to ATmega/RP2040, but good for custom wired builds.</p>
 
-<p><img src="/assets/media/input_media/STM32F103C8T6_Blue_Pill.jpg" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+<p><img src="/assets/media/input_media/mcu/STM32F103C8T6_Blue_Pill.jpg" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
 
 <table>
   <thead>
@@ -378,80 +647,24 @@ Ideal for wireless keyboard projects requiring Bluetooth connectivity (ZMK firmw
   </tbody>
 </table>
 
-<h3 id="honorable-mention-teensy-40">Honorable Mention: Teensy 4.0</h3>
+<h4 id="honorable-mention-teensy-microcontrollers">Honorable Mention: Teensy microcontrollers</h4>
+<p>Teensy 4.0</p>
 <ul>
   <li>NXP iMXRT1062 microcontroller chip</li>
   <li>Core: ARM Cortex-M7 processor operating at 600 MHz.</li>
 </ul>
 
-<p><img src="/assets/media/input_media/teensy4.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+<p><img src="/assets/media/input_media/mcu/teensy4.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
 
 <p>Absolute workhorse of a microcontroller</p>
-
-<h2 id="keyboard">Keyboard</h2>
-<p>A keyboard simply converts keystrokes (user input) into input commands, usually in the form of character inputs.</p>
-
-<h3 id="keyboard-matrix-multiplexing">Keyboard Matrix (Multiplexing)</h3>
-<p>The keyboard matrix is the fundamental idea behind the operation of any and all keyboard-adjacent input devices.</p>
-<h3 id="firmware">Firmware</h3>
-<h4 id="qmk"><a href="https://qmk.fm/">QMK</a></h4>
-<p><a href="https://github.com/nzge/qmk_firmware">My fork of QMK</a><br />
-Quantum Mechanical Keyboard (QMK) firmware is an improved version of the TMK firmware made by Hasu, with improved programmability and microcontroller compatibility. VIA builds upon QMK by 
-offering a GUI with simplified/graphical layout firmware configuration and additional features such as plug and play (no flashing), RGB controls, switch tester, etc.
-QMK is general suitable for wired keyboard designs that employ Atmel AVR and ARM architecture.
-https://www.reddit.com/r/MechanicalKeyboards/comments/hjh61v/what_is_qmk/</p>
-<h4 id="zmk"><a href="https://zmk.dev/">ZMK</a></h4>
-<p><a href="https://github.com/nzge/zmk-config">My fork of ZMK</a><br />
-ZMK Firmware is an open source (MIT) keyboard firmware built on the Zephyr™ Project Real Time Operating System (RTOS). ZMK’s goal is to provide a modern and powerful firmware that is designed for power-efficiency, flexibility, and broad hardware support. 
-ZMK is capable of being used for both wired and wireless input devices.
-ZMK is easier to implement and support both wired(unibody) and wireless options
-ZMK is has greater compatibility, notably in wireless applications. However, users say ZMK lags slightly behind in terms of ease-of-use features.
-There is also TMK and KMK. TMK is mostly deprecated, and is a Circuit Python keyboard firmware. ZMK and QMK are the more common options.</p>
-
-<h2 id="mice">Mice</h2>
-<p>A mouse provides cursor control to navigate and interact with display elements.</p>
-<h3 id="motion-sensor">Motion Sensor</h3>
-<p>The motion sensor is at the core of mouse function. It converts physical mouse interaction to cursor movement.</p>
-
-<p><strong>Laser sensor</strong>: motion tracking via lasers<br />
-Largely obsolete by modern standards.</p>
-
-<p><strong>Optical Mice</strong>: motion tracking via LEDs</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Sensor</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>mx8650</td>
-      <td>https://github.com/styropyr0/MX8650</td>
-    </tr>
-    <tr>
-      <td>pmw3360</td>
-      <td>https://www.tindie.com/products/jkicklighter/pmw3360-motion-sensor/</td>
-    </tr>
-    <tr>
-      <td>Pixart paw 3395</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="firmware-1">Firmware</h3>
-<p>The open-source support from the community is far more limited for mice.
-<a href="https://github.com/biomurph/Mouse">https://github.com/biomurph/Mouse</a></p>
 
 <hr />
 <hr />
 
 <h1 id="keyboards">Keyboards</h1>
-<p>I initially fell into the keyboard hobby during COVID because of the design aesthetics and boundless creative expression. My love for industrial design aesthetics and the fact that I use keyboards daily has led me on a long creative path of keyboard design.</p>
+<p>I initially fell into the keyboard hobby during COVID when I was glued to my desktop and keyboard like most folks. My interest in industrial design aesthetics and boundless creative expression has led me on a long creative path of keyboard design.</p>
 
-<p>Design Inspiration</p>
+<p><strong>Design Inspiration</strong></p>
 <div id="my-slideshow"></div>
 <script>
   const slides= [
@@ -472,16 +685,15 @@ Largely obsolete by modern standards.</p>
 <h2 id="hand-wired-macropad">Hand-wired Macropad</h2>
 
 <h3 id="specs">Specs</h3>
+<p>For my first design, I kept it simple.</p>
 <ul>
   <li>4x4 Matrix</li>
   <li>Unibody construction</li>
 </ul>
 
-<p>For my first design, I kept it simple.</p>
-
 <p><img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="height:400px; display:block; margin: auto;" /></p>
 
-<h4 id="layout">Layout</h4>
+<h4 id="layout-1">Layout</h4>
 
 <p><img src="/assets/media/input_media/macro/4x4.png" alt="Alt text" style="height:200px; display:block; margin: auto;" /></p>
 
@@ -532,25 +744,25 @@ Largely obsolete by modern standards.</p>
 <h3 id="build-log">Build Log</h3>
 
 <blockquote>
-  <p>3-25-25:</p>
+  <p>3-25-25: Added keycaps</p>
 
   <p><img src="/assets/media/input_media/macro/hand-wire/IMG_0829.JPG" alt="Alt text" style="height:200px; display:block; margin: auto;" /></p>
 </blockquote>
 
 <blockquote>
-  <p>3-20-25:</p>
+  <p>3-20-25: Completed the wiring</p>
 
   <p><img src="/assets/media/input_media/macro/hand-wire/IMG_0812.jpg" alt="Alt text" style="height:200px; display:block; margin: auto;" /></p>
 </blockquote>
 
 <blockquote>
-  <p>3-18-25:</p>
+  <p>3-18-25: Hot-glued the switches in place</p>
 
   <p><img src="/assets/media/input_media/macro/hand-wire/IMG_0783.JPG" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <blockquote>
-  <p>3-14-25:</p>
+  <p>3-14-25: Made dimension modifications better suited to the design</p>
 
   <p><img src="/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
 </blockquote>
@@ -573,7 +785,7 @@ Largely obsolete by modern standards.</p>
 <h3 id="build-log-1">Build Log</h3>
 
 <blockquote>
-  <p>4-11-25:</p>
+  <p>4-11-25: PCB Prototype</p>
 
   <p><img src="/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png" alt="macro-pcb-proto" style="height:200px;display: block; margin: auto;" /></p>
 </blockquote>
@@ -621,7 +833,7 @@ Largely obsolete by modern standards.</p>
   </tbody>
 </table>
 
-<h4 id="layout-1">Layout</h4>
+<h4 id="layout-2">Layout</h4>
 <p><img src="/assets/media/input_media/split/ergo/ergo-split.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
 
 <h3 id="pcb-1">PCB</h3>
@@ -684,7 +896,7 @@ Largely obsolete by modern standards.</p>
   </tbody>
 </table>
 
-<h4 id="layout-2">Layout</h4>
+<h4 id="layout-3">Layout</h4>
 
 <p><img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
 
@@ -754,7 +966,7 @@ Largely obsolete by modern standards.</p>
   </tbody>
 </table>
 
-<h4 id="layout-3">Layout</h4>
+<h4 id="layout-4">Layout</h4>
 <p><img src="/assets/media/input_media/hhkb/hhkb-default.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
 
 <h3 id="pcb-3">PCB</h3>
@@ -769,9 +981,9 @@ Largely obsolete by modern standards.</p>
 <hr />
 
 <h2 id="modular-keyboard">Modular Keyboard</h2>
-<p>Fully modular keyboard, with each keyswitch being a singular unit.</p>
+<p>Fully modular keyboard, with each keyswitch being a singular unit. A lego keyboard, if you will.</p>
 <h3 id="concept">Concept</h3>
-<p><img src="/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png" alt="Modular keyboard concept sketch" style="height:200px;display: block; margin: auto;" /></p>
+<p><img src="/assets/media/input_media/modular/modular-keyboard_concept.png" alt="Modular keyboard concept sketch" style="height:400px;display: block; margin: auto;" /></p>
 
 <h3 id="specs-5">Specs</h3>
 
@@ -780,13 +992,13 @@ Largely obsolete by modern standards.</p>
 <blockquote>
   <p>4-11-25:</p>
 
-  <p><img src="/assets/media/input_media/modular/" alt="macro-pcb-proto" style="height:200px;display: block; margin: auto;" /></p>
+  <p><img src="/assets/media/input_media/modular/modular-keyboard_concept.png" alt="macro-pcb-proto" style="height:200px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <hr />
 <hr />
 
-<h1 id="mice-1">Mice</h1>
+<h1 id="mice">Mice</h1>
 
 <h2 id="ultralight-mouse">Ultralight Mouse</h2>
 <p>Chasing performance.</p>
@@ -804,11 +1016,15 @@ Largely obsolete by modern standards.</p>
 
 <hr />
 
-<h2 id="keyswitch-mouse">Keyswitch Mouse</h2>
-<p>Injecting keyboard functionality into the mouse peripheral</p>
+<h2 id="chimera">Chimera</h2>
+<p>A Keyswitch Mouse<br />
+Injecting keyboard DNA into the mouse peripheral</p>
+<h3 id="concept-1">Concept</h3>
+<p><img src="/assets/media/input_media/mice/keyswitch-mouse/keyswitch-mouse_concept.png" alt="Alt text" style="height:350px;display: block; margin: auto;" /></p>
 
 <h3 id="specs-7">Specs</h3>
-<p>4 choc keyswitches</p>
+<p>4 choc keyswitches<br />
+Capacitive scroll wheel</p>
 
 <h3 id="pcb-5">PCB</h3>
 <h3 id="firmware-3">Firmware</h3>
@@ -823,7 +1039,8 @@ Largely obsolete by modern standards.</p>
 <hr />
 
 <h2 id="macros-mouse">Macros Mouse</h2>
-<p>Buttons galore</p>
+<p>How many useful buttons can I fit on one mouse?</p>
+<h3 id="concept-2">Concept</h3>
 <h3 id="specs-8">Specs</h3>
 <h3 id="pcb-6">PCB</h3>
 <h3 id="firmware-4">Firmware</h3>
@@ -840,36 +1057,50 @@ Largely obsolete by modern standards.</p>
 
 <h1 id="references">References</h1>
 
-<h2 id="keyboard-1">Keyboard</h2>
-<h3 id="design-language">Design Language</h3>
+<h3 id="keyboard-1">Keyboard</h3>
+<ul>
+  <li>https://www.keyboard.university/</li>
+  <li>https://www.deskthority.net/</li>
+</ul>
+
+<h4 id="design-language">Design Language</h4>
 <ol>
-  <li><a href="https://www.youtube.com/watch?v=0sqF46vm8yY">Endgame Never Felt So Close - My TGR Jane V2 ME Experience by Wongsquared</a></li>
-  <li><a href="https://www.youtube.com/watch?v=IK7r_d62QXA">Gehirn / Keyboard Preview by Markchun</a></li>
+  <li><a href="https://www.youtube.com/watch?v=0sqF46vm8yY" target="_blank">Endgame Never Felt So Close - My TGR Jane V2 ME Experience by Wongsquared</a></li>
+  <li><a href="https://www.youtube.com/watch?v=IK7r_d62QXA" target="_blank">Gehirn / Keyboard Preview by Markchun</a></li>
 </ol>
 
-<h3 id="split">Split</h3>
+<h4 id="switches-2">Switches</h4>
 <ol>
-  <li><a href="https://www.youtube.com/watch?v=UKfeJrRIcxw&amp;t=895s">“The REAL Ergonomic Keyboard Endgame!” - How To Design &amp; Make A Totally Custom Keyboard</a></li>
-  <li><a href="https://www.youtube.com/watch?v=riqmW3UHqPY">My favorite ergo split keyboard so far by EIGA</a></li>
-  <li><a href="https://www.youtube.com/watch?v=YwsutNf1WRA">The TOTEM wireless keyboard by EIGA</a></li>
-  <li><a href="https://www.youtube.com/watch?v=7UXsD7nSfDY">I Built My Dream Keyboard from Absolute Scratch by Christian Selig</a></li>
+  <li>https://www.theremingoat.com/</li>
+  <li><a href="https://www.youtube.com/watch?v=QmJ-IEEBQAI" target="_blank">Teardown - Alps SKCL/SKCM switches by Chyrosran22</a></li>
+  <li><a href="https://docs.google.com/spreadsheets/d/1WCzp0ujCfmMPZ6r_oSULzEEcG4pcWDd01S09OtAf9LM/edit?gid=0#gid=0" target="_blank">The Comprehensive Switch List - Official Version</a></li>
+  <li><a href="https://www.alexotos.com/the-best-mechanical-keyboard-stabilizers-in-2025/" target="_blank">The Best Mechanical Keyboard Stabilizers - 2025 by Alexotos</a></li>
+  <li><a href="https://varmilo.com/blogs/switches/varmilo-ec-switches-better-than-the-rest" target="_blank">Varmilo EC Switches. Better Than The Rest.</a></li>
 </ol>
 
-<h3 id="macropad">Macropad</h3>
+<h4 id="split-1">Split</h4>
 <ol>
-  <li><a href="https://www.youtube.com/watch?v=hjml-K-pV4E">How to Build a Handwired Keyboard by Joe Scotto</a></li>
-  <li><a href="https://www.youtube.com/watch?v=7azQkSu0m_U">How to Design Mechanical Keyboard Plates and Cases</a></li>
-  <li><a href="https://www.youtube.com/watch?v=nhJiCa46weE">Statial Macropad by PyottDesign</a></li>
+  <li><a href="https://www.youtube.com/watch?v=UKfeJrRIcxw&amp;t=895s" target="_blank">“The REAL Ergonomic Keyboard Endgame!” - How To Design &amp; Make A Totally Custom Keyboard</a></li>
+  <li><a href="https://www.youtube.com/watch?v=riqmW3UHqPY" target="_blank">My favorite ergo split keyboard so far by EIGA</a></li>
+  <li><a href="https://www.youtube.com/watch?v=YwsutNf1WRA" target="_blank">The TOTEM wireless keyboard by EIGA</a></li>
+  <li><a href="https://www.youtube.com/watch?v=7UXsD7nSfDY" target="_blank">I Built My Dream Keyboard from Absolute Scratch by Christian Selig</a></li>
 </ol>
 
-<h2 id="mice-2">Mice</h2>
+<h4 id="macropad">Macropad</h4>
 <ol>
-  <li><a href="https://www.youtube.com/watch?v=qmX8vL-GbxU">I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything</a></li>
-  <li><a href="https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb">The worlds lightest gaming mouse PCB by Patrick Schmalzried</a></li>
-  <li><a href="https://www.youtube.com/watch?v=9CQqasv5_qo&amp;t=208s">I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim</a></li>
+  <li><a href="https://www.youtube.com/watch?v=hjml-K-pV4E" target="_blank">How to Build a Handwired Keyboard by Joe Scotto</a></li>
+  <li><a href="https://www.youtube.com/watch?v=7azQkSu0m_U" target="_blank">How to Design Mechanical Keyboard Plates and Cases</a></li>
+  <li><a href="https://www.youtube.com/watch?v=nhJiCa46weE" target="_blank">Statial Macropad by PyottDesign</a></li>
 </ol>
 
-<h2 id="sources">Sources</h2>
+<h3 id="mice-1">Mice</h3>
+<ol>
+  <li><a href="https://www.youtube.com/watch?v=qmX8vL-GbxU" target="_blank">I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything</a></li>
+  <li><a href="https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb" target="_blank">The worlds lightest gaming mouse PCB by Patrick Schmalzried</a></li>
+  <li><a href="https://www.youtube.com/watch?v=9CQqasv5_qo&amp;t=208s" target="_blank">I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim</a></li>
+</ol>
+
+<h3 id="sources">Sources</h3>
 
 <!-- Hidden references trigger the footnote rendering -->
 <p><span id="hidden-references"><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> [^2] [^3] [^4] [^5] [^6]</span></p>
