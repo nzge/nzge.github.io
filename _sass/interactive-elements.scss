@@ -245,33 +245,33 @@ select {
   transform: rotate(-90deg);
 }
 
-.menu {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+// .menu {
+//   position: fixed;
+//   top: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   display: flex;
 
-  a {
-    position: relative;
-    top: 120px;
-    line-height: 70%;
-    text-decoration: none;
-    color: red;
+//   a {
+//     position: relative;
+//     top: 120px;
+//     line-height: 70%;
+//     text-decoration: none;
+//     color: red;
 
-    span {
-      font-size: 20px;
-      margin-right: 2em;
-      font-family: "Ayer";
+//     span {
+//       font-size: 20px;
+//       margin-right: 2em;
+//       font-family: "Ayer";
 
-    }
-  }
-}
+//     }
+//   }
+// }
 
-.menu > div {
-  position: relative; 
-  display: flex;
-}
+// .menu > div {
+//   position: relative; 
+//   display: flex;
+// }
 
 /*--------------- Slider --------------- */
 

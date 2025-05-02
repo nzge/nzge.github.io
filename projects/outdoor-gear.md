@@ -35,6 +35,12 @@ I combined my knack for design and passion for the outdoors into designing outdo
 	- Large stretch water side pockets
 	- Medium stretch upper side pockets
 - Bottom stretch pocket
+
+Floating waist belt
+https://www.reddit.com/r/myog/comments/1k5y1k2/framed_40l_pack_with_floating_hipbelt/
+
+
+
 ## Materials and Construction
 
 ## Build Log 
@@ -85,6 +91,15 @@ style="height:400px;display: block; margin: auto;"}
 
 ### General Knowledge
 1. [how to ACTUALLY start sewing in 2025 by Glory Allen](https://www.youtube.com/watch?v=gMYn_3uXBTc)
+2. https://www.reddit.com/r/myog/comments/1jwtn1d/first_framed_backpack/
+
+### Backpack
+1. []()
+2. []()
+3. []()
+https://www.reddit.com/r/myog/comments/1k61nxm/new_type_dcf_backpack/
+https://www.reddit.com/r/myog/comments/1k5y1k2/framed_40l_pack_with_floating_hipbelt/
+https://www.reddit.com/r/myog/comments/1juw9cv/modified_my_ula_ohm_20_front_pocket_and_hipbelt/
 
 ### Ice Axe
 1. ["Homemade pair of ice axes - reddit"](https://www.reddit.com/r/myog/comments/1igxyxl/homemade_pair_of_ice_axes/). Accessed: March 6, 2025. 

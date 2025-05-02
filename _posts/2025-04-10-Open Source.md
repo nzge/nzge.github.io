@@ -2,7 +2,10 @@
 author: nzge
 ---
 
-We stand on the backs of giants. Or maybe one metaphorical giant rather. 
+The world is becoming more and more open source.
+We stand on the backs of giants. Or maybe one metaphorical giant rather. Each brick is built upon a layer of bricks 
+
+Modern computing is built off the critical of work of our prodigious forefathers, the ken thompsons and guidos of the world.
 
 Many current tools scrape/aggregate resources from across the web. Most egregious instances of this at the forefront of media are the various AI tools we use now on a daily basis.
 Is this forgery/thievery or the next step in human evolution? That we as a singular race can levy the intellect of the entire human race, as one breathing unit? Open source on a global scale?

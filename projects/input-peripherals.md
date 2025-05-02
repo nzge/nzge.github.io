@@ -418,6 +418,9 @@ style="height:200px; display:block; margin: auto;"}
 style="height:350px;display: block; margin: auto;"}
 
 ### Build Log
+> 4-10-25: Resized to fit a macropad
+>
+>
 
 > 3-25-25: Added keycaps
 >
@@ -457,8 +460,7 @@ KiCAD
 
 > 4-11-25: PCB Prototype
 >
-> ![macro-pcb-proto](/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png){: 
-style="height:200px;display: block; margin: auto;"}
+> ![macro-pcb-proto](/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png){: style="height:200px; display: block; margin: auto;"}
 
 ---
 

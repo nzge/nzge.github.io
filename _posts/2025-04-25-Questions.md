@@ -3,6 +3,7 @@ author: nzge
 ---
 
 Why do I frame everything in life as a question, and what does that say about who I am?
+Today I attempt to uncover that secret? That secret.
 
 I noticed that I like to put everything as a rhetorical, as an inquisition.
 Maybe this is me placing a level of uncertainty on everything I understand about the world.

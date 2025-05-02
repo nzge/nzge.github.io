@@ -56,3 +56,10 @@ style="height:400px;display: block; margin: auto;"}
 
 # References
 
+### IEMS
+1. https://www.instructables.com/Make-Custom-in-Ear-Monitors-DIY-CIEM/
+2. https://www.reddit.com/r/DIEMs/comments/13fhf92/i_made_my_own_custom_iems_with_5_bas_and_a_14mm/
+
+### Headphones
+
+### Pedals
