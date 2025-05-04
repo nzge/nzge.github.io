@@ -39,9 +39,9 @@ This was my attempt at creating a tilt-rotor drone inspired by Sova's drone in V
 | [Brushless Motors]() | Primary source of thrust/locomotion |
 | [Servos]() | Tilts the motors to enable thrust vectoring |
 | [Propellors]() | Attached to the motors for thrust production |
-| [Teensy 4.0]() | Low-level stabilization control |
-| [Raspberry Pi Pico]() | High-level controller that feeds control inputs to the teensy from the raspberry pi web server. Relays telemetry data from the teensy back to the web server |
-| [Raspberry Pi 5]() | Hosts web server that provides a gui for sending control inputs to the drone via pico. Data/telemetry visualization |
+| [Teensy 4.0](https://www.amazon.com/dp/B08259KDHY?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_1) | Low-level stabilization control |
+| [Raspberry Pi Pico](https://www.pishop.us/product/raspberry-pi-pico-2-w/?searchid=0&search_query=pico+2) | High-level controller that feeds control inputs to the teensy from the raspberry pi web server. Relays telemetry data from the teensy back to the web server |
+| [Raspberry Pi 5](https://www.pishop.us/product/raspberry-pi-5-8gb/?searchid=0&search_query=+Raspberry+Pi+5%2F8GB) | Hosts web server that provides a gui for sending control inputs to the drone via pico. Data/telemetry visualization |
 | [MPU 6050]() | IMU for stability control |
 
 
@@ -50,6 +50,7 @@ This was my attempt at creating a tilt-rotor drone inspired by Sova's drone in V
   
 ### Design Considerations
 
+I performed rough calculations to source motors that could support the weight of the drone.
 **Basic Motor Thrust Requirement Calculations**
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb){:target="_blank"}
 
@@ -273,15 +274,15 @@ OpenGL/WebGL
 
 # References
 
-## Inspiration
+### Inspiration
 1. V22 Osprey by Tom Stanton
 - [Part 1](https://www.youtube.com/watch?v=55G-mwT9uCE)
 - [Part 2](https://www.youtube.com/watch?v=HitJ8r9HwBg&t=792s)
 
-## Flight Controller
+### Flight Controller
 1. [RC VTOL - V4 by Tom Stanton](https://www.youtube.com/watch?v=gPEeCjVrTBw&t=190s)
 
-## Sources
+### Sources
 [^1]: ["How I Designed a 3D Printed Wing"](https://www.youtube.com/watch?v=QJjhMan6T_E), Accessed March 6, 2025.  
 
 <!-- Hidden references trigger the footnote rendering -->

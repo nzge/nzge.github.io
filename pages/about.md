@@ -3,6 +3,8 @@ layout: about
 title: About 
 ---
 
+[Resume](https://nzge.github.io/media/about/nathan-ge_resume.pdf)
+
 Mechanical Engineering student with an interest in robotics and industrial design, and an unbridled curiosity for the world. A proponent of open-source. 
 
 **Technical proficiencies:**  
@@ -15,3 +17,4 @@ Mechanical Engineering student with an interest in robotics and industrial desig
 - Embedded: PlatformIO, ArduinoIDE  
 
 Hobbies: interest in olympic weightlifting, wrestling, cooking, backpacking, and singing
+

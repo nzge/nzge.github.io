@@ -68,7 +68,7 @@ Hardware Designs
 
 
 ## Build Log 
-> 4-22-24: 
+> 4-22-24: Prototype 0 (initial concept)
 >
 > ![Alt text](/assets/media/parallettes_media/parallette_typ1-v7.png){: 
 style="height:400px;display: block; margin: auto;"}

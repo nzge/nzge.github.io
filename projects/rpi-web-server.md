@@ -9,7 +9,16 @@ repo: "https://github.com/nzge/raspi_web-app"
 toc: true
 ---
 
+Nextjs web server hosted on Raspberry Pi 5. A place to test and implement dynamic web functionality in a self contained local space.  
 [Link to server](https://raspi.nzge.org/)
+
+## Hardware
+
+ Item | Description 
+---|---
+[Raspberry Pi 5](https://www.pishop.us/product/raspberry-pi-5-8gb/?searchid=0&search_query=+Raspberry+Pi+5%2F8GB) | 
+[M.2 HAT+](https://vilros.com/products/raspberry-pi-m-2-hat-for-raspberry-pi-5) | 
+[256 GB SSD](https://vilros.com/products/raspberry-pi-m-2-hat-for-raspberry-pi-5) | 
 
 ## Next.JS
 
