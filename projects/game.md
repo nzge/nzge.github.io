@@ -16,4 +16,5 @@ toc: true
 
 # References
 
-1. https://www.reddit.com/r/godot/comments/1k233jb/working_on_my_own_rts_in_godot_how_does_it_look/
+1. [Working on my own RTS in Godot. How does it look so far?](https://www.reddit.com/r/godot/comments/1k233jb/working_on_my_own_rts_in_godot_how_does_it_look/)
+2. [miniboss idea](https://www.reddit.com/r/PixelArt/comments/1jmsump/miniboss_idea/)

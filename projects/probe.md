@@ -8,13 +8,52 @@ description: "Mechanical housing for the IRISS beam splitter to enable automated
 repo: "https://github.com/nzge/oct-probe-mount"
 ---
 
+![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
 ## OCT Holder
 
+![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+| Component | Description |
+|---|---|
+| OCT Probe | |
+| Maxon - DC Motor - Gearhead Motor w/Encoder - Type # 47.022.022-00.19-189 | |
+| [LAUNCHXL-F28379D](https://www.ti.com/tool/LAUNCHXL-F28379D){: target="blank"} | F28379D LaunchPad™ development kit for C2000™ Delfino™ MCU |
+| Bearings | |
+
+### Slider rail
+![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+### Orientation configuration
+Upright 
+![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+Idle
+![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+### Design for Manufacturing
+![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
+style="height:400px;display: block; margin: auto;"}
+
+### FPGA MATLAB Motor Control
 
 ## Zeiss Fixture
 
+![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
+style="height:400px;display: block; margin: auto;"}
 
-## FPGA MATLAB Motor Control
+ Component | Description 
+---|---
+ Zeiss | Microscope 
+ Lens |  
+ Magnets |  
+
+
+
 
 
 ## Build Log
@@ -22,22 +61,19 @@ repo: "https://github.com/nzge/oct-probe-mount"
 > 10-17-24: 
 >
 > ![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
-style="height:400px;display: block; margin: auto;"}
-
-> 10-17-24: 
+style="height:200px;display: block; margin: auto;"}
 >
-> ![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
-style="height:400px;display: block; margin: auto;"}
 
 > 8-25-24: 
 >
 > ![Alt text](/assets/media/oct-holder_media/2024-08-25_143947.png){: 
-style="height:400px;display: block; margin: auto;"}
+style="height:200px;display: block; margin: auto;"}
+>
 
 > 7-9-24: 
 >
 >![Alt text](/assets/media/oct-holder_media/2024-07-09_140748.png){: 
-style="height:400px;display: block; margin: auto;"}
+style="height:200px;display: block; margin: auto;"}
 >
 > :-------------------------:|:-------------------------:
 ![Alt text](/assets/media/oct-holder_media/2024-07-09_120923.png){: style="width: 400px;display: block; margin: auto;"}   |  ![Alt text](/assets/media/oct-holder_media/2024-07-09_231237.png){: style="width:400px;display: block; margin: auto;"}

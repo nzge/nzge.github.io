@@ -233,8 +233,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 ///////////////////////////////
-
-//music
-document.addEventListener('DOMContentLoaded', () => {
-
-});

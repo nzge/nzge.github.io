@@ -23,5 +23,7 @@ This led me to chase the idea of creating my own compact PC case design to fulfi
 
 ---
 
-## References
-1. []()
+# References
+- [XIKII INDUSTRY FF04 LP Horizontal - reddit](https://www.reddit.com/r/sffpc/comments/1jt27h8/xikii_industry_ff04_lp_horizontal/)
+- [Mac Studio inspired Sff PC - reddit](https://www.reddit.com/r/sffpc/comments/1jmnjs3/mac_studio_inspired_sff_pc/)
+- [First Gaming Build. Judge away](https://www.reddit.com/r/sffpc/comments/1jgsftx/first_gaming_build_judge_away/)

@@ -8,7 +8,9 @@ description: "A solar-powered mini car featuring a front-wheel drive, a bevel ge
 repo: ""
 ---
 
-[Documentation]( /assets/media/solar-car_media/Ge_FinalReport.pdf )
+[Documentation](/assets/media/solar-car_media/Ge_FinalReport.pdf){:target="_blank"}
+
+<embed src="/assets/media/solar-car_media/Ge_FinalReport.pdf " width="1000px" height="2100px"/>
 
 
 ## Build Log

@@ -89,3 +89,18 @@ a {
   transform: scaleX(-1) translateX(20px);
   right: 0;
 }
+
+
+/*--------------- Favicons --------------- */
+
+a.icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px; /* space between icon and text */
+  text-decoration: none; /* optional */
+}
+
+a.icon img {
+  width: 16px;
+  height: 16px;
+}

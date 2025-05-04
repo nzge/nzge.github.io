@@ -8,11 +8,11 @@ description: "Fully Autonomous delivery robot."
 repo: "https://github.com/nzge/ROKUSHO"
 toc: true
 ---
+
 ## Hardware Design
 ### Components
 
 ### Schematic
-
 
 ### Four-bar linkage
 
@@ -22,6 +22,10 @@ toc: true
 ### State machine
 
 ### Communication protocol
+
+## Documentation
+<embed src="/assets/media/capstone-robot_media/Team05_Final-Design-Report_MAE162E-2024.pdf" width="950px" height="1200px"/>
+
 
 
 ## Build Log

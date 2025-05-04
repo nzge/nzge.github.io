@@ -14,7 +14,9 @@ layout: default
   <div class="container">
     <div class="go-back" onclick="goBack()">Go Back</div>
     <h2>{{page.title}}</h2>
-    <a href={{page.repo}}> Repo </a>
+    {% unless page.repo == blank %}
+      <a href="{{ page.repo }}" target="_blank" rel="noopener noreferrer">Repo</a>
+    {% endunless %}
   </div>
 </header>
 
