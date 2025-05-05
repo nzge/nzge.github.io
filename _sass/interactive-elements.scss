@@ -201,7 +201,7 @@ select {
   justify-content: center;
   align-items: center;
   margin: 2em;
-  z-index: 9999;
+  z-index: 1001;
   cursor: pointer;
 }
 
@@ -209,7 +209,7 @@ select {
   position:relative;
   width: 20px;
   height: 25px;
-  z-index: 9999;
+  z-index: 1001;
 
   span{
     position: absolute;
@@ -273,7 +273,7 @@ select {
   height: 100vh;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: -1;
 }
 
 svg path {
