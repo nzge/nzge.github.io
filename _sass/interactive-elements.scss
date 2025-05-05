@@ -201,7 +201,7 @@ select {
   justify-content: center;
   align-items: center;
   margin: 2em;
-  z-index: 2;
+  z-index: 9999;
   cursor: pointer;
 }
 
@@ -209,7 +209,7 @@ select {
   position:relative;
   width: 20px;
   height: 25px;
-  z-index: 2;
+  z-index: 9999;
 
   span{
     position: absolute;
@@ -226,7 +226,7 @@ select {
       right: 0;
       display: inline-block;
       content: '';
-      width: 22px;
+      width: 28px;
       height: 2px;
       background: #e5e3dc;
       transform: translateY(5px);
@@ -238,52 +238,75 @@ select {
       right: 0;
       display: inline-block;
       content: '';
-      width: 22px;
+      width: 28px;
       height: 2px;
-      background: #e5e3dc;
+      background-color: #e5e3dc;
       transform: translateY(-5px);
       transition: transform 0.25s;
     }  
   }
+
+  &.active {
+    transform: rotate(45deg);  // Rotate hamburger when active
+
+    span::before {
+      top: unset;
+      width: 24px;
+      transform: rotate(-90deg);  // Rotate before span
+    }
+
+    span::after {
+      transform: rotate(90deg);  // Rotate after span
+    }
+  }
 }
 
-#hamburger .active {
-  transform: rotate(45deg);
+:root{
+  --bg : #000;
+  --link-color: #000;
+  --overlay-bg: #e3e3e3;
 }
 
-#hamburger .active span::before{
-  top: unset;
-  width: 24px;
-  transform: rotate(-90deg);
+.overlay{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
-// .menu {
-//   position: fixed;
-//   top: 0;
-//   width: 100vw;
-//   height: 100vh;
-//   display: flex;
+svg path {
+  fill: var(--overlay-bg)
+}
 
-//   a {
-//     position: relative;
-//     top: 120px;
-//     line-height: 70%;
-//     text-decoration: none;
-//     color: red;
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
 
-//     span {
-//       font-size: 20px;
-//       margin-right: 2em;
-//       font-family: "Ayer";
+  a {
+    position: relative;
+    top: 120px;
+    line-height: 70%;
+    text-decoration: none;
+    color: red;
 
-//     }
-//   }
-// }
+    span {
+      font-size: 20px;
+      margin-right: 2em;
+      font-family: "Ayer";
 
-// .menu > div {
-//   position: relative; 
-//   display: flex;
-// }
+    }
+  }
+}
+
+.menu > div {
+  position: relative; 
+  display: flex;
+}
 
 /*--------------- Slider --------------- */
 

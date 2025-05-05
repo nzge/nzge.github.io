@@ -21,26 +21,10 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> 
 
   <!-- stylesheet -->
-  <!-- Automatically include all CSS files in /assets/css/ -->
   {%- for css_file in site.static_files %}
-    {%- if css_file.path contains '/assets/css/' and css_file.extname == '.css' %}
-      <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}{{ css_file.path }}">{%- endif -%}
+  {%- if css_file.path contains '/assets/css/' and css_file.extname == '.css' %}
+  <link rel="stylesheet" type="text/css" href="{{ css_file.path | relative_url }}">{%- endif -%}
   {%- endfor %}
   <link rel="stylesheet" type="text/css" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-
-<!-- Include js -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ site.baseurl }}/assets/js/main.js"></script>
-<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
-    }
-  };
-</script>
-  
