@@ -704,6 +704,7 @@ Hall Effect
 - [I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim](https://www.youtube.com/watch?v=9CQqasv5_qo&t=208s)
 - [JEE600 in clusterfudge status (expected, really)](https://www.reddit.com/r/ErgoMechKeyboards/comments/1jnn0xk/jee600_in_clusterfudge_status_expected_really/)
 - [My Mouse Projects So Far...](https://www.reddit.com/r/arduino/comments/1jc1jhp/my_mouse_projects_so_far/)
+- [LOFREE Touch](https://www.lofree.co/products/lofree-touch-pbt-wireless-mouse)
 
 ### Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
