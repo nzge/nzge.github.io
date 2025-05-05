@@ -354,7 +354,20 @@ Taken from https://github.com/allejo/jekyll-toc</p>
       <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://linkedin.com/in/nzge"</span> <span class="n">target</span><span class="o">=</span><span class="s">"_blank"</span> <span class="n">data</span><span class="o">-</span><span class="n">no</span><span class="o">-</span><span class="n">icon</span><span class="o">&gt;&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s">"fab fa-linkedin"</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
       <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://instagram.com/naysun_g"</span> <span class="n">target</span><span class="o">=</span><span class="s">"_blank"</span> <span class="n">data</span><span class="o">-</span><span class="n">no</span><span class="o">-</span><span class="n">icon</span><span class="o">&gt;&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s">"fab fa-instagram"</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
     <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
   <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="err">'</span><span class="n">https</span><span class="o">:</span><span class="c1">//storage.ko-fi.com/cdn/scripts/overlay-widget.js'&gt;&lt;/script&gt;</span>
+  <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">kofiWidgetOverlay</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="err">'</span><span class="n">nathange</span><span class="err">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nl">type:</span> <span class="err">'</span><span class="n">floating</span><span class="o">-</span><span class="n">chat</span><span class="err">'</span><span class="p">,</span>
+      <span class="err">'</span><span class="n">floating</span><span class="o">-</span><span class="n">chat</span><span class="p">.</span><span class="n">donateButton</span><span class="p">.</span><span class="n">text</span><span class="err">'</span><span class="o">:</span> <span class="err">'</span><span class="n">Support</span> <span class="n">me</span><span class="err">'</span><span class="p">,</span>
+      <span class="err">'</span><span class="n">floating</span><span class="o">-</span><span class="n">chat</span><span class="p">.</span><span class="n">donateButton</span><span class="p">.</span><span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="err">'</span><span class="o">:</span> <span class="err">'</span><span class="n">rgba</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">)</span><span class="err">'</span><span class="p">,</span> <span class="c1">// opacity controlled here</span>
+      <span class="err">'</span><span class="n">floating</span><span class="o">-</span><span class="n">chat</span><span class="p">.</span><span class="n">donateButton</span><span class="p">.</span><span class="n">text</span><span class="o">-</span><span class="n">color</span><span class="err">'</span><span class="o">:</span> <span class="err">'#</span><span class="n">fff</span><span class="err">'</span>
+    <span class="p">});</span>
+  <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+
+
 <span class="o">&lt;/</span><span class="n">footer</span><span class="o">&gt;</span>
 </code></pre></div></div>
 
@@ -621,7 +634,20 @@ https://learnxinyminutes.com/docs/yaml/</p>
       <a href="https://linkedin.com/in/nzge" target="_blank" data-no-icon><i class="fab fa-linkedin"></i></a>
       <a href="https://instagram.com/naysun_g" target="_blank" data-no-icon><i class="fab fa-instagram"></i></a>
     </div>
+
   </div>
+
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('nathange', {
+      type: 'floating-chat',
+      'floating-chat.donateButton.text': 'Support me',
+      'floating-chat.donateButton.background-color': 'rgba(24, 22, 22, 0.6)', // opacity controlled here
+      'floating-chat.donateButton.text-color': '#fff'
+    });
+  </script>
+
+
 </footer>
     
     <style>

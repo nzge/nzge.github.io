@@ -5,6 +5,10 @@ title: "Audio Gear"
 date: 2025-03-20
 image: "placeholder.jpg"
 description: "DIY Audio Gear"
+link:
+  label: BOM Squad
+  url: https://bom-squad.com/user/nathange784@gmail.com/
+toc: true
 ---
 
 I first became an audiophile when I bought my first pair of IEMs freshman year of high school.

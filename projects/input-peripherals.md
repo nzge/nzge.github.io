@@ -34,7 +34,7 @@ style="height:500px; display: block; margin: auto;"}
 ### Case Design
 
 #### Layout
-The layout determines the form factor of the case. 
+The layout determines the general form factor of the case. 
 ##### Traditional Layouts
 Fullsize, HHKB, TKL, Ortho
 ##### Split

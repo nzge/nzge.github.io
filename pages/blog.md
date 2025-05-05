@@ -6,7 +6,10 @@ title: Blog
 <h1>Word Vomit</h1>
 
 <div class="container">
+
     <h3 style="text-align: justify;">An exercise in thought spillage. Not intended for a human audience. Just a place to project thoughts, coherent or incoherent. Grammar and spell checking in glarging absence. A blissful escape from literary convention</h3>
+
+  <br>
 
     <ul>
     {% for post in site.posts %}

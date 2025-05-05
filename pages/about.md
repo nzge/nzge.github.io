@@ -3,7 +3,8 @@ layout: about
 title: About 
 ---
 
-[Resume](https://nzge.github.io/media/about/nathan-ge_resume.pdf)
+[Resume](https://nzge.github.io/assets/media/about/nathan-ge_resume.pdf)
+[CV](https://nzge.github.io/assets/media/about/nathan-ge_resume.pdf)
 
 Mechanical Engineering student with an interest in robotics and industrial design, and an unbridled curiosity for the world. A proponent of open-source. 
 
@@ -16,5 +17,6 @@ Mechanical Engineering student with an interest in robotics and industrial desig
 - Web Dev: HTML, CSS, JS, Next.js, Jekyll/Liquid  
 - Embedded: PlatformIO, ArduinoIDE  
 
-Hobbies: interest in olympic weightlifting, wrestling, cooking, backpacking, and singing
+Hobbies: olympic weightlifting, wrestling, cooking, backpacking, and singing
 
+<iframe src="https://github.com/sponsors/nzge/button" title="Sponsor nzge" height="32" width="114" style="margin: 0 auto; border: 0; border-radius: 6px;"></iframe>
