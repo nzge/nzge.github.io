@@ -33,14 +33,14 @@ toc: true
 > 5-29-24: 
 >
 > ![Alt text](/assets/media/capstone-robot_media/IMG_1179.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+style="width:600px;display: block; margin: auto;"}
 
 > 5-11-24: 
 >
 > ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+style="width:600px;display: block; margin: auto;"}
 
 > 2-21-24: 
 >
 > ![Alt text](/assets/media/capstone-robot_media/concept.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+style="width:600px;display: block; margin: auto;"}
