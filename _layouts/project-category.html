@@ -33,10 +33,11 @@ layout: default
         {% unless sub_path contains '/' %}
           <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
             <h2><a href="{{ project.url }}" class="project-link" style="color: #FFFF00 !important;">{{ project.title }}</a></h2>
-            <p>{{ project.description }}
-              {% if project.link %}
-                <a href="{{ project.link.url }}" target="_blank" rel="noopener">{{ project.link.label }}</a>
-              {% endif %}  
+            <p>
+            {% if project.link %}
+              <a href="{{ project.link.url }}" target="_blank" rel="noopener">{{ project.link.label }}</a>
+            {% endif %}  <br>
+            {{ project.description }}
             </p>
           </div>
         {% endunless %}

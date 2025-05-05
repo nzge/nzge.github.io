@@ -14,7 +14,23 @@ repo: ""
 
 
 ## Build Log
-> 11-22-23: 
+> 8-15-22: Drawings
 >
-> ![Alt text](/assets/media/rocket_media/fin-can.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+> <embed src="/assets/media/solar-car_media/Ge_WorkingDrawingPackage.pdf " width="1000px" height="690px"/>
+
+<br>
+
+> 8-8-22: FEA Analysis
+>
+> <embed src="/assets/media/solar-car_media/Ge_ChassisFEA.pdf " width="1000px" height="1100px"/>
+
+<br>
+
+> 7-25-22: First Concepts
+>
+> Concept | 
+:---:|
+![Alt text](/assets/media/solar-car_media/concept1.png){: style="width:500px;display: block; margin: auto"} | 
+![Alt text](/assets/media/solar-car_media/concept2.png){: style="width:500px;display: block; margin: auto;"} |
+![Alt text](/assets/media/solar-car_media/concept3.png){: style="width:500px;display: block; margin: auto;"} |
+

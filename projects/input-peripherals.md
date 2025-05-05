@@ -694,6 +694,7 @@ Hall Effect
 - [How to Build a Handwired Keyboard by Joe Scotto](https://www.youtube.com/watch?v=hjml-K-pV4E)
 - [How to Design Mechanical Keyboard Plates and Cases](https://www.youtube.com/watch?v=7azQkSu0m_U)
 - [Statial Macropad by PyottDesign](https://www.youtube.com/watch?v=nhJiCa46weE)
+- [Magicforce MF17 Dual Mode Wireless Numeric Keypad](https://mechkeys.com/products/magicforce-mf17?variant=46928872145119)
 
 #### Ortho
 - [I designed this over the weekend. Thought it turned out kinda cool?](https://www.reddit.com/r/MechanicalKeyboards/comments/1jnxikp/i_designed_this_over_the_weekend_thought_it/)
@@ -705,6 +706,7 @@ Hall Effect
 - [JEE600 in clusterfudge status (expected, really)](https://www.reddit.com/r/ErgoMechKeyboards/comments/1jnn0xk/jee600_in_clusterfudge_status_expected_really/)
 - [My Mouse Projects So Far...](https://www.reddit.com/r/arduino/comments/1jc1jhp/my_mouse_projects_so_far/)
 - [LOFREE Touch](https://www.lofree.co/products/lofree-touch-pbt-wireless-mouse)
+- [2023 Top Six Latest Mouse With Unique Features: Hot-Swappable Switches, Unique Designs, and More!!](https://mechkeys.com/blogs/guide/top-six-latest-mouse-with-unique-features)
 
 ### Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  

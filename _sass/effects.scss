@@ -43,7 +43,9 @@
 }
 
 .dynamic-bg {
-  background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5) !important;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
   background-size: 400% 400%;
   animation: gradientAnimation 10s ease infinite;
   z-index: 9999;
