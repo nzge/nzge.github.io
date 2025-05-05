@@ -41,26 +41,10 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> 
 
   <!-- stylesheet -->
-  <!-- Automatically include all CSS files in /assets/css/ -->
-      <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-
-<!-- Include js -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="/assets/js/main.js"></script>
-<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
-    }
-  };
-</script>
-  
 
   <button id="backToTop" title="Back to top">↑</button>
 
@@ -70,18 +54,17 @@
   </div>
 </div>
 
-<!-- <div class="overlay">
+<div class="overlay">
   <svg viewBox="0 0 1000 1000"> 
     <path d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
   </svg>
-</div> */ -->
+</div> 
 
 <div class="menu">
 
 </div>
 
   <body>  
-
      <!--------------- navbar starts here --------------->
 <nav class="navbar"> 
   <div class="name animate__animated animate__fadeInUp" style="display: flex; align-items: center; gap: 10px;">
@@ -101,12 +84,12 @@
 </nav>
 
 
-    <div class="gif-left">
-  <img id="gif-left" alt="Left GIF">
+    <div class="gif-left"> 
+  <img id="gif-left" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
 </div>
 
 <div class="gif-right">
-  <img id="gif-right" alt="Right GIF">
+  <img id="gif-right" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
 </div>
 
 <header>
@@ -239,152 +222,31 @@
     height: 100%;
       border: 0;
   }    
-
 </style>
   
-<script>
-  function get_youtube_id(url) {
-      var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
-      return (url.match(p)) ? RegExp.$1 : false;
-  }
-  function vimeo_embed(url,el) {
-      var id = false;
-      $.ajax({
-        url: 'https://vimeo.com/api/oembed.json?url='+url,
-        async: true,
-        success: function(response) {
-          if(response.video_id) {
-            id = response.video_id;
-            if(url.indexOf('autoplay=1') !== -1) var autoplay=1; else var autoplay=0;
-            if(url.indexOf('loop=1') !== -1) var loop=1; else var loop=0;
-            var theInnerHTML = '<div class="videoWrapper"><iframe src="https://player.vimeo.com/video/'+id+'/?byline=0&title=0&portrait=0';
-            if(autoplay==1) theInnerHTML += '&autoplay=1';
-            if(loop==1) theInnerHTML += '&loop=1';
-            theInnerHTML += '" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>'; 
-            el.innerHTML = theInnerHTML;
-          }
-        }
-      });
-  }
-  function video_embed() {
-      var p = document.getElementsByTagName('p');
-      for(var i = 0; i < p.length; i++) {
-          //check if this is an external url (that starts with https:// or http://
-          if (p[i].innerHTML.indexOf("http://") == 0 ||
-              p[i].innerHTML.indexOf("https://") == 0) {
-              var youtube_id = get_youtube_id(p[i].innerHTML);
-              if(youtube_id) {
-                  if(p[i].innerHTML.indexOf('autoplay=1') !== -1) var autoplay=1; else var autoplay=0;
-                  if(p[i].innerHTML.indexOf('loop=1') !== -1) var loop=1; else var loop=0;
-                  var theInnerHTML = '<div class="videoWrapper"><iframe width="720" height="420" src="https://www.youtube.com/embed/' + youtube_id + '?rel=0&showinfo=0';
-                  if(autoplay==1) theInnerHTML += '&autoplay=1';
-                  if(loop==1) theInnerHTML += '&loop=1&playlist='+youtube_id+'&version=3';
-                  if(p[i].innerHTML.indexOf('start=') !== -1) theInnerHTML += '&start='+p[i].innerHTML.substring(p[i].innerHTML.indexOf('start=')+6);
-                  theInnerHTML += '" frameborder="0" allowfullscreen></iframe></div>';
-                  p[i].innerHTML = theInnerHTML;
-              }
-              if(p[i].innerHTML.indexOf('vimeo.com') !== -1) {
-                  //ask vimeo for the id and place the embed
-                  vimeo_embed(p[i].innerHTML,p[i]);
-              }
-          }
-      }
-  }
-  video_embed();
-  
-  function mp3_embed() {
-      var p = document.getElementsByTagName('p');
-      for(var i = 0; i < p.length; i++) {
-          if(p[i].innerHTML.indexOf('.mp3') !== -1) {
-              var str = p[i].innerHTML.split('?');
-              if(str.length == 1) str[1] = '';
-              var str1 = str[1];
-              str1 = str1.replace('&','').replace('&','');
-              str1 = str1.replace('autoplay=1','').replace('autoplay=0','');
-              str1 = str1.replace('loop=1','').replace('loop=0','');
-              str1 = str1.replace('controls=0','').replace('controls=1','');
-  
-              if (str[0].lastIndexOf('.mp3', str[0].length - 4) === str[0].length - 4 && str1.length == 0) {
-                  if(str[1].indexOf('autoplay=1') !== -1) var autoplay=1; else var autoplay=0;
-                  if(str[1].indexOf('loop=1') !== -1) var loop=1; else var loop=0;
-                  if(str[1].indexOf('controls=0') !== -1) var controls=0; else var controls=1;
-                  var newInnerHTML = '<audio';
-                  if(autoplay==1) newInnerHTML += ' autoplay';
-                  if(loop==1) newInnerHTML += ' loop';
-                  if(controls==1) newInnerHTML += ' controls';
-                  newInnerHTML += '><source src="'+str[0]+'" type="audio/mpeg">Your browser does not support the audio element.</audio>';
-                  p[i].innerHTML = newInnerHTML;
-              }
-          }
-      }
-    }
-    mp3_embed();
 
-  </script>
       
+        <!-- Include js -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const defaultIconUrl = "/assets/media/!misc/icons/link.svg"; // Fallback icon
-  
-    document.querySelectorAll("a[href]").forEach(link => {
-      const href = link.getAttribute("href");
-      if (!href) return;
-  
-      const isExternal = /^https?:\/\//i.test(href) && !href.includes(window.location.hostname);
-  
-      // Skip icon if explicitly opted out
-      if (link.hasAttribute("data-no-icon")) return;
-  
-      if (isExternal) {
-        // Open in new tab securely
-        link.setAttribute("target", "_blank");
-        link.setAttribute("rel", "noopener noreferrer");
-  
-        // Avoid duplicate icons
-        if (link.querySelector("img")) return;
-  
-        // Add styling class for vertical centering
-        link.classList.add("icon");
-  
-        // Detect if icon should go to the right
-        const iconRight = link.classList.contains("icon-right") ||
-                          link.getAttribute("data-icon") === "right" ||
-                          link.getAttribute("class")?.includes("icon-right");
-  
-        try {
-          const url = new URL(href);
-          const faviconUrl = `https://www.google.com/s2/favicons?sz=16&domain=${url.hostname}`;
-  
-          const icon = document.createElement("img");
-          icon.src = faviconUrl;
-          icon.alt = "";
-          icon.style.width = "16px";
-          icon.style.height = "16px";
-  
-          // Basic alignment and spacing
-          icon.style.margin = iconRight ? "0 0 0 4px" : "0 4px 0 0";
-  
-          // Fallback to default icon if favicon fails to load
-          icon.onerror = () => { icon.src = defaultIconUrl; };
-  
-          // Insert icon in correct position
-          if (iconRight) link.append(icon);
-          else link.prepend(icon);
-        } catch (e) {
-          const fallbackIcon = document.createElement("img");
-          fallbackIcon.src = defaultIconUrl;
-          fallbackIcon.alt = "";
-          fallbackIcon.style.width = "16px";
-          fallbackIcon.style.height = "16px";
-          fallbackIcon.style.margin = iconRight ? "0 0 0 4px" : "0 4px 0 0";
-          if (iconRight) link.append(fallbackIcon);
-          else link.prepend(fallbackIcon);
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
         }
-      }
-    });
-  });
-  </script>
-  
+      };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"  defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CSSRulePlugin.min.js"  defer></script>
+    <script src="/assets/js/links.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/menu.js"></script>
+    <script src="/assets/js/open-embed.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+
+
   </body>
 
 </html>
