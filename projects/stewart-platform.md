@@ -9,40 +9,46 @@ repo: "https://github.com/nzge/stewart-platform"
 toc: true
 ---
 
-<model-viewer
-  alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
-  src="https://nzge.github.io/assets/media/stewart-platform_media/stewart-assy.gltf"
-  shadow-intensity="0.5"
-  camera-controls
-  touch-action="pan-y"
-  camera-orbit="90deg 70deg 5m"
-  field-of-view="180deg"
-  style="width: 800px; height: 400px; display: block; margin: 0 auto 0.5em auto;" >
-</model-viewer>
+<br><br>
+![macro-pcb-proto](/assets/media/placeholder.jpg){: style="height:500px; display: block; margin: auto;"}
 
 ## Hardware Design
 
+<p style="text-align: center;" >Model</p>
+<model-viewer
+  src="https://nzge.github.io/assets/media/stewart-platform_media/stewart_assy.gltf"
+  alt="Stewart Platform"
+  camera-controls
+  touch-action="pan-y"
+  camera-orbit="0deg 0deg auto"
+  orientation="180deg 20deg 0deg"
+  field-of-view="45deg"
+  shadow-intensity="1"
+  exposure="1.0"
+  environment-image="legacy"
+  style="width: 800px; height: 500px; display: block; margin: 0 auto 0.5em auto; background-color: #1a1a1a;" >
+</model-viewer>
+
 ### Components
-
-Teensy + Raspberry Pi Pico
-Proto Board
-6V 10A Power Supply
-HiLetgo PCA9685 16 Channel 12-Bit PWM Servo Motor Driver
-MPU6050
-
-Tower MG996R 180 degree servo
-25T Servo Horn
-Servo Link
-6 Shafts with threaded ball joint
 
 Base plate
 Base plate cover
 Platform
 Top Plate
 
+[Teensy + Raspberry Pi Pico]() | asdas
+[Proto Board]() |
+[6V 10A Power Supply]() |
+[HiLetgo PCA9685 16 Channel 12-Bit PWM Servo Motor Driver]() |
+[MPU6050]() |
+
+[Tower MG996R 180 degree servo]() | asdas
+[25T Servo Horn]() |
+[Servo Link]() |
+[6 Shafts with threaded ball joint]() |
 
 ### Schematic
-<img src="https://raw.githubusercontent.com/nzge/stewart-platform/main/stewart-wiring/stewart-schematic_bb.svg?sanitize=true" alt="Stewart Platform Schematic" style="width:400px; height:400px;display: block; margin: auto;">
+<img src="https://raw.githubusercontent.com/nzge/stewart-platform/main/stewart-wiring/stewart-schematic_bb.svg?sanitize=true" alt="Stewart Platform Schematic" style="width:800px; height:450px;display: block; margin: auto; background: rgba(24, 22, 22, 0.6); border-radius: 4px;"> 
 
 ### Dimensions
 Simple base, platform, and link proportion calculations formatted in a csv file through Jupyter notebook serve as global variables to parametrize CAD model.
@@ -114,37 +120,37 @@ Micro-ROS on Pico
 > 3-29-25: Refined CAD for printing
 >
 > ![3-29-25 stewart proto](/assets/media/stewart-platform_media/IMG_0815.JPG){: 
-style="width:600px;display: block; margin: auto;"}
+style="width:500px;display: block; margin: auto;"}
 
 > 3-20-25: Refined CAD for printing
 >
 > ![3-20-25 stewart test fit](/assets/media/stewart-platform_media/IMG_0745.jpg){: 
-style="width:600px;display: block; margin: auto;"}
+style="width:500px;display: block; margin: auto;"}
 
 > 3-13-25: Refined CAD for printing
 >
 > ![3-13-25 stewart proto](/assets/media/stewart-platform_media/stewart-proto_3-13-25.png){: 
-style="width:600px;display: block; margin: auto;"}
+style="width:500px;display: block; margin: auto;"}
 
 > 3-11-25: CAD prototype
 >
 > ![3-11-25 stewart proto](/assets/media/stewart-platform_media/stewart-proto.png){: 
-style="width:600px;display: block; margin: auto;"}
+style="width:500px;display: block; margin: auto;"}
 
 > 3-6-25: Servo driver code is functional
 >
 > ![3-6-25 servo test](/assets/media/stewart-platform_media/servo-test.JPG){: 
-style="width:600px;display: block; margin: auto;"}
+style="width:500px;display: block; margin: auto;"}
 
 ---
 
-## References
+# References
 
 ### Inspiration
-1. [3DOF STEWART PLATFORM: ECE4760 MICROCONTROLLERS FINAL PROJECT](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/)
-2. [Stewart Platform by thiagohersan](https://www.instructables.com/Stewart-Platform/)
-3. [Ball Balancing Robot by Aaed Musa](https://www.youtube.com/watch?v=kAaYaZcpbLo&list=PLTqchMECawAp3Q6hHfBDlCq_db-DOYmcD&index=28)
-4. [6-DOF Stewart Platfor by Yichuan Wang](https://yichuan33.blogspot.com/2017/11/6-dof-stewart-platform.html)
+- [3DOF STEWART PLATFORM: ECE4760 MICROCONTROLLERS FINAL PROJECT](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/)
+- [Stewart Platform by thiagohersan](https://www.instructables.com/Stewart-Platform/)
+- [Ball Balancing Robot by Aaed Musa](https://www.youtube.com/watch?v=kAaYaZcpbLo&list=PLTqchMECawAp3Q6hHfBDlCq_db-DOYmcD&index=28)
+- [6-DOF Stewart Platfor by Yichuan Wang](https://yichuan33.blogspot.com/2017/11/6-dof-stewart-platform.html)
 
 ### Sources
 [^1]: ["Stewart Platform Control"](https://content.instructables.com/FFI/8ZXW/I55MMY14/FFI8ZXWI55MMY14.pdf), Accessed March 6, 2025.  

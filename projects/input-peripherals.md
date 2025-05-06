@@ -390,13 +390,28 @@ I initially fell into the keyboard hobby during COVID when I was glued to my des
 
 ## Hand-wired Macropad
 
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="height:400px; display:block; margin: auto;"}
+
 ### Specs
 For my first design, I kept it simple. 
 - 4x4 Matrix  
 - Unibody construction  
 
-![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
-style="height:400px; display:block; margin: auto;"}
+<p style="text-align: center;" >Model</p>
+<model-viewer
+  src="https://nzge.github.io/assets/media/stewart-platform_media/stewart_assy.gltf"
+  alt="Stewart Platform"
+  camera-controls
+  touch-action="pan-y"
+  camera-orbit="0deg 0deg auto"
+  orientation="180deg 20deg 0deg"
+  field-of-view="45deg"
+  shadow-intensity="1"
+  exposure="1.0"
+  environment-image="legacy"
+  style="width: 800px; height: 500px; display: block; margin: 0 auto 0.5em auto; background-color: #1a1a1a;" >
+</model-viewer>
 
 #### Layout
 
@@ -420,7 +435,7 @@ style="height:200px; display:block; margin: auto;"}
 style="height:350px;display: block; margin: auto;"}
 
 ### Build Log
-> 4-10-25: Resized to fit a macropad
+> 4-10-25: Resized to fit a battery
 >
 >
 
@@ -452,8 +467,6 @@ style="height:200px;display: block; margin: auto;"}
 ---
 
 ## Macropad with PCB 
-
-### Specs
 
 ### PCB 
 KiCAD

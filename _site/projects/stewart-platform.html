@@ -111,36 +111,75 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#dimensions">Dimensions</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#servo-driver">Servo Driver</a></li><li><a href="#inverse-kinematics">Inverse Kinematics</a></li><li><a href="#pid-control">PID Control</a></li><li><a href="#web-interface">Web Interface</a></li><li><a href="#ros-integration">ROS Integration</a></li></ul></li><li><a href="#build-log">Build Log</a></li><li><a href="#references">References</a><ul><li><a href="#inspiration">Inspiration</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
+      <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#dimensions">Dimensions</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#servo-driver">Servo Driver</a></li><li><a href="#inverse-kinematics">Inverse Kinematics</a></li><li><a href="#pid-control">PID Control</a></li><li><a href="#web-interface">Web Interface</a></li><li><a href="#ros-integration">ROS Integration</a></li></ul></li><li><a href="#build-log">Build Log</a><ul><li><a href="#inspiration">Inspiration</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
     </nav>
   
   <div>
     <article class="markdown-body">
-      <model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" src="https://nzge.github.io/assets/media/stewart-platform_media/stewart-assy.gltf" shadow-intensity="0.5" camera-controls="" touch-action="pan-y" camera-orbit="90deg 70deg 5m" field-of-view="180deg" style="width: 800px; height: 400px; display: block; margin: 0 auto 0.5em auto;">
-</model-viewer>
+      <p><br /><br />
+<img src="/assets/media/placeholder.jpg" alt="macro-pcb-proto" style="height:500px; display: block; margin: auto;" /></p>
 
 <h2 id="hardware-design">Hardware Design</h2>
 
+<p style="text-align: center;">Model</p>
+<model-viewer src="https://nzge.github.io/assets/media/stewart-platform_media/stewart_assy.gltf" alt="Stewart Platform" camera-controls="" touch-action="pan-y" camera-orbit="0deg 0deg auto" orientation="180deg 20deg 0deg" field-of-view="45deg" shadow-intensity="1" exposure="1.0" environment-image="legacy" style="width: 800px; height: 500px; display: block; margin: 0 auto 0.5em auto; background-color: #1a1a1a;">
+</model-viewer>
+
 <h3 id="components">Components</h3>
-
-<p>Teensy + Raspberry Pi Pico
-Proto Board
-6V 10A Power Supply
-HiLetgo PCA9685 16 Channel 12-Bit PWM Servo Motor Driver
-MPU6050</p>
-
-<p>Tower MG996R 180 degree servo
-25T Servo Horn
-Servo Link
-6 Shafts with threaded ball joint</p>
 
 <p>Base plate
 Base plate cover
 Platform
 Top Plate</p>
 
+<table>
+  <tbody>
+    <tr>
+      <td><a href="">Teensy + Raspberry Pi Pico</a></td>
+      <td>asdas</td>
+    </tr>
+    <tr>
+      <td><a href="">Proto Board</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">6V 10A Power Supply</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">HiLetgo PCA9685 16 Channel 12-Bit PWM Servo Motor Driver</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">MPU6050</a></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="">Tower MG996R 180 degree servo</a></td>
+      <td>asdas</td>
+    </tr>
+    <tr>
+      <td><a href="">25T Servo Horn</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">Servo Link</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">6 Shafts with threaded ball joint</a></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="schematic">Schematic</h3>
-<p><img src="https://raw.githubusercontent.com/nzge/stewart-platform/main/stewart-wiring/stewart-schematic_bb.svg?sanitize=true" alt="Stewart Platform Schematic" style="width:400px; height:400px;display: block; margin: auto;" /></p>
+<p><img src="https://raw.githubusercontent.com/nzge/stewart-platform/main/stewart-wiring/stewart-schematic_bb.svg?sanitize=true" alt="Stewart Platform Schematic" style="width:800px; height:450px;display: block; margin: auto; background: rgba(24, 22, 22, 0.6); border-radius: 4px;" /></p>
 
 <h3 id="dimensions">Dimensions</h3>
 <p>Simple base, platform, and link proportion calculations formatted in a csv file through Jupyter notebook serve as global variables to parametrize CAD model.</p>
@@ -209,44 +248,44 @@ Micro-ROS on Pico</p>
 <blockquote>
   <p>3-29-25: Refined CAD for printing</p>
 
-  <p><img src="/assets/media/stewart-platform_media/IMG_0815.JPG" alt="3-29-25 stewart proto" style="width:600px;display: block; margin: auto;" /></p>
+  <p><img src="/assets/media/stewart-platform_media/IMG_0815.JPG" alt="3-29-25 stewart proto" style="width:500px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <blockquote>
   <p>3-20-25: Refined CAD for printing</p>
 
-  <p><img src="/assets/media/stewart-platform_media/IMG_0745.jpg" alt="3-20-25 stewart test fit" style="width:600px;display: block; margin: auto;" /></p>
+  <p><img src="/assets/media/stewart-platform_media/IMG_0745.jpg" alt="3-20-25 stewart test fit" style="width:500px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <blockquote>
   <p>3-13-25: Refined CAD for printing</p>
 
-  <p><img src="/assets/media/stewart-platform_media/stewart-proto_3-13-25.png" alt="3-13-25 stewart proto" style="width:600px;display: block; margin: auto;" /></p>
+  <p><img src="/assets/media/stewart-platform_media/stewart-proto_3-13-25.png" alt="3-13-25 stewart proto" style="width:500px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <blockquote>
   <p>3-11-25: CAD prototype</p>
 
-  <p><img src="/assets/media/stewart-platform_media/stewart-proto.png" alt="3-11-25 stewart proto" style="width:600px;display: block; margin: auto;" /></p>
+  <p><img src="/assets/media/stewart-platform_media/stewart-proto.png" alt="3-11-25 stewart proto" style="width:500px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <blockquote>
   <p>3-6-25: Servo driver code is functional</p>
 
-  <p><img src="/assets/media/stewart-platform_media/servo-test.JPG" alt="3-6-25 servo test" style="width:600px;display: block; margin: auto;" /></p>
+  <p><img src="/assets/media/stewart-platform_media/servo-test.JPG" alt="3-6-25 servo test" style="width:500px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <hr />
 
-<h2 id="references">References</h2>
+<h1 id="references">References</h1>
 
 <h3 id="inspiration">Inspiration</h3>
-<ol>
+<ul>
   <li><a href="https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/">3DOF STEWART PLATFORM: ECE4760 MICROCONTROLLERS FINAL PROJECT</a></li>
   <li><a href="https://www.instructables.com/Stewart-Platform/">Stewart Platform by thiagohersan</a></li>
   <li><a href="https://www.youtube.com/watch?v=kAaYaZcpbLo&amp;list=PLTqchMECawAp3Q6hHfBDlCq_db-DOYmcD&amp;index=28">Ball Balancing Robot by Aaed Musa</a></li>
   <li><a href="https://yichuan33.blogspot.com/2017/11/6-dof-stewart-platform.html">6-DOF Stewart Platfor by Yichuan Wang</a></li>
-</ol>
+</ul>
 
 <h3 id="sources">Sources</h3>
 
