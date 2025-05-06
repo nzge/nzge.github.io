@@ -9,6 +9,9 @@ repo: "https://github.com/nzge/stewart-platform"
 toc: true
 ---
 
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+<model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" src="https://nzge.github.io/assets/media/!misc/random/CesiumMilkTruck.gltf" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
 
 ## Hardware Design
 

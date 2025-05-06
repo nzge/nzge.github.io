@@ -12,7 +12,9 @@ toc: true
 # Tilt-Rotor Drone
 This was my attempt at creating a tilt-rotor drone inspired by Sova's drone in Valorant.
 
-## Inspiration
+## Concept
+
+Inspiration
 <div id="my-slideshow4"></div>
 <script>
   const slides4 = [
@@ -25,8 +27,10 @@ This was my attempt at creating a tilt-rotor drone inspired by Sova's drone in V
   new Slideshow(slides4, 'my-slideshow4');
 </script>
 
+Concept Drawings
+![MPU6050](/assets/media/drone_media/mpu6050.png){: style="width:200px; height:200px;display: block; margin: auto;"}
 
-## Hardware Design  
+## Hardware
 
 
 ### Components
@@ -62,7 +66,7 @@ I performed rough calculations to source motors that could support the weight of
 Drone mask modeled in Blender
 
 
-## Software Design
+## Software 
 
 ### Sensor Feedback and Stability Control
 
@@ -249,10 +253,10 @@ OpenGL/WebGL
 
 
 ## Build Log
+> 5-21-25: 
+> 
 
-> 2-25-25
-> IMU works but experiencing gyro drift
->
+> 2-25-25: IMU works but experiencing gyro drift
 
 ---
 
@@ -265,22 +269,22 @@ OpenGL/WebGL
 ### Schematic
 
 ## Build Log
+> 5-25-25: 
 
-> 2-25-25
-> IMU works but experiencing gyro drift
-> 
+> 5-21-25: 
 
+---
 ---
 
 # References
 
 ### Inspiration
-1. V22 Osprey by Tom Stanton
-- [Part 1](https://www.youtube.com/watch?v=55G-mwT9uCE)
-- [Part 2](https://www.youtube.com/watch?v=HitJ8r9HwBg&t=792s)
+- V22 Osprey by Tom Stanton
+  - [Part 1](https://www.youtube.com/watch?v=55G-mwT9uCE)
+  - [Part 2](https://www.youtube.com/watch?v=HitJ8r9HwBg&t=792s)
 
 ### Flight Controller
-1. [RC VTOL - V4 by Tom Stanton](https://www.youtube.com/watch?v=gPEeCjVrTBw&t=190s)
+- [RC VTOL - V4 by Tom Stanton](https://www.youtube.com/watch?v=gPEeCjVrTBw&t=190s)
 
 ### Sources
 [^1]: ["How I Designed a 3D Printed Wing"](https://www.youtube.com/watch?v=QJjhMan6T_E), Accessed March 6, 2025.  

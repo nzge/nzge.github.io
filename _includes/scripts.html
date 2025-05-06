@@ -11,8 +11,9 @@
         }
       };
     </script>
-    {%- for js_file in site.static_files %}
-    {%- if js_file.path contains '/assets/js/' and js_file.extname == '.js' %}
-    <script src="{{ js_file.path | relative_url }}"></script>{%- endif -%}
-    {%- endfor %}
+    <script src="/assets/js/links.js"></script>
+    <script src="/assets/js/menu.js"></script>
+    <script src="/assets/js/open-embed.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+
 

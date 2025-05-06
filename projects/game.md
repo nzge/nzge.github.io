@@ -22,13 +22,13 @@ Fighting game (either top-down, semi-3D like league)
   - the point is the game is supposed to be unserious, but still have engaging fighting mechanics. a perfect mix of whacky and serious (mechanically intense)
   - the end character model should look whacky/funny but be perfectly attuned to your playstyle. 
 
-
 # Platform Fighter
 
 
-# Cute Idler Game
+# Cute Idler Party Game
 
-
+Pixel art
+Almost like a tabletop sim, but you can interact with puzzles and games like chess as your own character. 
 
 # References
 
