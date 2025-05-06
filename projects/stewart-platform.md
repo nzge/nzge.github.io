@@ -9,9 +9,16 @@ repo: "https://github.com/nzge/stewart-platform"
 toc: true
 ---
 
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-
-<model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" src="https://nzge.github.io/assets/media/!misc/random/CesiumMilkTruck.gltf" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+<model-viewer
+  alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
+  src="https://nzge.github.io/assets/media/stewart-platform_media/stewart-assy.gltf"
+  shadow-intensity="0.5"
+  camera-controls
+  touch-action="pan-y"
+  camera-orbit="90deg 70deg 5m"
+  field-of-view="180deg"
+  style="width: 800px; height: 400px; display: block; margin: 0 auto 0.5em auto;" >
+</model-viewer>
 
 ## Hardware Design
 
@@ -107,27 +114,27 @@ Micro-ROS on Pico
 > 3-29-25: Refined CAD for printing
 >
 > ![3-29-25 stewart proto](/assets/media/stewart-platform_media/IMG_0815.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+style="width:600px;display: block; margin: auto;"}
 
 > 3-20-25: Refined CAD for printing
 >
 > ![3-20-25 stewart test fit](/assets/media/stewart-platform_media/IMG_0745.jpg){: 
-style="height:400px;display: block; margin: auto;"}
+style="width:600px;display: block; margin: auto;"}
 
 > 3-13-25: Refined CAD for printing
 >
 > ![3-13-25 stewart proto](/assets/media/stewart-platform_media/stewart-proto_3-13-25.png){: 
-style="height:400px;display: block; margin: auto;"}
+style="width:600px;display: block; margin: auto;"}
 
 > 3-11-25: CAD prototype
 >
 > ![3-11-25 stewart proto](/assets/media/stewart-platform_media/stewart-proto.png){: 
-style="height:400px;display: block; margin: auto;"}
+style="width:600px;display: block; margin: auto;"}
 
 > 3-6-25: Servo driver code is functional
 >
 > ![3-6-25 servo test](/assets/media/stewart-platform_media/servo-test.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+style="width:600px;display: block; margin: auto;"}
 
 ---
 
