@@ -126,7 +126,7 @@
 <p>The keyboard matrix is the fundamental idea behind the operation of any and all keyboard-adjacent input devices.</p>
 
 <h3 id="keyboard-anatomy">Keyboard Anatomy</h3>
-<p><img src="/assets/media/input_media/keyboard-anatomy.png" alt="Alt text" style="height:500px; display: block; margin: auto;" /></p>
+<p><img src="/assets/media/input_media/keyboard/keyboard-anatomy.png" alt="Alt text" style="height:500px; display: block; margin: auto;" /></p>
 
 <table>
   <thead>
@@ -164,7 +164,17 @@
 <h4 id="layout">Layout</h4>
 <p>The layout determines the general form factor of the case.</p>
 <h5 id="traditional-layouts">Traditional Layouts</h5>
-<p>Fullsize, HHKB, TKL, Ortho</p>
+<div id="layouts"></div>
+<script>
+  const layouts= [
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/fullsize.png", caption: " ", title: "Fullsize" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/tkl.png", caption: "Full size without the numpad", title: " TKL" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/hhkb.png", caption: " ", title: "HHKB" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/ortho.png", caption: " ", title: "Ortho" },
+  ];
+  new Slideshow(layouts, 'layouts');
+</script>
+
 <h5 id="split">Split</h5>
 <p>Ergo split, Ortho split</p>
 
@@ -209,15 +219,15 @@
   <li>Other Manufacturers: Kailh, JWK/Durock, KTT, Tecsee, Outemu, SP-star, Akko, BSUN/YOK, HMX, Everglide</li>
 </ul>
 
-<blockquote class="callout-info">
-  <p>ℹ️ <strong>Honorable Mentions</strong><br />
-NK creams, Holy Pandas (Spinoffs: GOK Pandas, Glorious Pandas), Boba U4T, Tangies</p>
-</blockquote>
-
 <h6 id="frankenswitches">Frankenswitches</h6>
 <p>Combining components from various switches to create a completely unique switch<br />
 Notable examples: Black Cherry Pie, Creamsicle, Zyko, Holy Boba, Holy Panda<br />
 <br /></p>
+
+<blockquote class="callout-info">
+  <p>ℹ️ <strong>Honorable Mentions</strong><br />
+NK creams, Holy Pandas (Spinoffs: GOK Pandas, Glorious Pandas), Boba U4T, Tangies</p>
+</blockquote>
 
 <h5 id="other-switch-types">Other Switch Types</h5>
 <p>Less popular switch types</p>
@@ -343,8 +353,12 @@ There is also TMK and KMK. TMK is mostly deprecated, and is a Circuit Python key
 
 <h2 id="mouse">Mouse</h2>
 <p>A mouse provides cursor control to navigate and interact with display elements.</p>
+
 <h3 id="motion-sensor">Motion Sensor</h3>
-<p>The motion sensor is at the core of mouse function. It converts physical mouse movement to cursor movement. The sensor tracks translational movement, polling at a high frequency.</p>
+<p>The motion sensor is at the core of mouse function. It converts physical mouse movement to cursor movement. The sensor tracks translational movement, polling at a high frequency.<br />
+<br />
+<img src="/assets/media/input_media/mice/paw3395.jpg" alt="huano" style="height:350px; display: block; margin: auto;" />
+<br /></p>
 
 <p><strong>Laser sensor</strong>: motion tracking via lasers. Largely obsolete by modern standards.</p>
 
@@ -359,7 +373,7 @@ There is also TMK and KMK. TMK is mostly deprecated, and is a Circuit Python key
   </thead>
   <tbody>
     <tr>
-      <td><a href="">mx8650</a></td>
+      <td><a href="http://www.lizhiic.com/admin/Editor/uploadfile/20150127092829971.pdf">mx8650</a></td>
       <td><a href="https://github.com/styropyr0/MX8650">Firmware</a></td>
     </tr>
     <tr>
@@ -367,13 +381,16 @@ There is also TMK and KMK. TMK is mostly deprecated, and is a Circuit Python key
       <td> </td>
     </tr>
     <tr>
-      <td><a href="">Pixart paw3395</a></td>
+      <td><a href="https://www.aliexpress.us/item/3256806000276201.html?spm=a2g0o.productlist.main.3.f81f6506zGBJkc&amp;algo_pvid=3460ccad-eea4-41b0-9091-fe5f78e2867a&amp;algo_exp_id=3460ccad-eea4-41b0-9091-fe5f78e2867a-1&amp;pdp_npi=4%40dis%21GBP%211.16%211.16%21%21%2110.27%2110.27%21%402103846917125773200222636ea5da%2112000036558235684%21sea%21GB%214560809364%21AB&amp;curPageLogUid=DzwSQgdCiofx&amp;utparam-url=scene%3Asearch%7Cquery_from%3A&amp;gatewayAdapt=vnm2usa4itemAdapt#nav-description">Pixart paw3395</a></td>
       <td> </td>
     </tr>
   </tbody>
 </table>
 
 <h3 id="switches-1">Switches</h3>
+
+<p><img src="/assets/media/input_media/switches/huano.webp" alt="huano" style="height:350px; display: block; margin: auto;" /></p>
+
 <p>Omron D2F-01<br />
 Kailh GM2.0<br />
 Huano</p>
@@ -918,8 +935,8 @@ Ideal for wireless keyboard projects requiring Bluetooth connectivity (ZMK firmw
     </thead>
     <tbody>
       <tr>
-        <td style="text-align: center"><img src="/assets/media/input_media/40/40+_schematic_rev0-1.png" alt="Alt text" style="height:400px;display: block; margin: auto;" /></td>
-        <td style="text-align: center"><img src="/assets/media/input_media/40/40+_schematic_rev0-2.png" alt="Alt text" style="height:400px;display: block; margin: auto;" /></td>
+        <td style="text-align: center"><img src="/assets/media/input_media/40/40+_schematic_rev0-1.png" alt="Alt text" style="height:300px;display: block; margin: auto;" /></td>
+        <td style="text-align: center"><img src="/assets/media/input_media/40/40+_schematic_rev0-2.png" alt="Alt text" style="height:300px;display: block; margin: auto;" /></td>
       </tr>
     </tbody>
   </table>

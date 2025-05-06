@@ -20,7 +20,7 @@ Beyond the simple function of registering keystrokes, everything in the hobby is
 The keyboard matrix is the fundamental idea behind the operation of any and all keyboard-adjacent input devices.
 
 ### Keyboard Anatomy
-![Alt text](/assets/media/input_media/keyboard-anatomy.png){: 
+![Alt text](/assets/media/input_media/keyboard/keyboard-anatomy.png){: 
 style="height:500px; display: block; margin: auto;"}
 
 | Component | Description |
@@ -36,7 +36,17 @@ style="height:500px; display: block; margin: auto;"}
 #### Layout
 The layout determines the general form factor of the case. 
 ##### Traditional Layouts
-Fullsize, HHKB, TKL, Ortho
+<div id="layouts"></div>
+<script>
+  const layouts= [
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/fullsize.png", caption: " ", title: "Fullsize" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/tkl.png", caption: "Full size without the numpad", title: " TKL" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/hhkb.png", caption: " ", title: "HHKB" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/ortho.png", caption: " ", title: "Ortho" },
+  ];
+  new Slideshow(layouts, 'layouts');
+</script>
+
 ##### Split
 Ergo split, Ortho split
 
@@ -75,14 +85,14 @@ style="height:200px;display: block; margin: auto;"}
   - Milky Yellows, Deeping, Oil Kings, Black ink
 - Other Manufacturers: Kailh, JWK/Durock, KTT, Tecsee, Outemu, SP-star, Akko, BSUN/YOK, HMX, Everglide
 
-{:.callout-info}
-> ℹ️ **Honorable Mentions**  
-> NK creams, Holy Pandas (Spinoffs: GOK Pandas, Glorious Pandas), Boba U4T, Tangies
-
 ###### Frankenswitches 
 Combining components from various switches to create a completely unique switch  
 Notable examples: Black Cherry Pie, Creamsicle, Zyko, Holy Boba, Holy Panda  
 <br>
+
+{:.callout-info}
+> ℹ️ **Honorable Mentions**  
+> NK creams, Holy Pandas (Spinoffs: GOK Pandas, Glorious Pandas), Boba U4T, Tangies
 
 ##### Other Switch Types
 Less popular switch types
@@ -198,8 +208,13 @@ There is also TMK and KMK. TMK is mostly deprecated, and is a Circuit Python key
 
 ## Mouse
 A mouse provides cursor control to navigate and interact with display elements. 
+
 ### Motion Sensor
 The motion sensor is at the core of mouse function. It converts physical mouse movement to cursor movement. The sensor tracks translational movement, polling at a high frequency.  
+<br>
+![huano](/assets/media/input_media/mice/paw3395.jpg){: 
+style="height:350px; display: block; margin: auto;"}
+<br>
 
 **Laser sensor**: motion tracking via lasers. Largely obsolete by modern standards.  
 
@@ -207,11 +222,15 @@ The motion sensor is at the core of mouse function. It converts physical mouse m
 
 | Sensor | Description |
 |---|---|
-| [mx8650]() | [Firmware](https://github.com/styropyr0/MX8650) |
+| [mx8650](http://www.lizhiic.com/admin/Editor/uploadfile/20150127092829971.pdf) | [Firmware](https://github.com/styropyr0/MX8650) |
 | [pmw3360](https://www.tindie.com/products/jkicklighter/pmw3360-motion-sensor/) |  |
-| [Pixart paw3395]() | |
+| [Pixart paw3395](https://www.aliexpress.us/item/3256806000276201.html?spm=a2g0o.productlist.main.3.f81f6506zGBJkc&algo_pvid=3460ccad-eea4-41b0-9091-fe5f78e2867a&algo_exp_id=3460ccad-eea4-41b0-9091-fe5f78e2867a-1&pdp_npi=4%40dis%21GBP%211.16%211.16%21%21%2110.27%2110.27%21%402103846917125773200222636ea5da%2112000036558235684%21sea%21GB%214560809364%21AB&curPageLogUid=DzwSQgdCiofx&utparam-url=scene%3Asearch%7Cquery_from%3A&gatewayAdapt=vnm2usa4itemAdapt#nav-description) | |
 
 ### Switches
+
+![huano](/assets/media/input_media/switches/huano.webp){: 
+style="height:350px; display: block; margin: auto;"}
+
 Omron D2F-01  
 Kailh GM2.0  
 Huano 
@@ -553,7 +572,7 @@ style="height:200px;display: block; margin: auto;"}
 >
 > MCU Schematic            |  Key Matrix
 :-------------------------:|:-------------------------:
-![Alt text](/assets/media/input_media/40/40+_schematic_rev0-1.png){: style="height:400px;display: block; margin: auto;"}   |  ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-2.png){: style="height:400px;display: block; margin: auto;"}
+![Alt text](/assets/media/input_media/40/40+_schematic_rev0-1.png){: style="height:300px;display: block; margin: auto;"}   |  ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-2.png){: style="height:300px;display: block; margin: auto;"}
 
 > 4-10-25: Initial CAD prototype
 >

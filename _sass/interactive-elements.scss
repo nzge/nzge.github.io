@@ -396,6 +396,16 @@ input:checked + .slider:before {
     }
   }
 
+  .slide-title {
+    mix-blend-mode: difference;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 0.25em;
+  }
+
   /* Caption text */
   .text {
     mix-blend-mode: difference;
@@ -471,12 +481,7 @@ input:checked + .slider:before {
   }
 }
 
-.slide-title {
-  text-align: center;
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-top: 0.5em;
-}
+
 
 
 /*--------------- Back to Top --------------- */
