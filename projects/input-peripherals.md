@@ -46,8 +46,8 @@ The way the PCB-switch assembly are housed within the case.
 <script>
   const slides8= [
     { src: "https://nzge.github.io/assets/media/input_media/keyboard/top_mount.jpg", caption: "The plate is secured to the case top housing. Usually a stiffer typing experience. ", title: "Top Mount" },
-    { src: "https://nzge.github.io/assets/media/input_media/keyboard/top_mount.jpg", caption: "Gasket material between the plate (or PCB) and keyboard housing on both top and bottom sides.  This cushions/trampolines the plate within the keyboard.", title: "Gasket Mount" },
-    { src: "https://nzge.github.io/assets/media/input_media/keyboard/top_mount.jpg", caption: "Screws go fully through the bottom housing, plate, and top housing of the keyboard, holding the plate like the middle of a sandwich. ", title: "Sandwhich Mount" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/gasket_mount.jpg", caption: "Gasket material between the plate (or PCB) and keyboard housing on both top and bottom sides.  This cushions/trampolines the plate within the keyboard.", title: "Gasket Mount" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/sandwich_mount.jpg", caption: "Screws go fully through the bottom housing, plate, and top housing of the keyboard, holding the plate like the middle of a sandwich. ", title: "Sandwhich Mount" },
   ];
   new Slideshow(slides8, 'my-slideshow8');
 </script>
