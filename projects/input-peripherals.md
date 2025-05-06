@@ -22,6 +22,7 @@ The keyboard matrix is the fundamental idea behind the operation of any and all 
 ### Keyboard Anatomy
 ![Alt text](/assets/media/input_media/keyboard/keyboard-anatomy.png){: 
 style="height:500px; display: block; margin: auto;"}
+<p style="text-align:center;">source: https://geekhack.org/index.php?topic=125072.0</p>
 
 | Component | Description |
 |--------------|------|
