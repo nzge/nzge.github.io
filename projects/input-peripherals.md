@@ -35,7 +35,6 @@ style="height:500px; display: block; margin: auto;"}
 
 #### Layout
 The layout determines the general form factor of the case. 
-##### Traditional Layouts
 <div id="layouts"></div>
 <script>
   const layouts= [
@@ -43,12 +42,11 @@ The layout determines the general form factor of the case.
     { src: "https://nzge.github.io/assets/media/input_media/keyboard/tkl.png", caption: "Full size without the numpad", title: " TKL" },
     { src: "https://nzge.github.io/assets/media/input_media/keyboard/hhkb.png", caption: "The HHKB (Happy Hacking Keyboard) layout is a proprietary layout that optimizes ctrl, and baskspace key placements.", title: "HHKB" },
     { src: "https://nzge.github.io/assets/media/input_media/keyboard/ortho.png", caption: "The ortholinear layout positions the keys in a uniform grid.", title: "Ortho" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/ortho.png", caption: "The ortholinear layout positions the keys in a uniform grid.", title: "Split Ergo" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/ortho.png", caption: "The ortholinear layout positions the keys in a uniform grid.", title: "Split Ortho" },
   ];
   new Slideshow(layouts, 'layouts');
 </script>
-
-##### Split
-Ergo split, Ortho split
 
 #### Mounting System
 The way the PCB-switch assembly are housed within the case.
