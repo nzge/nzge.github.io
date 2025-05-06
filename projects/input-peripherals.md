@@ -39,10 +39,10 @@ The layout determines the general form factor of the case.
 <div id="layouts"></div>
 <script>
   const layouts= [
-    { src: "https://nzge.github.io/assets/media/input_media/keyboard/fullsize.png", caption: " ", title: "Fullsize" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/fullsize.png", caption: "Standard layout with all keys (alphas, function row, numpad)", title: "Fullsize" },
     { src: "https://nzge.github.io/assets/media/input_media/keyboard/tkl.png", caption: "Full size without the numpad", title: " TKL" },
-    { src: "https://nzge.github.io/assets/media/input_media/keyboard/hhkb.png", caption: " ", title: "HHKB" },
-    { src: "https://nzge.github.io/assets/media/input_media/keyboard/ortho.png", caption: " ", title: "Ortho" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/hhkb.png", caption: "The HHKB (Happy Hacking Keyboard) layout is a proprietary layout that optimizes ctrl, and baskspace key placements.", title: "HHKB" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/ortho.png", caption: "The ortholinear layout positions the keys in a uniform grid.", title: "Ortho" },
   ];
   new Slideshow(layouts, 'layouts');
 </script>
@@ -605,7 +605,7 @@ style="height:200px;display: block; margin: auto;"}
 ### Build Log
 > 3-14-25: 
 >
-> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
+> ![Alt text](/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png){: 
 style="height:200px;display: block; margin: auto;"}
 
 ---
