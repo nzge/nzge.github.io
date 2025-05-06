@@ -42,12 +42,15 @@ Ergo split, Ortho split
 
 #### Mounting System
 The way the PCB-switch assembly are housed within the case.
-##### Top Mount
-The plate is secured to the case top housing. Usually a stiffer typing experience. 
-##### Gasket Mount
-Gasket material between the plate (or PCB) and keyboard housing on both top and bottom sides.  This cushions/trampolines the plate within the keyboard.
-##### Sandwhich Mount
-Screws go fully through the bottom housing, plate, and top housing of the keyboard, holding the plate like the middle of a sandwich. 
+<div id="my-slideshow8"></div>
+<script>
+  const slides8= [
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/top_mount.jpg", caption: "The plate is secured to the case top housing. Usually a stiffer typing experience. ", title: "Top Mount" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/top_mount.jpg", caption: "Gasket material between the plate (or PCB) and keyboard housing on both top and bottom sides.  This cushions/trampolines the plate within the keyboard.", title: "Gasket Mount" },
+    { src: "https://nzge.github.io/assets/media/input_media/keyboard/top_mount.jpg", caption: "Screws go fully through the bottom housing, plate, and top housing of the keyboard, holding the plate like the middle of a sandwich. ", title: "Sandwhich Mount" },
+  ];
+  new Slideshow(slides8, 'my-slideshow8');
+</script>
 
 ### Switches
 Keyboard switches are a very intriguing corner of the keyboard hobby, filled with some of the most bizarre naming schemes out of any hobby I've been a part of. The Keyboard switch rabbithole is vast and deep. Switch selection may impact the design of your pcb (potentially even the case), as switches may possess a unique form factor that you need to account for.
@@ -176,7 +179,6 @@ Modding as an idea rose in popularity around 2020-22. In more recent times, most
 - Tempest Mod
 - Gasket
 - Silicone
-
 
 
 ### Firmware
@@ -670,6 +672,7 @@ style="height:200px;display: block; margin: auto;"}
 - [https://www.theremingoat.com/](https://www.theremingoat.com/)
 - [https://www.alexotos.com/category/keyboards/](https://www.alexotos.com/category/keyboards/)
 - [https://geekhack.org/](https://geekhack.org/)
+- [All the Parts of a Mechanical Keyboard Explained by Das Keyboard Staff](https://www.daskeyboard.com/blog/parts-of-a-mechanical-keyboard/)
 
 #### Design Language
 - [Endgame Never Felt So Close - My TGR Jane V2 ME Experience by Wongsquared](https://www.youtube.com/watch?v=0sqF46vm8yY)
@@ -720,6 +723,7 @@ Hall Effect
 - [My Mouse Projects So Far...](https://www.reddit.com/r/arduino/comments/1jc1jhp/my_mouse_projects_so_far/)
 - [LOFREE Touch](https://www.lofree.co/products/lofree-touch-pbt-wireless-mouse)
 - [2023 Top Six Latest Mouse With Unique Features: Hot-Swappable Switches, Unique Designs, and More!!](https://mechkeys.com/blogs/guide/top-six-latest-mouse-with-unique-features)
+- [key switches mouse](https://www.google.com/search?sca_esv=601b0517c7361365&rlz=1C1RXQR_enUS930US930&sxsrf=AHTn8zrtHuVK4oGJ64eYsjphaJLBXivZQQ:1746422722142&q=key+switches+mouse&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBsxayPSIAqObp_AgjkUGqel3rTRMIJGV_ECIUB00muput9Zp8VMKUi0ZjqPs3JlrgPeFrAnFlUitTiL3WcJlFn10ZVAeuxL5fSn-ULNu9lz3DIW3cy7rkKNmgHapdAFAoBFSl5-LQE_swXRSgVvZGy87KiusPiw1DSGvVAMCLf6f2K4DEg&sa=X&ved=2ahUKEwjxp-zPy4uNAxVsle4BHTgvJhAQtKgLegQIBxAB&biw=2560&bih=1279&dpr=1#vhid=1A7hF_VEmY1Y0M&vssid=mosaic)
 
 ### Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  

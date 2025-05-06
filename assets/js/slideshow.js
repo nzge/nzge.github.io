@@ -1,4 +1,3 @@
-
 class Slideshow {
   constructor(slidesData, targetId) {
     this.slidesData = slidesData;
@@ -20,6 +19,14 @@ class Slideshow {
     this.slides = this.slidesData.map((slide, index) => {
       const slideDiv = document.createElement('div');
       slideDiv.className = 'mySlides fade';
+
+      // Title at top
+      if (slide.title) {
+        const titleEl = document.createElement('div');
+        titleEl.className = 'slide-title';
+        titleEl.textContent = slide.title;
+        slideDiv.appendChild(titleEl);
+      }
 
       const numberText = document.createElement('div');
       numberText.className = 'numbertext';
@@ -57,7 +64,7 @@ class Slideshow {
 
     // Dot indicators
     this.dotWrapper = document.createElement('div');
-    this.dotWrapper.className = 'dot-wrapper'; // For styling if needed
+    this.dotWrapper.className = 'dot-wrapper';
     this.dotWrapper.style.textAlign = 'center';
 
     this.dots = this.slidesData.map((_, i) => {
@@ -68,15 +75,12 @@ class Slideshow {
       return dot;
     });
 
-    // Append to container
     this.container.appendChild(this.slideshowEl);
     this.container.appendChild(document.createElement('br'));
     this.container.appendChild(this.dotWrapper);
   }
 
-  attachEventListeners() {
-    // Future enhancement: key events, auto-advance, etc.
-  }
+  attachEventListeners() {}
 
   changeSlide(n) {
     this.showSlides(this.slideIndex + n);

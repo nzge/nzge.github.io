@@ -22,6 +22,7 @@ This led me to chase the idea of creating my own compact PC case design to fulfi
 
 
 ---
+---
 
 # References
 
@@ -35,6 +36,7 @@ This led me to chase the idea of creating my own compact PC case design to fulfi
 
 - [https://www.custom-mod.com/en/cases](https://www.custom-mod.com/en/cases)
 - [I designed a custom 9.1L mini-itx case based off of the 1991 Quadra 700](https://www.reddit.com/r/sffpc/comments/kr8tfv/i_designed_a_custom_91l_miniitx_case_based_off_of/)
+- [I rendered my custom <12L vertical case concept, looking for feedback and also have some manufacturing questions!](https://www.reddit.com/r/sffpc/comments/i6qxhp/i_rendered_my_custom_12l_vertical_case_concept/)
 
 Assets
 - https://smallformfactor.net/forum/resources/accurate-blank-motherboard-pcie-card-models.25/
