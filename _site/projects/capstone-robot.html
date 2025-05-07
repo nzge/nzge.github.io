@@ -110,16 +110,18 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#schematic">Schematic</a></li><li><a href="#four-bar-linkage">Four-bar linkage</a></li></ul></li><li><a href="#code">Code</a><ul><li><a href="#state-machine">State machine</a></li><li><a href="#communication-protocol">Communication protocol</a></li></ul></li><li><a href="#documentation">Documentation</a></li><li><a href="#build-log">Build Log</a></li></ul>
+      <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#schematic">Schematic</a></li><li><a href="#four-bar-linkage">Four-bar linkage</a></li></ul></li><li><a href="#code">Code</a><ul><li><a href="#state-machine">State machine</a></li><li><a href="#communication-protocol">Communication protocol</a></li><li><a href="#setup">Setup</a></li></ul></li><li><a href="#documentation">Documentation</a></li><li><a href="#build-log">Build Log</a></li></ul>
     </nav>
   
   <div>
     <article class="markdown-body">
-      <h2 id="hardware-design">Hardware Design</h2>
+      <p style="text-align: center;">Autonomous “burger transporter” robot CAPSTONE project</p>
+
+<h2 id="hardware-design">Hardware Design</h2>
 
 <div class="container" style="border: 1px solid white; color: white; padding: 1em; border-radius: 6px;">
 <p style="text-align: center;">Model</p>
-<model-viewer src="https://nzge.github.io/assets/media/capstone-robot_media/capstone.gltf" alt="GMPR Rocket" camera-controls="" touch-action="pan-y" camera-orbit="0deg 0deg auto" orientation="0deg 0deg 90deg" field-of-view="45deg" shadow-intensity="1" exposure="1.0" environment-image="legacy" style="width: 800px; height: 500px; display: block; margin: 0 auto 0.5em auto; background-color: #1a1a1a; border-radius: 4px;">
+<model-viewer src="https://nzge.github.io/assets/media/capstone-robot_media/capstone.gltf" alt="GMPR Rocket" camera-controls="" touch-action="pan-y" camera-orbit="0deg 0deg auto" orientation="0deg 0deg 0deg" field-of-view="45deg" shadow-intensity="1" exposure="1.0" environment-image="legacy" style="width: 800px; height: 500px; display: block; margin: 0 auto 0.5em auto; background-color: #1a1a1a; border-radius: 4px;">
 </model-viewer>
 <br />
 </div>
@@ -133,30 +135,70 @@
   </thead>
   <tbody>
     <tr>
-      <td>Servos</td>
-      <td> </td>
+      <td>Wheels</td>
+      <td><a href="https://www.pololu.com/product/1423">Pololu</a></td>
     </tr>
     <tr>
-      <td>Servos</td>
-      <td> </td>
+      <td>Wheel motor</td>
+      <td><a href="https://www.pololu.com/product 2367">Pololu</a></td>
     </tr>
     <tr>
-      <td>Servos</td>
-      <td> </td>
+      <td>Simple DC Motor Driver</td>
+      <td><a href="https://www.pololu.com/product/4733">Pololu</a></td>
     </tr>
     <tr>
-      <td>Servos</td>
-      <td> </td>
+      <td>Servo for gripper</td>
+      <td><a href="https://www.pololu.com/product/3424">Pololu</a></td>
     </tr>
     <tr>
-      <td>Servos</td>
-      <td> </td>
+      <td>Servo for four bar</td>
+      <td><a href="https://www.pololu.com/product/3443">Pololu</a></td>
+    </tr>
+    <tr>
+      <td>Elegoo MEGA2560 R3</td>
+      <td><a href="https://us.elegoo.com/products/elegoo-mega-2560-r3-board?srsltid=AfmBOor4bByFFKA7zSr0rdMOJYt_arJlkGCxiVnwVVs5LmO9HElB9PMP">Elegoo</a></td>
+    </tr>
+    <tr>
+      <td>Rasberry Pi Camera</td>
+      <td><a href="https://www.adafruit.com/product/3099?src=raspberrypi">Adafruit</a></td>
+    </tr>
+    <tr>
+      <td>Rasberry Pi 4</td>
+      <td><a href="https://www.adafruit.com/product/3055">Adafruit</a></td>
+    </tr>
+    <tr>
+      <td>Battery</td>
+      <td><a href="https://www.pololu.com/product/2223/specs">Pololu</a></td>
+    </tr>
+    <tr>
+      <td>5V voltage regulator</td>
+      <td><a href="https://www.pololu.com/product/4082">Pololu</a></td>
+    </tr>
+    <tr>
+      <td>5V battery pack</td>
+      <td><a href="https://www.amazon.com/Anker-Ultra-Compact-High-Speed-VoltageBoost-Technology/dp/B07QXV6N1B/ref=sr_1_6?crid=2ST6YNACSD5HE&amp;dib=eyJ2IjoiMSJ9.iopjHhTzjUDB1HQLCVWAJpbJvrTn0WJ7dR5n45ppjftEDgcgqbS7lfci9lHGNYZyDBbvJXCf7XgxZ5IPXkYgfyfX_IdT3poe34sKtcHdfW2SjX5p38yvLxv8w8XG3NsuH_Y84myrY7Y7ZbgyMqulXV9x88Z8AGz0Y4tFhTeu-PVMoHVvzEpq9lcbaJMI9vDJGvz2a4LofNPXRU0goBpaSuBTe-lmOyov2T5rQ2lTjwE.2X9kcse_WaTLTYJUxgONEZD_FVGRsGnEB-9sNWHzS40&amp;dib_tag=se&amp;keywords=battery+pack&amp;qid=1709542258&amp;sprefix=battery+pack%2Caps%2C184&amp;sr=8-6">Amazon</a></td>
+    </tr>
+    <tr>
+      <td>Large IR Sensor Array</td>
+      <td><a href="https://www.pololu.com/product/4453">Pololu</a></td>
+    </tr>
+    <tr>
+      <td>JR Connectors (M)</td>
+      <td><a href="https://www.pololu.com/product/1925">Pololu</a></td>
+    </tr>
+    <tr>
+      <td>JR Connectors (F)</td>
+      <td><a href="https://www.pololu.com/product/1924">Pololu</a></td>
+    </tr>
+    <tr>
+      <td>22 AWG Wire</td>
+      <td><a href="https://www.amazon.com/TUOFENG-Hookup-Wires-6-Different-Colored/dp/B07TX6BX47/ref=sr_1_5?crid=1TC1U7FBM4BYT&amp;dib=eyJ2IjoiMSJ9.aWmVac9Jeturh-LvIuLtD8ckuYXhB0AKmIdJrAgDwihHI6BdghYf3xz7ac9T2trX98mJzGeKkj69oe0Y5RfWw-3MvjfwPV7OWtLk5R39ube7PDCQXnrYUYsnIdWQmRXlJ8b8tUEyFW5C0JbL_tyXQCGOYiz-3CuzabWgHu95PRUj84qjuC953WYdbVxGeytR6vA2rXnDa8Ilf8sKJ8KWVOEfJ3lMFUaaTlvuzNK1pcFkGM4kKshJLvW5_JlBdlS-zaeFU6X8jyg_x2uIp1__iGduKx7IdXZ5VBd95T0XjXA.OhkaJuOKDXzXz2hnHvzzIZzBeW6CMRB8hMqdN5D7-dE&amp;dib_tag=se&amp;keywords=solid%2Bcore%2Bwire&amp;qid=1711061371&amp;sprefix=solid%2Bcore%2Bwi%2Caps%2C296&amp;sr=8-5&amp;th=1">Amazon</a></td>
     </tr>
   </tbody>
 </table>
 
 <h3 id="schematic">Schematic</h3>
-<p><img src="/assets/media/capstone-robot_media/IMG_1179.JPG" alt="Alt text" style="width:600px;display: block; margin: auto;" /></p>
+<p><img src="/assets/media/capstone-robot_media/schematic_group5-1.png" alt="Alt text" style="width:600px;display: block; margin: auto;" /></p>
 
 <h3 id="four-bar-linkage">Four-bar linkage</h3>
 <p><img src="/assets/media/capstone-robot_media/four-bar.png" alt="Alt text" style="width:600px;display: block; margin: auto;" /></p>
@@ -164,6 +206,7 @@
 <h2 id="code">Code</h2>
 
 <h3 id="state-machine">State machine</h3>
+
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;Arduino.h&gt;
 </span>
 <span class="cp">#include &lt;motor.h&gt;
@@ -214,36 +257,6 @@
   <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">right_tally</span> <span class="o">&gt;=</span> <span class="n">readings</span><span class="p">)</span> <span class="k">return</span> <span class="n">RIGHT</span><span class="p">;</span>
   <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">left_tally</span> <span class="o">&gt;=</span> <span class="n">readings</span><span class="p">)</span> <span class="k">return</span> <span class="n">LEFT</span><span class="p">;</span>
   <span class="k">else</span> <span class="k">return</span> <span class="n">NONE</span><span class="p">;</span>
-<span class="p">}</span>
-
-
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">rpi</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">rpi</span><span class="p">.</span><span class="n">wait_rpi_ready</span><span class="p">(</span><span class="mf">1e6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Timeout, hold forever</span>
-    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span><span class="n">delay</span><span class="p">(</span><span class="mi">10000000</span><span class="p">);}</span>
-  <span class="p">}</span>
-  <span class="n">lf</span><span class="p">.</span><span class="n">setTypeAnalog</span><span class="p">();</span>
-  <span class="n">lf</span><span class="p">.</span><span class="n">setSensorPins</span><span class="p">(</span><span class="n">line_follower_pins</span><span class="p">,</span> <span class="n">num_line_sensors</span><span class="p">);</span>
-
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">limit_switch_left</span><span class="p">,</span> <span class="n">INPUT_PULLUP</span><span class="p">);</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">limit_switch_right</span><span class="p">,</span> <span class="n">INPUT_PULLUP</span><span class="p">);</span>
-
-  <span class="n">grabber</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-
-  
-
-  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">calibration_LED_pin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">calibration_iterations</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="n">lf</span><span class="p">.</span><span class="n">calibrate</span><span class="p">();</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">calibration_LED_pin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-  <span class="n">delay</span><span class="p">(</span><span class="mf">10e3</span><span class="p">);</span>
-  <span class="n">rpi</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">"ARDUINO_READY"</span><span class="p">);</span>
-  <span class="n">rpi</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">log_header</span><span class="p">());</span>
 <span class="p">}</span>
 
 <span class="kt">bool</span> <span class="n">switchPressed_L</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
@@ -503,8 +516,45 @@
   </li>
 </ul>
 
+<p><img src="/assets/media/capstone-robot_media/main-loop.png" alt="Alt text" style="width:300px;display: block; margin: auto;" /></p>
+
 <h3 id="communication-protocol">Communication protocol</h3>
 <p><img src="/assets/media/capstone-robot_media/remote-dev.png" alt="Alt text" style="width:1000px;display: block; margin: auto;" /></p>
+
+<h3 id="setup">Setup</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">rpi</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">rpi</span><span class="p">.</span><span class="n">wait_rpi_ready</span><span class="p">(</span><span class="mf">1e6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Timeout, hold forever</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span><span class="n">delay</span><span class="p">(</span><span class="mi">10000000</span><span class="p">);}</span>
+  <span class="p">}</span>
+  <span class="n">lf</span><span class="p">.</span><span class="n">setTypeAnalog</span><span class="p">();</span>
+  <span class="n">lf</span><span class="p">.</span><span class="n">setSensorPins</span><span class="p">(</span><span class="n">line_follower_pins</span><span class="p">,</span> <span class="n">num_line_sensors</span><span class="p">);</span>
+
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">limit_switch_left</span><span class="p">,</span> <span class="n">INPUT_PULLUP</span><span class="p">);</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">limit_switch_right</span><span class="p">,</span> <span class="n">INPUT_PULLUP</span><span class="p">);</span>
+
+  <span class="n">grabber</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+
+  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">calibration_LED_pin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">calibration_iterations</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">lf</span><span class="p">.</span><span class="n">calibrate</span><span class="p">();</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">calibration_LED_pin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mf">10e3</span><span class="p">);</span>
+  <span class="n">rpi</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">"ARDUINO_READY"</span><span class="p">);</span>
+  <span class="n">rpi</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">log_header</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Calibration Sequence</p>
+<div style="text-align: center;">
+  <img src="/assets/media/capstone-robot_media/calibration.gif" alt="4-bar linkage" style="max-width: 100%; height: auto;" />
+</div>
 
 <h2 id="documentation">Documentation</h2>
 <embed src="/assets/media/capstone-robot_media/Team05_Final-Design-Report_MAE162E-2024.pdf" width="950px" height="1200px" />
@@ -518,9 +568,26 @@
 </blockquote>
 
 <blockquote>
+  <p>5-19-24: 4 bar linkage test</p>
+
+</blockquote>
+<div style="text-align: center; margin: 1em 0;">
+  <video width="800" controls="" muted="" style="max-width: 100%; border-radius: 6px; box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);">
+    <source src="/assets/media/capstone-robot_media/4bar-linkage-test.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<blockquote>
   <p>5-11-24:</p>
 
   <p><img src="/assets/media/capstone-robot_media/prints.JPG" alt="Alt text" style="width:600px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>3-15-24:</p>
+
+  <p><img src="/assets/media/capstone-robot_media/grabber.png" alt="Alt text" style="width:300px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <blockquote>
