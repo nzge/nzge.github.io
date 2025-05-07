@@ -87,7 +87,7 @@ toc: true
 ## Active Stabilization
 
 ### Gimbaled thrust
-
+### Fin Controlled
 
 ## Build Log
 > 11-21-23: 

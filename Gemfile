@@ -21,8 +21,7 @@ group :jekyll_plugins do
   # gem 'jekyll-toc'
 end
 
-gem "github-pages", "~> 228", require: false
-
 # gem "rails"
+gem "github-pages", "~> 228", require: false
 gem "minima", "~> 2.5"
 gem "rouge", "~> 3.26"

@@ -110,23 +110,401 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#four-bar-linkage">Four-bar linkage</a></li></ul></li><li><a href="#code">Code</a><ul><li><a href="#state-machine">State machine</a></li><li><a href="#communication-protocol">Communication protocol</a></li></ul></li><li><a href="#documentation">Documentation</a></li><li><a href="#build-log">Build Log</a></li></ul>
+      <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#schematic">Schematic</a></li><li><a href="#four-bar-linkage">Four-bar linkage</a></li></ul></li><li><a href="#code">Code</a><ul><li><a href="#state-machine">State machine</a></li><li><a href="#communication-protocol">Communication protocol</a></li></ul></li><li><a href="#documentation">Documentation</a></li><li><a href="#build-log">Build Log</a></li></ul>
     </nav>
   
   <div>
     <article class="markdown-body">
       <h2 id="hardware-design">Hardware Design</h2>
-<h3 id="components">Components</h3>
+
+<div class="container" style="border: 1px solid white; color: white; padding: 1em; border-radius: 6px;">
+<p style="text-align: center;">Model</p>
+<model-viewer src="https://nzge.github.io/assets/media/capstone-robot_media/capstone.gltf" alt="GMPR Rocket" camera-controls="" touch-action="pan-y" camera-orbit="0deg 0deg auto" orientation="0deg 0deg 90deg" field-of-view="45deg" shadow-intensity="1" exposure="1.0" environment-image="legacy" style="width: 800px; height: 500px; display: block; margin: 0 auto 0.5em auto; background-color: #1a1a1a; border-radius: 4px;">
+</model-viewer>
+<br />
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Servos</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Servos</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Servos</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Servos</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Servos</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="schematic">Schematic</h3>
+<p><img src="/assets/media/capstone-robot_media/IMG_1179.JPG" alt="Alt text" style="width:600px;display: block; margin: auto;" /></p>
 
 <h3 id="four-bar-linkage">Four-bar linkage</h3>
+<p><img src="/assets/media/capstone-robot_media/four-bar.png" alt="Alt text" style="width:600px;display: block; margin: auto;" /></p>
 
 <h2 id="code">Code</h2>
 
 <h3 id="state-machine">State machine</h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;Arduino.h&gt;
+</span>
+<span class="cp">#include &lt;motor.h&gt;
+#include &lt;constants.h&gt;
+#include &lt;fns.h&gt;
+#include &lt;rpi.h&gt;
+#include &lt;state.h&gt;
+</span>
+<span class="cp">#include &lt;QTRSensors.h&gt;
+#include &lt;controller.h&gt;
+#include &lt;claw.h&gt;
+</span>
+
+<span class="k">enum</span> <span class="n">JunctionType</span> <span class="p">{</span>
+  <span class="n">NONE</span><span class="p">,</span>
+  <span class="n">LEFT</span><span class="p">,</span>
+  <span class="n">RIGHT</span><span class="p">,</span>
+  <span class="n">T</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="n">State</span> <span class="n">state</span><span class="p">;</span>
+<span class="n">RPI</span> <span class="nf">rpi</span><span class="p">(</span><span class="mi">19200</span><span class="p">);</span>
+
+<span class="n">Claw</span> <span class="nf">grabber</span><span class="p">(</span><span class="n">four_bar_pwm_pin</span><span class="p">,</span> <span class="n">claw_pwm_pin</span><span class="p">,</span> <span class="n">four_bar_potentiometer_pin</span><span class="p">,</span> <span class="n">claw_potentiometer_pin</span><span class="p">);</span>
+<span class="n">QTRSensors</span> <span class="n">lf</span><span class="p">;</span>
+<span class="n">Controller</span> <span class="nf">base_controller</span><span class="p">(</span><span class="n">Kp</span><span class="p">,</span> <span class="n">Kd</span><span class="p">);</span>
+<span class="n">Motor</span> <span class="n">motors</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="n">Motor</span><span class="p">(</span><span class="n">m_pin</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">m_pin</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> 
+<span class="n">Motor</span><span class="p">(</span><span class="n">m_pin</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">m_pin</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> 
+<span class="n">Motor</span><span class="p">(</span><span class="n">m_pin</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">m_pin</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> 
+<span class="n">Motor</span><span class="p">(</span><span class="n">m_pin</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">m_pin</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">])};</span>
+
+<span class="kt">int</span> <span class="n">dropoff_location</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">dropoff_target</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">return_junction</span><span class="p">(</span><span class="kt">bool</span> <span class="n">left_readings</span><span class="p">[</span><span class="n">readings</span><span class="p">],</span> <span class="kt">bool</span> <span class="n">right_readings</span><span class="p">[</span><span class="n">readings</span><span class="p">])</span> <span class="p">{</span>
+  <span class="kt">bool</span> <span class="n">right_is_black</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">left_is_black</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+  <span class="kt">int</span> <span class="n">right_tally</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">left_tally</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">readings</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">right_readings</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">right_tally</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">left_readings</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">left_tally</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">right_tally</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">left_tally</span> <span class="o">&gt;=</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">T</span><span class="p">;</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">right_tally</span> <span class="o">&gt;=</span> <span class="n">readings</span><span class="p">)</span> <span class="k">return</span> <span class="n">RIGHT</span><span class="p">;</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">left_tally</span> <span class="o">&gt;=</span> <span class="n">readings</span><span class="p">)</span> <span class="k">return</span> <span class="n">LEFT</span><span class="p">;</span>
+  <span class="k">else</span> <span class="k">return</span> <span class="n">NONE</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">rpi</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">rpi</span><span class="p">.</span><span class="n">wait_rpi_ready</span><span class="p">(</span><span class="mf">1e6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Timeout, hold forever</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span><span class="n">delay</span><span class="p">(</span><span class="mi">10000000</span><span class="p">);}</span>
+  <span class="p">}</span>
+  <span class="n">lf</span><span class="p">.</span><span class="n">setTypeAnalog</span><span class="p">();</span>
+  <span class="n">lf</span><span class="p">.</span><span class="n">setSensorPins</span><span class="p">(</span><span class="n">line_follower_pins</span><span class="p">,</span> <span class="n">num_line_sensors</span><span class="p">);</span>
+
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">limit_switch_left</span><span class="p">,</span> <span class="n">INPUT_PULLUP</span><span class="p">);</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">limit_switch_right</span><span class="p">,</span> <span class="n">INPUT_PULLUP</span><span class="p">);</span>
+
+  <span class="n">grabber</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+
+  
+
+  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">calibration_LED_pin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">calibration_iterations</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">lf</span><span class="p">.</span><span class="n">calibrate</span><span class="p">();</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">calibration_LED_pin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mf">10e3</span><span class="p">);</span>
+  <span class="n">rpi</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">"ARDUINO_READY"</span><span class="p">);</span>
+  <span class="n">rpi</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">log_header</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">switchPressed_L</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">switchPressed_R</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">switchPressed</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+
+<span class="kt">int</span> <span class="n">reflectance_counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">bool</span> <span class="n">left_reflectance_readings</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="nb">false</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="nb">false</span><span class="p">};</span>
+<span class="kt">bool</span> <span class="n">right_reflectance_readings</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="nb">false</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="nb">false</span><span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">state</span><span class="p">.</span><span class="n">time_ms</span> <span class="o">=</span> <span class="n">millis</span><span class="p">();</span>
+
+  <span class="n">state</span><span class="p">.</span><span class="n">left_limit_switch</span> <span class="o">=</span> <span class="n">digitalRead</span><span class="p">(</span><span class="n">limit_switch_left</span><span class="p">);</span>   <span class="c1">// 1 if not pressed 0 if pressed</span>
+  <span class="n">state</span><span class="p">.</span><span class="n">right_limit_switch</span> <span class="o">=</span> <span class="n">digitalRead</span><span class="p">(</span><span class="n">limit_switch_right</span><span class="p">);</span> <span class="c1">// 1 if not pressed 0 if pressed</span>
+
+  <span class="kt">uint16_t</span> <span class="n">sensors</span><span class="p">[</span><span class="n">num_line_sensors</span><span class="p">];</span>
+  <span class="n">state</span><span class="p">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">lf</span><span class="p">.</span><span class="n">readLineBlack</span><span class="p">(</span><span class="n">sensors</span><span class="p">);</span>
+
+  <span class="n">memcpy</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">ssr</span><span class="p">,</span> <span class="n">sensors</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">sensors</span><span class="p">));</span>
+  
+  <span class="n">state</span><span class="p">.</span><span class="n">left_low_reflectance</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="n">state</span><span class="p">.</span><span class="n">right_low_reflectance</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+  <span class="kt">int</span> <span class="n">right_turn_cutoff_index</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">left_turn_cutoff_index</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">num_line_sensors</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">right_turn_cutoff_index</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">sensors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">700</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">left_low_reflectance</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">left_turn_cutoff_index</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">sensors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">700</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">state</span><span class="p">.</span><span class="n">right_low_reflectance</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">left_reflectance_readings</span><span class="p">[</span><span class="n">reflectance_counter</span><span class="p">]</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">left_low_reflectance</span><span class="p">;</span>
+<span class="n">right_reflectance_readings</span><span class="p">[</span><span class="n">reflectance_counter</span><span class="p">]</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">right_low_reflectance</span><span class="p">;</span>
+<span class="n">reflectance_counter</span><span class="o">++</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">reflectance_counter</span> <span class="o">&gt;=</span> <span class="n">readings</span><span class="p">)</span> <span class="n">reflectance_counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">slow_cycles</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">state</span><span class="p">.</span><span class="n">slow_cycles</span><span class="o">--</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">current_function</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="mi">0</span><span class="p">:</span> <span class="c1">// Normal Line Following</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">return_junction</span><span class="p">(</span><span class="n">left_reflectance_readings</span><span class="p">,</span> <span class="n">right_reflectance_readings</span><span class="p">))</span> <span class="p">{</span>
+          <span class="k">case</span> <span class="n">LEFT</span><span class="p">:</span> <span class="c1">// 90 degree left turn</span>
+            <span class="n">state</span><span class="p">.</span><span class="n">current_function</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="n">state</span><span class="p">.</span><span class="n">counted_left_junctions</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">state</span><span class="p">.</span><span class="n">slow_cycles</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+          <span class="k">case</span> <span class="n">RIGHT</span><span class="p">:</span> <span class="c1">// 90 degree right turn for manuvering</span>
+            <span class="n">state</span><span class="p">.</span><span class="n">slow_cycles</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="n">state</span><span class="p">.</span><span class="n">counted_right_junctions</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">counted_right_junctions</span> <span class="o">==</span> <span class="n">dropoff_location</span><span class="p">){</span>
+              <span class="n">state</span><span class="p">.</span><span class="n">current_function</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">break</span><span class="p">;</span>
+          <span class="k">case</span> <span class="n">T</span><span class="p">:</span> <span class="c1">// T junction</span>
+            <span class="c1">// state.current_function = 3;</span>
+            <span class="n">motors</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+            <span class="n">motors</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+            <span class="n">motors</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+            <span class="n">motors</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+            <span class="n">delay</span><span class="p">(</span><span class="mf">0.09e3</span><span class="p">);</span>
+            <span class="n">state</span><span class="p">.</span><span class="n">counted_T_junctions</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">state</span><span class="p">.</span><span class="n">slow_cycles</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+
+            <span class="c1">//@ all T junctions take a right</span>
+            <span class="n">state</span><span class="p">.</span><span class="n">current_function</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+          <span class="k">case</span> <span class="n">NONE</span><span class="p">:</span>
+            <span class="k">break</span><span class="p">;</span>
+          <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">// 90 degree left turn for manuv</span>
+        <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">left_solid_sensor_readings</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num_line_sensors</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">sensors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">800</span><span class="p">)</span> <span class="n">left_solid_sensor_readings</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">left_solid_sensor_readings</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="n">state</span><span class="p">.</span><span class="n">current_function</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="k">case</span> <span class="mi">2</span><span class="p">:</span> <span class="c1">// 90 degree right turn for objective</span>
+        <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">right_solid_sensor_readings</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num_line_sensors</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">sensors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">800</span><span class="p">)</span> <span class="n">right_solid_sensor_readings</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">right_solid_sensor_readings</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="n">state</span><span class="p">.</span><span class="n">current_function</span> <span class="o">=</span> <span class="mi">22</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="mi">22</span><span class="p">:</span> <span class="c1">// Line follow until wall then grab or release</span>
+      <span class="k">case</span> <span class="mi">221</span><span class="p">:</span>
+      <span class="k">case</span> <span class="mi">220</span><span class="p">:</span>
+      <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">state</span><span class="p">.</span><span class="n">left_limit_switch</span> <span class="o">||</span> <span class="o">!</span><span class="n">state</span><span class="p">.</span><span class="n">right_limit_switch</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">motors</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+          <span class="n">motors</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+          <span class="n">motors</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+          <span class="n">motors</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+          
+          <span class="k">switch</span> <span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">disk_num</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="mi">0</span><span class="p">:</span>
+              <span class="n">grabber</span><span class="p">.</span><span class="n">grabDisc</span><span class="p">(</span><span class="n">disc_positions</span><span class="p">[</span><span class="n">state</span><span class="p">.</span><span class="n">disk_num</span><span class="p">]);</span>
+              <span class="n">state</span><span class="p">.</span><span class="n">disk_num</span><span class="o">++</span><span class="p">;</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+              <span class="n">grabber</span><span class="p">.</span><span class="n">grabDisc</span><span class="p">(</span><span class="n">disc_positions</span><span class="p">[</span><span class="n">state</span><span class="p">.</span><span class="n">disk_num</span><span class="p">]);</span>
+              <span class="n">state</span><span class="p">.</span><span class="n">disk_num</span><span class="o">++</span><span class="p">;</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+              <span class="n">grabber</span><span class="p">.</span><span class="n">grabDisc</span><span class="p">(</span><span class="n">disc_positions</span><span class="p">[</span><span class="n">state</span><span class="p">.</span><span class="n">disk_num</span><span class="p">]);</span>
+              <span class="n">state</span><span class="p">.</span><span class="n">disk_num</span><span class="o">++</span><span class="p">;</span>
+              <span class="n">state</span><span class="p">.</span><span class="n">straight_cycles</span> <span class="o">=</span> <span class="mf">8e3</span> <span class="o">/</span> <span class="mi">50</span><span class="p">;</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+              <span class="n">grabber</span><span class="p">.</span><span class="n">releaseDisc</span><span class="p">();</span>
+          <span class="p">}</span>
+
+          <span class="n">state</span><span class="p">.</span><span class="n">current_function</span> <span class="o">=</span> <span class="mi">222</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">state</span><span class="p">.</span><span class="n">left_limit_switch</span><span class="p">){</span>
+          <span class="n">state</span><span class="p">.</span><span class="n">current_function</span> <span class="o">=</span> <span class="mi">220</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">state</span><span class="p">.</span><span class="n">right_limit_switch</span><span class="p">)</span>
+        <span class="p">{</span>
+          <span class="n">state</span><span class="p">.</span><span class="n">current_function</span> <span class="o">=</span> <span class="mi">221</span><span class="p">;</span>
+        <span class="p">}</span>
+          
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">case</span> <span class="mi">222</span><span class="p">:</span> <span class="c1">// Reversing from obj</span>
+      <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">left_low_reflectance</span> <span class="o">&amp;&amp;</span> <span class="n">state</span><span class="p">.</span><span class="n">right_low_reflectance</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">motors</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+          <span class="n">motors</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+          <span class="n">motors</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+          <span class="n">motors</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+          <span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+          <span class="n">state</span><span class="p">.</span><span class="n">current_function</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+          <span class="n">state</span><span class="p">.</span><span class="n">slow_cycles</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">case</span> <span class="mi">3</span><span class="p">:</span> <span class="c1">// placing the object</span>
+        <span class="k">break</span><span class="p">;</span> <span class="c1">//just stay here for now</span>
+      <span class="nl">default:</span>
+        <span class="n">state</span><span class="p">.</span><span class="n">current_function</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="c1">// delay(1e6);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">switch</span> <span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">current_function</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="mi">0</span><span class="p">:</span> <span class="c1">// Normal Line Following</span>
+    <span class="k">case</span> <span class="mi">22</span><span class="p">:</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">position</span> <span class="o">-</span> <span class="n">line_center_position</span><span class="p">;</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">controller_output</span> <span class="o">=</span> <span class="n">base_controller</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">error</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">straight_cycles</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">state</span><span class="p">.</span><span class="n">straight_cycles</span><span class="o">--</span><span class="p">;</span>
+        <span class="n">state</span><span class="p">.</span><span class="n">base_speed</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="k">else</span> <span class="n">state</span><span class="p">.</span><span class="n">base_speed</span> <span class="o">=</span> <span class="n">base_speed</span><span class="p">;</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">left_speed</span> <span class="o">=</span> <span class="n">clamp</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">base_speed</span> <span class="o">+</span> <span class="n">state</span><span class="p">.</span><span class="n">controller_output</span><span class="p">,</span> <span class="o">-</span><span class="n">clamp_max_speed</span><span class="p">,</span> <span class="n">clamp_max_speed</span><span class="p">);</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">right_speed</span> <span class="o">=</span> <span class="n">clamp</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">base_speed</span> <span class="o">-</span> <span class="n">state</span><span class="p">.</span><span class="n">controller_output</span><span class="p">,</span> <span class="o">-</span><span class="n">clamp_max_speed</span><span class="p">,</span> <span class="n">clamp_max_speed</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">state</span><span class="p">.</span><span class="n">left_limit_switch</span> <span class="o">||</span> <span class="o">!</span><span class="n">state</span><span class="p">.</span><span class="n">right_limit_switch</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">state</span><span class="p">.</span><span class="n">left_speed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">state</span><span class="p">.</span><span class="n">right_speed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">220</span><span class="p">:</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">left_speed</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">right_speed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">221</span><span class="p">:</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">left_speed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">right_speed</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">222</span><span class="p">:</span> <span class="c1">// Reverse Line Follow</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">position</span> <span class="o">-</span> <span class="n">line_center_position</span><span class="p">;</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">controller_output</span> <span class="o">=</span> <span class="n">base_controller</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">error</span><span class="p">);</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">left_speed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">right_speed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">// 90 degree left turn</span>
+
+      <span class="n">state</span><span class="p">.</span><span class="n">left_speed</span> <span class="o">=</span> <span class="n">clamp</span><span class="p">(</span><span class="n">turn_speed</span><span class="p">,</span> <span class="o">-</span><span class="n">clamp_max_speed</span><span class="p">,</span> <span class="n">clamp_max_speed</span><span class="p">);</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">right_speed</span> <span class="o">=</span> <span class="n">clamp</span><span class="p">(</span><span class="o">-</span><span class="n">turn_speed</span><span class="p">,</span> <span class="o">-</span><span class="n">clamp_max_speed</span><span class="p">,</span> <span class="n">clamp_max_speed</span><span class="p">);</span>
+
+      <span class="c1">// Code for 90 degree left turn mode</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span> <span class="c1">// 90 degree right turn</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">left_speed</span> <span class="o">=</span> <span class="o">-</span><span class="n">turn_speed</span><span class="p">;</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">right_speed</span> <span class="o">=</span> <span class="n">turn_speed</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">3</span><span class="p">:</span> <span class="c1">//placing the object</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">left_speed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">right_speed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="nl">default:</span>
+      <span class="n">state</span><span class="p">.</span><span class="n">current_function</span> <span class="o">=</span> <span class="o">-</span><span class="mi">11</span><span class="p">;</span>
+      <span class="c1">// delay(1e6);</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">motors</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">left_speed</span><span class="p">);</span>
+  <span class="n">motors</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">left_speed</span><span class="p">);</span>
+  <span class="n">motors</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">right_speed</span><span class="p">);</span>
+  <span class="n">motors</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="n">set_speed</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">right_speed</span><span class="p">);</span>
+
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">log</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>State:</strong>
+0: Line Following Forward<br />
+1: Left Turn<br />
+2: Right Turn<br />
+3: Line Following Backward</p>
+
+<p><strong>Picking up the Disk</strong></p>
+<ul>
+  <li>On every T Junction take a right and enter the following transition sequence
+    <ul>
+      <li>Take a right</li>
+      <li>Line follow forward until limits switches are activated</li>
+      <li>Grab Disk</li>
+      <li>Drive Backwards until T</li>
+      <li>Take a Left</li>
+      <li>Line Follow</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Placing Disk</strong></p>
+<ul>
+  <li>Count # Right turns to determine when to take Right
+    <ul>
+      <li>Take a right</li>
+      <li>Line follow forward until limit switches</li>
+      <li>Release Disks</li>
+      <li>Drive Backwards until T</li>
+      <li>Take a Left</li>
+      <li>Line Follow</li>
+    </ul>
+  </li>
+</ul>
 
 <h3 id="communication-protocol">Communication protocol</h3>
+<p><img src="/assets/media/capstone-robot_media/remote-dev.png" alt="Alt text" style="width:1000px;display: block; margin: auto;" /></p>
 
 <h2 id="documentation">Documentation</h2>
 <embed src="/assets/media/capstone-robot_media/Team05_Final-Design-Report_MAE162E-2024.pdf" width="950px" height="1200px" />
