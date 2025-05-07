@@ -684,66 +684,66 @@ style="height:200px;display: block; margin: auto;"}
 
 # References
 
-### Keyboard
-- [https://www.keyboard.university/](https://www.keyboard.university/)
-- [https://www.deskthority.net/](https://www.deskthority.net/)
-- [https://www.theremingoat.com/](https://www.theremingoat.com/)
-- [https://www.alexotos.com/category/keyboards/](https://www.alexotos.com/category/keyboards/)
-- [https://geekhack.org/](https://geekhack.org/)
-- [All the Parts of a Mechanical Keyboard Explained by Das Keyboard Staff](https://www.daskeyboard.com/blog/parts-of-a-mechanical-keyboard/)
+## Keyboard
+[https://www.keyboard.university/](https://www.keyboard.university/)
+[https://www.deskthority.net/](https://www.deskthority.net/)
+[https://www.theremingoat.com/](https://www.theremingoat.com/)
+[https://www.alexotos.com/category/keyboards/](https://www.alexotos.com/category/keyboards/)
+[https://geekhack.org/](https://geekhack.org/)
+[All the Parts of a Mechanical Keyboard Explained by Das Keyboard Staff](https://www.daskeyboard.com/blog/parts-of-a-mechanical-keyboard/)
 
-**Design Language**
-- [Endgame Never Felt So Close - My TGR Jane V2 ME Experience by Wongsquared](https://www.youtube.com/watch?v=0sqF46vm8yY)
-- [Gehirn / Keyboard Preview by Markchun](https://www.youtube.com/watch?v=IK7r_d62QXA)
-- [spring cleaning](https://www.reddit.com/r/CustomKeyboards/comments/1jmcg9k/spring_cleaning/)
-- [can't tell me keebs aren't art - (Seoul Mechanical Keyboard Expo) 2025](https://www.reddit.com/r/MechanicalKeyboards/comments/1jln2a9/cant_tell_me_keebs_arent_art_seoul_mechanical/)
-- [mode65](https://www.youtube.com/shorts/4e9Og6_fiDk)
+**Design Language**  
+[Endgame Never Felt So Close - My TGR Jane V2 ME Experience by Wongsquared](https://www.youtube.com/watch?v=0sqF46vm8yY)
+[Gehirn / Keyboard Preview by Markchun](https://www.youtube.com/watch?v=IK7r_d62QXA)
+[spring cleaning](https://www.reddit.com/r/CustomKeyboards/comments/1jmcg9k/spring_cleaning/)
+[can't tell me keebs aren't art - (Seoul Mechanical Keyboard Expo) 2025](https://www.reddit.com/r/MechanicalKeyboards/comments/1jln2a9/cant_tell_me_keebs_arent_art_seoul_mechanical/)
+[mode65](https://www.youtube.com/shorts/4e9Og6_fiDk)
 
-**Switches**
-- [Cherry MX Vintage Black Review: A Modder's Dream, Criminally Misunderstood](https://www.reddit.com/r/MechSwitchReview/comments/hlc6wt/cherry_mx_vintage_black_review_a_modders_dream/)
-- [Teardown - Alps SKCL/SKCM switches by Chyrosran22](https://www.youtube.com/watch?v=QmJ-IEEBQAI)
-- [The Comprehensive Switch List - Official Version](https://docs.google.com/spreadsheets/d/1WCzp0ujCfmMPZ6r_oSULzEEcG4pcWDd01S09OtAf9LM/edit?gid=0#gid=0)
-- [The Best Mechanical Keyboard Stabilizers - 2025 by Alexotos](https://www.alexotos.com/the-best-mechanical-keyboard-stabilizers-in-2025/)
-- [Varmilo EC Switches. Better Than The Rest.](https://varmilo.com/blogs/switches/varmilo-ec-switches-better-than-the-rest)
-- [Frankenswitches by AidanSmith.dev](https://www.aidansmith.dev/frankenswitches/)  
+**Switches**  
+[Cherry MX Vintage Black Review: A Modder's Dream, Criminally Misunderstood](https://www.reddit.com/r/MechSwitchReview/comments/hlc6wt/cherry_mx_vintage_black_review_a_modders_dream/)
+[Teardown - Alps SKCL/SKCM switches by Chyrosran22](https://www.youtube.com/watch?v=QmJ-IEEBQAI)
+[The Comprehensive Switch List - Official Version](https://docs.google.com/spreadsheets/d/1WCzp0ujCfmMPZ6r_oSULzEEcG4pcWDd01S09OtAf9LM/edit?gid=0#gid=0)
+[The Best Mechanical Keyboard Stabilizers - 2025 by Alexotos](https://www.alexotos.com/the-best-mechanical-keyboard-stabilizers-in-2025/)
+[Varmilo EC Switches. Better Than The Rest.](https://varmilo.com/blogs/switches/varmilo-ec-switches-better-than-the-rest)
+[Frankenswitches by AidanSmith.dev](https://www.aidansmith.dev/frankenswitches/)  
 
-*Hall Effect*
-- [Soundtest of the most popular Hall effect Switches (Wooting 80HE, Jade, Jade Pro, Jade Max, Magneto, Black Knight, Lekker V2)](https://www.reddit.com/r/MechanicalKeyboards/comments/1g87x4a/soundtest_of_the_most_popular_halleffect_switches/)
-- [Hall Effect vs. Optical: What Switches Should You Choose? by Yadullah Abidi](https://www.makeuseof.com/hall-effect-vs-optical-switches/)
-- [3D Printed Maglev Switch](https://github.com/famichu/MagLev_Switch_MX)
+*Hall Effect*  
+[Soundtest of the most popular Hall effect Switches (Wooting 80HE, Jade, Jade Pro, Jade Max, Magneto, Black Knight, Lekker V2)](https://www.reddit.com/r/MechanicalKeyboards/comments/1g87x4a/soundtest_of_the_most_popular_halleffect_switches/)
+[Hall Effect vs. Optical: What Switches Should You Choose? by Yadullah Abidi](https://www.makeuseof.com/hall-effect-vs-optical-switches/)
+[3D Printed Maglev Switch](https://github.com/famichu/MagLev_Switch_MX)
 
-**Split**
-- [“The REAL Ergonomic Keyboard Endgame!” - How To Design & Make A Totally Custom Keyboard](https://www.youtube.com/watch?v=UKfeJrRIcxw&t=895s)
-- [My favorite ergo split keyboard so far by EIGA](https://www.youtube.com/watch?v=riqmW3UHqPY)
-- [The TOTEM wireless keyboard by EIGA](https://www.youtube.com/watch?v=YwsutNf1WRA)
-- [I Built My Dream Keyboard from Absolute Scratch by Christian Selig](https://www.youtube.com/watch?v=7UXsD7nSfDY)
-- [mask-2.0.0 4x6 Split keyboard with Cherry MX-ULP keys](https://www.reddit.com/r/ErgoMechKeyboards/comments/zpo9h6/mask200_4x6_split_keyboard_with_cherry_mxulp_keys/#lightbox)
-- [Non Nemo Chimera + Case](https://www.reddit.com/r/ErgoMechKeyboards/comments/1jw2l4v/wip_non_nemo_chimera_case/)
-- [Lily58 Choc with touchpad - my first keyboard assembly](https://www.reddit.com/r/ErgoMechKeyboards/comments/1jwa0d6/lily58_choc_with_touchpad_my_first_keyboard/)
-- [A beautiful arc in my memory — Phekda. ](https://www.reddit.com/r/MechanicalKeyboards/comments/1jtkjyn/a_beautiful_arc_in_my_memory/)
-- [Bayleaf Wireless Keyboard Build](https://www.graz.io/articles/bayleaf-wireless-keyboard)
-- [There is no end game.](https://www.reddit.com/r/ErgoMechKeyboards/comments/1kcur3v/there_is_no_end_game/)
+**Split**  
+[“The REAL Ergonomic Keyboard Endgame!” — How To Design & Make A Totally Custom Keyboard](https://www.youtube.com/watch?v=UKfeJrRIcxw&t=895s)
+[My favorite ergo split keyboard so far by EIGA](https://www.youtube.com/watch?v=riqmW3UHqPY)
+[The TOTEM wireless keyboard by EIGA](https://www.youtube.com/watch?v=YwsutNf1WRA)
+[I Built My Dream Keyboard from Absolute Scratch by Christian Selig](https://www.youtube.com/watch?v=7UXsD7nSfDY)
+[mask-2.0.0 4x6 Split keyboard with Cherry MX-ULP keys](https://www.reddit.com/r/ErgoMechKeyboards/comments/zpo9h6/mask200_4x6_split_keyboard_with_cherry_mxulp_keys/#lightbox)
+[Non Nemo Chimera + Case](https://www.reddit.com/r/ErgoMechKeyboards/comments/1jw2l4v/wip_non_nemo_chimera_case/)
+[Lily58 Choc with touchpad — my first keyboard assembly](https://www.reddit.com/r/ErgoMechKeyboards/comments/1jwa0d6/lily58_choc_with_touchpad_my_first_keyboard/)
+[A beautiful arc in my memory — Phekda. ](https://www.reddit.com/r/MechanicalKeyboards/comments/1jtkjyn/a_beautiful_arc_in_my_memory/)
+[Bayleaf Wireless Keyboard Build](https://www.graz.io/articles/bayleaf-wireless-keyboard)
+[There is no end game.](https://www.reddit.com/r/ErgoMechKeyboards/comments/1kcur3v/there_is_no_end_game/)
 
-**Macropad**
-- [How to Build a Handwired Keyboard by Joe Scotto](https://www.youtube.com/watch?v=hjml-K-pV4E)
-- [How to Design Mechanical Keyboard Plates and Cases](https://www.youtube.com/watch?v=7azQkSu0m_U)
-- [Statial Macropad by PyottDesign](https://www.youtube.com/watch?v=nhJiCa46weE)
-- [Magicforce MF17 Dual Mode Wireless Numeric Keypad](https://mechkeys.com/products/magicforce-mf17?variant=46928872145119)
+**Macropad**  
+[How to Build a Handwired Keyboard by Joe Scotto](https://www.youtube.com/watch?v=hjml-K-pV4E)
+[How to Design Mechanical Keyboard Plates and Cases](https://www.youtube.com/watch?v=7azQkSu0m_U)
+[Statial Macropad by PyottDesign](https://www.youtube.com/watch?v=nhJiCa46weE)
+[Magicforce MF17 Dual Mode Wireless Numeric Keypad](https://mechkeys.com/products/magicforce-mf17?variant=46928872145119)
 
-**Ortho**
-- [I designed this over the weekend. Thought it turned out kinda cool?](https://www.reddit.com/r/MechanicalKeyboards/comments/1jnxikp/i_designed_this_over_the_weekend_thought_it/)
+**Ortho**  
+[I designed this over the weekend. Thought it turned out kinda cool?](https://www.reddit.com/r/MechanicalKeyboards/comments/1jnxikp/i_designed_this_over_the_weekend_thought_it/)
 
-### Mice
-- [I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything](https://www.youtube.com/watch?v=qmX8vL-GbxU)
-- [The worlds lightest gaming mouse PCB by Patrick Schmalzried](https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb)
-- [I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim](https://www.youtube.com/watch?v=9CQqasv5_qo&t=208s)
-- [JEE600 in clusterfudge status (expected, really)](https://www.reddit.com/r/ErgoMechKeyboards/comments/1jnn0xk/jee600_in_clusterfudge_status_expected_really/)
-- [My Mouse Projects So Far...](https://www.reddit.com/r/arduino/comments/1jc1jhp/my_mouse_projects_so_far/)
-- [LOFREE Touch](https://www.lofree.co/products/lofree-touch-pbt-wireless-mouse)
-- [2023 Top Six Latest Mouse With Unique Features: Hot-Swappable Switches, Unique Designs, and More!!](https://mechkeys.com/blogs/guide/top-six-latest-mouse-with-unique-features)
-- [key switches mouse](https://www.google.com/search?sca_esv=601b0517c7361365&rlz=1C1RXQR_enUS930US930&sxsrf=AHTn8zrtHuVK4oGJ64eYsjphaJLBXivZQQ:1746422722142&q=key+switches+mouse&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBsxayPSIAqObp_AgjkUGqel3rTRMIJGV_ECIUB00muput9Zp8VMKUi0ZjqPs3JlrgPeFrAnFlUitTiL3WcJlFn10ZVAeuxL5fSn-ULNu9lz3DIW3cy7rkKNmgHapdAFAoBFSl5-LQE_swXRSgVvZGy87KiusPiw1DSGvVAMCLf6f2K4DEg&sa=X&ved=2ahUKEwjxp-zPy4uNAxVsle4BHTgvJhAQtKgLegQIBxAB&biw=2560&bih=1279&dpr=1#vhid=1A7hF_VEmY1Y0M&vssid=mosaic)
+## Mice  
+[I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything](https://www.youtube.com/watch?v=qmX8vL-GbxU)
+[The worlds lightest gaming mouse PCB by Patrick Schmalzried](https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb)
+[I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim](https://www.youtube.com/watch?v=9CQqasv5_qo&t=208s)
+[JEE600 in clusterfudge status (expected, really)](https://www.reddit.com/r/ErgoMechKeyboards/comments/1jnn0xk/jee600_in_clusterfudge_status_expected_really/)
+[My Mouse Projects So Far...](https://www.reddit.com/r/arduino/comments/1jc1jhp/my_mouse_projects_so_far/)
+[LOFREE Touch](https://www.lofree.co/products/lofree-touch-pbt-wireless-mouse)
+[2023 Top Six Latest Mouse With Unique Features: Hot-Swappable Switches, Unique Designs, and More!!](https://mechkeys.com/blogs/guide/top-six-latest-mouse-with-unique-features)
+[key switches mouse](https://www.google.com/search?sca_esv=601b0517c7361365&rlz=1C1RXQR_enUS930US930&sxsrf=AHTn8zrtHuVK4oGJ64eYsjphaJLBXivZQQ:1746422722142&q=key+switches+mouse&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBsxayPSIAqObp_AgjkUGqel3rTRMIJGV_ECIUB00muput9Zp8VMKUi0ZjqPs3JlrgPeFrAnFlUitTiL3WcJlFn10ZVAeuxL5fSn-ULNu9lz3DIW3cy7rkKNmgHapdAFAoBFSl5-LQE_swXRSgVvZGy87KiusPiw1DSGvVAMCLf6f2K4DEg&sa=X&ved=2ahUKEwjxp-zPy4uNAxVsle4BHTgvJhAQtKgLegQIBxAB&biw=2560&bih=1279&dpr=1#vhid=1A7hF_VEmY1Y0M&vssid=mosaic)
 
-### Sources
+## Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
 
 <!-- Hidden references trigger the footnote rendering -->

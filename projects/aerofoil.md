@@ -26,11 +26,11 @@ repo: "https://github.com/nzge/aero-dev"
 
 ---
 
-## References
+# References
 
 This project was inspired by recent studies on control systems[^1] and previous research on Stewart platforms[^2].
 
-### Sources
+## Sources
 
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
 [^2]: ["Stewart Platform Control"](https://example.com), Accessed March 6, 2025.  
