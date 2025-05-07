@@ -60,6 +60,7 @@ The way the PCB-switch assembly are housed within the case.
   ];
   new Slideshow(slides8, 'my-slideshow8');
 </script>
+Courtesy of https://www.keyboard.university/200-courses/keyboard-mounting-styles-4lpp7
 
 ### Switches
 Keyboard switches are a very intriguing corner of the keyboard hobby, filled with some of the most bizarre naming schemes out of any hobby I've been a part of. The Keyboard switch rabbithole is vast and deep. Switch selection may impact the design of your pcb (potentially even the case), as switches may possess a unique form factor that you need to account for.
