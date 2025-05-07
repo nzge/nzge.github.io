@@ -139,43 +139,38 @@ style="height:400px;display: block; margin: auto;"}
 ---
 # References
 
-### FOC
+**FOC**
 []()  
 []()
 
-### Capstan 
-[Capstan Drive by Aaed Musa](https://www.aaedmusa.com/projects/capstandrive)
+**Capstan**  
+[Capstan Drive by Aaed Musa](https://www.aaedmusa.com/projects/capstandrive)  
 [Capstan Drive NEMA 17 Stepper Timing Belt](https://www.youtube.com/watch?v=ENMZsPwCUcA)  
 
-### Compliant Mechanisms
+**Compliant Mechanisms**  
 [BYU CMR](https://compliantmechanisms.byu.edu/maker-resources)  
 ["How to create effective compliant mechanisms with 3D printing" - Teaching Tech](https://www.youtube.com/watch?v=xV36ITRjP_4)  
 
-### Cycloidal
+**Cycloidal**  
 ["The BEST Way to Design a Cycloidal Drive in 2024" - Nelson Howe](https://www.youtube.com/watch?v=HDVCgaDknyM&t=7s)  
 ["Parametric Cycloidal Gear Drive (Fusion 360)" - Aaed Musa](https://www.youtube.com/watch?v=qDtFj4PE3-o)  
 ["How to Design a Cycloidal Disk in Fusion 360" - Levi Janssen](https://www.youtube.com/watch?v=jQ6LQBFZXmU&t=776s)  
 ["Designing a cycloidal drive in Python and Fusion 360" - RoTechnic](https://www.youtube.com/live/y9vLVXjz2c0?app=desktop&t=457s)  
 
-### Harmonic
+**Harmonic**  
 ["What is Strain Wave Gear (Harmonic Drive)? A Perfect Gear Set For Robotics Applications!?" - How To Mechatronics](https://www.youtube.com/watch?v=xlnNj9F37MA)  
 
-### Rolling Joint
+**Rolling Joint**  
 [Alternative to bearings for tiny robots](https://www.youtube.com/watch?v=TQiLLcumqDw)  
 [You've never seen the Robot Joint like this one!](https://www.youtube.com/watch?v=utDagouxM5U)  
 
-### CVT
+**CVT**  
 [This Is The World's First Geared CVT and It Will Blow Your Mind - Ratio Zero Transmission](https://www.youtube.com/watch?v=mWJHI7UHuys&t=121s)  
 [RatioZero - the 'world's first geared CVT'](https://www.youtube.com/watch?v=vc9o-O1n81E)  
 
-### Sources
-[^1]: https://github.com/woodenCaliper/CycloidalDrive
-[^2]: https://github.com/roTechnic/CycloidalDesign
-[^2]: ["Stewart Platform Control"](https://example.com), Accessed March 6, 2025.  
-[^3]: **Book:** K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
-[^4]: **Website:** ["Stewart Platform Control"](https://example.com). Accessed: March 6, 2025.  
-[^5]: **Journal:** Doe, J. *Optimization of Robotic Mechanisms*. *Journal of Robotics Research*, Vol. 25, 2023, pp. 45-60.  
-[^6]: **Technical Report:** NASA. *Adaptive Control for Space Robotics*. Tech Report No. 4567, 2022.  
+Sources  
+[^1]: https://github.com/woodenCaliper/CycloidalDrive  
+[^2]: https://github.com/roTechnic/CycloidalDesign  
 
 <!-- Hidden references trigger the footnote rendering -->
 <span id="hidden-references"> [^3] [^4] [^5] [^6]</span>
