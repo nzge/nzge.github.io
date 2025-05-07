@@ -33,8 +33,10 @@ toc: true
 ![Alt text](/assets/media/rocket_media/simple-rocket/openrocket.PNG){: style="width:1000px;display: block; margin: auto;"}
 
 ## Design
+
 ### Tube
 ![Alt text](/assets/media/rocket_media/simple-rocket/bodytube.PNG){: style="width:1000px;display: block; margin: auto;"}
+
 ### Fin-can
 ![Alt text](/assets/media/rocket_media/simple-rocket/fin-can.PNG){: style="width:1000px;display: block; margin: auto;"}
 
@@ -87,7 +89,10 @@ toc: true
 ## Active Stabilization
 
 ### Gimbaled thrust
+
+
 ### Fin Controlled
+
 
 ## Build Log
 > 11-21-23: 

@@ -61,13 +61,15 @@ a {
   display: none;
 }
 
-
 /* Center tables on the page */
 .markdown-preview-view table {
   margin-left: auto !important; 
   margin-right: auto !important;
 }
 
+.center-header {
+  text-align: center;
+}
 
 /*--------------- GIFS --------------- */
 .gif-left, .gif-right {

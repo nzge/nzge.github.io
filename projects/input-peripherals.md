@@ -380,7 +380,7 @@ Teensy 4.0
 ![Alt text](/assets/media/input_media/mcu/teensy4.png){: 
 style="height:200px;display: block; margin: auto;"}
 
-Absolute workhorse of a microcontroller
+A very capable microcontroller
 
 ---
 ---
@@ -557,12 +557,14 @@ A 40% keyboard with extra flare.
 | Housing     | 3D printed using PLA |
 
 #### Layout
-
+<br>
 ![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
 style="height:200px;display: block; margin: auto;"}
 
 ### PCB 
 Designed in KiCAD
+<br>
+
 ![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
 style="height:200px;display: block; margin: auto;"}
 

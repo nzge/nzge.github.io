@@ -40,6 +40,16 @@
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> 
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5YSKESBHT6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5YSKESBHT6');
+  </script>
+
   <!-- stylesheet -->
   <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
@@ -188,35 +198,36 @@ Top Plate</p>
 <h2 id="software-design">Software Design</h2>
 
 <h3 id="servo-driver">Servo Driver</h3>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "servos.h"
-</span>
-<span class="n">Servos</span><span class="o">::</span><span class="n">Servos</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">pca9685</span> <span class="o">=</span> <span class="n">Adafruit_PWMServoDriver</span><span class="p">();</span>
-  <span class="n">servo_count</span> <span class="o">=</span> <span class="n">NUM_SERVOS</span><span class="p">;</span>
-<span class="p">}</span>
+<p>```cpp
+#include “servos.h”</p>
 
-<span class="c1">// Initialize the PCA9685</span>
-<span class="kt">void</span> <span class="n">Servos</span><span class="o">::</span><span class="n">init</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">pca9685</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-  <span class="n">pca9685</span><span class="p">.</span><span class="n">setOscillatorFrequency</span><span class="p">(</span><span class="mi">25000000</span><span class="p">);</span>  <span class="c1">// Set to 25 MHz (default)</span>
-  <span class="n">pca9685</span><span class="p">.</span><span class="n">setPWMFreq</span><span class="p">(</span><span class="n">PWM_FREQ</span><span class="p">);</span>  <span class="c1">// Set PWM frequency for servos (50Hz)</span>
-  <span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-<span class="p">}</span>
+<p>Servos::Servos() {
+  pca9685 = Adafruit_PWMServoDriver();
+  servo_count = NUM_SERVOS;
+}</p>
 
-<span class="c1">// Set the PWM signal on the specified channel</span>
-<span class="kt">void</span> <span class="n">Servos</span><span class="o">::</span><span class="n">setServoAngle</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">angle</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Ensure angle is in valid range</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">angle</span> <span class="o">&lt;</span> <span class="n">MIN_SERVO_ANGLE</span><span class="p">)</span> <span class="n">angle</span> <span class="o">=</span> <span class="n">MIN_SERVO_ANGLE</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">angle</span> <span class="o">&gt;</span> <span class="n">MAX_SERVO_ANGLE</span><span class="p">)</span> <span class="n">angle</span> <span class="o">=</span> <span class="n">MAX_SERVO_ANGLE</span><span class="p">;</span>
-  <span class="n">pca9685</span><span class="p">.</span><span class="n">setPWM</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">angleToPWM</span><span class="p">(</span><span class="n">angle</span><span class="p">));</span>
-<span class="p">}</span>
+<p>// Initialize the PCA9685
+void Servos::init() {
+  pca9685.begin();
+  pca9685.setOscillatorFrequency(25000000);  // Set to 25 MHz (default)
+  pca9685.setPWMFreq(PWM_FREQ);  // Set PWM frequency for servos (50Hz)
+  delay(10);
+}</p>
 
-<span class="kt">void</span> <span class="n">Servos</span><span class="o">::</span><span class="n">setServoAngles</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">angles</span><span class="p">[])</span> <span class="p">{</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">servo_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">setServoAngle</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>// Set the PWM signal on the specified channel
+void Servos::setServoAngle(uint8_t channel, uint16_t angle) {
+  // Ensure angle is in valid range
+  if (angle &lt; MIN_SERVO_ANGLE) angle = MIN_SERVO_ANGLE;
+  if (angle &gt; MAX_SERVO_ANGLE) angle = MAX_SERVO_ANGLE;
+  pca9685.setPWM(channel, 0, angleToPWM(angle));
+}</p>
+
+<p>void Servos::setServoAngles(uint16_t angles[]) {
+  for (uint8_t i = 0; i &lt; servo_count; i++) {
+    setServoAngle(i, angles[i]);
+  }
+}
+```</p>
 
 <h3 id="inverse-kinematics">Inverse Kinematics</h3>
 <p><a href="https://colab.research.google.com/github/nzge/Stewart-Platform/blob/main/stewart_inverse-kinematics.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" /></a></p>
@@ -278,13 +289,11 @@ Micro-ROS on Pico</p>
 
 <h1 id="references">References</h1>
 
-<p><strong>Inspiration</strong></p>
-<ul>
-  <li><a href="https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/">3DOF STEWART PLATFORM: ECE4760 MICROCONTROLLERS FINAL PROJECT</a></li>
-  <li><a href="https://www.instructables.com/Stewart-Platform/">Stewart Platform by thiagohersan</a></li>
-  <li><a href="https://www.youtube.com/watch?v=kAaYaZcpbLo&amp;list=PLTqchMECawAp3Q6hHfBDlCq_db-DOYmcD&amp;index=28">Ball Balancing Robot by Aaed Musa</a></li>
-  <li><a href="https://yichuan33.blogspot.com/2017/11/6-dof-stewart-platform.html">6-DOF Stewart Platfor by Yichuan Wang</a></li>
-</ul>
+<p><strong>Inspiration</strong>
+- <a href="https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/">3DOF STEWART PLATFORM: ECE4760 MICROCONTROLLERS FINAL PROJECT</a>
+- <a href="https://www.instructables.com/Stewart-Platform/">Stewart Platform by thiagohersan</a>
+- <a href="https://www.youtube.com/watch?v=kAaYaZcpbLo&amp;list=PLTqchMECawAp3Q6hHfBDlCq_db-DOYmcD&amp;index=28">Ball Balancing Robot by Aaed Musa</a>
+- <a href="https://yichuan33.blogspot.com/2017/11/6-dof-stewart-platform.html">6-DOF Stewart Platfor by Yichuan Wang</a></p>
 
 <p><strong>Sources</strong>
 [^1]: <a href="https://content.instructables.com/FFI/8ZXW/I55MMY14/FFI8ZXWI55MMY14.pdf">“Stewart Platform Control”</a>, Accessed March 6, 2025.<br />

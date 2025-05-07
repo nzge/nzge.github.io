@@ -28,10 +28,9 @@ github_username:  nzge
 #remote_theme: jekyll/minima
 markdown: kramdown
 kramdown:
-  input: GFM
+  input: kramdown
   syntax_highlighter: rouge
   math_engine: mathjax
-
 highlighter: rouge
 
 sass:
