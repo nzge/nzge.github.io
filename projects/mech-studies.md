@@ -9,6 +9,8 @@ repo: "https://github.com/nzge/mechanism-studies"
 toc: true
 ---
 
+This page is dedicated to the study of various electromechanical systems to aid in the development of robotic mechanisms. 
+
 # FOC (Field oriented Control)
 Field Oriented Control (FOC) is a control strategy most traditionally used for AC motors (typically permanent magnet synchronous motors (PMSMs) or induction motors) that enables precise control of torque and speed by decoupling the motor’s stator currents into two orthogonal components.
 
@@ -137,35 +139,36 @@ style="height:400px;display: block; margin: auto;"}
 ---
 # References
 
-## FOC
-1. 
+### FOC
+[]()  
+[]()
 
-## Capstan 
-1. https://www.aaedmusa.com/projects/capstandrive
-2. [Capstan Drive NEMA 17 Stepper Timing Belt](https://www.youtube.com/watch?v=ENMZsPwCUcA)
+### Capstan 
+[Capstan Drive by Aaed Musa](https://www.aaedmusa.com/projects/capstandrive)
+[Capstan Drive NEMA 17 Stepper Timing Belt](https://www.youtube.com/watch?v=ENMZsPwCUcA)  
 
-## Compliant Mechanisms
-1. [BYU CMR](https://compliantmechanisms.byu.edu/maker-resources)
-2. ["How to create effective compliant mechanisms with 3D printing" - Teaching Tech](https://www.youtube.com/watch?v=xV36ITRjP_4)
+### Compliant Mechanisms
+[BYU CMR](https://compliantmechanisms.byu.edu/maker-resources)  
+["How to create effective compliant mechanisms with 3D printing" - Teaching Tech](https://www.youtube.com/watch?v=xV36ITRjP_4)  
 
-## Cycloidal
-1. ["The BEST Way to Design a Cycloidal Drive in 2024" - Nelson Howe](https://www.youtube.com/watch?v=HDVCgaDknyM&t=7s)
-2. ["Parametric Cycloidal Gear Drive (Fusion 360)" - Aaed Musa](https://www.youtube.com/watch?v=qDtFj4PE3-o)
-3. ["How to Design a Cycloidal Disk in Fusion 360" - Levi Janssen](https://www.youtube.com/watch?v=jQ6LQBFZXmU&t=776s)
-4. ["Designing a cycloidal drive in Python and Fusion 360" - RoTechnic](https://www.youtube.com/live/y9vLVXjz2c0?app=desktop&t=457s)
+### Cycloidal
+["The BEST Way to Design a Cycloidal Drive in 2024" - Nelson Howe](https://www.youtube.com/watch?v=HDVCgaDknyM&t=7s)  
+["Parametric Cycloidal Gear Drive (Fusion 360)" - Aaed Musa](https://www.youtube.com/watch?v=qDtFj4PE3-o)  
+["How to Design a Cycloidal Disk in Fusion 360" - Levi Janssen](https://www.youtube.com/watch?v=jQ6LQBFZXmU&t=776s)  
+["Designing a cycloidal drive in Python and Fusion 360" - RoTechnic](https://www.youtube.com/live/y9vLVXjz2c0?app=desktop&t=457s)  
 
-## Harmonic
-1. ["What is Strain Wave Gear a.k.a. Harmonic Drive? A Perfect Gear Set For Robotics Applications!?" - How To Mechatronics](https://www.youtube.com/watch?v=xlnNj9F37MA)
+### Harmonic
+["What is Strain Wave Gear (Harmonic Drive)? A Perfect Gear Set For Robotics Applications!?" - How To Mechatronics](https://www.youtube.com/watch?v=xlnNj9F37MA)  
 
-## Rolling Joint
-1. [Alternative to bearings for tiny robots](https://www.youtube.com/watch?v=TQiLLcumqDw)
-2. [You've never seen the Robot Joint like this one!](https://www.youtube.com/watch?v=utDagouxM5U)
+### Rolling Joint
+[Alternative to bearings for tiny robots](https://www.youtube.com/watch?v=TQiLLcumqDw)  
+[You've never seen the Robot Joint like this one!](https://www.youtube.com/watch?v=utDagouxM5U)  
 
-## CVT
-1. [This Is The World's First Geared CVT and It Will Blow Your Mind - Ratio Zero Transmission](https://www.youtube.com/watch?v=mWJHI7UHuys&t=121s)
-2. [RatioZero - the 'world's first geared CVT'](https://www.youtube.com/watch?v=vc9o-O1n81E)
+### CVT
+[This Is The World's First Geared CVT and It Will Blow Your Mind - Ratio Zero Transmission](https://www.youtube.com/watch?v=mWJHI7UHuys&t=121s)  
+[RatioZero - the 'world's first geared CVT'](https://www.youtube.com/watch?v=vc9o-O1n81E)  
 
-## Sources
+### Sources
 [^1]: https://github.com/woodenCaliper/CycloidalDrive
 [^2]: https://github.com/roTechnic/CycloidalDesign
 [^2]: ["Stewart Platform Control"](https://example.com), Accessed March 6, 2025.  

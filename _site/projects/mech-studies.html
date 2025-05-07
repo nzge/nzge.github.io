@@ -110,12 +110,14 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#foc-field-oriented-control">FOC (Field oriented Control)</a><ul><li><a href="#theory">Theory</a><ul><li><a href="#how-does-a-bldc-work">How Does a BLDC Work?</a></li><li><a href="#the-control-solution-of-foc">The control solution of FOC</a><ul><li><a href="#1-rotor-position-sensingestimation">1. Rotor Position sensing/estimation</a></li><li><a href="#2-clarke--park-transformation">2. Clarke + Park transformation</a></li><li><a href="#3-control-loop">3. Control Loop</a></li><li><a href="#4-inverse-parke--inverse-parke">4. Inverse Parke + Inverse Parke</a></li><li><a href="#5-inverter-pwm-output">5. Inverter PWM output</a></li></ul></li></ul></li><li><a href="#firmware">Firmware</a></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#capstan-drive">Capstan Drive</a><ul><li><a href="#the-capstan-equation">The Capstan Equation</a></li><li><a href="#components">Components</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#harmonic-drive">Harmonic Drive</a><ul><li><a href="#components-1">Components</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#cycloidal-drive">Cycloidal Drive</a><ul><li><a href="#parametric-model">Parametric Model</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#compliant-mechanisms">Compliant Mechanisms</a><ul><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#rolling-joints">Rolling Joints</a><ul><li><a href="#build-log-5">Build Log</a></li></ul></li><li><a href="#continuous-variable-transmission-cvt">Continuous Variable Transmission (CVT)</a><ul><li><a href="#build-log-6">Build Log</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#foc">FOC</a></li><li><a href="#capstan">Capstan</a></li><li><a href="#compliant-mechanisms-1">Compliant Mechanisms</a></li><li><a href="#cycloidal">Cycloidal</a></li><li><a href="#harmonic">Harmonic</a></li><li><a href="#rolling-joint">Rolling Joint</a></li><li><a href="#cvt">CVT</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
+      <ul><li><a href="#foc-field-oriented-control">FOC (Field oriented Control)</a><ul><li><a href="#theory">Theory</a><ul><li><a href="#how-does-a-bldc-work">How Does a BLDC Work?</a></li><li><a href="#the-control-solution-of-foc">The control solution of FOC</a><ul><li><a href="#1-rotor-position-sensingestimation">1. Rotor Position sensing/estimation</a></li><li><a href="#2-clarke--park-transformation">2. Clarke + Park transformation</a></li><li><a href="#3-control-loop">3. Control Loop</a></li><li><a href="#4-inverse-parke--inverse-parke">4. Inverse Parke + Inverse Parke</a></li><li><a href="#5-inverter-pwm-output">5. Inverter PWM output</a></li></ul></li></ul></li><li><a href="#firmware">Firmware</a></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#capstan-drive">Capstan Drive</a><ul><li><a href="#the-capstan-equation">The Capstan Equation</a></li><li><a href="#components">Components</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#harmonic-drive">Harmonic Drive</a><ul><li><a href="#components-1">Components</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#cycloidal-drive">Cycloidal Drive</a><ul><li><a href="#parametric-model">Parametric Model</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#compliant-mechanisms">Compliant Mechanisms</a><ul><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#rolling-joints">Rolling Joints</a><ul><li><a href="#build-log-5">Build Log</a></li></ul></li><li><a href="#continuous-variable-transmission-cvt">Continuous Variable Transmission (CVT)</a><ul><li><a href="#build-log-6">Build Log</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#foc">FOC</a></li><li><a href="#capstan">Capstan</a></li><li><a href="#compliant-mechanisms-1">Compliant Mechanisms</a></li><li><a href="#cycloidal">Cycloidal</a></li><li><a href="#harmonic">Harmonic</a></li><li><a href="#rolling-joint">Rolling Joint</a></li><li><a href="#cvt">CVT</a></li><li><a href="#sources">Sources</a></li></ul></li></ul></li></ul>
     </nav>
   
   <div>
     <article class="markdown-body">
-      <h1 id="foc-field-oriented-control">FOC (Field oriented Control)</h1>
+      <p>This page is dedicated to the study of various electromechanical systems to aid in the development of robotic mechanisms.</p>
+
+<h1 id="foc-field-oriented-control">FOC (Field oriented Control)</h1>
 <p>Field Oriented Control (FOC) is a control strategy most traditionally used for AC motors (typically permanent magnet synchronous motors (PMSMs) or induction motors) that enables precise control of torque and speed by decoupling the motor’s stator currents into two orthogonal components.</p>
 
 <p>FOC transforms three-phase stator currents into a rotating reference frame aligned with the rotor’s magnetic field, allowing independent control of:<br />
@@ -254,49 +256,36 @@ Even though BLDC motors are often controlled using six-step trapezoidal commutat
 <hr />
 <h1 id="references">References</h1>
 
-<h2 id="foc">FOC</h2>
-<ol>
-  <li></li>
-</ol>
+<h3 id="foc">FOC</h3>
+<p><a href=""></a><br />
+<a href=""></a></p>
 
-<h2 id="capstan">Capstan</h2>
-<ol>
-  <li>https://www.aaedmusa.com/projects/capstandrive</li>
-  <li><a href="https://www.youtube.com/watch?v=ENMZsPwCUcA">Capstan Drive NEMA 17 Stepper Timing Belt</a></li>
-</ol>
+<h3 id="capstan">Capstan</h3>
+<p><a href="https://www.aaedmusa.com/projects/capstandrive">Capstan Drive by Aaed Musa</a>
+<a href="https://www.youtube.com/watch?v=ENMZsPwCUcA">Capstan Drive NEMA 17 Stepper Timing Belt</a></p>
 
-<h2 id="compliant-mechanisms-1">Compliant Mechanisms</h2>
-<ol>
-  <li><a href="https://compliantmechanisms.byu.edu/maker-resources">BYU CMR</a></li>
-  <li><a href="https://www.youtube.com/watch?v=xV36ITRjP_4">“How to create effective compliant mechanisms with 3D printing” - Teaching Tech</a></li>
-</ol>
+<h3 id="compliant-mechanisms-1">Compliant Mechanisms</h3>
+<p><a href="https://compliantmechanisms.byu.edu/maker-resources">BYU CMR</a><br />
+<a href="https://www.youtube.com/watch?v=xV36ITRjP_4">“How to create effective compliant mechanisms with 3D printing” - Teaching Tech</a></p>
 
-<h2 id="cycloidal">Cycloidal</h2>
-<ol>
-  <li><a href="https://www.youtube.com/watch?v=HDVCgaDknyM&amp;t=7s">“The BEST Way to Design a Cycloidal Drive in 2024” - Nelson Howe</a></li>
-  <li><a href="https://www.youtube.com/watch?v=qDtFj4PE3-o">“Parametric Cycloidal Gear Drive (Fusion 360)” - Aaed Musa</a></li>
-  <li><a href="https://www.youtube.com/watch?v=jQ6LQBFZXmU&amp;t=776s">“How to Design a Cycloidal Disk in Fusion 360” - Levi Janssen</a></li>
-  <li><a href="https://www.youtube.com/live/y9vLVXjz2c0?app=desktop&amp;t=457s">“Designing a cycloidal drive in Python and Fusion 360” - RoTechnic</a></li>
-</ol>
+<h3 id="cycloidal">Cycloidal</h3>
+<p><a href="https://www.youtube.com/watch?v=HDVCgaDknyM&amp;t=7s">“The BEST Way to Design a Cycloidal Drive in 2024” - Nelson Howe</a><br />
+<a href="https://www.youtube.com/watch?v=qDtFj4PE3-o">“Parametric Cycloidal Gear Drive (Fusion 360)” - Aaed Musa</a><br />
+<a href="https://www.youtube.com/watch?v=jQ6LQBFZXmU&amp;t=776s">“How to Design a Cycloidal Disk in Fusion 360” - Levi Janssen</a><br />
+<a href="https://www.youtube.com/live/y9vLVXjz2c0?app=desktop&amp;t=457s">“Designing a cycloidal drive in Python and Fusion 360” - RoTechnic</a></p>
 
-<h2 id="harmonic">Harmonic</h2>
-<ol>
-  <li><a href="https://www.youtube.com/watch?v=xlnNj9F37MA">“What is Strain Wave Gear a.k.a. Harmonic Drive? A Perfect Gear Set For Robotics Applications!?” - How To Mechatronics</a></li>
-</ol>
+<h3 id="harmonic">Harmonic</h3>
+<p><a href="https://www.youtube.com/watch?v=xlnNj9F37MA">“What is Strain Wave Gear (Harmonic Drive)? A Perfect Gear Set For Robotics Applications!?” - How To Mechatronics</a></p>
 
-<h2 id="rolling-joint">Rolling Joint</h2>
-<ol>
-  <li><a href="https://www.youtube.com/watch?v=TQiLLcumqDw">Alternative to bearings for tiny robots</a></li>
-  <li><a href="https://www.youtube.com/watch?v=utDagouxM5U">You’ve never seen the Robot Joint like this one!</a></li>
-</ol>
+<h3 id="rolling-joint">Rolling Joint</h3>
+<p><a href="https://www.youtube.com/watch?v=TQiLLcumqDw">Alternative to bearings for tiny robots</a><br />
+<a href="https://www.youtube.com/watch?v=utDagouxM5U">You’ve never seen the Robot Joint like this one!</a></p>
 
-<h2 id="cvt">CVT</h2>
-<ol>
-  <li><a href="https://www.youtube.com/watch?v=mWJHI7UHuys&amp;t=121s">This Is The World’s First Geared CVT and It Will Blow Your Mind - Ratio Zero Transmission</a></li>
-  <li><a href="https://www.youtube.com/watch?v=vc9o-O1n81E">RatioZero - the ‘world’s first geared CVT’</a></li>
-</ol>
+<h3 id="cvt">CVT</h3>
+<p><a href="https://www.youtube.com/watch?v=mWJHI7UHuys&amp;t=121s">This Is The World’s First Geared CVT and It Will Blow Your Mind - Ratio Zero Transmission</a><br />
+<a href="https://www.youtube.com/watch?v=vc9o-O1n81E">RatioZero - the ‘world’s first geared CVT’</a></p>
 
-<h2 id="sources">Sources</h2>
+<h3 id="sources">Sources</h3>
 
 <!-- Hidden references trigger the footnote rendering -->
 <p><span id="hidden-references"> <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">2</a></sup> <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">3</a></sup> <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">4</a></sup></span></p>

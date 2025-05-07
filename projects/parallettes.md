@@ -77,4 +77,4 @@ style="height:400px;display: block; margin: auto;"}
 
 ## References
 
-1. [12 BEST Push-Up Bars for Calisthenics: Mini Parallettes Comparison by Calisthenics Worldwide](https://www.youtube.com/watch?v=yOmqRXeuD_4)
+[12 BEST Push-Up Bars for Calisthenics: Mini Parallettes Comparison by Calisthenics Worldwide](https://www.youtube.com/watch?v=yOmqRXeuD_4)
