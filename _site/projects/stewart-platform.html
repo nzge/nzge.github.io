@@ -110,7 +110,7 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#dimensions">Dimensions</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#servo-driver">Servo Driver</a></li><li><a href="#inverse-kinematics">Inverse Kinematics</a></li><li><a href="#pid-control">PID Control</a></li><li><a href="#web-interface">Web Interface</a></li><li><a href="#ros-integration">ROS Integration</a></li></ul></li><li><a href="#build-log">Build Log</a><ul><li><a href="#inspiration">Inspiration</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
+      <ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#dimensions">Dimensions</a></li></ul></li><li><a href="#software-design">Software Design</a><ul><li><a href="#servo-driver">Servo Driver</a></li><li><a href="#inverse-kinematics">Inverse Kinematics</a></li><li><a href="#pid-control">PID Control</a></li><li><a href="#web-interface">Web Interface</a></li><li><a href="#ros-integration">ROS Integration</a></li></ul></li><li><a href="#build-log">Build Log</a></li></ul>
     </nav>
   
   <div>
@@ -221,7 +221,7 @@ Top Plate</p>
 <h3 id="inverse-kinematics">Inverse Kinematics</h3>
 <p><a href="https://colab.research.google.com/github/nzge/Stewart-Platform/blob/main/stewart_inverse-kinematics.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" /></a></p>
 
-<p>The inverse kinematic derivation is not incredibly complex, but not completely non-trivial. I won’t expound upon the derivation in exceptional detail here, as there are many online resources that present the derivation clearer that I am capable of. <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">1</a></sup> However, here is the general form of the angle derived from the inverse kinematic computation.</p>
+<p>The inverse kinematic derivation is not incredibly complex, but not completely non-trivial. I won’t expound upon the derivation in exceptional detail here, as there are many online resources that present the derivation clearer that I am capable of. [^2] However, here is the general form of the angle derived from the inverse kinematic computation.</p>
 
 \[\begin{gathered}
 \alpha=\sin^{-1}{\frac{\mathrm{L}}{\sqrt{\mathrm{M}^{2}+\mathrm{N}^{2}}}}\cdot\tan^{-1}{\frac{\mathrm{N}}{\mathrm{M}}} \\
@@ -278,7 +278,7 @@ Micro-ROS on Pico</p>
 
 <h1 id="references">References</h1>
 
-<h3 id="inspiration">Inspiration</h3>
+<p><strong>Inspiration</strong></p>
 <ul>
   <li><a href="https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/">3DOF STEWART PLATFORM: ECE4760 MICROCONTROLLERS FINAL PROJECT</a></li>
   <li><a href="https://www.instructables.com/Stewart-Platform/">Stewart Platform by thiagohersan</a></li>
@@ -286,24 +286,14 @@ Micro-ROS on Pico</p>
   <li><a href="https://yichuan33.blogspot.com/2017/11/6-dof-stewart-platform.html">6-DOF Stewart Platfor by Yichuan Wang</a></li>
 </ul>
 
-<h3 id="sources">Sources</h3>
+<p><strong>Sources</strong>
+[^1]: <a href="https://content.instructables.com/FFI/8ZXW/I55MMY14/FFI8ZXWI55MMY14.pdf">“Stewart Platform Control”</a>, Accessed March 6, 2025.<br />
+[^2]: Robert Eisele. <em>Inverse Kinematics of a Stewart Platform</em>. Feb 2019. <a href="https://raw.org/paper/inverse-kinematics-of-a-stewart-platform/">“Inverse Kinematics of a Stewart Platform”</a>
+[^3]: K. Ogata. <em>Modern Control Engineering</em>. Pearson, 2010.</p>
 
 <!-- Hidden references trigger the footnote rendering -->
-<p><span id="hidden-references"> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">2</a></sup> <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> [^4]</span></p>
+<p><span id="hidden-references"> [^1] [^3] [^4]</span></p>
 
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:2" role="doc-endnote">
-      <p>Robert Eisele. <em>Inverse Kinematics of a Stewart Platform</em>. Feb 2019. <a href="https://raw.org/paper/inverse-kinematics-of-a-stewart-platform/">“Inverse Kinematics of a Stewart Platform”</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:1" role="doc-endnote">
-      <p><a href="https://content.instructables.com/FFI/8ZXW/I55MMY14/FFI8ZXWI55MMY14.pdf">“Stewart Platform Control”</a>, Accessed March 6, 2025. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:3" role="doc-endnote">
-      <p>K. Ogata. <em>Modern Control Engineering</em>. Pearson, 2010. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
 
     </article>
   </div>

@@ -692,14 +692,14 @@ style="height:200px;display: block; margin: auto;"}
 - [https://geekhack.org/](https://geekhack.org/)
 - [All the Parts of a Mechanical Keyboard Explained by Das Keyboard Staff](https://www.daskeyboard.com/blog/parts-of-a-mechanical-keyboard/)
 
-#### Design Language
+**Design Language**
 - [Endgame Never Felt So Close - My TGR Jane V2 ME Experience by Wongsquared](https://www.youtube.com/watch?v=0sqF46vm8yY)
 - [Gehirn / Keyboard Preview by Markchun](https://www.youtube.com/watch?v=IK7r_d62QXA)
 - [spring cleaning](https://www.reddit.com/r/CustomKeyboards/comments/1jmcg9k/spring_cleaning/)
 - [can't tell me keebs aren't art - (Seoul Mechanical Keyboard Expo) 2025](https://www.reddit.com/r/MechanicalKeyboards/comments/1jln2a9/cant_tell_me_keebs_arent_art_seoul_mechanical/)
 - [mode65](https://www.youtube.com/shorts/4e9Og6_fiDk)
 
-#### Switches
+**Switches**
 - [Cherry MX Vintage Black Review: A Modder's Dream, Criminally Misunderstood](https://www.reddit.com/r/MechSwitchReview/comments/hlc6wt/cherry_mx_vintage_black_review_a_modders_dream/)
 - [Teardown - Alps SKCL/SKCM switches by Chyrosran22](https://www.youtube.com/watch?v=QmJ-IEEBQAI)
 - [The Comprehensive Switch List - Official Version](https://docs.google.com/spreadsheets/d/1WCzp0ujCfmMPZ6r_oSULzEEcG4pcWDd01S09OtAf9LM/edit?gid=0#gid=0)
@@ -707,12 +707,12 @@ style="height:200px;display: block; margin: auto;"}
 - [Varmilo EC Switches. Better Than The Rest.](https://varmilo.com/blogs/switches/varmilo-ec-switches-better-than-the-rest)
 - [Frankenswitches by AidanSmith.dev](https://www.aidansmith.dev/frankenswitches/)  
 
-Hall Effect
+*Hall Effect*
 - [Soundtest of the most popular Hall effect Switches (Wooting 80HE, Jade, Jade Pro, Jade Max, Magneto, Black Knight, Lekker V2)](https://www.reddit.com/r/MechanicalKeyboards/comments/1g87x4a/soundtest_of_the_most_popular_halleffect_switches/)
 - [Hall Effect vs. Optical: What Switches Should You Choose? by Yadullah Abidi](https://www.makeuseof.com/hall-effect-vs-optical-switches/)
 - [3D Printed Maglev Switch](https://github.com/famichu/MagLev_Switch_MX)
 
-#### Split
+**Split**
 - [“The REAL Ergonomic Keyboard Endgame!” - How To Design & Make A Totally Custom Keyboard](https://www.youtube.com/watch?v=UKfeJrRIcxw&t=895s)
 - [My favorite ergo split keyboard so far by EIGA](https://www.youtube.com/watch?v=riqmW3UHqPY)
 - [The TOTEM wireless keyboard by EIGA](https://www.youtube.com/watch?v=YwsutNf1WRA)
@@ -724,13 +724,13 @@ Hall Effect
 - [Bayleaf Wireless Keyboard Build](https://www.graz.io/articles/bayleaf-wireless-keyboard)
 - [There is no end game.](https://www.reddit.com/r/ErgoMechKeyboards/comments/1kcur3v/there_is_no_end_game/)
 
-#### Macropad
+**Macropad**
 - [How to Build a Handwired Keyboard by Joe Scotto](https://www.youtube.com/watch?v=hjml-K-pV4E)
 - [How to Design Mechanical Keyboard Plates and Cases](https://www.youtube.com/watch?v=7azQkSu0m_U)
 - [Statial Macropad by PyottDesign](https://www.youtube.com/watch?v=nhJiCa46weE)
 - [Magicforce MF17 Dual Mode Wireless Numeric Keypad](https://mechkeys.com/products/magicforce-mf17?variant=46928872145119)
 
-#### Ortho
+**Ortho**
 - [I designed this over the weekend. Thought it turned out kinda cool?](https://www.reddit.com/r/MechanicalKeyboards/comments/1jnxikp/i_designed_this_over_the_weekend_thought_it/)
 
 ### Mice
