@@ -44,8 +44,8 @@ style="height:400px;display: block; margin: auto;"}
   camera-controls
   touch-action="pan-y"
   camera-orbit="0deg 0deg auto"
-  orientation="180deg 20deg 0deg"
-  field-of-view="45deg"
+  orientation="90deg 90deg 0deg"
+  field-of-view="60deg"
   shadow-intensity="1"
   exposure="1.0"
   environment-image="legacy"
