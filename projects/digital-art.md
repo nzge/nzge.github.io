@@ -10,6 +10,7 @@ toc: true
 ---
 
 # 3D Modelling
+
 ## Donut
 Everyone's foray into Blender begins with the donut
 
@@ -32,6 +33,17 @@ Everyone's foray into Blender begins with the donut
 # Graphic Design
 
 
+
+
+
+---
+
+# Generative Art
+
+## Cellular Automata
+
+## Test
+
 ---
 ---
 
@@ -40,21 +52,22 @@ Everyone's foray into Blender begins with the donut
 This project was inspired by recent studies on control systems[^1] and previous research on Stewart platforms[^2].
 
 ### 3D 
-#### Blender 
-- [Arrimus 3D](https://www.youtube.com/@Arrimus3D)
-- [Creative Shrimp](https://www.youtube.com/@GlebAlexandrov/)
-- [Tim ]()
 
-#### Inspiration
-- [uuh, should I be apologizing? - reddit](https://www.reddit.com/r/blender/comments/1jo1arg/uuh_should_i_be_apologizing/)
-- [I'm 34 years old and downloaded Blender on Tuesday after years of deliberation. I have never been more deeply upset. - reddit](https://www.reddit.com/r/blender/comments/1jnke1e/im_34_years_old_and_downloaded_blender_on_tuesday/)
-- [I made a Korok in Blender... and also in other programs](https://www.reddit.com/r/blender/comments/1jldgxo/i_made_a_korok_in_blender_and_also_in_other/)
-- [I tried modeling my desk setup over the years.](https://www.reddit.com/r/blender/comments/1j3jimm/i_tried_modeling_my_desk_setup_over_the_years/)
-- [Test drive in Rome](https://www.reddit.com/r/blender/comments/1iwfgy5/test_drive_in_rome/)
-- [](https://www.reddit.com/r/Cinema4D/comments/1jfzarp/how_can_i_achive_this_smooth_inertia_effect/)
+**Blender**  
+[Arrimus 3D](https://www.youtube.com/@Arrimus3D)  
+[Creative Shrimp](https://www.youtube.com/@GlebAlexandrov/)  
+[Tim ]()  
+
+**Inspiration**  
+[uuh, should I be apologizing? - reddit](https://www.reddit.com/r/blender/comments/1jo1arg/uuh_should_i_be_apologizing/)  
+[I'm 34 years old and downloaded Blender on Tuesday after years of deliberation. I have never been more deeply upset. - reddit](https://www.reddit.com/r/blender/comments/1jnke1e/im_34_years_old_and_downloaded_blender_on_tuesday/)  
+[I made a Korok in Blender... and also in other programs](https://www.reddit.com/r/blender/comments/1jldgxo/i_made_a_korok_in_blender_and_also_in_other/)  
+[I tried modeling my desk setup over the years.](https://www.reddit.com/r/blender/comments/1j3jimm/i_tried_modeling_my_desk_setup_over_the_years/)  
+[Test drive in Rome](https://www.reddit.com/r/blender/comments/1iwfgy5/test_drive_in_rome/)  
+[How can I achive this smooth inertia effect?](https://www.reddit.com/r/Cinema4D/comments/1jfzarp/how_can_i_achive_this_smooth_inertia_effect/)  
 
 ### 2D
-- [Art with snipping tool](https://www.reddit.com/r/glitch_art/comments/1h2opuv/art_with_snipping_tool/)
+[Art with snipping tool](https://www.reddit.com/r/glitch_art/comments/1h2opuv/art_with_snipping_tool/)  
 
 ### Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  

@@ -35,8 +35,8 @@ style="height:400px;display: block; margin: auto;"}
 |---|---|
 | OCT Probe | |
 | Maxon - DC Motor - Gearhead Motor w/Encoder - Type # 47.022.022-00.19-189 | |
-| [LAUNCHXL-F28379D](https://www.ti.com/tool/LAUNCHXL-F28379D){: target="blank"} | F28379D LaunchPad™ development kit for C4000™ Delfino™ MCU |
-| Bearings | |
+| [LAUNCHXL-F28379D](https://www.ti.com/tool/LAUNCHXL-F28379D) | F28379D LaunchPad™ development kit for C4000™ Delfino™ MCU |
+| [Ball Bearing 20 mm Shaft Diameter](https://www.mcmaster.com/5972K215/) | |
 
 ### Slider rail
 ![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 

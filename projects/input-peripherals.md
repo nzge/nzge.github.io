@@ -589,6 +589,7 @@ My take on the classic HHKB layout
 
 ### Specs
 
+
 #### Components
 
 | Component | Description |
@@ -637,7 +638,11 @@ style="height:200px;display: block; margin: auto;"}
 Chasing performance.
 
 ### Specs
+
+
 ### PCB
+
+
 ### Firmware
 
 ### Build Log
@@ -659,7 +664,10 @@ style="height:350px;display: block; margin: auto;"}
 Capacitive scroll wheel  
 
 ### PCB
+
+
 ### Firmware
+
 
 ### Build Log
 > 4-28-25: 
@@ -671,10 +679,18 @@ style="height:400px;display: block; margin: auto;"}
 
 ## Macros Mouse
 How many useful buttons can I fit on one mouse?  
+
 ### Concept
+
+
 ### Specs
+
+
 ### PCB
+
+
 ### Firmware
+
 
 ### Build Log
 > 3-14-25: 
@@ -709,7 +725,8 @@ style="height:200px;display: block; margin: auto;"}
 [The Best Mechanical Keyboard Stabilizers - 2025 by Alexotos](https://www.alexotos.com/the-best-mechanical-keyboard-stabilizers-in-2025/)  
 [Varmilo EC Switches. Better Than The Rest.](https://varmilo.com/blogs/switches/varmilo-ec-switches-better-than-the-rest)  
 [Frankenswitches by AidanSmith.dev](https://www.aidansmith.dev/frankenswitches/)  
-- *Hall Effect*  
+
+- Hall Effect
 [Soundtest of the most popular Hall effect Switches (Wooting 80HE, Jade, Jade Pro, Jade Max, Magneto, Black Knight, Lekker V2)](https://www.reddit.com/r/MechanicalKeyboards/comments/1g87x4a/soundtest_of_the_most_popular_halleffect_switches/)
 [Hall Effect vs. Optical: What Switches Should You Choose? by Yadullah Abidi](https://www.makeuseof.com/hall-effect-vs-optical-switches/)
 [3D Printed Maglev Switch](https://github.com/famichu/MagLev_Switch_MX)
