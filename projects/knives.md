@@ -22,7 +22,7 @@ toc: true
 
 ## Balisong Trainer
 
-![Alt text](/assets/media/knives_media/balisong-blade_proto1.png){: 
+![Alt text](/assets/media/knives_media/trainer-bali-open_concept0_5-10-25.png){: 
 style="width:100%; height:auto; display:block; margin: auto;"}
 
 <br>
@@ -33,10 +33,17 @@ style="height:500px; display: block; margin: auto;"}
 
 ### Build Log
 
-> 3-20-25: 
+> 5-10-25: Initial design. Leaning into edgy aesthetics.
+>
+> ![Alt text](/assets/media/knives_media/trainer-bali-open_concept0_5-10-25.png){: 
+style="width:500px;display: block; margin: auto;"}
+> ![Alt text](/assets/media/knives_media/trainer-bali-close_concept0_5-10-25.png){: 
+style="width:500px;display: block; margin: auto;"}
+
+> 3-20-25: Playing around with blade designs
 >
 > ![Alt text](/assets/media/knives_media/balisong-blade_proto1.png){: 
-style="height:400px;display: block; margin: auto;"}
+style="width:500px;display: block; margin: auto;"}
 
 <br>
 
@@ -56,16 +63,16 @@ style="height:500px; display: block; margin: auto;"}
 
 ### Build Log
 
-> 5-9-25: 
+> 5-9-25: Initial concept does not deviate from source images. Further iterations will deviate, with structural and aesthetic improvements.
 >
 > ![Alt text](/assets/media/knives_media/util-bali_concept0_5-9-25.png){: 
-style="width:400px;display: block; margin: auto;"}
+style="width:500px;display: block; margin: auto;"}
 
 ---
 
 ## Short Balisong
 
-![Alt text](/assets/media/knives_media/balisong-blade_proto1.png){: 
+![Alt text](/assets/media/knives_media/short-bali-open_concept0_5-10-25.png){: 
 style="width:100%; height:auto; display:block; margin: auto;"}
 
 <br>
@@ -79,39 +86,18 @@ style="width:500px; display: block; margin: auto;"}
 
 > 3-20-25: 
 >
-> ![Alt text](/assets/media/knives_media/balisong-blade_proto1.png){: 
-style="height:400px;display: block; margin: auto;"}
-
----
----
-
-# Fixed Blade
-
-Inspiration
-<div id="fixed-knives"></div>
-<script>
-  const fixedknives = [
-    { src: "/assets/media/knives_media/inspiration/balisong-blade_proto1.png", caption: " ", title: " " },
-    { src: "/assets/media/knives_media/inspiration/balisong-blade_proto1.png", caption: " ", title: " " },
-    { src: "/assets/media/knives_media/inspiration/balisong-blade_proto1.png", caption: " ", title: " " },
-  ];
-  new Slideshow(fixedknives, 'fixed-knives');
-</script>
-
-## Hardware
-
-
-## Build Log
-
-> 3-20-25: 
->
-
-<br>
+> ![Alt text](/assets/media/knives_media/short-bali-open_concept0_5-10-25.png){: 
+style="width:500px;display: block; margin: auto;"}
+> ![Alt text](/assets/media/knives_media/short-bali-close_concept0_5-10-25.png){: 
+style="width:500px;display: block; margin: auto;"}
 
 ---
 ---
 
 # Folder Knives
+
+![Alt text](/assets/media/knives_media/short-bali-open_concept0_5-10-25.png){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
 
 Inspiration
 <div id="fold-knives"></div>
@@ -131,6 +117,39 @@ Inspiration
 
 > 3-20-25: 
 >
+> ![Alt text](/assets/media/knives_media/short-bali-open_concept0_5-10-25.png){: 
+style="width:500px;display: block; margin: auto;"}
+
+<br>
+
+---
+---
+
+# Fixed Blade
+
+![Alt text](/assets/media/knives_media/short-bali-open_concept0_5-10-25.png){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
+Inspiration
+<div id="fixed-knives"></div>
+<script>
+  const fixedknives = [
+    { src: "/assets/media/knives_media/inspiration/balisong-blade_proto1.png", caption: " ", title: " " },
+    { src: "/assets/media/knives_media/inspiration/balisong-blade_proto1.png", caption: " ", title: " " },
+    { src: "/assets/media/knives_media/inspiration/balisong-blade_proto1.png", caption: " ", title: " " },
+  ];
+  new Slideshow(fixedknives, 'fixed-knives');
+</script>
+
+## Hardware
+
+
+## Build Log
+
+> 3-20-25: 
+>
+> ![Alt text](/assets/media/knives_media/short-bali-open_concept0_5-10-25.png){: 
+style="width:500px;display: block; margin: auto;"}
 
 <br>
 
