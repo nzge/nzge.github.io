@@ -2,7 +2,7 @@
 layout: project
 category: "fiverr"
 title: "O-Wind Turbine"
-date: 2025-05-8
+date: 2025-05-08
 image: "owind.png"
 description: "Omnidirectional wind turbine design"
 ---
