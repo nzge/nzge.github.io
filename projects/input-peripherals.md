@@ -64,10 +64,12 @@ Courtesy of https://www.keyboard.university/200-courses/keyboard-mounting-styles
 
 ### Switches
 Keyboard switches are a very intriguing corner of the keyboard hobby, filled with some of the most bizarre naming schemes out of any hobby I've been a part of. The Keyboard switch rabbithole is vast and deep. Switch selection may impact the design of your pcb (potentially even the case), as switches may possess a unique form factor that you need to account for.
+
 #### Switch Types
 
 ##### Cherry MX Style
 Invented by Cherry in the 1980s, the MX style switch became the gold standard high-end switch solution. The MX style switch was a major innovation because it introduced a modular, customizable, and reliable mechanical keyboard switch. This design enabled a wide variety of tactile and auditory feedback options, and the durability of the switches allowed them to withstand millions of keystrokes. Most of the keyboard ecosystem is built around housing this style of switch.
+
 ###### Switch Anatomy
 ![Alt text](/assets/media/input_media/switches/cherry.gif){: 
 style="height:200px;display: block; margin: auto;"}
@@ -96,6 +98,7 @@ Notable examples: Black Cherry Pie, Creamsicle, Zyko, Holy Boba, Holy Panda
 
 ##### Other Switch Types
 Less popular switch types
+
 ###### Low profile 
 Low profile switches are most often seen in split keyboard builds.  
 ![Alt text](/assets/media/input_media/switches/choc.png){: 
@@ -169,34 +172,33 @@ Owlstabs, Staebies, Durock, TX, Cherry Clip-in
 Modifications on existing components to improve sound and feel.  
 Modding as an idea rose in popularity around 2020-22. In more recent times, most mods, specifically ones that add foam/dampeners, are often rejected as a cheap/shoddy remedy to the many pitfalls of a poor design or keyboard configuration. People are returning to a more purist approach to keyboard builds by perfecting the basics (little to no foam, properly tuned stabilizers)
 
-##### Switch Mods
-**Lube**: Not so much a mod as lubrication is standard procedure, and many switches come pre-lubed. However, people do prefer to lube their own switches. Common lube choices include Krytox 205G0 (thicker, for linear switches), Tribosys 3203 (thinner, for tactile switches), or a proprietary blend of lubes.  
+**Switch Mods**
 
-**Spring swap**: stock springs can be substituted for aftermarket options, greatly impacting key feel. Springs can vary in length, actuation force (g), and number of stages (some springs have 2 stages, creating a staged actuation curve). Common spring manufacturers include SPRiT, TX, and Geon. 
+- *Lube*: Not so much a mod as lubrication is standard procedure, and many switches come pre-lubed. However, people do prefer to lube their own switches. Common lube choices include Krytox 205G0 (thicker, for linear switches), Tribosys 3203 (thinner, for tactile switches), or a proprietary blend of lubes.  
+- *Spring swap*: stock springs can be substituted for aftermarket options, greatly impacting key feel. Springs can vary in length, actuation force (g), and number of stages (some springs have 2 stages, creating a staged actuation curve). Common spring manufacturers include SPRiT, TX, and Geon. 
+- *Switch Films*: Switch films are sandwhiched between the top and bottom housing of a switch to reduce housing wobble/vibration.  
+ -*"Broken-in"*: Switches can be preemptively pressed for tens of thousands of keystrokes before being sold, to physically smoothen the switch mechanical friction (like how a river stream smoothens river rocks).  
+- *Switch pads*: Poron pads that are placed between the PCB and the switch to reduce key wobble. Switch pads are a less popular mod that came as a biproduct of the foam craze that seeks to dampen and deepen a keyboard's sound signature by any means necessary.  
 
-**Switch Films**: Switch films are sandwhiched between the top and bottom housing of a switch to reduce housing wobble/vibration.  
+**Stabilizer Mods**  
+- Holee   
+- Band-Aid  
 
-**"Broken-in"**: Switches can be preemptively pressed for tens of thousands of keystrokes before being sold, to physically smoothen the switch mechanical friction (like how a river stream smoothens river rocks).  
-
-**Switch pads**: Poron pads that are placed between the PCB and the switch to reduce key wobble. Switch pads are a less popular mod that came as a biproduct of the foam craze that seeks to dampen and deepen a keyboard's sound signature by any means necessary.  
-
-##### Stabilizer Mods
-- Holee
-- Band-Aid
-
-##### Case Mods
-- Forcebreak
+**Case Mods**   
+- Forcebreak  
 - Tempest Mod
 - Gasket
 - Silicone
 
 ### Firmware
+
 #### [QMK](https://qmk.fm/)
 [My fork of QMK](https://github.com/nzge/qmk_firmware)  
 Quantum Mechanical Keyboard (QMK) firmware is an improved version of the TMK firmware made by Hasu, with improved programmability and microcontroller compatibility. VIA builds upon QMK by 
 offering a GUI with simplified/graphical layout firmware configuration and additional features such as plug and play (no flashing), RGB controls, switch tester, etc.
 QMK is general suitable for wired keyboard designs that employ Atmel AVR and ARM architecture.
 https://www.reddit.com/r/MechanicalKeyboards/comments/hjh61v/what_is_qmk/
+
 #### [ZMK](https://zmk.dev/)
 [My fork of ZMK](https://github.com/nzge/zmk-config)  
 ZMK Firmware is an open source (MIT) keyboard firmware built on the Zephyr™ Project Real Time Operating System (RTOS). ZMK's goal is to provide a modern and powerful firmware that is designed for power-efficiency, flexibility, and broad hardware support. 
@@ -412,10 +414,10 @@ I initially fell into the keyboard hobby during COVID when I was glued to my des
 ## Hand-wired Macropad
 
 ![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
-style="height:400px; display:block; margin: auto;"}
+style="width:100%; height:auto; display:block; margin: auto;"}
 
-### Specs
-For my first design, I kept it simple. 
+### Specs  
+For my first design, I kept it simple.  
 - 4x4 Matrix  
 - Unibody construction  
 
@@ -491,6 +493,8 @@ style="height:200px;display: block; margin: auto;"}
 
 ### PCB 
 KiCAD
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
 
 ### Build Log
 
@@ -501,6 +505,9 @@ KiCAD
 ---
 
 ## Ergo Split
+
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
 
 ### Specs
 - Tenting via magsafe phone stands
@@ -537,6 +544,9 @@ style="height:200px;display: block; margin: auto;"}
 
 ## 40% with Fkeys
 A 40% keyboard with extra flare. 
+
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
 
 ### Specs
 - Layout: 40% with function keys left side
@@ -587,6 +597,9 @@ style="height:200px;display: block; margin: auto;"}
 ## HHKB
 My take on the classic HHKB layout
 
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
 ### Specs
 
 
@@ -604,6 +617,8 @@ My take on the classic HHKB layout
 style="height:200px;display: block; margin: auto;"}
 
 ### PCB
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
 
 ### Build Log
 > 3-14-25: 
@@ -637,11 +652,15 @@ style="height:200px;display: block; margin: auto;"}
 ## Ultralight Mouse
 Chasing performance.
 
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
 ### Specs
 
 
 ### PCB
-
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
 
 ### Firmware
 
@@ -655,6 +674,9 @@ Chasing performance.
 ## Chimera
 A Keyswitch Mouse  
 Injecting keyboard DNA into the mouse peripheral
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
 ### Concept
  ![Alt text](/assets/media/input_media/mice/keyswitch-mouse/keyswitch-mouse_concept.png){: 
 style="height:350px;display: block; margin: auto;"}
@@ -664,7 +686,8 @@ style="height:350px;display: block; margin: auto;"}
 Capacitive scroll wheel  
 
 ### PCB
-
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
 
 ### Firmware
 
@@ -679,6 +702,8 @@ style="height:400px;display: block; margin: auto;"}
 
 ## Macros Mouse
 How many useful buttons can I fit on one mouse?  
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
 
 ### Concept
 

@@ -146,6 +146,9 @@
 <loc>http://localhost:4000/projects/outdoor-gear.html</loc>
 </url>
 <url>
+<loc>http://localhost:4000/projects/owind-turbine.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/projects/parallettes.html</loc>
 </url>
 <url>
@@ -194,10 +197,10 @@
 <loc>http://localhost:4000/projects/stewart-platform.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/projects/test.html</loc>
+<loc>http://localhost:4000/projects/test1.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/projects/test1.html</loc>
+<loc>http://localhost:4000/projects/test2.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/projects/tire-temp-sensor-mount.html</loc>
