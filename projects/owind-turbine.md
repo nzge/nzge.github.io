@@ -24,6 +24,10 @@ Reference
 </script>
 
 ## Build Log 
+> 5-10-25: 
+>
+> ![Alt text](/assets/media/owind_media/build-log/concept1_5-8-25.png){: 
+style="height:200px;display: block; margin: auto;"}
 
 > 5-9-25: **Revision 1 complete**. Manufacturing optimizations. Created printable files for a full scale model and an approximate 1:10 scale-down of the intended 80cm diameter size (the side lengths of each triangle making up the tetrahedron panel are 80mm instead of 80cm) full scale model. The scale-down model is intended for print testing and prototyping before committing to a final version of the full scale model. Added a custom base fitted with bearings in the assembly for smooth operation.
 >

@@ -9,7 +9,8 @@ description: "test"
 
 <br>
 
-**Client Objective**: Produce a geometrically faithful, functionally representative, and 3D printable CAD model of the most recent iteration of the O-Wind Turbine, originally developed by O-Inspiration as an award-winning urban wind energy solution. Based on available visual references and publicly accessible information. 
+**Client Objective**: 
+
 
 <br>
 
