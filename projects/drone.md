@@ -279,12 +279,12 @@ OpenGL/WebGL
 # References
 
 ### Inspiration
-- V22 Osprey by Tom Stanton
-  - [Part 1](https://www.youtube.com/watch?v=55G-mwT9uCE)
-  - [Part 2](https://www.youtube.com/watch?v=HitJ8r9HwBg&t=792s)
+V22 Osprey by Tom Stanton
+- [Part 1](https://www.youtube.com/watch?v=55G-mwT9uCE)
+- [Part 2](https://www.youtube.com/watch?v=HitJ8r9HwBg&t=792s)
 
 ### Flight Controller
-- [RC VTOL - V4 by Tom Stanton](https://www.youtube.com/watch?v=gPEeCjVrTBw&t=190s)
+[RC VTOL - V4 by Tom Stanton](https://www.youtube.com/watch?v=gPEeCjVrTBw&t=190s)
 
 ### Sources
 [^1]: ["How I Designed a 3D Printed Wing"](https://www.youtube.com/watch?v=QJjhMan6T_E), Accessed March 6, 2025.  
