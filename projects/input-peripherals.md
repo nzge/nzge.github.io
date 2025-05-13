@@ -510,6 +510,7 @@ style="height:200px;display: block; margin: auto;"}
 style="width:100%; height:auto; display:block; margin: auto;"}
 
 ### Specs
+- Low profile switches
 - Tenting via magsafe phone stands
 - Ergonomic splayed key spacing
 
@@ -539,6 +540,38 @@ style="height:200px;display: block; margin: auto;"}
 > ![Alt text](/assets/media/input_media/split/ergo/){: 
 style="height:200px;display: block; margin: auto;"}
 
+
+---
+
+## Ortho
+Sleek 
+
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
+### Specs
+- Ortholinear key spacing
+- Ultra low profile switches
+
+#### Components
+
+| Component | Description |
+|---|---|
+| Housing | 3D printed using PLA |
+
+#### Layout
+![Alt text](/assets/media/input_media/hhkb/hhkb-default.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+### PCB
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+### Build Log
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png){: 
+style="height:200px;display: block; margin: auto;"}
 
 ---
 

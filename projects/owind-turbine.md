@@ -24,7 +24,17 @@ Reference
 </script>
 
 ## Build Log 
-> 5-10-25: 
+> 5-13-25: **Final Revision**. 
+>
+> ![Alt text](/assets/media/owind_media/build-log/concept1_5-8-25.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+> 5-12-25: **Revision 2 complete**. 
+>
+> ![Alt text](/assets/media/owind_media/build-log/concept1_5-8-25.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+> 5-10-25: **Revision 1.5**. 
 >
 > ![Alt text](/assets/media/owind_media/build-log/concept1_5-8-25.png){: 
 style="height:200px;display: block; margin: auto;"}
