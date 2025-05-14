@@ -146,13 +146,13 @@ style="width:500px;display: block; margin: auto;"}
 
 # References
 
-**Inspiration**
-- [3DOF STEWART PLATFORM: ECE4760 MICROCONTROLLERS FINAL PROJECT](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/)
-- [Stewart Platform by thiagohersan](https://www.instructables.com/Stewart-Platform/)
-- [Ball Balancing Robot by Aaed Musa](https://www.youtube.com/watch?v=kAaYaZcpbLo&list=PLTqchMECawAp3Q6hHfBDlCq_db-DOYmcD&index=28)
-- [6-DOF Stewart Platfor by Yichuan Wang](https://yichuan33.blogspot.com/2017/11/6-dof-stewart-platform.html)
+**Inspiration**  
+[3DOF STEWART PLATFORM: ECE4760 MICROCONTROLLERS FINAL PROJECT](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/)  
+[Stewart Platform by thiagohersan](https://www.instructables.com/Stewart-Platform/)  
+[Ball Balancing Robot by Aaed Musa](https://www.youtube.com/watch?v=kAaYaZcpbLo&list=PLTqchMECawAp3Q6hHfBDlCq_db-DOYmcD&index=28)  
+[6-DOF Stewart Platform by Yichuan Wang](https://yichuan33.blogspot.com/2017/11/6-dof-stewart-platform.html)  
 
-**Sources**
+**Sources**  
 [^1]: ["Stewart Platform Control"](https://content.instructables.com/FFI/8ZXW/I55MMY14/FFI8ZXWI55MMY14.pdf), Accessed March 6, 2025.  
 [^2]: Robert Eisele. *Inverse Kinematics of a Stewart Platform*. Feb 2019. ["Inverse Kinematics of a Stewart Platform"](https://raw.org/paper/inverse-kinematics-of-a-stewart-platform/)
 [^3]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.     

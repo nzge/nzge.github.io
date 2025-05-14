@@ -120,7 +120,7 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#tilt-rotor-drone">Tilt-Rotor Drone</a><ul><li><a href="#concept">Concept</a></li><li><a href="#hardware">Hardware</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#design-considerations">Design Considerations</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetic-components">Aesthetic Components</a></li></ul></li><li><a href="#software">Software</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#quadcopter-race-drone">Quadcopter Race Drone</a><ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components-1">Components</a></li><li><a href="#schematic-1">Schematic</a></li></ul></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#inspiration">Inspiration</a></li><li><a href="#flight-controller">Flight Controller</a></li><li><a href="#sources">Sources</a></li></ul></li></ul></li></ul>
+      <ul><li><a href="#tilt-rotor-drone">Tilt-Rotor Drone</a><ul><li><a href="#concept">Concept</a></li><li><a href="#hardware">Hardware</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#design-considerations">Design Considerations</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetic-components">Aesthetic Components</a></li></ul></li><li><a href="#software">Software</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#quadcopter-race-drone">Quadcopter Race Drone</a><ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components-1">Components</a></li><li><a href="#schematic-1">Schematic</a></li></ul></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#references">References</a></li></ul>
     </nav>
   
   <div>
@@ -438,27 +438,32 @@ Motor mixing varies from drone-to-drone or robot-to-robot depending on your cont
 
 <h1 id="references">References</h1>
 
-<h3 id="inspiration">Inspiration</h3>
-<p>V22 Osprey by Tom Stanton</p>
+<p><strong>Inspiration</strong><br />
+V22 Osprey by Tom Stanton</p>
 <ul>
   <li><a href="https://www.youtube.com/watch?v=55G-mwT9uCE">Part 1</a></li>
   <li><a href="https://www.youtube.com/watch?v=HitJ8r9HwBg&amp;t=792s">Part 2</a></li>
 </ul>
 
-<h3 id="flight-controller">Flight Controller</h3>
-<p><a href="https://www.youtube.com/watch?v=gPEeCjVrTBw&amp;t=190s">RC VTOL - V4 by Tom Stanton</a></p>
+<p><strong>Flight Controller</strong><br />
+<a href="https://www.youtube.com/watch?v=gPEeCjVrTBw&amp;t=190s">RC VTOL - V4 by Tom Stanton</a><br />
+<a href="https://www.youtube.com/watch?v=aco225x0s84">2. Control of Drone (Quadcopter) DC Motors Using Teensy/Arduino - Aleksandar Haber PhD</a><br />
+<a href="https://www.youtube.com/watch?v=CHSYgLfhwUo&amp;sttick=0">Embedded Programming for Quadcopters - Code and Supply</a></p>
 
-<h3 id="sources">Sources</h3>
+<p><strong>Drone Performance Optimization and Component Selection</strong>
+<a href="https://www.youtube.com/watch?v=HslATY70cig&amp;sttick=0">10 Ways to Make Your Drone Lighter - Improve Your Quadcopter’s Performance - Timmy RC</a>
+<a href="https://oscarliang.com/how-to-make-fpv-drone-lighter/">How to Reduce Weight of FPV drones – make them lighter and fly better - Oscar Liang</a>
+<a href="https://oscarliang.com/lipo-battery-guide/#5%E2%80%B3-Freestyle-and-Racing-Drones">Using LiPo Batteries for FPV Drones: Beginner’s Guide with Top Product Recommendations - Oscar Liang</a></p>
+<ul>
+  <li><a href="https://oscarliang.com/table-prop-motor-lipo-weight/">Lookup Table: Motor &amp; Prop Sizes, KV, Battery Cell Count, and Weight for FPV Drone Builds</a>
+<a href="https://oscarliang.com/motors/">How to Choose FPV Drone Motors – Considerations and Best Motor Recommendations - Oscar Liang</a></li>
+</ul>
+
+<p><strong>Sources</strong><br />
+[^1]: <a href="https://www.youtube.com/watch?v=QJjhMan6T_E">“How I Designed a 3D Printed Wing”</a>, Accessed March 6, 2025.</p>
 
 <!-- Hidden references trigger the footnote rendering -->
-<p><span id="hidden-references"> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> [^4] [^5] [^6]</span></p>
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p><a href="https://www.youtube.com/watch?v=QJjhMan6T_E">“How I Designed a 3D Printed Wing”</a>, Accessed March 6, 2025. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<p><span id="hidden-references"> [^1] [^4] [^5] [^6]</span></p>
 
     </article>
   </div>

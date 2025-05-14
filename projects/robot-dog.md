@@ -30,6 +30,12 @@ style="height:400px;display: block; margin: auto;"}
 
 This project was inspired by recent studies on control systems[^1] and previous research on Stewart platforms[^2].
 
+**Inspiration**  
+[Quadruped Robot Dog-MATLAB simulate Inverse kinematic Trot step](https://www.youtube.com/watch?v=KwLMVeGbPdg)  
+[I might be in over my head... - Adam Beedle](https://www.youtube.com/watch?v=RK-5vt_MVSE)  
+[I Made a Robot Dog - AstroSam](https://www.youtube.com/watch?v=XvKlplncafQ&sttick=0)  
+[]()  
+
 ### Sources
 
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  

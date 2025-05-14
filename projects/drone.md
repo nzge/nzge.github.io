@@ -288,15 +288,24 @@ OpenGL/WebGL
 
 # References
 
-### Inspiration
-V22 Osprey by Tom Stanton
+**Inspiration**  
+V22 Osprey by Tom Stanton  
 - [Part 1](https://www.youtube.com/watch?v=55G-mwT9uCE)
 - [Part 2](https://www.youtube.com/watch?v=HitJ8r9HwBg&t=792s)
 
-### Flight Controller
-[RC VTOL - V4 by Tom Stanton](https://www.youtube.com/watch?v=gPEeCjVrTBw&t=190s)
+**Flight Controller**  
+[RC VTOL - V4 by Tom Stanton](https://www.youtube.com/watch?v=gPEeCjVrTBw&t=190s)  
+[2. Control of Drone (Quadcopter) DC Motors Using Teensy/Arduino - Aleksandar Haber PhD](https://www.youtube.com/watch?v=aco225x0s84)  
+[Embedded Programming for Quadcopters - Code and Supply](https://www.youtube.com/watch?v=CHSYgLfhwUo&sttick=0)
 
-### Sources
+**Drone Performance Optimization and Component Selection**
+[10 Ways to Make Your Drone Lighter - Improve Your Quadcopter's Performance - Timmy RC](https://www.youtube.com/watch?v=HslATY70cig&sttick=0)
+[How to Reduce Weight of FPV drones – make them lighter and fly better - Oscar Liang](https://oscarliang.com/how-to-make-fpv-drone-lighter/)
+[Using LiPo Batteries for FPV Drones: Beginner’s Guide with Top Product Recommendations - Oscar Liang](https://oscarliang.com/lipo-battery-guide/#5%E2%80%B3-Freestyle-and-Racing-Drones)
+ - [Lookup Table: Motor & Prop Sizes, KV, Battery Cell Count, and Weight for FPV Drone Builds](https://oscarliang.com/table-prop-motor-lipo-weight/)
+[How to Choose FPV Drone Motors – Considerations and Best Motor Recommendations - Oscar Liang](https://oscarliang.com/motors/)
+
+**Sources**  
 [^1]: ["How I Designed a 3D Printed Wing"](https://www.youtube.com/watch?v=QJjhMan6T_E), Accessed March 6, 2025.  
 
 <!-- Hidden references trigger the footnote rendering -->

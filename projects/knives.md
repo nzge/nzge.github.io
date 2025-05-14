@@ -31,6 +31,10 @@ style="width:100%; height:auto; display:block; margin: auto;"}
 ![Alt text](/assets/media/knives_media/inspiration/rynix.jpg){: 
 style="height:500px; display: block; margin: auto;"}
 
+Design Aesthetics
+[Baionlenja Gehirn](https://kbdfans.com/products/gehirn-by-baionlenja?srsltid=AfmBOoqwEaJY15ElDDoWNONlaXpV3g9u3LLASASjPgnPliMkXvMdCzat)
+[Pistolo77](https://pistollo.com/en/)
+
 ### Build Log
 
 > 5-10-25: Initial design. Leaning into edgy aesthetics.
@@ -172,11 +176,14 @@ style="width:500px;display: block; margin: auto;"}
 [First Draft Entropic FLS Astral](https://www.reddit.com/r/balisong/comments/1k3zyrr/first_draft_entropic_fls_astral/)  
 [Lucha](https://kershaw.kaiusa.com/lucha.html)  
 [Titanium Balisong Butterfly Knife Box Cutter Razor Blade Utility Knife with Pocket Clip](https://www.arenaaccessories.com/Titanium-Balisong-Butterfly-Knife-Box-Cutter-Razor-Blade-Utility-Knife-with-Pocket-Clip_p_2666.html)
+[Arctic 2 - Jupiter GLIDR](https://glidr.co/collections/arctic/products/arctic-jupiter)
 [Small Balisong](https://www.reddit.com/r/knives/comments/13b4c7z/small_balisong/)  
 [Squid Industries Kraken v3 Specs](https://www.squidindustries.co/pages/kraken-v25-specs?srsltid=AfmBOooj2xkJbij5ryXiKqvy2bQpdQM5Wx2wg5p6lxU9zEU4UOKv4NWt)
 - Live  
 [It was a rep. Was](https://www.reddit.com/r/balisong/comments/1k2uafr/it_was_a_rep_was/)  
 [Decided to do an edit](https://www.reddit.com/r/balisong/comments/1k30x7s/decided_to_do_an_edit/)  
+[Sibat - Magnetic Titanium Balisong Knife | Daily Carry Co](https://dailycarryco.com/products/sibat-magnetic-titanium-balisong-knife)  
+[Benchmade 82 Laro Bali-Song](https://cutleryshoppe.com/benchmade-82-laro-bali-song-3-6-stonewash-finish-cpm-magnacut-blade-billet-6al-4v-titanium-handle/)  
 
 **Fixed Blade**  
 [Black and Gold](https://www.reddit.com/r/knifemaking/comments/1jbzbvl/black_and_gold/)  
