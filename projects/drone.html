@@ -120,12 +120,15 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#tilt-rotor-drone">Tilt-Rotor Drone</a><ul><li><a href="#concept">Concept</a></li><li><a href="#hardware">Hardware</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#design-considerations">Design Considerations</a></li><li><a href="#frame">Frame</a></li></ul></li><li><a href="#software">Software</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li></ul></li></ul></li></ul></li><li><a href="#include-arduinoh">include <Arduino.h></Arduino.h></a></li><li><a href="#endif">endif</a></li><li><a href="#include-mpu6050h">include “MPU6050.h”</a><ul><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#quadcopter-race-drone">Quadcopter Race Drone</a><ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components-1">Components</a></li><li><a href="#schematic-1">Schematic</a></li></ul></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#inspiration">Inspiration</a></li><li><a href="#flight-controller">Flight Controller</a></li><li><a href="#sources">Sources</a></li></ul></li></ul></li></ul>
+      <ul><li><a href="#tilt-rotor-drone">Tilt-Rotor Drone</a><ul><li><a href="#concept">Concept</a></li><li><a href="#hardware">Hardware</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#design-considerations">Design Considerations</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetic-components">Aesthetic Components</a></li></ul></li><li><a href="#software">Software</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#quadcopter-race-drone">Quadcopter Race Drone</a><ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components-1">Components</a></li><li><a href="#schematic-1">Schematic</a></li></ul></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#inspiration">Inspiration</a></li><li><a href="#flight-controller">Flight Controller</a></li><li><a href="#sources">Sources</a></li></ul></li></ul></li></ul>
     </nav>
   
   <div>
     <article class="markdown-body">
       <h1 id="tilt-rotor-drone">Tilt-Rotor Drone</h1>
+
+<p><img src="/assets/media/placeholder.jpg" alt="Alt text" style="width:100%;display: block; margin: auto;" /></p>
+
 <p>This was my attempt at creating a tilt-rotor drone inspired by Sova’s drone in Valorant.</p>
 
 <h2 id="concept">Concept</h2>
@@ -206,14 +209,16 @@
 
 <h3 id="design-considerations">Design Considerations</h3>
 
-<p>I performed rough calculations to source motors that could support the weight of the drone.
-<strong>Basic Motor Thrust Requirement Calculations</strong>
+<p>I performed rough calculations to source motors that could support the weight of the drone.</p>
+
+<p><strong>Basic Motor Thrust Requirement Calculations</strong>
 <a href="https://colab.research.google.com/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" /></a></p>
 
 <h3 id="frame">Frame</h3>
-<p><img src="/assets/media/drone_media/" alt="MPU6050" style="width:200px; height:200px;display: block; margin: auto;" />
-### Aesthetic Components
-Drone mask modeled in Blender</p>
+<p><img src="/assets/media/drone_media/" alt="MPU6050" style="width:200px; height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="aesthetic-components">Aesthetic Components</h3>
+<p>Drone mask modeled in Blender</p>
 
 <h2 id="software">Software</h2>
 
@@ -225,155 +230,155 @@ Drone mask modeled in Blender</p>
 <p><img src="/assets/media/drone_media/mpu6050.png" alt="MPU6050" style="width:200px; height:200px;display: block; margin: auto;" /></p>
 
 <h5 id="mpu6050-source-code">MPU6050 Source Code</h5>
-<p>MPU6050 Class structure
-```cpp
-#ifndef MPU6050_H
-#define MPU6050_H</p>
 
-<h1 id="include-arduinoh">include <Arduino.h></Arduino.h></h1>
-<p>#include <Wire.h>
-#include <tuple>
-#include "constants.h"</tuple></Wire.h></p>
+<p>MPU6050 Class structure</p>
 
-<p>class MPU6050{
-  public:
-    MPU6050();
-    void init();
-    void calibrate();
-    std::tuple&lt;float, float, float, float, float, float&gt; read();
-    std::tuple&lt;float, float, float&gt; acc_read();
-    std::tuple&lt;float, float, float&gt; gyro_read();
-  private:
-    float_t Ax, Ay, Az;
-    float_t Gx, Gy, Gz;
-    float_t Ax_cal, Ay_cal, Az_cal;
-    float_t Gx_cal, Gy_cal, Gz_cal;
-};</p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#ifndef MPU6050_H
+#define MPU6050_H
+</span>
+<span class="cp">#include &lt;Arduino.h&gt;
+#include &lt;Wire.h&gt;
+#include &lt;tuple&gt;
+#include "constants.h"
+</span>
+<span class="k">class</span> <span class="nc">MPU6050</span><span class="p">{</span>
+  <span class="nl">public:</span>
+    <span class="n">MPU6050</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="n">init</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="n">calibrate</span><span class="p">();</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="o">&gt;</span> <span class="n">read</span><span class="p">();</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_read</span><span class="p">();</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="o">&gt;</span> <span class="n">gyro_read</span><span class="p">();</span>
+  <span class="nl">private:</span>
+    <span class="n">float_t</span> <span class="n">Ax</span><span class="p">,</span> <span class="n">Ay</span><span class="p">,</span> <span class="n">Az</span><span class="p">;</span>
+    <span class="n">float_t</span> <span class="n">Gx</span><span class="p">,</span> <span class="n">Gy</span><span class="p">,</span> <span class="n">Gz</span><span class="p">;</span>
+    <span class="n">float_t</span> <span class="n">Ax_cal</span><span class="p">,</span> <span class="n">Ay_cal</span><span class="p">,</span> <span class="n">Az_cal</span><span class="p">;</span>
+    <span class="n">float_t</span> <span class="n">Gx_cal</span><span class="p">,</span> <span class="n">Gy_cal</span><span class="p">,</span> <span class="n">Gz_cal</span><span class="p">;</span>
+<span class="p">};</span>
 
-<h1 id="endif">endif</h1>
-<p>```</p>
+<span class="cp">#endif
+</span></code></pre></div></div>
 
 <p>MPU6050 instantiation and startup sequence.
-This involves manipulating config registers to set appropriate MPU6050 settings and calibrating the sensor.
-```cpp
-#include <Arduino.h>
-#include <Wire.h>
-#include <tuple></tuple></Wire.h></Arduino.h></p>
+This involves manipulating config registers to set appropriate MPU6050 settings and calibrating the sensor.</p>
 
-<h1 id="include-mpu6050h">include “MPU6050.h”</h1>
-<p>#include “constants.h”</p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;Arduino.h&gt;
+#include &lt;Wire.h&gt;
+#include &lt;tuple&gt;
+</span>
+<span class="cp">#include "MPU6050.h"
+#include "constants.h"
+</span>
+<span class="n">MPU6050</span><span class="o">::</span><span class="n">MPU6050</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Ax_cal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">Ay_cal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">Az_cal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">Gx_cal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">Gy_cal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">Gz_cal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>MPU6050::MPU6050() {
-  Ax_cal = 0;
-  Ay_cal = 0;
-  Az_cal = 0;
-  Gx_cal = 0;
-  Gy_cal = 0;
-  Gz_cal = 0;
-}</p>
+<span class="kt">void</span> <span class="n">MPU6050</span><span class="o">::</span><span class="n">init</span><span class="p">()</span> <span class="p">{</span> 
+  <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="mh">0x68</span><span class="p">);</span> <span class="c1">// MPU6050 I2C address</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x6B</span><span class="p">);</span>  <span class="c1">// Power management register</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x00</span><span class="p">);</span>  <span class="c1">// Wake up MPU6050</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>
 
-<p>void MPU6050::init() { 
-  Wire.beginTransmission(0x68); // MPU6050 I2C address
-  Wire.write(0x6B);  // Power management register
-  Wire.write(0x00);  // Wake up MPU6050
-  Wire.endTransmission();</p>
+  <span class="c1">// Set Digital Low Pass Filter (DLPF)</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="mh">0x68</span><span class="p">);</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x1A</span><span class="p">);</span> <span class="c1">// DLPF config register</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x05</span><span class="p">);</span> <span class="c1">// 10 Hz cutoff frequency</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>
 
-<p>// Set Digital Low Pass Filter (DLPF)
-  Wire.beginTransmission(0x68);
-  Wire.write(0x1A); // DLPF config register
-  Wire.write(0x05); // 10 Hz cutoff frequency
-  Wire.endTransmission();</p>
+  <span class="c1">// Configure Gyro (±500°/s range)</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="mh">0x68</span><span class="p">);</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x1B</span><span class="p">);</span> <span class="c1">// Gyro config register</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x08</span><span class="p">);</span> <span class="c1">// Set range (65.5 LSB/deg/s)</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>
 
-<p>// Configure Gyro (±500°/s range)
-  Wire.beginTransmission(0x68);
-  Wire.write(0x1B); // Gyro config register
-  Wire.write(0x08); // Set range (65.5 LSB/deg/s)
-  Wire.endTransmission();</p>
+  <span class="c1">// Configure Accelerometer (±2g range)</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="mh">0x68</span><span class="p">);</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x1C</span><span class="p">);</span> <span class="c1">// Accel config register</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x00</span><span class="p">);</span> <span class="c1">// Set range (16384 LSB/g)</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>
+  
+  <span class="n">calibrate</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p>// Configure Accelerometer (±2g range)
-  Wire.beginTransmission(0x68);
-  Wire.write(0x1C); // Accel config register
-  Wire.write(0x00); // Set range (16384 LSB/g)
-  Wire.endTransmission();</p>
+<p>This function is responsible for gathering gyrometer and accelerometer readings from the MPU6050.</p>
 
-<p>calibrate();
-}
-```</p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="o">&gt;</span>  <span class="n">MPU6050</span><span class="o">::</span><span class="n">read</span><span class="p">(){</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="mh">0x68</span><span class="p">);</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x3B</span><span class="p">);</span> <span class="c1">// Starting register for accelerometer data</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+  
+  <span class="n">Wire</span><span class="p">.</span><span class="n">requestFrom</span><span class="p">(</span><span class="mh">0x68</span><span class="p">,</span> <span class="mi">14</span><span class="p">);</span> <span class="c1">// Request 14 bytes</span>
+  <span class="kt">int16_t</span> <span class="n">rawAx</span><span class="o">=</span><span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+  <span class="kt">int16_t</span> <span class="n">rawAy</span><span class="o">=</span><span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+  <span class="kt">int16_t</span> <span class="n">rawAz</span><span class="o">=</span><span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+  <span class="kt">int16_t</span> <span class="n">temp</span><span class="o">=</span><span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+  <span class="kt">int16_t</span> <span class="n">rawGx</span><span class="o">=</span><span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+  <span class="kt">int16_t</span> <span class="n">rawGy</span><span class="o">=</span><span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+  <span class="kt">int16_t</span> <span class="n">rawGz</span><span class="o">=</span><span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="mi">8</span> <span class="o">|</span> <span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
 
-<p>This function is responsible for gathering gyrometer and accelerometer readings from the MPU6050.
-```cpp
-std::tuple&lt;float, float, float, float, float, float&gt;  MPU6050::read(){
-  Wire.beginTransmission(0x68);
-  Wire.write(0x3B); // Starting register for accelerometer data
-  Wire.endTransmission(false);</p>
+  <span class="n">float_t</span> <span class="n">Ax</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">rawAx</span><span class="p">)</span> <span class="o">/</span> <span class="n">LSB_acc</span> <span class="o">-</span> <span class="n">Ax_cal</span><span class="p">;</span> <span class="c1">// convert to G</span>
+  <span class="n">float_t</span> <span class="n">Ay</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">rawAy</span><span class="p">)</span> <span class="o">/</span> <span class="n">LSB_acc</span> <span class="o">-</span> <span class="n">Ay_cal</span><span class="p">;</span>
+  <span class="n">float_t</span> <span class="n">Az</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">rawAz</span><span class="p">)</span> <span class="o">/</span> <span class="n">LSB_acc</span> <span class="o">-</span> <span class="n">Az_cal</span><span class="p">;</span>
+  <span class="n">float_t</span> <span class="n">Gx</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">rawGx</span><span class="p">)</span> <span class="o">/</span> <span class="n">LSB_gyr</span> <span class="o">-</span> <span class="n">Gx_cal</span><span class="p">;</span>
+  <span class="n">float_t</span> <span class="n">Gy</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">rawGy</span><span class="p">)</span> <span class="o">/</span> <span class="n">LSB_gyr</span> <span class="o">-</span> <span class="n">Gy_cal</span><span class="p">;</span>
+  <span class="n">float_t</span> <span class="n">Gz</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">rawGz</span><span class="p">)</span> <span class="o">/</span> <span class="n">LSB_gyr</span> <span class="o">-</span> <span class="n">Gz_cal</span><span class="p">;</span>
 
-<p>Wire.requestFrom(0x68, 14); // Request 14 bytes
-  int16_t rawAx=Wire.read()«8 | Wire.read();
-  int16_t rawAy=Wire.read()«8 | Wire.read();
-  int16_t rawAz=Wire.read()«8 | Wire.read();
-  int16_t temp=Wire.read()«8 | Wire.read();
-  int16_t rawGx=Wire.read()«8 | Wire.read();
-  int16_t rawGy=Wire.read()«8 | Wire.read();
-  int16_t rawGz=Wire.read()«8 | Wire.read();</p>
-
-<p>float_t Ax = (float)(rawAx) / LSB_acc - Ax_cal; // convert to G
-  float_t Ay = (float)(rawAy) / LSB_acc - Ay_cal;
-  float_t Az = (float)(rawAz) / LSB_acc - Az_cal;
-  float_t Gx = (float)(rawGx) / LSB_gyr - Gx_cal;
-  float_t Gy = (float)(rawGy) / LSB_gyr - Gy_cal;
-  float_t Gz = (float)(rawGz) / LSB_gyr - Gz_cal;</p>
-
-<p>return std::make_tuple(Ax, Ay, Az, Gx, Gy, Gz);
-}
-```</p>
+  <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="n">Ax</span><span class="p">,</span> <span class="n">Ay</span><span class="p">,</span> <span class="n">Az</span><span class="p">,</span> <span class="n">Gx</span><span class="p">,</span> <span class="n">Gy</span><span class="p">,</span> <span class="n">Gz</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h4 id="calibration">Calibration</h4>
 <p>The MPU6050 is calibrated by sampling 1000 gyroscope and accelerometer readings at a stationary position. One thing to note is that the accelerometer in the z-axis is calibrated to -1g to account for the constant pull of gravity, while all other values are calibrated to 0.</p>
 
-<p>```cpp
-//calibration sequence<br />
-void MPU6050::calibrate() {
-  float_t sumAx = 0, sumAy = 0, sumAz = 0;
-  float_t sumGx = 0, sumGy = 0, sumGz = 0;
-  // Collect accelerometer and gyro data to compute offsets
-  for (int i = 0; i &lt; calibrationSamples; i++) {
-    auto [ax, ay, az, gx, gy, gz] = read(); 
-    // Sum the errors for each axis
-    sumAx += ax;
-    sumAy += ay;
-    sumAz += az;
-    sumGx += gx;
-    sumGy += gy;
-    sumGz += gz;</p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//calibration sequence  </span>
+<span class="kt">void</span> <span class="n">MPU6050</span><span class="o">::</span><span class="n">calibrate</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">float_t</span> <span class="n">sumAx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sumAy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sumAz</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">float_t</span> <span class="n">sumGx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sumGy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sumGz</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="c1">// Collect accelerometer and gyro data to compute offsets</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">calibrationSamples</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">auto</span> <span class="p">[</span><span class="n">ax</span><span class="p">,</span> <span class="n">ay</span><span class="p">,</span> <span class="n">az</span><span class="p">,</span> <span class="n">gx</span><span class="p">,</span> <span class="n">gy</span><span class="p">,</span> <span class="n">gz</span><span class="p">]</span> <span class="o">=</span> <span class="n">read</span><span class="p">();</span> 
+    <span class="c1">// Sum the errors for each axis</span>
+    <span class="n">sumAx</span> <span class="o">+=</span> <span class="n">ax</span><span class="p">;</span>
+    <span class="n">sumAy</span> <span class="o">+=</span> <span class="n">ay</span><span class="p">;</span>
+    <span class="n">sumAz</span> <span class="o">+=</span> <span class="n">az</span><span class="p">;</span>
+    <span class="n">sumGx</span> <span class="o">+=</span> <span class="n">gx</span><span class="p">;</span>
+    <span class="n">sumGy</span> <span class="o">+=</span> <span class="n">gy</span><span class="p">;</span>
+    <span class="n">sumGz</span> <span class="o">+=</span> <span class="n">gz</span><span class="p">;</span>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>delay(10); // Small delay between readings   }
+    <span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// Small delay between readings</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Calculate average errors</span>
+  <span class="n">Ax_cal</span> <span class="o">=</span> <span class="n">sumAx</span> <span class="o">/</span> <span class="n">calibrationSamples</span><span class="p">;</span>
+  <span class="n">Ay_cal</span> <span class="o">=</span> <span class="n">sumAy</span> <span class="o">/</span> <span class="n">calibrationSamples</span><span class="p">;</span>
+  <span class="n">Az_cal</span> <span class="o">=</span> <span class="p">(</span><span class="n">sumAz</span> <span class="o">/</span> <span class="n">calibrationSamples</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Subtract 1g from Z axis</span>
+  <span class="n">Gx_cal</span> <span class="o">=</span> <span class="n">sumGx</span> <span class="o">/</span> <span class="n">calibrationSamples</span><span class="p">;</span>
+  <span class="n">Gy_cal</span> <span class="o">=</span> <span class="n">sumGy</span> <span class="o">/</span> <span class="n">calibrationSamples</span><span class="p">;</span>
+  <span class="n">Gz_cal</span> <span class="o">=</span> <span class="n">sumGz</span> <span class="o">/</span> <span class="n">calibrationSamples</span><span class="p">;</span>
+
+  <span class="c1">// Print calibration results</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Calibration done"</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Acc Errors: "</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">Ax_cal</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">Ay_cal</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">Az_cal</span><span class="p">);</span>
+
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Gyro Errors: "</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">Gx_cal</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">Gy_cal</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">Gz_cal</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></div>
-
-<p>// Calculate average errors
-  Ax_cal = sumAx / calibrationSamples;
-  Ay_cal = sumAy / calibrationSamples;
-  Az_cal = (sumAz / calibrationSamples) - 1; // Subtract 1g from Z axis
-  Gx_cal = sumGx / calibrationSamples;
-  Gy_cal = sumGy / calibrationSamples;
-  Gz_cal = sumGz / calibrationSamples;</p>
-
-<p>// Print calibration results
-  Serial.println(“Calibration done”);
-  Serial.print(“Acc Errors: “);
-  Serial.print(Ax_cal);
-  Serial.print(“ “);
-  Serial.print(Ay_cal);
-  Serial.print(“ “);
-  Serial.println(Az_cal);</p>
-
-<p>Serial.print(“Gyro Errors: “);
-  Serial.print(Gx_cal);
-  Serial.print(“ “);
-  Serial.print(Gy_cal);
-  Serial.print(“ “);
-  Serial.println(Gz_cal);
-}
-```</p>
 
 <h4 id="sensor-fusion">Sensor Fusion</h4>
 <p>Sensor fusion is used to convert 6-axis MPU readings (yaw rate, pitch rate, roll rate from gyrometer and $\dot{x},\dot{y},\dot{z}$ from accelerometer) to obtain precise global yaw, pitch, and roll angle estimations. These angle values are important to stabilize and move the drone in desired ways through subsequent algorithmic steps.
@@ -434,9 +439,11 @@ Motor mixing varies from drone-to-drone or robot-to-robot depending on your cont
 <h1 id="references">References</h1>
 
 <h3 id="inspiration">Inspiration</h3>
-<p>V22 Osprey by Tom Stanton
-- <a href="https://www.youtube.com/watch?v=55G-mwT9uCE">Part 1</a>
-- <a href="https://www.youtube.com/watch?v=HitJ8r9HwBg&amp;t=792s">Part 2</a></p>
+<p>V22 Osprey by Tom Stanton</p>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=55G-mwT9uCE">Part 1</a></li>
+  <li><a href="https://www.youtube.com/watch?v=HitJ8r9HwBg&amp;t=792s">Part 2</a></li>
+</ul>
 
 <h3 id="flight-controller">Flight Controller</h3>
 <p><a href="https://www.youtube.com/watch?v=gPEeCjVrTBw&amp;t=190s">RC VTOL - V4 by Tom Stanton</a></p>
