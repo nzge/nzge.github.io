@@ -10,6 +10,10 @@ toc: true
 ---
 
 # Tilt-Rotor Drone
+
+![Alt text](/assets/media/placeholder.jpg){: 
+style="width:100%;display: block; margin: auto;"}
+
 This was my attempt at creating a tilt-rotor drone inspired by Sova's drone in Valorant.
 
 ## Concept
@@ -55,6 +59,7 @@ Concept Drawings
 ### Design Considerations
 
 I performed rough calculations to source motors that could support the weight of the drone.
+
 **Basic Motor Thrust Requirement Calculations**
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb){:target="_blank"}
 
@@ -62,6 +67,7 @@ I performed rough calculations to source motors that could support the weight of
 
 ### Frame
 ![MPU6050](/assets/media/drone_media/){: style="width:200px; height:200px;display: block; margin: auto;"}
+
 ### Aesthetic Components
 Drone mask modeled in Blender
 
@@ -77,7 +83,9 @@ The MPU6050 is a 6-axis (3-axis Gyroscope, 3-axis Accelerometer) motion tracking
 
 
 ##### MPU6050 Source Code
+
 MPU6050 Class structure
+
 ```cpp
 #ifndef MPU6050_H
 #define MPU6050_H
@@ -107,6 +115,7 @@ class MPU6050{
 
 MPU6050 instantiation and startup sequence.
 This involves manipulating config registers to set appropriate MPU6050 settings and calibrating the sensor.
+
 ```cpp
 #include <Arduino.h>
 #include <Wire.h>
@@ -153,6 +162,7 @@ void MPU6050::init() {
 ```
 
 This function is responsible for gathering gyrometer and accelerometer readings from the MPU6050.
+
 ```cpp
 std::tuple<float, float, float, float, float, float>  MPU6050::read(){
   Wire.beginTransmission(0x68);

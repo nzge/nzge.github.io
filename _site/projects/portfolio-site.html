@@ -120,7 +120,7 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#code">Code</a><ul><li><a href="#sass">sass</a></li><li><a href="#assets">assets</a><ul><li><a href="#css">CSS</a></li><li><a href="#media-storage">Media storage</a></li></ul></li><li><a href="#includes">includes</a></li><li> Settings </li></ul></li></ul>
+      <ul><li><a href="#code">Code</a><ul><li><a href="#sass">sass</a></li><li><a href="#assets">assets</a><ul><li><a href="#js">jS</a></li><li><a href="#css">CSS</a></li><li><a href="#media-storage">Media storage</a></li></ul></li><li><a href="#includes">includes</a></li><li><a href="#layouts">layouts</a></li><li><a href="#configyml">config.yml</a></li><li><a href="#gemfile">gemfile</a></li><li><a href="#deployment">deployment</a></li></ul></li><li><a href="#build-log">Build Log</a></li><li><a href="#references">References</a></li></ul>
     </nav>
   
   <div>
@@ -172,8 +172,8 @@
 </table>
 
 <h3 id="assets">assets</h3>
-<p>#### jS
-<strong>wow.js</strong><br />
+<h4 id="js">jS</h4>
+<p><strong>wow.js</strong><br />
 https://wowjs.uk<br />
 Scrolling animations</p>
 
@@ -212,7 +212,7 @@ A collection of javascript functions that are paired with physical buttons style
 </table>
 
 <h4 id="css">CSS</h4>
-<p><strong>animate.css</strong>\
+<p><strong>animate.css</strong><br />
 https://animate.style/
 CSS library for element animations</p>
 
@@ -226,383 +226,381 @@ Also includes storage of miscellaneous media (gifs, background images, icons/fav
 <h3 id="includes">includes</h3>
 <p>Modularized HTML code sections to be added to pages using liquid templating language</p>
 
-<p>For example:
-```liquid</p>
+<p>For example:</p>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>test.html<span class="w"> </span><span class="p">%}</span>
 
-<p>{% include test.html %}</p>
+</code></pre></div></div>
 
-<p>```</p>
+<p><strong>Header</strong></p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s">"en"</span><span class="o">&gt;</span>
 
-<p><strong>Header</strong>
-```cpp
-&lt;!DOCTYPE html&gt;</p>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nathan Ge - Portfolio Site</title>
-  <meta name="description" content="Static website powered by Jekyll" />
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="n">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Nathan</span> <span class="n">Ge</span> <span class="o">-</span> <span class="n">Portfolio</span> <span class="n">Site</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s">"description"</span> <span class="n">content</span><span class="o">=</span><span class="s">"Static website powered by Jekyll"</span><span class="o">&gt;</span>
   
-  <!-- favicon -->
-  <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/assets/media/nathan/favicon/favicon.svg" />
-  <link rel="shortcut icon" href="/assets/media/nathan/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/nathan/favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="/assets/media/nathan/favicon/site.webmanifest" />
+  <span class="o">&lt;!--</span> <span class="n">favicon</span> <span class="o">--&gt;</span>
+  <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"icon"</span> <span class="n">type</span><span class="o">=</span><span class="s">"image/png"</span> <span class="n">href</span><span class="o">=</span><span class="s">"/assets/media/nathan/favicon/favicon-96x96.png"</span> <span class="n">sizes</span><span class="o">=</span><span class="s">"96x96"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"icon"</span> <span class="n">type</span><span class="o">=</span><span class="s">"image/svg+xml"</span> <span class="n">href</span><span class="o">=</span><span class="s">"/assets/media/nathan/favicon/favicon.svg"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"shortcut icon"</span> <span class="n">href</span><span class="o">=</span><span class="s">"/assets/media/nathan/favicon/favicon.ico"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"apple-touch-icon"</span> <span class="n">sizes</span><span class="o">=</span><span class="s">"180x180"</span> <span class="n">href</span><span class="o">=</span><span class="s">"/assets/media/nathan/favicon/apple-touch-icon.png"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"manifest"</span> <span class="n">href</span><span class="o">=</span><span class="s">"/assets/media/nathan/favicon/site.webmanifest"</span> <span class="o">/&gt;</span>
   
-  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="My Website" />
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Portfolio Site | My Website</title>
-<meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="Portfolio Site" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Static website powered by Jekyll" />
-<meta property="og:description" content="Static website powered by Jekyll" />
-<link rel="canonical" href="http://localhost:4000/projects/portfolio-site.html" />
-<meta property="og:url" content="http://localhost:4000/projects/portfolio-site.html" />
-<meta property="og:site_name" content="My Website" />
-<meta property="og:image" content="http://localhost:4000/portfolio.PNG" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-02-05T00:00:00-08:00" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4000/portfolio.PNG" />
-<meta property="twitter:title" content="Portfolio Site" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-05T00:00:00-08:00","datePublished":"2025-02-05T00:00:00-08:00","description":"Static website powered by Jekyll","headline":"Portfolio Site","image":"http://localhost:4000/portfolio.PNG","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/portfolio-site.html"},"url":"http://localhost:4000/projects/portfolio-site.html"}</script>
-<!-- End Jekyll SEO tag -->
+  <span class="o">&lt;</span><span class="n">link</span> <span class="n">type</span><span class="o">=</span><span class="s">"application/atom+xml"</span> <span class="n">rel</span><span class="o">=</span><span class="s">"alternate"</span> <span class="n">href</span><span class="o">=</span><span class="s">"http://localhost:4000/feed.xml"</span> <span class="n">title</span><span class="o">=</span><span class="s">"My Website"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;!--</span> <span class="n">Begin</span> <span class="n">Jekyll</span> <span class="n">SEO</span> <span class="n">tag</span> <span class="n">v2</span><span class="mf">.8.0</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Portfolio</span> <span class="n">Site</span> <span class="o">|</span> <span class="n">My</span> <span class="n">Website</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s">"generator"</span> <span class="n">content</span><span class="o">=</span><span class="s">"Jekyll v3.9.3"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">property</span><span class="o">=</span><span class="s">"og:title"</span> <span class="n">content</span><span class="o">=</span><span class="s">"Portfolio Site"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">property</span><span class="o">=</span><span class="s">"og:locale"</span> <span class="n">content</span><span class="o">=</span><span class="s">"en_US"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s">"description"</span> <span class="n">content</span><span class="o">=</span><span class="s">"Static website powered by Jekyll"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">property</span><span class="o">=</span><span class="s">"og:description"</span> <span class="n">content</span><span class="o">=</span><span class="s">"Static website powered by Jekyll"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"canonical"</span> <span class="n">href</span><span class="o">=</span><span class="s">"http://localhost:4000/projects/portfolio-site.html"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">property</span><span class="o">=</span><span class="s">"og:url"</span> <span class="n">content</span><span class="o">=</span><span class="s">"http://localhost:4000/projects/portfolio-site.html"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">property</span><span class="o">=</span><span class="s">"og:site_name"</span> <span class="n">content</span><span class="o">=</span><span class="s">"My Website"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">property</span><span class="o">=</span><span class="s">"og:image"</span> <span class="n">content</span><span class="o">=</span><span class="s">"http://localhost:4000/portfolio.PNG"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">property</span><span class="o">=</span><span class="s">"og:type"</span> <span class="n">content</span><span class="o">=</span><span class="s">"article"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">property</span><span class="o">=</span><span class="s">"article:published_time"</span> <span class="n">content</span><span class="o">=</span><span class="s">"2025-02-05T00:00:00-08:00"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s">"twitter:card"</span> <span class="n">content</span><span class="o">=</span><span class="s">"summary_large_image"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">property</span><span class="o">=</span><span class="s">"twitter:image"</span> <span class="n">content</span><span class="o">=</span><span class="s">"http://localhost:4000/portfolio.PNG"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">property</span><span class="o">=</span><span class="s">"twitter:title"</span> <span class="n">content</span><span class="o">=</span><span class="s">"Portfolio Site"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">script</span> <span class="n">type</span><span class="o">=</span><span class="s">"application/ld+json"</span><span class="o">&gt;</span>
+<span class="p">{</span><span class="s">"@context"</span><span class="o">:</span><span class="s">"https://schema.org"</span><span class="p">,</span><span class="s">"@type"</span><span class="o">:</span><span class="s">"BlogPosting"</span><span class="p">,</span><span class="s">"dateModified"</span><span class="o">:</span><span class="s">"2025-02-05T00:00:00-08:00"</span><span class="p">,</span><span class="s">"datePublished"</span><span class="o">:</span><span class="s">"2025-02-05T00:00:00-08:00"</span><span class="p">,</span><span class="s">"description"</span><span class="o">:</span><span class="s">"Static website powered by Jekyll"</span><span class="p">,</span><span class="s">"headline"</span><span class="o">:</span><span class="s">"Portfolio Site"</span><span class="p">,</span><span class="s">"image"</span><span class="o">:</span><span class="s">"http://localhost:4000/portfolio.PNG"</span><span class="p">,</span><span class="s">"mainEntityOfPage"</span><span class="o">:</span><span class="p">{</span><span class="s">"@type"</span><span class="o">:</span><span class="s">"WebPage"</span><span class="p">,</span><span class="s">"@id"</span><span class="o">:</span><span class="s">"http://localhost:4000/projects/portfolio-site.html"</span><span class="p">},</span><span class="s">"url"</span><span class="o">:</span><span class="s">"http://localhost:4000/projects/portfolio-site.html"</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;!--</span> <span class="n">End</span> <span class="n">Jekyll</span> <span class="n">SEO</span> <span class="n">tag</span> <span class="o">--&gt;</span>
 
 
-  <!-- google fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet" /> 
+  <span class="o">&lt;!--</span> <span class="n">google</span> <span class="n">fonts</span> <span class="o">--&gt;</span>
+  <span class="o">&lt;</span><span class="n">link</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i"</span> <span class="n">rel</span><span class="o">=</span><span class="s">"stylesheet"</span><span class="o">&gt;</span> 
 
-  <!-- Google tag (gtag.js) -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5YSKESBHT6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <span class="o">&lt;!--</span> <span class="n">Google</span> <span class="n">tag</span> <span class="p">(</span><span class="n">gtag</span><span class="p">.</span><span class="n">js</span><span class="p">)</span> <span class="o">--&gt;</span>
+  <span class="o">&lt;</span><span class="n">script</span> <span class="n">async</span> <span class="n">src</span><span class="o">=</span><span class="s">"https://www.googletagmanager.com/gtag/js?id=G-5YSKESBHT6"</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">window</span><span class="p">.</span><span class="n">dataLayer</span> <span class="o">=</span> <span class="n">window</span><span class="p">.</span><span class="n">dataLayer</span> <span class="o">||</span> <span class="p">[];</span>
+    <span class="n">function</span> <span class="nf">gtag</span><span class="p">(){</span><span class="n">dataLayer</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">arguments</span><span class="p">);}</span>
+    <span class="n">gtag</span><span class="p">(</span><span class="err">'</span><span class="n">js</span><span class="err">'</span><span class="p">,</span> <span class="k">new</span> <span class="nf">Date</span><span class="p">());</span>
 
-    gtag('config', 'G-5YSKESBHT6');
-  </script>
+    <span class="n">gtag</span><span class="p">(</span><span class="err">'</span><span class="n">config</span><span class="err">'</span><span class="p">,</span> <span class="err">'</span><span class="n">G</span><span class="o">-</span><span class="mi">5</span><span class="n">YSKESBHT6</span><span class="err">'</span><span class="p">);</span>
+  <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
 
-  <!-- stylesheet -->
-  <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css" />
-  <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-</head>
-```
+  <span class="o">&lt;!--</span> <span class="n">stylesheet</span> <span class="o">--&gt;</span>
+  <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="n">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="n">href</span><span class="o">=</span><span class="s">"/assets/css/animate.min.css"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="n">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="n">href</span><span class="o">=</span><span class="s">"/assets/css/main.css"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
-**Navbar**
-```cpp
- <!--------------- navbar starts here --------------->
-<nav class="navbar"> 
-  <div class="name animate__animated animate__fadeInUp" style="display: flex; align-items: center; gap: 10px;">
-    <a href="/index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-      <span>nathan</span> 
-      <img src="/assets/media/nathan/Nathan-red_block.svg" alt=" " style="width: 35px; height: auto; margin-left: 2px;" />
-    </a>
-  </div>
+<p><strong>Navbar</strong></p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">&lt;!---------------</span> <span class="n">navbar</span> <span class="n">starts</span> <span class="n">here</span> <span class="o">---------------&gt;</span>
+<span class="o">&lt;</span><span class="n">nav</span> <span class="k">class</span><span class="o">=</span><span class="s">"navbar"</span><span class="o">&gt;</span> 
+  <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s">"name animate__animated animate__fadeInUp"</span> <span class="n">style</span><span class="o">=</span><span class="s">"display: flex; align-items: center; gap: 10px;"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"/index.html"</span> <span class="n">style</span><span class="o">=</span><span class="s">"display: flex; align-items: center; text-decoration: none; color: inherit;"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">span</span><span class="o">&gt;</span><span class="n">nathan</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span> 
+      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s">"/assets/media/nathan/Nathan-red_block.svg"</span> <span class="n">alt</span><span class="o">=</span><span class="s">" "</span> <span class="n">style</span><span class="o">=</span><span class="s">"width: 35px; height: auto; margin-left: 2px;"</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 
-  <ul class="nav-select">
-    <li class="nav-item"><a href="/index.html">home.</a></li>
-    <li class="nav-item"><a href="/pages/about.html">about me.</a></li>
-    <li class="nav-item"><a href="/pages/work.html">work.</a></li>
-    <li class="nav-item"><a href="/pages/blog.html">blog.</a></li>
-    <li class="nav-item"><a href="/pages/contact.html">contact.</a></li>
-  </ul>
-</nav>
+  <span class="o">&lt;</span><span class="n">ul</span> <span class="k">class</span><span class="o">=</span><span class="s">"nav-select"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">li</span> <span class="k">class</span><span class="o">=</span><span class="s">"nav-item"</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"/index.html"</span><span class="o">&gt;</span><span class="n">home</span><span class="p">.</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">li</span> <span class="k">class</span><span class="o">=</span><span class="s">"nav-item"</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"/pages/about.html"</span><span class="o">&gt;</span><span class="n">about</span> <span class="n">me</span><span class="p">.</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">li</span> <span class="k">class</span><span class="o">=</span><span class="s">"nav-item"</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"/pages/work.html"</span><span class="o">&gt;</span><span class="n">work</span><span class="p">.</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">li</span> <span class="k">class</span><span class="o">=</span><span class="s">"nav-item"</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"/pages/blog.html"</span><span class="o">&gt;</span><span class="n">blog</span><span class="p">.</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">li</span> <span class="k">class</span><span class="o">=</span><span class="s">"nav-item"</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"/pages/contact.html"</span><span class="o">&gt;</span><span class="n">contact</span><span class="p">.</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">nav</span><span class="o">&gt;</span>
 
-```
+</code></pre></div></div>
 
-**Table of Contents**  
-Taken from https://github.com/allejo/jekyll-toc
+<p><strong>Table of Contents</strong><br />
+Taken from https://github.com/allejo/jekyll-toc</p>
 
-**Side Menu**
-```cpp
-<!-- Side Menu -->
-<div class="side-menu">
-    <h3 style="text-align: center;"> Settings </h3>
-    <div class="menu-icons">
-      <label class="switch" alt="Light mode" id="toggleTheme">
-        <input type="checkbox" />
-        <span class="slider round"></span>
-      </label>
-      <img src="/assets/media/!misc/icons/other-icon.svg" alt="Another action" />
-      <!-- Add more icons/buttons as needed -->
-    </div>
-</div>
+<p><strong>Side Menu</strong></p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!--</span> <span class="n">Side</span> <span class="n">Menu</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s">"side-menu"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h3</span> <span class="n">style</span><span class="o">=</span><span class="s">"text-align: center;"</span><span class="o">&gt;</span> <span class="n">Settings</span> <span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s">"menu-icons"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">label</span> <span class="k">class</span><span class="o">=</span><span class="s">"switch"</span> <span class="n">alt</span><span class="o">=</span><span class="s">"Light mode"</span> <span class="n">id</span><span class="o">=</span><span class="s">"toggleTheme"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s">"checkbox"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">span</span> <span class="k">class</span><span class="o">=</span><span class="s">"slider round"</span><span class="o">&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s">"/assets/media/!misc/icons/other-icon.svg"</span> <span class="n">alt</span><span class="o">=</span><span class="s">"Another action"</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;!--</span> <span class="n">Add</span> <span class="n">more</span> <span class="n">icons</span><span class="o">/</span><span class="n">buttons</span> <span class="n">as</span> <span class="n">needed</span> <span class="o">--&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 
 
-```
+</code></pre></div></div>
 
-**Footer**
-```cpp
-&lt;footer class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s""&gt;
-  <div class="footer-line"></div>
-  <div class="footer-content">
-    <img src="/assets/media/!misc/random/wwwbutton.gif" alt="www" />
-    <p>&copy; 2025 Nathan Ge 葛中骐</p>
-    <div class="social-icons">
-      <a href="https://github.com/nzge" target="_blank" data-no-icon=""><i class="fab fa-github"></i></a>
-      <a href="https://x.com/ge_nathan73556" target="_blank" data-no-icon=""><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com/in/nzge" target="_blank" data-no-icon=""><i class="fab fa-linkedin"></i></a>
-      <a href="https://instagram.com/naysun_g" target="_blank" data-no-icon=""><i class="fab fa-instagram"></i></a>
-    </div>
+<p><strong>Footer</strong></p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">footer</span> <span class="k">class</span><span class="o">=</span><span class="s">"container wow animate__animated animate__fadeInUp"</span> <span class="n">data</span><span class="o">-</span><span class="n">wow</span><span class="o">-</span><span class="n">duration</span><span class="o">=</span><span class="s">"2s"</span> <span class="n">data</span><span class="o">-</span><span class="n">wow</span><span class="o">-</span><span class="n">delay</span><span class="o">=</span><span class="s">"0.5s""&gt;</span><span class="err">
+</span><span class="s">  &lt;div class="</span><span class="n">footer</span><span class="o">-</span><span class="n">line</span><span class="s">"&gt;&lt;/div&gt;</span><span class="err">
+</span><span class="s">  &lt;div class="</span><span class="n">footer</span><span class="o">-</span><span class="n">content</span><span class="s">"&gt;</span><span class="err">
+</span><span class="s">    &lt;img src="</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">media</span><span class="o">/!</span><span class="n">misc</span><span class="o">/</span><span class="n">random</span><span class="o">/</span><span class="n">wwwbutton</span><span class="p">.</span><span class="n">gif</span><span class="s">" alt="</span><span class="n">www</span><span class="s">"&gt;</span><span class="err">
+</span><span class="s">    &lt;p&gt;&amp;copy; 2025 Nathan Ge 葛中骐&lt;/p&gt;</span><span class="err">
+</span><span class="s">    &lt;div class="</span><span class="n">social</span><span class="o">-</span><span class="n">icons</span><span class="s">"&gt;</span><span class="err">
+</span><span class="s">      &lt;a href="</span><span class="n">https</span><span class="o">:</span><span class="c1">//github.com/nzge" target="_blank" data-no-icon&gt;&lt;i class="fab fa-github"&gt;&lt;/i&gt;&lt;/a&gt;</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://x.com/ge_nathan73556"</span> <span class="n">target</span><span class="o">=</span><span class="s">"_blank"</span> <span class="n">data</span><span class="o">-</span><span class="n">no</span><span class="o">-</span><span class="n">icon</span><span class="o">&gt;&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s">"fab fa-twitter"</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://linkedin.com/in/nzge"</span> <span class="n">target</span><span class="o">=</span><span class="s">"_blank"</span> <span class="n">data</span><span class="o">-</span><span class="n">no</span><span class="o">-</span><span class="n">icon</span><span class="o">&gt;&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s">"fab fa-linkedin"</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://instagram.com/naysun_g"</span> <span class="n">target</span><span class="o">=</span><span class="s">"_blank"</span> <span class="n">data</span><span class="o">-</span><span class="n">no</span><span class="o">-</span><span class="n">icon</span><span class="o">&gt;&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s">"fab fa-instagram"</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 
-  </div>
+  <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 
-  <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
-  <script>
-    kofiWidgetOverlay.draw('nathange', {
-      type: 'floating-chat',
-      'floating-chat.donateButton.text': 'Support me',
-      'floating-chat.donateButton.background-color': 'rgba(24, 22, 22, 0.3)', // opacity controlled here
-      'floating-chat.donateButton.text-color': '#fff'
-    });
-  </script>
+  <span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="err">'</span><span class="n">https</span><span class="o">:</span><span class="c1">//storage.ko-fi.com/cdn/scripts/overlay-widget.js'&gt;&lt;/script&gt;</span>
+  <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">kofiWidgetOverlay</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="err">'</span><span class="n">nathange</span><span class="err">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nl">type:</span> <span class="err">'</span><span class="n">floating</span><span class="o">-</span><span class="n">chat</span><span class="err">'</span><span class="p">,</span>
+      <span class="err">'</span><span class="n">floating</span><span class="o">-</span><span class="n">chat</span><span class="p">.</span><span class="n">donateButton</span><span class="p">.</span><span class="n">text</span><span class="err">'</span><span class="o">:</span> <span class="err">'</span><span class="n">Support</span> <span class="n">me</span><span class="err">'</span><span class="p">,</span>
+      <span class="err">'</span><span class="n">floating</span><span class="o">-</span><span class="n">chat</span><span class="p">.</span><span class="n">donateButton</span><span class="p">.</span><span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="err">'</span><span class="o">:</span> <span class="err">'</span><span class="n">rgba</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span><span class="err">'</span><span class="p">,</span> <span class="c1">// opacity controlled here</span>
+      <span class="err">'</span><span class="n">floating</span><span class="o">-</span><span class="n">chat</span><span class="p">.</span><span class="n">donateButton</span><span class="p">.</span><span class="n">text</span><span class="o">-</span><span class="n">color</span><span class="err">'</span><span class="o">:</span> <span class="err">'#</span><span class="n">fff</span><span class="err">'</span>
+    <span class="p">});</span>
+  <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
 
-&lt;/footer&gt;
-```
+<span class="o">&lt;/</span><span class="n">footer</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
-### layouts
-Broader scope page templates for markdown pages (about page, contact page, project pages, etc.)
+<h3 id="layouts">layouts</h3>
+<p>Broader scope page templates for markdown pages (about page, contact page, project pages, etc.)</p>
 
-**Default**  
-Includes header, footer, navbar, and side menu.
+<p><strong>Default</strong><br />
+Includes header, footer, navbar, and side menu.</p>
 
-**Project Category Page**  
-Implements subcategory and project listing. Sorts the projects by date or name. Coded with Liquid templating
+<p><strong>Project Category Page</strong><br />
+Implements subcategory and project listing. Sorts the projects by date or name. Coded with Liquid templating</p>
 
-**Project Subcategory Page**  
-Sorts the projects within a certain subcategory by date or name.
+<p><strong>Project Subcategory Page</strong><br />
+Sorts the projects within a certain subcategory by date or name.</p>
 
-**Project**  
-Template for project documentation.
+<p><strong>Project</strong><br />
+Template for project documentation.</p>
 
-**Post**  
-Template for blog posts.
+<p><strong>Post</strong><br />
+Template for blog posts.</p>
 
-### config.yml
-This config file is meant for settings that affect your whole blog, values which you are expected to set up once and rarely edit after that. For frequent value updates, use Jekyll's data files feature. For technical reasons, this file is *NOT* reloaded automatically when you use 'bundle exec jekyll serve'. A restart of the server process is required to observe changes.
+<h3 id="configyml">config.yml</h3>
+<p>This config file is meant for settings that affect your whole blog, values which you are expected to set up once and rarely edit after that. For frequent value updates, use Jekyll’s data files feature. For technical reasons, this file is <em>NOT</em> reloaded automatically when you use ‘bundle exec jekyll serve’. A restart of the server process is required to observe changes.</p>
 
-https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-https://learnxinyminutes.com/docs/yaml/
+<p>https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+https://learnxinyminutes.com/docs/yaml/</p>
 
-Site settings used to personalize your new site. If you look in the HTML files, accessed via { { site.title } }, { { site.email } }, etc. Custom variables are allowed, accessible in the templates via { { site.myvariable } }.
+<p>Site settings used to personalize your new site. If you look in the HTML files, accessed via { { site.title } }, { { site.email } }, etc. Custom variables are allowed, accessible in the templates via { { site.myvariable } }.</p>
 
-```yaml
-title: My Website
-email: nathange784@gmail.com
-description: &gt;- # this means to ignore newlines until "baseurl:"
-  my personal website
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://nzge.github.io"
-twitter_username: nzge
-github_username:  nzge
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">title</span><span class="pi">:</span> <span class="s">My Website</span>
+<span class="na">email</span><span class="pi">:</span> <span class="s">nathange784@gmail.com</span>
+<span class="na">description</span><span class="pi">:</span> <span class="pi">&gt;-</span> <span class="c1"># this means to ignore newlines until "baseurl:"</span>
+  <span class="s">my personal website</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># the subpath of your site, e.g. /blog</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://nzge.github.io"</span>
+<span class="na">twitter_username</span><span class="pi">:</span> <span class="s">nzge</span>
+<span class="na">github_username</span><span class="pi">:</span>  <span class="s">nzge</span>
 
-#remote_theme: jekyll/minima
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  math_engine: mathjax
+<span class="c1">#remote_theme: jekyll/minima</span>
+<span class="na">markdown</span><span class="pi">:</span> <span class="s">kramdown</span>
+<span class="na">kramdown</span><span class="pi">:</span>
+  <span class="na">input</span><span class="pi">:</span> <span class="s">GFM</span>
+  <span class="na">syntax_highlighter</span><span class="pi">:</span> <span class="s">rouge</span>
+  <span class="na">math_engine</span><span class="pi">:</span> <span class="s">mathjax</span>
 
-highlighter: rouge
+<span class="na">highlighter</span><span class="pi">:</span> <span class="s">rouge</span>
 
-sass:
-  sass_dir: _sass
-  style: compressed
+<span class="na">sass</span><span class="pi">:</span>
+  <span class="na">sass_dir</span><span class="pi">:</span> <span class="s">_sass</span>
+  <span class="na">style</span><span class="pi">:</span> <span class="s">compressed</span>
   
-plugins:
-  - jekyll-contentblocks
-  - jekyll-archives
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-github-metadata
-  - jekyll-paginate
-  - jekyll-seo-tag
-  - jekyll-remote-theme
-  - jemoji
-  - htmlcompressor
-  - htmlbeautifier
-  # - jekyll-toc
+<span class="na">plugins</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">jekyll-contentblocks</span>
+  <span class="pi">-</span> <span class="s">jekyll-archives</span>
+  <span class="pi">-</span> <span class="s">jekyll-sitemap</span>
+  <span class="pi">-</span> <span class="s">jekyll-feed</span>
+  <span class="pi">-</span> <span class="s">jekyll-github-metadata</span>
+  <span class="pi">-</span> <span class="s">jekyll-paginate</span>
+  <span class="pi">-</span> <span class="s">jekyll-seo-tag</span>
+  <span class="pi">-</span> <span class="s">jekyll-remote-theme</span>
+  <span class="pi">-</span> <span class="s">jemoji</span>
+  <span class="pi">-</span> <span class="s">htmlcompressor</span>
+  <span class="pi">-</span> <span class="s">htmlbeautifier</span>
+  <span class="c1"># - jekyll-toc</span>
 
-collections:
-  projects:
-    output: true
+<span class="na">collections</span><span class="pi">:</span>
+  <span class="na">projects</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
 
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
+<span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">posts"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">post"</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">default"</span>
 
-#include:
-#  - assets/media/_icons
-#  - assets/media/_nathan
+<span class="c1">#include:</span>
+<span class="c1">#  - assets/media/_icons</span>
+<span class="c1">#  - assets/media/_nathan</span>
 
-# Exclude from processing. The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
+<span class="c1"># Exclude from processing. The following items will not be processed, by default.</span>
+<span class="c1"># Any item listed under the `exclude:` key here will be automatically added to</span>
+<span class="c1"># the internal "default list".</span>
 
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - archive
-```
-### gemfile
-Installation of bundled Jekyll plugins coded in Ruby
-```ruby
-# frozen_string_literal: true
-source "https://rubygems.org"
-gem "bundler"
+<span class="c1"># Excluded items can be processed by explicitly listing the directories or</span>
+<span class="c1"># their entries' file path in the `include:` list.</span>
+<span class="na">exclude</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">.sass-cache/</span>
+  <span class="pi">-</span> <span class="s">.jekyll-cache/</span>
+  <span class="pi">-</span> <span class="s">gemfiles/</span>
+  <span class="pi">-</span> <span class="s">Gemfile</span>
+  <span class="pi">-</span> <span class="s">Gemfile.lock</span>
+  <span class="pi">-</span> <span class="s">node_modules/</span>
+  <span class="pi">-</span> <span class="s">vendor/bundle/</span>
+  <span class="pi">-</span> <span class="s">vendor/cache/</span>
+  <span class="pi">-</span> <span class="s">vendor/gems/</span>
+  <span class="pi">-</span> <span class="s">vendor/ruby/</span>
+  <span class="pi">-</span> <span class="s">archive</span>
+</code></pre></div></div>
+<h3 id="gemfile">gemfile</h3>
+<p>Installation of bundled Jekyll plugins coded in Ruby</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
+<span class="n">source</span> <span class="s2">"https://rubygems.org"</span>
+<span class="n">gem</span> <span class="s2">"bundler"</span>
 
-group :jekyll_plugins do
-  gem 'wdm', '&gt;= 0.1.0' if Gem.win_platform?
-  gem "jekyll"
-  gem 'jekyll-contentblocks'
-  gem 'jekyll-archives'
-  gem 'jekyll-sitemap'
-  gem 'jekyll-feed'
-  gem 'jekyll-github-metadata'
-  gem 'jekyll-paginate'
-  gem 'jekyll-seo-tag'
-  gem 'jekyll-remote-theme'
-  gem 'htmlcompressor'
-  gem 'htmlbeautifier'
-  gem "webrick"
-  gem 'jemoji'
-  # gem 'jekyll-toc'
-end
+<span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s1">'wdm'</span><span class="p">,</span> <span class="s1">'&gt;= 0.1.0'</span> <span class="k">if</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">win_platform?</span>
+  <span class="n">gem</span> <span class="s2">"jekyll"</span>
+  <span class="n">gem</span> <span class="s1">'jekyll-contentblocks'</span>
+  <span class="n">gem</span> <span class="s1">'jekyll-archives'</span>
+  <span class="n">gem</span> <span class="s1">'jekyll-sitemap'</span>
+  <span class="n">gem</span> <span class="s1">'jekyll-feed'</span>
+  <span class="n">gem</span> <span class="s1">'jekyll-github-metadata'</span>
+  <span class="n">gem</span> <span class="s1">'jekyll-paginate'</span>
+  <span class="n">gem</span> <span class="s1">'jekyll-seo-tag'</span>
+  <span class="n">gem</span> <span class="s1">'jekyll-remote-theme'</span>
+  <span class="n">gem</span> <span class="s1">'htmlcompressor'</span>
+  <span class="n">gem</span> <span class="s1">'htmlbeautifier'</span>
+  <span class="n">gem</span> <span class="s2">"webrick"</span>
+  <span class="n">gem</span> <span class="s1">'jemoji'</span>
+  <span class="c1"># gem 'jekyll-toc'</span>
+<span class="k">end</span>
 
-gem "github-pages", "~&gt; 228", require: false
+<span class="n">gem</span> <span class="s2">"github-pages"</span><span class="p">,</span> <span class="s2">"~&gt; 228"</span><span class="p">,</span> <span class="ss">require: </span><span class="kp">false</span>
 
-# gem "rails"
-gem "minima", "~&gt; 2.5"
-gem "rouge", "~&gt; 3.26"
+<span class="c1"># gem "rails"</span>
+<span class="n">gem</span> <span class="s2">"minima"</span><span class="p">,</span> <span class="s2">"~&gt; 2.5"</span>
+<span class="n">gem</span> <span class="s2">"rouge"</span><span class="p">,</span> <span class="s2">"~&gt; 3.26"</span>
 
-```
+</code></pre></div></div>
 
-### deployment
-```yaml
-name: Build and Deploy Jekyll Site
+<h3 id="deployment">deployment</h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Build and Deploy Jekyll Site</span>
 
-on:
-  push:
-    branches:
-      - main  # or your default branch
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">main</span>  <span class="c1"># or your default branch</span>
 
-permissions:  # ✅ Explicitly grant write access
-  contents: write
-  pages: write
-  id-token: write
+<span class="na">permissions</span><span class="pi">:</span>  <span class="c1"># ✅ Explicitly grant write access</span>
+  <span class="na">contents</span><span class="pi">:</span> <span class="s">write</span>
+  <span class="na">pages</span><span class="pi">:</span> <span class="s">write</span>
+  <span class="na">id-token</span><span class="pi">:</span> <span class="s">write</span>
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout repository</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'  # specify your Ruby version
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Ruby</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">ruby/setup-ruby@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">ruby-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.2'</span>  <span class="c1"># specify your Ruby version</span>
 
-      - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">gem install bundler</span>
+          <span class="s">bundle install</span>
 
-      - name: Build the Jekyll site
-        run: |
-          bundle exec jekyll build
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build the Jekyll site</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">bundle exec jekyll build</span>
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: $
-          publish_dir: ./_site
-```
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy to GitHub Pages</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">peaceiris/actions-gh-pages@v3</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github_token</span><span class="pi">:</span> <span class="s">$</span>
+          <span class="na">publish_dir</span><span class="pi">:</span> <span class="s">./_site</span>
+</code></pre></div></div>
 
-## Build Log
+<h2 id="build-log">Build Log</h2>
 
-&gt; 4-29-25: Cool randomized gifs
-&gt;
-&gt; ![Alt text](/assets/media/portfolio_media/4-29-25.PNG){: 
-style="height:300px;display: block; margin: auto;"}
+<blockquote>
+  <p>4-29-25: Cool randomized gifs</p>
 
-&gt; 4-12-25: Added logo to favicon and navbar
-&gt;
-&gt; ![Alt text](/assets/media/portfolio_media/4-12-25.PNG){: 
-style="height:300px;display: block; margin: auto;"}
+  <p><img src="/assets/media/portfolio_media/4-29-25.PNG" alt="Alt text" style="height:300px;display: block; margin: auto;" /></p>
+</blockquote>
 
-&gt; 3-8-25: Added gradient background to front page
-&gt;
-&gt; ![Alt text](/assets/media/portfolio_media/3-8-25.PNG){: 
-style="height:300px;display: block; margin: auto;"}
+<blockquote>
+  <p>4-12-25: Added logo to favicon and navbar</p>
 
-&gt; 3-6-25: Colorful markdown formatting
-&gt;
-&gt; ![Alt text](/assets/media/portfolio_media/3-6-25.PNG){: 
-style="height:300px;display: block; margin: auto;"}
+  <p><img src="/assets/media/portfolio_media/4-12-25.PNG" alt="Alt text" style="height:300px;display: block; margin: auto;" /></p>
+</blockquote>
 
-&gt; 2-29-25: Contact page
-&gt;
-&gt; ![Alt text](/assets/media/portfolio_media/2-29-25.PNG){: 
-style="height:300px;display: block; margin: auto;"}
+<blockquote>
+  <p>3-8-25: Added gradient background to front page</p>
 
+  <p><img src="/assets/media/portfolio_media/3-8-25.PNG" alt="Alt text" style="height:300px;display: block; margin: auto;" /></p>
+</blockquote>
 
-&gt; 2-25-25: Project sorting/display structuring
-&gt;
-&gt; ![Alt text](/assets/media/portfolio_media/2-25-25.PNG){: 
-style="height:400px;display: block; margin: auto;"}
+<blockquote>
+  <p>3-6-25: Colorful markdown formatting</p>
 
----
----
+  <p><img src="/assets/media/portfolio_media/3-6-25.PNG" alt="Alt text" style="height:300px;display: block; margin: auto;" /></p>
+</blockquote>
 
-## References
+<blockquote>
+  <p>2-29-25: Contact page</p>
 
-**Inspiration**  
-["Complete Responsive Web Design Tutorial - Minimal Portfolio Website" by Codegrid](https://www.youtube.com/watch?v=SFVhAfRHjTo&amp;list=PLTqchMECawAr4xC0UPulEVUqBPYgZU0xG&amp;index=4){:target="_blank"}
-["Full Screen Overlay Menu (SVG Path Animation) Using HTML, CSS &amp; GSAP" - Inspired By Niccolò Miranda](https://www.youtube.com/watch?v=qn1tcSaJ5XQ&amp;list=PLTqchMECawAr4xC0UPulEVUqBPYgZU0xG&amp;index=1){:target="_blank"}
-["Swiss web design: simple, but it works. Here's why" by Phoebe Yu](https://www.youtube.com/watch?v=qdHipyZgOTY&amp;t=509s){:target="_blank"}
-[Cameronsworld](https://www.cameronsworld.net/){:target="_blank"}
-[restorativland](https://geocities.restorativland.org/Area51/Dungeon/1092/){:target="_blank"}
-[Sadgrl webring](https://goblin-heart.net/sadgrl/cyberspace/webrings){:target="_blank"}
-[ZJ neocities](https://zj.neocities.org/){:target="_blank"}
+  <p><img src="/assets/media/portfolio_media/2-29-25.PNG" alt="Alt text" style="height:300px;display: block; margin: auto;" /></p>
+</blockquote>
 
-**Assets** 
-[https://geocities.restorativland.org/](https://geocities.restorativland.org/)
-[https://cyber.dabamos.de/](https://cyber.dabamos.de/)
-[https://gifcities.org/](https://gifcities.org/)
+<blockquote>
+  <p>2-25-25: Project sorting/display structuring</p>
 
-**Learning Resources**
-[https://jekyllrb.com/docs/](https://jekyllrb.com/docs/){:target="_blank"}
-[https://sass-lang.com/documentation/at-rules/import/](https://sass-lang.com/documentation/at-rules/import/){:target="_blank"}
-w3schools  
-  - css: [https://www.w3schools.com/css/default.asp](https://www.w3schools.com/css/default.asp){:target="_blank"}
-  - html: [https://www.w3schools.com/html/default.asp](https://www.w3schools.com/html/default.asp){:target="_blank"}
-  - js: [https://www.w3schools.com/js/default.asp](https://www.w3schools.com/js/default.asp){:target="_blank"}
-[https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS){:target="_blank"}
-</html>
+  <p><img src="/assets/media/portfolio_media/2-25-25.PNG" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+<hr />
+
+<h2 id="references">References</h2>
+
+<p><strong>Inspiration</strong><br />
+<a href="https://www.youtube.com/watch?v=SFVhAfRHjTo&amp;list=PLTqchMECawAr4xC0UPulEVUqBPYgZU0xG&amp;index=4" target="_blank">“Complete Responsive Web Design Tutorial - Minimal Portfolio Website” by Codegrid</a>
+<a href="https://www.youtube.com/watch?v=qn1tcSaJ5XQ&amp;list=PLTqchMECawAr4xC0UPulEVUqBPYgZU0xG&amp;index=1" target="_blank">“Full Screen Overlay Menu (SVG Path Animation) Using HTML, CSS &amp; GSAP” - Inspired By Niccolò Miranda</a>
+<a href="https://www.youtube.com/watch?v=qdHipyZgOTY&amp;t=509s" target="_blank">“Swiss web design: simple, but it works. Here’s why” by Phoebe Yu</a>
+<a href="https://www.cameronsworld.net/" target="_blank">Cameronsworld</a>
+<a href="https://geocities.restorativland.org/Area51/Dungeon/1092/" target="_blank">restorativland</a>
+<a href="https://goblin-heart.net/sadgrl/cyberspace/webrings" target="_blank">Sadgrl webring</a>
+<a href="https://zj.neocities.org/" target="_blank">ZJ neocities</a></p>
+
+<p><strong>Assets</strong> 
+<a href="https://geocities.restorativland.org/">https://geocities.restorativland.org/</a>
+<a href="https://cyber.dabamos.de/">https://cyber.dabamos.de/</a>
+<a href="https://gifcities.org/">https://gifcities.org/</a></p>
+
+<p><strong>Learning Resources</strong>
+<a href="https://jekyllrb.com/docs/" target="_blank">https://jekyllrb.com/docs/</a>
+<a href="https://sass-lang.com/documentation/at-rules/import/" target="_blank">https://sass-lang.com/documentation/at-rules/import/</a>
+w3schools</p>
+<ul>
+  <li>css: <a href="https://www.w3schools.com/css/default.asp" target="_blank">https://www.w3schools.com/css/default.asp</a></li>
+  <li>html: <a href="https://www.w3schools.com/html/default.asp" target="_blank">https://www.w3schools.com/html/default.asp</a></li>
+  <li>js: <a href="https://www.w3schools.com/js/default.asp" target="_blank">https://www.w3schools.com/js/default.asp</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS</a></li>
+</ul>
 
     </article>
   </div>

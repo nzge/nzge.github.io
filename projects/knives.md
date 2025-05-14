@@ -173,6 +173,7 @@ style="width:500px;display: block; margin: auto;"}
 [Lucha](https://kershaw.kaiusa.com/lucha.html)  
 [Titanium Balisong Butterfly Knife Box Cutter Razor Blade Utility Knife with Pocket Clip](https://www.arenaaccessories.com/Titanium-Balisong-Butterfly-Knife-Box-Cutter-Razor-Blade-Utility-Knife-with-Pocket-Clip_p_2666.html)
 [Small Balisong](https://www.reddit.com/r/knives/comments/13b4c7z/small_balisong/)  
+[Squid Industries Kraken v3 Specs](https://www.squidindustries.co/pages/kraken-v25-specs?srsltid=AfmBOooj2xkJbij5ryXiKqvy2bQpdQM5Wx2wg5p6lxU9zEU4UOKv4NWt)
 - Live  
 [It was a rep. Was](https://www.reddit.com/r/balisong/comments/1k2uafr/it_was_a_rep_was/)  
 [Decided to do an edit](https://www.reddit.com/r/balisong/comments/1k30x7s/decided_to_do_an_edit/)  

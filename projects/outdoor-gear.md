@@ -102,23 +102,22 @@ ___
 # Reference
 
 ## General Knowledge
-- [how to ACTUALLY start sewing in 2025 by Glory Allen](https://www.youtube.com/watch?v=gMYn_3uXBTc)
-- 
+[how to ACTUALLY start sewing in 2025 by Glory Allen](https://www.youtube.com/watch?v=gMYn_3uXBTc)  
+ 
 
 ## Backpack
-- [First Framed Backpack](https://www.reddit.com/r/myog/comments/1jwtn1d/first_framed_backpack/)
-- [](https://www.reddit.com/r/myog/comments/1k61nxm/new_type_dcf_backpack/)
-- [](https://www.reddit.com/r/myog/comments/1k5y1k2/framed_40l_pack_with_floating_hipbelt/)
-- [](https://www.reddit.com/r/myog/comments/1juw9cv/modified_my_ula_ohm_20_front_pocket_and_hipbelt/)
-- [](https://www.reddit.com/r/myog/comments/1ka3pdj/first_myog_pack_based_of_palante_simple_pack_with/)
-
+[First Framed Backpack](https://www.reddit.com/r/myog/comments/1jwtn1d/first_framed_backpack/)  
+[new type DCF Backpack](https://www.reddit.com/r/myog/comments/1k61nxm/new_type_dcf_backpack/)  
+[Framed 40l pack with floating hipbelt](https://www.reddit.com/r/myog/comments/1k5y1k2/framed_40l_pack_with_floating_hipbelt/)  
+[Modified my ULA Ohm 2.0 front pocket and hipbelt](https://www.reddit.com/r/myog/comments/1juw9cv/modified_my_ula_ohm_20_front_pocket_and_hipbelt/)  
+[First MYOG pack based of Pa'lante Simple Pack with vest straps](https://www.reddit.com/r/myog/comments/1ka3pdj/first_myog_pack_based_of_palante_simple_pack_with/)  
 
 ## Bike Bags
-- [First go at a bike bag](https://www.reddit.com/r/myog/comments/1ixplen/first_go_at_a_bike_bag/)
-- 
+[First go at a bike bag](https://www.reddit.com/r/myog/comments/1ixplen/first_go_at_a_bike_bag/)
+[]() 
 
 ## Ice Axe
-- ["Homemade pair of ice axes - reddit"](https://www.reddit.com/r/myog/comments/1igxyxl/homemade_pair_of_ice_axes/). Accessed: March 6, 2025. 
-- [https://steemit.com/mountaineering/@imagimara.rocks/homemade-ice-and-snow-axes-for-mountaineering](https://steemit.com/mountaineering/@imagimara.rocks/homemade-ice-and-snow-axes-for-mountaineering)
-- ["Petzl Glacier Ice Axe"](https://www.amazon.com/Petzl-Glacier-ice-Axe-50cm/dp/B0DDMNLJX6?gQT=1&th=1)
-- ["Black Diamond Raven Ice Axe"](https://www.rei.com/product/182045/black-diamond-raven-ice-axe?sku=1820450001&store=83&gStoreCode=83&gQT=1)
+["Homemade pair of ice axes - reddit"](https://www.reddit.com/r/myog/comments/1igxyxl/homemade_pair_of_ice_axes/). Accessed: March 6, 2025.   
+[https://steemit.com/mountaineering/@imagimara.rocks/homemade-ice-and-snow-axes-for-mountaineering](https://steemit.com/mountaineering/@imagimara.rocks/homemade-ice-and-snow-axes-for-mountaineering)  
+["Petzl Glacier Ice Axe"](https://www.amazon.com/Petzl-Glacier-ice-Axe-50cm/dp/B0DDMNLJX6?gQT=1&th=1)  
+["Black Diamond Raven Ice Axe"](https://www.rei.com/product/182045/black-diamond-raven-ice-axe?sku=1820450001&store=83&gStoreCode=83&gQT=1)  
