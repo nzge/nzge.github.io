@@ -19,12 +19,15 @@ style="width:100%;display: block; margin: auto;"}
 Reference
 <div id="owind"></div>
 <script>
-  const owind= 
-    { src: "/assets/media/owind_media/owindA.png", caption: "", title: "O-wind turbine" },
+  const owind= [
+    { src: "/assets/media/owind_media/owindA.png", caption: "Latest iteration o-wind turbine by o-inspiration", title: "O-wind turbine" },
     { src: "/assets/media/owind_media/owindB.png", caption: "Previous iteration of the design", title: "O-wind turbine" },
   ];
   new Slideshow(owind, 'owind');
 </script>
+
+<br>
+Core challenges: Sucessfully generating surface geometry and adding functional elements like drain holes and ribs. Preserving design intent. 
 
 ## Build Log 
 > 5-13-25: **Final Revision**. Added drain holes (in the fins and on the vent exteriors) to guide rain water out the bottom of the turbine. Added a through hole dowel hub cap to accomadate a locking pin.
@@ -99,13 +102,13 @@ style="width:450px;display: block; margin: auto;"}
 **Hardware**  
 [608-2RS Roller Bearing](https://www.mcmaster.com/products/bearings/ball-bearings-1~/)  
 
-**Research Materials**  
-[Wind Turbines Design - Energy and AI, 2022](https://www.sciencedirect.com/topics/engineering/wind-turbines-design)
-[Wind energy - OpenEI](https://openei.org/wiki/Wind_energy)
-[Wind Turbine Generator - Alternative Energy Tutorials](https://www.alternative-energy-tutorials.com/wind-energy/wind-turbine-generator.html)
-[Omnidirectional generating device - patent](https://patents.google.com/patent/WO2045047685A1/en)
-[o-wind - google patents](https://patents.google.com/?q=(o-wind)&oq=o-wind)
+**Research Materials**   
+[Wind Turbines Design - Energy and AI, 2022](https://www.sciencedirect.com/topics/engineering/wind-turbines-design)  
+[Wind energy - OpenEI](https://openei.org/wiki/Wind_energy)  
+[Wind Turbine Generator - Alternative Energy Tutorials](https://www.alternative-energy-tutorials.com/wind-energy/wind-turbine-generator.html)  
+[Omnidirectional generating device - patent](https://patents.google.com/patent/WO2045047685A1/en)  
+[o-wind - google patents](https://patents.google.com/?q=(o-wind)&oq=o-wind)  
 
 **Modelling Resources**
-[Solidworks Reuleaux Tetrahedron 羅勒斯四面體 - batermit](https://www.youtube.com/watch?v=l5_5c2-O1EI)
-[Math and Art of Smooth-Rollers in SOLIDWORKS](https://www.goengineer.com/blog/math-and-art-smooth-rollers-solidworks)
+[Solidworks Reuleaux Tetrahedron 羅勒斯四面體 - batermit](https://www.youtube.com/watch?v=l5_5c2-O1EI)  
+[Math and Art of Smooth-Rollers in SOLIDWORKS](https://www.goengineer.com/blog/math-and-art-smooth-rollers-solidworks)  

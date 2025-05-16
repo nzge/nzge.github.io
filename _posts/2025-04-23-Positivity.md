@@ -10,3 +10,6 @@ There is obviously a clear distinction between thriving and survival. Caveman ap
 
 The adoption of a positive mindset is when we begin to live as beings on this earth.
 To be a cynic as the core is to claim defeat at the foot of death. A surrendering of our being. 
+
+
+People conflate hesitancy and cynicism with intelligence and measuredness, when it could not be more far from the truth. The greatest minds are dreamers and believers. True and pure ideas are birthed from optimism and thinking with faith, and a level of optimism potentially overbearing.

@@ -63,13 +63,13 @@ I performed rough calculations to source motors that could support the weight of
 **Basic Motor Thrust Requirement Calculations**
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb){:target="_blank"}
 
-
-
 ### Frame
 ![MPU6050](/assets/media/drone_media/){: style="width:200px; height:200px;display: block; margin: auto;"}
 
 ### Aesthetic Components
 Drone mask modeled in Blender
+
+### Tilt Mechanism
 
 
 ## Software 
@@ -291,7 +291,8 @@ OpenGL/WebGL
 **Inspiration**  
 V22 Osprey by Tom Stanton  
 - [Part 1](https://www.youtube.com/watch?v=55G-mwT9uCE)
-- [Part 2](https://www.youtube.com/watch?v=HitJ8r9HwBg&t=792s)
+- [Part 2](https://www.youtube.com/watch?v=HitJ8r9HwBg&t=792s)  
+[Building a Fixed-Wing Drone with 3D Printing | Stallion](https://www.youtube.com/watch?v=wAYwlVW0USQ)  
 
 **Flight Controller**  
 [RC VTOL - V4 by Tom Stanton](https://www.youtube.com/watch?v=gPEeCjVrTBw&t=190s)  

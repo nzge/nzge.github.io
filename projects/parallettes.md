@@ -8,9 +8,8 @@ description: "Design and creation of paralletes for calisthenics movements"
 repo: ""
 ---
 
-Since I was young, I have always been a fan of personal fitness. I played lots of sports growing up.
-
-This long fitness journey led me to calisthenics. I was captivated by the gravity-defying feats of strength and the aesthetic, muscular, and proportioned physiques that epitomize the ideal physique of most guys.
+I have always been physically active from a young age, as my parents involved in lots of team sports.  
+This fitness journey eventually led me to calisthenics. I was captivated by the gravity-defying feats of strength and the aesthetic, muscular, and proportioned physiques that epitomize the ideal physique of most guys.
 
 
 ## Inspiration
@@ -78,3 +77,6 @@ style="height:400px;display: block; margin: auto;"}
 ## References
 
 [12 BEST Push-Up Bars for Calisthenics: Mini Parallettes Comparison by Calisthenics Worldwide](https://www.youtube.com/watch?v=yOmqRXeuD_4)
+
+**Learning Resources**  
+[woodworkweb](https://www.woodworkweb.com/)

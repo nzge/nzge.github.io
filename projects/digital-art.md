@@ -69,7 +69,10 @@ This project was inspired by recent studies on control systems[^1] and previous 
 ### 2D
 [Art with snipping tool](https://www.reddit.com/r/glitch_art/comments/1h2opuv/art_with_snipping_tool/)  
 
-### Sources
+**Learning Resources**  
+[I Wish I Knew this when I Started Digital Art. - Ten Hundred](https://www.youtube.com/watch?v=xu7stFSOaqg&list=PLTqchMECawApOTaiqJiWeh09Xd4mRvyf0&index=9)
+
+### Sources  
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
 [^2]: ["Stewart Platform Control"](https://example.com), Accessed March 6, 2025.  
 [^3]: **Book:** K. Ogata. *Modern Control Engineering*. Pearson, 2010.  

@@ -11,7 +11,7 @@ repo: "https://github.com/nzge/oct-probe-mount"
 <div class="container" style="border: 1px solid white; color: white; padding: 1em; border-radius: 6px;">
 <p style="text-align: center;" >Model</p>
 <model-viewer
-  src="https://nzge.github.io/assets/media/rocket_media/simple-rocket/gmpr.gltf"
+  src="https://nzge.github.io/assets/media/oct-holder_media/probe_assy-v3.gltf"
   alt="GMPR Rocket"
   camera-controls
   touch-action="pan-y"
@@ -26,10 +26,12 @@ repo: "https://github.com/nzge/oct-probe-mount"
 <br>
 </div>
 
+**Project objective:** Design and manufacture a high-precision fixture for an OCT (Optical Coherence Tomography) probe system used with a Zeiss microscope in a dual-sensing array configuration. The fixture must accommodate two probes: one directed orthogonally at the observed target (the eye), and another redirected via an optical element (e.g., mirror or lens) to intersect the same target region. This setup is intended for laparoscopic ophthalmic procedures, requiring micron-level alignment accuracy, mechanical stability, and compatibility with existing surgical and imaging systems.
+
 ## OCT Holder
 
-![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+![Alt text](/assets/media/oct-holder_media/oct-holder_v3.png){: 
+style="width:100%;display: block; margin: auto;"}
 
 | Component | Description |
 |---|---|
@@ -39,37 +41,36 @@ style="height:400px;display: block; margin: auto;"}
 | [Ball Bearing 20 mm Shaft Diameter](https://www.mcmaster.com/5972K215/) | |
 
 ### Slider rail
-![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+![Alt text](/assets/media/oct-holder_media/oct-slider_v3.png){: 
+style="width:100%;display: block; margin: auto;"}
 
 #### FPGA MATLAB Motor Control
 
 ### Orientation configuration
 Upright 
-![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+![Alt text](/assets/media/oct-holder_media/oct-holder_v3 (upright).png){: 
+style="width:100%;display: block; margin: auto;"}
 Idle
-![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+![Alt text](/assets/media/oct-holder_media/oct-holder_v3 (idle).png){: 
+style="width:100%;display: block; margin: auto;"}
 
 ### Design for Manufacturing
-![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
-style="height:400px;display: block; margin: auto;"}
-
+![Alt text](/assets/media/oct-holder_media/zeiss-bracket_v4.png){: 
+style="width:100%;display: block; margin: auto;"}
+![Alt text](/assets/media/oct-holder_media/zeiss-bracket2_v4.png){: 
+style="width:100%;display: block; margin: auto;"}
 
 
 ## Zeiss Fixture
 
-![Alt text](/assets/media/oct-holder_media/test-print.JPG){: 
-style="height:400px;display: block; margin: auto;"}
+![Alt text](/assets/media/oct-holder_media/zeiss-holder_v4.png){: 
+style="width:100%;display: block; margin: auto;"}
 
  Component | Description 
 ---|---
  Zeiss | Microscope 
  Lens |  
  Magnets |  
-
-
 
 
 
