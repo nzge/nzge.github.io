@@ -81,6 +81,14 @@
 <lastmod>2025-05-10T00:00:00-07:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2025/05/18/25-Failure.html</loc>
+<lastmod>2025-05-18T00:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2025/05/28/Cooking.html</loc>
+<lastmod>2025-05-28T00:00:00-07:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/pages/about.html</loc>
 </url>
 <url>
@@ -100,6 +108,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/pages/contact.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/projects/cup-bot.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/projects/cv-boot.html</loc>
@@ -211,6 +222,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/projects/tire-temp-sensor-mount.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/projects/project_categories/professional/upwork.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/pages/work.html</loc>

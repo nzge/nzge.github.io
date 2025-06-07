@@ -109,6 +109,6 @@ style="width:450px;display: block; margin: auto;"}
 [Omnidirectional generating device - patent](https://patents.google.com/patent/WO2045047685A1/en)  
 [o-wind - google patents](https://patents.google.com/?q=(o-wind)&oq=o-wind)  
 
-**Modelling Resources**
+**Modelling Resources**  
 [Solidworks Reuleaux Tetrahedron 羅勒斯四面體 - batermit](https://www.youtube.com/watch?v=l5_5c2-O1EI)  
 [Math and Art of Smooth-Rollers in SOLIDWORKS](https://www.goengineer.com/blog/math-and-art-smooth-rollers-solidworks)  

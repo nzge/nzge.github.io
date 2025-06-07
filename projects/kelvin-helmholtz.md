@@ -45,6 +45,7 @@ style="height:400px;display: block; margin: auto;"}
 ---
 
 # References
-- Fluid Mechanics by Kundu or Introduction to Fluid Mechanics by Fox & McDonald
-- Online lectures (e.g., MIT OCW 18.353 – Nonlinear Dynamics and Waves)
-- [Approaches to Solving Flow Problems and the Role of CFD by Milovan Peric](https://www.youtube.com/watch?v=ZiwUQDeGRhs)
+Fluid Mechanics by Kundu  
+Introduction to Fluid Mechanics by Fox & McDonald  
+Online lectures (e.g., MIT OCW 18.353 – Nonlinear Dynamics and Waves)  
+[Approaches to Solving Flow Problems and the Role of CFD by Milovan Peric](https://www.youtube.com/watch?v=ZiwUQDeGRhs)  

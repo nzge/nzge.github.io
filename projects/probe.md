@@ -16,7 +16,7 @@ repo: "https://github.com/nzge/oct-probe-mount"
   camera-controls
   touch-action="pan-y"
   camera-orbit="0deg 0deg auto"
-  orientation="0deg 0deg 90deg"
+  orientation="0deg 0deg 0deg"
   field-of-view="45deg"
   shadow-intensity="1"
   exposure="1.0"
