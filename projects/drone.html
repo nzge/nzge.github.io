@@ -385,7 +385,7 @@ This involves manipulating config registers to set appropriate MPU6050 settings 
 <h4 id="sensor-fusion">Sensor Fusion</h4>
 <p>Sensor fusion is used to convert 6-axis MPU readings (yaw rate, pitch rate, roll rate from gyrometer and $\dot{x},\dot{y},\dot{z}$ from accelerometer) to obtain precise global yaw, pitch, and roll angle estimations. These angle values are important to stabilize and move the drone in desired ways through subsequent algorithmic steps.
 Sensor fusion also mitigates the impact of sensor drift when the MPU sensor cannot perfectly maintain perfect 0 readings at stationary position.
-A few sensor fusion approaches were explored, with the simplest being a complementary filter. Madgwick, Mahony, kalman, and extended kalman filters were also pontetial candidates.</p>
+A few sensor fusion approaches were explored, with the simplest being a complementary filter. Madgwick, Mahony, kalman, and extended kalman filters were also potential candidates.</p>
 
 <h4 id="pid">PID</h4>
 <p>Current global rotational positions computed through sensor fusion is fed into a PID controller, which performs error correction to achieve the desired orientation of the drone. Current global rotational positions of the MPU6050 is compared to a nominal orientation to compute error and subsequently correct for that error. The nominal orientation is recieved by the PID controller through a higher level controller.</p>
