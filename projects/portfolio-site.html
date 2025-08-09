@@ -357,6 +357,31 @@ Taken from https://github.com/allejo/jekyll-toc</p>
     <span class="p">});</span>
   <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
 
+  <span class="o">&lt;</span><span class="n">div</span> <span class="n">id</span><span class="o">=</span><span class="s">"kofi-button-container"</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+   <span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s">"</span><span class="err">
+</span><span class="s">      position: fixed;</span><span class="err">
+</span><span class="s">      bottom: 0;</span><span class="err">
+</span><span class="s">      left: 0;</span><span class="err">
+</span><span class="s">      width: 100%;</span><span class="err">
+</span><span class="s">      background: rgba(0,0,0,0.85);</span><span class="err">
+</span><span class="s">      color: white;</span><span class="err">
+</span><span class="s">      text-align: center;</span><span class="err">
+</span><span class="s">      padding: 6px 8px;</span><span class="err">
+</span><span class="s">      font-size: 0.9rem;</span><span class="err">
+</span><span class="s">      z-index: 9999;</span><span class="err">
+</span><span class="s">    "</span><span class="o">&gt;</span>
+      <span class="n">Disclaimer</span><span class="o">:</span> <span class="n">The</span> <span class="n">website</span> <span class="n">is</span> <span class="n">a</span> <span class="n">constant</span> <span class="n">work</span> <span class="n">in</span> <span class="n">progress</span><span class="p">.</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">style</span><span class="o">&gt;</span>
+      <span class="err">@</span><span class="n">media</span> <span class="p">(</span><span class="n">max</span><span class="o">-</span><span class="n">width</span><span class="o">:</span> <span class="mi">600</span><span class="n">px</span><span class="p">)</span> <span class="p">{</span>
+        <span class="cp">#site-footer div[style] {
+</span>          <span class="n">font</span><span class="o">-</span><span class="n">size</span><span class="o">:</span> <span class="mf">0.75</span><span class="n">rem</span><span class="p">;</span>
+          <span class="nl">padding:</span> <span class="mi">4</span><span class="n">px</span> <span class="mi">6</span><span class="n">px</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="err">}</span>
+    <span class="o">&lt;/</span><span class="n">style</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="n">footer</span><span class="o">&gt;</span>
 </code></pre></div></div>
 
@@ -630,6 +655,31 @@ w3schools</p>
     });
   </script>
 
+  <div id="kofi-button-container"></div>
+
+   <div style="
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.85);
+      color: white;
+      text-align: center;
+      padding: 6px 8px;
+      font-size: 0.9rem;
+      z-index: 9999;
+    ">
+      Disclaimer: The website is a constant work in progress.
+    </div>
+
+    <style>
+      @media (max-width: 600px) {
+        #site-footer div[style] {
+          font-size: 0.75rem;
+          padding: 4px 6px;
+        }
+      }
+    </style>
 </footer>
     <style>
   .videoWrapper {
