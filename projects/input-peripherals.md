@@ -203,9 +203,10 @@ https://www.reddit.com/r/MechanicalKeyboards/comments/hjh61v/what_is_qmk/
 [My fork of ZMK](https://github.com/nzge/zmk-config)  
 ZMK Firmware is an open source (MIT) keyboard firmware built on the Zephyr™ Project Real Time Operating System (RTOS). ZMK's goal is to provide a modern and powerful firmware that is designed for power-efficiency, flexibility, and broad hardware support. 
 ZMK is capable of being used for both wired and wireless input devices.
-ZMK is easier to implement and support both wired(unibody) and wireless options
-ZMK is has greater compatibility, notably in wireless applications. However, users say ZMK lags slightly behind in terms of ease-of-use features.
-There is also TMK and KMK. TMK is mostly deprecated, and is a Circuit Python keyboard firmware. ZMK and QMK are the more common options.
+While QMK is easier to implement and supports both wired (unibody) and wireless options,
+ZMK has greater compatibility, notably in wireless applications. However, users say ZMK lags slightly behind in terms of ease-of-use features.  
+
+Other firmware configurators include TMK and KMK. TMK, a Circuit Python keyboard firmware, is mostly deprecated. ZMK and QMK are the more common options.
 
 ## Mouse
 A mouse provides cursor control to navigate and interact with display elements. 
@@ -390,6 +391,17 @@ A very capable microcontroller
 
 # Keyboards
 I initially fell into the keyboard hobby during COVID when I was glued to my desktop and keyboard like most folks. My interest in industrial design aesthetics and boundless creative expression has led me on a long creative path of keyboard design.
+
+## My Current Setup
+
+![Alt text](/assets/media/input_media/my-keyboard.jpg){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
+*Specs*  
+- Mr. Suit TKL
+- Gateron box ink 
+  - filmed and lubed
+- GMK WoB
 
 **Design Inspiration**
 <div id="my-slideshow"></div>
