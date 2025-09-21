@@ -399,9 +399,11 @@ style="width:100%; height:auto; display:block; margin: auto;"}
 
 *Specs*  
 - Mr. Suit TKL
-- Gateron box ink 
-  - filmed and lubed
-- GMK WoB
+- Switches: Gateron box ink v2
+  - filmed (Deskeys films) and lubed (Krytox 205G0)
+- Keycaps: GMK WoB + CMYK Accents (IFK WOB)
+
+<br><br>
 
 **Design Inspiration**
 <div id="my-slideshow"></div>
