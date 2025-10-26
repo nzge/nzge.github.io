@@ -557,8 +557,7 @@ style="height:200px;display: block; margin: auto;"}
 
 ---
 
-## Ortho
-Sleek 
+## Ortho 
 
 ![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
 style="width:100%; height:auto; display:block; margin: auto;"}
@@ -566,6 +565,7 @@ style="width:100%; height:auto; display:block; margin: auto;"}
 ### Specs
 - Ortholinear key spacing
 - Ultra low profile switches
+- Keycaps level with the case
 
 #### Components
 
@@ -824,6 +824,11 @@ style="height:200px;display: block; margin: auto;"}
 
 **Ortho**  
 [I designed this over the weekend. Thought it turned out kinda cool?](https://www.reddit.com/r/MechanicalKeyboards/comments/1jnxikp/i_designed_this_over_the_weekend_thought_it/)
+
+**PCB Design**  
+[]()
+[]()
+[]()
 
 ## Mice  
 [I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything](https://www.youtube.com/watch?v=qmX8vL-GbxU)
