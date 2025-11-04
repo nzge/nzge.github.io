@@ -453,6 +453,7 @@ For my first design, I kept it simple.
   shadow-intensity="1"
   exposure="1.0">
 </model-viewer>
+
 #### Layout
 
 ![Alt text](/assets/media/input_media/macro/4x4.png){: 
