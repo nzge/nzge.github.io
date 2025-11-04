@@ -26,14 +26,14 @@
 <link rel="canonical" href="https://nzge.github.io/projects/cup-bot.html" />
 <meta property="og:url" content="https://nzge.github.io/projects/cup-bot.html" />
 <meta property="og:site_name" content="My Website" />
-<meta property="og:image" content="https://nzge.github.io/placeholder.jpg" />
+<meta property="og:image" content="https://nzge.github.io/cup-bot.PNG" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-06-01T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://nzge.github.io/placeholder.jpg" />
+<meta property="twitter:image" content="https://nzge.github.io/cup-bot.PNG" />
 <meta property="twitter:title" content="Cup Bot" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-01T00:00:00+00:00","datePublished":"2025-06-01T00:00:00+00:00","description":"Cup scribing robot","headline":"Cup Bot","image":"https://nzge.github.io/placeholder.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://nzge.github.io/projects/cup-bot.html"},"url":"https://nzge.github.io/projects/cup-bot.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-01T00:00:00+00:00","datePublished":"2025-06-01T00:00:00+00:00","description":"Cup scribing robot","headline":"Cup Bot","image":"https://nzge.github.io/cup-bot.PNG","mainEntityOfPage":{"@type":"WebPage","@id":"https://nzge.github.io/projects/cup-bot.html"},"url":"https://nzge.github.io/projects/cup-bot.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -120,11 +120,11 @@
     <article class="markdown-body">
       <p><br /></p>
 
-<p><img src="/assets/media/cup-bot_media/build-log/total%20assy%20rough%20prototype2.PNG" alt="Alt text" style="width:100%;display: block; margin: auto;" /></p>
+<p><img src="/assets/media/cup-bot.PNG" alt="Alt text" style="width:100%;display: block; margin: auto;" /></p>
 
-<p><strong>Client Objective</strong>: Design a robot that draws designs on robots</p>
+<p><strong>Client Objective</strong>: Design a robot that draws designs on cups.</p>
 
-<p><strong>Goals</strong></p>
+<p><strong>Motivation</strong></p>
 <ul>
   <li>Environmentally friendly packages</li>
   <li>custom printed hot cups</li>
@@ -138,14 +138,15 @@
 
 <h2 id="prototyping-phase">Prototyping Phase</h2>
 
-<p>Reference</p>
-<div id="owind"></div>
+<p>Design Sketches</p>
+<div id="cupbot-concept"></div>
 <script>
-  const owind= [
-    { src: "/assets/media/owind_media/owindA.png", caption: "", title: "O-wind turbine" },
-    { src: "/assets/media/owind_media/owindB.png", caption: "Previous iteration of the design", title: "O-wind turbine" },
+  const cupbot= [
+    { src: "/assets/media/cup-bot_media/prototyping/Cup Bot-1.png", caption: "", title: "Cup Dispenser" },
+    { src: "/assets/media/cup-bot_media/prototyping/Cup Bot-2.png", caption: "", title: "Turntable" },
+    { src: "/assets/media/cup-bot_media/prototyping/Cup Bot-3.png", caption: "", title: "Writing Implement" }
   ];
-  new Slideshow(owind, 'owind');
+  new Slideshow(cupbot, 'cupbot-concept');
 </script>
 
 <h2 id="robotics">Robotics</h2>
@@ -179,12 +180,8 @@ Rail system that accomodates multiple cup types</p>
   <li>indexing system?</li>
 </ul>
 
-<hr />
-
 <h3 id="cup-catchfunnel-area-of-development">Cup catch/funnel (Area of development)</h3>
 <p>Breaks the fall of the cup coming out of the dispenser. Can optionally present the cup to the consumer mechanically</p>
-
-<hr />
 
 <h3 id="pen-lifter-mechanism">Pen lifter mechanism</h3>
 <p>The primary component of the robot. Changes levels in the z and horizontal axis to efficiently move a singular pen that draws any conceivable design on a cup of any size. 
@@ -258,8 +255,6 @@ Pen z-axis</li>
   <li>GT3 Timing belt</li>
   <li>GT Pulley</li>
 </ul>
-
-<hr />
 
 <h3 id="turntable">Turntable</h3>
 <p>Rotates the cup

@@ -120,7 +120,7 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#tilt-rotor-drone">Tilt-Rotor Drone</a><ul><li><a href="#concept">Concept</a></li><li><a href="#hardware">Hardware</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#design-considerations">Design Considerations</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetic-components">Aesthetic Components</a></li><li><a href="#tilt-mechanism">Tilt Mechanism</a></li></ul></li><li><a href="#software">Software</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#quadcopter-race-drone">Quadcopter Race Drone</a><ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components-1">Components</a></li><li><a href="#schematic-1">Schematic</a></li></ul></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#references">References</a></li></ul>
+      <ul><li><a href="#tilt-rotor-drone">Tilt-Rotor Drone</a><ul><li><a href="#prototyping">Prototyping</a></li><li><a href="#hardware">Hardware</a><ul><li><a href="#components">Components</a></li><li><a href="#schematic">Schematic</a></li><li><a href="#design-considerations">Design Considerations</a></li><li><a href="#frame">Frame</a></li><li><a href="#aesthetic-components">Aesthetic Components</a></li><li><a href="#tilt-mechanism">Tilt Mechanism</a></li></ul></li><li><a href="#software">Software</a><ul><li><a href="#sensor-feedback-and-stability-control">Sensor Feedback and Stability Control</a><ul><li><a href="#mpu6050">MPU6050</a><ul><li><a href="#mpu6050-source-code">MPU6050 Source Code</a></li></ul></li><li><a href="#calibration">Calibration</a></li><li><a href="#sensor-fusion">Sensor Fusion</a></li><li><a href="#pid">PID</a></li></ul></li><li><a href="#positional-control">Positional Control</a><ul><li><a href="#motor-mixing">Motor mixing</a></li></ul></li><li><a href="#temeletry-and-visualization">Temeletry and Visualization</a><ul><li><a href="#real-time-rotation-visualization">Real-time rotation visualization</a></li></ul></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#quadcopter-race-drone">Quadcopter Race Drone</a><ul><li><a href="#hardware-design">Hardware Design</a><ul><li><a href="#components-1">Components</a></li><li><a href="#schematic-1">Schematic</a></li></ul></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#references">References</a></li></ul>
     </nav>
   
   <div>
@@ -131,7 +131,7 @@
 
 <p>This was my attempt at creating a tilt-rotor drone inspired by Sova’s drone in Valorant.</p>
 
-<h2 id="concept">Concept</h2>
+<h2 id="prototyping">Prototyping</h2>
 
 <p>Inspiration</p>
 <div id="my-slideshow4"></div>
@@ -146,8 +146,15 @@
   new Slideshow(slides4, 'my-slideshow4');
 </script>
 
-<p>Concept Drawings
-<img src="/assets/media/drone_media/mpu6050.png" alt="MPU6050" style="width:200px; height:200px;display: block; margin: auto;" /></p>
+<p>Concept Drawings</p>
+<div id="drone-concept"></div>
+<script>
+  const drone = [
+    { src: "/assets/media/drone_media/prototyping/Drone-1.png", caption: "", title: "Initial Rough Concept Sketch" },
+    { src: "/assets/media/drone_media/prototyping/Drone-1.png", caption: "", title: "Turntable" },
+  ];
+  new Slideshow(drone, 'drone-concept');
+</script>
 
 <h2 id="hardware">Hardware</h2>
 
@@ -205,7 +212,7 @@
 </table>
 
 <h3 id="schematic">Schematic</h3>
-<p><img src="https://raw.githubusercontent.com/nzge/drone/main/drone-schematic_bb.svg?sanitize=true" alt="Drone Schematic" style="width:400px; height:400px;display: block; margin: auto;" /></p>
+<p><img src="https://raw.githubusercontent.com/nzge/drone/main/drone-wiring/drone-schematic_bb.svg?sanitize=true" alt="Drone Schematic" style="width:400px; height:400px;display: block; margin: auto;" /></p>
 
 <h3 id="design-considerations">Design Considerations</h3>
 
