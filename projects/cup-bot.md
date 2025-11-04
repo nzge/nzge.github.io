@@ -25,10 +25,24 @@ Reference
 </script>
 
 ## Build Log 
+> 6-31-25: 
+>
+> ![Alt text](/assets/media/cup-bot_media/build-log/total%20assy%20rough%20prototype.PNG){: 
+style="height:200px;display: block; margin: auto;"}
+
+> 6-19-25: 
+>
+> ![Alt text](/assets/media/cup-bot_media/build-log/6-19-25.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+> 5-22-25: 
+>
+> ![Alt text](/assets/media/cup-bot_media/build-log/5-22-25.png){: 
+style="height:200px;display: block; margin: auto;"}
 
 > 5-9-25: 
 >
-> ![Alt text](/assets/media/owind_media/build-log/concept3_5-9-25.png){: 
+> ![Alt text](/assets/media/cup-bot_media/build-log/5-9-25.png){: 
 style="height:200px;display: block; margin: auto;"}
 
 ---

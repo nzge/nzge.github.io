@@ -562,7 +562,9 @@ style="height:200px;display: block; margin: auto;"}
 
 ## Ortho 
 
-![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+![Alt text](/assets/media/input_media/ortho/40%-ortho.svg){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+![Alt text](/assets/media/input_media/ortho/ortho-v2.png){: 
 style="width:100%; height:auto; display:block; margin: auto;"}
 
 ### Specs
