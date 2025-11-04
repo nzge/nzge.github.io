@@ -56,7 +56,7 @@ https://www.dispensingcomponents.com/cup-dispensers.html
 Activates the cup dispenser. Reciprocal motion enables repeatable dispense action.
 https://www.youtube.com/watch?v=QAcdDiX4zQE
 
-#### Motorized turret line (Area of development)
+#### Motorized turret line (Area of development)  
 How do index each cup turret?
 Rail system that accomodates multiple cup types
 
@@ -75,9 +75,9 @@ The horizontal motion is driven by a rack and pinion design. The main design con
 The z axis is driven by a stepper motor attached to a lead screw. This takes inspiration from 3d printer gantries that function in a similar way. While most 3d printers run with 2 lead screws to drive the z axis (to evenly drive the upwards motion on both ends with the 3d printer nozzle in the middle to still accomadate its horizontal motion), I adopted the design to run with only 1 stepper motor.
 Requires limit switches to calibrate the motion and limit the linear motion of both axes.
 
-**Inspiration**
-[Compliant pen lifter](https://www.youtube.com/shorts/tQbczmsBnS0)
-https://us.openbuilds.com/scribe-pen-lifter/
+**Inspiration**  
+[Compliant pen lifter](https://www.youtube.com/shorts/tQbczmsBnS0)  
+https://us.openbuilds.com/scribe-pen-lifter/  
 
 Horizontal pen movement actuation ideas
 - https://www.reddit.com/r/robotics/comments/z91sn8/looking_for_a_high_speed_linear_actuator/
@@ -91,7 +91,7 @@ archimedes screw too slow, not responsive?
 #### Pen
 The primary design challenge with the pen was to have it spring loaded to maintain consistent contact pressure and take out some of the guess work of positioning the pen at the perfect location.
 
-[Making your own plotter pens for the CE-150](https://www.youtube.com/watch?v=G97EAIrhWRY)
+[Making your own plotter pens for the CE-150](https://www.youtube.com/watch?v=G97EAIrhWRY)  
 https://www.servomagazine.com/magazine/article/make-a-spring-loaded-pen-holder-for-your-cnc-router-for-5
 
 Linear guide 
@@ -107,8 +107,8 @@ How to drive pen motion?
   - complex
 - 
 
-**Parts**
-Pen lifter
+**Parts**  
+Pen lifter  
 - rack and pinion
 - NEMA-17 Stepper
 - springs
@@ -116,19 +116,19 @@ Pen z-axis
 - GT3 Timing belt
 - GT Pulley 
 
-### Turntable
+### Turntable 
 Rotates the cup
 Driven by a stepper motor attached to the turntable via timing belt. 
 
-**Inspiration**
-https://www.audiomatica.com/wp/?page_id=3024
-https://www.instructables.com/Automated-Turntable-With-Steppermotor/ 
-https://learn.adafruit.com/stepper-motor-turntable
+**Inspiration**  
+https://www.audiomatica.com/wp/?page_id=3024  
+https://www.instructables.com/Automated-Turntable-With-Steppermotor/   
+https://learn.adafruit.com/stepper-motor-turntable  
 
 Design challenges
 - internally routed vacuum pipe to accomadate rotation of chuck
 
-**Parts**
+**Parts**  
 - NEMA-17 Stepper
 - GT3 Timing belt
 - GT Pulley (20T for motor, 60T for turntable) 
@@ -137,12 +137,12 @@ Design challenges
 #### Vaccuum table
 Suctions the cup to the cup in place, while still maintaining complete access to the cup exterior surface
 
-**Inspiration**
-[A $20 DIY VACUUM TABLE FOR CNC AND WOODWORKERS -- CAD, MACHINE, & TEST. DOES IT SUCK REALLY GOOD???](https://www.youtube.com/watch?v=pWSyRxU38HM)
-[CNC Vacuum PAD's 3D printed [with .stl & Fusion 360 files]](https://www.youtube.com/watch?v=r-QcuUqpHh4)
-https://amastone.com/shop/suction-cup-110-mm/
+**Inspiration**  
+[A $20 DIY VACUUM TABLE FOR CNC AND WOODWORKERS -- CAD, MACHINE, & TEST. DOES IT SUCK REALLY GOOD???](https://www.youtube.com/watch?v=pWSyRxU38HM)  
+[CNC Vacuum PAD's 3D printed [with .stl & Fusion 360 files]](https://www.youtube.com/watch?v=r-QcuUqpHh4)  
+https://amastone.com/shop/suction-cup-110-mm/  
 
-**Parts**
+**Parts**  
 - vacuum pump
 - rubber o-ring gasket
 
