@@ -3,18 +3,18 @@ layout: project
 category: "upwork"
 title: "Cup Bot"
 date: 2025-06-1
-image: "placeholder.jpg"
+image: "cup-bot.PNG"
 description: "Cup scribing robot"
 ---
 
 <br>
 
-![Alt text](/assets/media/cup-bot_media/build-log/total%20assy%20rough%20prototype2.PNG){: 
+![Alt text](/assets/media/cup-bot.PNG){: 
 style="width:100%;display: block; margin: auto;"}
 
-**Client Objective**: Design a robot that draws designs on robots
+**Client Objective**: Design a robot that draws designs on cups.
 
-**Goals**
+**Motivation**
 - Environmentally friendly packages
 - custom printed hot cups
 - minimum of 25000 
@@ -26,16 +26,16 @@ style="width:100%;display: block; margin: auto;"}
 
 ## Prototyping Phase
 
-Reference
-<div id="owind"></div>
+Design Sketches
+<div id="cupbot-concept"></div>
 <script>
-  const owind= [
-    { src: "/assets/media/owind_media/owindA.png", caption: "", title: "O-wind turbine" },
-    { src: "/assets/media/owind_media/owindB.png", caption: "Previous iteration of the design", title: "O-wind turbine" },
+  const cupbot= [
+    { src: "/assets/media/cup-bot_media/prototyping/Cup Bot-1.png", caption: "", title: "Cup Dispenser" },
+    { src: "/assets/media/cup-bot_media/prototyping/Cup Bot-2.png", caption: "", title: "Turntable" },
+    { src: "/assets/media/cup-bot_media/prototyping/Cup Bot-3.png", caption: "", title: "Writing Implement" }
   ];
-  new Slideshow(owind, 'owind');
+  new Slideshow(cupbot, 'cupbot-concept');
 </script>
-
 
 ## Robotics
 
@@ -66,12 +66,8 @@ Rail system that accomodates multiple cup types
 - motors to moving turrets
 - indexing system?
 
----
-
 ### Cup catch/funnel (Area of development)
 Breaks the fall of the cup coming out of the dispenser. Can optionally present the cup to the consumer mechanically
-
----
 
 ### Pen lifter mechanism
 The primary component of the robot. Changes levels in the z and horizontal axis to efficiently move a singular pen that draws any conceivable design on a cup of any size. 
@@ -119,8 +115,6 @@ Pen lifter
 Pen z-axis
 - GT3 Timing belt
 - GT Pulley 
-
----
 
 ### Turntable
 Rotates the cup

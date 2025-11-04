@@ -16,7 +16,7 @@ style="width:100%;display: block; margin: auto;"}
 
 This was my attempt at creating a tilt-rotor drone inspired by Sova's drone in Valorant.
 
-## Concept
+## Prototyping
 
 Inspiration
 <div id="my-slideshow4"></div>
@@ -32,7 +32,14 @@ Inspiration
 </script>
 
 Concept Drawings
-![MPU6050](/assets/media/drone_media/mpu6050.png){: style="width:200px; height:200px;display: block; margin: auto;"}
+<div id="drone-concept"></div>
+<script>
+  const drone = [
+    { src: "/assets/media/drone_media/prototyping/Drone-1.png", caption: "", title: "Initial Rough Concept Sketch" },
+    { src: "/assets/media/drone_media/prototyping/Drone-1.png", caption: "", title: "Turntable" },
+  ];
+  new Slideshow(drone, 'drone-concept');
+</script>
 
 ## Hardware
 
@@ -54,7 +61,7 @@ Concept Drawings
 
 
 ### Schematic
-<img src="https://raw.githubusercontent.com/nzge/drone/main/drone-schematic_bb.svg?sanitize=true" alt="Drone Schematic" style="width:400px; height:400px;display: block; margin: auto;">
+<img src="https://raw.githubusercontent.com/nzge/drone/main/drone-wiring/drone-schematic_bb.svg?sanitize=true" alt="Drone Schematic" style="width:400px; height:400px;display: block; margin: auto;">
   
 ### Design Considerations
 

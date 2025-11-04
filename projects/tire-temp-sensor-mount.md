@@ -3,7 +3,7 @@ layout: project
 category: "racing"
 title: "Tire Temperature Sensor Mount"
 date: 2022-04-05
-image: "temp_sensor.PNG"
+image: "temp-sensor.PNG"
 description: "Wheel temperature sensor mounting solution"
 repo: "https://github.com/nzge/tire-temp-sensor"
 ---

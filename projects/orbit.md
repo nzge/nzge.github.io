@@ -9,9 +9,9 @@ description: "Recreation of the Orbit Sprinkler Timer"
 
 <br>
 
-<p style="text-align: center;" >Model</p>
+<p style="text-align: center;" >Orbit Sprinkler Timer Model</p>
 <model-viewer
-  src="/assets/media/orbit-media/orbit_assy.glb"
+  src="/assets/media/orbit_media/orbit_assy.glb"
   alt="Handwired Macropad"
   camera-controls
   touch-action="none"
