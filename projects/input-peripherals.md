@@ -437,8 +437,8 @@ For my first design, I kept it simple.
 
 <p style="text-align: center;" >Model</p>
 <model-viewer
-  src="https://nzge.github.io/assets/media/stewart-platform_media/stewart_assy.gltf"
-  alt="Stewart Platform"
+  src="https://nzge.github.io/assets/media/input_media/macro_assy.glb"
+  alt="Handwired Macropad"
   camera-controls
   touch-action="pan-y"
   camera-orbit="0deg 0deg auto"
