@@ -2,7 +2,7 @@
 layout: project
 category: "personal"
 title: "Input Peripherals"
-date: 2022-02-20
+date: 2025-11-03
 image: "macropad.png"
 description: "An investigation into the customization potential of input devices and their core functionality."
 repo: "https://github.com/nzge/input-peripherals"
@@ -501,6 +501,11 @@ style="height:200px;display: block; margin: auto;"}
 style="height:200px;display: block; margin: auto;"}
 
 > 8-21-24: Test fit JWICK tactiles 
+>
+> ![Alt text](/assets/media/input_media/macro/hand-wire/test-fit.jpg){: 
+style="height:200px;display: block; margin: auto;"}
+
+> 02-20-2022: 
 >
 > ![Alt text](/assets/media/input_media/macro/hand-wire/test-fit.jpg){: 
 style="height:200px;display: block; margin: auto;"}
