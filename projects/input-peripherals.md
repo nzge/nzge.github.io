@@ -437,7 +437,7 @@ For my first design, I kept it simple.
 
 <p style="text-align: center;" >Model</p>
 <model-viewer
-  src="https://nzge.github.io/assets/media/input_media/macro_assy.glb"
+  src="https://nzge.github.io/assets/media/input_media/macro/hand-wire/macro_assy.glb"
   alt="Handwired Macropad"
   camera-controls
   touch-action="pan-y"
