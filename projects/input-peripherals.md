@@ -440,16 +440,19 @@ For my first design, I kept it simple.
   src="https://nzge.github.io/assets/media/input_media/macro/hand-wire/macro_assy.glb"
   alt="Handwired Macropad"
   camera-controls
-  touch-action="pan-y"
-  camera-orbit="0deg 0deg auto"
-  orientation="180deg 20deg 0deg"
-  field-of-view="45deg"
+  touch-action="none"
+  interaction-prompt="none"
+  disable-tap
+  style="width: 800px; height: 500px; display: block; margin: 0 auto 0.5em auto; background-color: #1a1a1a;"
+  camera-orbit="0deg 75deg auto"
+  min-camera-orbit="auto auto auto"
+  max-camera-orbit="auto auto auto"
+  min-field-of-view="10deg"
+  max-field-of-view="100deg"
+  environment-image="neutral"
   shadow-intensity="1"
-  exposure="1.0"
-  environment-image="legacy"
-  style="width: 800px; height: 500px; display: block; margin: 0 auto 0.5em auto; background-color: #1a1a1a;" >
+  exposure="1.0">
 </model-viewer>
-
 #### Layout
 
 ![Alt text](/assets/media/input_media/macro/4x4.png){: 
