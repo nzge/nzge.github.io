@@ -9,6 +9,402 @@ repo: "https://github.com/nzge/input-peripherals"
 toc: true
 ---
 
+
+# Keyboards
+I initially fell into the keyboard hobby during COVID when I was glued to my desktop and keyboard like most folks. My interest in industrial design aesthetics and boundless creative expression has led me on a long creative path of keyboard design.
+
+## My Current Setup
+
+![Alt text](/assets/media/input_media/my-keyboard.jpg){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
+*Specs*  
+- Mr. Suit TKL
+- Switches: Gateron box ink v2
+  - filmed (Deskeys films) and lubed (Krytox 205G0)
+- Keycaps: GMK WoB + CMYK Accents (IFK WOB)
+
+<br><br>
+
+**Design Inspiration**
+<div id="my-slideshow"></div>
+<script>
+  const slides= [
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/derivative.png", caption: "Derivative" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/derivative-bot.PNG", caption: "Derivative bottom" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/eventhorizon.jpg", caption: "Event Horizon" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/eventhorizon-bot.PNG", caption: "Event Horizon bottom" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/kreygasm keyboard.jpg", caption: "Cool keyboard render" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/neo75-side.jpg", caption: "Neo 75 side profile" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/neo75-bot.jpg", caption: "Neo 75 bottom" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/noxary378-gray.png", caption: "Noxary 378" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/ogr.jpg", caption: "OGR" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/pangea-side.jpg", caption: "Pangea side profile" },
+  ];
+  new Slideshow(slides, 'my-slideshow');
+</script>
+
+<br><br>
+
+## Hand-wired Macropad
+
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
+### Specs  
+For my first design, I kept it simple.  
+- 4x4 Matrix  
+- Unibody construction  
+
+<p style="text-align: center;" >Model</p>
+<model-viewer
+  src="https://nzge.github.io/assets/media/input_media/macro/hand-wire/macro_assy.glb"
+  alt="Handwired Macropad"
+  camera-controls
+  touch-action="none"
+  interaction-prompt="none"
+  disable-tap
+  style="width: 800px; height: 500px; display: block; margin: 0 auto 0.5em auto; background-color: #1a1a1a;"
+  camera-orbit="0deg 75deg auto"
+  min-camera-orbit="auto auto auto"
+  max-camera-orbit="auto auto auto"
+  min-field-of-view="10deg"
+  max-field-of-view="100deg"
+  environment-image="neutral"
+  shadow-intensity="1"
+  exposure="1.0">
+</model-viewer>
+
+#### Layout
+
+![Alt text](/assets/media/input_media/macro/4x4.png){: 
+style="height:200px; left: 0;}
+
+#### Components
+
+| Component | Description |
+|---|---|
+| [Pro Micro nRF52840](https://www.aliexpress.us/item/3256807783872448.html?spm=a2g0o.productlist.main.1.7f97412cFmkPgZ&algo_pvid=6620151d-2b6a-4130-98c6-9ad4570e99f9&algo_exp_id=6620151d-2b6a-4130-98c6-9ad4570e99f9-0&pdp_ext_f=%7B%22order%22%3A%22980%22%2C%22eval%22%3A%221%22%2C%22orig_sl_item_id%22%3A%221005007970187200%22%2C%22orig_item_id%22%3A%221005008079431976%22%7D&pdp_npi=4%40dis%21USD%213.60%211.80%21%21%2126.16%2113.08%21%40210312d517458248843083517e9190%2112000043081959970%21sea%21US%214467253674%21X&curPageLogUid=U7yGAfNlG6GQ&utparam-url=scene%3Asearch%7Cquery_from%3A) | Cheap alternative to nice!nanov2. BLE and lipo charging capability |
+| [DO-35 IN4148 High-speed Switching Diodes](https://www.aliexpress.us/item/3256805848952479.html?spm=a2g0o.order_list.order_list_main.65.7ddc1802EYblLy&gatewayAdapt=glo2usa)   | Prevent ghosting (when multiple, unintended key presses register as a single press when multiple keys are pressed simultaneously. Diodes ensure that the current only flows in one direction, preventing unintended paths through the matrix when multiple switches are closed)  |
+| [Heat shrink](https://www.aliexpress.us/item/3256804442290103.html?spm=a2g0o.order_list.order_list_main.35.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Electrical isolation between rows and columns |
+| [1.5mm Bare Copper wire](https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Wiring to form rows and columns |
+| [JWK Black T1 Tactile Switches](https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457)    | Switches |
+| 250 mAh LiPo     | Rechargeability |
+| Housing     | 3D printed using PLA |
+
+#### Pin Mapping
+![Alt text](/assets/media/input_media/macro/promicro-nrf52840.png){: 
+style="height:350px;display: block; margin: auto;"}
+
+### Build Log
+> 4-10-25: Resized to fit a battery
+>
+>
+
+> 3-25-25: Added keycaps
+>
+> ![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0829.JPG){: 
+style="height:200px; display:block; margin: auto;"}
+
+> 3-20-25: Completed the wiring
+>
+> ![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0812.jpg){: 
+style="height:200px; display:block; margin: auto;"}
+
+> 3-18-25: Hot-glued the switches in place
+>
+> ![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0783.JPG){: 
+style="height:200px;display: block; margin: auto;"}
+
+> 3-14-25: Made dimension modifications better suited to the design
+>
+> ![Alt text](/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+> 8-21-24: Test fit JWICK tactiles 
+>
+> ![Alt text](/assets/media/input_media/macro/hand-wire/test-fit.jpg){: 
+style="height:200px;display: block; margin: auto;"}
+
+> 02-20-2022: 
+>
+> ![Alt text](/assets/media/input_media/macro/hand-wire/test-fit.jpg){: 
+style="height:200px;display: block; margin: auto;"}
+
+---
+
+## Macropad with PCB 
+
+### PCB 
+KiCAD
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+### Build Log
+
+> 4-11-25: PCB Prototype
+>
+> ![macro-pcb-proto](/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png){: style="height:200px; display: block; margin: auto;"}
+
+---
+
+## Ergo Split
+
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
+### Specs
+- Low profile switches
+- Tenting via magsafe phone stands
+- Ergonomic splayed key spacing
+
+#### Components
+
+| Component | Description |
+|---|---|
+| [Magsafe phone stand](https://www.aliexpress.us/item/3256807516374506.html?spm=a2g0o.cart.0.0.34f738daxHlmM3&mp=1&pdp_npi=5%40dis%21USD%21USD%2021.77%21USD%2010.59%21%21USD%2010.59%21%21%21%402101c5b217460555351044119eab9b%2112000041913114307%21ct%21US%214467253674%21%212%210&_gl=1*11e8ki2*_gcl_aw*R0NMLjE3NDA1NTgxMDkuQ2p3S0NBaUFsUHU5QmhBakVpd0E1TkRTQTdzMF9GdmJFOFI0LWQwMnlrcXdKem04cm9BQXBXQUxNTWkyMXZzZ2x4WUx3Tlk3OTNwMUpSb0NESW9RQXZEX0J3RQ..*_gcl_au*NjI4NjQxMDkuMTczODMwNDY3NQ..*_ga*OTY3MjMwOTg4LjE3MzgzMDQ2NzU.*_ga_VED1YSGNC7*MTc0NjA1NTUyNy4yNC4xLjE3NDYwNTU1MzYuNTEuMC4w&gatewayAdapt=glo2usa) x2 | Tenting |
+| [Magsafe ring]() x2   | Placed on keyboard to magnetically bind to stands|
+| [Choc Purple Switches](https://www.aliexpress.us/item/3256804880270570.html?spm=a2g0o.cart.0.0.34f738daxHlmM3&mp=1&pdp_npi=5%40dis%21USD%21USD%2071.55%21USD%2057.24%21%21USD%2057.24%21%21%21%402101c5b217460555351044119eab9b%2112000036200576713%21ct%21US%214467253674%21%211%210&_gl=1*1q7dg1o*_gcl_aw*R0NMLjE3NDA1NTgxMDkuQ2p3S0NBaUFsUHU5QmhBakVpd0E1TkRTQTdzMF9GdmJFOFI0LWQwMnlrcXdKem04cm9BQXBXQUxNTWkyMXZzZ2x4WUx3Tlk3OTNwMUpSb0NESW9RQXZEX0J3RQ..*_gcl_au*NjI4NjQxMDkuMTczODMwNDY3NQ..*_ga*OTY3MjMwOTg4LjE3MzgzMDQ2NzU.*_ga_VED1YSGNC7*MTc0NjA1NTUyNy4yNC4xLjE3NDYwNTU1NTcuMzAuMC4w&gatewayAdapt=glo2usa)    | Switches |
+| [250 mAh LiPo Battery]()  x2  | Rechargeability |
+| Housing     | 3D printed using PLA |
+
+#### Layout
+![Alt text](/assets/media/input_media/split/ergo/ergo-split.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+
+### PCB 
+Designed in KiCAD
+![Alt text](/assets/media/input_media/split/ergo/ergo-split.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+### Build Log
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/input_media/split/ergo/){: 
+style="height:200px;display: block; margin: auto;"}
+
+
+---
+
+## Ortho 
+
+![Alt text](/assets/media/input_media/ortho/ortho-v2.png){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
+### Specs
+- Ortholinear key spacing
+- Ultra low profile switches
+- Keycaps level with the case
+
+#### Components
+
+| Component | Description |
+|---|---|
+| Housing | 3D printed using PLA |
+
+#### Layout
+![Alt text](/assets/media/input_media/ortho/40%-ortho.svg){: 
+style="height:200px; display:block; margin: auto;"}
+![Alt text](/assets/media/input_media/ortho/ortho-v2.png){: 
+style="height:200px; display:block; margin: auto;"}
+
+### PCB
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+### Build Log
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+---
+
+## 40% with Fkeys
+A 40% keyboard with extra flare. 
+
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
+### Specs
+- Layout: 40% with function keys left side
+- PCB: mill max sockets
+- Case
+  - thin side bezels
+  - 2 piece construction
+  - top mount
+  - rectangular rubber feet 
+  - low front height (cherry lip)
+
+#### Components
+
+| Component | Description |
+|---|---|
+| [1.5mm Bare Copper wire](https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Wiring to form rows and columns |
+| [JWK Black T1 Tactile Switches](https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457)    | Switches |
+| [250 mAh LiPo Battery]()     | Rechargeability |
+| Housing     | 3D printed using PLA |
+
+#### Layout
+<br>
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+### PCB 
+Designed in KiCAD
+<br>
+
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+### Build Log
+> 4-12-25: Prototype schematic revision 0
+>
+> MCU Schematic            |  Key Matrix
+:-------------------------:|:-------------------------:
+![Alt text](/assets/media/input_media/40/40+_schematic_rev0-1.png){: style="height:300px;display: block; margin: auto;"}   |  ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-2.png){: style="height:300px;display: block; margin: auto;"}
+
+> 4-10-25: Initial CAD prototype
+>
+> ![Alt text](/assets/media/input_media/40/40+_proto_rev0.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+
+---
+
+## HHKB
+My take on the classic HHKB layout
+
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
+### Specs
+
+
+#### Components
+
+| Component | Description |
+|---|---|
+| [1.5mm Bare Copper wire](https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Wiring to form rows and columns |
+| [JWK Black T1 Tactile Switches](https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457) | Switches |
+| [250 mAh LiPo]() | Rechargeability |
+| Housing     | 3D printed using PLA |
+
+#### Layout
+![Alt text](/assets/media/input_media/hhkb/hhkb-default.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+### PCB
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+### Build Log
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+---
+
+## Modular Keyboard
+Fully modular keyboard, with each keyswitch being a singular unit. A lego keyboard, if you will. 
+### Concept
+![Modular keyboard concept sketch](/assets/media/input_media/modular/modular-keyboard_concept.png){: 
+style="height:400px;display: block; margin: auto;"}
+
+### Specs
+
+
+### Build Log
+
+> 4-11-25: 
+>
+> ![macro-pcb-proto](/assets/media/input_media/modular/modular-keyboard_concept.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+---
+---
+
+# Mice
+
+## Ultralight Mouse
+Chasing performance.
+
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
+### Specs
+
+
+### PCB
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+### Firmware
+
+### Build Log
+> 4-29-25: 
+>
+> ![Alt text](/assets/media/input_media/mice/ul-mouse/ul-mouse_schematic_rev0-1.png){: style="height:400px;display: block; margin: auto;"}
+
+---
+
+## Chimera
+A Keyswitch Mouse  
+Injecting keyboard DNA into the mouse peripheral
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
+### Concept
+ ![Alt text](/assets/media/input_media/mice/keyswitch-mouse/keyswitch-mouse_concept.png){: 
+style="height:350px;display: block; margin: auto;"}
+
+### Specs
+4 choc keyswitches  
+Capacitive scroll wheel  
+
+### PCB
+![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+### Firmware
+
+
+### Build Log
+> 4-28-25: 
+>
+> ![Alt text](/assets/media/input_media/mice/keyswitch-mouse/keyswitch-mouse_schematic_rev0-1.png){: 
+style="height:400px;display: block; margin: auto;"}
+
+---
+
+## Macros Mouse
+How many useful buttons can I fit on one mouse?  
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
+style="width:100%; height:auto; display:block; margin: auto;"}
+
+### Concept
+
+
+### Specs
+
+
+### PCB
+
+
+### Firmware
+
+
+### Build Log
+> 3-14-25: 
+>
+> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
+style="height:200px;display: block; margin: auto;"}
+
+---
+---
+
 # General Info
 
 ## Keyboard
@@ -389,401 +785,6 @@ A very capable microcontroller
 ---
 ---
 
-# Keyboards
-I initially fell into the keyboard hobby during COVID when I was glued to my desktop and keyboard like most folks. My interest in industrial design aesthetics and boundless creative expression has led me on a long creative path of keyboard design.
-
-## My Current Setup
-
-![Alt text](/assets/media/input_media/my-keyboard.jpg){: 
-style="width:100%; height:auto; display:block; margin: auto;"}
-
-*Specs*  
-- Mr. Suit TKL
-- Switches: Gateron box ink v2
-  - filmed (Deskeys films) and lubed (Krytox 205G0)
-- Keycaps: GMK WoB + CMYK Accents (IFK WOB)
-
-<br><br>
-
-**Design Inspiration**
-<div id="my-slideshow"></div>
-<script>
-  const slides= [
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/derivative.png", caption: "Derivative" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/derivative-bot.PNG", caption: "Derivative bottom" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/eventhorizon.jpg", caption: "Event Horizon" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/eventhorizon-bot.PNG", caption: "Event Horizon bottom" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/kreygasm keyboard.jpg", caption: "Cool keyboard render" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/neo75-side.jpg", caption: "Neo 75 side profile" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/neo75-bot.jpg", caption: "Neo 75 bottom" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/noxary378-gray.png", caption: "Noxary 378" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/ogr.jpg", caption: "OGR" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/pangea-side.jpg", caption: "Pangea side profile" },
-  ];
-  new Slideshow(slides, 'my-slideshow');
-</script>
-
-<br><br>
-
-## Hand-wired Macropad
-
-![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
-style="width:100%; height:auto; display:block; margin: auto;"}
-
-### Specs  
-For my first design, I kept it simple.  
-- 4x4 Matrix  
-- Unibody construction  
-
-<p style="text-align: center;" >Model</p>
-<model-viewer
-  src="https://nzge.github.io/assets/media/input_media/macro/hand-wire/macro_assy.glb"
-  alt="Handwired Macropad"
-  camera-controls
-  touch-action="none"
-  interaction-prompt="none"
-  disable-tap
-  style="width: 800px; height: 500px; display: block; margin: 0 auto 0.5em auto; background-color: #1a1a1a;"
-  camera-orbit="0deg 75deg auto"
-  min-camera-orbit="auto auto auto"
-  max-camera-orbit="auto auto auto"
-  min-field-of-view="10deg"
-  max-field-of-view="100deg"
-  environment-image="neutral"
-  shadow-intensity="1"
-  exposure="1.0">
-</model-viewer>
-
-#### Layout
-
-![Alt text](/assets/media/input_media/macro/4x4.png){: 
-style="height:200px; left: 0;}
-
-#### Components
-
-| Component | Description |
-|---|---|
-| [Pro Micro nRF52840](https://www.aliexpress.us/item/3256807783872448.html?spm=a2g0o.productlist.main.1.7f97412cFmkPgZ&algo_pvid=6620151d-2b6a-4130-98c6-9ad4570e99f9&algo_exp_id=6620151d-2b6a-4130-98c6-9ad4570e99f9-0&pdp_ext_f=%7B%22order%22%3A%22980%22%2C%22eval%22%3A%221%22%2C%22orig_sl_item_id%22%3A%221005007970187200%22%2C%22orig_item_id%22%3A%221005008079431976%22%7D&pdp_npi=4%40dis%21USD%213.60%211.80%21%21%2126.16%2113.08%21%40210312d517458248843083517e9190%2112000043081959970%21sea%21US%214467253674%21X&curPageLogUid=U7yGAfNlG6GQ&utparam-url=scene%3Asearch%7Cquery_from%3A) | Cheap alternative to nice!nanov2. BLE and lipo charging capability |
-| [DO-35 IN4148 High-speed Switching Diodes](https://www.aliexpress.us/item/3256805848952479.html?spm=a2g0o.order_list.order_list_main.65.7ddc1802EYblLy&gatewayAdapt=glo2usa)   | Prevent ghosting (when multiple, unintended key presses register as a single press when multiple keys are pressed simultaneously. Diodes ensure that the current only flows in one direction, preventing unintended paths through the matrix when multiple switches are closed)  |
-| [Heat shrink](https://www.aliexpress.us/item/3256804442290103.html?spm=a2g0o.order_list.order_list_main.35.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Electrical isolation between rows and columns |
-| [1.5mm Bare Copper wire](https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Wiring to form rows and columns |
-| [JWK Black T1 Tactile Switches](https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457)    | Switches |
-| 250 mAh LiPo     | Rechargeability |
-| Housing     | 3D printed using PLA |
-
-#### Pin Mapping
-![Alt text](/assets/media/input_media/macro/promicro-nrf52840.png){: 
-style="height:350px;display: block; margin: auto;"}
-
-### Build Log
-> 4-10-25: Resized to fit a battery
->
->
-
-> 3-25-25: Added keycaps
->
-> ![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0829.JPG){: 
-style="height:200px; display:block; margin: auto;"}
-
-> 3-20-25: Completed the wiring
->
-> ![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0812.jpg){: 
-style="height:200px; display:block; margin: auto;"}
-
-> 3-18-25: Hot-glued the switches in place
->
-> ![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0783.JPG){: 
-style="height:200px;display: block; margin: auto;"}
-
-> 3-14-25: Made dimension modifications better suited to the design
->
-> ![Alt text](/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-> 8-21-24: Test fit JWICK tactiles 
->
-> ![Alt text](/assets/media/input_media/macro/hand-wire/test-fit.jpg){: 
-style="height:200px;display: block; margin: auto;"}
-
-> 02-20-2022: 
->
-> ![Alt text](/assets/media/input_media/macro/hand-wire/test-fit.jpg){: 
-style="height:200px;display: block; margin: auto;"}
-
----
-
-## Macropad with PCB 
-
-### PCB 
-KiCAD
-![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-### Build Log
-
-> 4-11-25: PCB Prototype
->
-> ![macro-pcb-proto](/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png){: style="height:200px; display: block; margin: auto;"}
-
----
-
-## Ergo Split
-
-![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
-style="width:100%; height:auto; display:block; margin: auto;"}
-
-### Specs
-- Low profile switches
-- Tenting via magsafe phone stands
-- Ergonomic splayed key spacing
-
-#### Components
-
-| Component | Description |
-|---|---|
-| [Magsafe phone stand](https://www.aliexpress.us/item/3256807516374506.html?spm=a2g0o.cart.0.0.34f738daxHlmM3&mp=1&pdp_npi=5%40dis%21USD%21USD%2021.77%21USD%2010.59%21%21USD%2010.59%21%21%21%402101c5b217460555351044119eab9b%2112000041913114307%21ct%21US%214467253674%21%212%210&_gl=1*11e8ki2*_gcl_aw*R0NMLjE3NDA1NTgxMDkuQ2p3S0NBaUFsUHU5QmhBakVpd0E1TkRTQTdzMF9GdmJFOFI0LWQwMnlrcXdKem04cm9BQXBXQUxNTWkyMXZzZ2x4WUx3Tlk3OTNwMUpSb0NESW9RQXZEX0J3RQ..*_gcl_au*NjI4NjQxMDkuMTczODMwNDY3NQ..*_ga*OTY3MjMwOTg4LjE3MzgzMDQ2NzU.*_ga_VED1YSGNC7*MTc0NjA1NTUyNy4yNC4xLjE3NDYwNTU1MzYuNTEuMC4w&gatewayAdapt=glo2usa) x2 | Tenting |
-| [Magsafe ring]() x2   | Placed on keyboard to magnetically bind to stands|
-| [Choc Purple Switches](https://www.aliexpress.us/item/3256804880270570.html?spm=a2g0o.cart.0.0.34f738daxHlmM3&mp=1&pdp_npi=5%40dis%21USD%21USD%2071.55%21USD%2057.24%21%21USD%2057.24%21%21%21%402101c5b217460555351044119eab9b%2112000036200576713%21ct%21US%214467253674%21%211%210&_gl=1*1q7dg1o*_gcl_aw*R0NMLjE3NDA1NTgxMDkuQ2p3S0NBaUFsUHU5QmhBakVpd0E1TkRTQTdzMF9GdmJFOFI0LWQwMnlrcXdKem04cm9BQXBXQUxNTWkyMXZzZ2x4WUx3Tlk3OTNwMUpSb0NESW9RQXZEX0J3RQ..*_gcl_au*NjI4NjQxMDkuMTczODMwNDY3NQ..*_ga*OTY3MjMwOTg4LjE3MzgzMDQ2NzU.*_ga_VED1YSGNC7*MTc0NjA1NTUyNy4yNC4xLjE3NDYwNTU1NTcuMzAuMC4w&gatewayAdapt=glo2usa)    | Switches |
-| [250 mAh LiPo Battery]()  x2  | Rechargeability |
-| Housing     | 3D printed using PLA |
-
-#### Layout
-![Alt text](/assets/media/input_media/split/ergo/ergo-split.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-
-### PCB 
-Designed in KiCAD
-![Alt text](/assets/media/input_media/split/ergo/ergo-split.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-### Build Log
-> 3-14-25: 
->
-> ![Alt text](/assets/media/input_media/split/ergo/){: 
-style="height:200px;display: block; margin: auto;"}
-
-
----
-
-## Ortho 
-
-![Alt text](/assets/media/input_media/ortho/40%-ortho.svg){: 
-style="width:100%; height:auto; display:block; margin: auto;"}
-![Alt text](/assets/media/input_media/ortho/ortho-v2.png){: 
-style="width:100%; height:auto; display:block; margin: auto;"}
-
-### Specs
-- Ortholinear key spacing
-- Ultra low profile switches
-- Keycaps level with the case
-
-#### Components
-
-| Component | Description |
-|---|---|
-| Housing | 3D printed using PLA |
-
-#### Layout
-![Alt text](/assets/media/input_media/hhkb/hhkb-default.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-### PCB
-![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-### Build Log
-> 3-14-25: 
->
-> ![Alt text](/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png){: 
-style="height:200px;display: block; margin: auto;"}
-
----
-
-## 40% with Fkeys
-A 40% keyboard with extra flare. 
-
-![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
-style="width:100%; height:auto; display:block; margin: auto;"}
-
-### Specs
-- Layout: 40% with function keys left side
-- PCB: mill max sockets
-- Case
-  - thin side bezels
-  - 2 piece construction
-  - top mount
-  - rectangular rubber feet 
-  - low front height (cherry lip)
-
-#### Components
-
-| Component | Description |
-|---|---|
-| [1.5mm Bare Copper wire](https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Wiring to form rows and columns |
-| [JWK Black T1 Tactile Switches](https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457)    | Switches |
-| [250 mAh LiPo Battery]()     | Rechargeability |
-| Housing     | 3D printed using PLA |
-
-#### Layout
-<br>
-![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-### PCB 
-Designed in KiCAD
-<br>
-
-![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-### Build Log
-> 4-12-25: Prototype schematic revision 0
->
-> MCU Schematic            |  Key Matrix
-:-------------------------:|:-------------------------:
-![Alt text](/assets/media/input_media/40/40+_schematic_rev0-1.png){: style="height:300px;display: block; margin: auto;"}   |  ![Alt text](/assets/media/input_media/40/40+_schematic_rev0-2.png){: style="height:300px;display: block; margin: auto;"}
-
-> 4-10-25: Initial CAD prototype
->
-> ![Alt text](/assets/media/input_media/40/40+_proto_rev0.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-
----
-
-## HHKB
-My take on the classic HHKB layout
-
-![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
-style="width:100%; height:auto; display:block; margin: auto;"}
-
-### Specs
-
-
-#### Components
-
-| Component | Description |
-|---|---|
-| [1.5mm Bare Copper wire](https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&gatewayAdapt=glo2usa) | Wiring to form rows and columns |
-| [JWK Black T1 Tactile Switches](https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457) | Switches |
-| [250 mAh LiPo]() | Rechargeability |
-| Housing     | 3D printed using PLA |
-
-#### Layout
-![Alt text](/assets/media/input_media/hhkb/hhkb-default.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-### PCB
-![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-### Build Log
-> 3-14-25: 
->
-> ![Alt text](/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png){: 
-style="height:200px;display: block; margin: auto;"}
-
----
-
-## Modular Keyboard
-Fully modular keyboard, with each keyswitch being a singular unit. A lego keyboard, if you will. 
-### Concept
-![Modular keyboard concept sketch](/assets/media/input_media/modular/modular-keyboard_concept.png){: 
-style="height:400px;display: block; margin: auto;"}
-
-### Specs
-
-
-### Build Log
-
-> 4-11-25: 
->
-> ![macro-pcb-proto](/assets/media/input_media/modular/modular-keyboard_concept.png){: 
-style="height:200px;display: block; margin: auto;"}
-
----
----
-
-# Mice
-
-## Ultralight Mouse
-Chasing performance.
-
-![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
-style="width:100%; height:auto; display:block; margin: auto;"}
-
-### Specs
-
-
-### PCB
-![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-### Firmware
-
-### Build Log
-> 4-29-25: 
->
-> ![Alt text](/assets/media/input_media/mice/ul-mouse/ul-mouse_schematic_rev0-1.png){: style="height:400px;display: block; margin: auto;"}
-
----
-
-## Chimera
-A Keyswitch Mouse  
-Injecting keyboard DNA into the mouse peripheral
-![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
-style="width:100%; height:auto; display:block; margin: auto;"}
-
-### Concept
- ![Alt text](/assets/media/input_media/mice/keyswitch-mouse/keyswitch-mouse_concept.png){: 
-style="height:350px;display: block; margin: auto;"}
-
-### Specs
-4 choc keyswitches  
-Capacitive scroll wheel  
-
-### PCB
-![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
-style="height:200px;display: block; margin: auto;"}
-
-### Firmware
-
-
-### Build Log
-> 4-28-25: 
->
-> ![Alt text](/assets/media/input_media/mice/keyswitch-mouse/keyswitch-mouse_schematic_rev0-1.png){: 
-style="height:400px;display: block; margin: auto;"}
-
----
-
-## Macros Mouse
-How many useful buttons can I fit on one mouse?  
-![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
-style="width:100%; height:auto; display:block; margin: auto;"}
-
-### Concept
-
-
-### Specs
-
-
-### PCB
-
-
-### Firmware
-
-
-### Build Log
-> 3-14-25: 
->
-> ![Alt text](/assets/media/input_media/macro/macropad-proto_3-14-25.png){: 
-style="height:200px;display: block; margin: auto;"}
-
----
----
-
 # References
 
 ## Keyboard
@@ -811,9 +812,9 @@ style="height:200px;display: block; margin: auto;"}
 [Frankenswitches by AidanSmith.dev](https://www.aidansmith.dev/frankenswitches/)  
 
 - Hall Effect
-[Soundtest of the most popular Hall effect Switches (Wooting 80HE, Jade, Jade Pro, Jade Max, Magneto, Black Knight, Lekker V2)](https://www.reddit.com/r/MechanicalKeyboards/comments/1g87x4a/soundtest_of_the_most_popular_halleffect_switches/)
-[Hall Effect vs. Optical: What Switches Should You Choose? by Yadullah Abidi](https://www.makeuseof.com/hall-effect-vs-optical-switches/)
-[3D Printed Maglev Switch](https://github.com/famichu/MagLev_Switch_MX)
+[Soundtest of the most popular Hall effect Switches (Wooting 80HE, Jade, Jade Pro, Jade Max, Magneto, Black Knight, Lekker V2)](https://www.reddit.com/r/MechanicalKeyboards/comments/1g87x4a/soundtest_of_the_most_popular_halleffect_switches/)  
+[Hall Effect vs. Optical: What Switches Should You Choose? by Yadullah Abidi](https://www.makeuseof.com/hall-effect-vs-optical-switches/)  
+[3D Printed Maglev Switch](https://github.com/famichu/MagLev_Switch_MX)  
 
 **Split**  
 [“The REAL Ergonomic Keyboard Endgame!” — How To Design & Make A Totally Custom Keyboard](https://www.youtube.com/watch?v=UKfeJrRIcxw&t=895s)  
@@ -842,14 +843,14 @@ style="height:200px;display: block; margin: auto;"}
 []()
 
 ## Mice  
-[I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything](https://www.youtube.com/watch?v=qmX8vL-GbxU)
-[The worlds lightest gaming mouse PCB by Patrick Schmalzried](https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb)
-[I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim](https://www.youtube.com/watch?v=9CQqasv5_qo&t=208s)
+[I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything](https://www.youtube.com/watch?v=qmX8vL-GbxU)  
+[The worlds lightest gaming mouse PCB by Patrick Schmalzried](https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb)  
+[I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim](https://www.youtube.com/watch?v=9CQqasv5_qo&t=208s)  
 [JEE600 in clusterfudge status (expected, really)](https://www.reddit.com/r/ErgoMechKeyboards/comments/1jnn0xk/jee600_in_clusterfudge_status_expected_really/)  
 [My Mouse Projects So Far...](https://www.reddit.com/r/arduino/comments/1jc1jhp/my_mouse_projects_so_far/)  
 [LOFREE Touch](https://www.lofree.co/products/lofree-touch-pbt-wireless-mouse)  
-[2023 Top Six Latest Mouse With Unique Features: Hot-Swappable Switches, Unique Designs, and More!!](https://mechkeys.com/blogs/guide/top-six-latest-mouse-with-unique-features)
-[key switches mouse](https://www.google.com/search?sca_esv=601b0517c7361365&rlz=1C1RXQR_enUS930US930&sxsrf=AHTn8zrtHuVK4oGJ64eYsjphaJLBXivZQQ:1746422722142&q=key+switches+mouse&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBsxayPSIAqObp_AgjkUGqel3rTRMIJGV_ECIUB00muput9Zp8VMKUi0ZjqPs3JlrgPeFrAnFlUitTiL3WcJlFn10ZVAeuxL5fSn-ULNu9lz3DIW3cy7rkKNmgHapdAFAoBFSl5-LQE_swXRSgVvZGy87KiusPiw1DSGvVAMCLf6f2K4DEg&sa=X&ved=2ahUKEwjxp-zPy4uNAxVsle4BHTgvJhAQtKgLegQIBxAB&biw=2560&bih=1279&dpr=1#vhid=1A7hF_VEmY1Y0M&vssid=mosaic)
+[2023 Top Six Latest Mouse With Unique Features: Hot-Swappable Switches, Unique Designs, and More!!](https://mechkeys.com/blogs/guide/top-six-latest-mouse-with-unique-features)    
+[key switches mouse](https://www.google.com/search?sca_esv=601b0517c7361365&rlz=1C1RXQR_enUS930US930&sxsrf=AHTn8zrtHuVK4oGJ64eYsjphaJLBXivZQQ:1746422722142&q=key+switches+mouse&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBsxayPSIAqObp_AgjkUGqel3rTRMIJGV_ECIUB00muput9Zp8VMKUi0ZjqPs3JlrgPeFrAnFlUitTiL3WcJlFn10ZVAeuxL5fSn-ULNu9lz3DIW3cy7rkKNmgHapdAFAoBFSl5-LQE_swXRSgVvZGy87KiusPiw1DSGvVAMCLf6f2K4DEg&sa=X&ved=2ahUKEwjxp-zPy4uNAxVsle4BHTgvJhAQtKgLegQIBxAB&biw=2560&bih=1279&dpr=1#vhid=1A7hF_VEmY1Y0M&vssid=mosaic)  
 
 ## Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
