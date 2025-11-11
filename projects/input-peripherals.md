@@ -9,6 +9,7 @@ repo: "https://github.com/nzge/input-peripherals"
 toc: true
 ---
 
+This page details my exploration of designing input peripherals, particularly mice and keyboards, and adapting their functions to the personal tastes and as a means of personal expression.
 
 # Keyboards
 I initially fell into the keyboard hobby during COVID when I was glued to my desktop and keyboard like most folks. My interest in industrial design aesthetics and boundless creative expression has led me on a long creative path of keyboard design.
@@ -134,10 +135,14 @@ style="height:200px;display: block; margin: auto;"}
 ---
 
 ## Macropad with PCB 
+The natural evolution of the hand-wired macropad was integrating the wiring logic into a more formalized, production quality product.
+Fundamentally, this macropad has the same core features as the previous hand-wired iteration, but packaged nicer.
 
 ### PCB 
 KiCAD
-![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
+[Macropad Schematic view](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2Fnzge%2Finput-peripherals%2Ftree%2Fmain%2Fmacropad%2Fpcb%25204x4%2520macro%2F4x4_macro)
+
+![Alt text](/assets/media/input_media/macro/macro-pcb/4x4_macro.svg){: 
 style="height:200px;display: block; margin: auto;"}
 
 ### Build Log
@@ -154,7 +159,7 @@ style="height:200px;display: block; margin: auto;"}
 style="width:100%; height:auto; display:block; margin: auto;"}
 
 ### Specs
-- Low profile switches
+- Low profile choc switches
 - Tenting via magsafe phone stands
 - Ergonomic splayed key spacing
 
@@ -169,6 +174,9 @@ style="width:100%; height:auto; display:block; margin: auto;"}
 | Housing     | 3D printed using PLA |
 
 #### Layout
+
+I used [Ergogen](https://ergogen.xyz/) to configure my ergo layout
+
 ![Alt text](/assets/media/input_media/split/ergo/ergo-split.png){: 
 style="height:200px;display: block; margin: auto;"}
 
@@ -188,6 +196,7 @@ style="height:200px;display: block; margin: auto;"}
 ---
 
 ## Ortho 
+An ultra thin, ultraportable ortholinear keyboard.
 
 ![Alt text](/assets/media/input_media/ortho/ortho-v2.png){: 
 style="width:100%; height:auto; display:block; margin: auto;"}
@@ -228,7 +237,7 @@ A 40% keyboard with extra flare.
 style="width:100%; height:auto; display:block; margin: auto;"}
 
 ### Specs
-- Layout: 40% with function keys left side
+- Layout: 40% with 2 function key columns to the left
 - PCB: mill max sockets
 - Case
   - thin side bezels
@@ -248,12 +257,13 @@ style="width:100%; height:auto; display:block; margin: auto;"}
 
 #### Layout
 <br>
+
 ![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
 style="height:200px;display: block; margin: auto;"}
 
 ### PCB 
 Designed in KiCAD
-https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2Fnzge%2Finput-peripherals%2Ftree%2Fmain%2Fforty%2F40%252B%2F40%252B_pcb 
+[40%+ PCB Schematic view](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2Fnzge%2Finput-peripherals%2Ftree%2Fmain%2Fforty%2F40%252B%2F40%252B_pcb)
 
 <br>
 
@@ -289,7 +299,8 @@ My take on the classic HHKB layout
 style="width:100%; height:auto; display:block; margin: auto;"}
 
 ### Specs
-
+- HHKB Layout
+- 
 
 #### Components
 
@@ -322,6 +333,9 @@ Fully modular keyboard, with each keyswitch being a singular unit. A lego keyboa
 ![Modular keyboard concept sketch](/assets/media/input_media/modular/modular-keyboard_concept.png){: 
 style="height:400px;display: block; margin: auto;"}
 
+Some kind of central intelligence that dynamically detects the quantity of keys 'absorbed' within the matrix. 
+Magnetic POGO pin connectors forming connections between keys.
+
 ### Specs
 
 
@@ -347,6 +361,8 @@ style="width:100%; height:auto; display:block; margin: auto;"}
 
 
 ### PCB
+
+[UL Mouse PCB Schematic view](https://github.com/nzge/input-peripherals/tree/main/mouse/ultralight/ul-mouse_pcb)
 ![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
 style="height:200px;display: block; margin: auto;"}
 
