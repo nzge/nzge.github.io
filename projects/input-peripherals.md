@@ -253,12 +253,21 @@ style="height:200px;display: block; margin: auto;"}
 
 ### PCB 
 Designed in KiCAD
+https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2Fnzge%2Finput-peripherals%2Ftree%2Fmain%2Fforty%2F40%252B%2F40%252B_pcb 
+
 <br>
 
 ![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
 style="height:200px;display: block; margin: auto;"}
 
 ### Build Log
+>11-11-25: Correcting label mismatch/discrepancy between switches and associated diodes to prep for kbplacer 
+>
+
+> 11-10-25: Making schematic functional with matrix column and row labelling. Confirming power-path management logic. Added extra
+decoupling caps when needed. Other minor fixes/changes.
+>
+
 > 4-12-25: Prototype schematic revision 0
 >
 > MCU Schematic            |  Key Matrix
@@ -839,9 +848,14 @@ A very capable microcontroller
 
 **PCB Design**  
 [How to Design Mechanical Keyboard PCBs with Kicad - Joe Scotto](https://www.youtube.com/watch?v=8WXpGTIbxlQ&t=537s)  
+[Simple STM32 Mechanical Keyboard PCB Design in Kicad](https://www.youtube.com/watch?v=o7SF2TPVV6o&t=452s)
 [ruiqimao/keyboard-pcb-guide](https://github.com/ruiqimao/keyboard-pcb-guide?tab=readme-ov-file#associating-components-and-footprints)  
 [Designing a keyboard from scratch - masterzen](https://www.masterzen.fr/2020/05/03/designing-a-keyboard-part-1/)   
 [Designing PCBs: Advanced SMD - SparkFun](https://learn.sparkfun.com/tutorials/designing-pcbs-advanced-smd/all)  
+- Lipo Charging
+[Li-ion Battery Charging Circuit Design - MicroType Engineering](https://www.youtube.com/watch?v=GRd9uTwg7r4)  
+[LiPo MCP73831 battery charge + load sharing circuit review, and safety question](https://www.reddit.com/r/AskElectronics/comments/xyfpyt/lipo_mcp73831_battery_charge_load_sharing_circuit/#:~:text=If%20MCP73831%20is%20what%20you,really%20is%20not%20that%20efficient.)  
+[A Lithium Battery Charger with Load Sharing - Zak's Electronics Blog](https://blog.zakkemble.net/a-lithium-battery-charger-with-load-sharing/)  
 
 **Firmware Configs**  
 - ZMK  
