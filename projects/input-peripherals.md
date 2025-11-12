@@ -849,6 +849,19 @@ A very capable microcontroller
 **Ortho**  
 [I designed this over the weekend. Thought it turned out kinda cool?](https://www.reddit.com/r/MechanicalKeyboards/comments/1jnxikp/i_designed_this_over_the_weekend_thought_it/)
 
+## Mice  
+[I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything](https://www.youtube.com/watch?v=qmX8vL-GbxU)  
+[The worlds lightest gaming mouse PCB by Patrick Schmalzried](https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb)  
+[I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim](https://www.youtube.com/watch?v=9CQqasv5_qo&t=208s)  
+[JEE600 in clusterfudge status (expected, really)](https://www.reddit.com/r/ErgoMechKeyboards/comments/1jnn0xk/jee600_in_clusterfudge_status_expected_really/)  
+[My Mouse Projects So Far...](https://www.reddit.com/r/arduino/comments/1jc1jhp/my_mouse_projects_so_far/)   
+[LOFREE Touch](https://www.lofree.co/products/lofree-touch-pbt-wireless-mouse)   
+[2023 Top Six Latest Mouse With Unique Features: Hot-Swappable Switches, Unique Designs, and More!!](https://mechkeys.com/blogs/guide/top-six-latest-mouse-with-unique-features)    
+[key switches mouse](https://www.google.com/search?sca_esv=601b0517c7361365&rlz=1C1RXQR_enUS930US930&sxsrf=AHTn8zrtHuVK4oGJ64eYsjphaJLBXivZQQ:1746422722142&q=key+switches+mouse&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBsxayPSIAqObp_AgjkUGqel3rTRMIJGV_ECIUB00muput9Zp8VMKUi0ZjqPs3JlrgPeFrAnFlUitTiL3WcJlFn10ZVAeuxL5fSn-ULNu9lz3DIW3cy7rkKNmgHapdAFAoBFSl5-LQE_swXRSgVvZGy87KiusPiw1DSGvVAMCLf6f2K4DEg&sa=X&ved=2ahUKEwjxp-zPy4uNAxVsle4BHTgvJhAQtKgLegQIBxAB&biw=2560&bih=1279&dpr=1#vhid=1A7hF_VEmY1Y0M&vssid=mosaic)  
+
+
+## Other Info
+
 **Switches**  
 [Cherry MX Vintage Black Review: A Modder's Dream, Criminally Misunderstood](https://www.reddit.com/r/MechSwitchReview/comments/hlc6wt/cherry_mx_vintage_black_review_a_modders_dream/)  
 [Teardown - Alps SKCL/SKCM switches by Chyrosran22](https://www.youtube.com/watch?v=QmJ-IEEBQAI)  
@@ -882,15 +895,9 @@ A very capable microcontroller
 - QMK  
 []()
 
-## Mice  
-[I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything](https://www.youtube.com/watch?v=qmX8vL-GbxU)  
-[The worlds lightest gaming mouse PCB by Patrick Schmalzried](https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb)  
-[I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim](https://www.youtube.com/watch?v=9CQqasv5_qo&t=208s)  
-[JEE600 in clusterfudge status (expected, really)](https://www.reddit.com/r/ErgoMechKeyboards/comments/1jnn0xk/jee600_in_clusterfudge_status_expected_really/)  
-[My Mouse Projects So Far...](https://www.reddit.com/r/arduino/comments/1jc1jhp/my_mouse_projects_so_far/)   
-[LOFREE Touch](https://www.lofree.co/products/lofree-touch-pbt-wireless-mouse)   
-[2023 Top Six Latest Mouse With Unique Features: Hot-Swappable Switches, Unique Designs, and More!!](https://mechkeys.com/blogs/guide/top-six-latest-mouse-with-unique-features)    
-[key switches mouse](https://www.google.com/search?sca_esv=601b0517c7361365&rlz=1C1RXQR_enUS930US930&sxsrf=AHTn8zrtHuVK4oGJ64eYsjphaJLBXivZQQ:1746422722142&q=key+switches+mouse&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBsxayPSIAqObp_AgjkUGqel3rTRMIJGV_ECIUB00muput9Zp8VMKUi0ZjqPs3JlrgPeFrAnFlUitTiL3WcJlFn10ZVAeuxL5fSn-ULNu9lz3DIW3cy7rkKNmgHapdAFAoBFSl5-LQE_swXRSgVvZGy87KiusPiw1DSGvVAMCLf6f2K4DEg&sa=X&ved=2ahUKEwjxp-zPy4uNAxVsle4BHTgvJhAQtKgLegQIBxAB&biw=2560&bih=1279&dpr=1#vhid=1A7hF_VEmY1Y0M&vssid=mosaic)  
+**MCU**
+[nrf52840](https://docs.nordicsemi.com/bundle/ps_nrf52840/page/keyfeatures_html5.html#)  
+[https://fab.cba.mit.edu/ - embedded programming (nrf52840)](https://fab.cba.mit.edu/classes/863.17/CBA/people/agnes/7.html)
 
 ## Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
