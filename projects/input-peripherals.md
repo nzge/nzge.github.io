@@ -265,6 +265,9 @@ style="height:200px;display: block; margin: auto;"}
 Designed in KiCAD
 [40%+ PCB Schematic view](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2Fnzge%2Finput-peripherals%2Ftree%2Fmain%2Fforty%2F40%252B%2F40%252B_pcb)
 
+Component Breakdown
+[Antenna - johanson_2450AT18B100E](https://www.mouser.com/catalog/specsheets/johanson_2450AT18B100E.pdf)
+
 <br>
 
 ![Alt text](/assets/media/input_media/40/40+-with-fkeys.png){: 
@@ -881,10 +884,13 @@ A very capable microcontroller
 [ruiqimao/keyboard-pcb-guide](https://github.com/ruiqimao/keyboard-pcb-guide?tab=readme-ov-file#associating-components-and-footprints)  
 [Designing a keyboard from scratch - masterzen](https://www.masterzen.fr/2020/05/03/designing-a-keyboard-part-1/)   
 [Designing PCBs: Advanced SMD - SparkFun](https://learn.sparkfun.com/tutorials/designing-pcbs-advanced-smd/all)  
+[Creating a Keyboard PCB with Diodes (Kicad 6.0)](https://www.youtube.com/watch?v=iznKltVU1yw&t=6s)
 - Lipo Charging
 [Li-ion Battery Charging Circuit Design - MicroType Engineering](https://www.youtube.com/watch?v=GRd9uTwg7r4)  
 [LiPo MCP73831 battery charge + load sharing circuit review, and safety question](https://www.reddit.com/r/AskElectronics/comments/xyfpyt/lipo_mcp73831_battery_charge_load_sharing_circuit/#:~:text=If%20MCP73831%20is%20what%20you,really%20is%20not%20that%20efficient.)  
 [A Lithium Battery Charger with Load Sharing - Zak's Electronics Blog](https://blog.zakkemble.net/a-lithium-battery-charger-with-load-sharing/)  
+- Antenna
+[Designing a PCB patch antenna for WiFi and Bluetooth | KiCad | Philip Salmony](https://www.youtube.com/watch?v=cOtv0ddR3aI)
 
 **Firmware Configs**  
 - ZMK  
@@ -896,8 +902,11 @@ A very capable microcontroller
 []()
 
 **MCU**
-[nrf52840](https://docs.nordicsemi.com/bundle/ps_nrf52840/page/keyfeatures_html5.html#)  
-[https://fab.cba.mit.edu/ - embedded programming (nrf52840)](https://fab.cba.mit.edu/classes/863.17/CBA/people/agnes/7.html)
+nrf52840
+[nrf52840 spec sheet](https://docs.nordicsemi.com/bundle/ps_nrf52840/page/keyfeatures_html5.html#)  
+[https://fab.cba.mit.edu/ - embedded programming (nrf52840)](https://fab.cba.mit.edu/classes/863.17/CBA/people/agnes/7.html)  
+Holyiot YJ-18010 (easily handsoldered)
+EBYTE E73-2G4M08S1C (available for PCB assembly)
 
 ## Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
