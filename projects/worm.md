@@ -9,3 +9,24 @@ repo: "https://github.com/nzge/mae-263f"
 toc: true
 ---
 
+[Paper][https://github.com/nzge/MAE-263F/tree/main/final_report/final.pdf]
+
+
+
+
+
+
+> 12-11-25: 
+>
+> ![Alt text](/assets/media/capstone-robot_media/prints.JPG){: 
+style="width:600px;display: block; margin: auto;"}
+
+> 11-15-25: 
+>
+> ![Alt text](/assets/media/capstone-robot_media/grabber.png){: 
+style="width:300px;display: block; margin: auto;"}
+
+> 11-21-25: 
+>
+> ![Alt text](/assets/media/capstone-robot_media/concept.JPG){: 
+style="width:600px;display: block; margin: auto;"}
