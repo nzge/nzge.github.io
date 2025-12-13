@@ -131,8 +131,6 @@
 Department of Mechanical and Aerospace Engineering<br />
 University of California, Los Angeles</p>
 
-<hr />
-
 <h2 id="abstract">Abstract</h2>
 
 <p>Soft-bodied invertebrates such as earthworms demonstrate highly efficient and robust locomotion in confined and irregular environments. Their movement is enabled by coordinated peristaltic contraction of body segments combined with frictional interactions with the environment. This project characterizes the underlying mechanics of worm locomotion and explores its robotic implementation through computational modeling and simulation. A two-dimensional segmented worm model is developed using a rhombic linkage representation, implicit time integration, and anisotropic friction. Simulation results investigate the effect of segment count, contraction profiles, and frictional asymmetry on displacement efficiency and cost of transport.</p>
@@ -162,13 +160,9 @@ University of California, Los Angeles</p>
 
 <p>By coordinating these muscle groups with spatial and temporal phase offsets, worms achieve net forward motion.</p>
 
-<hr />
-
 <h3 id="b-material-construction">B. Material Construction</h3>
 
 <p>The outer body of a worm-inspired robot must be compliant while remaining structurally robust. Compliance allows for large deformations during actuation, while robustness ensures durability. Candidate approaches include elastomeric skins, fabric-reinforced structures, and braided meshes. The mechanical properties of the body directly influence force transmission, anchoring, and energy efficiency.</p>
-
-<hr />
 
 <h3 id="c-actuation-framework">C. Actuation Framework</h3>
 
@@ -196,8 +190,6 @@ IPMCs deform through ion migration under an electric field. They operate at low 
   <figcaption><strong>Figure 1.</strong> Dielectric elastomer actuator-based worm segment</figcaption>
 </figure>
 
-<hr />
-
 <h4 id="fluid-based-actuators">Fluid-Based Actuators</h4>
 
 <p>Fluid-based actuation strategies include:</p>
@@ -212,8 +204,6 @@ IPMCs deform through ion migration under an electric field. They operate at low 
   <img src="/assets/images/figure2_pneumatic_worm.png" alt="Pneumatically actuated worm robot" />
   <figcaption><strong>Figure 2.</strong> Pneumatically actuated worm robot</figcaption>
 </figure>
-
-<hr />
 
 <h3 id="d-control-strategy">D. Control Strategy</h3>
 
@@ -230,8 +220,6 @@ IPMCs deform through ion migration under an electric field. They operate at low 
   <li>Stable heteroclinic channels (SHCs) for smooth switching between rhythmic states</li>
   <li>Central Pattern Generators (CPGs) inspired by biological neural circuits</li>
 </ul>
-
-<hr />
 
 <h3 id="e-biomechanical-model">E. Biomechanical Model</h3>
 
@@ -250,8 +238,6 @@ IPMCs deform through ion migration under an electric field. They operate at low 
   <img src="/assets/images/figure4_turning_worm.png" alt="Turning worm model" />
   <figcaption><strong>Figure 4.</strong> Turning worm model</figcaption>
 </figure>
-
-<hr />
 
 <h3 id="f-performance-metrics">F. Performance Metrics</h3>
 
@@ -291,42 +277,28 @@ IPMCs deform through ion migration under an electric field. They operate at low 
   <figcaption><strong>Figure 6.</strong> Model construction schematic</figcaption>
 </figure>
 
-<hr />
-
 <h3 id="b-numerical-solver">B. Numerical Solver</h3>
 
 <h4 id="implicit-euler-integration">Implicit Euler Integration</h4>
 
-<p>[
-\mathbf{F}_{\text{inertia}}</p>
-<ul>
-  <li>\mathbf{F}_{\text{elastic}}</li>
-  <li>\mathbf{F}_{\text{viscous}}</li>
-  <li>\mathbf{F}_{\text{friction}}</li>
-  <li>\mathbf{F}_{\text{contract}} = 0
-]</li>
-</ul>
+\[\mathbf{F}_{\text{inertia}}
+- \mathbf{F}_{\text{elastic}}
+- \mathbf{F}_{\text{viscous}}
+- \mathbf{F}_{\text{friction}}
+- \mathbf{F}_{\text{contract}} = 0\]
 
 <p>Newton–Raphson update:</p>
 
-<p>[
-\Delta q = -\frac{f(q_{k+1})}{J(q_{k+1})}
-]</p>
-
-<hr />
+<p>$\Delta q = -\frac{f(q_{k+1})}{J(q_{k+1})}$</p>
 
 <h4 id="friction-model">Friction Model</h4>
 
-<p>[
-F_{\text{friction}} =
+\[F_{\text{friction}} =
 \begin{cases}
--\mu_{\text{forward}} N \, \text{sign}(v_x), &amp; v_x &gt; \varepsilon <br />
--\mu_{\text{backward}} N \, \text{sign}(v_x), &amp; v_x &lt; -\varepsilon <br />
+-\mu_{\text{forward}} N \, \text{sign}(v_x), &amp; v_x &gt; \varepsilon \\
+-\mu_{\text{backward}} N \, \text{sign}(v_x), &amp; v_x &lt; -\varepsilon \\
 0, &amp; |v_x| \le \varepsilon
-\end{cases}
-]</p>
-
-<hr />
+\end{cases}\]
 
 <h3 id="c-control-scheme">C. Control Scheme</h3>
 
@@ -344,19 +316,12 @@ F_{\text{friction}} =
 <p><strong>Figure 7:</strong> Segment activation pattern<br />
 <strong>Figure 8:</strong> Segment contraction force</p>
 
-<hr />
-
 <h4 id="traveling-wave-contraction">Traveling-Wave Contraction</h4>
 
 <p>The contraction wave is defined as:</p>
 
-<p>[
-\phi(x,t) = kx - \omega t
-]</p>
-
-<p>[
-A(x,t) = \sin(\phi(x,t))
-]</p>
+<p>\(\phi(x,t) = kx - \omega t\)
+\(A(x,t) = \sin(\phi(x,t))\)</p>
 
 <p><strong>Figure 9:</strong> Traveling wave contraction visualization</p>
 
@@ -368,19 +333,13 @@ A(x,t) = \sin(\phi(x,t))
 
 <p>The mechanical work done by contraction forces is computed as:</p>
 
-<p>[
-W^{(n)}<em>{\text{contract}}
-= \mathbf{F}</em>{\text{contract}} \cdot (q_{n+1} - q_n)
-]</p>
+\[W^{(n)}_{\text{contract}}
+= \mathbf{F}_{\text{contract}} \cdot (q_{n+1} - q_n)\]
 
-<p>[
-\text{CoT}<em>{\text{contract}}
-= \frac{W^{(n)}</em>{\text{contract}}}{\Delta x_{\text{COM}}}
-]</p>
+\[\text{CoT}_{\text{contract}}
+= \frac{W^{(n)}_{\text{contract}}}{\Delta x_{\text{COM}}}\]
 
 <p>Frictional work is computed in an analogous manner.</p>
-
-<hr />
 
 <h3 id="simulation-parameters">Simulation Parameters</h3>
 
@@ -421,8 +380,6 @@ W^{(n)}<em>{\text{contract}}
   </tbody>
 </table>
 
-<hr />
-
 <h3 id="a-segment-count-study">A. Segment Count Study</h3>
 
 <p>Simulations were conducted for worms with three to seven segments under identical contraction parameters.</p>
@@ -432,8 +389,6 @@ W^{(n)}<em>{\text{contract}}
 
 <p>While increased segment count generally improved locomotion efficiency, the seven-segment configuration exhibited degraded performance, likely due to numerical instability and increased stiffness.</p>
 
-<hr />
-
 <h3 id="b-contraction-profile-analysis">B. Contraction Profile Analysis</h3>
 
 <p>The contraction wave period was varied from one to five seconds.</p>
@@ -442,8 +397,6 @@ W^{(n)}<em>{\text{contract}}
 <strong>Figure 13:</strong> Cost of transport vs. wave period</p>
 
 <p>Shorter wave periods produced greater displacement but increased energetic cost.</p>
-
-<hr />
 
 <h3 id="c-current-challenges">C. Current Challenges</h3>
 
