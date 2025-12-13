@@ -15,7 +15,6 @@ Nathan Ge
 Department of Mechanical and Aerospace Engineering  
 University of California, Los Angeles  
 
----
 
 ## Abstract
 
@@ -44,13 +43,11 @@ Earthworms possess hydrostatic skeletons, meaning that structural support is pro
 
 By coordinating these muscle groups with spatial and temporal phase offsets, worms achieve net forward motion.
 
----
 
 ### B. Material Construction
 
 The outer body of a worm-inspired robot must be compliant while remaining structurally robust. Compliance allows for large deformations during actuation, while robustness ensures durability. Candidate approaches include elastomeric skins, fabric-reinforced structures, and braided meshes. The mechanical properties of the body directly influence force transmission, anchoring, and energy efficiency.
 
----
 
 ### C. Actuation Framework
 
@@ -72,8 +69,6 @@ Smart materials directly convert electrical or thermal energy into mechanical de
   <figcaption><strong>Figure 1.</strong> Dielectric elastomer actuator-based worm segment</figcaption>
 </figure>
 
----
-
 #### Fluid-Based Actuators
 
 Fluid-based actuation strategies include:
@@ -87,7 +82,6 @@ Fluid-based actuation strategies include:
   <figcaption><strong>Figure 2.</strong> Pneumatically actuated worm robot</figcaption>
 </figure>
 
----
 
 ### D. Control Strategy
 
@@ -102,8 +96,6 @@ More advanced strategies incorporate feedback and learning:
 - Closed-loop control using strain or displacement sensors  
 - Stable heteroclinic channels (SHCs) for smooth switching between rhythmic states  
 - Central Pattern Generators (CPGs) inspired by biological neural circuits  
-
----
 
 ### E. Biomechanical Model
 
@@ -123,7 +115,6 @@ The model can be extended to three dimensions by introducing inter-segment hinge
   <figcaption><strong>Figure 4.</strong> Turning worm model</figcaption>
 </figure>
 
----
 
 ### F. Performance Metrics
 
@@ -159,40 +150,32 @@ Each worm segment consists of:
   <figcaption><strong>Figure 6.</strong> Model construction schematic</figcaption>
 </figure>
 
----
 
 ### B. Numerical Solver
 
 #### Implicit Euler Integration
 
-\[
-\mathbf{F}_{\text{inertia}}
+$$\mathbf{F}_{\text{inertia}}
 - \mathbf{F}_{\text{elastic}}
 - \mathbf{F}_{\text{viscous}}
 - \mathbf{F}_{\text{friction}}
-- \mathbf{F}_{\text{contract}} = 0
-\]
+- \mathbf{F}_{\text{contract}} = 0$$
 
 Newton–Raphson update:
 
-\[
-\Delta q = -\frac{f(q_{k+1})}{J(q_{k+1})}
-\]
+$\Delta q = -\frac{f(q_{k+1})}{J(q_{k+1})}$
 
----
 
 #### Friction Model
 
-\[
-F_{\text{friction}} =
+$$F_{\text{friction}} =
 \begin{cases}
 -\mu_{\text{forward}} N \, \text{sign}(v_x), & v_x > \varepsilon \\
 -\mu_{\text{backward}} N \, \text{sign}(v_x), & v_x < -\varepsilon \\
 0, & |v_x| \le \varepsilon
-\end{cases}
-\]
+\end{cases}$$
 
----
+
 
 ### C. Control Scheme
 
@@ -208,19 +191,13 @@ Each segment is actuated sequentially using pulse-based force inputs. The contro
 **Figure 7:** Segment activation pattern  
 **Figure 8:** Segment contraction force
 
----
 
 #### Traveling-Wave Contraction
 
 The contraction wave is defined as:
 
-\[
-\phi(x,t) = kx - \omega t
-\]
-
-\[
-A(x,t) = \sin(\phi(x,t))
-\]
+$$\phi(x,t) = kx - \omega t$$
+$$A(x,t) = \sin(\phi(x,t))$$
 
 **Figure 9:** Traveling wave contraction visualization
 
@@ -232,19 +209,13 @@ A(x,t) = \sin(\phi(x,t))
 
 The mechanical work done by contraction forces is computed as:
 
-\[
-W^{(n)}_{\text{contract}}
-= \mathbf{F}_{\text{contract}} \cdot (q_{n+1} - q_n)
-\]
+$$W^{(n)}_{\text{contract}}
+= \mathbf{F}_{\text{contract}} \cdot (q_{n+1} - q_n)$$
 
-\[
-\text{CoT}_{\text{contract}}
-= \frac{W^{(n)}_{\text{contract}}}{\Delta x_{\text{COM}}}
-\]
+$$\text{CoT}_{\text{contract}}
+= \frac{W^{(n)}_{\text{contract}}}{\Delta x_{\text{COM}}}$$
 
 Frictional work is computed in an analogous manner.
-
----
 
 ### Simulation Parameters
 
@@ -259,7 +230,6 @@ Frictional work is computed in an analogous manner.
 | Time step | 0.01 s |
 | Simulation time | 10 s |
 
----
 
 ### A. Segment Count Study
 
@@ -270,7 +240,6 @@ Simulations were conducted for worms with three to seven segments under identica
 
 While increased segment count generally improved locomotion efficiency, the seven-segment configuration exhibited degraded performance, likely due to numerical instability and increased stiffness.
 
----
 
 ### B. Contraction Profile Analysis
 
@@ -281,7 +250,6 @@ The contraction wave period was varied from one to five seconds.
 
 Shorter wave periods produced greater displacement but increased energetic cost.
 
----
 
 ### C. Current Challenges
 

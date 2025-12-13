@@ -9,8 +9,6 @@ repo: "https://github.com/nzge/bionics"
 toc: true
 ---
 
-
-
 # A Hamstring Recovery Bionic System
 
 **Nathan Ge**, Beom Jun Kim, Fotini Ioannides, Katrina Le, Matthew Silva  
@@ -33,7 +31,6 @@ A hamstring strain is an injury to the hamstring muscle group, commonly characte
 
 **Secondary pathologies** may include complete tendon rupture at the insertion site or avulsion fractures caused by excessive tendon loading.
 
----
 
 ### B. Anatomy
 
@@ -51,13 +48,11 @@ The hamstring muscle group shares several defining anatomical characteristics:
 | Biceps femoris (long head) | Ischial tuberosity | Fibular head |
 | Biceps femoris (short head) | Linea aspera | Fibular head |
 
----
 
 ### C. Mechanism of Injury
 
 Hamstring strains are among the most common athletic injuries, accounting for approximately 12–16% of sports-related injuries and exhibiting re-injury rates between 22–34%. These injuries frequently occur during high-speed running, jumping, and rapid changes in direction, where the hamstrings undergo eccentric loading at extended muscle lengths.
 
----
 
 ### D. Prior Art
 
@@ -87,19 +82,16 @@ The hamstring muscles analyzed were:
 
 Model constraints included a peak knee torque of 16.64 Nm, angular velocity limited to 60°/s, and a total exoskeleton mass constraint of 2.5 kg.
 
----
 
 ### B. Pathology Characterization
 
 Hamstring strain pathology was modeled as a 22% reduction in maximum isometric muscle force. This value represents a generalized acute injury scenario. The semimembranosus muscle was selected as the primary target for assistance due to its significant contribution to knee flexion torque.
 
----
 
 ### C. Bionic System Modeling
 
 The bionic system was implemented as an OpenSim path actuator operating in parallel with the hamstring musculature. The actuator applied assistive tensile forces along the anatomical path of the semimembranosus muscle. Actuator force limits were selected based on feasible motor capabilities.
 
----
 
 ### D. Simulation Procedure
 
@@ -127,7 +119,6 @@ The primary design constraints were:
 - Minimal soft-tissue interaction  
 - Avoidance of a tourniquet effect during muscle expansion  
 
----
 
 ### B. General Description
 
@@ -137,13 +128,11 @@ The system is named:
 
 **H.A.M.S.T.E.R — Hamstring Active Mechanical Support Training and Enhancement Robot**
 
----
 
 ### C. Optimization Problem
 
 An optimization study was conducted to minimize muscle activation while respecting mass and battery constraints. Increasing actuator force beyond 566 N resulted in diminishing returns, providing minimal additional reduction in muscle activation.
 
----
 
 ### D. Actuator Selection and Transmission Optimization
 
@@ -151,25 +140,19 @@ Thirteen candidate motors were evaluated using a cost function based on heat los
 
 Peak transmission ratio occurs at 0° knee flexion, corresponding to peak biological torque demand.
 
----
 
 ### E. Series Elastic Actuation
 
 The inclusion of series elastic actuation was investigated. Simulation results indicated negligible efficiency improvement, and SEA was therefore excluded from the final design.
 
----
 
 ### F. Battery Selection
 
 Energy consumption per step was estimated at 273.6 J. Assuming 5,000 assisted steps per day, the total daily energy requirement is approximately 380 Wh. A 48 V, 10 Ah battery with a capacity of approximately 480 Wh was selected, providing roughly 6,300 assisted steps per charge.
 
----
-
 ### G. Hardware Implementation
 
 Design considerations included muscle expansion during gait, soft-tissue artifact, and preference for bony attachment points such as the tibial crest. A kinematic strap mechanism dynamically loosens during knee flexion and tightens during extension to accommodate muscle volume changes.
-
----
 
 ### H. Control Framework
 
@@ -192,8 +175,6 @@ The final system mass was 5.735 kg, with a torque density of 128.6 Nm/kg. Comput
 ### A. Ilizarov Method
 
 The Ilizarov method offers rigid attachment but is highly invasive and unsuitable for dynamic gait assistance applications.
-
----
 
 ### B. Electrical Stimulation
 

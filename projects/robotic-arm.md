@@ -15,8 +15,6 @@ toc: true
 MAE C263A Final Project  
 Fall 2025
 
----
-
 ## Table of Contents
 
 1. [Introduction](#i-introduction)
