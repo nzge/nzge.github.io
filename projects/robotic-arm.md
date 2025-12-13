@@ -2,10 +2,10 @@
 layout: project
 category: "school"
 title: "Robotic Manipulator"
-date: 2025-11-17
-image: "robot-arm.png"
+date: 2025-12-04
+image: "mae-c263a.png"
 description: "Design and Control of a Robotic Manipulator"
-repo: "https://github.com/nzge/robot-arm"
+repo: "https://github.com/nzge/mae-c263a"
 toc: true
 ---
 
@@ -16,3 +16,5 @@ toc: true
 
 [PAROL6 3D printed robot - MAX speed](https://www.youtube.com/shorts/HfR3GO239qs)
 
+
+[Report](https://github.com/nzge/mae-c263a/blob/main/MAE-C263A_report.pdf)
