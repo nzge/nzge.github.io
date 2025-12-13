@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nathan Ge - Bionic Studies</title>
-  <meta name="description" content="Design and Control of a Robotic Manipulator">
+  <meta name="description" content="Design and Control of a Hamstring Recovery Bionic System">
   
   <!-- favicon -->
   <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
@@ -21,8 +21,8 @@
 <meta name="generator" content="Jekyll v3.9.3" />
 <meta property="og:title" content="Bionic Studies" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Design and Control of a Robotic Manipulator" />
-<meta property="og:description" content="Design and Control of a Robotic Manipulator" />
+<meta name="description" content="Design and Control of a Hamstring Recovery Bionic System" />
+<meta property="og:description" content="Design and Control of a Hamstring Recovery Bionic System" />
 <link rel="canonical" href="https://nzge.github.io/projects/bionic-hamstring.html" />
 <meta property="og:url" content="https://nzge.github.io/projects/bionic-hamstring.html" />
 <meta property="og:site_name" content="My Website" />
@@ -33,7 +33,7 @@
 <meta property="twitter:image" content="https://nzge.github.io/bionic.png" />
 <meta property="twitter:title" content="Bionic Studies" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-02T00:00:00+00:00","datePublished":"2025-12-02T00:00:00+00:00","description":"Design and Control of a Robotic Manipulator","headline":"Bionic Studies","image":"https://nzge.github.io/bionic.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nzge.github.io/projects/bionic-hamstring.html"},"url":"https://nzge.github.io/projects/bionic-hamstring.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-02T00:00:00+00:00","datePublished":"2025-12-02T00:00:00+00:00","description":"Design and Control of a Hamstring Recovery Bionic System","headline":"Bionic Studies","image":"https://nzge.github.io/bionic.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nzge.github.io/projects/bionic-hamstring.html"},"url":"https://nzge.github.io/projects/bionic-hamstring.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -120,12 +120,259 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      
+      <ul><li><a href="#a-hamstring-recovery-bionic-system">A Hamstring Recovery Bionic System</a><ul><li><a href="#abstract">Abstract</a></li><li><a href="#i-background">I. Background</a><ul><li><a href="#a-pathology-description">A. Pathology Description</a></li><li><a href="#b-anatomy">B. Anatomy</a></li><li><a href="#c-mechanism-of-injury">C. Mechanism of Injury</a></li><li><a href="#d-prior-art">D. Prior Art</a></li></ul></li><li><a href="#ii-biomechanical-modeling">II. Biomechanical Modeling</a><ul><li><a href="#a-model-selection">A. Model Selection</a></li><li><a href="#b-pathology-characterization">B. Pathology Characterization</a></li><li><a href="#c-bionic-system-modeling">C. Bionic System Modeling</a></li><li><a href="#d-simulation-procedure">D. Simulation Procedure</a></li></ul></li><li><a href="#iii-bionic-system-design">III. Bionic System Design</a><ul><li><a href="#a-design-specifications">A. Design Specifications</a></li><li><a href="#b-general-description">B. General Description</a></li><li><a href="#c-optimization-problem">C. Optimization Problem</a></li><li><a href="#d-actuator-selection-and-transmission-optimization">D. Actuator Selection and Transmission Optimization</a></li><li><a href="#e-series-elastic-actuation">E. Series Elastic Actuation</a></li><li><a href="#f-battery-selection">F. Battery Selection</a></li><li><a href="#g-hardware-implementation">G. Hardware Implementation</a></li><li><a href="#h-control-framework">H. Control Framework</a></li><li><a href="#i-evaluation">I. Evaluation</a></li></ul></li><li><a href="#iv-surgical-innovation">IV. Surgical Innovation</a><ul><li><a href="#a-ilizarov-method">A. Ilizarov Method</a></li><li><a href="#b-electrical-stimulation">B. Electrical Stimulation</a></li></ul></li><li><a href="#v-conclusions">V. Conclusions</a></li><li><a href="#acknowledgment">Acknowledgment</a></li><li><a href="#build-log">Build Log</a></li><li><a href="#references">References</a></li></ul></li></ul>
     </nav>
   
   <div>
     <article class="markdown-body">
-      <p><a href="https://github.com/nzge/bionics/blob/main/MAE-263E_report.pdf">Bionics Report</a></p>
+      <h1 id="a-hamstring-recovery-bionic-system">A Hamstring Recovery Bionic System</h1>
+
+<p><strong>Nathan Ge</strong>, Beom Jun Kim, Fotini Ioannides, Katrina Le, Matthew Silva<br />
+Department of Mechanical and Aerospace Engineering<br />
+University of California, Los Angeles</p>
+
+<hr />
+
+<h2 id="abstract">Abstract</h2>
+
+<p>The hamstring muscles are a muscle group crucial to daily function, especially for movements such as walking, running, and jumping. As a result, hamstring strains, which involve disruption to the muscle–tendon structures of the hamstring group, are particularly debilitating. This project proposes a bionic system designed to promote healing during the early stages of more severe hamstring injuries while operating efficiently. The report details the design process and technical reasoning informing the system, including pathology characterization, biomechanical simulation, transmission design calculations, physical architecture, and control framework.</p>
+
+<hr />
+
+<h2 id="i-background">I. Background</h2>
+
+<h3 id="a-pathology-description">A. Pathology Description</h3>
+
+<p>A hamstring strain is an injury to the hamstring muscle group, commonly characterized by a sudden sharp pain in the posterior thigh. This injury often limits activities such as running, hip extension, and knee flexion. Hamstring strains are typically classified using grading schemes ranging from Grade I to Grade III or numerical scales from 0 to 4, depending on severity and anatomical location within the musculotendinous unit.</p>
+
+<p><strong>Secondary pathologies</strong> may include complete tendon rupture at the insertion site or avulsion fractures caused by excessive tendon loading.</p>
+
+<hr />
+
+<h3 id="b-anatomy">B. Anatomy</h3>
+
+<p>The hamstring muscle group shares several defining anatomical characteristics:</p>
+
+<ul>
+  <li>Origin at the ischial tuberosity</li>
+  <li>Insertion across the knee joint at the tibia or fibula</li>
+  <li>Innervation by the tibial branch of the sciatic nerve</li>
+  <li>Primary functions of knee flexion and hip extension</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Muscle</th>
+      <th>Origin</th>
+      <th>Insertion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Semitendinosus</td>
+      <td>Ischial tuberosity</td>
+      <td>Medial tibia</td>
+    </tr>
+    <tr>
+      <td>Semimembranosus</td>
+      <td>Ischial tuberosity</td>
+      <td>Medial tibial condyle</td>
+    </tr>
+    <tr>
+      <td>Biceps femoris (long head)</td>
+      <td>Ischial tuberosity</td>
+      <td>Fibular head</td>
+    </tr>
+    <tr>
+      <td>Biceps femoris (short head)</td>
+      <td>Linea aspera</td>
+      <td>Fibular head</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="c-mechanism-of-injury">C. Mechanism of Injury</h3>
+
+<p>Hamstring strains are among the most common athletic injuries, accounting for approximately 12–16% of sports-related injuries and exhibiting re-injury rates between 22–34%. These injuries frequently occur during high-speed running, jumping, and rapid changes in direction, where the hamstrings undergo eccentric loading at extended muscle lengths.</p>
+
+<hr />
+
+<h3 id="d-prior-art">D. Prior Art</h3>
+
+<p>Conservative treatment is commonly prescribed for Grade I and II hamstring strains and includes rest, cryotherapy, partial immobilization, and gradual reintroduction of stretching and strengthening exercises. More advanced treatments include peptide-based therapies and surgical interventions such as proximal hamstring repair using all-suture anchors.</p>
+
+<hr />
+
+<h2 id="ii-biomechanical-modeling">II. Biomechanical Modeling</h2>
+
+<p>All biomechanical simulations were performed using the OpenSim application programming interface (API).</p>
+
+<h3 id="a-model-selection">A. Model Selection</h3>
+
+<p>The <strong>GaitModel2392</strong> musculoskeletal model was selected. This model includes:</p>
+
+<ul>
+  <li>23 degrees of freedom</li>
+  <li>92 musculotendon actuators</li>
+  <li>Lower-extremity joint definitions based on Delp et al.</li>
+  <li>A planar knee joint model following Yamaguchi and Zajac</li>
+</ul>
+
+<p>The hamstring muscles analyzed were:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">semimem_r</code></li>
+  <li><code class="language-plaintext highlighter-rouge">semiten_r</code></li>
+  <li><code class="language-plaintext highlighter-rouge">bifemsh_r</code></li>
+  <li><code class="language-plaintext highlighter-rouge">bifemlh_r</code></li>
+</ul>
+
+<p>Model constraints included a peak knee torque of 16.64 Nm, angular velocity limited to 60°/s, and a total exoskeleton mass constraint of 2.5 kg.</p>
+
+<hr />
+
+<h3 id="b-pathology-characterization">B. Pathology Characterization</h3>
+
+<p>Hamstring strain pathology was modeled as a 22% reduction in maximum isometric muscle force. This value represents a generalized acute injury scenario. The semimembranosus muscle was selected as the primary target for assistance due to its significant contribution to knee flexion torque.</p>
+
+<hr />
+
+<h3 id="c-bionic-system-modeling">C. Bionic System Modeling</h3>
+
+<p>The bionic system was implemented as an OpenSim path actuator operating in parallel with the hamstring musculature. The actuator applied assistive tensile forces along the anatomical path of the semimembranosus muscle. Actuator force limits were selected based on feasible motor capabilities.</p>
+
+<hr />
+
+<h3 id="d-simulation-procedure">D. Simulation Procedure</h3>
+
+<p>The simulation pipeline consisted of the following steps:</p>
+
+<ol>
+  <li>Scaling GaitModel2392 to subject-specific motion data</li>
+  <li>Creation of three models: healthy gait, injured gait, and injured gait with bionic assistance</li>
+  <li>Inverse kinematics analysis</li>
+  <li>Residual Reduction Algorithm (RRA)</li>
+  <li>Computed Muscle Control (CMC)</li>
+</ol>
+
+<p>The optimal actuator force was found to be 566 N.</p>
+
+<hr />
+
+<h2 id="iii-bionic-system-design">III. Bionic System Design</h2>
+
+<h3 id="a-design-specifications">A. Design Specifications</h3>
+
+<p>The primary design constraints were:</p>
+
+<ul>
+  <li>Total system mass less than or equal to 2.5 kg</li>
+  <li>Energy-efficient operation</li>
+  <li>Reduction of semimembranosus activation</li>
+  <li>Minimal soft-tissue interaction</li>
+  <li>Avoidance of a tourniquet effect during muscle expansion</li>
+</ul>
+
+<hr />
+
+<h3 id="b-general-description">B. General Description</h3>
+
+<p>The proposed system is a powered knee exoskeleton spanning the mid-thigh to the shank. The actuation system consists of a Maxon EC-4pole 30 motor rated at 200 W, coupled with a 215:1 transmission. The lateral frame design minimizes interference with soft tissue, and a strap-loosening mechanism adapts to muscle volume changes during gait.</p>
+
+<p>The system is named:</p>
+
+<p><strong>H.A.M.S.T.E.R — Hamstring Active Mechanical Support Training and Enhancement Robot</strong></p>
+
+<hr />
+
+<h3 id="c-optimization-problem">C. Optimization Problem</h3>
+
+<p>An optimization study was conducted to minimize muscle activation while respecting mass and battery constraints. Increasing actuator force beyond 566 N resulted in diminishing returns, providing minimal additional reduction in muscle activation.</p>
+
+<hr />
+
+<h3 id="d-actuator-selection-and-transmission-optimization">D. Actuator Selection and Transmission Optimization</h3>
+
+<p>Thirteen candidate motors were evaluated using a cost function based on heat loss. The Maxon EC-4pole 30 motor was selected as the optimal actuator. The system experiences approximately 1.47 J of heat loss per gait step.</p>
+
+<p>Peak transmission ratio occurs at 0° knee flexion, corresponding to peak biological torque demand.</p>
+
+<hr />
+
+<h3 id="e-series-elastic-actuation">E. Series Elastic Actuation</h3>
+
+<p>The inclusion of series elastic actuation was investigated. Simulation results indicated negligible efficiency improvement, and SEA was therefore excluded from the final design.</p>
+
+<hr />
+
+<h3 id="f-battery-selection">F. Battery Selection</h3>
+
+<p>Energy consumption per step was estimated at 273.6 J. Assuming 5,000 assisted steps per day, the total daily energy requirement is approximately 380 Wh. A 48 V, 10 Ah battery with a capacity of approximately 480 Wh was selected, providing roughly 6,300 assisted steps per charge.</p>
+
+<hr />
+
+<h3 id="g-hardware-implementation">G. Hardware Implementation</h3>
+
+<p>Design considerations included muscle expansion during gait, soft-tissue artifact, and preference for bony attachment points such as the tibial crest. A kinematic strap mechanism dynamically loosens during knee flexion and tightens during extension to accommodate muscle volume changes.</p>
+
+<hr />
+
+<h3 id="h-control-framework">H. Control Framework</h3>
+
+<p>The control architecture consists of three layers:</p>
+
+<ul>
+  <li>High-level control (100 Hz): EMG-based intent detection</li>
+  <li>Mid-level control (1 kHz): knee impedance control</li>
+  <li>Low-level control (10 kHz): motor current and position control using a Maxon EPOS4 controller</li>
+</ul>
+
+<hr />
+
+<h3 id="i-evaluation">I. Evaluation</h3>
+
+<p>The final system mass was 5.735 kg, with a torque density of 128.6 Nm/kg. Computed Muscle Control simulations demonstrated a reduction in semimembranosus activation when using the bionic system.</p>
+
+<hr />
+
+<h2 id="iv-surgical-innovation">IV. Surgical Innovation</h2>
+
+<h3 id="a-ilizarov-method">A. Ilizarov Method</h3>
+
+<p>The Ilizarov method offers rigid attachment but is highly invasive and unsuitable for dynamic gait assistance applications.</p>
+
+<hr />
+
+<h3 id="b-electrical-stimulation">B. Electrical Stimulation</h3>
+
+<p>Hybrid systems combining functional or neuromuscular electrical stimulation with mechanical assistance offer improved rehabilitation potential with reduced invasiveness and increased adaptability.</p>
+
+<hr />
+
+<h2 id="v-conclusions">V. Conclusions</h2>
+
+<p>This project presents a biomechanically grounded framework for hamstring rehabilitation using powered bionic assistance. Simulation results demonstrate meaningful reductions in muscle activation while preserving natural gait kinematics, supporting the feasibility of assistive recovery exoskeletons.</p>
+
+<hr />
+
+<h2 id="acknowledgment">Acknowledgment</h2>
+
+<p>The authors thank Professor Tyler Clites for guidance during the MAE 263E Bionics Systems Engineering course.</p>
+
+<hr />
+
+<h2 id="build-log">Build Log</h2>
+
+<hr />
+
+<h2 id="references">References</h2>
+
+<p><em>(References preserved from original PDF; see source document for full citations.)</em></p>
+
+<p><a href="https://github.com/nzge/bionics/blob/main/MAE-263E_report.pdf">Bionics Report</a></p>
 
     </article>
   </div>

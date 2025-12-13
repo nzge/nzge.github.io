@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nathan Ge - Worm Robot</title>
-  <meta name="description" content="A worm robot">
+  <meta name="description" content="Characterization and Simulation of a Worm-Inspired Robot">
   
   <!-- favicon -->
   <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
@@ -21,8 +21,8 @@
 <meta name="generator" content="Jekyll v3.9.3" />
 <meta property="og:title" content="Worm Robot" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A worm robot" />
-<meta property="og:description" content="A worm robot" />
+<meta name="description" content="Characterization and Simulation of a Worm-Inspired Robot" />
+<meta property="og:description" content="Characterization and Simulation of a Worm-Inspired Robot" />
 <link rel="canonical" href="https://nzge.github.io/projects/worm.html" />
 <meta property="og:url" content="https://nzge.github.io/projects/worm.html" />
 <meta property="og:site_name" content="My Website" />
@@ -33,7 +33,7 @@
 <meta property="twitter:image" content="https://nzge.github.io/worm.gif" />
 <meta property="twitter:title" content="Worm Robot" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-13T00:00:00+00:00","datePublished":"2025-12-13T00:00:00+00:00","description":"A worm robot","headline":"Worm Robot","image":"https://nzge.github.io/worm.gif","mainEntityOfPage":{"@type":"WebPage","@id":"https://nzge.github.io/projects/worm.html"},"url":"https://nzge.github.io/projects/worm.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-13T00:00:00+00:00","datePublished":"2025-12-13T00:00:00+00:00","description":"Characterization and Simulation of a Worm-Inspired Robot","headline":"Worm Robot","image":"https://nzge.github.io/worm.gif","mainEntityOfPage":{"@type":"WebPage","@id":"https://nzge.github.io/projects/worm.html"},"url":"https://nzge.github.io/projects/worm.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -120,12 +120,368 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      
+      <ul><li><a href="#characterization-and-simulation-of-a-worm-inspired-robot">Characterization and Simulation of a Worm-Inspired Robot</a><ul><li><a href="#abstract">Abstract</a></li><li><a href="#i-problem-statement">I. Problem Statement</a></li><li><a href="#ii-background">II. Background</a><ul><li><a href="#a-peristalsis-mechanics">A. Peristalsis Mechanics</a></li><li><a href="#b-material-construction">B. Material Construction</a></li><li><a href="#c-actuation-framework">C. Actuation Framework</a><ul><li><a href="#smart-materials">Smart Materials</a></li><li><a href="#fluid-based-actuators">Fluid-Based Actuators</a></li></ul></li><li><a href="#d-control-strategy">D. Control Strategy</a><ul><li><a href="#open-loop-control">Open-Loop Control</a></li><li><a href="#intelligent-control">Intelligent Control</a></li></ul></li><li><a href="#e-biomechanical-model">E. Biomechanical Model</a></li><li><a href="#f-performance-metrics">F. Performance Metrics</a></li></ul></li><li><a href="#iii-simulation-approach">III. Simulation Approach</a><ul><li><a href="#a-model-construction">A. Model Construction</a></li><li><a href="#b-numerical-solver">B. Numerical Solver</a><ul><li><a href="#implicit-euler-integration">Implicit Euler Integration</a></li><li><a href="#friction-model">Friction Model</a></li></ul></li><li><a href="#c-control-scheme">C. Control Scheme</a><ul><li><a href="#segment-driven-contraction">Segment-Driven Contraction</a></li><li><a href="#traveling-wave-contraction">Traveling-Wave Contraction</a></li></ul></li></ul></li><li><a href="#iv-results">IV. Results</a><ul><li><a href="#cost-of-transport">Cost of Transport</a></li><li><a href="#simulation-parameters">Simulation Parameters</a></li><li><a href="#a-segment-count-study">A. Segment Count Study</a></li><li><a href="#b-contraction-profile-analysis">B. Contraction Profile Analysis</a></li><li><a href="#c-current-challenges">C. Current Challenges</a></li></ul></li><li><a href="#v-future-work">V. Future Work</a></li><li><a href="#vi-conclusions">VI. Conclusions</a></li><li><a href="#acknowledgment">Acknowledgment</a></li><li><a href="#build-log">Build Log</a></li><li><a href="#references">References</a></li></ul></li></ul>
     </nav>
   
   <div>
     <article class="markdown-body">
-      <p>[Paper][https://github.com/nzge/MAE-263F/tree/main/final_report/final_report.pdf]</p>
+      <h1 id="characterization-and-simulation-of-a-worm-inspired-robot">Characterization and Simulation of a Worm-Inspired Robot</h1>
+
+<p>Nathan Ge<br />
+Department of Mechanical and Aerospace Engineering<br />
+University of California, Los Angeles</p>
+
+<hr />
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Soft-bodied invertebrates such as earthworms demonstrate highly efficient and robust locomotion in confined and irregular environments. Their movement is enabled by coordinated peristaltic contraction of body segments combined with frictional interactions with the environment. This project characterizes the underlying mechanics of worm locomotion and explores its robotic implementation through computational modeling and simulation. A two-dimensional segmented worm model is developed using a rhombic linkage representation, implicit time integration, and anisotropic friction. Simulation results investigate the effect of segment count, contraction profiles, and frictional asymmetry on displacement efficiency and cost of transport.</p>
+
+<hr />
+
+<h2 id="i-problem-statement">I. Problem Statement</h2>
+
+<p>Traditional rigid robotic systems perform poorly in confined or irregular environments such as underground tunnels, collapsed structures, or biological passageways. Soft-bodied organisms such as earthworms present an alternative locomotion paradigm that prioritizes adaptability, robustness, and energy efficiency. Earthworms move using peristaltic motion, which consists of coordinated contraction and extension of body segments.</p>
+
+<p>While peristaltic locomotion is largely one-dimensional, it is highly effective and scalable. Understanding the mechanical principles that enable this motion may inform the design of soft robotic systems capable of navigating constrained environments. This project aims to simulate and characterize worm-like locomotion using a simplified computational model, with particular emphasis on frictional interaction, segment coordination, and energetic efficiency.</p>
+
+<hr />
+
+<h2 id="ii-background">II. Background</h2>
+
+<h3 id="a-peristalsis-mechanics">A. Peristalsis Mechanics</h3>
+
+<p>Peristalsis refers to the wave-like propagation of muscle contraction along the body of an organism. In earthworms, this motion enables forward locomotion by alternately anchoring portions of the body to the ground while extending other regions forward. There is ongoing debate regarding whether friction or internal momentum transfer is the dominant driver of propulsion; however, frictional anchoring is widely considered to play a central role.</p>
+
+<p>Earthworms possess hydrostatic skeletons, meaning that structural support is provided by internal fluid pressure rather than rigid bones. Locomotion is governed by two primary muscle groups:</p>
+
+<ul>
+  <li>Longitudinal muscles, which shorten and lengthen the body</li>
+  <li>Circular (radial) muscles, which expand and contract the body radially</li>
+</ul>
+
+<p>By coordinating these muscle groups with spatial and temporal phase offsets, worms achieve net forward motion.</p>
+
+<hr />
+
+<h3 id="b-material-construction">B. Material Construction</h3>
+
+<p>The outer body of a worm-inspired robot must be compliant while remaining structurally robust. Compliance allows for large deformations during actuation, while robustness ensures durability. Candidate approaches include elastomeric skins, fabric-reinforced structures, and braided meshes. The mechanical properties of the body directly influence force transmission, anchoring, and energy efficiency.</p>
+
+<hr />
+
+<h3 id="c-actuation-framework">C. Actuation Framework</h3>
+
+<h4 id="smart-materials">Smart Materials</h4>
+
+<p>Smart materials directly convert electrical or thermal energy into mechanical deformation.</p>
+
+<ul>
+  <li>
+    <p><strong>Shape Memory Alloys (SMAs):</strong><br />
+SMAs generate high forces and are well-suited for small-scale systems but suffer from slow response times due to thermal actuation.</p>
+  </li>
+  <li>
+    <p><strong>Dielectric Elastomer Actuators (DEAs):</strong><br />
+DEAs consist of elastomer films sandwiched between compliant electrodes. When voltage is applied, electrostatic forces cause expansion. DEAs are well-suited for peristaltic motion due to their high strain capabilities.</p>
+  </li>
+  <li>
+    <p><strong>Ionic Polymer-Metal Composites (IPMCs):</strong><br />
+IPMCs deform through ion migration under an electric field. They operate at low voltages but exhibit relatively slow response times.</p>
+  </li>
+</ul>
+
+<figure>
+  <img src="/assets/images/figure1_dea_worm.png" alt="Dielectric elastomer actuator-based worm segment" />
+  <figcaption><strong>Figure 1.</strong> Dielectric elastomer actuator-based worm segment</figcaption>
+</figure>
+
+<hr />
+
+<h4 id="fluid-based-actuators">Fluid-Based Actuators</h4>
+
+<p>Fluid-based actuation strategies include:</p>
+
+<ul>
+  <li>Pneumatic actuation, which offers high force output but requires bulky compressors</li>
+  <li>Hydraulic systems, which rely on pressurized fluids and micro-scale pistons</li>
+  <li>Magnetorheological or ferrofluid systems actuated by external magnetic fields</li>
+</ul>
+
+<figure>
+  <img src="/assets/images/figure2_pneumatic_worm.png" alt="Pneumatically actuated worm robot" />
+  <figcaption><strong>Figure 2.</strong> Pneumatically actuated worm robot</figcaption>
+</figure>
+
+<hr />
+
+<h3 id="d-control-strategy">D. Control Strategy</h3>
+
+<h4 id="open-loop-control">Open-Loop Control</h4>
+
+<p>The simplest control strategy applies a traveling sinusoidal activation pattern across body segments. Each segment is driven with a phase offset relative to its neighbors, producing a peristaltic wave.</p>
+
+<h4 id="intelligent-control">Intelligent Control</h4>
+
+<p>More advanced strategies incorporate feedback and learning:</p>
+
+<ul>
+  <li>Closed-loop control using strain or displacement sensors</li>
+  <li>Stable heteroclinic channels (SHCs) for smooth switching between rhythmic states</li>
+  <li>Central Pattern Generators (CPGs) inspired by biological neural circuits</li>
+</ul>
+
+<hr />
+
+<h3 id="e-biomechanical-model">E. Biomechanical Model</h3>
+
+<p>To capture the essential mechanics of worm locomotion, the robot is modeled as a two-dimensional planar system composed of interconnected segments.</p>
+
+<figure>
+  <img src="/assets/images/figure3_rhomboid_model.png" alt="Two-dimensional rhomboid linkage model" />
+  <figcaption><strong>Figure 3.</strong> Two-dimensional rhomboid linkage model</figcaption>
+</figure>
+
+<p>Each segment is represented by a rhombic four-bar linkage that couples vertical expansion with horizontal contraction. This abstraction captures the essential kinematic relationship between radial and axial deformation.</p>
+
+<p>The model can be extended to three dimensions by introducing inter-segment hinges or asymmetric actuation, enabling turning behaviors.</p>
+
+<figure>
+  <img src="/assets/images/figure4_turning_worm.png" alt="Turning worm model" />
+  <figcaption><strong>Figure 4.</strong> Turning worm model</figcaption>
+</figure>
+
+<hr />
+
+<h3 id="f-performance-metrics">F. Performance Metrics</h3>
+
+<p>The following metrics are used to evaluate performance:</p>
+
+<ul>
+  <li>Cost of Transport (CoT)</li>
+  <li>Center-of-mass displacement</li>
+  <li>Locomotion speed</li>
+  <li>Segment count</li>
+  <li>Actuation frequency and amplitude</li>
+  <li>Frictional anisotropy</li>
+  <li>Stability and maneuverability</li>
+</ul>
+
+<hr />
+
+<h2 id="iii-simulation-approach">III. Simulation Approach</h2>
+
+<h3 id="a-model-construction">A. Model Construction</h3>
+
+<p>Each worm segment consists of:</p>
+
+<ul>
+  <li>A rhombic four-bar linkage</li>
+  <li>A linear spring modeling axial elasticity</li>
+  <li>Torsional springs modeling inter-segment stiffness</li>
+</ul>
+
+<figure>
+  <img src="/assets/images/figure5_six_segment.png" alt="Six-segment rhombic worm model" />
+  <figcaption><strong>Figure 5.</strong> Six-segment rhombic worm model</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/images/figure6_construction.png" alt="Model construction schematic" />
+  <figcaption><strong>Figure 6.</strong> Model construction schematic</figcaption>
+</figure>
+
+<hr />
+
+<h3 id="b-numerical-solver">B. Numerical Solver</h3>
+
+<h4 id="implicit-euler-integration">Implicit Euler Integration</h4>
+
+<p>[
+\mathbf{F}_{\text{inertia}}</p>
+<ul>
+  <li>\mathbf{F}_{\text{elastic}}</li>
+  <li>\mathbf{F}_{\text{viscous}}</li>
+  <li>\mathbf{F}_{\text{friction}}</li>
+  <li>\mathbf{F}_{\text{contract}} = 0
+]</li>
+</ul>
+
+<p>Newton–Raphson update:</p>
+
+<p>[
+\Delta q = -\frac{f(q_{k+1})}{J(q_{k+1})}
+]</p>
+
+<hr />
+
+<h4 id="friction-model">Friction Model</h4>
+
+<p>[
+F_{\text{friction}} =
+\begin{cases}
+-\mu_{\text{forward}} N \, \text{sign}(v_x), &amp; v_x &gt; \varepsilon <br />
+-\mu_{\text{backward}} N \, \text{sign}(v_x), &amp; v_x &lt; -\varepsilon <br />
+0, &amp; |v_x| \le \varepsilon
+\end{cases}
+]</p>
+
+<hr />
+
+<h3 id="c-control-scheme">C. Control Scheme</h3>
+
+<h4 id="segment-driven-contraction">Segment-Driven Contraction</h4>
+
+<p>Each segment is actuated sequentially using pulse-based force inputs. The control pipeline consists of:</p>
+
+<ol>
+  <li>Wave-based activation generation</li>
+  <li>Phase update</li>
+  <li>Pulse shaping (Gaussian, square, or Dirac)</li>
+  <li>Net force application</li>
+</ol>
+
+<p><strong>Figure 7:</strong> Segment activation pattern<br />
+<strong>Figure 8:</strong> Segment contraction force</p>
+
+<hr />
+
+<h4 id="traveling-wave-contraction">Traveling-Wave Contraction</h4>
+
+<p>The contraction wave is defined as:</p>
+
+<p>[
+\phi(x,t) = kx - \omega t
+]</p>
+
+<p>[
+A(x,t) = \sin(\phi(x,t))
+]</p>
+
+<p><strong>Figure 9:</strong> Traveling wave contraction visualization</p>
+
+<hr />
+
+<h2 id="iv-results">IV. Results</h2>
+
+<h3 id="cost-of-transport">Cost of Transport</h3>
+
+<p>The mechanical work done by contraction forces is computed as:</p>
+
+<p>[
+W^{(n)}<em>{\text{contract}}
+= \mathbf{F}</em>{\text{contract}} \cdot (q_{n+1} - q_n)
+]</p>
+
+<p>[
+\text{CoT}<em>{\text{contract}}
+= \frac{W^{(n)}</em>{\text{contract}}}{\Delta x_{\text{COM}}}
+]</p>
+
+<p>Frictional work is computed in an analogous manner.</p>
+
+<hr />
+
+<h3 id="simulation-parameters">Simulation Parameters</h3>
+
+<p><strong>Table I: Base Simulation Parameters</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Worm length</td>
+      <td>1.0 m</td>
+    </tr>
+    <tr>
+      <td>Density</td>
+      <td>10 kg/m³</td>
+    </tr>
+    <tr>
+      <td>Linear stiffness</td>
+      <td>13 N/m</td>
+    </tr>
+    <tr>
+      <td>Torsional stiffness</td>
+      <td>1e4 N·m/rad</td>
+    </tr>
+    <tr>
+      <td>Time step</td>
+      <td>0.01 s</td>
+    </tr>
+    <tr>
+      <td>Simulation time</td>
+      <td>10 s</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="a-segment-count-study">A. Segment Count Study</h3>
+
+<p>Simulations were conducted for worms with three to seven segments under identical contraction parameters.</p>
+
+<p><strong>Figure 10:</strong> Center-of-mass displacement vs. time<br />
+<strong>Figure 11:</strong> Cumulative cost of transport</p>
+
+<p>While increased segment count generally improved locomotion efficiency, the seven-segment configuration exhibited degraded performance, likely due to numerical instability and increased stiffness.</p>
+
+<hr />
+
+<h3 id="b-contraction-profile-analysis">B. Contraction Profile Analysis</h3>
+
+<p>The contraction wave period was varied from one to five seconds.</p>
+
+<p><strong>Figure 12:</strong> Center-of-mass displacement vs. wave period<br />
+<strong>Figure 13:</strong> Cost of transport vs. wave period</p>
+
+<p>Shorter wave periods produced greater displacement but increased energetic cost.</p>
+
+<hr />
+
+<h3 id="c-current-challenges">C. Current Challenges</h3>
+
+<ul>
+  <li>Mass concentration at nodes leading to instability</li>
+  <li>Sensitivity to torsional stiffness values</li>
+  <li>Non-ideal vertical constraint enforcement</li>
+</ul>
+
+<hr />
+
+<h2 id="v-future-work">V. Future Work</h2>
+
+<p>Future directions include:</p>
+
+<ul>
+  <li>Solver improvements using Projective Dynamics and FEM residual learning</li>
+  <li>More biologically realistic contraction patterns</li>
+  <li>Neural control via SHCs and CPGs</li>
+  <li>Simulation of sloped and confined environments</li>
+  <li>Spatially varying stiffness and geometry</li>
+</ul>
+
+<hr />
+
+<h2 id="vi-conclusions">VI. Conclusions</h2>
+
+<p>This work presents a computational framework for analyzing worm-inspired locomotion. The results highlight key relationships between segment count, actuation timing, and frictional interaction. These insights inform the design of future soft robotic systems capable of navigating constrained environments.</p>
+
+<hr />
+
+<h2 id="acknowledgment">Acknowledgment</h2>
+
+<p>The author thanks Professor Khalid Jawed for guidance during the MAE 263F Soft Robotics course.</p>
+
+<hr />
+
+<h2 id="build-log">Build Log</h2>
 
 <blockquote>
   <p>12-11-25:</p>
@@ -150,6 +506,16 @@
 
   <p><img src="/assets/media/worm_media/grabber.png" alt="Alt text" style="width:300px;display: block; margin: auto;" /></p>
 </blockquote>
+
+<p>[Paper][https://github.com/nzge/MAE-263F/tree/main/final_report/final_report.pdf]</p>
+
+<h2 id="references">References</h2>
+
+<p>[1] S. Coyle, E. Rouse, and C. Majidi, “Actuation and design innovations in earthworm-inspired soft robots: A review,” <em>Frontiers in Robotics and AI</em>, vol. 10, 2023.</p>
+
+<p>[2] T. D. Nguyen, et al., “Soft robot locomotion using peristaltic actuation,” <em>IEEE Robotics and Automation Letters</em>, 2021.</p>
+
+<p>[3] Additional references as listed in the original report.</p>
 
     </article>
   </div>
