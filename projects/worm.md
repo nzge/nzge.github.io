@@ -307,7 +307,9 @@ style="width:600px;display: block; margin: auto;"}
 style="width:300px;display: block; margin: auto;"}
 
 
-[Paper][https://github.com/nzge/MAE-263F/tree/main/final_report/final_report.pdf]
+---
+
+[Paper](https://github.com/nzge/MAE-263F/tree/main/final_report/final_report.pdf)
 
 ## References
 

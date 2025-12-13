@@ -15,7 +15,6 @@ toc: true
 Department of Mechanical and Aerospace Engineering  
 University of California, Los Angeles  
 
----
 
 ## Abstract
 
@@ -194,14 +193,26 @@ The authors thank Professor Tyler Clites for guidance during the MAE 263E Bionic
 
 ---
 
+
 ## Build Log
 
+> 12-11-25: 
+>
+> ![Alt text](/assets/media/worm_media/prints.JPG){: 
+style="width:600px;display: block; margin: auto;"}
+
+> 11-21-25: 
+>
+> ![Alt text](/assets/media/worm_media/concept.JPG){: 
+style="width:600px;display: block; margin: auto;"}
 
 
 ---
+
+[Report](https://github.com/nzge/bionics/blob/main/MAE-263E_report.pdf)
 
 ## References
 
 *(References preserved from original PDF; see source document for full citations.)*
 
-[Bionics Report](https://github.com/nzge/bionics/blob/main/MAE-263E_report.pdf)
+

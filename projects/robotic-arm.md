@@ -180,6 +180,23 @@ Another improvement could be to build an overhead structure to hold the lightbul
 
 ---
 
+## Build Log
+
+> 12-11-25: 
+>
+> ![Alt text](/assets/media/worm_media/prints.JPG){: 
+style="width:600px;display: block; margin: auto;"}
+
+> 11-21-25: 
+>
+> ![Alt text](/assets/media/worm_media/concept.JPG){: 
+style="width:600px;display: block; margin: auto;"}
+
+
+---
+
+[Paper](https://github.com/nzge/mae-c263a/tree/main/MAE-C263A_report.pdf)
+
 ## References
 
 Ting, Han Zhong, et al. "Kinematic Analysis for Trajectory Planning of Open-Source 4-DoF Robot Arm." *International Journal of Advanced Computer Science and Applications*, vol. 12, no. 6, 2021, pp. 768–775.
