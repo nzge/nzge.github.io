@@ -2,7 +2,7 @@
 layout: project
 category: "upwork"
 title: "Cup Bot"
-date: 2025-06-1
+date: 2025-06-01
 image: "cup-bot.PNG"
 description: "Cup scribing robot"
 ---
