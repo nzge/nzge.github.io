@@ -81,9 +81,6 @@ This design worked very well and helped secure a solid foundation for the rest o
 | 3 | 0 | 0.186 m | 0 | $\theta_3$ |
 | 4 | 0 | 0.196 m | 0 | $\theta_4$ |
 
-![Figure 4.1](/assets/media/robotic-arm_media/figure-4-1.png){: style="width:50%; height:auto; display: block; margin: auto;"} 
-Transformation Matrix from base to end effector frames
-
 Using the DH parameters from the table above describing the design of our system, the transformation matrix in Figure 4.1 was calculated using the provided Matlab code. The table above is organized in classic DH format as opposed to a modified format.
 
 The transformation matrix from base to end effector frames is:
@@ -187,7 +184,6 @@ One of our primary future improvements would be to weight and moment-optimize an
 
 Another improvement could be to build an overhead structure to hold the lightbulb socket in a more realistic position. Our end effector could also implement a sort of grasping mechanism, which would allow the arm to reach into an actual countersunk lightbulb socket instead of our idealized one and potentially become compatible with other sizes and shapes of bulbs. Adding a sensing element to find the hole, either with an ultrasonic sensor or a computer vision setup, is another improvement we would hope to make.
 
----
 
 ## References
 

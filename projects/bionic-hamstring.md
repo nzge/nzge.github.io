@@ -385,7 +385,7 @@ This project provides a structured foundation for understanding basic hamstring 
 
 The author thanks Professor Tyler Clites for guidance and instruction throughout the MAE 263E Bionics Systems Engineering course. Their insights into bionic systems design formed the foundation of this project.
 
----
+
 
 ## Appendix
 
@@ -436,7 +436,7 @@ The author thanks Professor Tyler Clites for guidance and instruction throughout
 | RE 65 (Ø 65 mm, brushed) | 0.365 | 0.161 | 123 | 77.8 | 1340 |
 | EC 90 flat (Ø 90 mm, brushless) | 0.844 | 1.07 | 231 | 41.3 | 5060 |
 
----
+
 
 ## References
 

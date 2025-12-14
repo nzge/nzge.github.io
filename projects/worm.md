@@ -423,13 +423,13 @@ These instabilities restrict the parameter space over which the simulation can r
 
 This project establishes a computational foundation for investigating efficient soft robotic locomotion. The insights gained from modeling actuation and body-environment interactions will guide the design of soft robots capable of adaptive and robust movement in complex settings.
 
----
+
 
 ## Acknowledgment
 
 The author thanks Professor Khalid Jawed for guidance and instruction throughout the MAE 263F Soft Robotics course. Their insights into soft robotic modeling formed the foundation of this project.
 
----
+
 
 ## References
 
