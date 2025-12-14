@@ -141,8 +141,6 @@
 
 <p>In the following sections, we dive deeper into the details of each aspect and discuss how we modified our initial plan to fit real-world design, manufacturing, and time constraints.</p>
 
-<hr />
-
 <h2 id="ii-manipulator-configuration">II. Manipulator Configuration</h2>
 
 <p>Our design of E.D.I.S.O.N., is a planar RRR manipulator on top of a revolving base. The links for each revolute joint are controlled by Dynamixel MX-28AR servo motors. The revolving base rotates solely around the world z-axis. This allows us to more easily rotate all links simultaneously, simplifying the kinematic calculations and greatly expanding the reachable workspace. Additionally, the end effector is attached to a continuous motor to achieve the screwing motion required to put in a lightbulb once the socket is reached.</p>
@@ -154,8 +152,6 @@
 <p><img src="/assets/media/robotic-arm_media/figure-2-1.png" alt="Figure 2.1" style="width:50%; height:auto; display: block; margin: auto;" /></p>
 
 <p><img src="/assets/media/robotic-arm_media/figure-2-2.png" alt="Figure 2.2" style="width:50%; height:auto; display: block; margin: auto;" /></p>
-
-<hr />
 
 <h2 id="iii-design-highlights-and-difficulties">III. Design Highlights and Difficulties</h2>
 
@@ -184,8 +180,6 @@
 <p><img src="/assets/media/robotic-arm_media/figure-3-6.png" alt="Figure 3.6" style="width:50%; height:auto; display: block; margin: auto;" /></p>
 
 <p>This design worked very well and helped secure a solid foundation for the rest of the links and the end effector. Additionally, circular cavities at the bottom link 1 helped ensure the screwheads from motor 1 did not prohibit a good fit for the holder and link 1.</p>
-
-<hr />
 
 <h2 id="iv-derivation-of-kinematics">IV. Derivation of Kinematics</h2>
 
@@ -249,8 +243,6 @@ s_{234} &amp; c_{234} &amp; 0 &amp; d_1 + a_2 s_2 + a_3 s_{23} + a_4 s_{234} \\
 
 <p>where $c_i = \cos(\theta_i)$, $s_i = \sin(\theta_i)$, $c_{ij} = \cos(\theta_i + \theta_j)$, $s_{ij} = \sin(\theta_i + \theta_j)$, etc.</p>
 
-<hr />
-
 <h2 id="v-solution-selection-for-inverse-kinematics">V. Solution Selection for Inverse Kinematics</h2>
 
 <p><img src="/assets/media/robotic-arm_media/figure-5-1.png" alt="Figure 5.1" style="width:50%; height:auto; display: block; margin: auto;" /><br />
@@ -275,8 +267,6 @@ z_2 &amp;= z_3 - a_4 \sin \phi \\
 
 <p>For solution selection, it is important to prefer the elbow-up position for our robot manipulator so that it moves the links as high out of the way of obstacles when the whole system rotates about the z-axis from joint 1. Additionally, it is important that the end effector is facing towards the ground when it reaches its desired target position for our own use cases, as the lightbulb socket is oriented upwards.</p>
 
-<hr />
-
 <h2 id="vi-workspace-analysis">VI. Workspace Analysis</h2>
 
 <p>To determine the reachable workspace of the final robot design analytically, the forward and inverse kinematics were utilized to calculate which positions were located within and outside of the workspace. For the positions that could be reached, their locations in 3D space are plotted as a point cloud in Figure 6.1. To get a better understanding of the reachable workspace, a cross-section of the point cloud with a cutting plane in the x-z direction can be observed in Figure 6.2, which reveals a small void within the workspace. This void indicates further points that are not reachable by the current design, largely in part of the individual link lengths in the current design, in addition to the servo limits.</p>
@@ -288,8 +278,6 @@ z_2 &amp;= z_3 - a_4 \sin \phi \\
 <em>Full reachable workspace cross-section in x-z plane</em></p>
 
 <p>The current reachable workspace is very typical of most 3R robotic arms and did not produce any unexpected findings. It also allows for a variety of positions towards addressing the problem at hand, from loading a lightbulb at a particular point and then moving along a trajectory towards where the lightbulb needs to be screwed in. As long as the specified way points for each of these locations are within the point cloud, along with the trajectory between the two locations, there should be no issues for the robot to complete these tasks. Although this does not take into account dynamic limitations and changes as the robot moves throughout the reachable workspace, which may need further consideration if issues arise within the current reachable workspace.</p>
-
-<hr />
 
 <h2 id="vii-task-simulation">VII. Task Simulation</h2>
 
@@ -304,8 +292,6 @@ z_2 &amp;= z_3 - a_4 \sin \phi \\
 
 <p><img src="/assets/media/robotic-arm_media/figure-7-2.png" alt="Figure 7.2" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
 <em>Showing simulation result from final manipulator design performing sample routine</em></p>
-
-<hr />
 
 <h2 id="viii-challenges-and-future-improvements">VIII. Challenges and Future Improvements</h2>
 
@@ -341,6 +327,8 @@ z_2 &amp;= z_3 - a_4 \sin \phi \\
 <p>Ting, Han Zhong, et al. “Kinematic Analysis for Trajectory Planning of Open-Source 4-DoF Robot Arm.” <em>International Journal of Advanced Computer Science and Applications</em>, vol. 12, no. 6, 2021, pp. 768–775.</p>
 
 <hr />
+
+<p><br /></p>
 
 <p><a href="https://github.com/nzge/mae-c263a/blob/main/MAE-C263A_report.pdf">Report PDF</a></p>
 
