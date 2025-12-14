@@ -16,10 +16,9 @@ I initially fell into the keyboard hobby during COVID when I was glued to my des
 
 ## My Current Setup
 
-![Alt text](/assets/media/input_media/my-keyboard.jpg){: 
-style="width:100%; height:auto; display:block; margin: auto;"}
+![Alt text](/assets/media/input_media/my-keyboard.jpg){: style="width:100%; height:auto; display:block; margin: auto;"}
 
-*Specs*  
+*Specs*   
 - Mr. Suit TKL
 - Switches: Gateron box ink v2
   - filmed (Deskeys films) and lubed (Krytox 205G0)
@@ -49,8 +48,7 @@ style="width:100%; height:auto; display:block; margin: auto;"}
 
 ## Hand-wired Macropad
 
-![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: 
-style="width:100%; height:auto; display:block; margin: auto;"}
+![Alt text](/assets/media/input_media/macro/hand-wire/IMG_0830.JPG){: style="width:100%; height:auto; display:block; margin: auto;"}
 
 ### Specs  
 For my first design, I kept it simple.  
@@ -78,8 +76,7 @@ For my first design, I kept it simple.
 
 #### Layout
 
-![Alt text](/assets/media/input_media/macro/4x4.png){: 
-style="height:200px; left: 0;}
+![Alt text](/assets/media/input_media/macro/4x4.png){: style="height:200px; left: 0;}
 
 #### Components
 
@@ -94,8 +91,7 @@ style="height:200px; left: 0;}
 | Housing     | 3D printed using PLA |
 
 #### Pin Mapping
-![Alt text](/assets/media/input_media/macro/promicro-nrf52840.png){: 
-style="height:350px;display: block; margin: auto;"}
+![Alt text](/assets/media/input_media/macro/promicro-nrf52840.png){: style="height:350px;display: block; margin: auto;"}
 
 ### Build Log
 > 4-10-25: Resized to fit a battery
@@ -796,7 +792,7 @@ style="height:200px;display: block; margin: auto;"}
 | Microcontroller | Description |
 |--------------|------|
 | Blue Pill (STM32F103C8T6) | Affordable and widely used in DIY projects. |
-| Black Pill (STM32F411CEU6) | Provides higher performance with more memory and faster processing.|
+| Black Pill (STM32F411CEU6) | Provides higher performance with more memory and faster processing. |
 | STM32F072 Nucleo | Features native USB support, beneficial for HID devices |
 | STM32 Nucleo-32 | Compact board with Arduino Nano compatibility|
 
@@ -878,35 +874,35 @@ A very capable microcontroller
 [Hall Effect vs. Optical: What Switches Should You Choose? by Yadullah Abidi](https://www.makeuseof.com/hall-effect-vs-optical-switches/)  
 [3D Printed Maglev Switch](https://github.com/famichu/MagLev_Switch_MX)  
 
-**PCB Design**  
+**PCB Design**    
 [How to Design Mechanical Keyboard PCBs with Kicad - Joe Scotto](https://www.youtube.com/watch?v=8WXpGTIbxlQ&t=537s)  
 [Simple STM32 Mechanical Keyboard PCB Design in Kicad](https://www.youtube.com/watch?v=o7SF2TPVV6o&t=452s)
 [ruiqimao/keyboard-pcb-guide](https://github.com/ruiqimao/keyboard-pcb-guide?tab=readme-ov-file#associating-components-and-footprints)  
 [Designing a keyboard from scratch - masterzen](https://www.masterzen.fr/2020/05/03/designing-a-keyboard-part-1/)   
 [Designing PCBs: Advanced SMD - SparkFun](https://learn.sparkfun.com/tutorials/designing-pcbs-advanced-smd/all)  
 [Creating a Keyboard PCB with Diodes (Kicad 6.0)](https://www.youtube.com/watch?v=iznKltVU1yw&t=6s)
-- Lipo Charging
+- Lipo Charging    
 [Li-ion Battery Charging Circuit Design - MicroType Engineering](https://www.youtube.com/watch?v=GRd9uTwg7r4)  
 [LiPo MCP73831 battery charge + load sharing circuit review, and safety question](https://www.reddit.com/r/AskElectronics/comments/xyfpyt/lipo_mcp73831_battery_charge_load_sharing_circuit/#:~:text=If%20MCP73831%20is%20what%20you,really%20is%20not%20that%20efficient.)  
 [A Lithium Battery Charger with Load Sharing - Zak's Electronics Blog](https://blog.zakkemble.net/a-lithium-battery-charger-with-load-sharing/)  
-- Antenna
+- Antenna    
 [Designing a PCB patch antenna for WiFi and Bluetooth | KiCad | Philip Salmony](https://www.youtube.com/watch?v=cOtv0ddR3aI)
 
 **Firmware Configs**  
-- ZMK  
-[](https://github.com/urob/zmk-config/tree/main)  
-[](https://github.com/mctechnology17/zmk-config/tree/main)  
-[](https://github.com/Matoch/zmk_kinesis)  
+- ZMK    
+[urob: zmk-config](https://github.com/urob/zmk-config/tree/main)  
+[mctechnology17](https://github.com/mctechnology17/zmk-config/tree/main)  
+[zmk_kinesis](https://github.com/Matoch/zmk_kinesis)  
 
-- QMK  
+- QMK   
 []()
 
 **MCU**
-nrf52840
-[nrf52840 spec sheet](https://docs.nordicsemi.com/bundle/ps_nrf52840/page/keyfeatures_html5.html#)  
-[https://fab.cba.mit.edu/ - embedded programming (nrf52840)](https://fab.cba.mit.edu/classes/863.17/CBA/people/agnes/7.html)  
-Holyiot YJ-18010 (easily handsoldered)
-EBYTE E73-2G4M08S1C (available for PCB assembly)
+nrf52840  
+[nrf52840 spec sheet](https://docs.nordicsemi.com/bundle/ps_nrf52840/page/keyfeatures_html5.html#)   
+[https://fab.cba.mit.edu/ - embedded programming (nrf52840)](https://fab.cba.mit.edu/classes/863.17/CBA/people/agnes/7.html)   
+Holyiot YJ-18010 (easily handsoldered)   
+EBYTE E73-2G4M08S1C (available for PCB assembly)   
 
 ## Sources
 [^1]: K. Ogata. *Modern Control Engineering*. Pearson, 2010.  
