@@ -107,3 +107,21 @@ a.icon img {
   width: 16px;
   height: 16px;
 }
+
+/*--------------- Custom Figure --------------- */
+.custom-figure {
+  margin: 0;
+  padding: 0;
+  
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .figure-caption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+    color: #cccccc;
+  }
+}
