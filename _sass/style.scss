@@ -61,6 +61,30 @@ a {
   display: none;
 }
 
+/* Hide footnotes initially to prevent flash, then show after JS moves them */
+.footnotes {
+  display: none;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+/* Show footnotes after they've been moved to References section */
+.footnotes.moved-to-references {
+  display: block;
+}
+
+.footnotes ol {
+  list-style: decimal;
+  padding-left: 2em;
+  margin: 1em 0;
+}
+
+.footnotes li {
+  margin-bottom: 0.75em;
+  padding-left: 0.5em;
+  line-height: 1.6;
+}
+
 /* Center tables on the page */
 .markdown-preview-view table {
   margin-left: auto !important; 
