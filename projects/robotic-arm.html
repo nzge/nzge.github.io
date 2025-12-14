@@ -227,9 +227,6 @@
   </tbody>
 </table>
 
-<p><img src="/assets/media/robotic-arm_media/figure-4-1.png" alt="Figure 4.1" style="width:50%; height:auto; display: block; margin: auto;" /> 
-Transformation Matrix from base to end effector frames</p>
-
 <p>Using the DH parameters from the table above describing the design of our system, the transformation matrix in Figure 4.1 was calculated using the provided Matlab code. The table above is organized in classic DH format as opposed to a modified format.</p>
 
 <p>The transformation matrix from base to end effector frames is:</p>
@@ -319,8 +316,6 @@ z_2 &amp;= z_3 - a_4 \sin \phi \\
 <p>One of our primary future improvements would be to weight and moment-optimize an RRRR robot, allowing it to have the full, desired operating range of motion. In addition to cutting material and shortening links, coding the position to have the first link act as a counterweight could potentially help solve this problem. Adding a transmission to our second motor, programming a hard torque limit, or gain-scheduling a damper could also alleviate weight concerns if we reach the limit of our weight optimization.</p>
 
 <p>Another improvement could be to build an overhead structure to hold the lightbulb socket in a more realistic position. Our end effector could also implement a sort of grasping mechanism, which would allow the arm to reach into an actual countersunk lightbulb socket instead of our idealized one and potentially become compatible with other sizes and shapes of bulbs. Adding a sensing element to find the hole, either with an ultrasonic sensor or a computer vision setup, is another improvement we would hope to make.</p>
-
-<hr />
 
 <h2 id="references">References</h2>
 
