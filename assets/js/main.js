@@ -98,36 +98,3 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
-
-///////////////////////////////
-
-// Match figure caption width to image width
-function syncFigureCaptionWidths() {
-  document.querySelectorAll('.custom-figure .figure-wrapper').forEach(wrapper => {
-    const img = wrapper.querySelector('img');
-    if (img) {
-      const updateWidth = () => {
-        const imgWidth = img.offsetWidth;
-        if (imgWidth > 0) {
-          wrapper.style.width = imgWidth + 'px';
-        }
-      };
-      
-      if (img.complete) {
-        updateWidth();
-      } else {
-        img.addEventListener('load', updateWidth, { once: true });
-      }
-    }
-  });
-}
-
-// Run on page load and resize
-document.addEventListener('DOMContentLoaded', syncFigureCaptionWidths);
-window.addEventListener('load', syncFigureCaptionWidths);
-
-let resizeTimeout;
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(syncFigureCaptionWidths, 150);
-});
