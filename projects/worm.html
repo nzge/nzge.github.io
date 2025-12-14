@@ -120,7 +120,7 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#characterization-and-simulation-of-a-worm-inspired-robot">Characterization and Simulation of a Worm-Inspired Robot</a><ul><li><a href="#abstract">Abstract</a></li><li><a href="#i-problem-statement">I. Problem Statement</a></li><li><a href="#ii-background">II. Background</a><ul><li><a href="#peristalsis-mechanics">Peristalsis Mechanics</a></li><li><a href="#material-construction">Material Construction</a></li><li><a href="#actuation-framework">Actuation Framework</a><ul><li><a href="#smart-materials">Smart Materials</a></li><li><a href="#fluid-based-actuators">Fluid-Based Actuators</a></li></ul></li><li><a href="#control-strategy">Control Strategy</a><ul><li><a href="#open-loop-control">Open Loop Control</a></li><li><a href="#intelligent-control-design">Intelligent Control Design</a></li></ul></li><li><a href="#biomechanical-model">Biomechanical Model</a></li><li><a href="#performance-metrics">Performance Metrics</a></li></ul></li><li><a href="#iii-simulation-approach">III. Simulation Approach</a><ul><li><a href="#model-construction">Model Construction</a></li><li><a href="#numerical-solver">Numerical Solver</a></li><li><a href="#control-scheme">Control Scheme</a><ul><li><a href="#segment-by-segment-contraction">Segment-by-segment contraction</a></li><li><a href="#standingtraveling-wave-contraction-pattern">Standing/Traveling Wave Contraction Pattern</a></li></ul></li></ul></li><li><a href="#iv-results">IV. Results</a><ul><li><a href="#segment-count-test">Segment Count test</a></li><li><a href="#contraction-profile-analysis">Contraction profile analysis</a></li><li><a href="#current-challenges">Current Challenges</a></li></ul></li><li><a href="#v-future-work">V. Future Work</a></li><li><a href="#vi-conclusions">VI. Conclusions</a></li><li><a href="#acknowledgment">Acknowledgment</a></li><li><a href="#references">References</a></li></ul></li></ul>
+      <ul><li><a href="#characterization-and-simulation-of-a-worm-inspired-robot">Characterization and Simulation of a Worm-Inspired Robot</a><ul><li><a href="#abstract">Abstract</a></li><li><a href="#i-problem-statement">I. Problem Statement</a></li><li><a href="#ii-background">II. Background</a><ul><li><a href="#peristalsis-mechanics">Peristalsis Mechanics</a></li><li><a href="#material-construction">Material Construction</a></li><li><a href="#actuation-framework">Actuation Framework</a><ul><li><a href="#smart-materials">Smart Materials</a></li><li><a href="#fluid-based-actuators">Fluid-Based Actuators</a></li></ul></li><li><a href="#control-strategy">Control Strategy</a><ul><li><a href="#open-loop-control">Open Loop Control</a></li><li><a href="#intelligent-control-design">Intelligent Control Design</a></li></ul></li><li><a href="#biomechanical-model">Biomechanical Model</a></li><li><a href="#performance-metrics">Performance Metrics</a></li></ul></li><li><a href="#iii-simulation-approach">III. Simulation Approach</a><ul><li><a href="#model-construction">Model Construction</a></li><li><a href="#numerical-solver">Numerical Solver</a></li><li><a href="#control-scheme">Control Scheme</a><ul><li><a href="#segment-by-segment-contraction">Segment-by-segment contraction</a></li><li><a href="#standingtraveling-wave-contraction-pattern">Standing/Traveling Wave Contraction Pattern</a></li></ul></li></ul></li><li><a href="#iv-results">IV. Results</a><ul><li><a href="#segment-count-test">Segment Count test</a></li><li><a href="#contraction-profile-analysis">Contraction profile analysis</a></li><li><a href="#current-challenges">Current Challenges</a></li></ul></li><li><a href="#v-future-work">V. Future Work</a></li><li><a href="#vi-conclusions">VI. Conclusions</a></li><li><a href="#references">References</a></li></ul></li></ul>
     </nav>
   
   <div>
@@ -131,15 +131,11 @@
 
 <p>Soft-bodied invertebrates such as earthworms achieve efficient movement through coordinated peristaltic contractions of their body segments. This project explores this unique locomotive paradigm and examines its potential as a robotic framework.</p>
 
-<hr />
-
 <h2 id="i-problem-statement">I. Problem Statement</h2>
 
 <p>Traditional rigid robots struggle in confined spaces or irregular terrain (e.g., pipelines, soil, rubble). Soft-bodied worms offer a biological blueprint for adaptable motion via peristalsis. Understanding and simulating this mode of movement can inform the design of soft robots capable of traversing restrictive environments (e.g., medical endoscopy, search-and-rescue, pipeline inspection). Although peristaltic motion is effectively one-dimensional, it exhibits remarkable movement economy compared to limb-based locomotion, making it an efficient and robust strategy for soft robotic applications. The movement pattern is predictable yet surprisingly well-adapted to varied surface conditions, permitted surface contact can be maintained.</p>
 
 <p>We gain insight into this mode of movement through the development of a computational model and simulation of a soft robotic worm. By capturing the coupling between actuation patterns, soft body mechanics and deformation, and frictional interactions with the environment, this model will provide insights into the fundamental physics and control strategies that enable efficient soft-bodied motion.</p>
-
-<hr />
 
 <h2 id="ii-background">II. Background</h2>
 
@@ -177,7 +173,7 @@
   </li>
 </ul>
 
-<p><img src="/assets/media/worm_media/dea-worm-segment.jpg" alt="DEA Worm Segment" style="width:80%; height:auto; display: block; margin: auto;" /><br />
+<p><img src="/assets/media/worm_media/dea-worm-segment.jpg" alt="DEA Worm Segment" style="width:50%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 1: A singular worm segment that contracts via dielectric elastomer actuation integrated into the bottom of the worm segment</em></p>
 
 <h4 id="fluid-based-actuators">Fluid-Based Actuators</h4>
@@ -196,7 +192,7 @@
   </li>
 </ul>
 
-<p><img src="/assets/media/worm_media/pneumatic-worm.jpg" alt="Pneumatic Worm" style="width:80%; height:auto; display: block; margin: auto;" /><br />
+<p><img src="/assets/media/worm_media/pneumatic-worm.jpg" alt="Pneumatic Worm" style="width:50%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 2: Pneumatically actuated worm</em></p>
 
 <h3 id="control-strategy">Control Strategy</h3>
@@ -227,12 +223,12 @@
 
 <p>But for the sake of capturing the worm’s end behavior to establish basic movement characteristics, most physical worm frameworks can be mathematically generalized to a simple 2-D planar model. The worm is first represented as a series of deformable planar (viewed from the side) segments actuated by a traveling contraction wave, enabling net forward motion through phase-shifted actuation.</p>
 
-<p><img src="/assets/media/worm_media/2d-worm-model.jpg" alt="2D Worm Model" style="width:80%; height:auto; display: block; margin: auto;" /><br />
+<p><img src="/assets/media/worm_media/2d-worm-model.jpg" alt="2D Worm Model" style="width:50%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 3: 2D planar model using rhomboid linkages for height-length coupling</em></p>
 
 <p>One model presents the worm as a segmented series of connected four-bar linkages that expand vertically and shorten horizontally when activated. This gives a more physically realistic coupling between radial and axial changes of each segment.</p>
 
-<p><img src="/assets/media/worm_media/2d-turning-worm.jpg" alt="2D Turning Worm" style="width:80%; height:auto; display: block; margin: auto;" /><br />
+<p><img src="/assets/media/worm_media/2d-turning-worm.jpg" alt="2D Turning Worm" style="width:50%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 4: Turning worm model</em></p>
 
 <p>The model can then be further generalized to a 3-D structure. If rectilinear single-line motion is the goal, the 3-D generalization is more of a programming challenge of building surface geometry to better simulate frictional forces. However, the 3-D model also opens up the option of implementing turning capabilities. From a model perspective, the simplest implementation of turning is placing a rotational hinge in between rhomboid segments. Each time a segment is activated/contracted, a turning angle is applied to the hinge associated with the contracted segment. The approach that more realistically models a worm’s mode of turning action would be creating a differential radial actuation (left/right bias). Split the rhomboid into left and right chambers/tendons so you can inflate/contract them asymmetrically. If the left chamber expands more than right, the normal force distribution shifts and the body will bias to one side during sliding, which produces turning. The differential radial actuation may be a more physically realistic model and represents the neural intent of the worm, but the hinge integration is easier to build control frameworks around due to its relatively simpler dynamics.</p>
@@ -241,16 +237,14 @@
 
 <p>The simulation will explore how actuation frequency, amplitude, and friction anisotropy influence locomotion performance. The results are expected to provide insight into control and design strategies for soft robots operating in constrained or complex environments. Segment count (representative of control fidelity, and perhaps the physical segment count of the final robot). Do more segments mean greater efficiency? The project will explore the relationship between actuation phase patterns and segment deformation, frictional interactions with the environment, and body compliance and stiffness distribution. An analytical framework surrounding these relationships and gain insight into locomotion efficiency and metabolic activity, maneuverability, stability, and control responsiveness to identify design parameters that optimize performance.</p>
 
-<hr />
-
 <h2 id="iii-simulation-approach">III. Simulation Approach</h2>
 
 <h3 id="model-construction">Model Construction</h3>
 
-<p><img src="/assets/media/worm_media/worm-config.png" alt="Worm Configuration" style="width:80%; height:auto; display: block; margin: auto;" /><br />
+<p><img src="/assets/media/worm_media/worm-config.png" alt="Worm Configuration" style="width:50%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 5: Rhombic linkage segments based worm model with 6 segments</em></p>
 
-<p><img src="/assets/media/worm_media/worm.jpg" alt="Worm Model" style="width:80%; height:auto; display: block; margin: auto;" /><br />
+<p><img src="/assets/media/worm_media/worm.jpg" alt="Worm Model" style="width:50%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 6: Rhombic linkage segments based worm model construction description</em></p>
 
 <p>Each segment consists of a rhombic four-bar linkage. A linear spring extends horizontally across each segment to represent the natural elasticity of each segment. Torsional spring stiffness between segments represents a resistance to positional differences between adjacent segments.</p>
@@ -377,10 +371,10 @@ F_{\mathrm{contract}} &amp;= \text{StandingWaveContraction}(\phi(x,t)).
 
 <p>This approach allows modeling of sequential, wave-like contractions and the resulting force distribution along a multi-segment body.</p>
 
-<p><img src="/assets/media/worm_media/segment-activation.png" alt="Segment Activation" style="width:80%; height:auto; display: block; margin: auto;" /><br />
+<p><img src="/assets/media/worm_media/segment-activation.png" alt="Segment Activation" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" /><br />
 <em>Figure 7: Segment based activation</em></p>
 
-<p><img src="/assets/media/worm_media/force-history.png" alt="Force History" style="width:80%; height:auto; display: block; margin: auto;" /><br />
+<p><img src="/assets/media/worm_media/force-history.png" alt="Force History" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" /><br />
 <em>Figure 8: Segment based contraction force</em></p>
 
 <h4 id="standingtraveling-wave-contraction-pattern">Standing/Traveling Wave Contraction Pattern</h4>
@@ -405,10 +399,8 @@ F_{\mathrm{contract}} &amp;= \text{StandingWaveContraction}(\phi(x,t)).
 
 \[A(x,t) = \sin\!\left( \phi(x,t) \right) = \sin\!\left( kx - \omega t \right).\]
 
-<p><img src="/assets/media/worm_media/wave-contraction.png" alt="Wave Contraction" style="width:80%; height:auto; display: block; margin: auto;" /><br />
+<p><img src="/assets/media/worm_media/wave-contraction.png" alt="Wave Contraction" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" /><br />
 <em>Figure 9: Standing wave contraction force</em></p>
-
-<hr />
 
 <h2 id="iv-results">IV. Results</h2>
 
@@ -575,10 +567,10 @@ The software pipeline is modular and experiment-friendly:</p>
   </tbody>
 </table>
 
-<p><img src="/assets/media/worm_media/plots/segment-com.png" alt="Segment COM" style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
+<p><img src="/assets/media/worm_media/plots/segment-com.png" alt="Segment COM" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
 <em>Figure 10: X-Direction Center of Mass tracked over 10 seconds from worms of different segment counts.</em></p>
 
-<p><img src="/assets/media/worm_media/plots/segment-cumcot.png" alt="Segment COT" style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
+<p><img src="/assets/media/worm_media/plots/segment-cumcot.png" alt="Segment COT" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
 <em>Figure 11: Cumulative Cost of Transport tracked over 10 seconds from worms of different segment counts.</em></p>
 
 <p>Distance traveled and cost of transport (CoT) generally increase as the number of segments increases. However, for the 7-segment worm, both metrics drop significantly compared to the 6-segment case.</p>
@@ -632,10 +624,10 @@ The software pipeline is modular and experiment-friendly:</p>
 <strong>Run D</strong>: $4.0~\mathrm{s}$ wave period<br />
 <strong>Run E</strong>: $5.0~\mathrm{s}$ wave period</p>
 
-<p><img src="/assets/media/worm_media/plots/contract-com.png" alt="Contract COM" style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
+<p><img src="/assets/media/worm_media/plots/contract-com.png" alt="Contract COM" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
 <em>Figure 12: Center of mass tracked over 10 seconds from 6 segment worms of varying contraction wave periods.</em></p>
 
-<p><img src="/assets/media/worm_media/plots/contract-cumcot.png" alt="Contract COT" style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
+<p><img src="/assets/media/worm_media/plots/contract-cumcot.png" alt="Contract COT" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
 <em>Figure 13: Cumulative Cost of Transport tracked over 10 seconds from of varying contraction wave periods.</em></p>
 
 <p>The results match intuition in that a shorter wave period produces more contraction efforts in a given time-frame, hence a higher Cost of Transport.</p>
@@ -652,8 +644,6 @@ The software pipeline is modular and experiment-friendly:</p>
 
 <p>These instabilities restrict the parameter space over which the simulation can robustly produce physically realistic worm behavior.</p>
 
-<hr />
-
 <h2 id="v-future-work">V. Future Work</h2>
 
 <p><strong>Solver</strong>: Future work will explore alternative numerical methods, such as a Hybrid pipeline that combines a fast real-time controller using Projective dynamics (PD)/Extended Peridynamic Model (XPDM), offline FEM-based validation, and a learned residual corrector. The residual corrector, implemented as a small neural network or regression model, would predict FEM-level residuals for unseen PD states, enabling real-time simulation with FEM-level accuracy. More realistic friction models will also be investigated, including enhanced predictor–corrector schemes and frictional anchoring forces in place of velocity-threshold-based formulations.</p>
@@ -666,15 +656,9 @@ The software pipeline is modular and experiment-friendly:</p>
 
 <p><strong>Model Improvements</strong>: Additional work will focus on resolving numerical instabilities to enable more realistic simulations, incorporating spatially varying torsional and linear spring stiffnesses, and enabling path-following through directed contraction patterns using the modeling approaches discussed in the background.</p>
 
-<hr />
-
 <h2 id="vi-conclusions">VI. Conclusions</h2>
 
 <p>This project establishes a computational foundation for investigating efficient soft robotic locomotion. The insights gained from modeling actuation and body-environment interactions will guide the design of soft robots capable of adaptive and robust movement in complex settings.</p>
-
-<h2 id="acknowledgment">Acknowledgment</h2>
-
-<p>The author thanks Professor Khalid Jawed for guidance and instruction throughout the MAE 263F Soft Robotics course. Their insights into soft robotic modeling formed the foundation of this project.</p>
 
 <h2 id="references">References</h2>
 
@@ -736,6 +720,9 @@ The software pipeline is modular and experiment-friendly:</p>
 Department of Mechanical and Aerospace Engineering<br />
 University of California, Los Angeles<br />
 Email: nzge@g.ucla.edu</p>
+
+<p><strong>Acknowledgment</strong><br />
+The author thanks Professor Khalid Jawed for guidance and instruction throughout the MAE 263F Soft Robotics course. Their insights into soft robotic modeling formed the foundation of this project.</p>
 
     </article>
   </div>
