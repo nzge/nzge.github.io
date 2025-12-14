@@ -29,7 +29,7 @@ We gain insight into this mode of movement through the development of a computat
 
 It is first important to understand the underlying biomechanics that allow worms to move forward. The theory of peristalsis can then be shaped into a functional robot model.
 
-At a high level, peristalsis is perceived as a wave-like propagation of muscle contraction and subsequent relaxation that is practiced repeatedly starting from the head to the toe of a worm's body. One contentious topic of discussion regarding the theory of peristalsis is the role of friction. Some believe friction is not the predominant source of movement, and that momentum transfer inside the body may be the driving mechanism. However, one way friction is believed to propel the worm is by providing a stationary anchor for segments in front of the actuated tissue to lurch forward. Simulation may reveal deeper truths about the mechanics of peristalsis.
+At a high level, peristalsis is perceived as a wave-like propagation of muscle contraction and subsequent relaxation that is practiced repeatedly starting from the head to the toe of a worm's body [^2][^3]. One contentious topic of discussion regarding the theory of peristalsis is the role of friction. Some believe friction is not the predominant source of movement, and that momentum transfer inside the body may be the driving mechanism. However, one way friction is believed to propel the worm is by providing a stationary anchor for segments in front of the actuated tissue to lurch forward [^5]. Simulation may reveal deeper truths about the mechanics of peristalsis.
 
 However we may believe peristalsis drives forward locomotion, sequential wave-like contraction is the fundamental action that characterizes peristalsis, and any virtual or physical system should be built around this behavior.
 
@@ -47,11 +47,11 @@ A class of material important to the field of soft robotics is smart materials. 
 
 #### Smart Materials
 
-- **Shape Memory Alloys (SMAs)** is one prevalent example of a smart material. They can reset back to a predefined structure when met with ample heat. They have the highest work density compared to other smart materials, meaning a small amount of material can generate a lot of work. They are not fast, but can behave responsively at microscale (such as the case of Micro helix SMAs, which have strain ratios of up to 200% and can be actuated in under a second). One implementation of SMA actuation has SMAs structures wrapped around the robot and actuated by wiring that also constitutes the braided mesh, creating seamless integration of actuation and structural framework.
+- **Shape Memory Alloys (SMAs)** [^1] is one prevalent example of a smart material. They can reset back to a predefined structure when met with ample heat. They have the highest work density compared to other smart materials, meaning a small amount of material can generate a lot of work. They are not fast, but can behave responsively at microscale (such as the case of Micro helix SMAs, which have strain ratios of up to 200% and can be actuated in under a second). One implementation of SMA actuation has SMAs structures wrapped around the robot and actuated by wiring that also constitutes the braided mesh, creating seamless integration of actuation and structural framework.
 
-- **Dielectric Elastomers (DEAs)** are another smart material that have a use case in building robotic worms. DEAs consist of a passive elastomer sandwiched between 2 compliant electrodes. Applied voltage acts between the electrodes and inadvertently squeezes the elastomer film through electrostatic pressure, causing expansion of material. DEAs can be shaped around a tube-like structure and actuated to mimic the pulsating activation pattern required for peristalsis.
+- **Dielectric Elastomers (DEAs)** are another smart material that have a use case in building robotic worms [^4]. DEAs consist of a passive elastomer sandwiched between 2 compliant electrodes. Applied voltage acts between the electrodes and inadvertently squeezes the elastomer film through electrostatic pressure, causing expansion of material. DEAs can be shaped around a tube-like structure and actuated to mimic the pulsating activation pattern required for peristalsis.
 
-- **Ionic polymer–metal composites (IPMCs)**: like DEAs, IPMCs are electroactive polymers. However, actuation is based on the migration/displacement of ions within a hydrated polymer matrix when a voltage is applied, causing the material to bend (a bimorph motion). IPMCs are slower in actuation compared to DEAs, but require low driving voltages.
+- **Ionic polymer–metal composites (IPMCs)** [^13]: like DEAs, IPMCs are electroactive polymers. However, actuation is based on the migration/displacement of ions within a hydrated polymer matrix when a voltage is applied, causing the material to bend (a bimorph motion). IPMCs are slower in actuation compared to DEAs, but require low driving voltages.
 
 {% include figure.html 
    src="/assets/media/worm_media/dea-worm-segment.jpg" 
@@ -62,11 +62,11 @@ A class of material important to the field of soft robotics is smart materials. 
 
 Fluid-based actuators result in high force, precise, and controllable action that changes the shape of the worm from within. This action may perhaps more naturally mirror the biological model of actuation. However, they present their own set of limitations.
 
-- **Pneumatics**: Movement of compressed air to drive contraction of artificial muscles contained with the skin wall. The theoretical basis of pneumatics is simple but hard to implement. Additionally, they require bulky pumps, resulting in an unwieldy construction.
+- **Pneumatics** [^15]: Movement of compressed air to drive contraction of artificial muscles contained with the skin wall. The theoretical basis of pneumatics is simple but hard to implement. Additionally, they require bulky pumps, resulting in an unwieldy construction.
 
 - **Hydrostatic Fluid Actuators**: similar to pneumatics in that fluids are used to drive action. This method also has size scaling limitations, requiring an effective micro-hydraulic piston.
 
-- **Magnetic fluid**: magnetic attraction of magnetic fluid embedded within the segmented worm as a permanent magnet passes over each self-contained body segment is one way to create patterned expansion. The challenge lies in the mechanism that moves the permanent magnet with minimal intervention.
+- **Magnetic fluid** [^10]: magnetic attraction of magnetic fluid embedded within the segmented worm as a permanent magnet passes over each self-contained body segment is one way to create patterned expansion. The challenge lies in the mechanism that moves the permanent magnet with minimal intervention.
 
 {% include figure.html 
    src="/assets/media/worm_media/pneumatic-worm.jpg" 
@@ -85,9 +85,9 @@ The simplest control strategy employs an open-loop sinusoidal input applied to e
 
 - **Close loop**: close-loop feedback control can be designed around certain measurable state variables, such as measure contraction/expansion of each segment (segment length/strain sensors) and position sensors (track head or body centroid movement). Local segment tracking combined with global body motion correction can be used to achieve a desired velocity.
 
-- **Stable heteroclinic channels (SHCs)**: SHCs are a mathematical framework that allows smooth transitions between stable manifolds crossing unstable bridges.
+- **Stable heteroclinic channels (SHCs)** [^5]: SHCs are a mathematical framework that allows smooth transitions between stable manifolds crossing unstable bridges.
 
-- **Neural Circuits**: Neural circuit control design is inspired by biological neural drive operated through central pattern generators (CPGs). One study trained its neural CPG network on real Drosophila larvae by quantifying timing and duration of segmental boundary contractions. The network consists of repeated units of excitatory and inhibitory (EI) neuronal populations (for each worm segment) coupled with immediate neighboring segments. This model successfully generated forward and backward wave propagation.
+- **Neural Circuits** [^12]: Neural circuit control design is inspired by biological neural drive operated through central pattern generators (CPGs). One study trained its neural CPG network on real Drosophila larvae by quantifying timing and duration of segmental boundary contractions. The network consists of repeated units of excitatory and inhibitory (EI) neuronal populations (for each worm segment) coupled with immediate neighboring segments. This model successfully generated forward and backward wave propagation.
 
 ### Biomechanical Model
 
@@ -100,14 +100,14 @@ But for the sake of capturing the worm's end behavior to establish basic movemen
    caption="Figure 3: 2D planar model using rhomboid linkages for height-length coupling"
    style="width:50%; height:auto; display: block; margin: auto;" %}
 
-One model presents the worm as a segmented series of connected four-bar linkages that expand vertically and shorten horizontally when activated. This gives a more physically realistic coupling between radial and axial changes of each segment.
+One model presents the worm as a segmented series of connected four-bar linkages that expand vertically and shorten horizontally when activated [^5]. This gives a more physically realistic coupling between radial and axial changes of each segment.
 
 {% include figure.html 
    src="/assets/media/worm_media/2d-turning-worm.jpg" 
    caption="Figure 4: Turning worm model"
    style="width:50%; height:auto; display: block; margin: auto;" %}
 
-The model can then be further generalized to a 3-D structure. If rectilinear single-line motion is the goal, the 3-D generalization is more of a programming challenge of building surface geometry to better simulate frictional forces. However, the 3-D model also opens up the option of implementing turning capabilities. From a model perspective, the simplest implementation of turning is placing a rotational hinge in between rhomboid segments. Each time a segment is activated/contracted, a turning angle is applied to the hinge associated with the contracted segment. The approach that more realistically models a worm's mode of turning action would be creating a differential radial actuation (left/right bias). Split the rhomboid into left and right chambers/tendons so you can inflate/contract them asymmetrically. If the left chamber expands more than right, the normal force distribution shifts and the body will bias to one side during sliding, which produces turning. The differential radial actuation may be a more physically realistic model and represents the neural intent of the worm, but the hinge integration is easier to build control frameworks around due to its relatively simpler dynamics.
+The model can then be further generalized to a 3-D structure [^8]. If rectilinear single-line motion is the goal, the 3-D generalization is more of a programming challenge of building surface geometry to better simulate frictional forces. However, the 3-D model also opens up the option of implementing turning capabilities. From a model perspective, the simplest implementation of turning is placing a rotational hinge in between rhomboid segments. Each time a segment is activated/contracted, a turning angle is applied to the hinge associated with the contracted segment. The approach that more realistically models a worm's mode of turning action would be creating a differential radial actuation (left/right bias). Split the rhomboid into left and right chambers/tendons so you can inflate/contract them asymmetrically. If the left chamber expands more than right, the normal force distribution shifts and the body will bias to one side during sliding, which produces turning. The differential radial actuation may be a more physically realistic model and represents the neural intent of the worm, but the hinge integration is easier to build control frameworks around due to its relatively simpler dynamics.
 
 ### Performance Metrics
 
@@ -434,6 +434,7 @@ This project establishes a computational foundation for investigating efficient 
 
 ## References
 
+
 [^1]: S. Coyle, E. Rouse, and C. Majidi, "Actuation and design innovations in earthworm-inspired soft robots: A review," *Frontiers in Robotics and AI*, vol. 10, 2023. [Online]. Available: <https://pmc.ncbi.nlm.nih.gov/articles/PMC9989016/>
 
 [^2]: T. D. Nguyen, S. Park, and M. Sitti, "A new theory and methods for creating peristaltic motion in a robotic platform," in *Proc. IEEE Int. Conf. on Robotics and Automation (ICRA)*, 2010, pp. 1151–1156. [Online]. Available: <https://ieeexplore.ieee.org/document/5509655>
@@ -477,3 +478,6 @@ Email: nzge@g.ucla.edu
 
 **Acknowledgment**    
 The author thanks Professor Khalid Jawed for guidance and instruction throughout the MAE 263F Soft Robotics course. Their insights into soft robotic modeling formed the foundation of this project.
+
+<!-- Hidden references trigger the footnote rendering -->
+<span id="hidden-references"> [^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9] [^10] [^11] [^12] [^13] [^14] [^15]</span>

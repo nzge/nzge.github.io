@@ -183,7 +183,7 @@ The current reachable workspace is very typical of most 3R robotic arms and did 
 
 With the current design parameters, forward and inverse kinematics, and a target trajectory, we were able to simulate our robotic manipulator both from our initial design of a planar RRR and a planar RR manipulator, both atop a rotating base. Using the initial design, the first simulation for the robot was given a simple segmented trajectory to lift the end effector, move it across the x-y plane, and then descend the end effector in order to screw it into a target position.
 
-In order to calculate these trajectories, each of the goal positions from the lightbulb load position to the lightbulb screw position can be represented as waypoints in 3D space. Additionally, desired points along the trajectory can be represented in the same fashion to ensure that the calculated trajectories lie within the reachable workspace outlined in Section VI. After defining the waypoints, parametric equations in the x, y, and z directions going through all of the waypoints are then calculated and finally simulated. This simulation demonstrates a possible routine our robot could follow in order to accomplish the task.
+In order to calculate these trajectories, each of the goal positions from the lightbulb load position to the lightbulb screw position can be represented as waypoints in 3D space [^1]. Additionally, desired points along the trajectory can be represented in the same fashion to ensure that the calculated trajectories lie within the reachable workspace outlined in Section VI. After defining the waypoints, parametric equations in the x, y, and z directions going through all of the waypoints are then calculated and finally simulated. This simulation demonstrates a possible routine our robot could follow in order to accomplish the task.
 
 Figure 7.1 shows the results of the simulation, with each link colored uniquely and the intended trajectory displayed as a dashed line. When shifting to the final design, the previously calculated inverse kinematics were still utilized for the new simulations through locking the value of the joint, which was set to zero, and augmenting the link length of that specific joint accordingly. Figure 7.2 displays the results of the simulation from our final design.
 
@@ -247,3 +247,6 @@ Another improvement could be to build an overhead structure to hold the lightbul
 **Ajay Chandrasekhar, Calvin Wicks, Cruz Ramirez, James Weiler, Liam McGlynn, Nathan Ge, Shahab Besharatlou**  
 MAE C263A Final Project  
 Fall 2025
+
+<!-- Hidden references trigger the footnote rendering -->
+<span id="hidden-references"> [^1]</span>

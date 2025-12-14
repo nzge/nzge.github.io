@@ -29,18 +29,18 @@ A hamstring strain, aptly named, is an injury to the hamstring muscles. Qualitat
 
 A strain is the generalized term used to describe an injury to the greater hamstring musculature. This can be further specified as a strain (micro tear), tear, or rupture that can occur in the muscle belly or musculotendinous region, or a combination of these injury sites and severities.
 
-Although non-standardized and quite convoluted, the severity of the strain is often diagnosed using a grading system. Most grading schemes follow an I-III or 0-4 level structure. More advanced grading structures separate the finer details of hamstring injury, combining severity grading and anatomic site classification across the musculotendinous region.
+Although non-standardized and quite convoluted, the severity of the strain is often diagnosed using a grading system [^7]. Most grading schemes follow an I-III or 0-4 level structure. More advanced grading structures separate the finer details of hamstring injury, combining severity grading and anatomic site classification across the musculotendinous region.
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/grade.png" 
    caption="Figure 1: Detailed hamstring strain grading scheme"
    style="width:70%; height:auto; display: block; margin: auto;" %}
 
-**Secondary Pathologies**: Tendon rupture (especially at insertion) can cause retraction or bone fragment avulsion, in the case that the tension in the tendon forcefully rips off a portion of bone from the tendon insertion site.
+**Secondary Pathologies** [^4]: Tendon rupture (especially at insertion) can cause retraction or bone fragment avulsion, in the case that the tension in the tendon forcefully rips off a portion of bone from the tendon insertion site.
 
 #### Anatomy
 
-The hamstrings anatomically comprise a group of muscles and their associated tendons that satisfy the following definitions:
+The hamstrings anatomically comprise a group of muscles and their associated tendons that satisfy the following definitions [^11][^14][^15]:
 
 - Originates from the ischial tuberosity.
 - Inserted over the knee joint, in the tibia or fibula.
@@ -49,7 +49,7 @@ The hamstrings anatomically comprise a group of muscles and their associated ten
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/hamstrings.png" 
-   caption="Reference: Gray's Anatomy (1918)"
+   caption="Reference: Gray's Anatomy (1918) [^15]"
    style="width:80%; height:auto; display: block; margin: auto;" %}
 
 | Muscle | Origin | Insertion |
@@ -61,15 +61,15 @@ The hamstrings anatomically comprise a group of muscles and their associated ten
 
 ### B. Mechanism of Injury
 
-Hamstring strains are a highly recurring injury, particularly in athlete populations. Hamstring strains are reported to account for 12–16% of all injuries in athletes, with a reported re-injury rate of 22-34%.
+Hamstring strains are a highly recurring injury, particularly in athlete populations [^1][^3]. Hamstring strains are reported to account for 12–16% of all injuries in athletes, with a reported re-injury rate of 22-34%.
 
 One major risk factor for hamstring injuries is high-impact movements involving the legs, such as sprinting, jumping, and quick changes of direction, hence why this injury disproportionately affects athlete populations.
 
 ### C. Prior Art
 
-Rehabilitation strategies and protocols are in place to expedite and enhance the healing process. Conservative care is the standard for Grade I–II hamstring strains, typically involving rest, cryotherapy, partial immobilization, and pain control, followed by progressive stretching and strengthening as symptoms improve.
+Rehabilitation strategies and protocols are in place to expedite and enhance the healing process [^2]. Conservative care is the standard for Grade I–II hamstring strains, typically involving rest, cryotherapy, partial immobilization, and pain control, followed by progressive stretching and strengthening as symptoms improve.
 
-Beyond traditional methods of passive recovery and additional rehabilitative efforts, experimental treatments such as peptides may be introduced to promote healing factors. In severe cases such as complete hamstring tendon rupture, surgical intervention may be warranted. One paper, for instance, discusses proximal hamstring repair with all-suture anchors.
+Beyond traditional methods of passive recovery and additional rehabilitative efforts, experimental treatments such as peptides may be introduced to promote healing factors. In severe cases such as complete hamstring tendon rupture, surgical intervention may be warranted [^13]. One paper, for instance, discusses proximal hamstring repair with all-suture anchors.
 
 
 
@@ -81,7 +81,7 @@ The entirety of our modeling workflow is run through the OpenSim API.
 
 ### A. Model Selection
 
-We use GaitModel2392 to represent our human musculoskeletal system, a complete top-down 23-DOF computer model. The models were created by Darryl Thelen (University of Wisconsin-Madison) and Ajay Seth, Frank C. Anderson, and Scott L. Delp (Stanford University). The models feature lower extremity joint definitions adopted from Delp et al. (1990), low back joint and anthropometry adopted from Anderson and Pandy (1999), and a planar knee model adopted from Yamaguchi and Zajac (1989). The Gait2392 model features 92 musculotendon actuators to represent 76 muscles in the lower extremities and torso.
+We use GaitModel2392 to represent our human musculoskeletal system, a complete top-down 23-DOF computer model [^17]. The models were created by Darryl Thelen (University of Wisconsin-Madison) and Ajay Seth, Frank C. Anderson, and Scott L. Delp (Stanford University). The models feature lower extremity joint definitions adopted from Delp et al. (1990), low back joint and anthropometry adopted from Anderson and Pandy (1999), and a planar knee model adopted from Yamaguchi and Zajac (1989). The Gait2392 model features 92 musculotendon actuators to represent 76 muscles in the lower extremities and torso.
 
 **Model Details:**
 
@@ -94,7 +94,7 @@ We use GaitModel2392 to represent our human musculoskeletal system, a complete t
 
 ### B. Pathology Characterization
 
-The pathology of a hamstring strain is mechanically characterized by a change in the force-length relationship in the affected muscle, resulting in a loss of force production potential in the larger ranges of motion of the muscle. Given the complexity of this relationship and the inability to shape unique force-length curves for the infinite varieties of hamstring strains, we simplified the pathology to its most notable and generalized performance reductions, specifically a decrease in the maximum isometric force of the hamstring muscles. During injury, typically, patients experience a range of 10% reduction to 22% peak torque reduction encompassing eccentric and concentric motion, so we will be evaluating the pathological gait at a 22% reduction in max isometric force of the muscles of interest, the larger end of this figure. This will model the most "generalized" case of hamstring strain immediately after injury.
+The pathology of a hamstring strain is mechanically characterized by a change in the force-length relationship in the affected muscle, resulting in a loss of force production potential in the larger ranges of motion of the muscle [^1]. Given the complexity of this relationship and the inability to shape unique force-length curves for the infinite varieties of hamstring strains, we simplified the pathology to its most notable and generalized performance reductions, specifically a decrease in the maximum isometric force of the hamstring muscles. During injury, typically, patients experience a range of 10% reduction to 22% peak torque reduction encompassing eccentric and concentric motion, so we will be evaluating the pathological gait at a 22% reduction in max isometric force of the muscles of interest, the larger end of this figure. This will model the most "generalized" case of hamstring strain immediately after injury.
 
 To further simplify and sharpen the focus of our bionic design, we have honed in on the semimembranosus muscle as our specific hamstring muscle of choice.
 
@@ -374,7 +374,7 @@ Additional anatomical techniques can be employed to improve the performance of o
 
 One suggested augmentation to the bionic framework takes inspiration from the Ilizarov technique, which takes inspiration from limb lengthening surgery techniques. Wires are driven into the bone, forming bone anchors. Metal halos are attached to these wires surrounding the target limb. This surgical technique provides a rigid base to which the bionic can be attached, while also solving the problem of placing undesired pressure on the affected muscle.
 
-This technique is not well studied for its ability to withstand dynamic loading patterns, such as those sustained under walking and control inputs from our actuated system. Although potentially reversible, there may also be unwarranted bone growth at anchor sites. The surgery is also quite invasive. For these reasons, this surgery may not be the most suitable option for our given pathology.
+This technique is not well studied for its ability to withstand dynamic loading patterns, such as those sustained under walking and control inputs from our actuated system [^18][^19]. Although potentially reversible, there may also be unwarranted bone growth at anchor sites. The surgery is also quite invasive. For these reasons, this surgery may not be the most suitable option for our given pathology.
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/ilizarov.png" 
@@ -397,7 +397,7 @@ This technique is not well studied for its ability to withstand dynamic loading 
 
 ### B. Electrical Stimulation
 
-We can also choose to augment our mechanical exo with FES/NMES co-activation. A hybrid physical exo and electrical stimulation approach can leverage the benefits of either method while reducing the downsides. Electrical stimulation is a low-weight and energy-efficient system, but it may introduce muscular fatigue over extended use. Mechanical exos are a rigid, controllable platform that entirely offloads muscle use, but can be physically unwieldy and heavy. A hybrid system also increases control complexity, requiring simultaneous optimization of electrical stimulation and mechanical actuation while accounting for the nonlinear biomechanics involved in walking.
+We can also choose to augment our mechanical exo with FES/NMES co-activation [^22]. A hybrid physical exo and electrical stimulation approach can leverage the benefits of either method while reducing the downsides. Electrical stimulation is a low-weight and energy-efficient system, but it may introduce muscular fatigue over extended use. Mechanical exos are a rigid, controllable platform that entirely offloads muscle use, but can be physically unwieldy and heavy. A hybrid system also increases control complexity, requiring simultaneous optimization of electrical stimulation and mechanical actuation while accounting for the nonlinear biomechanics involved in walking.
 
 Here are two methods of electrical stimulation:
 
@@ -551,3 +551,6 @@ Emails: nzge@g.ucla.edu, bj007@g.ucla.edu, fotiniioannides@g.ucla.edu, katrinale
 
 **Acknowledgement**
 The author thanks Professor Tyler Clites for guidance and instruction throughout the MAE 263E Bionics Systems Engineering course. Their insights into bionic systems design formed the foundation of this project.
+
+<!-- Hidden references trigger the footnote rendering -->
+<span id="hidden-references"> [^1] [^2] [^3] [^4] [^5] [^6] [^7] [^8] [^9] [^10] [^11] [^12] [^13] [^14] [^15] [^16] [^17] [^18] [^19] [^20] [^21] [^22]</span>
