@@ -465,6 +465,8 @@ The author thanks Professor Khalid Jawed for guidance and instruction throughout
 
 ---
 
+<br>
+
 [Report](https://github.com/nzge/bionics/tree/main/MAE-263F/final_report/final_report.pdf)
 
 **Nathan Ge**  

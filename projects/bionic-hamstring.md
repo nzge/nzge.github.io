@@ -11,7 +11,7 @@ toc: true
 
 # A Hamstring Recovery Bionic System
 
----
+
 
 ## Abstract
 
@@ -19,7 +19,7 @@ The hamstring muscles are a muscle group crucial to daily function, especially f
 
 We propose a bionic system that effectively promotes hamstring strain healing in the early stages of more severe cases of our target pathology while operating efficiently. The report details the design process and technical reasoning that informed our design. Pathology and bionic simulation, transmission design calculations, physical architecture, and control framework are all discussed.
 
----
+
 
 ## I. Background
 
@@ -67,7 +67,7 @@ Rehabilitation strategies and protocols are in place to expedite and enhance the
 
 Beyond traditional methods of passive recovery and additional rehabilitative efforts, experimental treatments such as peptides may be introduced to promote healing factors. In severe cases such as complete hamstring tendon rupture, surgical intervention may be warranted. One paper, for instance, discusses proximal hamstring repair with all-suture anchors.
 
----
+
 
 ## II. Biomechanical Modeling
 
@@ -139,7 +139,7 @@ Here is our finalized representation of hamstring muscle activation across three
 
 Data collected at this stage will inform our bionic system design, discussed in the next section.
 
----
+
 
 ## III. Bionic System Design
 
@@ -318,7 +318,7 @@ Since the stall torque of the maxon motor is 3,430 mNm and the transmission rati
 
 The graphs clearly demonstrate that semimembranosus activation is reduced compared to unassisted gait.
 
----
+
 
 ## IV. Surgical Innovation
 
@@ -373,13 +373,13 @@ Here are two methods of electrical stimulation:
 
 Based on the cost-benefit analysis of both augmentative methods, electrical stimulation appears to be the more advantageous approach. It outperforms the Ilizarov method across multiple metrics, including cost, functional outcomes, adjustability, and invasiveness, making it a promising option for rehabilitation and gait assistance.
 
----
+
 
 ## V. Conclusions
 
 This project provides a structured foundation for understanding basic hamstring injury mechanics and exploring potential bionic assistance strategies. The compiled pathology research, anatomical modeling, and prior surgical approaches help clarify both the challenges and opportunities in supporting recovery. These insights will guide the continued development of a bio-mechanically informed, assistive bionic system aimed at enhancing joint stability, restoring strength, and reducing reinjury risk.
 
----
+
 
 ## Acknowledgment
 
@@ -485,6 +485,8 @@ The author thanks Professor Tyler Clites for guidance and instruction throughout
 22. Author(s), "Hybrid FES–robot cooperative control of ambulatory gait rehabilitation exoskeleton," [Online]. Available: https://link.springer.com/article/10.1186/1743-0003-11-27
 
 ---
+
+<br>
 
 [Report](https://github.com/nzge/bionics/tree/main/MAE-263E_report.pdf)
 
