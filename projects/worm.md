@@ -281,9 +281,9 @@ F_{\mathrm{contract}} &= \text{StandingWaveContraction}(\phi(x,t)).
 \end{aligned}
 $$
 
-### Control Scheme
+### Contraction
 
-Two control strategies were explored. In both instances, the goal was to achieve a cyclical contraction sequences that enables forward propulsion.
+Two contraction strategies were explored. In both instances, the goal was to achieve a cyclical contraction sequences that enables forward propulsion.
 
 #### Segment-by-segment contraction
 
@@ -337,6 +337,9 @@ $$ A(x,t) = \sin\!\left( \phi(x,t) \right) = \sin\!\left( kx - \omega t \right).
    src="/assets/media/worm_media/wave-contraction.png" 
    caption="Figure 9: Standing wave contraction force"
    style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" %}
+
+### Control Framework
+
 
 
 
