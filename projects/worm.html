@@ -120,7 +120,7 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#characterization-and-simulation-of-a-worm-inspired-robot">Characterization and Simulation of a Worm-Inspired Robot</a><ul><li><a href="#abstract">Abstract</a></li><li><a href="#i-problem-statement">I. Problem Statement</a></li><li><a href="#ii-background">II. Background</a><ul><li><a href="#peristalsis-mechanics">Peristalsis Mechanics</a></li><li><a href="#material-construction">Material Construction</a></li><li><a href="#actuation-framework">Actuation Framework</a><ul><li><a href="#smart-materials">Smart Materials</a></li><li><a href="#fluid-based-actuators">Fluid-Based Actuators</a></li></ul></li><li><a href="#control-strategy">Control Strategy</a><ul><li><a href="#open-loop-control">Open Loop Control</a></li><li><a href="#intelligent-control-design">Intelligent Control Design</a></li></ul></li><li><a href="#biomechanical-model">Biomechanical Model</a></li><li><a href="#performance-metrics">Performance Metrics</a></li></ul></li><li><a href="#iii-simulation-approach">III. Simulation Approach</a><ul><li><a href="#model-construction">Model Construction</a></li><li><a href="#numerical-solver">Numerical Solver</a></li><li><a href="#control-scheme">Control Scheme</a><ul><li><a href="#segment-by-segment-contraction">Segment-by-segment contraction</a></li><li><a href="#standingtraveling-wave-contraction-pattern">Standing/Traveling Wave Contraction Pattern</a></li></ul></li></ul></li><li><a href="#iv-results">IV. Results</a><ul><li><a href="#segment-count-test">Segment Count test</a></li><li><a href="#contraction-profile-analysis">Contraction profile analysis</a></li><li><a href="#current-challenges">Current Challenges</a></li></ul></li><li><a href="#v-future-work">V. Future Work</a></li><li><a href="#vi-conclusions">VI. Conclusions</a></li><li><a href="#references">References</a></li></ul></li></ul>
+      <ul><li><a href="#characterization-and-simulation-of-a-worm-inspired-robot">Characterization and Simulation of a Worm-Inspired Robot</a><ul><li><a href="#abstract">Abstract</a></li><li><a href="#i-problem-statement">I. Problem Statement</a></li><li><a href="#ii-background">II. Background</a><ul><li><a href="#peristalsis-mechanics">Peristalsis Mechanics</a></li><li><a href="#material-construction">Material Construction</a></li><li><a href="#actuation-framework">Actuation Framework</a><ul><li><a href="#smart-materials">Smart Materials</a></li><li><a href="#fluid-based-actuators">Fluid-Based Actuators</a></li></ul></li><li><a href="#control-strategy">Control Strategy</a><ul><li><a href="#open-loop-control">Open Loop Control</a></li><li><a href="#intelligent-control-design">Intelligent Control Design</a></li></ul></li><li><a href="#biomechanical-model">Biomechanical Model</a></li><li><a href="#performance-metrics">Performance Metrics</a></li></ul></li><li><a href="#iii-simulation-approach">III. Simulation Approach</a><ul><li><a href="#model-construction">Model Construction</a></li><li><a href="#numerical-solver">Numerical Solver</a></li><li><a href="#contraction">Contraction</a><ul><li><a href="#segment-by-segment-contraction">Segment-by-segment contraction</a></li><li><a href="#standingtraveling-wave-contraction-pattern">Standing/Traveling Wave Contraction Pattern</a></li></ul></li><li><a href="#control-framework">Control Framework</a></li></ul></li><li><a href="#iv-results">IV. Results</a><ul><li><a href="#segment-count-test">Segment Count test</a></li><li><a href="#contraction-profile-analysis">Contraction profile analysis</a></li><li><a href="#current-challenges">Current Challenges</a></li></ul></li><li><a href="#v-future-work">V. Future Work</a></li><li><a href="#vi-conclusions">VI. Conclusions</a></li><li><a href="#references">References</a></li></ul></li></ul>
     </nav>
   
   <div>
@@ -176,8 +176,10 @@
 <p><br /></p>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/dea-worm-segment.jpg" alt="Figure 1: A singular worm segment that contracts via dielectric elastomer actuation integrated into the bottom of the worm segment" style="width:50%; height:auto; display: block; margin: auto;" />
-  <figcaption class="figure-caption">Figure 1: A singular worm segment that contracts via dielectric elastomer actuation integrated into the bottom of the worm segment</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/dea-worm-segment.jpg" alt="Figure 1: A singular worm segment that contracts via dielectric elastomer actuation integrated into the bottom of the worm segment" style="width:50%; height:auto; display: block; margin: auto;" />
+    <figcaption class="figure-caption">Figure 1: A singular worm segment that contracts via dielectric elastomer actuation integrated into the bottom of the worm segment</figcaption>
+  </div>
 </figure>
 
 <p><br /></p>
@@ -201,8 +203,10 @@
 <p><br /></p>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/pneumatic-worm.jpg" alt="Figure 2: Pneumatically actuated worm" style="width:50%; height:auto; display: block; margin: auto;" />
-  <figcaption class="figure-caption">Figure 2: Pneumatically actuated worm</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/pneumatic-worm.jpg" alt="Figure 2: Pneumatically actuated worm" style="width:50%; height:auto; display: block; margin: auto;" />
+    <figcaption class="figure-caption">Figure 2: Pneumatically actuated worm</figcaption>
+  </div>
 </figure>
 
 <p><br /></p>
@@ -238,8 +242,10 @@
 <p><br /></p>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/2d-worm-model.jpg" alt="Figure 3: 2D planar model using rhomboid linkages for height-length coupling" style="width:50%; height:auto; display: block; margin: auto;" />
-  <figcaption class="figure-caption">Figure 3: 2D planar model using rhomboid linkages for height-length coupling</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/2d-worm-model.jpg" alt="Figure 3: 2D planar model using rhomboid linkages for height-length coupling" style="width:50%; height:auto; display: block; margin: auto;" />
+    <figcaption class="figure-caption">Figure 3: 2D planar model using rhomboid linkages for height-length coupling</figcaption>
+  </div>
 </figure>
 
 <p><br /></p>
@@ -249,8 +255,10 @@
 <p><br /></p>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/2d-turning-worm.jpg" alt="Figure 4: Turning worm model" style="width:50%; height:auto; display: block; margin: auto;" />
-  <figcaption class="figure-caption">Figure 4: Turning worm model</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/2d-turning-worm.jpg" alt="Figure 4: Turning worm model" style="width:50%; height:auto; display: block; margin: auto;" />
+    <figcaption class="figure-caption">Figure 4: Turning worm model</figcaption>
+  </div>
 </figure>
 
 <p><br /></p>
@@ -268,13 +276,17 @@
 <p><br /></p>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/worm-config.png" alt="Figure 5: Rhombic linkage segments based worm model with 6 segments" style="width:50%; height:auto; display: block; margin: auto; background-color: tan;" />
-  <figcaption class="figure-caption">Figure 5: Rhombic linkage segments based worm model with 6 segments</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/worm-config.png" alt="Figure 5: Rhombic linkage segments based worm model with 6 segments" style="width:50%; height:auto; display: block; margin: auto; background-color: tan;" />
+    <figcaption class="figure-caption">Figure 5: Rhombic linkage segments based worm model with 6 segments</figcaption>
+  </div>
 </figure>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/worm.jpg" alt="Figure 6: Rhombic linkage segments based worm model construction description" style="width:50%; height:auto; display: block; margin: auto; " />
-  <figcaption class="figure-caption">Figure 6: Rhombic linkage segments based worm model construction description</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/worm.jpg" alt="Figure 6: Rhombic linkage segments based worm model construction description" style="width:50%; height:auto; display: block; margin: auto; " />
+    <figcaption class="figure-caption">Figure 6: Rhombic linkage segments based worm model construction description</figcaption>
+  </div>
 </figure>
 
 <p><br /></p>
@@ -413,9 +425,9 @@ F_{\mathrm{contract}} &amp;= \text{ContractionEngine}_{\text{segment-driven}} (\
 F_{\mathrm{contract}} &amp;= \text{StandingWaveContraction}(\phi(x,t)).
 \end{aligned}\]
 
-<h3 id="control-scheme">Control Scheme</h3>
+<h3 id="contraction">Contraction</h3>
 
-<p>Two control strategies were explored. In both instances, the goal was to achieve a cyclical contraction sequences that enables forward propulsion.</p>
+<p>Two contraction strategies were explored. In both instances, the goal was to achieve a cyclical contraction sequences that enables forward propulsion.</p>
 
 <h4 id="segment-by-segment-contraction">Segment-by-segment contraction</h4>
 
@@ -441,13 +453,17 @@ F_{\mathrm{contract}} &amp;= \text{StandingWaveContraction}(\phi(x,t)).
 <p><br /></p>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/segment-activation.png" alt="Figure 7: Segment based activation" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" />
-  <figcaption class="figure-caption">Figure 7: Segment based activation</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/segment-activation.png" alt="Figure 7: Segment based activation" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" />
+    <figcaption class="figure-caption">Figure 7: Segment based activation</figcaption>
+  </div>
 </figure>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/force-history.png" alt="Figure 8: Segment based contraction force" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" />
-  <figcaption class="figure-caption">Figure 8: Segment based contraction force</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/force-history.png" alt="Figure 8: Segment based contraction force" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" />
+    <figcaption class="figure-caption">Figure 8: Segment based contraction force</figcaption>
+  </div>
 </figure>
 
 <p><br /></p>
@@ -477,11 +493,15 @@ F_{\mathrm{contract}} &amp;= \text{StandingWaveContraction}(\phi(x,t)).
 <p><br /></p>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/wave-contraction.png" alt="Figure 9: Standing wave contraction force" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" />
-  <figcaption class="figure-caption">Figure 9: Standing wave contraction force</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/wave-contraction.png" alt="Figure 9: Standing wave contraction force" style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" />
+    <figcaption class="figure-caption">Figure 9: Standing wave contraction force</figcaption>
+  </div>
 </figure>
 
 <p><br /></p>
+
+<h3 id="control-framework">Control Framework</h3>
 
 <h2 id="iv-results">IV. Results</h2>
 
@@ -651,13 +671,17 @@ The software pipeline is modular and experiment-friendly:</p>
 <p><br /></p>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/plots/segment-com.png" alt="Figure 10: X-Direction Center of Mass tracked over 10 seconds from worms of different segment counts." style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" />
-  <figcaption class="figure-caption">Figure 10: X-Direction Center of Mass tracked over 10 seconds from worms of different segment counts.</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/plots/segment-com.png" alt="Figure 10: X-Direction Center of Mass tracked over 10 seconds from worms of different segment counts." style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" />
+    <figcaption class="figure-caption">Figure 10: X-Direction Center of Mass tracked over 10 seconds from worms of different segment counts.</figcaption>
+  </div>
 </figure>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/plots/segment-cumcot.png" alt="Figure 11: Cumulative Cost of Transport tracked over 10 seconds from worms of different segment counts." style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" />
-  <figcaption class="figure-caption">Figure 11: Cumulative Cost of Transport tracked over 10 seconds from worms of different segment counts.</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/plots/segment-cumcot.png" alt="Figure 11: Cumulative Cost of Transport tracked over 10 seconds from worms of different segment counts." style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" />
+    <figcaption class="figure-caption">Figure 11: Cumulative Cost of Transport tracked over 10 seconds from worms of different segment counts.</figcaption>
+  </div>
 </figure>
 
 <p><br /></p>
@@ -716,13 +740,17 @@ The software pipeline is modular and experiment-friendly:</p>
 <p><br /></p>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/plots/contract-com.png" alt="Figure 12: Center of mass tracked over 10 seconds from 6 segment worms of varying contraction wave periods." style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" />
-  <figcaption class="figure-caption">Figure 12: Center of mass tracked over 10 seconds from 6 segment worms of varying contraction wave periods.</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/plots/contract-com.png" alt="Figure 12: Center of mass tracked over 10 seconds from 6 segment worms of varying contraction wave periods." style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" />
+    <figcaption class="figure-caption">Figure 12: Center of mass tracked over 10 seconds from 6 segment worms of varying contraction wave periods.</figcaption>
+  </div>
 </figure>
 
 <figure class="custom-figure">
-  <img src="/assets/media/worm_media/plots/contract-cumcot.png" alt="Figure 13: Cumulative Cost of Transport tracked over 10 seconds from of varying contraction wave periods." style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" />
-  <figcaption class="figure-caption">Figure 13: Cumulative Cost of Transport tracked over 10 seconds from of varying contraction wave periods.</figcaption>
+  <div class="figure-wrapper">
+    <img src="/assets/media/worm_media/plots/contract-cumcot.png" alt="Figure 13: Cumulative Cost of Transport tracked over 10 seconds from of varying contraction wave periods." style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" />
+    <figcaption class="figure-caption">Figure 13: Cumulative Cost of Transport tracked over 10 seconds from of varying contraction wave periods.</figcaption>
+  </div>
 </figure>
 
 <p><br /></p>
