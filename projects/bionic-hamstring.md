@@ -101,12 +101,12 @@ To further simplify and sharpen the focus of our bionic design, we have honed in
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/unhealthy.png" 
    caption="Figure 2: Force contribution of each hamstring muscle during a walking gait with a hamstring strain (22% peak isometric force reduction in semimembranosus)"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/healthy.png" 
    caption="Figure 3: Force contribution of each hamstring muscle during a walking gait without a hamstring strain"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false %}
 
 ### C. Bionic System Modelling
 
@@ -124,17 +124,17 @@ Our modeling abstraction must conform to the OpenSim framework and its selection
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/400N.png" 
    caption="Figure 4a: Muscle activation of unhealthy gait with 400N actuator"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/600N.png" 
    caption="Figure 4b: Muscle activation of unhealthy gait with 600N actuator"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/700N.png" 
    caption="Figure 4c: Muscle activation of unhealthy gait with 700N actuator"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false %}
 
 *Figure 4: Activation of hamstring muscles during 1 cycle of a patient with a semimembranosus tear (unhealthy gait) with path actuator assistance (400N, 600N, 700N max force potential actuators). Normalized to [0,1]*
 
@@ -143,17 +143,17 @@ Here is our finalized representation of hamstring muscle activation across three
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/healthy-activation.png" 
    caption="Figure 5a: Activation of hamstring muscles during 1 cycle of healthy gait"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/unhealthy-activation.png" 
    caption="Figure 5b: Activation of hamstring muscles during 1 cycle of a patient with a semimembranosus tear (unhealthy gait)"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/active-actuation.png" 
    caption="Figure 5c: Activation of hamstring muscles during 1 cycle of a patient with a semimembranosus tear (unhealthy gait) with path actuator assistance"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false %}
 
 *Figure 5: Activation data gathered from CMC of healthy, unhealthy, and unhealthy assisted gaits. Normalized to [0,1]*
 
@@ -208,17 +208,17 @@ The healthy knee joint torque and angle over time for one step were exported to 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/motor1.png" 
    caption="Figure 8a: First 5 motors compared: motor 4 (TR=215) is the best (Energy lost to heat = 1.5025 J)."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/motor2.png" 
    caption="Figure 8b: Wanted to try other nominal voltages, keeping motor 4 the same but changing the other 4."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/motor3.png" 
    caption="Figure 8c: Want to try different profiles and different wattage but keeping 48V of nominal voltage (again, keeping motor 4 the same)."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false %}
 
 *Figure 8: 3-staged comparison of 13 different motors and their energy dissipation to heat loss across different transmission ratios.*
 
@@ -233,29 +233,31 @@ This combination results in about 1.47J of energy lost to heat. This does not so
 
 A rotary-to-linear transmission system was designed as the peak transmission ratio can be selected to be achieved at a certain joint angle. Since the peak torque of the knee is achieved at 0 degrees of knee flexion, the 215:1 transmission ratio should be the peak and achieved at the equivalent -180 degrees. It is not a worry that the knee will go past -180 degrees, as there will be a hard stop to prevent the knee from bending this way. Using the following parameters, a peak transmission ratio of 215:1 is achieved at 0 degrees of flexion as needed.
 
+
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/parameters.png" 
    caption="Figure 10: Transmission system geometric parameters"
-   style="width:50%; height:auto; display: block; margin: auto;" %}
+   style="width:50%; height:auto; display: block; margin: auto;" break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/transmission.png" 
    caption="Figure 11: Transmission ratio curve across varying knee angles (optimized to peak at $-180°$ where peak torque is required)"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false %}
 
 ### D. Series Elastic Actuation (SEA)
 
 We evaluated the performance impact of integrating a series elastic actuator. It was concluded that the efficiency gains derived from SEA are negligible, making SEA an unnecessary inclusion in our bionic system.
 
+
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/sea.png" 
    caption="Figure 12: Input current and voltage comparison between a bionic system with and without an SEA"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/power-loss_SEA.png" 
    caption="Figure 13: Power loss across a single walking gait of a series elastic actuated system across different stiffness constants"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false %}
 
 ### E. Battery Selection
 
@@ -434,17 +436,17 @@ This project provides a structured foundation for understanding basic hamstring 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/error-healthy.png" 
    caption="Figure A1a: Error tracking of healthy gait."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/error-unhealthy.png" 
    caption="Figure A1b: Error tracking of unhealthy gait."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/error-active.png" 
    caption="Figure A1c: Error tracking of unhealthy gait with 566N path actuator"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
 *Figure A1: Error Tracking for Comparison for Final Result.*
 
@@ -453,17 +455,17 @@ This project provides a structured foundation for understanding basic hamstring 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/reserve-healthy.png" 
    caption="Figure A2a: Force reserves of healthy gait."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/reserve-unhealthy.png" 
    caption="Figure A2b: Force reserves of unhealthy gait."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/reserve-active.png" 
    caption="Figure A2c: Force reserves of unhealthy gait with 566N path actuator"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
 *Figure A2: Reserve Plots for Comparison for Final Result.*
 
@@ -492,49 +494,49 @@ This project provides a structured foundation for understanding basic hamstring 
 
 ## References
 
-1. J. L. Sanfilippo, A. Silder, M. A. Sherry, M. J. Tuite, and B. C. Heiderscheit, "Hamstring strength and morphology progression after return to sport from injury," *Med. Sci. Sports Exerc.*, vol. 45, no. 3, pp. 448–454, Mar. 2013. [Online]. Available: https://pmc.ncbi.nlm.nih.gov/articles/PMC3580023/
+[^1]: J. L. Sanfilippo, A. Silder, M. A. Sherry, M. J. Tuite, and B. C. Heiderscheit, "Hamstring strength and morphology progression after return to sport from injury," *Med. Sci. Sports Exerc.*, vol. 45, no. 3, pp. 448–454, Mar. 2013. [Online]. Available: <https://pmc.ncbi.nlm.nih.gov/articles/PMC3580023/>
 
-2. B. Poudel and S. Pandey, "Hamstring Injury," StatPearls [Internet], Treasure Island, FL: StatPearls Publishing, 2023. [Online]. Available: https://www.ncbi.nlm.nih.gov/books/NBK558936/
+[^2]: B. Poudel and S. Pandey, "Hamstring Injury," StatPearls [Internet], Treasure Island, FL: StatPearls Publishing, 2023. [Online]. Available: <https://www.ncbi.nlm.nih.gov/books/NBK558936/>
 
-3. B. Schmitt, T. Tim, and M. McHugh, "Hamstring injury rehabilitation and prevention of reinjury using lengthened state eccentric training: a new concept," *Int. J. Sports Phys. Ther.*, vol. 7, no. 3, pp. 333–341, Jun. 2012. [Online]. Available: https://pmc.ncbi.nlm.nih.gov/articles/PMC3362981/
+[^3]: B. Schmitt, T. Tim, and M. McHugh, "Hamstring injury rehabilitation and prevention of reinjury using lengthened state eccentric training: a new concept," *Int. J. Sports Phys. Ther.*, vol. 7, no. 3, pp. 333–341, Jun. 2012. [Online]. Available: <https://pmc.ncbi.nlm.nih.gov/articles/PMC3362981/>
 
-4. OrthoIllinois, "Hamstring Tear." [Online]. Available: https://www.orthoillinois.com/hip/hamstring-tear/
+[^4]: OrthoIllinois, "Hamstring Tear." [Online]. Available: <https://www.orthoillinois.com/hip/hamstring-tear/>
 
-5. MedlinePlus, "Hamstring muscle," Patient Instructions. [Online]. Available: https://medlineplus.gov/ency/patientinstructions/000551.htm
+[^5]: MedlinePlus, "Hamstring muscle," Patient Instructions. [Online]. Available: <https://medlineplus.gov/ency/patientinstructions/000551.htm>
 
-6. NCBI MeSH, "Hamstring," 2016. [Online]. Available: https://www.ncbi.nlm.nih.gov/mesh/2016304
+[^6]: NCBI MeSH, "Hamstring," 2016. [Online]. Available: <https://www.ncbi.nlm.nih.gov/mesh/2016304>
 
-7. Radsource, "Grading hamstring injuries using the British Athletics Muscle Injury Classification (BAMIC)." [Online]. Available: https://radsource.us/grading-hamstring-injuries-using-the-british-athletics-muscle-injury-classification-bamic/
+[^7]: Radsource, "Grading hamstring injuries using the British Athletics Muscle Injury Classification (BAMIC)." [Online]. Available: <https://radsource.us/grading-hamstring-injuries-using-the-british-athletics-muscle-injury-classification-bamic/>
 
-8. TeachMeAnatomy, "Hamstrings." [Online]. Available: https://teachmeanatomy.info/lower-limb/muscles/thigh/hamstrings/
+[^8]: TeachMeAnatomy, "Hamstrings." [Online]. Available: <https://teachmeanatomy.info/lower-limb/muscles/thigh/hamstrings/>
 
-9. Merriam-Webster, "Hamstring." [Online]. Available: https://www.merriam-webster.com/dictionary/hamstring
+[^9]: Merriam-Webster, "Hamstring." [Online]. Available: <https://www.merriam-webster.com/dictionary/hamstring>
 
-10. Wikipedia, "Linea aspera." [Online]. Available: https://en.wikipedia.org/wiki/Linea_aspera
+[^10]: Wikipedia, "Linea aspera." [Online]. Available: <https://en.wikipedia.org/wiki/Linea_aspera>
 
-11. Wikipedia, "Hamstring." [Online]. Available: https://en.wikipedia.org/wiki/Hamstring#cite_note-daniel-4
+[^11]: Wikipedia, "Hamstring." [Online]. Available: <https://en.wikipedia.org/wiki/Hamstring#cite_note-daniel-4>
 
-12. Wikipedia, "Biceps femoris muscle." [Online]. Available: https://en.wikipedia.org/wiki/Biceps_femoris_muscle
+[^12]: Wikipedia, "Biceps femoris muscle." [Online]. Available: <https://en.wikipedia.org/wiki/Biceps_femoris_muscle>
 
-13. S. E. Wong, K. R. Julian, J. G. Carpio, and A. L. Zhang, "Proximal hamstring repair with all-suture anchors and an accelerated rehabilitation and bracing protocol demonstrates good outcomes at 1-year follow-up," *Arthrosc. Sports Med. Rehabil.*, vol. 6, no. 2, 100891, Feb. 2024. [Online]. Available: https://pmc.ncbi.nlm.nih.gov/articles/PMC10867423/
+[^13]: S. E. Wong, K. R. Julian, J. G. Carpio, and A. L. Zhang, "Proximal hamstring repair with all-suture anchors and an accelerated rehabilitation and bracing protocol demonstrates good outcomes at 1-year follow-up," *Arthrosc. Sports Med. Rehabil.*, vol. 6, no. 2, 100891, Feb. 2024. [Online]. Available: <https://pmc.ncbi.nlm.nih.gov/articles/PMC10867423/>
 
-14. Wikiversity, "Medical gallery of Mikael Häggström 2014." [Online]. Available: https://en.wikiversity.org/w/index.php?title=WikiJournal_of_Medicine/Medical_gallery_of_Mikael_H%C3%A4ggstr%C3%B6m_2014&printable=yes#Human_body_diagrams
+[^14]: Wikiversity, "Medical gallery of Mikael Häggström 2014." [Online]. Available: <https://en.wikiversity.org/w/index.php?title=WikiJournal_of_Medicine/Medical_gallery_of_Mikael_H%C3%A4ggstr%C3%B6m_2014&printable=yes#Human_body_diagrams>
 
-15. H. Gray, *Anatomy of the Human Body*, 1918. [Online]. Available: https://archive.org/details/anatomyofhumanbo1918gray/page/960/mode/2up?q=hamstring
+[^15]: H. Gray, *Anatomy of the Human Body*, 1918. [Online]. Available: <https://archive.org/details/anatomyofhumanbo1918gray/page/960/mode/2up?q=hamstring>
 
-16. Netter Images, "Gluteal and posterior thigh muscles (unlabeled)." [Online]. Available: https://www.netterimages.com/gluteal-and-posterior-thigh-muscles-unlabeled-76263.html
+[^16]: Netter Images, "Gluteal and posterior thigh muscles (unlabeled)." [Online]. Available: <https://www.netterimages.com/gluteal-and-posterior-thigh-muscles-unlabeled-76263.html>
 
-17. OpenSim Confluence, "Gait 2392 and 2354 Models." [Online]. Available: https://opensimconfluence.atlassian.net/wiki/spaces/OpenSim/pages/53086215/Gait+2392+and+2354+Models
+[^17]: OpenSim Confluence, "Gait 2392 and 2354 Models." [Online]. Available: <https://opensimconfluence.atlassian.net/wiki/spaces/OpenSim/pages/53086215/Gait+2392+and+2354+Models>
 
-18. A. L. Author et al., "Direct and indirect loading of the Ilizarov external fixator: the effect on the interfragmentary movements and compressive loads," *J. Orthop. Surg. Res.*, [Online]. Available: https://pmc.ncbi.nlm.nih.gov/articles/PMC3058184/
+[^18]: A. L. Author et al., "Direct and indirect loading of the Ilizarov external fixator: the effect on the interfragmentary movements and compressive loads," *J. Orthop. Surg. Res.*, [Online]. Available: <https://pmc.ncbi.nlm.nih.gov/articles/PMC3058184/>
 
-19. Oxford Orthopaedics, "Limb lengthening and reconstruction surgery." [Online]. Available: https://oxfordortho.sg/limb-lengthening-and-reconstruction-surgery/
+[^19]: Oxford Orthopaedics, "Limb lengthening and reconstruction surgery." [Online]. Available: <https://oxfordortho.sg/limb-lengthening-and-reconstruction-surgery/>
 
-20. Musculoskeletal Key, "Limb lengthening using the Ilizarov method or a monoplanar fixator." [Online]. Available: https://musculoskeletalkey.com/limb-lengthening-using-the-ilizarov-method-or-a-monoplanar-fixator/
+[^20]: Musculoskeletal Key, "Limb lengthening using the Ilizarov method or a monoplanar fixator." [Online]. Available: <https://musculoskeletalkey.com/limb-lengthening-using-the-ilizarov-method-or-a-monoplanar-fixator/>
 
-21. International Center for Limb Lengthening, "Short Stature: Want to Be Taller? (Cosmetic Height Surgery)." [Online]. Available: https://www.limblength.org/conditions/short-stature/
+[^21]: International Center for Limb Lengthening, "Short Stature: Want to Be Taller? (Cosmetic Height Surgery)." [Online]. Available: <https://www.limblength.org/conditions/short-stature/>
 
-22. Author(s), "Hybrid FES–robot cooperative control of ambulatory gait rehabilitation exoskeleton," [Online]. Available: https://link.springer.com/article/10.1186/1743-0003-11-27
+[^22]: Author(s), "Hybrid FES–robot cooperative control of ambulatory gait rehabilitation exoskeleton," [Online]. Available: <https://link.springer.com/article/10.1186/1743-0003-11-27>
 
 ---
 

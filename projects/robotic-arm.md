@@ -34,10 +34,17 @@ Although different types of manipulators could have been used to achieve this ta
 
 Our link design focused on structural strength, attempting to reduce the effects of shearing and bending induced by the large moments created by the servo motors. With the ultimate goal of reaching an overhead lightbulb socket in mind, we chose relatively long links. Our original, three-link design had a ground to end-effector reach of 75.53 cm, later shortened to 54.84 cm in our two-link design. These choices gave our robot excellent articulation and workspace range at the cost of having fairly heavy links and large torques acting on the motors, which, when paired with the heavy servos, led to future challenges.
 
-![Figure 2.1](/assets/media/robotic-arm_media/figure-2-1.png){: style="width:50%; height:auto; display: block; margin: auto;"}
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-2-1.png" 
+   caption="Figure 2.1"
+   style="width:50%; height:auto; display: block; margin: auto;" 
+   break-bottom=false %}
 
-![Figure 2.2](/assets/media/robotic-arm_media/figure-2-2.png){: style="width:50%; height:auto; display: block; margin: auto;"}
-
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-2-2.png" 
+   caption="Figure 2.2"
+   style="width:50%; height:auto; display: block; margin: auto;" 
+   break-top=false %}
 
 
 ## III. Design Highlights and Difficulties
@@ -48,23 +55,46 @@ The end effector was designed to easily—yet securely—grasp and release the l
 
 To screw the lightbulb in, the effector is mounted to the servo's attachment. The effector's axis of rotation is intentionally collinear with the symmetry axis of the lightbulb to minimize any forms of runout.
 
-![Figure 3.1](/assets/media/robotic-arm_media/figure-3-1.png){: style="width:50%; height:auto; display: block; margin: auto;"}
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-3-1.png" 
+   caption="Figure 3.1"
+   style="width:50%; height:auto; display: block; margin: auto;" 
+   break-bottom=false %}
 
-![Figure 3.2](/assets/media/robotic-arm_media/figure-3-2.png){: style="width:50%; height:auto; display: block; margin: auto;"}
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-3-2.png" 
+   caption="Figure 3.2"
+   style="width:50%; height:auto; display: block; margin: auto;" 
+   break-top=false break-bottom=false %}
 
-![Figure 3.3](/assets/media/robotic-arm_media/figure-3-3.png){: style="width:50%; height:auto; display: block; margin: auto;"}
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-3-3.png" 
+   caption="Figure 3.3"
+   style="width:50%; height:auto; display: block; margin: auto;" 
+   break-top=false %}
 
 ### Base and Link 1
 
 As seen in Figure 3.4, the base housed the motor for the rotation of the arm. This proved to be a suitable design for our motor configuration; however, it did not have the weight to support the whole arm. We had to attach the base to wood boards to ensure there was enough weight for the arm, as seen in Figure 2.2.
 
-![Figure 3.4](/assets/media/robotic-arm_media/figure-3-4.png){: style="width:50%; height:auto; display: block; margin: auto;"}
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-3-4.png" 
+   caption="Figure 3.4"
+   style="width:50%; height:auto; display: block; margin: auto;" %}
 
 When designing the connector between the base and link 1, we observed that with the design of link 1, we would not be able to screw in the screws for the motor and attachment. Therefore, a secondary piece had to be designed to fit onto link 1 and was separate so that we could screw in the screws. As seen in Figure 3.6, this would have the proper screw holes and extrusions for link 1 to be placed inside. The other end of link 1 is equipped with prongs to act as mounts for the second motor, which would attach to link 2.
 
-![Figure 3.5](/assets/media/robotic-arm_media/figure-3-5.png){: style="width:50%; height:auto; display: block; margin: auto;"}
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-3-5.png" 
+   caption="Figure 3.5"
+   style="width:50%; height:auto; display: block; margin: auto;" 
+   break-bottom=false %}
 
-![Figure 3.6](/assets/media/robotic-arm_media/figure-3-6.png){: style="width:50%; height:auto; display: block; margin: auto;"}
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-3-6.png" 
+   caption="Figure 3.6"
+   style="width:50%; height:auto; display: block; margin: auto;" 
+   break-top=false %}
 
 This design worked very well and helped secure a solid foundation for the rest of the links and the end effector. Additionally, circular cavities at the bottom link 1 helped ensure the screwheads from motor 1 did not prohibit a good fit for the holder and link 1.
 
@@ -100,8 +130,10 @@ where $c_i = \cos(\theta_i)$, $s_i = \sin(\theta_i)$, $c_{ij} = \cos(\theta_i + 
 
 ## V. Solution Selection for Inverse Kinematics
 
-![Figure 5.1](/assets/media/robotic-arm_media/figure-5-1.png){: style="width:50%; height:auto; display: block; margin: auto;"}  
-*Projection of x-y axis as r axis, Projection of r-z surface*
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-5-1.png" 
+   caption="Figure 5.1: Projection of x-y axis as r axis, Projection of r-z surface"
+   style="width:50%; height:auto; display: block; margin: auto;" %}
 
 
 The inverse kinematics equations are derived from geometrical means from the diagrams of our system as well as using the transformation matrix in the forward kinematics:
@@ -131,11 +163,17 @@ For solution selection, it is important to prefer the elbow-up position for our 
 
 To determine the reachable workspace of the final robot design analytically, the forward and inverse kinematics were utilized to calculate which positions were located within and outside of the workspace. For the positions that could be reached, their locations in 3D space are plotted as a point cloud in Figure 6.1. To get a better understanding of the reachable workspace, a cross-section of the point cloud with a cutting plane in the x-z direction can be observed in Figure 6.2, which reveals a small void within the workspace. This void indicates further points that are not reachable by the current design, largely in part of the individual link lengths in the current design, in addition to the servo limits.
 
-![Figure 6.1](/assets/media/robotic-arm_media/figure-6-1.png){: style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"}  
-*Full reachable workspace of E.D.I.S.O.N robotic arm*
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-6-1.png" 
+   caption="Figure 6.1: Full reachable workspace of E.D.I.S.O.N robotic arm"
+   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" 
+   break-bottom=false %}
 
-![Figure 6.2](/assets/media/robotic-arm_media/figure-6-2.png){: style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"}  
-*Full reachable workspace cross-section in x-z plane*
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-6-2.png" 
+   caption="Figure 6.2: Full reachable workspace cross-section in x-z plane"
+   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" 
+   break-top=false %}
 
 The current reachable workspace is very typical of most 3R robotic arms and did not produce any unexpected findings. It also allows for a variety of positions towards addressing the problem at hand, from loading a lightbulb at a particular point and then moving along a trajectory towards where the lightbulb needs to be screwed in. As long as the specified way points for each of these locations are within the point cloud, along with the trajectory between the two locations, there should be no issues for the robot to complete these tasks. Although this does not take into account dynamic limitations and changes as the robot moves throughout the reachable workspace, which may need further consideration if issues arise within the current reachable workspace.
 
@@ -149,11 +187,17 @@ In order to calculate these trajectories, each of the goal positions from the li
 
 Figure 7.1 shows the results of the simulation, with each link colored uniquely and the intended trajectory displayed as a dashed line. When shifting to the final design, the previously calculated inverse kinematics were still utilized for the new simulations through locking the value of the joint, which was set to zero, and augmenting the link length of that specific joint accordingly. Figure 7.2 displays the results of the simulation from our final design.
 
-![Figure 7.1](/assets/media/robotic-arm_media/figure-7-1.png){: style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"}  
-*Showing simulation result from initial manipulator design performing sample routine*
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-7-1.png" 
+   caption="Figure 7.1: Showing simulation result from initial manipulator design performing sample routine"
+   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" 
+   break-bottom=false %}
 
-![Figure 7.2](/assets/media/robotic-arm_media/figure-7-2.png){: style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"}  
-*Showing simulation result from final manipulator design performing sample routine*
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-7-2.png" 
+   caption="Figure 7.2: Showing simulation result from final manipulator design performing sample routine"
+   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" 
+   break-top=false %}
 
 
 
@@ -165,8 +209,10 @@ Throughout the development process, a couple of challenges were encountered that
 
 Our original design focused on emphasizing structural strength and workspace range at the cost of having long, heavy links. This weight created significant loads that could have potentially caused issues with the servos. As a result, we decided to remove our second link, shifting to an RRR design (instead of RRRR). This dramatically reduced the maximum load on our first loaded servo, both by having one less major link and servo to add weight, and by decreasing the length of the moment arm. However, we now had much less range of motion when it came to where our arm could reach, requiring us to use a set distance and height for the socket instead of our robot being able to reach anywhere within its workspace. This adjustment also caused challenges on the coding side, as our simulations and applications of kinematics now required the first two links to be in a line.
 
-![Figure 8.1](/assets/media/robotic-arm_media/figure-8-1.png){: style="width:50%; height:auto; display: block; margin: auto;"}  
-*Solidworks CAD assembly of adjusted RRR arm*
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-8-1.png" 
+   caption="Figure 8.1: Solidworks CAD assembly of adjusted RRR arm"
+   style="width:50%; height:auto; display: block; margin: auto;" %}
 
 ### Development Process Challenges
 
@@ -176,7 +222,10 @@ We also encountered a variety of problems involving the parallel development of 
 
 Furthermore, challenges with simple design aspects pushed back our timeline. Many issues stemmed from underestimating the screw sizes that were provided in the kit. The screwholes we intended to connect components were precisely 2mm (the thickness of the screws). We did not take into account the tolerance of the 3D printer and material, so many of the screws would not fit in the screwholes. As seen in Figure 8.2, our first iteration of the link 1 holder was too thick for the screw to pass through and connect to the motor (white component on the right). We had to sand down the piece, which ruined the structural integrity of the piece. Our second iteration (black component on the left) had a thinner profile and bigger screw holes to accommodate the tolerances in the real world.
 
-![Figure 8.2](/assets/media/robotic-arm_media/figure-8-2.png){: style="width:50%; height:auto; display: block; margin: auto;"}
+{% include figure.html 
+   src="/assets/media/robotic-arm_media/figure-8-2.png" 
+   caption="Figure 8.2"
+   style="width:50%; height:auto; display: block; margin: auto;" %}
 
 ### Future Improvements
 
@@ -187,7 +236,7 @@ Another improvement could be to build an overhead structure to hold the lightbul
 
 ## References
 
-Ting, Han Zhong, et al. "Kinematic Analysis for Trajectory Planning of Open-Source 4-DoF Robot Arm." *International Journal of Advanced Computer Science and Applications*, vol. 12, no. 6, 2021, pp. 768–775.
+[^1]: Ting, Han Zhong, et al. "Kinematic Analysis for Trajectory Planning of Open-Source 4-DoF Robot Arm." *International Journal of Advanced Computer Science and Applications*, vol. 12, no. 6, 2021, pp. 768–775.
 
 ---
 
