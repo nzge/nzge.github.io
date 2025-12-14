@@ -71,7 +71,7 @@ I performed rough calculations to source motors that could support the weight of
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Drone/blob/main/Motor%20Calcs.ipynb){:target="_blank"}
 
 ### Frame
-![MPU6050](/assets/media/drone_media/){: style="width:200px; height:200px;display: block; margin: auto;"}
+![MPU6050](/assets/media/drone_media/){: style="width:60%; height:auto ;display: block; margin: auto;"}
 
 ### Aesthetic Components
 Drone mask modeled in Blender
@@ -86,7 +86,7 @@ Drone mask modeled in Blender
 #### MPU6050
 The MPU6050 is a 6-axis (3-axis Gyroscope, 3-axis Accelerometer) motion tracking sensor, detecting changes in acceleration and rotation.
 
-![MPU6050](/assets/media/drone_media/mpu6050.png){: style="width:200px; height:200px;display: block; margin: auto;"}
+![MPU6050](/assets/media/drone_media/mpu6050.png){: style="width:60%; height:auto ;display: block; margin: auto;"}
 
 
 ##### MPU6050 Source Code
