@@ -11,11 +11,6 @@ toc: true
 
 # E.D.I.S.O.N. - Electronic Device for Installing Screws On (bulb) Nuts
 
-**Ajay Chandrasekhar, Calvin Wicks, Cruz Ramirez, James Weiler, Liam McGlynn, Nathan Ge, Shahab Besharatlou**  
-MAE C263A Final Project  
-Fall 2025
-
-
 
 ## I. Introduction
 
@@ -201,3 +196,7 @@ Ting, Han Zhong, et al. "Kinematic Analysis for Trajectory Planning of Open-Sour
 ---
 
 [Report PDF](https://github.com/nzge/mae-c263a/blob/main/MAE-C263A_report.pdf)
+
+**Ajay Chandrasekhar, Calvin Wicks, Cruz Ramirez, James Weiler, Liam McGlynn, Nathan Ge, Shahab Besharatlou**  
+MAE C263A Final Project  
+Fall 2025
