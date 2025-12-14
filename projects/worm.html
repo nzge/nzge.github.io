@@ -143,7 +143,7 @@
 
 <p>It is first important to understand the underlying biomechanics that allow worms to move forward. The theory of peristalsis can then be shaped into a functional robot model.</p>
 
-<p>At a high level, peristalsis is perceived as a wave-like propagation of muscle contraction and subsequent relaxation that is practiced repeatedly starting from the head to the toe of a worm’s body. One contentious topic of discussion regarding the theory of peristalsis is the role of friction. Some believe friction is not the predominant source of movement, and that momentum transfer inside the body may be the driving mechanism. However, one way friction is believed to propel the worm is by providing a stationary anchor for segments in front of the actuated tissue to lurch forward. Simulation may reveal deeper truths about the mechanics of peristalsis.</p>
+<p>At a high level, peristalsis is perceived as a wave-like propagation of muscle contraction and subsequent relaxation that is practiced repeatedly starting from the head to the toe of a worm’s body <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">1</a></sup><sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">2</a></sup>. One contentious topic of discussion regarding the theory of peristalsis is the role of friction. Some believe friction is not the predominant source of movement, and that momentum transfer inside the body may be the driving mechanism. However, one way friction is believed to propel the worm is by providing a stationary anchor for segments in front of the actuated tissue to lurch forward <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">3</a></sup>. Simulation may reveal deeper truths about the mechanics of peristalsis.</p>
 
 <p>However we may believe peristalsis drives forward locomotion, sequential wave-like contraction is the fundamental action that characterizes peristalsis, and any virtual or physical system should be built around this behavior.</p>
 
@@ -163,13 +163,13 @@
 
 <ul>
   <li>
-    <p><strong>Shape Memory Alloys (SMAs)</strong> is one prevalent example of a smart material. They can reset back to a predefined structure when met with ample heat. They have the highest work density compared to other smart materials, meaning a small amount of material can generate a lot of work. They are not fast, but can behave responsively at microscale (such as the case of Micro helix SMAs, which have strain ratios of up to 200% and can be actuated in under a second). One implementation of SMA actuation has SMAs structures wrapped around the robot and actuated by wiring that also constitutes the braided mesh, creating seamless integration of actuation and structural framework.</p>
+    <p><strong>Shape Memory Alloys (SMAs)</strong> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">4</a></sup> is one prevalent example of a smart material. They can reset back to a predefined structure when met with ample heat. They have the highest work density compared to other smart materials, meaning a small amount of material can generate a lot of work. They are not fast, but can behave responsively at microscale (such as the case of Micro helix SMAs, which have strain ratios of up to 200% and can be actuated in under a second). One implementation of SMA actuation has SMAs structures wrapped around the robot and actuated by wiring that also constitutes the braided mesh, creating seamless integration of actuation and structural framework.</p>
   </li>
   <li>
-    <p><strong>Dielectric Elastomers (DEAs)</strong> are another smart material that have a use case in building robotic worms. DEAs consist of a passive elastomer sandwiched between 2 compliant electrodes. Applied voltage acts between the electrodes and inadvertently squeezes the elastomer film through electrostatic pressure, causing expansion of material. DEAs can be shaped around a tube-like structure and actuated to mimic the pulsating activation pattern required for peristalsis.</p>
+    <p><strong>Dielectric Elastomers (DEAs)</strong> are another smart material that have a use case in building robotic worms <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">5</a></sup>. DEAs consist of a passive elastomer sandwiched between 2 compliant electrodes. Applied voltage acts between the electrodes and inadvertently squeezes the elastomer film through electrostatic pressure, causing expansion of material. DEAs can be shaped around a tube-like structure and actuated to mimic the pulsating activation pattern required for peristalsis.</p>
   </li>
   <li>
-    <p><strong>Ionic polymer–metal composites (IPMCs)</strong>: like DEAs, IPMCs are electroactive polymers. However, actuation is based on the migration/displacement of ions within a hydrated polymer matrix when a voltage is applied, causing the material to bend (a bimorph motion). IPMCs are slower in actuation compared to DEAs, but require low driving voltages.</p>
+    <p><strong>Ionic polymer–metal composites (IPMCs)</strong> <sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">6</a></sup>: like DEAs, IPMCs are electroactive polymers. However, actuation is based on the migration/displacement of ions within a hydrated polymer matrix when a voltage is applied, causing the material to bend (a bimorph motion). IPMCs are slower in actuation compared to DEAs, but require low driving voltages.</p>
   </li>
 </ul>
 
@@ -188,13 +188,13 @@
 
 <ul>
   <li>
-    <p><strong>Pneumatics</strong>: Movement of compressed air to drive contraction of artificial muscles contained with the skin wall. The theoretical basis of pneumatics is simple but hard to implement. Additionally, they require bulky pumps, resulting in an unwieldy construction.</p>
+    <p><strong>Pneumatics</strong> <sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">7</a></sup>: Movement of compressed air to drive contraction of artificial muscles contained with the skin wall. The theoretical basis of pneumatics is simple but hard to implement. Additionally, they require bulky pumps, resulting in an unwieldy construction.</p>
   </li>
   <li>
     <p><strong>Hydrostatic Fluid Actuators</strong>: similar to pneumatics in that fluids are used to drive action. This method also has size scaling limitations, requiring an effective micro-hydraulic piston.</p>
   </li>
   <li>
-    <p><strong>Magnetic fluid</strong>: magnetic attraction of magnetic fluid embedded within the segmented worm as a permanent magnet passes over each self-contained body segment is one way to create patterned expansion. The challenge lies in the mechanism that moves the permanent magnet with minimal intervention.</p>
+    <p><strong>Magnetic fluid</strong> <sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">8</a></sup>: magnetic attraction of magnetic fluid embedded within the segmented worm as a permanent magnet passes over each self-contained body segment is one way to create patterned expansion. The challenge lies in the mechanism that moves the permanent magnet with minimal intervention.</p>
   </li>
 </ul>
 
@@ -222,10 +222,10 @@
     <p><strong>Close loop</strong>: close-loop feedback control can be designed around certain measurable state variables, such as measure contraction/expansion of each segment (segment length/strain sensors) and position sensors (track head or body centroid movement). Local segment tracking combined with global body motion correction can be used to achieve a desired velocity.</p>
   </li>
   <li>
-    <p><strong>Stable heteroclinic channels (SHCs)</strong>: SHCs are a mathematical framework that allows smooth transitions between stable manifolds crossing unstable bridges.</p>
+    <p><strong>Stable heteroclinic channels (SHCs)</strong> <sup id="fnref:5:1" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">3</a></sup>: SHCs are a mathematical framework that allows smooth transitions between stable manifolds crossing unstable bridges.</p>
   </li>
   <li>
-    <p><strong>Neural Circuits</strong>: Neural circuit control design is inspired by biological neural drive operated through central pattern generators (CPGs). One study trained its neural CPG network on real Drosophila larvae by quantifying timing and duration of segmental boundary contractions. The network consists of repeated units of excitatory and inhibitory (EI) neuronal populations (for each worm segment) coupled with immediate neighboring segments. This model successfully generated forward and backward wave propagation.</p>
+    <p><strong>Neural Circuits</strong> <sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">9</a></sup>: Neural circuit control design is inspired by biological neural drive operated through central pattern generators (CPGs). One study trained its neural CPG network on real Drosophila larvae by quantifying timing and duration of segmental boundary contractions. The network consists of repeated units of excitatory and inhibitory (EI) neuronal populations (for each worm segment) coupled with immediate neighboring segments. This model successfully generated forward and backward wave propagation.</p>
   </li>
 </ul>
 
@@ -244,7 +244,7 @@
 
 <p><br /></p>
 
-<p>One model presents the worm as a segmented series of connected four-bar linkages that expand vertically and shorten horizontally when activated. This gives a more physically realistic coupling between radial and axial changes of each segment.</p>
+<p>One model presents the worm as a segmented series of connected four-bar linkages that expand vertically and shorten horizontally when activated <sup id="fnref:5:2" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">3</a></sup>. This gives a more physically realistic coupling between radial and axial changes of each segment.</p>
 
 <p><br /></p>
 
@@ -255,7 +255,7 @@
 
 <p><br /></p>
 
-<p>The model can then be further generalized to a 3-D structure. If rectilinear single-line motion is the goal, the 3-D generalization is more of a programming challenge of building surface geometry to better simulate frictional forces. However, the 3-D model also opens up the option of implementing turning capabilities. From a model perspective, the simplest implementation of turning is placing a rotational hinge in between rhomboid segments. Each time a segment is activated/contracted, a turning angle is applied to the hinge associated with the contracted segment. The approach that more realistically models a worm’s mode of turning action would be creating a differential radial actuation (left/right bias). Split the rhomboid into left and right chambers/tendons so you can inflate/contract them asymmetrically. If the left chamber expands more than right, the normal force distribution shifts and the body will bias to one side during sliding, which produces turning. The differential radial actuation may be a more physically realistic model and represents the neural intent of the worm, but the hinge integration is easier to build control frameworks around due to its relatively simpler dynamics.</p>
+<p>The model can then be further generalized to a 3-D structure <sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">10</a></sup>. If rectilinear single-line motion is the goal, the 3-D generalization is more of a programming challenge of building surface geometry to better simulate frictional forces. However, the 3-D model also opens up the option of implementing turning capabilities. From a model perspective, the simplest implementation of turning is placing a rotational hinge in between rhomboid segments. Each time a segment is activated/contracted, a turning angle is applied to the hinge associated with the contracted segment. The approach that more realistically models a worm’s mode of turning action would be creating a differential radial actuation (left/right bias). Split the rhomboid into left and right chambers/tendons so you can inflate/contract them asymmetrically. If the left chamber expands more than right, the normal force distribution shifts and the body will bias to one side during sliding, which produces turning. The differential radial actuation may be a more physically realistic model and represents the neural intent of the worm, but the hinge integration is easier to build control frameworks around due to its relatively simpler dynamics.</p>
 
 <h3 id="performance-metrics">Performance Metrics</h3>
 
@@ -737,6 +737,58 @@ Email: nzge@g.ucla.edu</p>
 
 <p><strong>Acknowledgment</strong>  <br />
 The author thanks Professor Khalid Jawed for guidance and instruction throughout the MAE 263F Soft Robotics course. Their insights into soft robotic modeling formed the foundation of this project.</p>
+
+<!-- Hidden references trigger the footnote rendering -->
+<p><span id="hidden-references"> <sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">4</a></sup> <sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">2</a></sup> <sup id="fnref:4:1" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">5</a></sup> <sup id="fnref:5:3" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">3</a></sup> <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">11</a></sup> <sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">12</a></sup> <sup id="fnref:8:1" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">10</a></sup> <sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">13</a></sup> <sup id="fnref:10:1" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">8</a></sup> <sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">14</a></sup> <sup id="fnref:12:1" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">9</a></sup> <sup id="fnref:13:1" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">6</a></sup> <sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">15</a></sup> <sup id="fnref:15:1" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">7</a></sup></span></p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:2" role="doc-endnote">
+      <p>T. D. Nguyen, S. Park, and M. Sitti, “A new theory and methods for creating peristaltic motion in a robotic platform,” in <em>Proc. IEEE Int. Conf. on Robotics and Automation (ICRA)</em>, 2010, pp. 1151–1156. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/5509655">https://ieeexplore.ieee.org/document/5509655</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Y. Uno, T. Ishihara, and M. Tanaka, “Locomotion strategy for a peristaltic crawling robot in a 2-dimensional space,” in <em>Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems (IROS)</em>, 2007, pp. 2995–3000. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/4543215">https://ieeexplore.ieee.org/document/4543215</a> <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>R. Pfeifer, F. Iida, and G. Gómez, “Efficient worm-like locomotion: slip and control of soft-bodied peristaltic robots,” <em>Bioinspiration &amp; Biomimetics</em>, vol. 8, no. 3, 2013. [Online]. Available: <a href="https://iopscience.iop.org/article/10.1088/1748-3182/8/3/035003">https://iopscience.iop.org/article/10.1088/1748-3182/8/3/035003</a> <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:5:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:5:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a> <a href="#fnref:5:3" class="reversefootnote" role="doc-backlink">&#8617;<sup>4</sup></a></p>
+    </li>
+    <li id="fn:1" role="doc-endnote">
+      <p>S. Coyle, E. Rouse, and C. Majidi, “Actuation and design innovations in earthworm-inspired soft robots: A review,” <em>Frontiers in Robotics and AI</em>, vol. 10, 2023. [Online]. Available: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9989016/">https://pmc.ncbi.nlm.nih.gov/articles/PMC9989016/</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>H. Li, J. Zhang, and Y. Wang, “Development of an annelid-like peristaltic crawling soft robot using dielectric elastomer actuators,” <em>Bioinspiration &amp; Biomimetics</em>, vol. 15, no. 4, 2020. [Online]. Available: <a href="https://iopscience.iop.org/article/10.1088/1748-3190/ab8af6">https://iopscience.iop.org/article/10.1088/1748-3190/ab8af6</a> <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:4:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:13" role="doc-endnote">
+      <p>M. Aureli, A. Pagano, and M. Porfiri, “Design and control of an IPMC wormlike robot,” <em>IEEE/ASME Transactions on Mechatronics</em>, vol. 15, no. 5, pp. 603–614, 2010. [Online]. Available: <a href="https://ieeexplore.ieee.org/document/1703647">https://ieeexplore.ieee.org/document/1703647</a> <a href="#fnref:13" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:13:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:15" role="doc-endnote">
+      <p>“Soft Pneumatic Earthworm Robots,” Arm Lab, Georgia Institute of Technology. [Online]. Available: <a href="https://armlab.gatech.edu/research-2/current/soft-pneumatic-earthworm-robots/">https://armlab.gatech.edu/research-2/current/soft-pneumatic-earthworm-robots/</a> <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:15:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:10" role="doc-endnote">
+      <p>T. Kato, K. Shimizu, and M. Sato, “Development of a peristaltic crawling robot using magnetic fluid on the basis of the locomotion mechanism of the earthworm,” <em>Smart Materials and Structures</em>, vol. 13, no. 3, pp. 362–368, 2004. [Online]. Available: <a href="https://iopscience.iop.org/article/10.1088/0964-1726/13/3/016/pdf">https://iopscience.iop.org/article/10.1088/0964-1726/13/3/016/pdf</a> <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:10:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:12" role="doc-endnote">
+      <p>B. Gjorgjieva, J. Berni, and A. H. Cohen, “Neural circuits for peristaltic wave propagation in crawling Drosophila larvae: analysis and modeling,” <em>Frontiers in Computational Neuroscience</em>, vol. 7, 2013. [Online]. Available: <a href="https://www.frontiersin.org/articles/10.3389/fncom.2013.00024/full">https://www.frontiersin.org/articles/10.3389/fncom.2013.00024/full</a> <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:12:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:8" role="doc-endnote">
+      <p>Y. Luo, W. Zhao, and H. Yang, “In-plane gait planning for earthworm-like metameric robots using genetic algorithm,” <em>Bioinspiration &amp; Biomimetics</em>, vol. 15, 2020. [Online]. Available: <a href="https://iopscience.iop.org/article/10.1088/1748-3190/ab97fb">https://iopscience.iop.org/article/10.1088/1748-3190/ab97fb</a> <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:8:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>H. N. Luu and S. Kim, “Controlling a peristaltic robot inspired by inchworms,” <em>Artificial Life and Robotics</em>, vol. 29, 2024. [Online]. Available: <a href="https://www.sciencedirect.com/science/article/pii/S2667379724000044">https://www.sciencedirect.com/science/article/pii/S2667379724000044</a> <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>K. Takahashi and H. Kimura, “Peristaltic crawling robot based on the locomotion mechanism of earthworms,” in <em>Proc. Int. Symp. on Micro-NanoMechatronics and Human Science</em>, 2005, pp. 115–120. [Online]. Available: <a href="https://www.sciencedirect.com/science/article/pii/S1474667015341550">https://www.sciencedirect.com/science/article/pii/S1474667015341550</a> <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:9" role="doc-endnote">
+      <p>K. Yasuda, A. Nabae, and T. Morita, “Acquisition of earthworm-like movement patterns of many-segmented peristaltic crawling robots,” <em>Journal of Intelligent Material Systems and Structures</em>, vol. 27, no. 15, pp. 2045–2056, 2016. [Online]. Available: <a href="https://journals.sagepub.com/doi/10.1177/1729881416657740">https://journals.sagepub.com/doi/10.1177/1729881416657740</a> <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:11" role="doc-endnote">
+      <p>C. T. Nguyen and M. Sitti, “A worm-like biomimetic crawling robot based on cylindrical dielectric elastomer actuators,” <em>Frontiers in Robotics and AI</em>, vol. 7, 2020. [Online]. Available: <a href="https://www.frontiersin.org/articles/10.3389/frobt.2020.00009/full">https://www.frontiersin.org/articles/10.3389/frobt.2020.00009/full</a> <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:14" role="doc-endnote">
+      <p>Z. Xu, J. Zhang, and T. Li, “An earthworm-like modular soft robot for locomotion in multi-terrain environments,” <em>Scientific Reports</em>, vol. 13, 2023. [Online]. Available: <a href="https://www.nature.com/articles/s41598-023-28873-w">https://www.nature.com/articles/s41598-023-28873-w</a> <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
     </article>
   </div>
