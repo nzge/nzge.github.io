@@ -15,7 +15,7 @@ toc: true
 
 Soft-bodied invertebrates such as earthworms achieve efficient movement through coordinated peristaltic contractions of their body segments. This project explores this unique locomotive paradigm and examines its potential as a robotic framework.
 
----
+
 
 ## I. Problem Statement
 
@@ -23,7 +23,7 @@ Traditional rigid robots struggle in confined spaces or irregular terrain (e.g.,
 
 We gain insight into this mode of movement through the development of a computational model and simulation of a soft robotic worm. By capturing the coupling between actuation patterns, soft body mechanics and deformation, and frictional interactions with the environment, this model will provide insights into the fundamental physics and control strategies that enable efficient soft-bodied motion.
 
----
+
 
 ## II. Background
 
@@ -55,7 +55,7 @@ A class of material important to the field of soft robotics is smart materials. 
 
 - **Ionic polymer–metal composites (IPMCs)**: like DEAs, IPMCs are electroactive polymers. However, actuation is based on the migration/displacement of ions within a hydrated polymer matrix when a voltage is applied, causing the material to bend (a bimorph motion). IPMCs are slower in actuation compared to DEAs, but require low driving voltages.
 
-![DEA Worm Segment](/assets/media/worm_media/dea-worm-segment.jpg){: style="width:80%; height:auto; display: block; margin: auto;"}  
+![DEA Worm Segment](/assets/media/worm_media/dea-worm-segment.jpg){: style="width:50%; height:auto; display: block; margin: auto;"}  
 *Figure 1: A singular worm segment that contracts via dielectric elastomer actuation integrated into the bottom of the worm segment*
 
 #### Fluid-Based Actuators
@@ -68,7 +68,7 @@ Fluid-based actuators result in high force, precise, and controllable action tha
 
 - **Magnetic fluid**: magnetic attraction of magnetic fluid embedded within the segmented worm as a permanent magnet passes over each self-contained body segment is one way to create patterned expansion. The challenge lies in the mechanism that moves the permanent magnet with minimal intervention.
 
-![Pneumatic Worm](/assets/media/worm_media/pneumatic-worm.jpg){: style="width:80%; height:auto; display: block; margin: auto;"}  
+![Pneumatic Worm](/assets/media/worm_media/pneumatic-worm.jpg){: style="width:50%; height:auto; display: block; margin: auto;"}  
 *Figure 2: Pneumatically actuated worm*
 
 ### Control Strategy
@@ -93,12 +93,12 @@ By building upon existing soft robotics modeling frameworks such as Cosserat rod
 
 But for the sake of capturing the worm's end behavior to establish basic movement characteristics, most physical worm frameworks can be mathematically generalized to a simple 2-D planar model. The worm is first represented as a series of deformable planar (viewed from the side) segments actuated by a traveling contraction wave, enabling net forward motion through phase-shifted actuation.
 
-![2D Worm Model](/assets/media/worm_media/2d-worm-model.jpg){: style="width:80%; height:auto; display: block; margin: auto;"}  
+![2D Worm Model](/assets/media/worm_media/2d-worm-model.jpg){: style="width:50%; height:auto; display: block; margin: auto;"}  
 *Figure 3: 2D planar model using rhomboid linkages for height-length coupling*
 
 One model presents the worm as a segmented series of connected four-bar linkages that expand vertically and shorten horizontally when activated. This gives a more physically realistic coupling between radial and axial changes of each segment.
 
-![2D Turning Worm](/assets/media/worm_media/2d-turning-worm.jpg){: style="width:80%; height:auto; display: block; margin: auto;"}  
+![2D Turning Worm](/assets/media/worm_media/2d-turning-worm.jpg){: style="width:50%; height:auto; display: block; margin: auto;"}  
 *Figure 4: Turning worm model*
 
 The model can then be further generalized to a 3-D structure. If rectilinear single-line motion is the goal, the 3-D generalization is more of a programming challenge of building surface geometry to better simulate frictional forces. However, the 3-D model also opens up the option of implementing turning capabilities. From a model perspective, the simplest implementation of turning is placing a rotational hinge in between rhomboid segments. Each time a segment is activated/contracted, a turning angle is applied to the hinge associated with the contracted segment. The approach that more realistically models a worm's mode of turning action would be creating a differential radial actuation (left/right bias). Split the rhomboid into left and right chambers/tendons so you can inflate/contract them asymmetrically. If the left chamber expands more than right, the normal force distribution shifts and the body will bias to one side during sliding, which produces turning. The differential radial actuation may be a more physically realistic model and represents the neural intent of the worm, but the hinge integration is easier to build control frameworks around due to its relatively simpler dynamics.
@@ -107,16 +107,16 @@ The model can then be further generalized to a 3-D structure. If rectilinear sin
 
 The simulation will explore how actuation frequency, amplitude, and friction anisotropy influence locomotion performance. The results are expected to provide insight into control and design strategies for soft robots operating in constrained or complex environments. Segment count (representative of control fidelity, and perhaps the physical segment count of the final robot). Do more segments mean greater efficiency? The project will explore the relationship between actuation phase patterns and segment deformation, frictional interactions with the environment, and body compliance and stiffness distribution. An analytical framework surrounding these relationships and gain insight into locomotion efficiency and metabolic activity, maneuverability, stability, and control responsiveness to identify design parameters that optimize performance.
 
----
+
 
 ## III. Simulation Approach
 
 ### Model Construction
 
-![Worm Configuration](/assets/media/worm_media/worm-config.png){: style="width:80%; height:auto; display: block; margin: auto;"}  
+![Worm Configuration](/assets/media/worm_media/worm-config.png){: style="width:50%; height:auto; display: block; margin: auto;"}  
 *Figure 5: Rhombic linkage segments based worm model with 6 segments*
 
-![Worm Model](/assets/media/worm_media/worm.jpg){: style="width:80%; height:auto; display: block; margin: auto;"}  
+![Worm Model](/assets/media/worm_media/worm.jpg){: style="width:50%; height:auto; display: block; margin: auto;"}  
 *Figure 6: Rhombic linkage segments based worm model construction description*
 
 Each segment consists of a rhombic four-bar linkage. A linear spring extends horizontally across each segment to represent the natural elasticity of each segment. Torsional spring stiffness between segments represents a resistance to positional differences between adjacent segments.
@@ -247,10 +247,10 @@ The `ContractionEngine_segmentdriven` class models a series of muscle-like segme
 
 This approach allows modeling of sequential, wave-like contractions and the resulting force distribution along a multi-segment body.
 
-![Segment Activation](/assets/media/worm_media/segment-activation.png){: style="width:80%; height:auto; display: block; margin: auto;"}  
+![Segment Activation](/assets/media/worm_media/segment-activation.png){: style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px"}  
 *Figure 7: Segment based activation*
 
-![Force History](/assets/media/worm_media/force-history.png){: style="width:80%; height:auto; display: block; margin: auto;"}  
+![Force History](/assets/media/worm_media/force-history.png){: style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px"}  
 *Figure 8: Segment based contraction force*
 
 #### Standing/Traveling Wave Contraction Pattern
@@ -283,10 +283,10 @@ $$
 A(x,t) = \sin\!\left( \phi(x,t) \right) = \sin\!\left( kx - \omega t \right).
 $$
 
-![Wave Contraction](/assets/media/worm_media/wave-contraction.png){: style="width:80%; height:auto; display: block; margin: auto;"}  
+![Wave Contraction](/assets/media/worm_media/wave-contraction.png){: style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px"}  
 *Figure 9: Standing wave contraction force*
 
----
+
 
 ## IV. Results
 
@@ -357,10 +357,10 @@ I used the same contraction wave parameters on 5 different worms with different 
 | $\lambda$ | $1.0~\mathrm{m}$ | Contraction wave wavelength |
 | $T_{wave}$ | $2.0$ | Wave Period |
 
-![Segment COM](/assets/media/worm_media/plots/segment-com.png){: style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"}  
+![Segment COM](/assets/media/worm_media/plots/segment-com.png){: style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"}  
 *Figure 10: X-Direction Center of Mass tracked over 10 seconds from worms of different segment counts.*
 
-![Segment COT](/assets/media/worm_media/plots/segment-cumcot.png){: style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"}  
+![Segment COT](/assets/media/worm_media/plots/segment-cumcot.png){: style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"}  
 *Figure 11: Cumulative Cost of Transport tracked over 10 seconds from worms of different segment counts.*
 
 Distance traveled and cost of transport (CoT) generally increase as the number of segments increases. However, for the 7-segment worm, both metrics drop significantly compared to the 6-segment case.
@@ -385,10 +385,10 @@ I used the same six segment geometric worm model but altered the contraction wav
 **Run D**: $4.0~\mathrm{s}$ wave period  
 **Run E**: $5.0~\mathrm{s}$ wave period
 
-![Contract COM](/assets/media/worm_media/plots/contract-com.png){: style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"}  
+![Contract COM](/assets/media/worm_media/plots/contract-com.png){: style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"}  
 *Figure 12: Center of mass tracked over 10 seconds from 6 segment worms of varying contraction wave periods.*
 
-![Contract COT](/assets/media/worm_media/plots/contract-cumcot.png){: style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"}  
+![Contract COT](/assets/media/worm_media/plots/contract-cumcot.png){: style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"}  
 *Figure 13: Cumulative Cost of Transport tracked over 10 seconds from of varying contraction wave periods.*
 
 The results match intuition in that a shorter wave period produces more contraction efforts in a given time-frame, hence a higher Cost of Transport.
@@ -403,7 +403,6 @@ The main challenges involve numerical stability:
 
 These instabilities restrict the parameter space over which the simulation can robustly produce physically realistic worm behavior.
 
----
 
 ## V. Future Work
 
@@ -417,18 +416,11 @@ These instabilities restrict the parameter space over which the simulation can r
 
 **Model Improvements**: Additional work will focus on resolving numerical instabilities to enable more realistic simulations, incorporating spatially varying torsional and linear spring stiffnesses, and enabling path-following through directed contraction patterns using the modeling approaches discussed in the background.
 
----
+
 
 ## VI. Conclusions
 
 This project establishes a computational foundation for investigating efficient soft robotic locomotion. The insights gained from modeling actuation and body-environment interactions will guide the design of soft robots capable of adaptive and robust movement in complex settings.
-
-
-
-## Acknowledgment
-
-The author thanks Professor Khalid Jawed for guidance and instruction throughout the MAE 263F Soft Robotics course. Their insights into soft robotic modeling formed the foundation of this project.
-
 
 
 ## References
@@ -473,3 +465,6 @@ The author thanks Professor Khalid Jawed for guidance and instruction throughout
 Department of Mechanical and Aerospace Engineering  
 University of California, Los Angeles  
 Email: nzge@g.ucla.edu  
+
+**Acknowledgment**  
+The author thanks Professor Khalid Jawed for guidance and instruction throughout the MAE 263F Soft Robotics course. Their insights into soft robotic modeling formed the foundation of this project.

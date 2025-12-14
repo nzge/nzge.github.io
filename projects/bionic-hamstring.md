@@ -381,12 +381,6 @@ This project provides a structured foundation for understanding basic hamstring 
 
 
 
-## Acknowledgment
-
-The author thanks Professor Tyler Clites for guidance and instruction throughout the MAE 263E Bionics Systems Engineering course. Their insights into bionic systems design formed the foundation of this project.
-
-
-
 ## Appendix
 
 ### Error Tracking
@@ -494,3 +488,6 @@ The author thanks Professor Tyler Clites for guidance and instruction throughout
 Department of Mechanical and Aerospace Engineering  
 University of California, Los Angeles  
 Emails: nzge@g.ucla.edu, bj007@g.ucla.edu, fotiniioannides@g.ucla.edu, katrinale@g.ucla.edu, mattsilva2@g.ucla.edu
+
+**Acknowledgement**
+The author thanks Professor Tyler Clites for guidance and instruction throughout the MAE 263E Bionics Systems Engineering course. Their insights into bionic systems design formed the foundation of this project.
