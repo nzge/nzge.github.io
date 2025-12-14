@@ -132,8 +132,6 @@ Department of Mechanical and Aerospace Engineering<br />
 University of California, Los Angeles<br />
 Email: nzge@g.ucla.edu</p>
 
-<hr />
-
 <h2 id="abstract">Abstract</h2>
 
 <p>Soft-bodied invertebrates such as earthworms achieve efficient movement through coordinated peristaltic contractions of their body segments. This project explores this unique locomotive paradigm and examines its potential as a robotic framework.</p>
@@ -184,7 +182,7 @@ Email: nzge@g.ucla.edu</p>
   </li>
 </ul>
 
-<p><img src="/assets/media/worm_media/dea-worm-segment.jpg" alt="DEA Worm Segment" /><br />
+<p><img src="/assets/media/worm_media/dea-worm-segment.jpg" alt="DEA Worm Segment" style="width:80%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 1: A singular worm segment that contracts via dielectric elastomer actuation integrated into the bottom of the worm segment</em></p>
 
 <h4 id="fluid-based-actuators">Fluid-Based Actuators</h4>
@@ -203,7 +201,7 @@ Email: nzge@g.ucla.edu</p>
   </li>
 </ul>
 
-<p><img src="/assets/media/worm_media/pneumatic-worm.jpg" alt="Pneumatic Worm" /><br />
+<p><img src="/assets/media/worm_media/pneumatic-worm.jpg" alt="Pneumatic Worm" style="width:80%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 2: Pneumatically actuated worm</em></p>
 
 <h3 id="control-strategy">Control Strategy</h3>
@@ -234,12 +232,12 @@ Email: nzge@g.ucla.edu</p>
 
 <p>But for the sake of capturing the worm’s end behavior to establish basic movement characteristics, most physical worm frameworks can be mathematically generalized to a simple 2-D planar model. The worm is first represented as a series of deformable planar (viewed from the side) segments actuated by a traveling contraction wave, enabling net forward motion through phase-shifted actuation.</p>
 
-<p><img src="/assets/media/worm_media/2d-worm-model.jpg" alt="2D Worm Model" /><br />
+<p><img src="/assets/media/worm_media/2d-worm-model.jpg" alt="2D Worm Model" style="width:80%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 3: 2D planar model using rhomboid linkages for height-length coupling</em></p>
 
 <p>One model presents the worm as a segmented series of connected four-bar linkages that expand vertically and shorten horizontally when activated. This gives a more physically realistic coupling between radial and axial changes of each segment.</p>
 
-<p><img src="/assets/media/worm_media/2d-turning-worm.jpg" alt="2D Turning Worm" /><br />
+<p><img src="/assets/media/worm_media/2d-turning-worm.jpg" alt="2D Turning Worm" style="width:80%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 4: Turning worm model</em></p>
 
 <p>The model can then be further generalized to a 3-D structure. If rectilinear single-line motion is the goal, the 3-D generalization is more of a programming challenge of building surface geometry to better simulate frictional forces. However, the 3-D model also opens up the option of implementing turning capabilities. From a model perspective, the simplest implementation of turning is placing a rotational hinge in between rhomboid segments. Each time a segment is activated/contracted, a turning angle is applied to the hinge associated with the contracted segment. The approach that more realistically models a worm’s mode of turning action would be creating a differential radial actuation (left/right bias). Split the rhomboid into left and right chambers/tendons so you can inflate/contract them asymmetrically. If the left chamber expands more than right, the normal force distribution shifts and the body will bias to one side during sliding, which produces turning. The differential radial actuation may be a more physically realistic model and represents the neural intent of the worm, but the hinge integration is easier to build control frameworks around due to its relatively simpler dynamics.</p>
@@ -254,10 +252,10 @@ Email: nzge@g.ucla.edu</p>
 
 <h3 id="model-construction">Model Construction</h3>
 
-<p><img src="/assets/media/worm_media/worm-config.png" alt="Worm Configuration" /><br />
+<p><img src="/assets/media/worm_media/worm-config.png" alt="Worm Configuration" style="width:80%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 5: Rhombic linkage segments based worm model with 6 segments</em></p>
 
-<p><img src="/assets/media/worm_media/worm.jpg" alt="Worm Model" /><br />
+<p><img src="/assets/media/worm_media/worm.jpg" alt="Worm Model" style="width:80%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 6: Rhombic linkage segments based worm model construction description</em></p>
 
 <p>Each segment consists of a rhombic four-bar linkage. A linear spring extends horizontally across each segment to represent the natural elasticity of each segment. Torsional spring stiffness between segments represents a resistance to positional differences between adjacent segments.</p>
@@ -384,10 +382,10 @@ F_{\mathrm{contract}} &amp;= \text{StandingWaveContraction}(\phi(x,t)).
 
 <p>This approach allows modeling of sequential, wave-like contractions and the resulting force distribution along a multi-segment body.</p>
 
-<p><img src="/assets/media/worm_media/segment-activation.png" alt="Segment Activation" /><br />
+<p><img src="/assets/media/worm_media/segment-activation.png" alt="Segment Activation" style="width:80%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 7: Segment based activation</em></p>
 
-<p><img src="/assets/media/worm_media/force-history.png" alt="Force History" /><br />
+<p><img src="/assets/media/worm_media/force-history.png" alt="Force History" style="width:80%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 8: Segment based contraction force</em></p>
 
 <h4 id="standingtraveling-wave-contraction-pattern">Standing/Traveling Wave Contraction Pattern</h4>
@@ -412,7 +410,7 @@ F_{\mathrm{contract}} &amp;= \text{StandingWaveContraction}(\phi(x,t)).
 
 \[A(x,t) = \sin\!\left( \phi(x,t) \right) = \sin\!\left( kx - \omega t \right).\]
 
-<p><img src="/assets/media/worm_media/wave-contraction.png" alt="Wave Contraction" /><br />
+<p><img src="/assets/media/worm_media/wave-contraction.png" alt="Wave Contraction" style="width:80%; height:auto; display: block; margin: auto;" /><br />
 <em>Figure 9: Standing wave contraction force</em></p>
 
 <hr />
@@ -582,10 +580,10 @@ The software pipeline is modular and experiment-friendly:</p>
   </tbody>
 </table>
 
-<p><img src="/assets/media/worm_media/plots/segment-com.png" alt="Segment COM" /><br />
+<p><img src="/assets/media/worm_media/plots/segment-com.png" alt="Segment COM" style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
 <em>Figure 10: X-Direction Center of Mass tracked over 10 seconds from worms of different segment counts.</em></p>
 
-<p><img src="/assets/media/worm_media/plots/segment-cumcot.png" alt="Segment COT" /><br />
+<p><img src="/assets/media/worm_media/plots/segment-cumcot.png" alt="Segment COT" style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
 <em>Figure 11: Cumulative Cost of Transport tracked over 10 seconds from worms of different segment counts.</em></p>
 
 <p>Distance traveled and cost of transport (CoT) generally increase as the number of segments increases. However, for the 7-segment worm, both metrics drop significantly compared to the 6-segment case.</p>
@@ -639,10 +637,10 @@ The software pipeline is modular and experiment-friendly:</p>
 <strong>Run D</strong>: $4.0~\mathrm{s}$ wave period<br />
 <strong>Run E</strong>: $5.0~\mathrm{s}$ wave period</p>
 
-<p><img src="/assets/media/worm_media/plots/contract-com.png" alt="Contract COM" /><br />
+<p><img src="/assets/media/worm_media/plots/contract-com.png" alt="Contract COM" style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
 <em>Figure 12: Center of mass tracked over 10 seconds from 6 segment worms of varying contraction wave periods.</em></p>
 
-<p><img src="/assets/media/worm_media/plots/contract-cumcot.png" alt="Contract COT" /><br />
+<p><img src="/assets/media/worm_media/plots/contract-cumcot.png" alt="Contract COT" style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" /><br />
 <em>Figure 13: Cumulative Cost of Transport tracked over 10 seconds from of varying contraction wave periods.</em></p>
 
 <p>The results match intuition in that a shorter wave period produces more contraction efforts in a given time-frame, hence a higher Cost of Transport.</p>
