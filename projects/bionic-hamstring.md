@@ -11,11 +11,6 @@ toc: true
 
 # A Hamstring Recovery Bionic System
 
-**Nathan Ge**, Beom Jun Kim, Fotini Ioannides, Katrina Le, Matthew Silva  
-Department of Mechanical and Aerospace Engineering  
-University of California, Los Angeles  
-Emails: nzge@g.ucla.edu, bj007@g.ucla.edu, fotiniioannides@g.ucla.edu, katrinale@g.ucla.edu, mattsilva2@g.ucla.edu
-
 ---
 
 ## Abstract
@@ -443,8 +438,6 @@ The author thanks Professor Tyler Clites for guidance and instruction throughout
 
 ---
 
-[Report](https://github.com/nzge/bionics/tree/main/MAE-263E_report.pdf)
-
 ## References
 
 1. J. L. Sanfilippo, A. Silder, M. A. Sherry, M. J. Tuite, and B. C. Heiderscheit, "Hamstring strength and morphology progression after return to sport from injury," *Med. Sci. Sports Exerc.*, vol. 45, no. 3, pp. 448–454, Mar. 2013. [Online]. Available: https://pmc.ncbi.nlm.nih.gov/articles/PMC3580023/
@@ -490,3 +483,12 @@ The author thanks Professor Tyler Clites for guidance and instruction throughout
 21. International Center for Limb Lengthening, "Short Stature: Want to Be Taller? (Cosmetic Height Surgery)." [Online]. Available: https://www.limblength.org/conditions/short-stature/
 
 22. Author(s), "Hybrid FES–robot cooperative control of ambulatory gait rehabilitation exoskeleton," [Online]. Available: https://link.springer.com/article/10.1186/1743-0003-11-27
+
+---
+
+[Report](https://github.com/nzge/bionics/tree/main/MAE-263E_report.pdf)
+
+**Nathan Ge**, Beom Jun Kim, Fotini Ioannides, Katrina Le, Matthew Silva  
+Department of Mechanical and Aerospace Engineering  
+University of California, Los Angeles  
+Emails: nzge@g.ucla.edu, bj007@g.ucla.edu, fotiniioannides@g.ucla.edu, katrinale@g.ucla.edu, mattsilva2@g.ucla.edu

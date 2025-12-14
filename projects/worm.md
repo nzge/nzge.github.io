@@ -11,12 +11,6 @@ toc: true
 
 # Characterization and Simulation of a Worm-Inspired Robot
 
-**Nathan Ge**  
-Department of Mechanical and Aerospace Engineering  
-University of California, Los Angeles  
-Email: nzge@g.ucla.edu  
-
-
 ## Abstract
 
 Soft-bodied invertebrates such as earthworms achieve efficient movement through coordinated peristaltic contractions of their body segments. This project explores this unique locomotive paradigm and examines its potential as a robotic framework.
@@ -437,8 +431,6 @@ The author thanks Professor Khalid Jawed for guidance and instruction throughout
 
 ---
 
-[Report](https://github.com/nzge/bionics/tree/main/MAE-263F/final_report/final_report.pdf)
-
 ## References
 
 1. S. Coyle, E. Rouse, and C. Majidi, "Actuation and design innovations in earthworm-inspired soft robots: A review," *Frontiers in Robotics and AI*, vol. 10, 2023. [Online]. Available: https://pmc.ncbi.nlm.nih.gov/articles/PMC9989016/
@@ -470,3 +462,12 @@ The author thanks Professor Khalid Jawed for guidance and instruction throughout
 14. Z. Xu, J. Zhang, and T. Li, "An earthworm-like modular soft robot for locomotion in multi-terrain environments," *Scientific Reports*, vol. 13, 2023. [Online]. Available: https://www.nature.com/articles/s41598-023-28873-w
 
 15. "Soft Pneumatic Earthworm Robots," Arm Lab, Georgia Institute of Technology. [Online]. Available: https://armlab.gatech.edu/research-2/current/soft-pneumatic-earthworm-robots/
+
+---
+
+[Report](https://github.com/nzge/bionics/tree/main/MAE-263F/final_report/final_report.pdf)
+
+**Nathan Ge**  
+Department of Mechanical and Aerospace Engineering  
+University of California, Los Angeles  
+Email: nzge@g.ucla.edu  
