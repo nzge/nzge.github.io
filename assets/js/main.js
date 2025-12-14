@@ -101,27 +101,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ///////////////////////////////
 
-// Sync figure caption width with image width
+// Match figure caption width to image width
 function syncFigureCaptionWidths() {
-  document.querySelectorAll('.custom-figure').forEach(figure => {
-    const img = figure.querySelector('img');
-    const wrapper = figure.querySelector('.figure-wrapper');
-    
-    if (img && wrapper) {
-      // Wait for image to load to get accurate dimensions
-      if (img.complete) {
+  document.querySelectorAll('.custom-figure .figure-wrapper').forEach(wrapper => {
+    const img = wrapper.querySelector('img');
+    if (img) {
+      const updateWidth = () => {
         const imgWidth = img.offsetWidth;
-        wrapper.style.width = imgWidth + 'px';
-      } else {
-        img.addEventListener('load', function() {
-          const imgWidth = img.offsetWidth;
+        if (imgWidth > 0) {
           wrapper.style.width = imgWidth + 'px';
-        });
+        }
+      };
+      
+      if (img.complete) {
+        updateWidth();
+      } else {
+        img.addEventListener('load', updateWidth, { once: true });
       }
     }
   });
 }
 
-// Run on page load and after images load
+// Run on page load and resize
 document.addEventListener('DOMContentLoaded', syncFigureCaptionWidths);
 window.addEventListener('load', syncFigureCaptionWidths);
+
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(syncFigureCaptionWidths, 150);
+});
