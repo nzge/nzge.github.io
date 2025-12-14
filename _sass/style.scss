@@ -136,29 +136,25 @@ a.icon img {
 .custom-figure {
   margin: 0 auto;
   padding: 0;
-  display: block;
+  display: inline-block;
+  max-width: 100%;
   text-align: center;
   
-  .figure-wrapper {
-    display: inline-block;
+  img {
+    display: block;
+    margin: 0 auto;
     max-width: 100%;
-    
-    img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      height: auto;
-    }
-    
-    .figure-caption {
-      text-align: center;
-      font-style: italic;
-      margin-top: 10px;
-      color: #cccccc;
-      width: 100%;
-      box-sizing: border-box;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
+    height: auto;
+  }
+  
+  .figure-caption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+    color: #cccccc;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }

@@ -1,10 +1,8 @@
 {% if include.break-top != false %}<br>{% endif %}
 
 <figure class="custom-figure">
-  <div class="figure-wrapper">
-    <img src="{{ include.src }}" alt="{{ include.alt | default: include.caption }}" {% if include.style %}style="{{ include.style }}"{% endif %}>
-    <figcaption class="figure-caption">{{ include.caption }}</figcaption>
-  </div>
+  <img src="{{ include.src }}" alt="{{ include.alt | default: include.caption }}" {% if include.style %}style="{{ include.style }}"{% endif %}>
+  <figcaption class="figure-caption">{{ include.caption }}</figcaption>
 </figure>
 
 {% if include.break-bottom != false %}<br>{% endif %}
