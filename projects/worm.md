@@ -168,7 +168,7 @@ $$
 = 0
 $$
 
-Let \(\mathbf{q}_k\) and \(\mathbf{q}_{k+1}\) denote the generalized coordinates at times \(t_k\) and \(t_{k+1}\), and let \(\mathbf{u}_k\) denote the velocity at time \(t_k\).
+Let \\(\mathbf{q}_k\\) and \\(\mathbf{q}_{k+1}\\) denote the generalized coordinates at times $t_k$ and $t_{k+1}$, and let \\(\mathbf{u}_k\\) denote the velocity at time $t_k$.
 
 - The implicit Euler update gives the inertial contribution
 
