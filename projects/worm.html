@@ -337,12 +337,46 @@ E^{b} &amp;= \frac{k_{\text{torsion}}}{2}\left(\Delta \text{cross}\right)^2 \\
 \mathbf{e}_1 &amp;= \mathbf{p}_b - \mathbf{p}_a, \quad \mathbf{e}_2 = \mathbf{p}_c - \mathbf{p}_b
 \end{aligned}\]
 
+<p>The force (negative gradient) is:
+\(\mathbf{F}^t = -\frac{\partial E^t}{\partial \mathbf{q}} = -k_{\text{torsion}} \Delta \text{cross} \frac{\partial \text{cross}}{\partial \mathbf{q}}\)
+where $\mathbf{q} = [x_a, y_a, x_b, y_b, x_c, y_c]^T$ and:
+\(\begin{align}
+\frac{\partial \text{cross}}{\partial \mathbf{t}_1} &amp;= [t_{2y}, -t_{2x}]^T \\
+\frac{\partial \text{cross}}{\partial \mathbf{t}_2} &amp;= [-t_{1y}, t_{1x}]^T \\
+\frac{\partial \mathbf{t}_1}{\partial \mathbf{e}_1} &amp;= \frac{\mathbf{I} - \mathbf{t}_1 \otimes \mathbf{t}_1}{l_1} \\
+\frac{\partial \mathbf{t}_2}{\partial \mathbf{e}_2} &amp;= \frac{\mathbf{I} - \mathbf{t}_2 \otimes \mathbf{t}_2}{l_2} \\
+\frac{\partial \text{cross}}{\partial \mathbf{p}_a} &amp;= -\frac{\partial \text{cross}}{\partial \mathbf{e}_1}, \quad
+\frac{\partial \text{cross}}{\partial \mathbf{p}_b} = \frac{\partial \text{cross}}{\partial \mathbf{e}_1} - \frac{\partial \text{cross}}{\partial \mathbf{e}_2}, \quad
+\frac{\partial \text{cross}}{\partial \mathbf{p}_c} = \frac{\partial \text{cross}}{\partial \mathbf{e}_2}
+\end{align}\)</p>
+
+<p>The Hessian (Jacobian) is:
+\(\mathbf{J}^t = -\frac{\partial^2 E^t}{\partial \mathbf{q}^2} = -k_{\text{torsion}} \left[ \frac{\partial \text{cross}}{\partial \mathbf{q}} \otimes \frac{\partial \text{cross}}{\partial \mathbf{q}} + \Delta \text{cross} \frac{\partial^2 \text{cross}}{\partial \mathbf{q}^2} \right]\)
+where the first term is the Gauss-Newton approximation and the second term includes second-order derivatives of the cross product with respect to positions.</p>
+
 <p>The linear spring energy model is as follows:</p>
 
 \[\begin{aligned}
 E^s &amp;= \frac{k l_0}{2} \left(1 - \frac{l}{l_0}\right)^2, \\
 \text{where } \quad l &amp;= \sqrt{(x_{k+1} - x_k)^2 + (y_{k+1} - y_k)^2}.
 \end{aligned}\]
+
+<p>The force (negative gradient) is:
+\(\mathbf{F}^s = -\frac{\partial E^s}{\partial \mathbf{q}} = \frac{k l_0}{2} \left(1 - \frac{l}{l_0}\right) \frac{1}{l l_0} \begin{bmatrix}
+-2(x_{k+1} - x_k) \\
+-2(y_{k+1} - y_k) \\
+2(x_{k+1} - x_k) \\
+2(y_{k+1} - y_k)
+\end{bmatrix}\)
+where $\mathbf{q} = [x_k, y_k, x_{k+1}, y_{k+1}]^T$.</p>
+
+<p>The Hessian (Jacobian) is:
+\(\mathbf{J}^s = -\frac{\partial^2 E^s}{\partial \mathbf{q}^2} = \frac{k l_0}{2} \mathbf{H}^s\)
+where $\mathbf{H}^s$ is a $4 \times 4$ symmetric matrix with components:
+\(\begin{align}
+H^s_{ij} &amp;= \frac{1}{l^2 l_0^2} \frac{\partial l}{\partial q_i} \frac{\partial l}{\partial q_j} + \left(1 - \frac{l}{l_0}\right) \left[ \frac{1}{l^3 l_0} \frac{\partial l}{\partial q_i} \frac{\partial l}{\partial q_j} - \frac{2}{l l_0} \delta_{ij} \right]
+\end{align}\)
+with $\frac{\partial l}{\partial \mathbf{q}} = \frac{1}{l} [-(x_{k+1} - x_k), -(y_{k+1} - y_k), (x_{k+1} - x_k), (y_{k+1} - y_k)]^T$.</p>
 
 <ul>
   <li><strong>Viscous damping</strong> (if enabled) would produce the following. Although not important to the simulation, we could use this term to simulate worm locomotion through viscous media.</li>
