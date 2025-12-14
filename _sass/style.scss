@@ -136,10 +136,15 @@ a.icon img {
 .custom-figure {
   margin: 0;
   padding: 0;
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
   
   img {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
+    height: auto;
   }
   
   .figure-caption {
@@ -147,5 +152,8 @@ a.icon img {
     font-style: italic;
     margin-top: 10px;
     color: #cccccc;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
   }
 }
