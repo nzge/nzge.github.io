@@ -133,19 +133,34 @@ a.icon img {
 }
 
 /*--------------- Custom Figure --------------- */
+/*
+Solution from: https://jeffbridgforth.com/having-figure-match-width-of-contained-image/
+Based on Stephanie Eckles' solution using inline-size: fit-content and contain: inline-size
+Retrieved 2025-12-16
+*/
+
 .custom-figure {
-  margin: 0;
-  padding: 0;
-  
+  display: block;
+  margin: 0 auto; /* Centers the figure */
+  /* Width is set via figure-style attribute */
+
   img {
     display: block;
-    margin: 0 auto;
+    width: 100%; /* Image matches figure width */
+    height: auto; /* Maintains aspect ratio */
+    margin: auto;
+    /* Additional image styles can be set via image-style attribute */
   }
-  
+
   .figure-caption {
-    text-align: center;
+
+    width: 90%; /* Caption matches figure width */
+    margin: 5px auto 20px auto; /* Top and bottom margins only, no left/right */
+    padding: 0; /* No padding to ensure tight fit */
+    text-align: justify;
     font-style: italic;
-    margin-top: 10px;
     color: #cccccc;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
   }
 }

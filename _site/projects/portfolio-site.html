@@ -97,13 +97,13 @@
 </nav>
 
 
-    <div class="gif-left"> 
-  <img id="gif-left" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
-</div>
+      <!-- <div class="gif-left"> 
+    <img id="gif-left" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
+  </div>
 
-<div class="gif-right">
-  <img id="gif-right" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
-</div>
+  <div class="gif-right">
+    <img id="gif-right" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
+  </div> -->
 
 <header>
   <div class="container">
@@ -357,6 +357,34 @@ Taken from https://github.com/allejo/jekyll-toc</p>
     <span class="p">});</span>
   <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
 
+  <span class="o">&lt;</span><span class="n">div</span> <span class="n">id</span><span class="o">=</span><span class="s">"kofi-button-container"</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+   <span class="o">&lt;!--</span> <span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s">"</span><span class="err">
+</span><span class="s">      position: fixed;</span><span class="err">
+</span><span class="s">      bottom: 0;</span><span class="err">
+</span><span class="s">      left: 0;</span><span class="err">
+</span><span class="s">      width: 100%;</span><span class="err">
+</span><span class="s">      background: transparent;</span><span class="err">
+</span><span class="s">      color: white;</span><span class="err">
+</span><span class="s">      text-align: center;</span><span class="err">
+</span><span class="s">      padding: 6px 8px;</span><span class="err">
+</span><span class="s">      font-size: 0.9rem;</span><span class="err">
+</span><span class="s">      z-index: 9999;</span><span class="err">
+</span><span class="s">    "</span><span class="o">&gt;</span>
+      <span class="n">Disclaimer</span><span class="o">:</span> <span class="n">The</span> <span class="n">website</span> <span class="n">is</span> <span class="n">a</span> <span class="n">constant</span> <span class="n">work</span> <span class="n">in</span> <span class="n">progress</span><span class="p">.</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span> <span class="o">--&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">style</span><span class="o">&gt;</span>
+      <span class="err">@</span><span class="n">media</span> <span class="p">(</span><span class="n">max</span><span class="o">-</span><span class="n">width</span><span class="o">:</span> <span class="mi">600</span><span class="n">px</span><span class="p">)</span> <span class="p">{</span>
+        <span class="cp">#site-footer div[style] {
+</span>          <span class="n">font</span><span class="o">-</span><span class="n">size</span><span class="o">:</span> <span class="mf">0.75</span><span class="n">rem</span><span class="p">;</span>
+          <span class="nl">padding:</span> <span class="mi">4</span><span class="n">px</span> <span class="mi">6</span><span class="n">px</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="err">}</span>
+    <span class="o">&lt;/</span><span class="n">style</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    
 <span class="o">&lt;/</span><span class="n">footer</span><span class="o">&gt;</span>
 </code></pre></div></div>
 
@@ -630,6 +658,34 @@ w3schools</p>
     });
   </script>
 
+  <div id="kofi-button-container"></div>
+
+   <!-- <div style="
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      color: white;
+      text-align: center;
+      padding: 6px 8px;
+      font-size: 0.9rem;
+      z-index: 9999;
+    ">
+      Disclaimer: The website is a constant work in progress.
+    </div> -->
+
+    <style>
+      @media (max-width: 600px) {
+        #site-footer div[style] {
+          font-size: 0.75rem;
+          padding: 4px 6px;
+        }
+      }
+    </style>
+
+    </li>
+    
 </footer>
     <style>
   .videoWrapper {
@@ -654,20 +710,22 @@ w3schools</p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"  defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CSSRulePlugin.min.js"  defer></script>
     <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
-    <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
       window.MathJax = {
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
         }
       };
     </script>
+    <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/links.js"></script>
     <script src="/assets/js/gifs.js"></script>
     <script src="/assets/js/menu.js"></script>
     <script src="/assets/js/open-embed.js"></script>
     <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/footnotes.js"></script>
 
 
 

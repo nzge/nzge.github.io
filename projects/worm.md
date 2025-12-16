@@ -56,7 +56,8 @@ A class of material important to the field of soft robotics is smart materials. 
 {% include figure.html 
    src="/assets/media/worm_media/dea-worm-segment.jpg" 
    caption="Figure 1: A singular worm segment that contracts via dielectric elastomer actuation integrated into the bottom of the worm segment"
-   style="width:50%; height:auto; display: block; margin: auto;" %}
+   figure-style="width:50%;" 
+   %}
 
 #### Fluid-Based Actuators
 
@@ -71,7 +72,8 @@ Fluid-based actuators result in high force, precise, and controllable action tha
 {% include figure.html 
    src="/assets/media/worm_media/pneumatic-worm.jpg" 
    caption="Figure 2: Pneumatically actuated worm"
-   style="width:50%; height:auto; display: block; margin: auto;" %}
+   figure-style="width:50%;" 
+   %}
 
 ### Control Strategy
 
@@ -98,14 +100,16 @@ But for the sake of capturing the worm's end behavior to establish basic movemen
 {% include figure.html 
    src="/assets/media/worm_media/2d-worm-model.jpg" 
    caption="Figure 3: 2D planar model using rhomboid linkages for height-length coupling"
-   style="width:50%; height:auto; display: block; margin: auto;" %}
+   figure-style="width:50%;" 
+   %}
 
 One model presents the worm as a segmented series of connected four-bar linkages that expand vertically and shorten horizontally when activated [^5]. This gives a more physically realistic coupling between radial and axial changes of each segment.
 
 {% include figure.html 
    src="/assets/media/worm_media/2d-turning-worm.jpg" 
    caption="Figure 4: Turning worm model"
-   style="width:50%; height:auto; display: block; margin: auto;" %}
+   figure-style="width:50%;" 
+   %}
 
 The model can then be further generalized to a 3-D structure [^8]. If rectilinear single-line motion is the goal, the 3-D generalization is more of a programming challenge of building surface geometry to better simulate frictional forces. However, the 3-D model also opens up the option of implementing turning capabilities. From a model perspective, the simplest implementation of turning is placing a rotational hinge in between rhomboid segments. Each time a segment is activated/contracted, a turning angle is applied to the hinge associated with the contracted segment. The approach that more realistically models a worm's mode of turning action would be creating a differential radial actuation (left/right bias). Split the rhomboid into left and right chambers/tendons so you can inflate/contract them asymmetrically. If the left chamber expands more than right, the normal force distribution shifts and the body will bias to one side during sliding, which produces turning. The differential radial actuation may be a more physically realistic model and represents the neural intent of the worm, but the hinge integration is easier to build control frameworks around due to its relatively simpler dynamics.
 
@@ -122,13 +126,15 @@ The simulation will explore how actuation frequency, amplitude, and friction ani
 {% include figure.html 
    src="/assets/media/worm_media/worm-config.png" 
    caption="Figure 5: Rhombic linkage segments based worm model with 6 segments"
-   style="width:50%; height:auto; display: block; margin: auto; background-color: tan;" 
+   figure-style="width:50%;" 
+   image-style="background-color: tan;" 
    break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/worm_media/worm.jpg" 
    caption="Figure 6: Rhombic linkage segments based worm model construction description"
-   style="width:50%; height:auto; display: block; margin: auto; " 
+   figure-style="width:50%;" 
+   image-style="height:auto; display: block; margin: auto;" 
    break-top=false %}
 
 Each segment consists of a rhombic four-bar linkage. A linear spring extends horizontally across each segment to represent the natural elasticity of each segment. Torsional spring stiffness between segments represents a resistance to positional differences between adjacent segments.
@@ -302,13 +308,15 @@ This approach allows modeling of sequential, wave-like contractions and the resu
 {% include figure.html 
    src="/assets/media/worm_media/segment-activation.png" 
    caption="Figure 7: Segment based activation"
-   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" 
+   figure-style="width:50%;" 
+   image-style="background-color: tan; padding: 10px" 
    break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/worm_media/force-history.png" 
    caption="Figure 8: Segment based contraction force"
-   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" 
+   figure-style="width:50%;" 
+   image-style="background-color: tan; padding: 10px" 
    break-top=false %}
 
 #### Standing/Traveling Wave Contraction Pattern
@@ -336,7 +344,8 @@ $$ A(x,t) = \sin\!\left( \phi(x,t) \right) = \sin\!\left( kx - \omega t \right).
 {% include figure.html 
    src="/assets/media/worm_media/wave-contraction.png" 
    caption="Figure 9: Standing wave contraction force"
-   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px" %}
+   figure-style="width:50%;" 
+   image-style="background-color: tan; padding: 10px" %}
 
 ### Control Framework
 
@@ -407,13 +416,15 @@ I used the same contraction wave parameters on 5 different worms with different 
 {% include figure.html 
    src="/assets/media/worm_media/plots/segment-com.png" 
    caption="Figure 10: X-Direction Center of Mass tracked over 10 seconds from worms of different segment counts."
-   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" 
+   figure-style="width:50%;" 
+   image-style="background-color: tan; padding: 10px;" 
    break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/worm_media/plots/segment-cumcot.png" 
    caption="Figure 11: Cumulative Cost of Transport tracked over 10 seconds from worms of different segment counts."
-   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" 
+   figure-style="width:50%;" 
+   image-style="background-color: tan; padding: 10px;" 
    break-top=false %}
 
 Distance traveled and cost of transport (CoT) generally increase as the number of segments increases. However, for the 7-segment worm, both metrics drop significantly compared to the 6-segment case.
@@ -441,13 +452,15 @@ I used the same six segment geometric worm model but altered the contraction wav
 {% include figure.html 
    src="/assets/media/worm_media/plots/contract-com.png" 
    caption="Figure 12: Center of mass tracked over 10 seconds from 6 segment worms of varying contraction wave periods."
-   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" 
+   figure-style="width:50%;" 
+   image-style="background-color: tan; padding: 10px;" 
    break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/worm_media/plots/contract-cumcot.png" 
    caption="Figure 13: Cumulative Cost of Transport tracked over 10 seconds from of varying contraction wave periods."
-   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" 
+   figure-style="width:50%;" 
+   image-style="background-color: tan; padding: 10px;" 
    break-top=false %}
 
 The results match intuition in that a shorter wave period produces more contraction efforts in a given time-frame, hence a higher Cost of Transport.

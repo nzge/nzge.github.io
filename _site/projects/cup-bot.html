@@ -26,14 +26,14 @@
 <link rel="canonical" href="http://localhost:4000/projects/cup-bot.html" />
 <meta property="og:url" content="http://localhost:4000/projects/cup-bot.html" />
 <meta property="og:site_name" content="My Website" />
-<meta property="og:image" content="http://localhost:4000/placeholder.jpg" />
+<meta property="og:image" content="http://localhost:4000/cup-bot.PNG" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-06-01T00:00:00-07:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4000/placeholder.jpg" />
+<meta property="twitter:image" content="http://localhost:4000/cup-bot.PNG" />
 <meta property="twitter:title" content="Cup Bot" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-01T00:00:00-07:00","datePublished":"2025-06-01T00:00:00-07:00","description":"Cup scribing robot","headline":"Cup Bot","image":"http://localhost:4000/placeholder.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/cup-bot.html"},"url":"http://localhost:4000/projects/cup-bot.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-01T00:00:00-07:00","datePublished":"2025-06-01T00:00:00-07:00","description":"Cup scribing robot","headline":"Cup Bot","image":"http://localhost:4000/cup-bot.PNG","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/cup-bot.html"},"url":"http://localhost:4000/projects/cup-bot.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -97,13 +97,13 @@
 </nav>
 
 
-    <div class="gif-left"> 
-  <img id="gif-left" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
-</div>
+      <!-- <div class="gif-left"> 
+    <img id="gif-left" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
+  </div>
 
-<div class="gif-right">
-  <img id="gif-right" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
-</div>
+  <div class="gif-right">
+    <img id="gif-right" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
+  </div> -->
 
 <header>
   <div class="container">
@@ -120,26 +120,201 @@
     <article class="markdown-body">
       <p><br /></p>
 
-<p><strong>Client Objective</strong>:</p>
+<p><img src="/assets/media/cup-bot.PNG" alt="Alt text" style="width:100%;display: block; margin: auto;" /></p>
+
+<p><strong>Client Objective</strong>: Design a robot that draws designs on cups.</p>
+
+<p><strong>Motivation</strong></p>
+<ul>
+  <li>Environmentally friendly packages</li>
+  <li>custom printed hot cups</li>
+  <li>minimum of 25000</li>
+  <li>inventory challenges</li>
+  <li>uv inkjet</li>
+  <li>Inspiration: egg-bot</li>
+</ul>
 
 <p><br /></p>
 
-<p>Reference</p>
-<div id="owind"></div>
+<h2 id="prototyping-phase">Prototyping Phase</h2>
+
+<p>Design Sketches</p>
+<div id="cupbot-concept"></div>
 <script>
-  const owind= [
-    { src: "/assets/media/owind_media/owindA.png", caption: "", title: "O-wind turbine" },
-    { src: "/assets/media/owind_media/owindB.png", caption: "Previous iteration of the design", title: "O-wind turbine" },
+  const cupbot= [
+    { src: "/assets/media/cup-bot_media/prototyping/Cup Bot-1.png", caption: "", title: "" },
+    { src: "/assets/media/cup-bot_media/prototyping/Cup Bot-2.png", caption: "", title: "" },
+    { src: "/assets/media/cup-bot_media/prototyping/Cup Bot-3.png", caption: "", title: "" }
   ];
-  new Slideshow(owind, 'owind');
+  new Slideshow(cupbot, 'cupbot-concept');
 </script>
 
+<h2 id="robotics">Robotics</h2>
+
+<p>https://www.instructables.com/Mug-O-Matic-a-Modular-Tiny-CNC-Drawing-Robot/
+<a href="https://www.youtube.com/shorts/YMTUNXfdOk4">Arduino CNC drawing robot - eggbot</a>
+<a href="https://www.youtube.com/shorts/KfeUCWzGf2E">Drawing with robots</a>
+<a href="https://www.youtube.com/watch?v=virDtVVt2Xo">DIY Pen Plotter with Automatic Tool Changer | Arduino based CNC Drawing Machine</a></p>
+
+<h3 id="cup-dispenser">Cup dispenser</h3>
+
+<p><strong>Inspiration</strong>
+https://www.dispensingcomponents.com/cup-dispensers.html
+<a href="https://www.youtube.com/watch?v=n5DNCDIZmQs">Automatic Paper Cup Dispenser. push pull 12 volt solenoid valve</a>
+<a href="https://www.youtube.com/shorts/HWDkaef7mZE">Paper cup dispenser - thang</a>
+<a href="https://www.youtube.com/watch?v=Vj6yzgA9p8w">AUTOMATIC CUP HOLDER made of PVC pipe how to make</a></p>
+
+<h4 id="reciprocating-linear-motor">Reciprocating Linear Motor</h4>
+<p>Activates the cup dispenser. Reciprocal motion enables repeatable dispense action.
+https://www.youtube.com/watch?v=QAcdDiX4zQE</p>
+
+<h4 id="motorized-turret-line-area-of-development">Motorized turret line (Area of development)</h4>
+<p>How do index each cup turret?
+Rail system that accomodates multiple cup types</p>
+
+<p><strong>Parts</strong></p>
+<ul>
+  <li>linear guide rail x2</li>
+  <li>rail carriages x2 per turret</li>
+  <li>motors to moving turrets</li>
+  <li>indexing system?</li>
+</ul>
+
+<h3 id="cup-catchfunnel-area-of-development">Cup catch/funnel (Area of development)</h3>
+<p>Breaks the fall of the cup coming out of the dispenser. Can optionally present the cup to the consumer mechanically</p>
+
+<h3 id="pen-lifter-mechanism">Pen lifter mechanism</h3>
+<p>The primary component of the robot. Changes levels in the z and horizontal axis to efficiently move a singular pen that draws any conceivable design on a cup of any size. 
+The horizontal motion is driven by a rack and pinion design. The main design concern is securing the open end of the stepper motor axle to mitigate axle deflection so that the pinion properly grips the rack. This problem was not solved but may not be a huge issue practically. Additional motor mounting orientations and horizontal movement driving methods were deliberated upon and tested, but ultimately I falled back on the rack and pinion due to its simple and elegant design.
+The z axis is driven by a stepper motor attached to a lead screw. This takes inspiration from 3d printer gantries that function in a similar way. While most 3d printers run with 2 lead screws to drive the z axis (to evenly drive the upwards motion on both ends with the 3d printer nozzle in the middle to still accomadate its horizontal motion), I adopted the design to run with only 1 stepper motor.
+Requires limit switches to calibrate the motion and limit the linear motion of both axes.</p>
+
+<p><strong>Inspiration</strong><br />
+<a href="https://www.youtube.com/shorts/tQbczmsBnS0">Compliant pen lifter</a><br />
+https://us.openbuilds.com/scribe-pen-lifter/</p>
+
+<p>Horizontal pen movement actuation ideas</p>
+<ul>
+  <li>https://www.reddit.com/r/robotics/comments/z91sn8/looking_for_a_high_speed_linear_actuator/</li>
+  <li><a href="https://benwang.dev/2022/08/09/PCB-Linear-Actuator.html">PCB Linear Actuator</a>
+    <ul>
+      <li>fast, but not load bearing/backdriveable</li>
+    </ul>
+  </li>
+  <li><a href="https://xeryon.com/products/mini-linear-actuators/">Xeryon Piezo mini linear actuators</a>
+    <ul>
+      <li>fast, but not cost effective</li>
+    </ul>
+  </li>
+  <li>[IRIS][https://irisdynamics.com/products/orca-series]
+archimedes screw too slow, not responsive?</li>
+</ul>
+
+<h4 id="pen">Pen</h4>
+<p>The primary design challenge with the pen was to have it spring loaded to maintain consistent contact pressure and take out some of the guess work of positioning the pen at the perfect location.</p>
+
+<p><a href="https://www.youtube.com/watch?v=G97EAIrhWRY">Making your own plotter pens for the CE-150</a><br />
+https://www.servomagazine.com/magazine/article/make-a-spring-loaded-pen-holder-for-your-cnc-router-for-5</p>
+
+<p>Linear guide</p>
+<ul>
+  <li>rail with linear bearings
+    <ul>
+      <li>spring implementation much easier</li>
+    </ul>
+  </li>
+  <li>rail with roller bearings
+    <ul>
+      <li>more compact</li>
+    </ul>
+  </li>
+</ul>
+
+<p>How to drive pen motion?</p>
+<ul>
+  <li>Rack and pinion
+    <ul>
+      <li>too slow</li>
+    </ul>
+  </li>
+  <li>stepper with pulleys
+    <ul>
+      <li>complex</li>
+    </ul>
+  </li>
+  <li></li>
+</ul>
+
+<p><strong>Parts</strong><br />
+Pen lifter</p>
+<ul>
+  <li>rack and pinion</li>
+  <li>NEMA-17 Stepper</li>
+  <li>springs
+Pen z-axis</li>
+  <li>GT3 Timing belt</li>
+  <li>GT Pulley</li>
+</ul>
+
+<h3 id="turntable">Turntable</h3>
+<p>Rotates the cup
+Driven by a stepper motor attached to the turntable via timing belt.</p>
+
+<p><strong>Inspiration</strong><br />
+https://www.audiomatica.com/wp/?page_id=3024<br />
+https://www.instructables.com/Automated-Turntable-With-Steppermotor/ <br />
+https://learn.adafruit.com/stepper-motor-turntable</p>
+
+<p>Design challenges</p>
+<ul>
+  <li>internally routed vacuum pipe to accomadate rotation of chuck</li>
+</ul>
+
+<p><strong>Parts</strong></p>
+<ul>
+  <li>NEMA-17 Stepper</li>
+  <li>GT3 Timing belt</li>
+  <li>GT Pulley (20T for motor, 60T for turntable)</li>
+  <li>Lazy susan</li>
+</ul>
+
+<h4 id="vaccuum-table">Vaccuum table</h4>
+<p>Suctions the cup to the cup in place, while still maintaining complete access to the cup exterior surface</p>
+
+<p><strong>Inspiration</strong><br />
+<a href="https://www.youtube.com/watch?v=pWSyRxU38HM">A $20 DIY VACUUM TABLE FOR CNC AND WOODWORKERS – CAD, MACHINE, &amp; TEST. DOES IT SUCK REALLY GOOD???</a><br />
+<a href="https://www.youtube.com/watch?v=r-QcuUqpHh4">CNC Vacuum PAD’s 3D printed [with .stl &amp; Fusion 360 files]</a><br />
+https://amastone.com/shop/suction-cup-110-mm/</p>
+
+<p><strong>Parts</strong></p>
+<ul>
+  <li>vacuum pump</li>
+  <li>rubber o-ring gasket</li>
+</ul>
+
 <h2 id="build-log">Build Log</h2>
+<blockquote>
+  <p>6-31-25:</p>
+
+  <p><img src="/assets/media/cup-bot_media/build-log/total%20assy%20rough%20prototype.PNG" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>6-19-25:</p>
+
+  <p><img src="/assets/media/cup-bot_media/build-log/6-19-25.PNG" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>5-22-25:</p>
+
+  <p><img src="/assets/media/cup-bot_media/build-log/5-22-25.PNG" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
 
 <blockquote>
   <p>5-9-25:</p>
 
-  <p><img src="/assets/media/owind_media/build-log/concept3_5-9-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+  <p><img src="/assets/media/cup-bot_media/build-log/5-21-25.PNG" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
 </blockquote>
 
 <hr />
@@ -178,6 +353,34 @@
     });
   </script>
 
+  <div id="kofi-button-container"></div>
+
+   <!-- <div style="
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      color: white;
+      text-align: center;
+      padding: 6px 8px;
+      font-size: 0.9rem;
+      z-index: 9999;
+    ">
+      Disclaimer: The website is a constant work in progress.
+    </div> -->
+
+    <style>
+      @media (max-width: 600px) {
+        #site-footer div[style] {
+          font-size: 0.75rem;
+          padding: 4px 6px;
+        }
+      }
+    </style>
+
+    </li>
+    
 </footer>
     <style>
   .videoWrapper {
@@ -202,20 +405,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"  defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CSSRulePlugin.min.js"  defer></script>
     <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
-    <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
       window.MathJax = {
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
         }
       };
     </script>
+    <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/links.js"></script>
     <script src="/assets/js/gifs.js"></script>
     <script src="/assets/js/menu.js"></script>
     <script src="/assets/js/open-embed.js"></script>
     <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/footnotes.js"></script>
 
 
 

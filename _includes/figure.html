@@ -1,7 +1,7 @@
 {% if include.break-top != false %}<br>{% endif %}
 
-<figure class="custom-figure">
-  <img src="{{ include.src }}" alt="{{ include.alt | default: include.caption }}" {% if include.style %}style="{{ include.style }}"{% endif %}>
+<figure class="custom-figure" {% if include.figure-style %}style="{{ include.figure-style }}"{% endif %}>
+  <img src="{{ include.src }}" alt="{{ include.alt | default: include.caption }}" {% if include.image-style %}style="{{ include.image-style }}"{% endif %}>
   <figcaption class="figure-caption">{{ include.caption }}</figcaption>
 </figure>
 

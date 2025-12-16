@@ -138,6 +138,34 @@ I look on social media, and sometimes feels like I’m looking into a sea of min
     });
   </script>
 
+  <div id="kofi-button-container"></div>
+
+   <!-- <div style="
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      color: white;
+      text-align: center;
+      padding: 6px 8px;
+      font-size: 0.9rem;
+      z-index: 9999;
+    ">
+      Disclaimer: The website is a constant work in progress.
+    </div> -->
+
+    <style>
+      @media (max-width: 600px) {
+        #site-footer div[style] {
+          font-size: 0.75rem;
+          padding: 4px 6px;
+        }
+      }
+    </style>
+
+    </li>
+    
 </footer>
     <style>
   .videoWrapper {
@@ -162,20 +190,22 @@ I look on social media, and sometimes feels like I’m looking into a sea of min
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"  defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CSSRulePlugin.min.js"  defer></script>
     <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
-    <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
       window.MathJax = {
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
         }
       };
     </script>
+    <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/links.js"></script>
     <script src="/assets/js/gifs.js"></script>
     <script src="/assets/js/menu.js"></script>
     <script src="/assets/js/open-embed.js"></script>
     <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/footnotes.js"></script>
 
 
 

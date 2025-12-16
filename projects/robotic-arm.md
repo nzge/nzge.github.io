@@ -37,13 +37,13 @@ Our link design focused on structural strength, attempting to reduce the effects
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-2-1.png" 
    caption="Figure 2.1"
-   style="width:50%; height:auto; display: block; margin: auto;" 
+   figure-style="width:50%;" 
    break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-2-2.png" 
    caption="Figure 2.2"
-   style="width:50%; height:auto; display: block; margin: auto;" 
+   figure-style="width:50%;" 
    break-top=false %}
 
 
@@ -58,19 +58,19 @@ To screw the lightbulb in, the effector is mounted to the servo's attachment. Th
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-3-1.png" 
    caption="Figure 3.1"
-   style="width:50%; height:auto; display: block; margin: auto;" 
+   figure-style="width:50%;" 
    break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-3-2.png" 
    caption="Figure 3.2"
-   style="width:50%; height:auto; display: block; margin: auto;" 
+   figure-style="width:50%;" 
    break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-3-3.png" 
    caption="Figure 3.3"
-   style="width:50%; height:auto; display: block; margin: auto;" 
+   figure-style="width:50%;" 
    break-top=false %}
 
 ### Base and Link 1
@@ -80,20 +80,21 @@ As seen in Figure 3.4, the base housed the motor for the rotation of the arm. Th
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-3-4.png" 
    caption="Figure 3.4"
-   style="width:50%; height:auto; display: block; margin: auto;" %}
+   figure-style="width:50%;" 
+%}
 
 When designing the connector between the base and link 1, we observed that with the design of link 1, we would not be able to screw in the screws for the motor and attachment. Therefore, a secondary piece had to be designed to fit onto link 1 and was separate so that we could screw in the screws. As seen in Figure 3.6, this would have the proper screw holes and extrusions for link 1 to be placed inside. The other end of link 1 is equipped with prongs to act as mounts for the second motor, which would attach to link 2.
 
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-3-5.png" 
    caption="Figure 3.5"
-   style="width:50%; height:auto; display: block; margin: auto;" 
+   figure-style="width:50%;" 
    break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-3-6.png" 
    caption="Figure 3.6"
-   style="width:50%; height:auto; display: block; margin: auto;" 
+   figure-style="width:50%;" 
    break-top=false %}
 
 This design worked very well and helped secure a solid foundation for the rest of the links and the end effector. Additionally, circular cavities at the bottom link 1 helped ensure the screwheads from motor 1 did not prohibit a good fit for the holder and link 1.
@@ -133,7 +134,8 @@ where $c_i = \cos(\theta_i)$, $s_i = \sin(\theta_i)$, $c_{ij} = \cos(\theta_i + 
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-5-1.png" 
    caption="Figure 5.1: Projection of x-y axis as r axis, Projection of r-z surface"
-   style="width:50%; height:auto; display: block; margin: auto;" %}
+   figure-style="width:50%;" 
+%}
 
 
 The inverse kinematics equations are derived from geometrical means from the diagrams of our system as well as using the transformation matrix in the forward kinematics:
@@ -166,13 +168,15 @@ To determine the reachable workspace of the final robot design analytically, the
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-6-1.png" 
    caption="Figure 6.1: Full reachable workspace of E.D.I.S.O.N robotic arm"
-   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" 
+   figure-style="width:50%;" 
+   image-style="background-color: tan; padding: 10px;" 
    break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-6-2.png" 
    caption="Figure 6.2: Full reachable workspace cross-section in x-z plane"
-   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" 
+   figure-style="width:50%;" 
+   image-style="background-color: tan; padding: 10px;" 
    break-top=false %}
 
 The current reachable workspace is very typical of most 3R robotic arms and did not produce any unexpected findings. It also allows for a variety of positions towards addressing the problem at hand, from loading a lightbulb at a particular point and then moving along a trajectory towards where the lightbulb needs to be screwed in. As long as the specified way points for each of these locations are within the point cloud, along with the trajectory between the two locations, there should be no issues for the robot to complete these tasks. Although this does not take into account dynamic limitations and changes as the robot moves throughout the reachable workspace, which may need further consideration if issues arise within the current reachable workspace.
@@ -190,13 +194,15 @@ Figure 7.1 shows the results of the simulation, with each link colored uniquely 
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-7-1.png" 
    caption="Figure 7.1: Showing simulation result from initial manipulator design performing sample routine"
-   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" 
+   figure-style="width:50%;" 
+   image-style="background-color: tan; padding: 10px;" 
    break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-7-2.png" 
    caption="Figure 7.2: Showing simulation result from final manipulator design performing sample routine"
-   style="width:50%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" 
+   figure-style="width:50%;" 
+   image-style="background-color: tan; padding: 10px;" 
    break-top=false %}
 
 
@@ -212,7 +218,8 @@ Our original design focused on emphasizing structural strength and workspace ran
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-8-1.png" 
    caption="Figure 8.1: Solidworks CAD assembly of adjusted RRR arm"
-   style="width:50%; height:auto; display: block; margin: auto;" %}
+   figure-style="width:50%;" 
+%}
 
 ### Development Process Challenges
 
@@ -225,7 +232,8 @@ Furthermore, challenges with simple design aspects pushed back our timeline. Man
 {% include figure.html 
    src="/assets/media/robotic-arm_media/figure-8-2.png" 
    caption="Figure 8.2"
-   style="width:50%; height:auto; display: block; margin: auto;" %}
+   figure-style="width:50%;" 
+%}
 
 ### Future Improvements
 

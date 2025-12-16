@@ -1,0 +1,1196 @@
+<html > 
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathan Ge - Bionic Studies</title>
+  <meta name="description" content="Design and Control of a Hamstring Recovery Bionic System">
+  
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/assets/media/nathan/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/media/nathan/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/media/nathan/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/nathan/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/media/nathan/favicon/site.webmanifest" />
+  
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="My Website" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Bionic Studies | My Website</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Bionic Studies" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Design and Control of a Hamstring Recovery Bionic System" />
+<meta property="og:description" content="Design and Control of a Hamstring Recovery Bionic System" />
+<link rel="canonical" href="http://localhost:4000/projects/bionic-hamstring.html" />
+<meta property="og:url" content="http://localhost:4000/projects/bionic-hamstring.html" />
+<meta property="og:site_name" content="My Website" />
+<meta property="og:image" content="http://localhost:4000/bionic.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-12-02T00:00:00-08:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/bionic.png" />
+<meta property="twitter:title" content="Bionic Studies" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-02T00:00:00-08:00","datePublished":"2025-12-02T00:00:00-08:00","description":"Design and Control of a Hamstring Recovery Bionic System","headline":"Bionic Studies","image":"http://localhost:4000/bionic.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/bionic-hamstring.html"},"url":"http://localhost:4000/projects/bionic-hamstring.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> 
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5YSKESBHT6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5YSKESBHT6');
+  </script>
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+  <button id="backToTop" title="Back to top">↑</button>
+
+  <div class="btn" id="toggle-btn">
+  <div id="hamburger">
+    <span></span>
+  </div>
+</div>
+
+<!-- <div class="overlay">
+  <svg viewBox="0 0 1000 1000"> 
+    <path d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
+  </svg>
+</div>  -->
+
+<div class="menu">
+
+</div>
+
+  <body>  
+    <script src="/assets/js/slideshow.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    
+     <!--------------- navbar starts here --------------->
+<nav class="navbar"> 
+  <div class="name animate__animated animate__fadeInUp" style="display: flex; align-items: center; gap: 10px;">
+    <a href="/index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+      <span>nathan</span> 
+      <img src="/assets/media/nathan/Nathan-red_block.svg" alt=" " style="width: 35px; height: auto; margin-left: 2px;">
+    </a>
+  </div>
+
+  <ul class="nav-select">
+    <li class="nav-item"><a href="/index.html">home.</a></li>
+    <li class="nav-item"><a href="/pages/about.html">about me.</a></li>
+    <li class="nav-item"><a href="/pages/work.html">work.</a></li>
+    <li class="nav-item"><a href="/pages/blog.html">blog.</a></li>
+    <li class="nav-item"><a href="/pages/contact.html">contact.</a></li>
+  </ul>
+</nav>
+
+
+      <!-- <div class="gif-left"> 
+    <img id="gif-left" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
+  </div>
+
+  <div class="gif-right">
+    <img id="gif-right" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
+  </div> -->
+
+<header>
+  <div class="container">
+    <div class="go-back" onclick="goBack()">Go Back</div>
+    <h2>Bionic Studies</h2>
+    
+      <a href="https://github.com/nzge/bionics" target="_blank" rel="noopener noreferrer">Repo</a>
+    
+  </div>
+</header>
+
+
+<div class="container">
+  
+    <nav class="toc-box">
+      <p>Table of Contents</p>
+      <ul><li><a href="#a-hamstring-recovery-bionic-system">A Hamstring Recovery Bionic System</a><ul><li><a href="#abstract">Abstract</a></li><li><a href="#i-background">I. Background</a><ul><li><a href="#a-pathology-description">A. Pathology Description</a><ul><li><a href="#anatomy">Anatomy</a></li></ul></li><li><a href="#b-mechanism-of-injury">B. Mechanism of Injury</a></li><li><a href="#c-prior-art">C. Prior Art</a></li></ul></li><li><a href="#ii-biomechanical-modeling">II. Biomechanical Modeling</a><ul><li><a href="#a-model-selection">A. Model Selection</a></li><li><a href="#b-pathology-characterization">B. Pathology Characterization</a></li><li><a href="#c-bionic-system-modelling">C. Bionic System Modelling</a></li><li><a href="#d-simulation-procedure">D. Simulation Procedure</a></li></ul></li><li><a href="#iii-bionic-system-design">III. Bionic System Design</a><ul><li><a href="#a-general-description">A. General Description</a></li><li><a href="#b-optimization-problem">B. Optimization Problem</a></li><li><a href="#c-actuator-selection-and-transmission-ratio-optimization">C. Actuator Selection and Transmission Ratio Optimization</a></li><li><a href="#d-series-elastic-actuation-sea">D. Series Elastic Actuation (SEA)</a></li><li><a href="#e-battery-selection">E. Battery Selection</a></li><li><a href="#f-hardware-implementation">F. Hardware Implementation</a></li><li><a href="#g-control-framework-communication">G. Control Framework (+communication)</a></li><li><a href="#h-evaluation">H. Evaluation</a></li></ul></li><li><a href="#iv-surgical-innovation">IV. Surgical Innovation</a><ul><li><a href="#a-ilizarov-method">A. Ilizarov Method</a></li><li><a href="#b-electrical-stimulation">B. Electrical Stimulation</a></li></ul></li><li><a href="#v-conclusions">V. Conclusions</a></li><li><a href="#appendix">Appendix</a><ul><li><a href="#error-tracking">Error Tracking</a></li><li><a href="#reserve-plots">Reserve Plots</a></li><li><a href="#motor-specification-summary">Motor Specification Summary</a></li></ul></li><li><a href="#references">References</a></li></ul></li></ul>
+    </nav>
+  
+  <div>
+    <article class="markdown-body">
+      <h1 id="a-hamstring-recovery-bionic-system">A Hamstring Recovery Bionic System</h1>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>The hamstring muscles are a muscle group crucial to daily function, especially for movements like walking, running, and jumping. That’s why hamstring strains, or any disruption to the muscle-tendon structures of the hamstring grouping, are particularly debilitating.</p>
+
+<p>We propose a bionic system that effectively promotes hamstring strain healing in the early stages of more severe cases of our target pathology while operating efficiently. The report details the design process and technical reasoning that informed our design. Pathology and bionic simulation, transmission design calculations, physical architecture, and control framework are all discussed.</p>
+
+<h2 id="i-background">I. Background</h2>
+
+<h3 id="a-pathology-description">A. Pathology Description</h3>
+
+<p>A hamstring strain, aptly named, is an injury to the hamstring muscles. Qualitatively, it is commonly characterized by a sudden, sharp pain in the back of the thigh. In consequence, increased exertion activities such as running, or extending the hip and bending the knee strongly, become painful and difficult to control.</p>
+
+<p>A strain is the generalized term used to describe an injury to the greater hamstring musculature. This can be further specified as a strain (micro tear), tear, or rupture that can occur in the muscle belly or musculotendinous region, or a combination of these injury sites and severities.</p>
+
+<p>Although non-standardized and quite convoluted, the severity of the strain is often diagnosed using a grading system <sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">1</a></sup>. Most grading schemes follow an I-III or 0-4 level structure. More advanced grading structures separate the finer details of hamstring injury, combining severity grading and anatomic site classification across the musculotendinous region.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:70%;">
+  <img src="/assets/media/bionic-hamstring_media/grade.png" alt="Figure 1: Detailed hamstring strain grading scheme" />
+  <figcaption class="figure-caption">Figure 1: Detailed hamstring strain grading scheme</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p><strong>Secondary Pathologies</strong> <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">2</a></sup>: Tendon rupture (especially at insertion) can cause retraction or bone fragment avulsion, in the case that the tension in the tendon forcefully rips off a portion of bone from the tendon insertion site.</p>
+
+<h4 id="anatomy">Anatomy</h4>
+
+<p>The hamstrings anatomically comprise a group of muscles and their associated tendons that satisfy the following definitions <sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">3</a></sup><sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">4</a></sup><sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">5</a></sup>:</p>
+
+<ul>
+  <li>Originates from the ischial tuberosity.</li>
+  <li>Inserted over the knee joint, in the tibia or fibula.</li>
+  <li>Innervated by the tibial branch of the sciatic nerve.</li>
+  <li>Participates in knee flexion and hip extension.</li>
+</ul>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/hamstrings.png" alt="Reference: Gray's Anatomy (1918) [^15]" />
+  <figcaption class="figure-caption">Reference: Gray's Anatomy (1918) [^15]</figcaption>
+</figure>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Muscle</th>
+      <th>Origin</th>
+      <th>Insertion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Semitendinosus</td>
+      <td>Ischial tuberosity</td>
+      <td>Medial tibia</td>
+    </tr>
+    <tr>
+      <td>Semimembranosus</td>
+      <td>Ischial tuberosity</td>
+      <td>Medial tibial condyle</td>
+    </tr>
+    <tr>
+      <td>Biceps femoris (LH)</td>
+      <td>Ischial tuberosity</td>
+      <td>Fibular head (lat)</td>
+    </tr>
+    <tr>
+      <td>Biceps femoris (SH)</td>
+      <td>Linea aspera</td>
+      <td>Fibular head (lat)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="b-mechanism-of-injury">B. Mechanism of Injury</h3>
+
+<p>Hamstring strains are a highly recurring injury, particularly in athlete populations <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">6</a></sup><sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">7</a></sup>. Hamstring strains are reported to account for 12–16% of all injuries in athletes, with a reported re-injury rate of 22-34%.</p>
+
+<p>One major risk factor for hamstring injuries is high-impact movements involving the legs, such as sprinting, jumping, and quick changes of direction, hence why this injury disproportionately affects athlete populations.</p>
+
+<h3 id="c-prior-art">C. Prior Art</h3>
+
+<p>Rehabilitation strategies and protocols are in place to expedite and enhance the healing process <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">8</a></sup>. Conservative care is the standard for Grade I–II hamstring strains, typically involving rest, cryotherapy, partial immobilization, and pain control, followed by progressive stretching and strengthening as symptoms improve.</p>
+
+<p>Beyond traditional methods of passive recovery and additional rehabilitative efforts, experimental treatments such as peptides may be introduced to promote healing factors. In severe cases such as complete hamstring tendon rupture, surgical intervention may be warranted <sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">9</a></sup>. One paper, for instance, discusses proximal hamstring repair with all-suture anchors.</p>
+
+<h2 id="ii-biomechanical-modeling">II. Biomechanical Modeling</h2>
+
+<p>In order to perform simulations on locomotive performance for normal gait and affected gait, as well as assess the impact of our proposed bionic solution, we must accurately represent our pathology computationally.</p>
+
+<p>The entirety of our modeling workflow is run through the OpenSim API.</p>
+
+<h3 id="a-model-selection">A. Model Selection</h3>
+
+<p>We use GaitModel2392 to represent our human musculoskeletal system, a complete top-down 23-DOF computer model <sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote" rel="footnote">10</a></sup>. The models were created by Darryl Thelen (University of Wisconsin-Madison) and Ajay Seth, Frank C. Anderson, and Scott L. Delp (Stanford University). The models feature lower extremity joint definitions adopted from Delp et al. (1990), low back joint and anthropometry adopted from Anderson and Pandy (1999), and a planar knee model adopted from Yamaguchi and Zajac (1989). The Gait2392 model features 92 musculotendon actuators to represent 76 muscles in the lower extremities and torso.</p>
+
+<p><strong>Model Details:</strong></p>
+
+<ul>
+  <li>Muscles of interest in the model are listed as: <code class="language-plaintext highlighter-rouge">semimem_r</code>, <code class="language-plaintext highlighter-rouge">semiten_r</code>, <code class="language-plaintext highlighter-rouge">bifemsh_r</code> (short head of biceps femoris), <code class="language-plaintext highlighter-rouge">bifemlh_r</code> (long head of biceps femoris).</li>
+  <li>We expect 10 degrees of freedom</li>
+  <li>16.64 Nm (average leg weight of 13 kg for a 70kg person, uninjured peak torque of 1.28 Nm/kg) of peak torque</li>
+  <li>velocity of 60°/s</li>
+  <li>Additional distributed mass of modeled exoskeleton cannot exceed 2.5 kg.</li>
+  <li>This open source model conveniently comes with a motion file. The original 75.82kg model is scaled down to match the dimensions of the test subject tied to this motion file.</li>
+</ul>
+
+<h3 id="b-pathology-characterization">B. Pathology Characterization</h3>
+
+<p>The pathology of a hamstring strain is mechanically characterized by a change in the force-length relationship in the affected muscle, resulting in a loss of force production potential in the larger ranges of motion of the muscle <sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">6</a></sup>. Given the complexity of this relationship and the inability to shape unique force-length curves for the infinite varieties of hamstring strains, we simplified the pathology to its most notable and generalized performance reductions, specifically a decrease in the maximum isometric force of the hamstring muscles. During injury, typically, patients experience a range of 10% reduction to 22% peak torque reduction encompassing eccentric and concentric motion, so we will be evaluating the pathological gait at a 22% reduction in max isometric force of the muscles of interest, the larger end of this figure. This will model the most “generalized” case of hamstring strain immediately after injury.</p>
+
+<p>To further simplify and sharpen the focus of our bionic design, we have honed in on the semimembranosus muscle as our specific hamstring muscle of choice.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/unhealthy.png" alt="Figure 2: Force contribution of each hamstring muscle during a walking gait with a hamstring strain (22% peak isometric force reduction in semimembranosus)" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 2: Force contribution of each hamstring muscle during a walking gait with a hamstring strain (22% peak isometric force reduction in semimembranosus)</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/healthy.png" alt="Figure 3: Force contribution of each hamstring muscle during a walking gait without a hamstring strain" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 3: Force contribution of each hamstring muscle during a walking gait without a hamstring strain</figcaption>
+</figure>
+
+<p><br /></p>
+
+<h3 id="c-bionic-system-modelling">C. Bionic System Modelling</h3>
+
+<p>Our modeling abstraction must conform to the OpenSim framework and its selection of objects. The bionic system is represented in OpenSim as a path actuator object, which applies a controllable tension along a path running parallel to the hamstring muscles. A force limit parameter, decided by the real-world motor it represents, is set on the path actuator to more realistically represent true motor performance. This representation and how it is used to inform our bionic design will be discussed in the bionic system design portion of the report.</p>
+
+<h3 id="d-simulation-procedure">D. Simulation Procedure</h3>
+
+<ol>
+  <li>Load GaitModel2392, and scale the model to the desired size to match the proportions of our motion file.</li>
+  <li>Out of the scaled model, create 3 separate models (healthy normal gait, weakened semimembranosus gait, and weakened semimembranosus gait with a path actuator). All subsequent steps will be performed on all 3 models for comparison.
+    <ul>
+      <li>We tested various path actuator representations with varying max forces potentials (400, 600, 700, 566 N) and landed on a 566N actuator as the optimal choice. It struck a balance of reducing activations enough while not being overkill and potentially adding more weight to the system with a beefier actuator.</li>
+    </ul>
+  </li>
+  <li>Perform inverse kinematics to derive joint angles from motion. Plot angle and moment for <code class="language-plaintext highlighter-rouge">semimem_r</code>, <code class="language-plaintext highlighter-rouge">semiten_r</code>, <code class="language-plaintext highlighter-rouge">bifemsh_r</code> (short head of biceps femoris), <code class="language-plaintext highlighter-rouge">bifemlh_r</code> (long head of biceps femoris) for healthy gait.</li>
+  <li>Run Residual Reduction Algorithm (RRA) to improve the accuracy of CMC results.</li>
+  <li>Run Computed Muscle Control (CMC) to obtain muscle activation information. We will use activation to measure system performance.</li>
+</ol>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/400N.png" alt="Figure 4a: Muscle activation of unhealthy gait with 400N actuator" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 4a: Muscle activation of unhealthy gait with 400N actuator</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/600N.png" alt="Figure 4b: Muscle activation of unhealthy gait with 600N actuator" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 4b: Muscle activation of unhealthy gait with 600N actuator</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/700N.png" alt="Figure 4c: Muscle activation of unhealthy gait with 700N actuator" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 4c: Muscle activation of unhealthy gait with 700N actuator</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p><em>Figure 4: Activation of hamstring muscles during 1 cycle of a patient with a semimembranosus tear (unhealthy gait) with path actuator assistance (400N, 600N, 700N max force potential actuators). Normalized to [0,1]</em></p>
+
+<p>Here is our finalized representation of hamstring muscle activation across three cases (healthy gait, unhealthy gait, and unhealthy gait with bionic system). The reserve actuator usage and tracking error plots remain within acceptable limits, indicating that the model executed the motion without excessive reliance on non-physiological actuators. Accordingly, we consider the simulation results reliable for continued analysis. All supporting plots are included in the Appendix.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/healthy-activation.png" alt="Figure 5a: Activation of hamstring muscles during 1 cycle of healthy gait" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 5a: Activation of hamstring muscles during 1 cycle of healthy gait</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/unhealthy-activation.png" alt="Figure 5b: Activation of hamstring muscles during 1 cycle of a patient with a semimembranosus tear (unhealthy gait)" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 5b: Activation of hamstring muscles during 1 cycle of a patient with a semimembranosus tear (unhealthy gait)</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/active-actuation.png" alt="Figure 5c: Activation of hamstring muscles during 1 cycle of a patient with a semimembranosus tear (unhealthy gait) with path actuator assistance" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 5c: Activation of hamstring muscles during 1 cycle of a patient with a semimembranosus tear (unhealthy gait) with path actuator assistance</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p style="text-align: center;"><i>Figure 5: Activation data gathered from CMC of healthy, unhealthy, and unhealthy assisted gaits. Normalized to [0,1]</i></p>
+
+<p>Data collected at this stage will inform our bionic system design, discussed in the next section.</p>
+
+<h2 id="iii-bionic-system-design">III. Bionic System Design</h2>
+
+<p>The primary goal of our exo system is to minimize the activation of the affected muscle, promoting healing while maintaining comfort and metabolic efficiency. We proposed a set of design criteria/considerations to direct the design process.</p>
+
+<p><strong>Design Specifications:</strong></p>
+
+<ul>
+  <li>We will assume the weight of the bionic system should not exceed 2.5 kg.</li>
+  <li>The system should accomplish the desired tasks while being optimized for energy efficiency, which secondarily reduces battery size (further decreasing weight and improving efficiency)</li>
+  <li>Reduce the activation of the affected muscle, the semimembranosus, as much as possible.</li>
+  <li>Minimize contact with soft tissue (for better control bandwidth)</li>
+  <li>Strap doesn’t pressure veins due to muscle volume change (prevents tourniquet effect)</li>
+</ul>
+
+<h3 id="a-general-description">A. General Description</h3>
+
+<p>Our device is a powered knee skeleton designed to assist patients recovering from a hamstring tear. The exoskeleton is worn on one leg and spans from the mid-thigh to the shank, with soft straps around the thigh and calf and a small anchor near the ankle. A lightweight external frame follows the lateral contour of the leg and houses a brushless DC motor (Maxon EC-4pole 30, Ø30 mm, 200 W) mounted at the knee joint. The motor drives the knee through a 215:1 transmission, allowing it to generate biologically relevant flexion/extension torques while keeping the actuator compact.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/bionic.png" alt="Figure 6: H.A.M.S.T.E.R: Hamstring Active Mechanical Support Training &amp; Enhancement Robot" />
+  <figcaption class="figure-caption">Figure 6: H.A.M.S.T.E.R: Hamstring Active Mechanical Support Training &amp; Enhancement Robot</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>The system attaches to the body using adjustable straps at the thigh and calf that are connected to a simple kinematic linkage. When the knee bends, this linkage actively loosens the straps to accommodate the increased leg circumference, preventing a tourniquet effect and improving comfort and circulation. When the leg is extended, the straps automatically tighten again to provide a secure mechanical connection for torque transfer. In operation, the device supplies assistive knee torque during gait to reduce the load on the injured hamstring muscles while preserving natural joint motion and user comfort.</p>
+
+<h3 id="b-optimization-problem">B. Optimization Problem</h3>
+
+<p>The most crucial area of our bionic system and the initial reason for the bionic’s existence is to reduce activation in the semimembranosus muscle.</p>
+
+<p>How do we go about finding an optimal actuated system that reduces semimembranosus activation? We use the aforementioned path actuator, a simplified model representation of our active bionic mechanism, to take up slack. We increase the peak actuation (force) of the motor until reductions in activations of the injured muscle become negligibly different (but overall decreased), or else the motor selection tied to its peak actuation results in a motor and battery combination that could exceed our threshold of 2.5 kg.</p>
+
+<p>The capability of our actuator is limited by its energy consumption, which has the secondary effect of adding weight via the battery. So not only will a more powerful motor add weight via a more bulky motor, it may add compounded weight via a bulky battery. Essentially, we need to push the performance capabilities of our desired system while toeing the line of our 5% bodyweight threshold for our complete bionic framework.</p>
+
+<p>Based on the desired trajectory from the OpenSim modeling we picked an off-the-shelf motor, model its electrical/mechanical performance, check current and heat, discuss heat dissipation, and choose a battery with enough voltage such that the device can be used for the entire day, so that that the combined weight, along with an estimate of the bionic frame weight, hopefully so that our mass requirement is not exceeded. Then we will choose an optimal energy-minimizing transmission ratio and the materials/devices to achieve that transmission ratio.</p>
+
+<h3 id="c-actuator-selection-and-transmission-ratio-optimization">C. Actuator Selection and Transmission Ratio Optimization</h3>
+
+<p>The healthy knee joint torque and angle over time for one step were exported to MATLAB. A 100-sample-per-second window was applied to smooth the results, and the resulting plots closely match the OpenSim plots. The segments with high angular acceleration and/or torque drive the motor specifications.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure">
+  <img src="/assets/media/bionic-hamstring_media/plots/knee.png" alt="Figure 7: Knee angle &amp; torque across 1 walking gait cycle" />
+  <figcaption class="figure-caption">Figure 7: Knee angle &amp; torque across 1 walking gait cycle</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>13 Maxon motors with various characteristics and geometries were compared. Energy lost to heat was the cost function used to select the optimal motor and transmission ratio combination. A 4-pole brushless motor from Maxon (Part number 305015) with a 215:1 transmission ratio was the best.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/motor1.png" alt="Figure 8a: First 5 motors compared: motor 4 (TR=215) is the best (Energy lost to heat = 1.5025 J)." style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 8a: First 5 motors compared: motor 4 (TR=215) is the best (Energy lost to heat = 1.5025 J).</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/motor2.png" alt="Figure 8b: Wanted to try other nominal voltages, keeping motor 4 the same but changing the other 4." style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 8b: Wanted to try other nominal voltages, keeping motor 4 the same but changing the other 4.</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/motor3.png" alt="Figure 8c: Want to try different profiles and different wattage but keeping 48V of nominal voltage (again, keeping motor 4 the same)." style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 8c: Want to try different profiles and different wattage but keeping 48V of nominal voltage (again, keeping motor 4 the same).</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p style="text-align: center;"><i>Figure 8: 3-staged comparison of 13 different motors and their energy dissipation to heat loss across different transmission ratios.</i></p>
+
+<p>Plotting the current draw and input voltage for this motor and transmission ratio combination yields the following plot.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure">
+  <img src="/assets/media/bionic-hamstring_media/plots/motor-CV.png" alt="Figure 9: Current draw and input voltage for optimal motor and transmission ratio combination" />
+  <figcaption class="figure-caption">Figure 9: Current draw and input voltage for optimal motor and transmission ratio combination</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>This combination results in about 1.47J of energy lost to heat. This does not sound like a lot, but since this occurs per step, the heat would build up quickly. To dissipate this heat, a finned motor housing can be used.</p>
+
+<p>A rotary-to-linear transmission system was designed as the peak transmission ratio can be selected to be achieved at a certain joint angle. Since the peak torque of the knee is achieved at 0 degrees of knee flexion, the 215:1 transmission ratio should be the peak and achieved at the equivalent -180 degrees. It is not a worry that the knee will go past -180 degrees, as there will be a hard stop to prevent the knee from bending this way. Using the following parameters, a peak transmission ratio of 215:1 is achieved at 0 degrees of flexion as needed.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:50%;">
+  <img src="/assets/media/bionic-hamstring_media/parameters.png" alt="Figure 10: Transmission system geometric parameters" />
+  <figcaption class="figure-caption">Figure 10: Transmission system geometric parameters</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/transmission.png" alt="Figure 11: Transmission ratio curve across varying knee angles (optimized to peak at $-180°$ where peak torque is required)" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 11: Transmission ratio curve across varying knee angles (optimized to peak at $-180°$ where peak torque is required)</figcaption>
+</figure>
+
+<p><br /></p>
+
+<h3 id="d-series-elastic-actuation-sea">D. Series Elastic Actuation (SEA)</h3>
+
+<p>We evaluated the performance impact of integrating a series elastic actuator. It was concluded that the efficiency gains derived from SEA are negligible, making SEA an unnecessary inclusion in our bionic system.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/sea.png" alt="Figure 12: Input current and voltage comparison between a bionic system with and without an SEA" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 12: Input current and voltage comparison between a bionic system with and without an SEA</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/power-loss_SEA.png" alt="Figure 13: Power loss across a single walking gait of a series elastic actuated system across different stiffness constants" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 13: Power loss across a single walking gait of a series elastic actuated system across different stiffness constants</figcaption>
+</figure>
+
+<p><br /></p>
+
+<h3 id="e-battery-selection">E. Battery Selection</h3>
+
+<p>We estimated the required battery capacity based on the electrical energy per step.</p>
+
+<p>From our simulations, the exoskeleton consumes 273.6 J per step. For 5,000 steps per day, this gives a total daily energy of:</p>
+
+\[E_{\text{day}} = 273.6~\text{J/step} \times 5{,}000~\text{steps} = 1{,}368{,}000~\text{J}\]
+
+<p>Converting to watt-hours, $E_{\text{day}} = 1{,}368{,}000 / 3{,}600 \approx 380~\text{Wh}$. To include a safety margin for battery aging and modeling error (about 1.2–1.3×), we target a battery around 48 V, 10 Ah, which provides approximately 480 Wh. This corresponds well to the estimated daily energy use. For reference, we consider the <a href="https://www.aegisbattery.com/products/aegis-48v-10ah-lithium-ion-battery-pack-nmc-48v-lithium-battery">Aegis 48V 10Ah Lithium Ion Battery Pack (NMC 48V Lithium Battery)</a>.</p>
+
+<p>With a 48 V, 10 Ah (≈480 Wh) battery and our estimated 273.6 J per step, the system can provide about 6,300 assisted steps per charge, which comfortably covers a full day of 5,000 steps with some margin.</p>
+
+<h3 id="f-hardware-implementation">F. Hardware Implementation</h3>
+
+<p><strong>Considerations for Designing the Attachment System:</strong></p>
+
+<ul>
+  <li>
+    <p><strong>Muscle volume changes during gait:</strong><br />
+The attachment system must accommodate the substantial volume changes of the thigh muscles during contraction. Both the hamstrings and quadriceps expand significantly over the gait cycle. If the cuff is too rigid or static, it can act like a tourniquet during flexion, causing pain and restricting blood flow; if sized for flexion only, it can become loose during relaxation and slip on the limb.</p>
+  </li>
+  <li>
+    <p><strong>Soft Tissue Artifact (STA) and control bandwidth:</strong><br />
+Relative motion between the exoskeleton and the underlying bone (soft tissue artifact) degrades control accuracy and effectively lowers the achievable control bandwidth. To minimize STA, rigid components should be anchored to bony regions where soft tissue is thinner. For the shank segment, this means preferentially using the anterior region (tibial crest area) as the primary attachment site.</p>
+  </li>
+</ul>
+
+<p><strong>Table I: Inspiration from Existing Exoskeletons</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exoskeleton</th>
+      <th>Image</th>
+      <th>Key Components / Attachment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Keeogo</td>
+      <td><img src="/assets/media/bionic-hamstring_media/inspo/keego.png" alt="Keeogo" style="width:80%; height:auto; display: block; margin: auto;" /></td>
+      <td>Frame &amp; Strap</td>
+    </tr>
+    <tr>
+      <td>KIT-EXO-1</td>
+      <td><img src="/assets/media/bionic-hamstring_media/inspo/kit-exo.png" alt="KIT-EXO" style="width:80%; height:auto; display: block; margin: auto;" /></td>
+      <td>Velcro strap around thigh and shank</td>
+    </tr>
+    <tr>
+      <td>Quasi-Passive Knee Exoskeleton</td>
+      <td><img src="/assets/media/bionic-hamstring_media/inspo/quasi.png" alt="Quasi" style="width:80%; height:auto; display: block; margin: auto;" /></td>
+      <td>Cuff + Velcro</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Proposed design idea:</strong><br />
+A kinematic strap mechanism for the thigh and calf that automatically loosens during knee flexion. As the limb bends and the muscle cross-section increases, the mechanism increases strap length or reduces tension, mitigating the tourniquet effect and improving comfort. During extension, the strap re-tightens to maintain secure coupling and reduce slippage, providing a better user experience without sacrificing control performance.</p>
+
+<h3 id="g-control-framework-communication">G. Control Framework (+communication)</h3>
+
+<p>The system will be driven using sensor inputs to a microcontroller, which then causes a motor driver to change the actuation from a motor. This feedback will be sent back to the microcontroller to ensure that the target trajectory is achieved.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/controls.png" alt="Figure 14: Controls diagram" style="background-color: white; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 14: Controls diagram</figcaption>
+</figure>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p><strong>High-level control</strong> (running on the Nucleo-G431RB at ≈100 Hz), the MCU reads the EMG signal through its ADC and interprets user intent (e.g., level of muscle activation and gait phase). Based on this information and a stored “desired” healthy knee profile, it generates a desired knee torque/angle trajectory and overall assistance level, and sends this reference to the mid-level controller while streaming data to the PC for logging.</p>
+  </li>
+  <li>
+    <p><strong>Mid-level control</strong><br />
+The mid-level loop (≈1 kHz, also on the MCU) is a joint-level controller for the knee. It receives the desired knee torque/angle from the high-level loop and the actual knee angle from the absolute joint encoder (AS5048A over SPI), and computes the corresponding desired motor position command. This loop implements the main position/impedance control of the knee joint and sends the desired motor position to the motor driver via CAN.</p>
+  </li>
+  <li>
+    <p><strong>Low-level control</strong><br />
+The low-level control is executed inside the motor driver (Maxon EPOS4, ≈10 kHz). Using the motor’s built-in sensors (current and encoder feedback), the driver closes fast current/velocity/position loops and generates current/torque input to the Maxon EC-4pole motor. It enforces current and voltage limits, providing precise tracking of the commanded motor position from the mid-level controller while protecting the hardware.</p>
+  </li>
+</ul>
+
+<h3 id="h-evaluation">H. Evaluation</h3>
+
+<p>Compute the total mass of all components and the torque density. Add these masses (and scaled inertia) back into OpenSim model and evaluate the performance change (based on total muscle activation).</p>
+
+<p><strong>Table II: Total weight of components</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Mass (kg)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Actuator</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td><strong>Kinematic Structure</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Link (Carbon rod, D: 5 mm)</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>Strap + Belt</td>
+      <td>0.5 (0.2 + 0.3)</td>
+    </tr>
+    <tr>
+      <td>Ball screw + Frame (Ball screw: 0.4 m, D: 5 mm; Frame: 50×50×50 mm aluminum box)</td>
+      <td>1.0 (0.3 + 0.675)</td>
+    </tr>
+    <tr>
+      <td><strong>Electronics</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Motor Driver</td>
+      <td>0.09</td>
+    </tr>
+    <tr>
+      <td>Casing (plastic)</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>Battery</td>
+      <td>2.8</td>
+    </tr>
+    <tr>
+      <td>MCU + wires</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>Encoder</td>
+      <td>0.03</td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td><strong>5.735</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We moved the bulk of the mass distribution downstream, or farther up the leg and close to the torso, so that most of the mass is located close to the center of rotation, effectively reducing metabolic cost.</p>
+
+<p><strong>Table III: Mass distribution of the system</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location / Components</th>
+      <th>Mass (kg)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Hip (belt)</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Motor Driver (0.09)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Casing</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Battery</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>MCU + wires</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Belt</td>
+      <td>3.69</td>
+    </tr>
+    <tr>
+      <td><strong>Thigh</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Strap (half)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Frame structure (half)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Link (half)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Ball screw</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Motor</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encoder</td>
+      <td>1.2875</td>
+    </tr>
+    <tr>
+      <td><strong>Shank</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Strap (half)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Link (half)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Frame structure (half)</td>
+      <td>0.7575</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Torque Density of the system:</strong><br />
+Since the stall torque of the maxon motor is 3,430 mNm and the transmission ratio 215:1, we can assume peak torque of the system to be 737.45 Nm. Dividing this by the entire mass of the system (5.735 kg), the torque density can be calculated as 128.59 Nm/kg.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:100%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/torque-density.png" alt="Figure 15: Comparison of CMC activation data of unhealthy gait without exoskeleton and unhealthy gait with exoskeleton with recomputed accurate mass distributions based on finalized bionic architecture" style="height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure 15: Comparison of CMC activation data of unhealthy gait without exoskeleton and unhealthy gait with exoskeleton with recomputed accurate mass distributions based on finalized bionic architecture</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>The graphs clearly demonstrate that semimembranosus activation is reduced compared to unassisted gait.</p>
+
+<h2 id="iv-surgical-innovation">IV. Surgical Innovation</h2>
+
+<p>Additional anatomical techniques can be employed to improve the performance of our bionic system further.</p>
+
+<h3 id="a-ilizarov-method">A. Ilizarov Method</h3>
+
+<p>One suggested augmentation to the bionic framework takes inspiration from the Ilizarov technique, which takes inspiration from limb lengthening surgery techniques. Wires are driven into the bone, forming bone anchors. Metal halos are attached to these wires surrounding the target limb. This surgical technique provides a rigid base to which the bionic can be attached, while also solving the problem of placing undesired pressure on the affected muscle.</p>
+
+<p>This technique is not well studied for its ability to withstand dynamic loading patterns, such as those sustained under walking and control inputs from our actuated system <sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote" rel="footnote">11</a></sup> <sup id="fnref:19" role="doc-noteref"><a href="#fn:19" class="footnote" rel="footnote">12</a></sup>. Although potentially reversible, there may also be unwarranted bone growth at anchor sites. The surgery is also quite invasive. For these reasons, this surgery may not be the most suitable option for our given pathology.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:50%;">
+  <img src="/assets/media/bionic-hamstring_media/ilizarov.png" alt="Figure 16: Ilizarov limb-lengthening technique" />
+  <figcaption class="figure-caption">Figure 16: Ilizarov limb-lengthening technique</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p><strong>Table IV: Cost-Benefit Analysis: Ilizarov Surgical Method</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Procedure Type</td>
+      <td>Highly invasive; surgical implantation of external fixator</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>High; includes surgery, hospitalization, fixator hardware, follow-up visits, potential revisions</td>
+    </tr>
+    <tr>
+      <td>Recovery Time</td>
+      <td>Long; several months with fixator in place, gradual weight-bearing, and rehab</td>
+    </tr>
+    <tr>
+      <td>Risk Level</td>
+      <td>High; infection, nerve damage, non-union, joint stiffness, prolonged pain</td>
+    </tr>
+    <tr>
+      <td>Functional Outcomes</td>
+      <td>Effective bone lengthening and joint realignment; requires intensive rehab for mobility</td>
+    </tr>
+    <tr>
+      <td>Repeatability/ Adjustability</td>
+      <td>Limited; revisions require additional surgery</td>
+    </tr>
+    <tr>
+      <td>Patient Burden</td>
+      <td>High; cumbersome external fixator, frequent clinic visits, strict care required</td>
+    </tr>
+    <tr>
+      <td>Long-term Benefits</td>
+      <td>Permanent limb lengthening and deformity correction; long-term functional gain if complications avoided</td>
+    </tr>
+    <tr>
+      <td>Ideal Candidates</td>
+      <td>Patients requiring significant limb lengthening, deformity correction, or bone reconstruction</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="b-electrical-stimulation">B. Electrical Stimulation</h3>
+
+<p>We can also choose to augment our mechanical exo with FES/NMES co-activation <sup id="fnref:22" role="doc-noteref"><a href="#fn:22" class="footnote" rel="footnote">13</a></sup>. A hybrid physical exo and electrical stimulation approach can leverage the benefits of either method while reducing the downsides. Electrical stimulation is a low-weight and energy-efficient system, but it may introduce muscular fatigue over extended use. Mechanical exos are a rigid, controllable platform that entirely offloads muscle use, but can be physically unwieldy and heavy. A hybrid system also increases control complexity, requiring simultaneous optimization of electrical stimulation and mechanical actuation while accounting for the nonlinear biomechanics involved in walking.</p>
+
+<p>Here are two methods of electrical stimulation:</p>
+
+<ul>
+  <li>
+    <p><strong>Functional Electrical Stimulation (FES) using EMG:</strong> High-density surface electrode (HD-sEMG) array or multi-pad FES sleeve (rows of small pads) may be worn. This system may be hard to get specificity with electrical activation.</p>
+  </li>
+  <li>
+    <p><strong>Neuromuscular Electrical Stimulation (NMES) via neural interfacing</strong> provides more direct access to muscle-specific activation pathways. This can be implemented with implantable electrodes (i.e., book electrodes, cuff electrodes) on tibial nerve branches.</p>
+  </li>
+</ul>
+
+<p><strong>Table V: Cost-Benefit Analysis: Electrical Stimulation</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Procedure Type</td>
+      <td>Non-invasive or minimally invasive; uses wearable electrodes and actuators</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>Low to moderate; equipment, clinical supervision, and rehab sessions</td>
+    </tr>
+    <tr>
+      <td>Recovery Time</td>
+      <td>Shorter; a few weeks to months depending on therapy intensity</td>
+    </tr>
+    <tr>
+      <td>Risk Level</td>
+      <td>Low; may include skin irritation, mild discomfort, or muscle fatigue</td>
+    </tr>
+    <tr>
+      <td>Functional Outcomes</td>
+      <td>Improves muscle activation, strength, and gait; limited effect on bone lengthening</td>
+    </tr>
+    <tr>
+      <td>Repeatability/ Adjustability</td>
+      <td>Highly adjustable; stimulation parameters can be modified, therapy repeated</td>
+    </tr>
+    <tr>
+      <td>Patient Burden</td>
+      <td>Low; wearable devices allow mobility, outpatient-friendly</td>
+    </tr>
+    <tr>
+      <td>Long-term Benefits</td>
+      <td>Muscle preservation, improved neuromuscular control, reduced risk of re-injury</td>
+    </tr>
+    <tr>
+      <td>Ideal Candidates</td>
+      <td>Patients needing muscle rehabilitation or gait assistance, non-surgical approach preferred</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Based on the cost-benefit analysis of both augmentative methods, electrical stimulation appears to be the more advantageous approach. It outperforms the Ilizarov method across multiple metrics, including cost, functional outcomes, adjustability, and invasiveness, making it a promising option for rehabilitation and gait assistance.</p>
+
+<h2 id="v-conclusions">V. Conclusions</h2>
+
+<p>This project provides a structured foundation for understanding basic hamstring injury mechanics and exploring potential bionic assistance strategies. The compiled pathology research, anatomical modeling, and prior surgical approaches help clarify both the challenges and opportunities in supporting recovery. These insights will guide the continued development of a bio-mechanically informed, assistive bionic system aimed at enhancing joint stability, restoring strength, and reducing reinjury risk.</p>
+
+<h2 id="appendix">Appendix</h2>
+
+<h3 id="error-tracking">Error Tracking</h3>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/error-healthy.png" alt="Figure A1a: Error tracking of healthy gait." style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure A1a: Error tracking of healthy gait.</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/error-unhealthy.png" alt="Figure A1b: Error tracking of unhealthy gait." style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure A1b: Error tracking of unhealthy gait.</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/error-active.png" alt="Figure A1c: Error tracking of unhealthy gait with 566N path actuator" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure A1c: Error tracking of unhealthy gait with 566N path actuator</figcaption>
+</figure>
+
+<p style="text-align: center;"><i>Figure A1: Error Tracking for Comparison for Final Result.</i></p>
+
+<h3 id="reserve-plots">Reserve Plots</h3>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/reserve-healthy.png" alt="Figure A2a: Force reserves of healthy gait." style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure A2a: Force reserves of healthy gait.</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/reserve-unhealthy.png" alt="Figure A2b: Force reserves of unhealthy gait." style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure A2b: Force reserves of unhealthy gait.</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:80%;">
+  <img src="/assets/media/bionic-hamstring_media/plots/reserve-active.png" alt="Figure A2c: Force reserves of unhealthy gait with 566N path actuator" style="background-color: tan; padding: 10px;" />
+  <figcaption class="figure-caption">Figure A2c: Force reserves of unhealthy gait with 566N path actuator</figcaption>
+</figure>
+
+<p style="text-align: center;"><i>Figure A2: Reserve Plots for Comparison for Final Result.</i></p>
+
+<h3 id="motor-specification-summary">Motor Specification Summary</h3>
+
+<p><strong>Table A1: Motor Specification Summary</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Motor</th>
+      <th>$R_{\text{term}}$($\Omega$)</th>
+      <th>$L_{\text{term}}$ (mH)</th>
+      <th>$K_t$ (mNm/A)</th>
+      <th>$K_v$ (rpm/V)</th>
+      <th>Inertia (g·cm²)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ECX FLAT 42 M (Ø 42 mm)</td>
+      <td>0.933</td>
+      <td>0.698</td>
+      <td>60.1</td>
+      <td>159</td>
+      <td>86.2</td>
+    </tr>
+    <tr>
+      <td>ECX FLAT 32 L (Ø 32 mm)</td>
+      <td>1.07</td>
+      <td>0.805</td>
+      <td>32.8</td>
+      <td>291</td>
+      <td>9.47</td>
+    </tr>
+    <tr>
+      <td>EC-max 22 (Ø 22 mm, 25 W)</td>
+      <td>13.1</td>
+      <td>0.729</td>
+      <td>34.8</td>
+      <td>274</td>
+      <td>4.45</td>
+    </tr>
+    <tr>
+      <td>EC-4pole 30 (Ø 30 mm, 200 W)</td>
+      <td>0.386</td>
+      <td>0.0653</td>
+      <td>27.6</td>
+      <td>346</td>
+      <td>33.3</td>
+    </tr>
+    <tr>
+      <td>EC-4pole 30 (Ø 30 mm, 100 W)</td>
+      <td>0.836</td>
+      <td>0.118</td>
+      <td>26.1</td>
+      <td>365</td>
+      <td>18.3</td>
+    </tr>
+    <tr>
+      <td>ECX FLAT 32 L (with hall sensors)</td>
+      <td>0.705</td>
+      <td>0.53</td>
+      <td>26.6</td>
+      <td>359</td>
+      <td>30.7</td>
+    </tr>
+    <tr>
+      <td>ECX FLAT 32 L (with hall sensors)</td>
+      <td>0.465</td>
+      <td>0.339</td>
+      <td>21.3</td>
+      <td>448</td>
+      <td>30.7</td>
+    </tr>
+    <tr>
+      <td>ECX FLAT 32 L (with hall sensors)</td>
+      <td>0.323</td>
+      <td>0.191</td>
+      <td>16</td>
+      <td>598</td>
+      <td>30.7</td>
+    </tr>
+    <tr>
+      <td>EC-4pole 30 (Ø 30 mm, 200 W, 48 V)</td>
+      <td>0.386</td>
+      <td>0.0653</td>
+      <td>27.6</td>
+      <td>346</td>
+      <td>33.3</td>
+    </tr>
+    <tr>
+      <td>ECX FLAT 22 L (Ø 22 mm)</td>
+      <td>6.45</td>
+      <td>1.12</td>
+      <td>30.7</td>
+      <td>311</td>
+      <td>6.82</td>
+    </tr>
+    <tr>
+      <td>EC-4pole 22 (Ø 22 mm, 120 W)</td>
+      <td>1.27</td>
+      <td>0.123</td>
+      <td>27.1</td>
+      <td>352</td>
+      <td>8.91</td>
+    </tr>
+    <tr>
+      <td>EC-4pole 22 (Ø 22 mm, 90 W)</td>
+      <td>2.37</td>
+      <td>0.201</td>
+      <td>28.1</td>
+      <td>340</td>
+      <td>5.54</td>
+    </tr>
+    <tr>
+      <td>RE 65 (Ø 65 mm, brushed)</td>
+      <td>0.365</td>
+      <td>0.161</td>
+      <td>123</td>
+      <td>77.8</td>
+      <td>1340</td>
+    </tr>
+    <tr>
+      <td>EC 90 flat (Ø 90 mm, brushless)</td>
+      <td>0.844</td>
+      <td>1.07</td>
+      <td>231</td>
+      <td>41.3</td>
+      <td>5060</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="references">References</h2>
+
+<hr />
+
+<p><br /></p>
+
+<p><a href="https://github.com/nzge/bionics/tree/main/MAE-263E_report.pdf">Report</a></p>
+
+<p><strong>Nathan Ge</strong>, Beom Jun Kim, Fotini Ioannides, Katrina Le, Matthew Silva<br />
+Department of Mechanical and Aerospace Engineering<br />
+University of California, Los Angeles<br />
+Emails: nzge@g.ucla.edu, bj007@g.ucla.edu, fotiniioannides@g.ucla.edu, katrinale@g.ucla.edu, mattsilva2@g.ucla.edu</p>
+
+<p><strong>Acknowledgement</strong>
+The author thanks Professor Tyler Clites for guidance and instruction throughout the MAE 263E Bionics Systems Engineering course. Their insights into bionic systems design formed the foundation of this project.</p>
+
+<!-- Hidden references trigger the footnote rendering -->
+<p><span id="hidden-references"> <sup id="fnref:1:2" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">6</a></sup> <sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">8</a></sup> <sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">7</a></sup> <sup id="fnref:4:1" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">2</a></sup> <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">14</a></sup> <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">15</a></sup> <sup id="fnref:7:1" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">16</a></sup> <sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">17</a></sup> <sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">18</a></sup> <sup id="fnref:11:1" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">3</a></sup> <sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">19</a></sup> <sup id="fnref:13:1" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">9</a></sup> <sup id="fnref:14:1" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">4</a></sup> <sup id="fnref:15:1" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">5</a></sup> <sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">20</a></sup> <sup id="fnref:17:1" role="doc-noteref"><a href="#fn:17" class="footnote" rel="footnote">10</a></sup> <sup id="fnref:18:1" role="doc-noteref"><a href="#fn:18" class="footnote" rel="footnote">11</a></sup> <sup id="fnref:19:1" role="doc-noteref"><a href="#fn:19" class="footnote" rel="footnote">12</a></sup> <sup id="fnref:20" role="doc-noteref"><a href="#fn:20" class="footnote" rel="footnote">21</a></sup> <sup id="fnref:21" role="doc-noteref"><a href="#fn:21" class="footnote" rel="footnote">22</a></sup> <sup id="fnref:22:1" role="doc-noteref"><a href="#fn:22" class="footnote" rel="footnote">13</a></sup></span></p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:7" role="doc-endnote">
+      <p>Radsource, “Grading hamstring injuries using the British Athletics Muscle Injury Classification (BAMIC).” [Online]. Available: <a href="https://radsource.us/grading-hamstring-injuries-using-the-british-athletics-muscle-injury-classification-bamic/">https://radsource.us/grading-hamstring-injuries-using-the-british-athletics-muscle-injury-classification-bamic/</a> <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:7:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>OrthoIllinois, “Hamstring Tear.” [Online]. Available: <a href="https://www.orthoillinois.com/hip/hamstring-tear/">https://www.orthoillinois.com/hip/hamstring-tear/</a> <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:4:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:11" role="doc-endnote">
+      <p>Wikipedia, “Hamstring.” [Online]. Available: <a href="https://en.wikipedia.org/wiki/Hamstring#cite_note-daniel-4">https://en.wikipedia.org/wiki/Hamstring#cite_note-daniel-4</a> <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:11:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:14" role="doc-endnote">
+      <p>Wikiversity, “Medical gallery of Mikael Häggström 2014.” [Online]. Available: <a href="https://en.wikiversity.org/w/index.php?title=WikiJournal_of_Medicine/Medical_gallery_of_Mikael_H%C3%A4ggstr%C3%B6m_2014&amp;printable=yes#Human_body_diagrams">https://en.wikiversity.org/w/index.php?title=WikiJournal_of_Medicine/Medical_gallery_of_Mikael_H%C3%A4ggstr%C3%B6m_2014&amp;printable=yes#Human_body_diagrams</a> <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:14:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:15" role="doc-endnote">
+      <p>H. Gray, <em>Anatomy of the Human Body</em>, 1918. [Online]. Available: <a href="https://archive.org/details/anatomyofhumanbo1918gray/page/960/mode/2up?q=hamstring">https://archive.org/details/anatomyofhumanbo1918gray/page/960/mode/2up?q=hamstring</a> <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:15:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:1" role="doc-endnote">
+      <p>J. L. Sanfilippo, A. Silder, M. A. Sherry, M. J. Tuite, and B. C. Heiderscheit, “Hamstring strength and morphology progression after return to sport from injury,” <em>Med. Sci. Sports Exerc.</em>, vol. 45, no. 3, pp. 448–454, Mar. 2013. [Online]. Available: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3580023/">https://pmc.ncbi.nlm.nih.gov/articles/PMC3580023/</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:1:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>B. Schmitt, T. Tim, and M. McHugh, “Hamstring injury rehabilitation and prevention of reinjury using lengthened state eccentric training: a new concept,” <em>Int. J. Sports Phys. Ther.</em>, vol. 7, no. 3, pp. 333–341, Jun. 2012. [Online]. Available: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3362981/">https://pmc.ncbi.nlm.nih.gov/articles/PMC3362981/</a> <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>B. Poudel and S. Pandey, “Hamstring Injury,” StatPearls [Internet], Treasure Island, FL: StatPearls Publishing, 2023. [Online]. Available: <a href="https://www.ncbi.nlm.nih.gov/books/NBK558936/">https://www.ncbi.nlm.nih.gov/books/NBK558936/</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:13" role="doc-endnote">
+      <p>S. E. Wong, K. R. Julian, J. G. Carpio, and A. L. Zhang, “Proximal hamstring repair with all-suture anchors and an accelerated rehabilitation and bracing protocol demonstrates good outcomes at 1-year follow-up,” <em>Arthrosc. Sports Med. Rehabil.</em>, vol. 6, no. 2, 100891, Feb. 2024. [Online]. Available: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10867423/">https://pmc.ncbi.nlm.nih.gov/articles/PMC10867423/</a> <a href="#fnref:13" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:13:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:17" role="doc-endnote">
+      <p>OpenSim Confluence, “Gait 2392 and 2354 Models.” [Online]. Available: <a href="https://opensimconfluence.atlassian.net/wiki/spaces/OpenSim/pages/53086215/Gait+2392+and+2354+Models">https://opensimconfluence.atlassian.net/wiki/spaces/OpenSim/pages/53086215/Gait+2392+and+2354+Models</a> <a href="#fnref:17" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:17:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:18" role="doc-endnote">
+      <p>A. L. Author et al., “Direct and indirect loading of the Ilizarov external fixator: the effect on the interfragmentary movements and compressive loads,” <em>J. Orthop. Surg. Res.</em>, [Online]. Available: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3058184/">https://pmc.ncbi.nlm.nih.gov/articles/PMC3058184/</a> <a href="#fnref:18" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:18:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:19" role="doc-endnote">
+      <p>Oxford Orthopaedics, “Limb lengthening and reconstruction surgery.” [Online]. Available: <a href="https://oxfordortho.sg/limb-lengthening-and-reconstruction-surgery/">https://oxfordortho.sg/limb-lengthening-and-reconstruction-surgery/</a> <a href="#fnref:19" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:19:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:22" role="doc-endnote">
+      <p>Author(s), “Hybrid FES–robot cooperative control of ambulatory gait rehabilitation exoskeleton,” [Online]. Available: <a href="https://link.springer.com/article/10.1186/1743-0003-11-27">https://link.springer.com/article/10.1186/1743-0003-11-27</a> <a href="#fnref:22" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:22:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>MedlinePlus, “Hamstring muscle,” Patient Instructions. [Online]. Available: <a href="https://medlineplus.gov/ency/patientinstructions/000551.htm">https://medlineplus.gov/ency/patientinstructions/000551.htm</a> <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>NCBI MeSH, “Hamstring,” 2016. [Online]. Available: <a href="https://www.ncbi.nlm.nih.gov/mesh/2016304">https://www.ncbi.nlm.nih.gov/mesh/2016304</a> <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8" role="doc-endnote">
+      <p>TeachMeAnatomy, “Hamstrings.” [Online]. Available: <a href="https://teachmeanatomy.info/lower-limb/muscles/thigh/hamstrings/">https://teachmeanatomy.info/lower-limb/muscles/thigh/hamstrings/</a> <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:9" role="doc-endnote">
+      <p>Merriam-Webster, “Hamstring.” [Online]. Available: <a href="https://www.merriam-webster.com/dictionary/hamstring">https://www.merriam-webster.com/dictionary/hamstring</a> <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:10" role="doc-endnote">
+      <p>Wikipedia, “Linea aspera.” [Online]. Available: <a href="https://en.wikipedia.org/wiki/Linea_aspera">https://en.wikipedia.org/wiki/Linea_aspera</a> <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:12" role="doc-endnote">
+      <p>Wikipedia, “Biceps femoris muscle.” [Online]. Available: <a href="https://en.wikipedia.org/wiki/Biceps_femoris_muscle">https://en.wikipedia.org/wiki/Biceps_femoris_muscle</a> <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:16" role="doc-endnote">
+      <p>Netter Images, “Gluteal and posterior thigh muscles (unlabeled).” [Online]. Available: <a href="https://www.netterimages.com/gluteal-and-posterior-thigh-muscles-unlabeled-76263.html">https://www.netterimages.com/gluteal-and-posterior-thigh-muscles-unlabeled-76263.html</a> <a href="#fnref:16" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:20" role="doc-endnote">
+      <p>Musculoskeletal Key, “Limb lengthening using the Ilizarov method or a monoplanar fixator.” [Online]. Available: <a href="https://musculoskeletalkey.com/limb-lengthening-using-the-ilizarov-method-or-a-monoplanar-fixator/">https://musculoskeletalkey.com/limb-lengthening-using-the-ilizarov-method-or-a-monoplanar-fixator/</a> <a href="#fnref:20" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:21" role="doc-endnote">
+      <p>International Center for Limb Lengthening, “Short Stature: Want to Be Taller? (Cosmetic Height Surgery).” [Online]. Available: <a href="https://www.limblength.org/conditions/short-stature/">https://www.limblength.org/conditions/short-stature/</a> <a href="#fnref:21" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    </article>
+  </div>
+</div>
+
+    <footer class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.5s"">
+  <div class="footer-line"></div>
+  <div class="footer-content">
+    <img src="/assets/media/!misc/random/wwwbutton.gif" alt="www">
+    <p>&copy; 2025 Nathan Ge 葛中骐</p>
+    <div class="social-icons">
+      <a href="https://github.com/nzge" target="_blank" data-no-icon><i class="fab fa-github"></i></a>
+      <a href="https://x.com/ge_nathan73556" target="_blank" data-no-icon><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com/in/nzge" target="_blank" data-no-icon><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/naysun_g" target="_blank" data-no-icon><i class="fab fa-instagram"></i></a>
+    </div>
+
+  </div>
+
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('nathange', {
+      type: 'floating-chat',
+      'floating-chat.donateButton.text': 'Support me',
+      'floating-chat.donateButton.background-color': 'rgba(24, 22, 22, 0.3)', // opacity controlled here
+      'floating-chat.donateButton.text-color': '#fff'
+    });
+  </script>
+
+  <div id="kofi-button-container"></div>
+
+   <!-- <div style="
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      color: white;
+      text-align: center;
+      padding: 6px 8px;
+      font-size: 0.9rem;
+      z-index: 9999;
+    ">
+      Disclaimer: The website is a constant work in progress.
+    </div> -->
+
+    <style>
+      @media (max-width: 600px) {
+        #site-footer div[style] {
+          font-size: 0.75rem;
+          padding: 4px 6px;
+        }
+      }
+    </style>
+
+    </li>
+    
+</footer>
+    <style>
+  .videoWrapper {
+    position: relative;
+    padding-bottom: 56.333%;
+    height: 0;
+      background: black;
+  }
+  .videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+      border: 0;
+  }    
+</style>
+  
+
+        <!-- Include js -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"  defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CSSRulePlugin.min.js"  defer></script>
+    <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/links.js"></script>
+    <script src="/assets/js/gifs.js"></script>
+    <script src="/assets/js/menu.js"></script>
+    <script src="/assets/js/open-embed.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/footnotes.js"></script>
+
+
+
+  </body>
+
+</html>
+

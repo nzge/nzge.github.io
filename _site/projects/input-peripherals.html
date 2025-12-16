@@ -28,12 +28,12 @@
 <meta property="og:site_name" content="My Website" />
 <meta property="og:image" content="http://localhost:4000/macropad.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-02-20T00:00:00-08:00" />
+<meta property="article:published_time" content="2025-11-03T00:00:00-08:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="http://localhost:4000/macropad.png" />
 <meta property="twitter:title" content="Input Peripherals" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-20T00:00:00-08:00","datePublished":"2022-02-20T00:00:00-08:00","description":"An investigation into the customization potential of input devices and their core functionality.","headline":"Input Peripherals","image":"http://localhost:4000/macropad.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/input-peripherals.html"},"url":"http://localhost:4000/projects/input-peripherals.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-11-03T00:00:00-08:00","datePublished":"2025-11-03T00:00:00-08:00","description":"An investigation into the customization potential of input devices and their core functionality.","headline":"Input Peripherals","image":"http://localhost:4000/macropad.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/input-peripherals.html"},"url":"http://localhost:4000/projects/input-peripherals.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -97,13 +97,13 @@
 </nav>
 
 
-    <div class="gif-left"> 
-  <img id="gif-left" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
-</div>
+      <!-- <div class="gif-left"> 
+    <img id="gif-left" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
+  </div>
 
-<div class="gif-right">
-  <img id="gif-right" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
-</div>
+  <div class="gif-right">
+    <img id="gif-right" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt=" ">
+  </div> -->
 
 <header>
   <div class="container">
@@ -120,12 +120,542 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      <ul><li><a href="#general-info">General Info</a><ul><li><a href="#keyboard">Keyboard</a><ul><li><a href="#keyboard-matrix-multiplexing">Keyboard Matrix (Multiplexing)</a></li><li><a href="#keyboard-anatomy">Keyboard Anatomy</a></li><li><a href="#case-design">Case Design</a><ul><li><a href="#layout">Layout</a></li><li><a href="#mounting-system">Mounting System</a></li></ul></li><li><a href="#switches">Switches</a><ul><li><a href="#switch-types">Switch Types</a><ul><li><a href="#cherry-mx-style">Cherry MX Style</a><ul><li><a href="#switch-anatomy">Switch Anatomy</a></li><li><a href="#manufacturers-the-switch-market">Manufacturers: The Switch Market</a></li><li><a href="#frankenswitches">Frankenswitches</a></li></ul></li><li><a href="#other-switch-types">Other Switch Types</a><ul><li><a href="#low-profile">Low profile</a></li><li><a href="#alps">Alps</a></li><li><a href="#hall-effect">Hall effect</a></li><li><a href="#ec">EC</a></li></ul></li></ul></li><li><a href="#sound-profile">Sound Profile</a></li><li><a href="#switch-materials">Switch Materials</a></li><li><a href="#stabilizers">Stabilizers</a></li></ul></li><li><a href="#mods">Mods</a></li><li><a href="#firmware">Firmware</a><ul><li><a href="#qmk"><a href="https://qmk.fm/">QMK</a></a></li><li><a href="#zmk"><a href="https://zmk.dev/">ZMK</a></a></li></ul></li></ul></li><li><a href="#mouse">Mouse</a><ul><li><a href="#motion-sensor">Motion Sensor</a></li><li><a href="#switches-1">Switches</a></li><li><a href="#firmware-1">Firmware</a></li></ul></li><li><a href="#mcu-selection">MCU Selection</a><ul><li><a href="#esp32">ESP32</a></li><li><a href="#atmega32u4-avr-family">ATmega32U4 (AVR family)</a></li><li><a href="#rp2040--rp2350">RP2040 / RP2350</a></li><li><a href="#nrf52480">nrf52480</a></li><li><a href="#stm32-family">STM32 Family</a></li><li><a href="#honorable-mention-teensy-microcontrollers">Honorable Mention: Teensy microcontrollers</a></li></ul></li></ul></li></ul></li><li><a href="#keyboards">Keyboards</a><ul><li><a href="#hand-wired-macropad">Hand-wired Macropad</a><ul><li><a href="#specs">Specs</a><ul><li><a href="#layout-1">Layout</a></li><li><a href="#components">Components</a></li><li><a href="#pin-mapping">Pin Mapping</a></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#macropad-with-pcb">Macropad with PCB</a><ul><li><a href="#pcb">PCB</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#ergo-split">Ergo Split</a><ul><li><a href="#specs-1">Specs</a><ul><li><a href="#components-1">Components</a></li><li><a href="#layout-2">Layout</a></li></ul></li><li><a href="#pcb-1">PCB</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#ortho">Ortho</a><ul><li><a href="#specs-2">Specs</a><ul><li><a href="#components-2">Components</a></li><li><a href="#layout-3">Layout</a></li></ul></li><li><a href="#pcb-2">PCB</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#40-with-fkeys">40% with Fkeys</a><ul><li><a href="#specs-3">Specs</a><ul><li><a href="#components-3">Components</a></li><li><a href="#layout-4">Layout</a></li></ul></li><li><a href="#pcb-3">PCB</a></li><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#hhkb">HHKB</a><ul><li><a href="#specs-4">Specs</a><ul><li><a href="#components-4">Components</a></li><li><a href="#layout-5">Layout</a></li></ul></li><li><a href="#pcb-4">PCB</a></li><li><a href="#build-log-5">Build Log</a></li></ul></li><li><a href="#modular-keyboard">Modular Keyboard</a><ul><li><a href="#concept">Concept</a></li><li><a href="#specs-5">Specs</a></li><li><a href="#build-log-6">Build Log</a></li></ul></li></ul></li><li><a href="#mice">Mice</a><ul><li><a href="#ultralight-mouse">Ultralight Mouse</a><ul><li><a href="#specs-6">Specs</a></li><li><a href="#pcb-5">PCB</a></li><li><a href="#firmware-2">Firmware</a></li><li><a href="#build-log-7">Build Log</a></li></ul></li><li><a href="#chimera">Chimera</a><ul><li><a href="#concept-1">Concept</a></li><li><a href="#specs-7">Specs</a></li><li><a href="#pcb-6">PCB</a></li><li><a href="#firmware-3">Firmware</a></li><li><a href="#build-log-8">Build Log</a></li></ul></li><li><a href="#macros-mouse">Macros Mouse</a><ul><li><a href="#concept-2">Concept</a></li><li><a href="#specs-8">Specs</a></li><li><a href="#pcb-7">PCB</a></li><li><a href="#firmware-4">Firmware</a></li><li><a href="#build-log-9">Build Log</a></li></ul></li></ul></li><li><a href="#references">References</a><ul><li><a href="#keyboard-1">Keyboard</a></li><li><a href="#mice-1">Mice</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
+      <ul><li><a href="#keyboards">Keyboards</a><ul><li><a href="#my-current-setup">My Current Setup</a></li><li><a href="#hand-wired-macropad">Hand-wired Macropad</a><ul><li><a href="#specs">Specs</a><ul><li><a href="#layout">Layout</a></li><li><a href="#components">Components</a></li><li><a href="#pin-mapping">Pin Mapping</a></li></ul></li><li><a href="#build-log">Build Log</a></li></ul></li><li><a href="#macropad-with-pcb">Macropad with PCB</a><ul><li><a href="#pcb">PCB</a></li><li><a href="#build-log-1">Build Log</a></li></ul></li><li><a href="#ergo-split">Ergo Split</a><ul><li><a href="#specs-1">Specs</a><ul><li><a href="#components-1">Components</a></li><li><a href="#layout-1">Layout</a></li></ul></li><li><a href="#pcb-1">PCB</a></li><li><a href="#build-log-2">Build Log</a></li></ul></li><li><a href="#ortho">Ortho</a><ul><li><a href="#specs-2">Specs</a><ul><li><a href="#components-2">Components</a></li><li><a href="#layout-2">Layout</a></li></ul></li><li><a href="#pcb-2">PCB</a></li><li><a href="#build-log-3">Build Log</a></li></ul></li><li><a href="#40-with-fkeys">40% with Fkeys</a><ul><li><a href="#specs-3">Specs</a><ul><li><a href="#components-3">Components</a></li><li><a href="#layout-3">Layout</a></li></ul></li><li><a href="#pcb-3">PCB</a></li><li><a href="#build-log-4">Build Log</a></li></ul></li><li><a href="#hhkb">HHKB</a><ul><li><a href="#specs-4">Specs</a><ul><li><a href="#components-4">Components</a></li><li><a href="#layout-4">Layout</a></li></ul></li><li><a href="#pcb-4">PCB</a></li><li><a href="#build-log-5">Build Log</a></li></ul></li><li><a href="#modular-keyboard">Modular Keyboard</a><ul><li><a href="#concept">Concept</a></li><li><a href="#specs-5">Specs</a></li><li><a href="#build-log-6">Build Log</a></li></ul></li></ul></li><li><a href="#mice">Mice</a><ul><li><a href="#ultralight-mouse">Ultralight Mouse</a><ul><li><a href="#specs-6">Specs</a></li><li><a href="#pcb-5">PCB</a></li><li><a href="#firmware">Firmware</a></li><li><a href="#build-log-7">Build Log</a></li></ul></li><li><a href="#chimera">Chimera</a><ul><li><a href="#concept-1">Concept</a></li><li><a href="#specs-7">Specs</a></li><li><a href="#pcb-6">PCB</a></li><li><a href="#firmware-1">Firmware</a></li><li><a href="#build-log-8">Build Log</a></li></ul></li><li><a href="#macros-mouse">Macros Mouse</a><ul><li><a href="#concept-2">Concept</a></li><li><a href="#specs-8">Specs</a></li><li><a href="#pcb-7">PCB</a></li><li><a href="#firmware-2">Firmware</a></li><li><a href="#build-log-9">Build Log</a></li></ul></li></ul></li><li><a href="#general-info">General Info</a><ul><li><a href="#keyboard">Keyboard</a><ul><li><a href="#keyboard-matrix-multiplexing">Keyboard Matrix (Multiplexing)</a></li><li><a href="#keyboard-anatomy">Keyboard Anatomy</a></li><li><a href="#case-design">Case Design</a><ul><li><a href="#layout-5">Layout</a></li><li><a href="#mounting-system">Mounting System</a></li></ul></li><li><a href="#switches">Switches</a><ul><li><a href="#switch-types">Switch Types</a><ul><li><a href="#cherry-mx-style">Cherry MX Style</a><ul><li><a href="#switch-anatomy">Switch Anatomy</a></li><li><a href="#manufacturers-the-switch-market">Manufacturers: The Switch Market</a></li><li><a href="#frankenswitches">Frankenswitches</a></li></ul></li><li><a href="#other-switch-types">Other Switch Types</a><ul><li><a href="#low-profile">Low profile</a></li><li><a href="#alps">Alps</a></li><li><a href="#hall-effect">Hall effect</a></li><li><a href="#ec">EC</a></li></ul></li></ul></li><li><a href="#sound-profile">Sound Profile</a></li><li><a href="#switch-materials">Switch Materials</a></li><li><a href="#stabilizers">Stabilizers</a></li></ul></li><li><a href="#mods">Mods</a></li><li><a href="#firmware-3">Firmware</a><ul><li><a href="#qmk"><a href="https://qmk.fm/">QMK</a></a></li><li><a href="#zmk"><a href="https://zmk.dev/">ZMK</a></a></li></ul></li></ul></li><li><a href="#mouse">Mouse</a><ul><li><a href="#motion-sensor">Motion Sensor</a></li><li><a href="#switches-1">Switches</a></li><li><a href="#firmware-4">Firmware</a></li></ul></li><li><a href="#mcu-selection">MCU Selection</a><ul><li><a href="#esp32">ESP32</a></li><li><a href="#atmega32u4-avr-family">ATmega32U4 (AVR family)</a></li><li><a href="#rp2040--rp2350">RP2040 / RP2350</a></li><li><a href="#nrf52480">nrf52480</a></li><li><a href="#stm32-family">STM32 Family</a></li><li><a href="#honorable-mention-teensy-microcontrollers">Honorable Mention: Teensy microcontrollers</a></li></ul></li></ul></li></ul></li><li><a href="#references">References</a><ul><li><a href="#keyboard-1">Keyboard</a></li><li><a href="#mice-1">Mice</a></li><li><a href="#other-info">Other Info</a></li><li><a href="#sources">Sources</a></li></ul></li></ul>
     </nav>
   
   <div>
     <article class="markdown-body">
-      <h1 id="general-info">General Info</h1>
+      <p>This page details my exploration of designing input peripherals, particularly mice and keyboards, and adapting their functions to the personal tastes and as a means of personal expression.</p>
+
+<h1 id="keyboards">Keyboards</h1>
+<p>I initially fell into the keyboard hobby during COVID when I was glued to my desktop and keyboard like most folks. My interest in industrial design aesthetics and boundless creative expression has led me on a long creative path of keyboard design.</p>
+
+<h2 id="my-current-setup">My Current Setup</h2>
+
+<p><img src="/assets/media/input_media/my-keyboard.jpg" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
+
+<p><em>Specs</em></p>
+<ul>
+  <li>Mr. Suit TKL</li>
+  <li>Switches: Gateron box ink v2
+    <ul>
+      <li>filmed (Deskeys films) and lubed (Krytox 205G0)</li>
+    </ul>
+  </li>
+  <li>Keycaps: GMK WoB + CMYK Accents (IFK WOB)</li>
+</ul>
+
+<p><br /><br /></p>
+
+<p><strong>Design Inspiration</strong></p>
+<div id="my-slideshow"></div>
+<script>
+  const slides= [
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/derivative.png", caption: "Derivative" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/derivative-bot.PNG", caption: "Derivative bottom" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/eventhorizon.jpg", caption: "Event Horizon" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/eventhorizon-bot.PNG", caption: "Event Horizon bottom" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/kreygasm keyboard.jpg", caption: "Cool keyboard render" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/neo75-side.jpg", caption: "Neo 75 side profile" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/neo75-bot.jpg", caption: "Neo 75 bottom" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/noxary378-gray.png", caption: "Noxary 378" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/ogr.jpg", caption: "OGR" },
+    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/pangea-side.jpg", caption: "Pangea side profile" },
+  ];
+  new Slideshow(slides, 'my-slideshow');
+</script>
+
+<p><br /><br /></p>
+
+<h2 id="hand-wired-macropad">Hand-wired Macropad</h2>
+
+<p><img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
+
+<h3 id="specs">Specs</h3>
+<p>For my first design, I kept it simple.</p>
+<ul>
+  <li>4x4 Matrix</li>
+  <li>Unibody construction</li>
+</ul>
+
+<p style="text-align: center;">Model</p>
+<model-viewer src="https://nzge.github.io/assets/media/input_media/macro/hand-wire/macro_assy.glb" alt="Handwired Macropad" camera-controls="" touch-action="none" interaction-prompt="none" disable-tap="" style="width: 800px; height: 500px; display: block; margin: 0 auto 0.5em auto; background-color: #1a1a1a;" camera-orbit="0deg 75deg auto" min-camera-orbit="auto auto auto" max-camera-orbit="auto auto auto" min-field-of-view="10deg" max-field-of-view="100deg" environment-image="neutral" shadow-intensity="1" exposure="1.0">
+</model-viewer>
+
+<h4 id="layout">Layout</h4>
+
+<p><img src="/assets/media/input_media/macro/4x4.png" alt="Alt text" /></p>
+
+<h4 id="components">Components</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.aliexpress.us/item/3256807783872448.html?spm=a2g0o.productlist.main.1.7f97412cFmkPgZ&amp;algo_pvid=6620151d-2b6a-4130-98c6-9ad4570e99f9&amp;algo_exp_id=6620151d-2b6a-4130-98c6-9ad4570e99f9-0&amp;pdp_ext_f=%7B%22order%22%3A%22980%22%2C%22eval%22%3A%221%22%2C%22orig_sl_item_id%22%3A%221005007970187200%22%2C%22orig_item_id%22%3A%221005008079431976%22%7D&amp;pdp_npi=4%40dis%21USD%213.60%211.80%21%21%2126.16%2113.08%21%40210312d517458248843083517e9190%2112000043081959970%21sea%21US%214467253674%21X&amp;curPageLogUid=U7yGAfNlG6GQ&amp;utparam-url=scene%3Asearch%7Cquery_from%3A">Pro Micro nRF52840</a></td>
+      <td>Cheap alternative to nice!nanov2. BLE and lipo charging capability</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.aliexpress.us/item/3256805848952479.html?spm=a2g0o.order_list.order_list_main.65.7ddc1802EYblLy&amp;gatewayAdapt=glo2usa">DO-35 IN4148 High-speed Switching Diodes</a></td>
+      <td>Prevent ghosting (when multiple, unintended key presses register as a single press when multiple keys are pressed simultaneously. Diodes ensure that the current only flows in one direction, preventing unintended paths through the matrix when multiple switches are closed)</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.aliexpress.us/item/3256804442290103.html?spm=a2g0o.order_list.order_list_main.35.7ddc1802EYblLy&amp;gatewayAdapt=glo2usa">Heat shrink</a></td>
+      <td>Electrical isolation between rows and columns</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&amp;gatewayAdapt=glo2usa">1.5mm Bare Copper wire</a></td>
+      <td>Wiring to form rows and columns</td>
+    </tr>
+    <tr>
+      <td><a href="https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457">JWK Black T1 Tactile Switches</a></td>
+      <td>Switches</td>
+    </tr>
+    <tr>
+      <td>250 mAh LiPo</td>
+      <td>Rechargeability</td>
+    </tr>
+    <tr>
+      <td>Housing</td>
+      <td>3D printed using PLA</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="pin-mapping">Pin Mapping</h4>
+<p><img src="/assets/media/input_media/macro/promicro-nrf52840.png" alt="Alt text" style="height:350px;display: block; margin: auto;" /></p>
+
+<h3 id="build-log">Build Log</h3>
+<blockquote>
+  <p>4-10-25: Resized to fit a battery</p>
+
+</blockquote>
+
+<blockquote>
+  <p>3-25-25: Added keycaps</p>
+
+  <p><img src="/assets/media/input_media/macro/hand-wire/IMG_0829.JPG" alt="Alt text" style="height:200px; display:block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>3-20-25: Completed the wiring</p>
+
+  <p><img src="/assets/media/input_media/macro/hand-wire/IMG_0812.jpg" alt="Alt text" style="height:200px; display:block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>3-18-25: Hot-glued the switches in place</p>
+
+  <p><img src="/assets/media/input_media/macro/hand-wire/IMG_0783.JPG" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>3-14-25: Made dimension modifications better suited to the design</p>
+
+  <p><img src="/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>8-21-24: Test fit JWICK tactiles</p>
+
+  <p><img src="/assets/media/input_media/macro/hand-wire/test-fit.jpg" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p>02-20-2022:</p>
+
+  <p><img src="/assets/media/input_media/macro/hand-wire/test-fit.jpg" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="macropad-with-pcb">Macropad with PCB</h2>
+<p>The natural evolution of the hand-wired macropad was integrating the wiring logic into a more formalized, production quality product.
+Fundamentally, this macropad has the same core features as the previous hand-wired iteration, but packaged nicer.</p>
+
+<h3 id="pcb">PCB</h3>
+<p>KiCAD
+<a href="https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2Fnzge%2Finput-peripherals%2Ftree%2Fmain%2Fmacropad%2Fpcb%25204x4%2520macro%2F4x4_macro">Macropad Schematic view</a></p>
+
+<p><img src="/assets/media/input_media/macro/macro-pcb/4x4_macro.svg" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="build-log-1">Build Log</h3>
+
+<blockquote>
+  <p>4-11-25: PCB Prototype</p>
+
+  <p><img src="/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png" alt="macro-pcb-proto" style="height:200px; display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="ergo-split">Ergo Split</h2>
+
+<p><img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
+
+<h3 id="specs-1">Specs</h3>
+<ul>
+  <li>Low profile choc switches</li>
+  <li>Tenting via magsafe phone stands</li>
+  <li>Ergonomic splayed key spacing</li>
+</ul>
+
+<h4 id="components-1">Components</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.aliexpress.us/item/3256807516374506.html?spm=a2g0o.cart.0.0.34f738daxHlmM3&amp;mp=1&amp;pdp_npi=5%40dis%21USD%21USD%2021.77%21USD%2010.59%21%21USD%2010.59%21%21%21%402101c5b217460555351044119eab9b%2112000041913114307%21ct%21US%214467253674%21%212%210&amp;_gl=1*11e8ki2*_gcl_aw*R0NMLjE3NDA1NTgxMDkuQ2p3S0NBaUFsUHU5QmhBakVpd0E1TkRTQTdzMF9GdmJFOFI0LWQwMnlrcXdKem04cm9BQXBXQUxNTWkyMXZzZ2x4WUx3Tlk3OTNwMUpSb0NESW9RQXZEX0J3RQ..*_gcl_au*NjI4NjQxMDkuMTczODMwNDY3NQ..*_ga*OTY3MjMwOTg4LjE3MzgzMDQ2NzU.*_ga_VED1YSGNC7*MTc0NjA1NTUyNy4yNC4xLjE3NDYwNTU1MzYuNTEuMC4w&amp;gatewayAdapt=glo2usa">Magsafe phone stand</a> x2</td>
+      <td>Tenting</td>
+    </tr>
+    <tr>
+      <td><a href="">Magsafe ring</a> x2</td>
+      <td>Placed on keyboard to magnetically bind to stands</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.aliexpress.us/item/3256804880270570.html?spm=a2g0o.cart.0.0.34f738daxHlmM3&amp;mp=1&amp;pdp_npi=5%40dis%21USD%21USD%2071.55%21USD%2057.24%21%21USD%2057.24%21%21%21%402101c5b217460555351044119eab9b%2112000036200576713%21ct%21US%214467253674%21%211%210&amp;_gl=1*1q7dg1o*_gcl_aw*R0NMLjE3NDA1NTgxMDkuQ2p3S0NBaUFsUHU5QmhBakVpd0E1TkRTQTdzMF9GdmJFOFI0LWQwMnlrcXdKem04cm9BQXBXQUxNTWkyMXZzZ2x4WUx3Tlk3OTNwMUpSb0NESW9RQXZEX0J3RQ..*_gcl_au*NjI4NjQxMDkuMTczODMwNDY3NQ..*_ga*OTY3MjMwOTg4LjE3MzgzMDQ2NzU.*_ga_VED1YSGNC7*MTc0NjA1NTUyNy4yNC4xLjE3NDYwNTU1NTcuMzAuMC4w&amp;gatewayAdapt=glo2usa">Choc Purple Switches</a></td>
+      <td>Switches</td>
+    </tr>
+    <tr>
+      <td><a href="">250 mAh LiPo Battery</a>  x2</td>
+      <td>Rechargeability</td>
+    </tr>
+    <tr>
+      <td>Housing</td>
+      <td>3D printed using PLA</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="layout-1">Layout</h4>
+
+<p>I used <a href="https://ergogen.xyz/">Ergogen</a> to configure my ergo layout</p>
+
+<p><img src="/assets/media/input_media/split/ergo/ergo-split.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="pcb-1">PCB</h3>
+<p>Designed in KiCAD
+<img src="/assets/media/input_media/split/ergo/ergo-split.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="build-log-2">Build Log</h3>
+<blockquote>
+  <p>3-14-25:</p>
+
+  <p><img src="/assets/media/input_media/split/ergo/" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="ortho">Ortho</h2>
+<p>An ultra thin, ultraportable ortholinear keyboard.</p>
+
+<p><img src="/assets/media/input_media/ortho/ortho-v2.png" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
+
+<h3 id="specs-2">Specs</h3>
+<ul>
+  <li>Ortholinear key spacing</li>
+  <li>Ultra low profile switches</li>
+  <li>Keycaps level with the case</li>
+</ul>
+
+<h4 id="components-2">Components</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Housing</td>
+      <td>3D printed using PLA</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="layout-2">Layout</h4>
+<p><img src="/assets/media/input_media/ortho/40%-ortho.svg" alt="Alt text" style="height:200px; display:block; margin: auto;" />
+<img src="/assets/media/input_media/ortho/ortho-v2.png" alt="Alt text" style="height:200px; display:block; margin: auto;" /></p>
+
+<h3 id="pcb-2">PCB</h3>
+<p><img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="build-log-3">Build Log</h3>
+<blockquote>
+  <p>3-14-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="40-with-fkeys">40% with Fkeys</h2>
+<p>A 40% keyboard with extra flare.</p>
+
+<p><img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
+
+<h3 id="specs-3">Specs</h3>
+<ul>
+  <li>Layout: 40% with 2 function key columns to the left</li>
+  <li>PCB: mill max sockets</li>
+  <li>Case
+    <ul>
+      <li>thin side bezels</li>
+      <li>2 piece construction</li>
+      <li>top mount</li>
+      <li>rectangular rubber feet</li>
+      <li>low front height (cherry lip)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="components-3">Components</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&amp;gatewayAdapt=glo2usa">1.5mm Bare Copper wire</a></td>
+      <td>Wiring to form rows and columns</td>
+    </tr>
+    <tr>
+      <td><a href="https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457">JWK Black T1 Tactile Switches</a></td>
+      <td>Switches</td>
+    </tr>
+    <tr>
+      <td><a href="">250 mAh LiPo Battery</a></td>
+      <td>Rechargeability</td>
+    </tr>
+    <tr>
+      <td>Housing</td>
+      <td>3D printed using PLA</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="layout-3">Layout</h4>
+<p><br /></p>
+
+<p><img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="pcb-3">PCB</h3>
+<p>Designed in KiCAD
+<a href="https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2Fnzge%2Finput-peripherals%2Ftree%2Fmain%2Fforty%2F40%252B%2F40%252B_pcb">40%+ PCB Schematic view</a></p>
+
+<p>Component Breakdown
+<a href="https://www.mouser.com/catalog/specsheets/johanson_2450AT18B100E.pdf">Antenna - johanson_2450AT18B100E</a></p>
+
+<p><br /></p>
+
+<p><img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="build-log-4">Build Log</h3>
+<blockquote>
+  <p>11-11-25: Correcting label mismatch/discrepancy between switches and associated diodes to prep for kbplacer</p>
+
+</blockquote>
+
+<blockquote>
+  <p>11-10-25: Making schematic functional with matrix column and row labelling. Confirming power-path management logic. Added extra
+decoupling caps when needed. Other minor fixes/changes.</p>
+
+</blockquote>
+
+<blockquote>
+  <p>4-12-25: Prototype schematic revision 0</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: center">MCU Schematic</th>
+        <th style="text-align: center">Key Matrix</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: center"><img src="/assets/media/input_media/40/40+_schematic_rev0-1.png" alt="Alt text" style="height:300px;display: block; margin: auto;" /></td>
+        <td style="text-align: center"><img src="/assets/media/input_media/40/40+_schematic_rev0-2.png" alt="Alt text" style="height:300px;display: block; margin: auto;" /></td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<blockquote>
+  <p>4-10-25: Initial CAD prototype</p>
+
+  <p><img src="/assets/media/input_media/40/40+_proto_rev0.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="hhkb">HHKB</h2>
+<p>My take on the classic HHKB layout</p>
+
+<p><img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
+
+<h3 id="specs-4">Specs</h3>
+<ul>
+  <li>HHKB Layout</li>
+  <li></li>
+</ul>
+
+<h4 id="components-4">Components</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&amp;gatewayAdapt=glo2usa">1.5mm Bare Copper wire</a></td>
+      <td>Wiring to form rows and columns</td>
+    </tr>
+    <tr>
+      <td><a href="https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457">JWK Black T1 Tactile Switches</a></td>
+      <td>Switches</td>
+    </tr>
+    <tr>
+      <td><a href="">250 mAh LiPo</a></td>
+      <td>Rechargeability</td>
+    </tr>
+    <tr>
+      <td>Housing</td>
+      <td>3D printed using PLA</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="layout-4">Layout</h4>
+<p><img src="/assets/media/input_media/hhkb/hhkb-default.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="pcb-4">PCB</h3>
+<p><img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="build-log-5">Build Log</h3>
+<blockquote>
+  <p>3-14-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="modular-keyboard">Modular Keyboard</h2>
+<p>Fully modular keyboard, with each keyswitch being a singular unit. A lego keyboard, if you will.</p>
+<h3 id="concept">Concept</h3>
+<p><img src="/assets/media/input_media/modular/modular-keyboard_concept.png" alt="Modular keyboard concept sketch" style="height:400px;display: block; margin: auto;" /></p>
+
+<p>Some kind of central intelligence that dynamically detects the quantity of keys ‘absorbed’ within the matrix. 
+Magnetic POGO pin connectors forming connections between keys.</p>
+
+<h3 id="specs-5">Specs</h3>
+
+<h3 id="build-log-6">Build Log</h3>
+
+<blockquote>
+  <p>4-11-25:</p>
+
+  <p><img src="/assets/media/input_media/modular/modular-keyboard_concept.png" alt="macro-pcb-proto" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+<hr />
+
+<h1 id="mice">Mice</h1>
+
+<h2 id="ultralight-mouse">Ultralight Mouse</h2>
+<p>Chasing performance.</p>
+
+<p><img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
+
+<h3 id="specs-6">Specs</h3>
+
+<h3 id="pcb-5">PCB</h3>
+
+<p><a href="https://github.com/nzge/input-peripherals/tree/main/mouse/ultralight/ul-mouse_pcb">UL Mouse PCB Schematic view</a>
+<img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="firmware">Firmware</h3>
+
+<h3 id="build-log-7">Build Log</h3>
+<blockquote>
+  <p>4-29-25:</p>
+
+  <p><img src="/assets/media/input_media/mice/ul-mouse/ul-mouse_schematic_rev0-1.png" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="chimera">Chimera</h2>
+<p>A Keyswitch Mouse<br />
+Injecting keyboard DNA into the mouse peripheral
+<img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
+
+<h3 id="concept-1">Concept</h3>
+<p><img src="/assets/media/input_media/mice/keyswitch-mouse/keyswitch-mouse_concept.png" alt="Alt text" style="height:350px;display: block; margin: auto;" /></p>
+
+<h3 id="specs-7">Specs</h3>
+<p>4 choc keyswitches<br />
+Capacitive scroll wheel</p>
+
+<h3 id="pcb-6">PCB</h3>
+<p><img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+
+<h3 id="firmware-1">Firmware</h3>
+
+<h3 id="build-log-8">Build Log</h3>
+<blockquote>
+  <p>4-28-25:</p>
+
+  <p><img src="/assets/media/input_media/mice/keyswitch-mouse/keyswitch-mouse_schematic_rev0-1.png" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+
+<h2 id="macros-mouse">Macros Mouse</h2>
+<p>How many useful buttons can I fit on one mouse?<br />
+<img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
+
+<h3 id="concept-2">Concept</h3>
+
+<h3 id="specs-8">Specs</h3>
+
+<h3 id="pcb-7">PCB</h3>
+
+<h3 id="firmware-2">Firmware</h3>
+
+<h3 id="build-log-9">Build Log</h3>
+<blockquote>
+  <p>3-14-25:</p>
+
+  <p><img src="/assets/media/input_media/macro/macropad-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
+</blockquote>
+
+<hr />
+<hr />
+
+<h1 id="general-info">General Info</h1>
 
 <h2 id="keyboard">Keyboard</h2>
 <p>A keyboard simply converts keystrokes (user input) into input commands, usually by stringing together a collection of character inputs.</p>
@@ -172,7 +702,7 @@
 
 <h3 id="case-design">Case Design</h3>
 
-<h4 id="layout">Layout</h4>
+<h4 id="layout-5">Layout</h4>
 <p>The layout determines the general form factor of the case.</p>
 <div id="layouts"></div>
 <script>
@@ -349,7 +879,7 @@ Modding as an idea rose in popularity around 2020-22. In more recent times, most
   <li>Silicone</li>
 </ul>
 
-<h3 id="firmware">Firmware</h3>
+<h3 id="firmware-3">Firmware</h3>
 
 <h4 id="qmk"><a href="https://qmk.fm/">QMK</a></h4>
 <p><a href="https://github.com/nzge/qmk_firmware">My fork of QMK</a><br />
@@ -362,9 +892,10 @@ https://www.reddit.com/r/MechanicalKeyboards/comments/hjh61v/what_is_qmk/</p>
 <p><a href="https://github.com/nzge/zmk-config">My fork of ZMK</a><br />
 ZMK Firmware is an open source (MIT) keyboard firmware built on the Zephyr™ Project Real Time Operating System (RTOS). ZMK’s goal is to provide a modern and powerful firmware that is designed for power-efficiency, flexibility, and broad hardware support. 
 ZMK is capable of being used for both wired and wireless input devices.
-ZMK is easier to implement and support both wired(unibody) and wireless options
-ZMK is has greater compatibility, notably in wireless applications. However, users say ZMK lags slightly behind in terms of ease-of-use features.
-There is also TMK and KMK. TMK is mostly deprecated, and is a Circuit Python keyboard firmware. ZMK and QMK are the more common options.</p>
+While QMK is easier to implement and supports both wired (unibody) and wireless options,
+ZMK has greater compatibility, notably in wireless applications. However, users say ZMK lags slightly behind in terms of ease-of-use features.</p>
+
+<p>Other firmware configurators include TMK and KMK. TMK, a Circuit Python keyboard firmware, is mostly deprecated. ZMK and QMK are the more common options.</p>
 
 <h2 id="mouse">Mouse</h2>
 <p>A mouse provides cursor control to navigate and interact with display elements.</p>
@@ -417,7 +948,7 @@ Huano</p>
 Zippy DF3P1<br />
 Kailong</p>
 
-<h3 id="firmware-1">Firmware</h3>
+<h3 id="firmware-4">Firmware</h3>
 <p>The open-source support from the community is far more limited for mice.
 <a href="https://github.com/biomurph/Mouse">https://github.com/biomurph/Mouse</a></p>
 
@@ -687,476 +1218,6 @@ Ideal for wireless keyboard projects requiring Bluetooth connectivity (ZMK firmw
 <hr />
 <hr />
 
-<h1 id="keyboards">Keyboards</h1>
-<p>I initially fell into the keyboard hobby during COVID when I was glued to my desktop and keyboard like most folks. My interest in industrial design aesthetics and boundless creative expression has led me on a long creative path of keyboard design.</p>
-
-<p><strong>Design Inspiration</strong></p>
-<div id="my-slideshow"></div>
-<script>
-  const slides= [
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/derivative.png", caption: "Derivative" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/derivative-bot.PNG", caption: "Derivative bottom" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/eventhorizon.jpg", caption: "Event Horizon" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/eventhorizon-bot.PNG", caption: "Event Horizon bottom" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/kreygasm keyboard.jpg", caption: "Cool keyboard render" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/neo75-side.jpg", caption: "Neo 75 side profile" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/neo75-bot.jpg", caption: "Neo 75 bottom" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/noxary378-gray.png", caption: "Noxary 378" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/ogr.jpg", caption: "OGR" },
-    { src: "https://raw.githubusercontent.com/nzge/input-peripherals/main/_inspiration/pangea-side.jpg", caption: "Pangea side profile" },
-  ];
-  new Slideshow(slides, 'my-slideshow');
-</script>
-
-<p><br /><br /></p>
-
-<h2 id="hand-wired-macropad">Hand-wired Macropad</h2>
-
-<p><img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
-
-<h3 id="specs">Specs</h3>
-<p>For my first design, I kept it simple.</p>
-<ul>
-  <li>4x4 Matrix</li>
-  <li>Unibody construction</li>
-</ul>
-
-<p style="text-align: center;">Model</p>
-<model-viewer src="https://nzge.github.io/assets/media/stewart-platform_media/stewart_assy.gltf" alt="Stewart Platform" camera-controls="" touch-action="pan-y" camera-orbit="0deg 0deg auto" orientation="180deg 20deg 0deg" field-of-view="45deg" shadow-intensity="1" exposure="1.0" environment-image="legacy" style="width: 800px; height: 500px; display: block; margin: 0 auto 0.5em auto; background-color: #1a1a1a;">
-</model-viewer>
-
-<h4 id="layout-1">Layout</h4>
-
-<p><img src="/assets/media/input_media/macro/4x4.png" alt="Alt text" /></p>
-
-<h4 id="components">Components</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Component</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://www.aliexpress.us/item/3256807783872448.html?spm=a2g0o.productlist.main.1.7f97412cFmkPgZ&amp;algo_pvid=6620151d-2b6a-4130-98c6-9ad4570e99f9&amp;algo_exp_id=6620151d-2b6a-4130-98c6-9ad4570e99f9-0&amp;pdp_ext_f=%7B%22order%22%3A%22980%22%2C%22eval%22%3A%221%22%2C%22orig_sl_item_id%22%3A%221005007970187200%22%2C%22orig_item_id%22%3A%221005008079431976%22%7D&amp;pdp_npi=4%40dis%21USD%213.60%211.80%21%21%2126.16%2113.08%21%40210312d517458248843083517e9190%2112000043081959970%21sea%21US%214467253674%21X&amp;curPageLogUid=U7yGAfNlG6GQ&amp;utparam-url=scene%3Asearch%7Cquery_from%3A">Pro Micro nRF52840</a></td>
-      <td>Cheap alternative to nice!nanov2. BLE and lipo charging capability</td>
-    </tr>
-    <tr>
-      <td><a href="https://www.aliexpress.us/item/3256805848952479.html?spm=a2g0o.order_list.order_list_main.65.7ddc1802EYblLy&amp;gatewayAdapt=glo2usa">DO-35 IN4148 High-speed Switching Diodes</a></td>
-      <td>Prevent ghosting (when multiple, unintended key presses register as a single press when multiple keys are pressed simultaneously. Diodes ensure that the current only flows in one direction, preventing unintended paths through the matrix when multiple switches are closed)</td>
-    </tr>
-    <tr>
-      <td><a href="https://www.aliexpress.us/item/3256804442290103.html?spm=a2g0o.order_list.order_list_main.35.7ddc1802EYblLy&amp;gatewayAdapt=glo2usa">Heat shrink</a></td>
-      <td>Electrical isolation between rows and columns</td>
-    </tr>
-    <tr>
-      <td><a href="https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&amp;gatewayAdapt=glo2usa">1.5mm Bare Copper wire</a></td>
-      <td>Wiring to form rows and columns</td>
-    </tr>
-    <tr>
-      <td><a href="https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457">JWK Black T1 Tactile Switches</a></td>
-      <td>Switches</td>
-    </tr>
-    <tr>
-      <td>250 mAh LiPo</td>
-      <td>Rechargeability</td>
-    </tr>
-    <tr>
-      <td>Housing</td>
-      <td>3D printed using PLA</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="pin-mapping">Pin Mapping</h4>
-<p><img src="/assets/media/input_media/macro/promicro-nrf52840.png" alt="Alt text" style="height:350px;display: block; margin: auto;" /></p>
-
-<h3 id="build-log">Build Log</h3>
-<blockquote>
-  <p>4-10-25: Resized to fit a battery</p>
-
-</blockquote>
-
-<blockquote>
-  <p>3-25-25: Added keycaps</p>
-
-  <p><img src="/assets/media/input_media/macro/hand-wire/IMG_0829.JPG" alt="Alt text" style="height:200px; display:block; margin: auto;" /></p>
-</blockquote>
-
-<blockquote>
-  <p>3-20-25: Completed the wiring</p>
-
-  <p><img src="/assets/media/input_media/macro/hand-wire/IMG_0812.jpg" alt="Alt text" style="height:200px; display:block; margin: auto;" /></p>
-</blockquote>
-
-<blockquote>
-  <p>3-18-25: Hot-glued the switches in place</p>
-
-  <p><img src="/assets/media/input_media/macro/hand-wire/IMG_0783.JPG" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-</blockquote>
-
-<blockquote>
-  <p>3-14-25: Made dimension modifications better suited to the design</p>
-
-  <p><img src="/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-</blockquote>
-
-<blockquote>
-  <p>8-21-24: Test fit JWICK tactiles</p>
-
-  <p><img src="/assets/media/input_media/macro/hand-wire/test-fit.jpg" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-</blockquote>
-
-<hr />
-
-<h2 id="macropad-with-pcb">Macropad with PCB</h2>
-
-<h3 id="pcb">PCB</h3>
-<p>KiCAD
-<img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-
-<h3 id="build-log-1">Build Log</h3>
-
-<blockquote>
-  <p>4-11-25: PCB Prototype</p>
-
-  <p><img src="/assets/media/input_media/macro/macro-pcb/macro-pcb-proto.png" alt="macro-pcb-proto" style="height:200px; display: block; margin: auto;" /></p>
-</blockquote>
-
-<hr />
-
-<h2 id="ergo-split">Ergo Split</h2>
-
-<p><img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
-
-<h3 id="specs-1">Specs</h3>
-<ul>
-  <li>Low profile switches</li>
-  <li>Tenting via magsafe phone stands</li>
-  <li>Ergonomic splayed key spacing</li>
-</ul>
-
-<h4 id="components-1">Components</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Component</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://www.aliexpress.us/item/3256807516374506.html?spm=a2g0o.cart.0.0.34f738daxHlmM3&amp;mp=1&amp;pdp_npi=5%40dis%21USD%21USD%2021.77%21USD%2010.59%21%21USD%2010.59%21%21%21%402101c5b217460555351044119eab9b%2112000041913114307%21ct%21US%214467253674%21%212%210&amp;_gl=1*11e8ki2*_gcl_aw*R0NMLjE3NDA1NTgxMDkuQ2p3S0NBaUFsUHU5QmhBakVpd0E1TkRTQTdzMF9GdmJFOFI0LWQwMnlrcXdKem04cm9BQXBXQUxNTWkyMXZzZ2x4WUx3Tlk3OTNwMUpSb0NESW9RQXZEX0J3RQ..*_gcl_au*NjI4NjQxMDkuMTczODMwNDY3NQ..*_ga*OTY3MjMwOTg4LjE3MzgzMDQ2NzU.*_ga_VED1YSGNC7*MTc0NjA1NTUyNy4yNC4xLjE3NDYwNTU1MzYuNTEuMC4w&amp;gatewayAdapt=glo2usa">Magsafe phone stand</a> x2</td>
-      <td>Tenting</td>
-    </tr>
-    <tr>
-      <td><a href="">Magsafe ring</a> x2</td>
-      <td>Placed on keyboard to magnetically bind to stands</td>
-    </tr>
-    <tr>
-      <td><a href="https://www.aliexpress.us/item/3256804880270570.html?spm=a2g0o.cart.0.0.34f738daxHlmM3&amp;mp=1&amp;pdp_npi=5%40dis%21USD%21USD%2071.55%21USD%2057.24%21%21USD%2057.24%21%21%21%402101c5b217460555351044119eab9b%2112000036200576713%21ct%21US%214467253674%21%211%210&amp;_gl=1*1q7dg1o*_gcl_aw*R0NMLjE3NDA1NTgxMDkuQ2p3S0NBaUFsUHU5QmhBakVpd0E1TkRTQTdzMF9GdmJFOFI0LWQwMnlrcXdKem04cm9BQXBXQUxNTWkyMXZzZ2x4WUx3Tlk3OTNwMUpSb0NESW9RQXZEX0J3RQ..*_gcl_au*NjI4NjQxMDkuMTczODMwNDY3NQ..*_ga*OTY3MjMwOTg4LjE3MzgzMDQ2NzU.*_ga_VED1YSGNC7*MTc0NjA1NTUyNy4yNC4xLjE3NDYwNTU1NTcuMzAuMC4w&amp;gatewayAdapt=glo2usa">Choc Purple Switches</a></td>
-      <td>Switches</td>
-    </tr>
-    <tr>
-      <td><a href="">250 mAh LiPo Battery</a>  x2</td>
-      <td>Rechargeability</td>
-    </tr>
-    <tr>
-      <td>Housing</td>
-      <td>3D printed using PLA</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="layout-2">Layout</h4>
-<p><img src="/assets/media/input_media/split/ergo/ergo-split.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-
-<h3 id="pcb-1">PCB</h3>
-<p>Designed in KiCAD
-<img src="/assets/media/input_media/split/ergo/ergo-split.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-
-<h3 id="build-log-2">Build Log</h3>
-<blockquote>
-  <p>3-14-25:</p>
-
-  <p><img src="/assets/media/input_media/split/ergo/" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-</blockquote>
-
-<hr />
-
-<h2 id="ortho">Ortho</h2>
-<p>Sleek</p>
-
-<p><img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
-
-<h3 id="specs-2">Specs</h3>
-<ul>
-  <li>Ortholinear key spacing</li>
-  <li>Ultra low profile switches</li>
-</ul>
-
-<h4 id="components-2">Components</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Component</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Housing</td>
-      <td>3D printed using PLA</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="layout-3">Layout</h4>
-<p><img src="/assets/media/input_media/hhkb/hhkb-default.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-
-<h3 id="pcb-2">PCB</h3>
-<p><img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-
-<h3 id="build-log-3">Build Log</h3>
-<blockquote>
-  <p>3-14-25:</p>
-
-  <p><img src="/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-</blockquote>
-
-<hr />
-
-<h2 id="40-with-fkeys">40% with Fkeys</h2>
-<p>A 40% keyboard with extra flare.</p>
-
-<p><img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
-
-<h3 id="specs-3">Specs</h3>
-<ul>
-  <li>Layout: 40% with function keys left side</li>
-  <li>PCB: mill max sockets</li>
-  <li>Case
-    <ul>
-      <li>thin side bezels</li>
-      <li>2 piece construction</li>
-      <li>top mount</li>
-      <li>rectangular rubber feet</li>
-      <li>low front height (cherry lip)</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="components-3">Components</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Component</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&amp;gatewayAdapt=glo2usa">1.5mm Bare Copper wire</a></td>
-      <td>Wiring to form rows and columns</td>
-    </tr>
-    <tr>
-      <td><a href="https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457">JWK Black T1 Tactile Switches</a></td>
-      <td>Switches</td>
-    </tr>
-    <tr>
-      <td><a href="">250 mAh LiPo Battery</a></td>
-      <td>Rechargeability</td>
-    </tr>
-    <tr>
-      <td>Housing</td>
-      <td>3D printed using PLA</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="layout-4">Layout</h4>
-<p><br />
-<img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-
-<h3 id="pcb-3">PCB</h3>
-<p>Designed in KiCAD
-<br /></p>
-
-<p><img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-
-<h3 id="build-log-4">Build Log</h3>
-<blockquote>
-  <p>4-12-25: Prototype schematic revision 0</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th style="text-align: center">MCU Schematic</th>
-        <th style="text-align: center">Key Matrix</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="text-align: center"><img src="/assets/media/input_media/40/40+_schematic_rev0-1.png" alt="Alt text" style="height:300px;display: block; margin: auto;" /></td>
-        <td style="text-align: center"><img src="/assets/media/input_media/40/40+_schematic_rev0-2.png" alt="Alt text" style="height:300px;display: block; margin: auto;" /></td>
-      </tr>
-    </tbody>
-  </table>
-</blockquote>
-
-<blockquote>
-  <p>4-10-25: Initial CAD prototype</p>
-
-  <p><img src="/assets/media/input_media/40/40+_proto_rev0.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-</blockquote>
-
-<hr />
-
-<h2 id="hhkb">HHKB</h2>
-<p>My take on the classic HHKB layout</p>
-
-<p><img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
-
-<h3 id="specs-4">Specs</h3>
-
-<h4 id="components-4">Components</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Component</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://www.aliexpress.us/item/3256806421888589.html?spm=a2g0o.order_list.order_list_main.45.7ddc1802EYblLy&amp;gatewayAdapt=glo2usa">1.5mm Bare Copper wire</a></td>
-      <td>Wiring to form rows and columns</td>
-    </tr>
-    <tr>
-      <td><a href="https://divinikey.com/products/jwk-black-t1-tactile-switches?variant=39897771835457">JWK Black T1 Tactile Switches</a></td>
-      <td>Switches</td>
-    </tr>
-    <tr>
-      <td><a href="">250 mAh LiPo</a></td>
-      <td>Rechargeability</td>
-    </tr>
-    <tr>
-      <td>Housing</td>
-      <td>3D printed using PLA</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="layout-5">Layout</h4>
-<p><img src="/assets/media/input_media/hhkb/hhkb-default.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-
-<h3 id="pcb-4">PCB</h3>
-<p><img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-
-<h3 id="build-log-5">Build Log</h3>
-<blockquote>
-  <p>3-14-25:</p>
-
-  <p><img src="/assets/media/input_media/macro/hand-wire/macro-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-</blockquote>
-
-<hr />
-
-<h2 id="modular-keyboard">Modular Keyboard</h2>
-<p>Fully modular keyboard, with each keyswitch being a singular unit. A lego keyboard, if you will.</p>
-<h3 id="concept">Concept</h3>
-<p><img src="/assets/media/input_media/modular/modular-keyboard_concept.png" alt="Modular keyboard concept sketch" style="height:400px;display: block; margin: auto;" /></p>
-
-<h3 id="specs-5">Specs</h3>
-
-<h3 id="build-log-6">Build Log</h3>
-
-<blockquote>
-  <p>4-11-25:</p>
-
-  <p><img src="/assets/media/input_media/modular/modular-keyboard_concept.png" alt="macro-pcb-proto" style="height:200px;display: block; margin: auto;" /></p>
-</blockquote>
-
-<hr />
-<hr />
-
-<h1 id="mice">Mice</h1>
-
-<h2 id="ultralight-mouse">Ultralight Mouse</h2>
-<p>Chasing performance.</p>
-
-<p><img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
-
-<h3 id="specs-6">Specs</h3>
-
-<h3 id="pcb-5">PCB</h3>
-<p><img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-
-<h3 id="firmware-2">Firmware</h3>
-
-<h3 id="build-log-7">Build Log</h3>
-<blockquote>
-  <p>4-29-25:</p>
-
-  <p><img src="/assets/media/input_media/mice/ul-mouse/ul-mouse_schematic_rev0-1.png" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
-</blockquote>
-
-<hr />
-
-<h2 id="chimera">Chimera</h2>
-<p>A Keyswitch Mouse<br />
-Injecting keyboard DNA into the mouse peripheral
-<img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
-
-<h3 id="concept-1">Concept</h3>
-<p><img src="/assets/media/input_media/mice/keyswitch-mouse/keyswitch-mouse_concept.png" alt="Alt text" style="height:350px;display: block; margin: auto;" /></p>
-
-<h3 id="specs-7">Specs</h3>
-<p>4 choc keyswitches<br />
-Capacitive scroll wheel</p>
-
-<h3 id="pcb-6">PCB</h3>
-<p><img src="/assets/media/input_media/40/40+-with-fkeys.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-
-<h3 id="firmware-3">Firmware</h3>
-
-<h3 id="build-log-8">Build Log</h3>
-<blockquote>
-  <p>4-28-25:</p>
-
-  <p><img src="/assets/media/input_media/mice/keyswitch-mouse/keyswitch-mouse_schematic_rev0-1.png" alt="Alt text" style="height:400px;display: block; margin: auto;" /></p>
-</blockquote>
-
-<hr />
-
-<h2 id="macros-mouse">Macros Mouse</h2>
-<p>How many useful buttons can I fit on one mouse?<br />
-<img src="/assets/media/input_media/macro/hand-wire/IMG_0830.JPG" alt="Alt text" style="width:100%; height:auto; display:block; margin: auto;" /></p>
-
-<h3 id="concept-2">Concept</h3>
-
-<h3 id="specs-8">Specs</h3>
-
-<h3 id="pcb-7">PCB</h3>
-
-<h3 id="firmware-4">Firmware</h3>
-
-<h3 id="build-log-9">Build Log</h3>
-<blockquote>
-  <p>3-14-25:</p>
-
-  <p><img src="/assets/media/input_media/macro/macropad-proto_3-14-25.png" alt="Alt text" style="height:200px;display: block; margin: auto;" /></p>
-</blockquote>
-
-<hr />
-<hr />
-
 <h1 id="references">References</h1>
 
 <h2 id="keyboard-1">Keyboard</h2>
@@ -1175,21 +1236,6 @@ Capacitive scroll wheel</p>
 <a href="https://www.reddit.com/r/CustomKeyboards/comments/1jmcg9k/spring_cleaning/">spring cleaning</a><br />
 <a href="https://www.reddit.com/r/MechanicalKeyboards/comments/1jln2a9/cant_tell_me_keebs_arent_art_seoul_mechanical/">can’t tell me keebs aren’t art - (Seoul Mechanical Keyboard Expo) 2025</a><br />
 <a href="https://www.youtube.com/shorts/4e9Og6_fiDk">mode65</a></li>
-</ul>
-
-<p><strong>Switches</strong><br />
-<a href="https://www.reddit.com/r/MechSwitchReview/comments/hlc6wt/cherry_mx_vintage_black_review_a_modders_dream/">Cherry MX Vintage Black Review: A Modder’s Dream, Criminally Misunderstood</a><br />
-<a href="https://www.youtube.com/watch?v=QmJ-IEEBQAI">Teardown - Alps SKCL/SKCM switches by Chyrosran22</a><br />
-<a href="https://docs.google.com/spreadsheets/d/1WCzp0ujCfmMPZ6r_oSULzEEcG4pcWDd01S09OtAf9LM/edit?gid=0#gid=0">The Comprehensive Switch List - Official Version</a><br />
-<a href="https://www.alexotos.com/the-best-mechanical-keyboard-stabilizers-in-2025/">The Best Mechanical Keyboard Stabilizers - 2025 by Alexotos</a><br />
-<a href="https://varmilo.com/blogs/switches/varmilo-ec-switches-better-than-the-rest">Varmilo EC Switches. Better Than The Rest.</a><br />
-<a href="https://www.aidansmith.dev/frankenswitches/">Frankenswitches by AidanSmith.dev</a></p>
-
-<ul>
-  <li>Hall Effect
-<a href="https://www.reddit.com/r/MechanicalKeyboards/comments/1g87x4a/soundtest_of_the_most_popular_halleffect_switches/">Soundtest of the most popular Hall effect Switches (Wooting 80HE, Jade, Jade Pro, Jade Max, Magneto, Black Knight, Lekker V2)</a>
-<a href="https://www.makeuseof.com/hall-effect-vs-optical-switches/">Hall Effect vs. Optical: What Switches Should You Choose? by Yadullah Abidi</a>
-<a href="https://github.com/famichu/MagLev_Switch_MX">3D Printed Maglev Switch</a></li>
 </ul>
 
 <p><strong>Split</strong><br />
@@ -1214,14 +1260,68 @@ Capacitive scroll wheel</p>
 <a href="https://www.reddit.com/r/MechanicalKeyboards/comments/1jnxikp/i_designed_this_over_the_weekend_thought_it/">I designed this over the weekend. Thought it turned out kinda cool?</a></p>
 
 <h2 id="mice-1">Mice</h2>
-<p><a href="https://www.youtube.com/watch?v=qmX8vL-GbxU">I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything</a>
-<a href="https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb">The worlds lightest gaming mouse PCB by Patrick Schmalzried</a>
-<a href="https://www.youtube.com/watch?v=9CQqasv5_qo&amp;t=208s">I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim</a>
+<p><a href="https://www.youtube.com/watch?v=qmX8vL-GbxU">I built a mouse from scratch with 3D printing and Arduino by Ben Makes Everything</a><br />
+<a href="https://zaunkoenig.co/blog/the-worlds-lightest-gaming-mouse-pcb">The worlds lightest gaming mouse PCB by Patrick Schmalzried</a><br />
+<a href="https://www.youtube.com/watch?v=9CQqasv5_qo&amp;t=208s">I Made the Worlds LIGHTEST Mouse (Wireless) by Juskim</a><br />
 <a href="https://www.reddit.com/r/ErgoMechKeyboards/comments/1jnn0xk/jee600_in_clusterfudge_status_expected_really/">JEE600 in clusterfudge status (expected, really)</a><br />
-<a href="https://www.reddit.com/r/arduino/comments/1jc1jhp/my_mouse_projects_so_far/">My Mouse Projects So Far…</a><br />
-<a href="https://www.lofree.co/products/lofree-touch-pbt-wireless-mouse">LOFREE Touch</a><br />
-<a href="https://mechkeys.com/blogs/guide/top-six-latest-mouse-with-unique-features">2023 Top Six Latest Mouse With Unique Features: Hot-Swappable Switches, Unique Designs, and More!!</a>
+<a href="https://www.reddit.com/r/arduino/comments/1jc1jhp/my_mouse_projects_so_far/">My Mouse Projects So Far…</a> <br />
+<a href="https://www.lofree.co/products/lofree-touch-pbt-wireless-mouse">LOFREE Touch</a> <br />
+<a href="https://mechkeys.com/blogs/guide/top-six-latest-mouse-with-unique-features">2023 Top Six Latest Mouse With Unique Features: Hot-Swappable Switches, Unique Designs, and More!!</a>  <br />
 <a href="https://www.google.com/search?sca_esv=601b0517c7361365&amp;rlz=1C1RXQR_enUS930US930&amp;sxsrf=AHTn8zrtHuVK4oGJ64eYsjphaJLBXivZQQ:1746422722142&amp;q=key+switches+mouse&amp;udm=2&amp;fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBsxayPSIAqObp_AgjkUGqel3rTRMIJGV_ECIUB00muput9Zp8VMKUi0ZjqPs3JlrgPeFrAnFlUitTiL3WcJlFn10ZVAeuxL5fSn-ULNu9lz3DIW3cy7rkKNmgHapdAFAoBFSl5-LQE_swXRSgVvZGy87KiusPiw1DSGvVAMCLf6f2K4DEg&amp;sa=X&amp;ved=2ahUKEwjxp-zPy4uNAxVsle4BHTgvJhAQtKgLegQIBxAB&amp;biw=2560&amp;bih=1279&amp;dpr=1#vhid=1A7hF_VEmY1Y0M&amp;vssid=mosaic">key switches mouse</a></p>
+
+<h2 id="other-info">Other Info</h2>
+
+<p><strong>Switches</strong><br />
+<a href="https://www.reddit.com/r/MechSwitchReview/comments/hlc6wt/cherry_mx_vintage_black_review_a_modders_dream/">Cherry MX Vintage Black Review: A Modder’s Dream, Criminally Misunderstood</a><br />
+<a href="https://www.youtube.com/watch?v=QmJ-IEEBQAI">Teardown - Alps SKCL/SKCM switches by Chyrosran22</a><br />
+<a href="https://docs.google.com/spreadsheets/d/1WCzp0ujCfmMPZ6r_oSULzEEcG4pcWDd01S09OtAf9LM/edit?gid=0#gid=0">The Comprehensive Switch List - Official Version</a><br />
+<a href="https://www.alexotos.com/the-best-mechanical-keyboard-stabilizers-in-2025/">The Best Mechanical Keyboard Stabilizers - 2025 by Alexotos</a><br />
+<a href="https://varmilo.com/blogs/switches/varmilo-ec-switches-better-than-the-rest">Varmilo EC Switches. Better Than The Rest.</a><br />
+<a href="https://www.aidansmith.dev/frankenswitches/">Frankenswitches by AidanSmith.dev</a></p>
+
+<ul>
+  <li>Hall Effect
+<a href="https://www.reddit.com/r/MechanicalKeyboards/comments/1g87x4a/soundtest_of_the_most_popular_halleffect_switches/">Soundtest of the most popular Hall effect Switches (Wooting 80HE, Jade, Jade Pro, Jade Max, Magneto, Black Knight, Lekker V2)</a><br />
+<a href="https://www.makeuseof.com/hall-effect-vs-optical-switches/">Hall Effect vs. Optical: What Switches Should You Choose? by Yadullah Abidi</a><br />
+<a href="https://github.com/famichu/MagLev_Switch_MX">3D Printed Maglev Switch</a></li>
+</ul>
+
+<p><strong>PCB Design</strong>  <br />
+<a href="https://www.youtube.com/watch?v=8WXpGTIbxlQ&amp;t=537s">How to Design Mechanical Keyboard PCBs with Kicad - Joe Scotto</a><br />
+<a href="https://www.youtube.com/watch?v=o7SF2TPVV6o&amp;t=452s">Simple STM32 Mechanical Keyboard PCB Design in Kicad</a>
+<a href="https://github.com/ruiqimao/keyboard-pcb-guide?tab=readme-ov-file#associating-components-and-footprints">ruiqimao/keyboard-pcb-guide</a><br />
+<a href="https://www.masterzen.fr/2020/05/03/designing-a-keyboard-part-1/">Designing a keyboard from scratch - masterzen</a> <br />
+<a href="https://learn.sparkfun.com/tutorials/designing-pcbs-advanced-smd/all">Designing PCBs: Advanced SMD - SparkFun</a><br />
+<a href="https://www.youtube.com/watch?v=iznKltVU1yw&amp;t=6s">Creating a Keyboard PCB with Diodes (Kicad 6.0)</a></p>
+<ul>
+  <li>Lipo Charging  <br />
+<a href="https://www.youtube.com/watch?v=GRd9uTwg7r4">Li-ion Battery Charging Circuit Design - MicroType Engineering</a><br />
+<a href="https://www.reddit.com/r/AskElectronics/comments/xyfpyt/lipo_mcp73831_battery_charge_load_sharing_circuit/#:~:text=If%20MCP73831%20is%20what%20you,really%20is%20not%20that%20efficient.">LiPo MCP73831 battery charge + load sharing circuit review, and safety question</a><br />
+<a href="https://blog.zakkemble.net/a-lithium-battery-charger-with-load-sharing/">A Lithium Battery Charger with Load Sharing - Zak’s Electronics Blog</a></li>
+  <li>Antenna  <br />
+<a href="https://www.youtube.com/watch?v=cOtv0ddR3aI">Designing a PCB patch antenna for WiFi and Bluetooth | KiCad | Philip Salmony</a></li>
+</ul>
+
+<p><strong>Firmware Configs</strong></p>
+<ul>
+  <li>
+    <p>ZMK  <br />
+<a href="https://github.com/urob/zmk-config/tree/main">urob: zmk-config</a><br />
+<a href="https://github.com/mctechnology17/zmk-config/tree/main">mctechnology17</a><br />
+<a href="https://github.com/Matoch/zmk_kinesis">zmk_kinesis</a></p>
+  </li>
+  <li>
+    <p>QMK <br />
+<a href=""></a></p>
+  </li>
+</ul>
+
+<p><strong>MCU</strong>
+nrf52840<br />
+<a href="https://docs.nordicsemi.com/bundle/ps_nrf52840/page/keyfeatures_html5.html#">nrf52840 spec sheet</a> <br />
+<a href="https://fab.cba.mit.edu/classes/863.17/CBA/people/agnes/7.html">https://fab.cba.mit.edu/ - embedded programming (nrf52840)</a> <br />
+Holyiot YJ-18010 (easily handsoldered) <br />
+EBYTE E73-2G4M08S1C (available for PCB assembly)</p>
 
 <h2 id="sources">Sources</h2>
 
@@ -1264,6 +1364,34 @@ Capacitive scroll wheel</p>
     });
   </script>
 
+  <div id="kofi-button-container"></div>
+
+   <!-- <div style="
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      color: white;
+      text-align: center;
+      padding: 6px 8px;
+      font-size: 0.9rem;
+      z-index: 9999;
+    ">
+      Disclaimer: The website is a constant work in progress.
+    </div> -->
+
+    <style>
+      @media (max-width: 600px) {
+        #site-footer div[style] {
+          font-size: 0.75rem;
+          padding: 4px 6px;
+        }
+      }
+    </style>
+
+    </li>
+    
 </footer>
     <style>
   .videoWrapper {
@@ -1288,20 +1416,22 @@ Capacitive scroll wheel</p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"  defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CSSRulePlugin.min.js"  defer></script>
     <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
-    <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
       window.MathJax = {
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
         }
       };
     </script>
+    <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/links.js"></script>
     <script src="/assets/js/gifs.js"></script>
     <script src="/assets/js/menu.js"></script>
     <script src="/assets/js/open-embed.js"></script>
     <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/footnotes.js"></script>
 
 
 

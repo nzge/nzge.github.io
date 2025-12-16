@@ -32,7 +32,8 @@ Although non-standardized and quite convoluted, the severity of the strain is of
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/grade.png" 
    caption="Figure 1: Detailed hamstring strain grading scheme"
-   style="width:70%; height:auto; display: block; margin: auto;" %}
+   figure-style="width:70%;" 
+   %}
 
 **Secondary Pathologies** [^4]: Tendon rupture (especially at insertion) can cause retraction or bone fragment avulsion, in the case that the tension in the tendon forcefully rips off a portion of bone from the tendon insertion site.
 
@@ -48,7 +49,8 @@ The hamstrings anatomically comprise a group of muscles and their associated ten
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/hamstrings.png" 
    caption="Reference: Gray's Anatomy (1918) [^15]"
-   style="width:80%; height:auto; display: block; margin: auto;" %}
+   figure-style="width:80%;" 
+   %}
 
 | Muscle | Origin | Insertion |
 |--------|--------|-----------|
@@ -99,12 +101,14 @@ To further simplify and sharpen the focus of our bionic design, we have honed in
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/unhealthy.png" 
    caption="Figure 2: Force contribution of each hamstring muscle during a walking gait with a hamstring strain (22% peak isometric force reduction in semimembranosus)"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;" break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/healthy.png" 
    caption="Figure 3: Force contribution of each hamstring muscle during a walking gait without a hamstring strain"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;" break-top=false %}
 
 ### C. Bionic System Modelling
 
@@ -122,17 +126,20 @@ Our modeling abstraction must conform to the OpenSim framework and its selection
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/400N.png" 
    caption="Figure 4a: Muscle activation of unhealthy gait with 400N actuator"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;" break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/600N.png" 
    caption="Figure 4b: Muscle activation of unhealthy gait with 600N actuator"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;" break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/700N.png" 
    caption="Figure 4c: Muscle activation of unhealthy gait with 700N actuator"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;" break-top=false %}
 
 *Figure 4: Activation of hamstring muscles during 1 cycle of a patient with a semimembranosus tear (unhealthy gait) with path actuator assistance (400N, 600N, 700N max force potential actuators). Normalized to [0,1]*
 
@@ -141,17 +148,20 @@ Here is our finalized representation of hamstring muscle activation across three
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/healthy-activation.png" 
    caption="Figure 5a: Activation of hamstring muscles during 1 cycle of healthy gait"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;" break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/unhealthy-activation.png" 
    caption="Figure 5b: Activation of hamstring muscles during 1 cycle of a patient with a semimembranosus tear (unhealthy gait)"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;" break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/active-actuation.png" 
    caption="Figure 5c: Activation of hamstring muscles during 1 cycle of a patient with a semimembranosus tear (unhealthy gait) with path actuator assistance"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;" break-top=false %}
 
 <p style="text-align: center;"><i>Figure 5: Activation data gathered from CMC of healthy, unhealthy, and unhealthy assisted gaits. Normalized to [0,1]</i></p>
 
@@ -178,7 +188,8 @@ Our device is a powered knee skeleton designed to assist patients recovering fro
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/bionic.png" 
    caption="Figure 6: H.A.M.S.T.E.R: Hamstring Active Mechanical Support Training & Enhancement Robot"
-   style="width:80%; height:auto; display: block; margin: auto;" %}
+   figure-style="width:80%;" 
+   %}
 
 The system attaches to the body using adjustable straps at the thigh and calf that are connected to a simple kinematic linkage. When the knee bends, this linkage actively loosens the straps to accommodate the increased leg circumference, preventing a tourniquet effect and improving comfort and circulation. When the leg is extended, the straps automatically tighten again to provide a secure mechanical connection for torque transfer. In operation, the device supplies assistive knee torque during gait to reduce the load on the injured hamstring muscles while preserving natural joint motion and user comfort.
 
@@ -206,17 +217,20 @@ The healthy knee joint torque and angle over time for one step were exported to 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/motor1.png" 
    caption="Figure 8a: First 5 motors compared: motor 4 (TR=215) is the best (Energy lost to heat = 1.5025 J)."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;" break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/motor2.png" 
    caption="Figure 8b: Wanted to try other nominal voltages, keeping motor 4 the same but changing the other 4."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;" break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/motor3.png" 
    caption="Figure 8c: Want to try different profiles and different wattage but keeping 48V of nominal voltage (again, keeping motor 4 the same)."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;"  break-top=false %}
 
 <p style="text-align: center;"><i>Figure 8: 3-staged comparison of 13 different motors and their energy dissipation to heat loss across different transmission ratios.</i></p>
 
@@ -236,12 +250,14 @@ A rotary-to-linear transmission system was designed as the peak transmission rat
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/parameters.png" 
    caption="Figure 10: Transmission system geometric parameters"
-   style="width:50%; height:auto; display: block; margin: auto;" break-bottom=false %}
+   figure-style="width:50%;" 
+   break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/transmission.png" 
    caption="Figure 11: Transmission ratio curve across varying knee angles (optimized to peak at $-180°$ where peak torque is required)"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;"  break-top=false %}
 
 ### D. Series Elastic Actuation (SEA)
 
@@ -251,12 +267,14 @@ We evaluated the performance impact of integrating a series elastic actuator. It
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/sea.png" 
    caption="Figure 12: Input current and voltage comparison between a bionic system with and without an SEA"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;" break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/power-loss_SEA.png" 
    caption="Figure 13: Power loss across a single walking gait of a series elastic actuated system across different stiffness constants"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;"  break-top=false %}
 
 ### E. Battery Selection
 
@@ -298,7 +316,8 @@ The system will be driven using sensor inputs to a microcontroller, which then c
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/controls.png" 
    caption="Figure 14: Controls diagram"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: white; padding: 10px;" %}
+   figure-style="width:80%;" 
+   image-style="background-color: white; padding: 10px;" %}
 
 - **High-level control** (running on the Nucleo-G431RB at ≈100 Hz), the MCU reads the EMG signal through its ADC and interprets user intent (e.g., level of muscle activation and gait phase). Based on this information and a stored "desired" healthy knee profile, it generates a desired knee torque/angle trajectory and overall assistance level, and sends this reference to the mid-level controller while streaming data to the PC for logging.
 
@@ -359,7 +378,8 @@ Since the stall torque of the maxon motor is 3,430 mNm and the transmission rati
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/torque-density.png" 
    caption="Figure 15: Comparison of CMC activation data of unhealthy gait without exoskeleton and unhealthy gait with exoskeleton with recomputed accurate mass distributions based on finalized bionic architecture"
-   style="width:100%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
+   figure-style="width:100%;" 
+   image-style="height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" %}
 
 The graphs clearly demonstrate that semimembranosus activation is reduced compared to unassisted gait.
 
@@ -378,7 +398,8 @@ This technique is not well studied for its ability to withstand dynamic loading 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/ilizarov.png" 
    caption="Figure 16: Ilizarov limb-lengthening technique"
-   style="width:50%; height:auto; display: block; margin: auto;" %}
+   figure-style="width:50%;" 
+   %}
 
 **Table IV: Cost-Benefit Analysis: Ilizarov Surgical Method**
 
@@ -435,17 +456,20 @@ This project provides a structured foundation for understanding basic hamstring 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/error-healthy.png" 
    caption="Figure A1a: Error tracking of healthy gait."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/error-unhealthy.png" 
    caption="Figure A1b: Error tracking of unhealthy gait."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/error-active.png" 
    caption="Figure A1c: Error tracking of unhealthy gait with 566N path actuator"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
 <p style="text-align: center;"><i>Figure A1: Error Tracking for Comparison for Final Result.</i></p>
 
@@ -455,17 +479,20 @@ This project provides a structured foundation for understanding basic hamstring 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/reserve-healthy.png" 
    caption="Figure A2a: Force reserves of healthy gait."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/reserve-unhealthy.png" 
    caption="Figure A2b: Force reserves of unhealthy gait."
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/plots/reserve-active.png" 
    caption="Figure A2c: Force reserves of unhealthy gait with 566N path actuator"
-   style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
+   figure-style="width:80%;" 
+   image-style="background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
 <p style="text-align: center;"><i>Figure A2: Reserve Plots for Comparison for Final Result.</i></p>
 
