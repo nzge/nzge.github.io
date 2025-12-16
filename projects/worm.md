@@ -349,6 +349,11 @@ $$ A(x,t) = \sin\!\left( \phi(x,t) \right) = \sin\!\left( kx - \omega t \right).
 
 ### Control Framework
 
+#### Velocity Based Control
+
+#### Neural Intent
+
+#### Stable Heteroclinic Channels
 
 
 
