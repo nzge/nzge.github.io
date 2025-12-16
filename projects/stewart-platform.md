@@ -48,12 +48,12 @@ Top Plate
 [6 Shafts with threaded ball joint]() |
 
 ### Schematic
-<img src="https://raw.githubusercontent.com/nzge/stewart-platform/main/stewart-wiring/stewart-schematic_bb.svg?sanitize=true" alt="Stewart Platform Schematic" style="width:800px; height:450px;display: block; margin: auto; background: rgba(24, 22, 22, 0.6); border-radius: 4px;"> 
+<img src="https://raw.githubusercontent.com/nzge/stewart-platform/main/wiring/stewart-schematic_bb.svg?sanitize=true" alt="Stewart Platform Schematic" style="width:800px; height:450px;display: block; margin: auto; background: rgba(24, 22, 22, 0.6); border-radius: 4px;"> 
 
 ### Dimensions
 Simple base, platform, and link proportion calculations formatted in a csv file through Jupyter notebook serve as global variables to parametrize CAD model.
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Stewart-Platform/blob/main/stewart-measure/stewart-sizing-calcs.ipynb){:target="_blank"}
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Stewart-Platform/blob/main/measure/stewart-sizing-calcs.ipynb){:target="_blank"}
 
 
 ## Software Design
@@ -92,7 +92,7 @@ void Servos::setServoAngles(uint16_t angles[]) {
 ```
 
 ### Inverse Kinematics
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/Stewart-Platform/blob/main/stewart_inverse-kinematics.ipynb){:target="_blank"}
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/stewart-platform/blob/main/stewart_inverse-kinematics.ipynb){:target="_blank"}
 
 The inverse kinematic derivation is not incredibly complex, but not completely non-trivial. I won't expound upon the derivation in exceptional detail here, as there are many online resources that present the derivation clearer that I am capable of. [^2] However, here is the general form of the angle derived from the inverse kinematic computation.
 
