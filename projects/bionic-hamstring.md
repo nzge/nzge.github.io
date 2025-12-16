@@ -11,8 +11,6 @@ toc: true
 
 # A Hamstring Recovery Bionic System
 
-
-
 ## Abstract
 
 The hamstring muscles are a muscle group crucial to daily function, especially for movements like walking, running, and jumping. That's why hamstring strains, or any disruption to the muscle-tendon structures of the hamstring grouping, are particularly debilitating.
@@ -155,7 +153,7 @@ Here is our finalized representation of hamstring muscle activation across three
    caption="Figure 5c: Activation of hamstring muscles during 1 cycle of a patient with a semimembranosus tear (unhealthy gait) with path actuator assistance"
    style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;" break-top=false %}
 
-*Figure 5: Activation data gathered from CMC of healthy, unhealthy, and unhealthy assisted gaits. Normalized to [0,1]*
+<p style="text-align: center;"><i>Figure 5: Activation data gathered from CMC of healthy, unhealthy, and unhealthy assisted gaits. Normalized to [0,1]</i></p>
 
 Data collected at this stage will inform our bionic system design, discussed in the next section.
 
@@ -220,7 +218,8 @@ The healthy knee joint torque and angle over time for one step were exported to 
    caption="Figure 8c: Want to try different profiles and different wattage but keeping 48V of nominal voltage (again, keeping motor 4 the same)."
    style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false %}
 
-*Figure 8: 3-staged comparison of 13 different motors and their energy dissipation to heat loss across different transmission ratios.*
+<p style="text-align: center;"><i>Figure 8: 3-staged comparison of 13 different motors and their energy dissipation to heat loss across different transmission ratios.</i></p>
+
 
 Plotting the current draw and input voltage for this motor and transmission ratio combination yields the following plot.
 
@@ -374,7 +373,7 @@ Additional anatomical techniques can be employed to improve the performance of o
 
 One suggested augmentation to the bionic framework takes inspiration from the Ilizarov technique, which takes inspiration from limb lengthening surgery techniques. Wires are driven into the bone, forming bone anchors. Metal halos are attached to these wires surrounding the target limb. This surgical technique provides a rigid base to which the bionic can be attached, while also solving the problem of placing undesired pressure on the affected muscle.
 
-This technique is not well studied for its ability to withstand dynamic loading patterns, such as those sustained under walking and control inputs from our actuated system [^18][^19]. Although potentially reversible, there may also be unwarranted bone growth at anchor sites. The surgery is also quite invasive. For these reasons, this surgery may not be the most suitable option for our given pathology.
+This technique is not well studied for its ability to withstand dynamic loading patterns, such as those sustained under walking and control inputs from our actuated system [^18] [^19]. Although potentially reversible, there may also be unwarranted bone growth at anchor sites. The surgery is also quite invasive. For these reasons, this surgery may not be the most suitable option for our given pathology.
 
 {% include figure.html 
    src="/assets/media/bionic-hamstring_media/ilizarov.png" 
@@ -448,7 +447,8 @@ This project provides a structured foundation for understanding basic hamstring 
    caption="Figure A1c: Error tracking of unhealthy gait with 566N path actuator"
    style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
-*Figure A1: Error Tracking for Comparison for Final Result.*
+<p style="text-align: center;"><i>Figure A1: Error Tracking for Comparison for Final Result.</i></p>
+
 
 ### Reserve Plots
 
@@ -467,7 +467,8 @@ This project provides a structured foundation for understanding basic hamstring 
    caption="Figure A2c: Force reserves of unhealthy gait with 566N path actuator"
    style="width:80%; height:auto; display: block; margin: auto; background-color: tan; padding: 10px;"  break-top=false break-bottom=false %}
 
-*Figure A2: Reserve Plots for Comparison for Final Result.*
+<p style="text-align: center;"><i>Figure A2: Reserve Plots for Comparison for Final Result.</i></p>
+
 
 ### Motor Specification Summary
 
