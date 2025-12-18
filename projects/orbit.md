@@ -27,3 +27,7 @@ description: "Recreation of the Orbit Sprinkler Timer"
   shadow-intensity="1"
   exposure="1.0">
 </model-viewer>
+
+**Client Objective**: Produce a geometrically faithful, functionally representative, and CAD model and accompanying animatino of an Orbit Sprinkler. 
+
+<br>

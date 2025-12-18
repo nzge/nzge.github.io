@@ -6,6 +6,7 @@ date: 2024-06-20
 image: "oct-probe.png"
 description: "Mechanical housing for the IRISS beam splitter to enable automated ocular surgery"
 repo: "https://github.com/nzge/oct-probe-mount"
+toc: true
 ---
 
 <div class="container" style="border: 1px solid white; color: white; padding: 1em; border-radius: 6px;">

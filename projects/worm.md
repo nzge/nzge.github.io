@@ -108,7 +108,7 @@ One model presents the worm as a segmented series of connected four-bar linkages
 {% include figure.html 
    src="/assets/media/worm_media/2d-turning-worm.jpg" 
    caption="Figure 4: Turning worm model"
-   figure-style="width:50%;" 
+   figure-style="width:30%;" 
    %}
 
 The model can then be further generalized to a 3-D structure [^8]. If rectilinear single-line motion is the goal, the 3-D generalization is more of a programming challenge of building surface geometry to better simulate frictional forces. However, the 3-D model also opens up the option of implementing turning capabilities. From a model perspective, the simplest implementation of turning is placing a rotational hinge in between rhomboid segments. Each time a segment is activated/contracted, a turning angle is applied to the hinge associated with the contracted segment. The approach that more realistically models a worm's mode of turning action would be creating a differential radial actuation (left/right bias). Split the rhomboid into left and right chambers/tendons so you can inflate/contract them asymmetrically. If the left chamber expands more than right, the normal force distribution shifts and the body will bias to one side during sliding, which produces turning. The differential radial actuation may be a more physically realistic model and represents the neural intent of the worm, but the hinge integration is easier to build control frameworks around due to its relatively simpler dynamics.
@@ -170,11 +170,10 @@ $$
 - \underbrace{\mu\mathbf{N}}_{F_\text{friction}}
 - \mathbf{F_{contract}}
 -\underbrace{\underbrace{\mathbf{C}\,\dot{\mathbf{q}}}_{F_\text{viscous}}
-- \underbrace{\mathbf{W}}_{F_\text{weight}}}_{\text{Optional}}
-= 0
+- \underbrace{\mathbf{W}}_{F_\text{weight}}}_{\text{Optional}} = 0
 $$
 
-Let \\(\mathbf{q}_k\\) and \\(\mathbf{q}_{k+1}\\) denote the generalized coordinates at times $t_k$ and $t_{k+1}$, and let \\(\mathbf{u}_k\\) denote the velocity at time $t_k$.
+Let $$\mathbf{q}_k$$ and $$\mathbf{q}_{k+1}$$ enote the generalized coordinates at times $t_k$ and $t_{k+1}$, and let \\(\mathbf{u}_k\\) denote the velocity at time $t_k$.
 
 - The implicit Euler update gives the inertial contribution
 
@@ -191,101 +190,112 @@ $$
     \end{aligned}
     $$
 
-    The segment torsional spring energy model is as follows:
+    - The segment **torsional spring** energy model is as follows:
 
-    $$
-    \begin{aligned}
-    E^{b} &= \frac{k_{\text{torsion}}}{2}\left(\Delta \text{cross}\right)^2 \\
-    \Delta \text{cross} &= \text{cross} - \text{cross}_0 \\
-    \text{cross} &= \mathbf{t}_1 \times \mathbf{t}_2 = t_{1x} t_{2y} - t_{1y} t_{2x} \\
-    \mathbf{t}_1 &= \frac{\mathbf{e}_1}{\lVert \mathbf{e}_1 \rVert}, \quad \mathbf{t}_2 = \frac{\mathbf{e}_2}{\lVert \mathbf{e}_2 \rVert} \\
-    \mathbf{e}_1 &= \mathbf{p}_b - \mathbf{p}_a, \quad \mathbf{e}_2 = \mathbf{p}_c - \mathbf{p}_b
-    \end{aligned}
-    $$
+      $$
+      \begin{aligned}
+      E^{b} &= \frac{k_{\text{torsion}}}{2}\left(\Delta \text{cross}\right)^2 \\
+      \Delta \text{cross} &= \text{cross} - \text{cross}_0 \\
+      \text{cross} &= \mathbf{t}_1 \times \mathbf{t}_2 = t_{1x} t_{2y} - t_{1y} t_{2x} \\
+      \mathbf{t}_1 &= \frac{\mathbf{e}_1}{\lVert \mathbf{e}_1 \rVert}, \quad \mathbf{t}_2 = \frac{\mathbf{e}_2}{\lVert \mathbf{e}_2 \rVert} \\
+      \mathbf{e}_1 &= \mathbf{p}_b - \mathbf{p}_a, \quad \mathbf{e}_2 = \mathbf{p}_c - \mathbf{p}_b
+      \end{aligned}
+      $$
 
-    The force (negative gradient) is:
-    $$
-    \mathbf{F}^t = -\frac{\partial E^t}{\partial \mathbf{q}} = -k_{\text{torsion}} \Delta \text{cross} \frac{\partial \text{cross}}{\partial \mathbf{q}}
-    $$
-    where $\mathbf{q} = [x_a, y_a, x_b, y_b, x_c, y_c]^T$ and:
-    $$
-    \begin{align}
-    \frac{\partial \text{cross}}{\partial \mathbf{t}_1} &= [t_{2y}, -t_{2x}]^T \\
-    \frac{\partial \text{cross}}{\partial \mathbf{t}_2} &= [-t_{1y}, t_{1x}]^T \\
-    \frac{\partial \mathbf{t}_1}{\partial \mathbf{e}_1} &= \frac{\mathbf{I} - \mathbf{t}_1 \otimes \mathbf{t}_1}{l_1} \\
-    \frac{\partial \mathbf{t}_2}{\partial \mathbf{e}_2} &= \frac{\mathbf{I} - \mathbf{t}_2 \otimes \mathbf{t}_2}{l_2} \\
-    \frac{\partial \text{cross}}{\partial \mathbf{p}_a} &= -\frac{\partial \text{cross}}{\partial \mathbf{e}_1}, \quad
-    \frac{\partial \text{cross}}{\partial \mathbf{p}_b} = \frac{\partial \text{cross}}{\partial \mathbf{e}_1} - \frac{\partial \text{cross}}{\partial \mathbf{e}_2}, \quad
-    \frac{\partial \text{cross}}{\partial \mathbf{p}_c} = \frac{\partial \text{cross}}{\partial \mathbf{e}_2}
-    \end{align}
-    $$
+      The force (negative gradient) is:
 
-    The Hessian (Jacobian) is:
-    $$
-    \mathbf{J}^t = -\frac{\partial^2 E^t}{\partial \mathbf{q}^2} = -k_{\text{torsion}} \left[ \frac{\partial \text{cross}}{\partial \mathbf{q}} \otimes \frac{\partial \text{cross}}{\partial \mathbf{q}} + \Delta \text{cross} \frac{\partial^2 \text{cross}}{\partial \mathbf{q}^2} \right]
-    $$
-    where the first term is the Gauss-Newton approximation and the second term includes second-order derivatives of the cross product with respect to positions.
+      $$
+      \mathbf{F}^t = -\frac{\partial E^t}{\partial \mathbf{q}} = -k_{\text{torsion}} \Delta \text{cross} \frac{\partial \text{cross}}{\partial \mathbf{q}}
+      $$
 
-    The linear spring energy model is as follows:
+      where $\mathbf{q} = [x_a, y_a, x_b, y_b, x_c, y_c]^T$ and:
 
-    $$ \begin{aligned}
-    E^s &= \frac{k l_0}{2} \left(1 - \frac{l}{l_0}\right)^2, \\
-    \text{where } \quad l &= \sqrt{(x_{k+1} - x_k)^2 + (y_{k+1} - y_k)^2}.
-    \end{aligned} $$
+      $$
+      \begin{align}
+      \frac{\partial \text{cross}}{\partial \mathbf{t}_1} &= [t_{2y}, -t_{2x}]^T \\
+      \frac{\partial \text{cross}}{\partial \mathbf{t}_2} &= [-t_{1y}, t_{1x}]^T \\
+      \frac{\partial \mathbf{t}_1}{\partial \mathbf{e}_1} &= \frac{\mathbf{I} - \mathbf{t}_1 \otimes \mathbf{t}_1}{l_1} \\
+      \frac{\partial \mathbf{t}_2}{\partial \mathbf{e}_2} &= \frac{\mathbf{I} - \mathbf{t}_2 \otimes \mathbf{t}_2}{l_2} \\
+      \frac{\partial \text{cross}}{\partial \mathbf{p}_a} &= -\frac{\partial \text{cross}}{\partial \mathbf{e}_1}, \quad
+      \frac{\partial \text{cross}}{\partial \mathbf{p}_b} = \frac{\partial \text{cross}}{\partial \mathbf{e}_1} - \frac{\partial \text{cross}}{\partial \mathbf{e}_2}, \quad
+      \frac{\partial \text{cross}}{\partial \mathbf{p}_c} = \frac{\partial \text{cross}}{\partial \mathbf{e}_2}
+      \end{align}
+      $$
 
-    The force (negative gradient) is:
-    $$
-    \mathbf{F}^s = -\frac{\partial E^s}{\partial \mathbf{q}} = \frac{k l_0}{2} \left(1 - \frac{l}{l_0}\right) \frac{1}{l l_0} \begin{bmatrix}
-    -2(x_{k+1} - x_k) \\
-    -2(y_{k+1} - y_k) \\
-    2(x_{k+1} - x_k) \\
-    2(y_{k+1} - y_k)
-    \end{bmatrix}
-    $$
-    where $\mathbf{q} = [x_k, y_k, x_{k+1}, y_{k+1}]^T$.
+      The Hessian (Jacobian) is:
+      
+      $$
+      \mathbf{J}^t = -\frac{\partial^2 E^t}{\partial \mathbf{q}^2} = -k_{\text{torsion}} \left[ \frac{\partial \text{cross}}{\partial \mathbf{q}} \otimes \frac{\partial \text{cross}}{\partial \mathbf{q}} + \Delta \text{cross} \frac{\partial^2 \text{cross}}{\partial \mathbf{q}^2} \right]
+      $$
+      
+      where the first term is the Gauss-Newton approximation and the second term includes second-order derivatives of the cross product with respect to positions.
 
-    The Hessian (Jacobian) is:
-    $$
-    \mathbf{J}^s = -\frac{\partial^2 E^s}{\partial \mathbf{q}^2} = \frac{k l_0}{2} \mathbf{H}^s
-    $$
-    where $\mathbf{H}^s$ is a $4 \times 4$ symmetric matrix with components:
-    $$
-    \begin{align}
-    H^s_{ij} &= \frac{1}{l^2 l_0^2} \frac{\partial l}{\partial q_i} \frac{\partial l}{\partial q_j} + \left(1 - \frac{l}{l_0}\right) \left[ \frac{1}{l^3 l_0} \frac{\partial l}{\partial q_i} \frac{\partial l}{\partial q_j} - \frac{2}{l l_0} \delta_{ij} \right]
-    \end{align}
-    $$
-    with $\frac{\partial l}{\partial \mathbf{q}} = \frac{1}{l} [-(x_{k+1} - x_k), -(y_{k+1} - y_k), (x_{k+1} - x_k), (y_{k+1} - y_k)]^T$.
+    - The **linear spring** energy model is as follows:
+
+      $$ \begin{aligned}
+      E^s &= \frac{k l_0}{2} \left(1 - \frac{l}{l_0}\right)^2, \\
+      \text{where } \quad l &= \sqrt{(x_{k+1} - x_k)^2 + (y_{k+1} - y_k)^2}.
+      \end{aligned} $$
+
+      The force (negative gradient) is:
+
+      $$
+      \mathbf{F}^s = -\frac{\partial E^s}{\partial \mathbf{q}} = \frac{k l_0}{2} \left(1 - \frac{l}{l_0}\right) \frac{1}{l l_0} \begin{bmatrix}
+      -2(x_{k+1} - x_k) \\
+      -2(y_{k+1} - y_k) \\
+      2(x_{k+1} - x_k) \\
+      2(y_{k+1} - y_k)
+      \end{bmatrix}
+      $$
+      
+      where $\mathbf{q} = [x_k, y_k, x_{k+1}, y_{k+1}]^T$.
+
+      The Hessian (Jacobian) is:
+      
+      $$
+      \mathbf{J}^s = -\frac{\partial^2 E^s}{\partial \mathbf{q}^2} = \frac{k l_0}{2} \mathbf{H}^s
+      $$
+      
+      where $\mathbf{H}^s$ is a $4 \times 4$ symmetric matrix with components:
+      
+      $$
+      \begin{align}
+      H^s_{ij} &= \frac{1}{l^2 l_0^2} \frac{\partial l}{\partial q_i} \frac{\partial l}{\partial q_j} + \left(1 - \frac{l}{l_0}\right) \left[ \frac{1}{l^3 l_0} \frac{\partial l}{\partial q_i} \frac{\partial l}{\partial q_j} - \frac{2}{l l_0} \delta_{ij} \right]
+      \end{align}
+      $$
+      
+      with $\frac{\partial l}{\partial \mathbf{q}} = \frac{1}{l} [-(x_{k+1} - x_k), -(y_{k+1} - y_k), (x_{k+1} - x_k), (y_{k+1} - y_k)]^T$.
 
 
 - **Viscous damping** (if enabled) would produce the following. Although not important to the simulation, we could use this term to simulate worm locomotion through viscous media.
 
-$$ \begin{aligned}
-\mathbf{F}_{\mathrm{viscous}} &= -\mathbf{C}\frac{\mathbf{q}_{k+1}-\mathbf{q}_k}{\Delta t}, \\
-\mathbf{J}_{\mathrm{viscous}} &= -\frac{\mathbf{C}}{\Delta t}.
-\end{aligned} $$
+   $$ \begin{aligned}
+   \mathbf{F}_{\mathrm{viscous}} &= -\mathbf{C}\frac{\mathbf{q}_{k+1}-\mathbf{q}_k}{\Delta t}, \\
+   \mathbf{J}_{\mathrm{viscous}} &= -\frac{\mathbf{C}}{\Delta t}.
+   \end{aligned} $$
 
-In the present model, $\mathbf{F}_{\mathrm{viscous}} = \mathbf{0}$.
+   In the present model, $\mathbf{F}_{\mathrm{viscous}} = \mathbf{0}$.
 
 - **Ground contact** is enforced using a predictor–corrector scheme in which normal forces are inferred from constraint residuals, and anisotropic Coulomb friction is applied based on the direction of tangential motion.
 
-$$ N_i = \left| r_{y,i} \right| = \mathbf{F}_{\mathrm{ground}}(\mathbf{q}_k, \Delta t), $$
+   $$ N_i = \left| r_{y,i} \right| = \mathbf{F}_{\mathrm{ground}}(\mathbf{q}_k, \Delta t), $$
 
-$$ F_{\text{friction},i} =
-\begin{cases}
--\mu_{\text{forward}}\, N_i \, \mathrm{sign}(v_{x,i}), & v_{x,i} > \varepsilon, \\
--\mu_{\text{backward}}\, N_i \, \mathrm{sign}(v_{x,i}), & v_{x,i} < -\varepsilon, \\
-0, & |v_{x,i}| \le \varepsilon .
-\end{cases} $$
+   $$ F_{\text{friction},i} =
+   \begin{cases}
+   -\mu_{\text{forward}}\, N_i \, \mathrm{sign}(v_{x,i}), & v_{x,i} > \varepsilon, \\
+   -\mu_{\text{backward}}\, N_i \, \mathrm{sign}(v_{x,i}), & v_{x,i} < -\varepsilon, \\
+   0, & |v_{x,i}| \le \varepsilon .
+   \end{cases} $$
 
 - **Muscle activation / body contraction** contributes the externally supplied force. The contraction pattern is discussed in detail in the control scheme portion.
 
-$$
-\begin{aligned}
-F_{\mathrm{contract}} &= \text{ContractionEngine}_{\text{segment-driven}} (\text{contractType}, T_{\mathrm{wave}}, T_{\mathrm{contract}}), \\
-\text{OR} \\
-F_{\mathrm{contract}} &= \text{StandingWaveContraction}(\phi(x,t)).
-\end{aligned}
-$$
+   $$
+   \begin{aligned}
+   F_{\mathrm{contract}} &= \text{ContractionEngine}_{\text{segment-driven}} (\text{contractType}, T_{\mathrm{wave}}, T_{\mathrm{contract}}), \\
+   \text{OR} \\
+   F_{\mathrm{contract}} &= \text{StandingWaveContraction}(\phi(x,t)).
+   \end{aligned}
+   $$
 
 ### Contraction
 
@@ -448,11 +458,15 @@ I used the same six segment geometric worm model but altered the contraction wav
 | **Contraction Wave Parameters** |
 | $\lambda$ | $1.0~\mathrm{m}$ | Contraction wave wavelength |
 
+<div markdown="1" style="text-align: center;">
+  
 **Run A**: $1.0~\mathrm{s}$ wave period  
 **Run B**: $2.0~\mathrm{s}$ wave period  
 **Run C**: $3.0~\mathrm{s}$ wave period  
 **Run D**: $4.0~\mathrm{s}$ wave period  
 **Run E**: $5.0~\mathrm{s}$ wave period
+
+</div>
 
 {% include figure.html 
    src="/assets/media/worm_media/plots/contract-com.png" 
