@@ -24,14 +24,14 @@ layout: default
 {% assign base_path = 'projects/project_categories/' | append: category_type | append: '/' %}
 {% assign base_path_size = base_path | size %}
 <div class="container">
-  <h1 class= "wow animate__animated animate__fadeInUp" style="text-align: center; color:rgb(95, 49, 94) !important;">...</h1>
+  <h1 class= "project-item" style="text-align: center; color:rgb(95, 49, 94) !important;">...</h1>
   <section id="subcategories">
     {% for project in site.pages %}
       {% assign path_start = project.path | slice: 0, base_path_size %}
       {% if path_start == base_path %}
         {% assign sub_path = project.path | remove_first: base_path %}
         {% unless sub_path contains '/' %}
-          <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="project project-item">
             <h2><a href="{{ project.url }}" class="project-link" style="color: #FFFF00 !important;">{{ project.title }}</a></h2>
             <p>
             {% if project.link %}
@@ -49,13 +49,13 @@ layout: default
 
 <!-- Display category projects -->
 <div class="container">
-  <h1 class= "wow animate__animated animate__fadeInUp" style="text-align: center; color:rgb(95, 49, 94) !important;">...</h1>
+  <h1 class= "wow animate__fadeInUp" style="text-align: center; color:rgb(95, 49, 94) !important;">...</h1>
   <section id="projects">
     {% assign projects = site.pages | where: "category", category_type %}
     <!-- Liquid sorting based on date, from newest to oldest by default -->
     {% assign sorted_projects = projects | sort: 'date' | reverse %}
     {% for project in sorted_projects %}
-      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="{{ project.title }}" data-date="{{ project.date | date: '%Y-%m-%d' }}">
+      <div class="project wow animate__fadeInUp" data-wow-duration="1s" data-title="{{ project.title }}" data-date="{{ project.date | date: '%Y-%m-%d' }}">
         <a href="{{ project.url }}" class="project-link">
           <h3>{{ project.title }}</h3>
           <img src="/assets/media/{{ project.image }}" alt="{{ project.title }}">

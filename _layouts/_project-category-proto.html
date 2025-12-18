@@ -27,7 +27,7 @@ layout: default
     {% assign sorted_projects = projects | sort: 'date' | reverse %}
 
     {% for project in sorted_projects %}
-      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="{{ project.title }}" data-date="{{ project.date | date: '%Y-%m-%d' }}">
+      <div class="project wow animate__fadeInUp" data-wow-duration="1s" data-title="{{ project.title }}" data-date="{{ project.date | date: '%Y-%m-%d' }}">
         <a href="{{ project.url }}" class="project-link">
           <h3>{{ project.title }}</h3>
           <img src="/assets/media/{{ project.image }}" alt="{{ project.title }}">

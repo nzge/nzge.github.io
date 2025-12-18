@@ -1,13 +1,3 @@
-//At the document ready event
-document.addEventListener("DOMContentLoaded", function () {
-  new WOW().init();
-});
-
-//also at the window load event
-jQuery(window).on('load', function(){
-  new WOW().init(); 
-});
-
 
 ///////////////////////////////
 
