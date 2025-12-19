@@ -1,4 +1,9 @@
 
+
+if (typeof WOW !== 'undefined') {
+  new WOW({animateClass: 'animate__animated'}).init();
+}
+
 ///////////////////////////////
 
 // JavaScript function to go back to the previous page
