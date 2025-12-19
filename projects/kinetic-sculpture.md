@@ -30,7 +30,7 @@ description: "A surfboard shaped kinetic sculpture"
 
 <br>
 
-**Client Objective**: Produce a functional kinetic sculpture.
+**Client Objective**: Produce a functional kinetic surfboard sculpture.
 
 ## Inspiration
 
