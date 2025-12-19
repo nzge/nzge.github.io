@@ -3,7 +3,7 @@ layout: project
 category: "upwork"
 title: "Kinetic Sculpture"
 date: 2025-11-16
-image: "kinetic-surfboard.png"
+image: "kinetic-sculpture.png"
 description: "A surfboard shaped kinetic sculpture"
 ---
 
@@ -30,7 +30,7 @@ description: "A surfboard shaped kinetic sculpture"
 
 <br>
 
-**Client Objective**: Produce a functional kinetic surfboard sculpture.
+**Client Objective**: Produce a functional kinetic sculpture.
 
 ## Inspiration
 
@@ -46,7 +46,7 @@ description: "A surfboard shaped kinetic sculpture"
 [https://research.frick.org/directory/viewItem/2021](https://research.frick.org/directory/viewItem/2021)  
 [George Rickey’s Life in Motion](https://raclinmurphymuseum.nd.edu/assets/516579/passage.pdf)*  
 [https://review.kasmingallery.com/weekend-long-reads/a-technology-of-kinetic-art](https://review.kasmingallery.com/weekend-long-reads/a-technology-of-kinetic-art/)  
-[https://www.georgerickey.org/themes/movement](https://www.georgerickey.org/themes/movement)*  
+[https://www.georgerickey.org/themes/movement](https://www.georgerickey.org/themes/movement)  
 [Curious George](https://www.sacurrent.com/arts/curious-george-2284558/)  
 [Two Open Trapezoids: Excentric V by George Rickey - MOA](https://moaonline.org/two-open-trapezoids-excentric-v-by-george-rickey/)  
 [Three Squares Gyratory (Getty Museum)](https://www.getty.edu/art/collection/object/10989J)  
@@ -71,7 +71,6 @@ DESIGN AND MATHEMATICAL MODELLING OF THE KINETIC SCULPTURE BLADE - S.D. Gooch
 ### Mechanical Theory
 
 Weighted Pendulums
-
 
 ### Construction
 
