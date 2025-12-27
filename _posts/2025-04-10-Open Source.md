@@ -16,3 +16,6 @@ Does this promote homogeneity? The loss of self identity?
 
 Is solipsism the antithesis of this ideology? 
 Does there exist a leech that only takes from the world but does not give?
+
+Communism of the mind. is that so bad? if everyone knew or was exposed to everything? thought unity?
+is that where AI is headed, a knowledge sink/singularity?
