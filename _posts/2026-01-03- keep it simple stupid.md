@@ -2,7 +2,7 @@
 author: nzge
 ---
 
-keep it simple stupid. a term i first heard about through my high school robotics team. it was parroted as a funny meme phrase, the inspiration behind our team name. a phrase that 
+keep it simple stupid (kiss). a term i first heard about through my high school robotics team. it was parroted as a funny meme phrase, the inspiration behind our team name. a phrase that 
 our coach brought to attention. but as i become more of a competent engineer (whatever that means), this phrase is becoming more relevant. i will try to give examples in my 'career'
 
 stewart platform build. the approach is almost like a software project leverage various frameworks with multiple abstraction/integration layers. it is tempting to scale and complicate, to create this flashy shiny cool novel project. using ros for communication, multi-staged communication. with a raspbi to host web server.
