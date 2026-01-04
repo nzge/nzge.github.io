@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://nzge.github.io/2025/01/03/collector.html</loc>
+<lastmod>2025-01-03T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://nzge.github.io/2025/01/03/keep-it-simple-stupid-(kiss).html</loc>
+<lastmod>2025-01-03T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://nzge.github.io/2025/03/06/Test.html</loc>
 <lastmod>2025-03-06T00:00:00+00:00</lastmod>
 </url>
@@ -159,6 +167,10 @@
 <url>
 <loc>https://nzge.github.io/2025/12/29/the-visual-image-of-music.html</loc>
 <lastmod>2025-12-29T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://nzge.github.io/2026/01/03/learning.html</loc>
+<lastmod>2026-01-03T00:00:00+00:00</lastmod>
 </url>
 <url>
 <loc>https://nzge.github.io/pages/about.html</loc>
@@ -321,22 +333,22 @@
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/about/nathan-ge_resume.pdf</loc>
-<lastmod>2025-12-30T00:12:36+00:00</lastmod>
+<lastmod>2026-01-04T05:50:24+00:00</lastmod>
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/capstone-robot_media/Team05_Final-Design-Report_MAE162E-2024.pdf</loc>
-<lastmod>2025-12-30T00:12:36+00:00</lastmod>
+<lastmod>2026-01-04T05:50:24+00:00</lastmod>
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/solar-car_media/Ge_ChassisFEA.pdf</loc>
-<lastmod>2025-12-30T00:12:38+00:00</lastmod>
+<lastmod>2026-01-04T05:50:26+00:00</lastmod>
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/solar-car_media/Ge_FinalReport.pdf</loc>
-<lastmod>2025-12-30T00:12:38+00:00</lastmod>
+<lastmod>2026-01-04T05:50:26+00:00</lastmod>
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/solar-car_media/Ge_WorkingDrawingPackage.pdf</loc>
-<lastmod>2025-12-30T00:12:38+00:00</lastmod>
+<lastmod>2026-01-04T05:50:26+00:00</lastmod>
 </url>
 </urlset>
