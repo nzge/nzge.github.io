@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://nzge.github.io/0001/01/01/the-philosophy-of-digital-organization.html</loc>
+<lastmod>0001-01-01T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://nzge.github.io/0001/01/01/the-science-of-electronic-music.html</loc>
+<lastmod>0001-01-01T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://nzge.github.io/2025/03/06/Test.html</loc>
 <lastmod>2025-03-06T00:00:00+00:00</lastmod>
 </url>
@@ -358,22 +366,22 @@
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/about/nathan-ge_resume.pdf</loc>
-<lastmod>2026-01-09T00:48:42+00:00</lastmod>
+<lastmod>2026-01-09T00:57:16+00:00</lastmod>
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/capstone-robot_media/Team05_Final-Design-Report_MAE162E-2024.pdf</loc>
-<lastmod>2026-01-09T00:48:42+00:00</lastmod>
+<lastmod>2026-01-09T00:57:16+00:00</lastmod>
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/solar-car_media/Ge_ChassisFEA.pdf</loc>
-<lastmod>2026-01-09T00:48:44+00:00</lastmod>
+<lastmod>2026-01-09T00:57:18+00:00</lastmod>
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/solar-car_media/Ge_FinalReport.pdf</loc>
-<lastmod>2026-01-09T00:48:44+00:00</lastmod>
+<lastmod>2026-01-09T00:57:18+00:00</lastmod>
 </url>
 <url>
 <loc>https://nzge.github.io/assets/media/solar-car_media/Ge_WorkingDrawingPackage.pdf</loc>
-<lastmod>2026-01-09T00:48:44+00:00</lastmod>
+<lastmod>2026-01-09T00:57:18+00:00</lastmod>
 </url>
 </urlset>
