@@ -6,15 +6,29 @@ description: "topical discussions"
 
 <h1>Topics</h1>
 
-{% assign topic_posts = site.posts | where_exp: "post", "post.topics" %}
+<div class="container">
 
-{% for post in topic_posts %}
-  <div>
-    <h2>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </h2>
-    <h3>{{ post.date | date_to_string }}</h3>
-    {{ post.excerpt }}
-  </div>
+    <h3 style="text-align: justify;">More curated thoughts on topics i deem worth delving into</h3>
+
   <br>
-{% endfor %}
+
+    <ul>
+    {% for post in site.posts %}
+        {% if post.type == "topic" %}
+            <div>
+            <h2 ><a style="color:teal !important; " href="{{ post.url }}">{{ post.title }}</a></h2>
+            <h3>{{ post.date | date_to_string }}</h3>
+            {{ post.excerpt }}
+            </div>
+            <br>
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+  <a href="http://validator.w3.org/feed/check.cgi?url=https%3A//nzge.github.io/feed.xml" style="display: block; text-align: center; margin: auto;">
+    <img src="/assets/media/!misc/icons/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" />
+  </a>
+
+  <br>
+  
+</div>
