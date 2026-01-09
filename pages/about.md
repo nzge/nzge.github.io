@@ -20,6 +20,3 @@ Mechanical Engineering student with an interest in robotics and industrial desig
 Hobbies: olympic weightlifting, wrestling, cooking, backpacking, and singing
 
 <iframe src="https://github.com/sponsors/nzge/button" title="Sponsor nzge" height="32" width="114" style="margin: 0 auto; border: 0; border-radius: 6px;"></iframe>
-
-
-![Duolingo Stats](https://duolingo-stats-card.vercel.app/api?username=naythun_&theme=github-dark&sort=xp){: style="display: block; margin: auto;"}

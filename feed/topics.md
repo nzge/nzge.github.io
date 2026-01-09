@@ -8,7 +8,7 @@ description: "topical discussions"
 
 <div class="container">
 
-    <h3 style="text-align: justify;">More curated thoughts on topics i deem worth delving into</h3>
+  <h3 style="text-align: center;">More curated thoughts on topics i deem worth delving into</h3>
 
   <br>
 
