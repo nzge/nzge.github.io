@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 Is the world finally healing?

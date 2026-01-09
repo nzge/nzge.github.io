@@ -1,3 +1,8 @@
+---
+author: nzge
+type: topic
+---
+
 1.7.25
 i have become enamoured by the complex science 
 wave manipulation 

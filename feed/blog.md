@@ -14,13 +14,14 @@ description: "personal blog"
 
     <ul>
     {% for post in site.posts %}
-        <div>
-        <h2 ><a style="color:teal !important; " href="{{ post.url }}">{{ post.title }}</a></h2>
-        <h3>{{ post.date | date_to_string }}</h3>
-        {{ post.excerpt }}
-        </div>
-        
-        <br>
+        {% if post.type == "blog" %}
+            <div>
+            <h2 ><a style="color:teal !important; " href="{{ post.url }}">{{ post.title }}</a></h2>
+            <h3>{{ post.date | date_to_string }}</h3>
+            {{ post.excerpt }}
+            </div>
+            <br>
+        {% endif %}
     {% endfor %}
     </ul>
 

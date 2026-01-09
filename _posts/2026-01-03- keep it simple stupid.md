@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 keep it simple stupid (kiss). a term i first heard about through my high school robotics team. it was parroted as a funny meme phrase, the inspiration behind our team name. a phrase that 

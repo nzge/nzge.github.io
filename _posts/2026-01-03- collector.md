@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 we are all collectors one way or another. collector of ideas. collector of images (photography), sounds (our playlists)

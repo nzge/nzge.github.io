@@ -1,3 +1,7 @@
+---
+author: nzge
+type: topic
+---
 
 it is an all encompassing philosophy
 

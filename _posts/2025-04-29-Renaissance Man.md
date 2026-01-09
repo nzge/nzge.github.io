@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 **What does it mean to be a Renaissance man in 2025?**

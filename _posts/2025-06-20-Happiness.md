@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 I refuse to live in a reality where happiness/contentness is derived for personal characteristics or states of being. If that were the case, it would provide evidence for the opposing/mirroring perspective that if I didn't meet a certain set of criteria, that I would be miserable. I refuse to entertain that reality, that I can't be happy if I wasn't the way I was. What if in an alternate reality, I was someone else or something different. It's a logical argument in a sense.

@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 The world is becoming more and more open source.

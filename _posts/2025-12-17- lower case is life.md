@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 lowercase is life.

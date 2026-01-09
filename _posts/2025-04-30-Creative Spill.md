@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 What is "creative spill" and how do we harness it?

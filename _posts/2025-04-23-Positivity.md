@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 Having a positive outlook on any given situation is the only way to persist. It is the utilitarian approach.

@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 Living a data driven existence. Is that the future?

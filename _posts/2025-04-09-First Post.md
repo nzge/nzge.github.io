@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 Hi. This is my first post.

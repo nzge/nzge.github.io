@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 What inspires me? 

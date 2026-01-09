@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 The internet is my greatest teacher and mentor. Yes. Not any one teacher in elementary, middle, or high school. It certainly wasn't Mr. Niebaum (Knee Bomb, we liked to call him). Not any teacher in Chinese after school, or professor in uni. Any one adult/parent, mentor, or "guru". Not even my parents.

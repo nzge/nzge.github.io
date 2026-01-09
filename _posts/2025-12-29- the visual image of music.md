@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 the visual logic of music is starting to click into my mind for me. 

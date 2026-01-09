@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 Why do I frame everything in life as a question, and what does that say about who I am?

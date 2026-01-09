@@ -1,5 +1,6 @@
 ---
 author: nzge
+type: blog
 ---
 
 Normalize uniqueness. Normalize doing things nobody has done, or doing things that you do not because you've seen someone else do them.
