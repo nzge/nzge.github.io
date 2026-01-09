@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Blog
+description: "personal blog"
 ---
 
 <h1>Word Vomit</h1>
