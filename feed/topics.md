@@ -4,12 +4,14 @@ title: Topics
 description: "topical discussions"
 ---
 
-<div class="go-back" onclick="goBack()">Go Back</div>
+
 
 <h1>Topics</h1>
 
 <div class="container">
 
+  <div class="go-back" onclick="goBack()">Go Back</div>
+  
   <h3 style="text-align: center;">More curated thoughts on topics i deem worth delving into</h3>
 
   <br>
