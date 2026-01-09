@@ -2,5 +2,13 @@
   link: /
 - name: About
   link: /pages/about.html
+- name: Contact
+  link: /pages/contact.html
+- name: Work
+  link: /pages/work.html
+- name: Feed
+  link: /pages/feed.html
+- name: Topics
+  link: /pages/feed/topics.html
 - name: Blog
-  link: /pages/blog.html
+  link: /pages/feed/blog.html
