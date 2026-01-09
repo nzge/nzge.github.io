@@ -4,6 +4,8 @@ title: Topics
 description: "topical discussions"
 ---
 
+<div class="go-back" onclick="goBack()">Go Back</div>
+
 <h1>Topics</h1>
 
 <div class="container">

@@ -4,6 +4,8 @@ title: Blog
 description: "personal blog"
 ---
 
+<div class="go-back" onclick="goBack()">Go Back</div>
+
 <h1>Word Vomit</h1>
 
 <div class="container">
