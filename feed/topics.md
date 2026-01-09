@@ -17,7 +17,6 @@ description: "topical discussions"
         {% if post.type == "topic" %}
             <div>
             <h2 ><a style="color:teal !important; " href="{{ post.url }}">{{ post.title }}</a></h2>
-            <h3>{{ post.date | date_to_string }}</h3>
             {{ post.excerpt }}
             </div>
             <br>
