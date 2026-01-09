@@ -3,6 +3,8 @@ author: nzge
 type: topic
 ---
 
+electronic music is beautiful
+
 1.7.25
 i have become enamoured by the complex science 
 wave manipulation 
