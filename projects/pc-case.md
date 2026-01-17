@@ -14,6 +14,20 @@ There is something about the fantasy of a tiny block of condensed compute that i
 
 This led me to chase the idea of creating my own compact PC case design to fulfill my personal needs. 
 
+===
+
+SFX PC CASE
+
+## Features
+
+## Materials and Construction
+
+## Build Log 
+
+---
+
+NAS SYSTEM CASE
+
 ## Features
 
 ## Materials and Construction
