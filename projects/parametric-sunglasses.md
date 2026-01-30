@@ -5,6 +5,7 @@ title: "Parametric Sunglasses"
 date: 2026-01-20
 image: "placeholder.jpg"
 description: "sunglasses perfectly attuned to your preferenced"
+status: ongoing
 repo: "https://github.com/nzge/sunglasses"
 toc: true
 ---
