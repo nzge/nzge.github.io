@@ -4,7 +4,7 @@ category: "personal"
 title: "Parametric Sunglasses"
 date: 2026-01-20
 image: "placeholder.jpg"
-description: "sunglasses perfectly attuned to your preferenced"
+description: "sunglasses perfectly attuned to your preference"
 status: ongoing
 repo: "https://github.com/nzge/sunglasses"
 toc: true

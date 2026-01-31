@@ -34,7 +34,11 @@ layout: default
         {% if project.link %}
             <a href="{{ project.link.url }}" target="_blank" rel="noopener">{{ project.link.label }}</a>
         {% endif %}  
+        <p>{{ project.date | date: '%Y-%m-%d' }}</p>
         <p>{{ project.description | raw }}
+        {% if project.status %}
+          <p>project status: {{ project.status }}</p>
+        {% endif %} 
         </p>
       </div>
     {% endfor %}
