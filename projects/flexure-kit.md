@@ -9,3 +9,12 @@ repo: "https://github.com/nzge/flexure-kit"
 toc: true
 ---
 
+**Project objective:**
+
+## Build Log
+
+> 02-11-26: 1st iteration 
+>
+> ![Alt text](/assets/media/flexure-kit_media/2026-02-11.png){: 
+style="width:400px;display: block; margin: auto;"}
+

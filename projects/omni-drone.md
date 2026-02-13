@@ -12,7 +12,6 @@ toc: true
 
 **Project objective:**
 
-
 ## Build Log
 
 > 01-30-26: 1st iteration 
