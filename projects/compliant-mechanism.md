@@ -9,7 +9,8 @@ repo: "https://github.com/nzge/flexure-kit"
 toc: true
 ---
 
-![Micro-mirror compliant mechanism](/assets/media/compliant-mirror-MAE294A.png)
+![Micro-mirror compliant mechanism](/assets/media/compliant-mirror-MAE294A.png){: 
+style="width:100%;display: block; margin: auto;"}
 
 # Design of a Micro-Mirror Compliant Mechanism
 
@@ -68,7 +69,7 @@ Instead of having the mirror at static positions, the Fraunhofer design applies 
 ## II. Topology
 
 {% include figure.html 
-   src="/assets/media/compliant-mirror-MAE294A.png" 
+   src="/assets/media/compliant-mirror-MAE294A_media/fig-2-design.png" 
    caption="Figure 2: Micro-mirror Design"
    figure-style="width:50%;" 
    break-bottom=false %}
