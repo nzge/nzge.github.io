@@ -16,7 +16,6 @@ Capture/model fundamental vehicle physics to inform design decisions.
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/lap-sim/blob/main/track-generation.ipynb){:target="_blank"}
 
 
-
 ## Vehicle Model
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nzge/lap-sim/blob/main/vehicle-model.ipynb){:target="_blank"}
 
@@ -25,7 +24,6 @@ Capture/model fundamental vehicle physics to inform design decisions.
 ### Tires
 
 ### Accumulator
-
 
 
 ## Laptime Simulation

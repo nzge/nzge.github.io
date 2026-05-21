@@ -9,6 +9,8 @@ repo: "https://github.com/nzge/mae-263f"
 toc: true
 ---
 
+![worm animation](/assets/media/worm_media/worm.gif)
+
 # Characterization and Simulation of a Worm-Inspired Robot
 
 ## Abstract
@@ -551,7 +553,7 @@ This project establishes a computational foundation for investigating efficient 
 
 <br>
 
-[Report](https://github.com/nzge/bionics/tree/main/MAE-263F/final_report/final_report.pdf)
+[Report](https://github.com/nzge/MAE-263F/tree/main/final_report/final_report.pdf)
 
 **Nathan Ge**  
 Department of Mechanical and Aerospace Engineering  
