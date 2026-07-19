@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "fiverr"
+category: "upwork"
 title: "Cooper Picks"
 date: 2026-07-04
 image: "cooper-picks.PNG"
