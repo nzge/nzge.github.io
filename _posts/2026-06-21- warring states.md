@@ -1,3 +1,7 @@
+---
+author: nzge
+type: blog
+---
 
 the mind is a collection of feudal warring states vying for domination
 let the best state be victorious

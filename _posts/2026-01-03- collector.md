@@ -7,3 +7,15 @@ we are all collectors one way or another. collector of ideas. collector of image
 this can be seen as a manifestation of being observant. i believe there is correlation, and perhaps causation. those who 'collect' more are often more observant of the world. and being observant is meditative, being present. seeing every little beautiful detail in the world.
 be more of a collector
 
+
+
+7.26.26
+i have this incessant compulsion to archive my personal history
+in the form of useless brochures, homework assignments, random pamphlets, maps, etc.
+
+do i have a mental deficiency? maybe
+what is this special kind of autism i possess
+why do i have this priority on preserving personal history and collecting of useless papers
+
+is it a complete waste of time? probably
+do i have to do it? yes
