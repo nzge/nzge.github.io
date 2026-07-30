@@ -19,3 +19,7 @@ why do i have this priority on preserving personal history and collecting of use
 
 is it a complete waste of time? probably
 do i have to do it? yes
+
+7.29.26
+sometimes we have to break the illusion that the things we deem important in life are really that important. by doing things incomprehensibly pointless.
+things such as archiving useless papers for days
