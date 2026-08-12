@@ -14,9 +14,23 @@ document.addEventListener("DOMContentLoaded", function () {
   window.__wowInitialised = true;
 
   new WOW({
-    live: false   // no MutationObserver: the project grid re-appends the same
+    live: false,  // no MutationObserver: the project grid re-appends the same
                   // nodes when sorted, which WOW would otherwise treat as new
                   // elements and re-animate.
+
+    // This site uses animate.css v4, whose class is `animate__animated`.
+    // WOW still defaults to the v3 name `animated`, and on animationend it
+    // runs `className.replace(animateClass, "")`. String.replace hits the
+    // FIRST substring match -- which lives inside `animate__animated` -- so
+    // it mangled that class to `animate__`, stripping the animation-duration
+    // and fill-mode it carries. The resulting property change restarted the
+    // animation, which fired animationend again: the flicker loop on the
+    // footer and every other .wow element.
+    animateClass: 'animate__animated',
+
+    // Belt and braces: nothing should mutate classes once the animation has
+    // played. Elements are meant to appear exactly once on scroll.
+    resetAnimation: false
   }).init();
 });
 

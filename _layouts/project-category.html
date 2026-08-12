@@ -31,7 +31,7 @@ layout: default
       {% if path_start == base_path %}
         {% assign sub_path = project.path | remove_first: base_path %}
         {% unless sub_path contains '/' %}
-          <div class="project project-item" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="project project-item">
             <h2><a href="{{ project.url }}" class="project-link" style="color: #FFFF00 !important;">{{ project.title }}</a></h2>
             <p>
             {% if project.link %}
