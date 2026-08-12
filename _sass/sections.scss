@@ -1,12 +1,12 @@
 
 /*--------------- TOC --------------- */
 .toc-box {
-  border: 2px solid #ccc; /* Border around the TOC box */
+  border: 2px solid var(--theme-border); /* Border around the TOC box */
   padding: 15px; /* Padding inside the box */
   margin: 20px; /* Space around the TOC box */
   margin-bottom: 6em;
   border-radius: 8px; /* Optional rounded corners */
-  color: teal;
+  color: var(--theme-toc-text);
   
   // Background pattern
   /*background-color: transparent; */
@@ -36,14 +36,14 @@
   background-color: transparent;
   margin: 5px 0;
   padding: 10px 30px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid var(--theme-rule);
   border-radius: 3px;
 }
 
 /*--------------- Header --------------- */
 header {
   background-color: transparent;
-  color: #fff;
+  color: var(--theme-text);
   padding: 10px 20px;
 }
 
@@ -54,7 +54,7 @@ footer {
   align-items: center;
   padding: 10px 20px;
   background: transparent;
-  color: white;
+  color: var(--theme-text);
 }
 
 .footer-content {
@@ -66,7 +66,7 @@ footer {
 .footer-line {
   width: 100%;
   height: 1px;
-  background-color: #928686;
+  background-color: var(--theme-footer-rule);
   margin-bottom: 15px;
 }
 

@@ -1,10 +1,10 @@
 /*--------------- Variables --------------- */
-$primary-color: white;
+$primary-color: var(--theme-nav);
 $hover-color: #45a049;
 $button-bg: #aa2b4b;
 $go-back-color: #c16b00;
-$dropdown-bg: #000000;
-$dropdown-text: #ffffff;
+$dropdown-bg: var(--theme-panel);
+$dropdown-text: var(--theme-text);
 
 /*--------------- Navbar --------------- */
 .navbar {
@@ -136,7 +136,7 @@ select {
   }
 
   &:hover {
-    border-color: #999;
+    border-color: var(--theme-field-focus);
     border-radius: 4px;
   }
 }
@@ -150,7 +150,7 @@ select {
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: var(--theme-field-bg);
     min-width: 160px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     padding: 12px 16px;
@@ -159,9 +159,9 @@ select {
       display: block;
       padding: 10px 0;
       text-decoration: none;
-      color: #333;
+      color: var(--theme-field-text);
       &:hover {
-        background-color: #f1f1f1;
+        background-color: var(--theme-field-hover);
       }
     }
   }
@@ -178,7 +178,7 @@ select {
   right: -125px;
   transform: translateY(-80%);
   width: 150px;
-  background-color: rgba(24, 22, 22, 0.4);
+  background-color: var(--theme-panel-soft);
   border-radius: 10px 0 0 10px;
   transition: right 0.3s ease-in-out;
   z-index: 999;
@@ -198,7 +198,7 @@ select {
       width: 24px;
       height: 24px;
       cursor: pointer;
-      filter: invert(1); // For white icons on dark background
+      filter: invert(var(--theme-icon-invert)); // monochrome icons flip with the theme
       transition: transform 0.2s;
 
       &:hover {
@@ -224,66 +224,62 @@ select {
   cursor: pointer;
 }
 
-#hamburger{
-  position:relative;
-  width: 20px;
-  height: 25px;
+/* Three bars: the <span> is the middle bar, its ::before / ::after are the
+   outer two. All three are the same width and share a centre transform
+   origin, so the two outer bars cross exactly when rotated to ±45deg.
+
+   The middle bar is hidden by going transparent rather than by opacity,
+   because opacity on the span would fade its pseudo-elements too. */
+
+#hamburger {
+  position: relative;
+  width: 28px;
+  height: 28px;
   z-index: 1001;
 
-  span{
+  span {
     position: absolute;
-    top: 0%;
-    transform: translateY(-10%);
-    display: inline-block;
+    top: 50%;
+    right: 0;
+    display: block;
     width: 28px;
     height: 2px;
-    background-color: #e5e3dc;
-    transition: transform 0.25s;
+    margin-top: -1px;             // centre the 2px bar on the 50% line
+    background-color: var(--theme-bar);
+    transition: background-color 0.2s ease;
 
-    &::after{
+    &::before,
+    &::after {
       position: absolute;
       right: 0;
-      display: inline-block;
+      display: block;
       content: '';
-      width: 28px;
-      height: 2px;
-      background: #e5e3dc;
-      transform: translateY(5px);
-      transition: transform 0.25s;
-    }  
+      width: 28px;               // equal widths — mismatched widths were
+      height: 2px;               // what made the X look doubled
+      background-color: var(--theme-bar);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  background-color 0.2s ease;
+    }
 
-    &::before{
-      position: absolute;
-      right: 0;
-      display: inline-block;
-      content: '';
-      width: 28px;
-      height: 2px;
-      background-color: #e5e3dc;
-      transform: translateY(-5px);
-      transition: transform 0.25s;
-    }  
+    &::before { transform: translateY(-8px); }
+    &::after  { transform: translateY(8px); }
   }
 
-  &.active {
-    transform: rotate(45deg);  // Rotate hamburger when active
+  &.active span {
+    background-color: transparent;   // middle bar drops out
 
-    span::before {
-      top: unset;
-      width: 24px;
-      transform: rotate(-90deg);  // Rotate before span
-    }
-
-    span::after {
-      transform: rotate(90deg);  // Rotate after span
-    }
+    // Both bars return to the centre line first, then rotate opposite
+    // ways. Composing translate+rotate in one transform (rather than
+    // letting rotate replace the translate) is what actually forms the X.
+    &::before { transform: translateY(0) rotate(45deg); }
+    &::after  { transform: translateY(0) rotate(-45deg); }
   }
 }
 
 :root{
-  --bg : #000;
-  --link-color: #000;
-  --overlay-bg: #000000;
+  /* Legacy: only --overlay-bg is consumed (by `svg path`). Kept so the
+     commented-out hero overlay still works if it is ever re-enabled. */
+  --overlay-bg: var(--theme-bg);
 }
 
 .overlay{
@@ -299,32 +295,130 @@ svg path {
   fill: var(--overlay-bg)
 }
 
-.menu {
+/*--------------- Menu panel ---------------
+   Sits directly under the hamburger in the top-right corner.
+   Transparent surface with a blur so page content reads through it.
+------------------------------------------ */
+
+/* Deliberately NOT `.menu` — a legacy navbar rule at the top of this file
+   already claims that selector inside a max-width:750px media query. */
+.menu-panel {
   position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+  top: calc(2em + 58px);          // clears the 50px button + its 2em margin
+  right: 2em;
+  z-index: 1000;
 
-  a {
-    position: relative;
-    top: 120px;
-    line-height: 70%;
-    text-decoration: none;
-    color: red;
+  min-width: 210px;
+  padding: 0.65rem;
 
-    span {
-      font-size: 20px;
-      margin-right: 2em;
-      font-family: "Ayer";
+  background-color: var(--theme-surface);
+  border: 1px solid var(--theme-surface-brd);
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
 
-    }
+  // Hidden by default. visibility + pointer-events keep it unfocusable
+  // and unclickable while closed; opacity/transform do the animation.
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px) scale(0.97);
+  transform-origin: top right;
+  transition: opacity 0.25s ease,
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0s linear 0.25s;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.25s ease,
+                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0s linear 0s;
+  }
+
+  @media (max-width: 480px) {
+    right: 1em;
+    left: auto;
+    min-width: 190px;
   }
 }
 
-.menu > div {
-  position: relative; 
+.menu-row {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--theme-text);
+
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--theme-surface-hover);
+  }
+}
+
+.menu-row-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+/* Compact theme switch, scaled down from the .switch/.slider pair below. */
+.theme-switch {
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .theme-slider {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    border-radius: 22px;
+    background-color: rgba(128, 128, 128, 0.45);
+    border: 1px solid var(--theme-surface-brd);
+    transition: background-color 0.25s ease;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 16px;
+      height: 16px;
+      left: 2px;
+      bottom: 2px;
+      border-radius: 50%;
+      background-color: var(--theme-bar);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  input:checked + .theme-slider::before {
+    transform: translateX(18px);
+  }
+
+  input:focus-visible + .theme-slider {
+    outline: 2px solid var(--theme-link);
+    outline-offset: 2px;
+  }
 }
 
 /*--------------- Slider --------------- */
@@ -352,7 +446,7 @@ svg path {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--theme-track);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -364,17 +458,17 @@ svg path {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--theme-knob);
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: var(--theme-accent);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px var(--theme-accent);
 }
 
 input:checked + .slider:before {
@@ -486,13 +580,13 @@ input:checked + .slider:before {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: var(--theme-dot);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 
   &.active, .dot:hover {
-    background-color: #717171;
+    background-color: var(--theme-dot-active);
   }
 }
 
@@ -507,8 +601,8 @@ input:checked + .slider:before {
   right: 40px;
   z-index: 9999;
   font-size: 24px;
-  background-color: #333;
-  color: white;
+  background-color: var(--theme-btn-bg);
+  color: var(--theme-btn-text);
   border: none;
   border-radius: 50%;
   width: 48px;
@@ -520,7 +614,7 @@ input:checked + .slider:before {
   pointer-events: auto;
 
   &:hover {
-    background-color: #555;
+    background-color: var(--theme-btn-hover);
     transform: scale(1.1);
   }
 }

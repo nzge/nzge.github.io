@@ -7,8 +7,8 @@ html, body {
   width: 100%;
   height: 100%;
   font-family: 'Roboto Mono', monospace; 
-  background: black; 
-  color: #ffffff;
+  background: var(--theme-bg);
+  color: var(--theme-text);
 }
 
 // Overriding background from html, body block:
@@ -159,7 +159,7 @@ Retrieved 2025-12-16
     padding: 0; /* No padding to ensure tight fit */
     text-align: justify;
     font-style: italic;
-    color: #cccccc;
+    color: var(--theme-text-soft);
     box-sizing: border-box;
     overflow-wrap: break-word;
   }

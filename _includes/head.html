@@ -4,6 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Theme bootstrap. Must run before first paint, otherwise a light-mode
+       visitor gets a black flash while the stylesheet and menu.js load.
+       Dark is the default, so we only ever set the attribute for light. -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('nz-theme') === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) { /* storage blocked; fall back to dark */ }
+    })();
+  </script>
   <title>Nathan Ge{% if page.title %} - {{ page.title }}{% endif %}</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Nathan Ge is a mechanical engineer and designer based in the Bay Area.{% endif %}">
   

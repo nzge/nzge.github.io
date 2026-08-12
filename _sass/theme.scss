@@ -1,0 +1,120 @@
+/*--------------- Theme Tokens ---------------
+
+   Dark is this site's native look and stays the default, so every dark
+   value below is the colour that was previously hardcoded — switching
+   the toggle off reproduces the original design exactly.
+
+   Light overrides page chrome only (background, text, rules, links,
+   menu). Code blocks intentionally stay on the Dracula palette in both
+   themes; dark code on a light page is a deliberate choice, not an
+   oversight.
+
+   Tokens are namespaced --theme-* to avoid colliding with the older
+   --bg / --link-color / --overlay-bg declarations in
+   interactive-elements.scss.
+-------------------------------------------- */
+
+:root {
+  /* --- page chrome --- */
+  --theme-bg:           #000000;
+  --theme-text:         #ffffff;
+  --theme-text-soft:    #cccccc;
+  --theme-rule:         #e8e8e8;
+  --theme-border:       #cccccc;
+  --theme-link:         #1f5c85;
+  --theme-link-hover:   #ff6347;
+  --theme-bar:          #e5e3dc;
+  --theme-nav:          #ffffff;
+  --theme-footer-rule:  #928686;
+  --theme-toc-text:     teal;
+
+  /* --- menu surface: transparent, blurred over page content --- */
+  --theme-surface:       rgba(18, 18, 18, 0.55);
+  --theme-surface-brd:   rgba(229, 227, 220, 0.28);
+  --theme-surface-hover: rgba(229, 227, 220, 0.10);
+
+  /* --- raised panels: project cards, side menu --- */
+  --theme-panel:        rgba(24, 22, 22, 0.6);
+  --theme-panel-brd:    rgba(24, 22, 22, 0.6);
+  --theme-panel-soft:   rgba(24, 22, 22, 0.4);
+
+  /* --- forms and dropdowns (light-on-dark by original design) --- */
+  --theme-field-bg:     #f9f9f9;
+  --theme-field-text:   #333333;
+  --theme-field-brd:    #cccccc;
+  --theme-field-hover:  #f1f1f1;
+  --theme-field-focus:  #999999;
+  --theme-input-bg:     #ffffff;
+
+  /* --- controls --- */
+  --theme-accent:       #2196F3;
+  --theme-accent-fg:    #ffffff;
+  --theme-track:        #cccccc;
+  --theme-knob:         #ffffff;
+  --theme-dot:          #bbbbbb;
+  --theme-dot-active:   #717171;
+  --theme-btn-bg:       #333333;
+  --theme-btn-text:     #ffffff;
+  --theme-btn-hover:    #555555;
+
+  /* Monochrome menu icons are authored black; invert them onto dark. */
+  --theme-icon-invert:  1;
+
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --theme-bg:           #f2f0ea;
+  --theme-text:         #171614;
+  --theme-text-soft:    #44423c;
+  --theme-rule:         #cfcbc2;
+  --theme-border:       #b9b5ac;
+  --theme-link:         #1f5c85;
+  --theme-link-hover:   #c8431d;
+  --theme-bar:          #171614;
+  --theme-nav:          #171614;
+  --theme-footer-rule:  #c3bcb4;
+  --theme-toc-text:     #0f5c5c;
+
+  --theme-surface:       rgba(255, 255, 255, 0.55);
+  --theme-surface-brd:   rgba(23, 22, 20, 0.22);
+  --theme-surface-hover: rgba(23, 22, 20, 0.08);
+
+  --theme-panel:        rgba(255, 255, 255, 0.72);
+  --theme-panel-brd:    rgba(23, 22, 20, 0.16);
+  --theme-panel-soft:   rgba(255, 255, 255, 0.6);
+
+  --theme-field-bg:     #ffffff;
+  --theme-field-text:   #26241f;
+  --theme-field-brd:    #c3bcb4;
+  --theme-field-hover:  #ece9e2;
+  --theme-field-focus:  #8a837a;
+  --theme-input-bg:     #f7f5f1;
+
+  --theme-accent:       #1f6fb2;
+  --theme-accent-fg:    #ffffff;
+  --theme-track:        #c3bcb4;
+  --theme-knob:         #ffffff;
+  --theme-dot:          #b3aca3;
+  --theme-dot-active:   #5f594f;
+  --theme-btn-bg:       #26241f;
+  --theme-btn-text:     #f5f3ee;
+  --theme-btn-hover:    #45413a;
+
+  --theme-icon-invert:  0;
+
+  color-scheme: light;
+}
+
+/* Cross-fade the swap rather than snapping between themes.
+   Guarded so it never fights a user's reduced-motion preference. */
+html {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  html * {
+    transition-duration: 0.01ms !important;
+  }
+}

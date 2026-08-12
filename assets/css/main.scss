@@ -2,7 +2,8 @@
 # Front matter is required for Jekyll to process this file
 ---
 
-@import "dracula-syntax";  
+@import "theme";
+@import "dracula-syntax";
 @import "dracula-text";
 @import "interactive-elements";
 @import "style";

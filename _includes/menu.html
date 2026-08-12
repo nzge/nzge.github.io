@@ -1,15 +1,23 @@
-<div class="btn" id="toggle-btn">
+<div class="btn" id="toggle-btn" role="button" tabindex="0"
+     aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
   <div id="hamburger">
     <span></span>
   </div>
 </div>
 
-<!-- <div class="overlay">
-  <svg viewBox="0 0 1000 1000"> 
-    <path d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
-  </svg>
-</div>  -->
+<div class="menu-panel" id="site-menu" role="menu" aria-hidden="true">
 
-<div class="menu">
+  <div class="menu-row">
+    <span class="menu-row-label">
+      <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      <span id="theme-label">Dark</span>
+    </span>
+
+    <label class="theme-switch" for="theme-toggle">
+      <input type="checkbox" id="theme-toggle" role="switch"
+             aria-label="Toggle light mode">
+      <span class="theme-slider"></span>
+    </label>
+  </div>
 
 </div>
