@@ -1,0 +1,31 @@
+# Normalize line endings: store LF in the repo, check out native on Windows.
+* text=auto
+
+# Explicit rules for the file types in this site.
+*.md    text
+*.html  text
+*.scss  text
+*.css   text
+*.js    text
+*.yml   text
+*.yaml  text
+*.json  text
+*.txt   text
+
+# Binary assets — never touch these.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.pdf   binary
+*.mp4   binary
+*.mov   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.stl   binary
+*.step  binary
+*.stp   binary
