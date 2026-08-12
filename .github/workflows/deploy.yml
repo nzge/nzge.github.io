@@ -1,39 +1,71 @@
 name: Build and Deploy Jekyll Site
 
+# REQUIRES: Settings -> Pages -> Source = "GitHub Actions".
+#
+# While Source is "Deploy from a branch", GitHub runs its own built-in
+# builder ("pages build and deployment") in parallel with this workflow, and
+# that built-in build is what actually serves the site. It ignores Gemfile,
+# pins its own Jekyll, silently drops non-whitelisted plugins
+# (jekyll-contentblocks, jekyll-archives, htmlcompressor, htmlbeautifier) and
+# silently adds others. Switching Source to "GitHub Actions" disables it and
+# makes this workflow the single source of truth.
+
 on:
   push:
-    branches:
-      - main  # or your default branch
+    branches: [main]
+  workflow_dispatch:
 
-permissions:  # ✅ Explicitly grant write access
-  contents: write
+# Least privilege. Nothing pushes to a branch any more, so contents is
+# read-only; deploy-pages needs pages:write plus id-token:write for OIDC.
+permissions:
+  contents: read
   pages: write
   id-token: write
+
+# Queue deploys rather than cancelling one mid-rollout.
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'  # specify your Ruby version
+          ruby-version: '3.2'
+          # Runs `bundle install` and caches the result between runs.
+          # Safe here: Gemfile.lock lists all 18 declared gems, so the
+          # frozen install this implies will not fail.
+          bundler-cache: true
 
-      - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
 
+      # No --baseurl override: _config.yml sets baseurl "" and
+      # url https://nzge.github.io, which is correct for a user site.
       - name: Build the Jekyll site
-        run: |
-          bundle exec jekyll build
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          path: ./_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
