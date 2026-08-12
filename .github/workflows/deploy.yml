@@ -2,13 +2,12 @@ name: Build and Deploy Jekyll Site
 
 # REQUIRES: Settings -> Pages -> Source = "GitHub Actions".
 #
-# While Source is "Deploy from a branch", GitHub runs its own built-in
-# builder ("pages build and deployment") in parallel with this workflow, and
-# that built-in build is what actually serves the site. It ignores Gemfile,
-# pins its own Jekyll, silently drops non-whitelisted plugins
-# (jekyll-contentblocks, jekyll-archives, htmlcompressor, htmlbeautifier) and
-# silently adds others. Switching Source to "GitHub Actions" disables it and
-# makes this workflow the single source of truth.
+# While Source is "Deploy from a branch", GitHub also runs its own built-in
+# builder ("pages build and deployment"), and that build is what serves the
+# site. It ignores Gemfile, pins its own Jekyll, silently drops
+# non-whitelisted plugins (jekyll-contentblocks, jekyll-archives,
+# htmlcompressor, htmlbeautifier) and silently adds others. Setting Source to
+# "GitHub Actions" disables it and makes this workflow authoritative.
 
 on:
   push:
@@ -38,10 +37,25 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          # Runs `bundle install` and caches the result between runs.
-          # Safe here: Gemfile.lock lists all 18 declared gems, so the
-          # frozen install this implies will not fail.
-          bundler-cache: true
+          # Deliberately NOT `bundler-cache: true`.
+          #
+          # That flag installs in frozen mode, and Gemfile.lock declares
+          # PLATFORMS: x64-mingw-ucrt only -- it was generated on Windows,
+          # and pins ffi and nokogiri to -x64-mingw-ucrt builds. On the
+          # ubuntu runner (x86_64-linux) frozen resolution fails with
+          # Bundler::ProductionError, exit code 16. That is exactly why the
+          # generated "Deploy Jekyll site to Pages" workflow failed.
+          #
+          # To enable caching later, run this locally and commit the result:
+          #     bundle lock --add-platform x86_64-linux
+          bundler-cache: false
+
+      # Non-frozen install: resolves for the runner's own platform. This is
+      # the step that has built this site successfully for 295 runs.
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
 
       - name: Configure Pages
         id: pages
@@ -68,4 +82,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
