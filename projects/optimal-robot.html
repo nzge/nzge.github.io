@@ -5,6 +5,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Theme bootstrap. Must run before first paint, otherwise a light-mode
+       visitor gets a black flash while the stylesheet and menu.js load.
+       Dark is the default, so we only ever set the attribute for light. -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('nz-theme') === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) { /* storage blocked; fall back to dark */ }
+    })();
+  </script>
   <title>Nathan Ge - Optimal Control Lander</title>
   <meta name="description" content="Optimal Control of a Variable-Mass Thrust-Vectoring Lander">
   
@@ -58,21 +71,30 @@
 
   <button id="backToTop" title="Back to top">↑</button>
 
-  <div class="btn" id="toggle-btn">
+  <div class="btn" id="toggle-btn" role="button" tabindex="0"
+     aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
   <div id="hamburger">
     <span></span>
   </div>
 </div>
 
-<!-- <div class="overlay">
-  <svg viewBox="0 0 1000 1000"> 
-    <path d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
-  </svg>
-</div>  -->
+<div class="menu-panel" id="site-menu" role="menu" aria-hidden="true">
 
-<div class="menu">
+  <div class="menu-row">
+    <span class="menu-row-label">
+      <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      <span id="theme-label">Dark</span>
+    </span>
+
+    <label class="theme-switch" for="theme-toggle">
+      <input type="checkbox" id="theme-toggle" role="switch"
+             aria-label="Toggle light mode">
+      <span class="theme-slider"></span>
+    </label>
+  </div>
 
 </div>
+
 
   <body>  
     <script src="/assets/js/slideshow.js"></script>
@@ -110,7 +132,7 @@
     <div class="go-back" onclick="goBack()">Go Back</div>
     <h2>Optimal Control Lander</h2>
     
-      <a href="https://github.com/nzge/mae-270c" target="_blank" rel="noopener noreferrer">Repo</a>
+      <a href="https://github.com/nzge/optimal-control-lander" target="_blank" rel="noopener noreferrer">Repo</a>
     
   </div>
 </header>
@@ -120,12 +142,1062 @@
   
     <nav class="toc-box">
       <p>Table of Contents</p>
-      
+      <ul><li><a href="#optimal-control-of-a-variable-mass-thrust-vectoring-lander">Optimal Control of a Variable-Mass Thrust-Vectoring Lander</a><ul><li><a href="#abstract">Abstract</a></li><li><a href="#i-problem-formulation">I. Problem Formulation</a><ul><li><a href="#constraints">Constraints</a></li><li><a href="#parameters">Parameters</a></li></ul></li><li><a href="#ii-the-pmp-skeleton">II. The PMP Skeleton</a><ul><li><a href="#base-derivation">Base Derivation</a></li><li><a href="#the-riccati-substitution">The Riccati Substitution</a></li><li><a href="#how-each-part-deviates">How Each Part Deviates</a></li></ul></li><li><a href="#iii-numerical-methodology">III. Numerical Methodology</a></li><li><a href="#iv-part-i--fixed-time-lqr-around-nominal-trajectories">IV. Part I — Fixed-Time LQR Around Nominal Trajectories</a><ul><li><a href="#linearization">Linearization</a></li><li><a href="#cost-tuning">Cost Tuning</a></li><li><a href="#controllability-analysis">Controllability Analysis</a></li><li><a href="#analysis">Analysis</a></li><li><a href="#validation">Validation</a></li></ul></li><li><a href="#v-part-ii--optimal-trajectory-tracking">V. Part II — Optimal Trajectory Tracking</a><ul><li><a href="#formulation">Formulation</a></li><li><a href="#why-the-riccati-substitution-must-be-extended">Why the Riccati Substitution Must Be Extended</a></li><li><a href="#scenario">Scenario</a></li><li><a href="#analysis-1">Analysis</a></li><li><a href="#robustness">Robustness</a></li><li><a href="#validation-1">Validation</a></li></ul></li><li><a href="#vi-part-iii--the-mission-problem">VI. Part III — The Mission Problem</a><ul><li><a href="#phase-a--minimum-time-ascent">Phase A — Minimum-Time Ascent</a></li><li><a href="#phase-b--return-and-land">Phase B — Return and Land</a></li><li><a href="#manifold-comparison">Manifold Comparison</a></li></ul></li><li><a href="#vii-part-iv--nonlinear-optimal-control-near-hover">VII. Part IV — Nonlinear Optimal Control Near Hover</a><ul><li><a href="#formulation-1">Formulation</a></li><li><a href="#numerical-implementation">Numerical Implementation</a></li><li><a href="#analysis-2">Analysis</a></li><li><a href="#validation-2">Validation</a></li></ul></li><li><a href="#references">References</a></li></ul></li></ul>
     </nav>
   
   <div>
     <article class="markdown-body">
-      <p>Dynamics</p>
+      <p><img src="/assets/media/optimal-control-lander.png" alt="Variable-mass thrust-vectoring lander" style="width:100%;display: block; margin: auto;" /></p>
+
+<h1 id="optimal-control-of-a-variable-mass-thrust-vectoring-lander">Optimal Control of a Variable-Mass Thrust-Vectoring Lander</h1>
+
+<p><em>Spring 2026 MAE 270C</em></p>
+
+<p>Nathan Ge</p>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>This project studies the optimal guidance and control of a planar variable-mass rocket/lander with translational and rotational dynamics, bounded controls, nonlinear coupling, free-final-time optimal control, endpoint manifold constraints, and trajectory tracking. It combines Pontryagin’s Maximum Principle (PMP), controllability analysis, Linear Quadratic Regulation (LQR), minimum-time optimal control, nonlinear indirect optimal control, and numerical two-point boundary value problem (TPBVP) solvers. The work is inspired by powered-descent guidance and reusable rocket landing systems studied in modern aerospace optimal control literature. All theoretical derivations are based on PMP; numerical implementations use indirect shooting, collocation, and hybrid approaches, with every optimality condition derived from PMP.</p>
+
+<p>The project is structured in four parts, each of which perturbs a single ingredient of one shared optimal control problem — the cost, the endpoint conditions, the final time, or the plant. Section II derives that shared skeleton once; Sections IV–VII state only what each part changes.</p>
+
+<h2 id="i-problem-formulation">I. Problem Formulation</h2>
+
+<p>The lander is modeled as a planar rigid body with variable mass, thrust-vectoring, and torque authority. The state and control vectors are</p>
+
+\[x = \begin{bmatrix} p_x &amp; p_z &amp; v_x &amp; v_z &amp; \theta &amp; \omega &amp; m \end{bmatrix}^{\top}, \qquad
+u = \begin{bmatrix} \delta T &amp; \tau \end{bmatrix}^{\top}\]
+
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$p_x,\ p_z$</td>
+      <td>Horizontal and vertical position</td>
+    </tr>
+    <tr>
+      <td>$v_x,\ v_z$</td>
+      <td>Horizontal and vertical velocity</td>
+    </tr>
+    <tr>
+      <td>$\theta$</td>
+      <td>Vehicle pitch angle</td>
+    </tr>
+    <tr>
+      <td>$\omega$</td>
+      <td>Angular velocity (pitch rate)</td>
+    </tr>
+    <tr>
+      <td>$m$</td>
+      <td>Instantaneous vehicle mass</td>
+    </tr>
+    <tr>
+      <td>$T$</td>
+      <td>Commanded thrust magnitude</td>
+    </tr>
+    <tr>
+      <td>$\tau$</td>
+      <td>Commanded control torque</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The nonlinear equations of motion $\dot{x} = f(x,u)$ are defined by kinematics, gravity, thrust resolution, and mass depletion:</p>
+
+\[\dot{x} =
+\begin{bmatrix}
+v_x \\
+v_z \\
+-\dfrac{T}{m}\sin\theta \\
+\dfrac{T}{m}\cos\theta - g \\
+\omega \\
+\dfrac{\tau}{I} \\
+-\alpha T
+\end{bmatrix}\]
+
+<p>where $\alpha = 1/(I_{sp}g_0)$ is the propellant consumption rate. Throughout Parts I, II and IV the control is the thrust <em>increment</em> about the hover trim, $\delta T = T - m_0 g$, so that $T = m_0 g + \delta T$.</p>
+
+<h3 id="constraints">Constraints</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Constraint</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$T \in [T_{\min}, T_{\max}]$</td>
+      <td>Actuator bounds on thrust magnitude</td>
+    </tr>
+    <tr>
+      <td>$\tau \in [\tau_{\min}, \tau_{\max}]$</td>
+      <td>Actuator bounds on control torque</td>
+    </tr>
+    <tr>
+      <td>$p_z(t) \geq 0$</td>
+      <td>Hard deck limit preventing subsurface flight</td>
+    </tr>
+    <tr>
+      <td>$m(t) \geq m_{\text{dry}}$</td>
+      <td>Minimum mass limit (dry mass)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="parameters">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$g$</td>
+      <td>9.81 m/s²</td>
+      <td>Gravitational acceleration</td>
+    </tr>
+    <tr>
+      <td>$I$</td>
+      <td>10 kg·m²</td>
+      <td>Vehicle moment of inertia</td>
+    </tr>
+    <tr>
+      <td>$m_0$</td>
+      <td>20 kg</td>
+      <td>Initial vehicle mass</td>
+    </tr>
+    <tr>
+      <td>$\alpha$</td>
+      <td>0.005 kg/(N·s)</td>
+      <td>Propellant consumption rate</td>
+    </tr>
+    <tr>
+      <td>$T_{\min}$</td>
+      <td>0 N</td>
+      <td>Minimum thrust limit</td>
+    </tr>
+    <tr>
+      <td>$T_{\max}$</td>
+      <td>300 N</td>
+      <td>Maximum thrust limit</td>
+    </tr>
+    <tr>
+      <td>$\tau_{\min}$</td>
+      <td>−30 N·m</td>
+      <td>Minimum torque limit</td>
+    </tr>
+    <tr>
+      <td>$\tau_{\max}$</td>
+      <td>30 N·m</td>
+      <td>Maximum torque limit</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="ii-the-pmp-skeleton">II. The PMP Skeleton</h2>
+
+<p>Every part of this project is an instance of the same necessary-condition machinery. Deriving it once makes the four parts readable as variations rather than four separate problems.</p>
+
+<h3 id="base-derivation">Base Derivation</h3>
+
+<p>Given a running cost $L(x,u)$, a terminal cost $\varphi(x(t_f))$, and dynamics $\dot{x} = f(x,u)$, the Hamiltonian adjoins the dynamics to the cost through the costate $p$:</p>
+
+\[H(x,u,p) = L(x,u) + p^{\top} f(x,u)\]
+
+<p>PMP then supplies three conditions. The <strong>adjoint (costate) equation</strong> propagates $p$ backward:</p>
+
+\[\dot{p} = -\frac{\partial H}{\partial x}\]
+
+<p>The <strong>stationarity condition</strong> selects the control that minimizes $H$ pointwise over the admissible set:</p>
+
+\[\frac{\partial H}{\partial u} = 0\]
+
+<p>And the <strong>transversality condition</strong> closes the system at the terminal time:</p>
+
+\[p(t_f) = \left.\frac{\partial \varphi}{\partial x}\right|_{t=t_f}\]
+
+<p>For the quadratic cost $L = x^{\top}Qx + u^{\top}Ru$ on the linearized plant $\dot{x} = Ax + Bu$, these evaluate to</p>
+
+\[H = x^{\top}Qx + u^{\top}Ru + p^{\top}(Ax+Bu), \qquad
+\dot{p} = -2Qx - A^{\top}p, \qquad
+u^{*} = -\tfrac{1}{2}R^{-1}B^{\top}p\]
+
+<h3 id="the-riccati-substitution">The Riccati Substitution</h3>
+
+<p>For the linear-quadratic parts the TPBVP admits a closed-form reduction. Assume the costate is linear in the state, $p(t) = P(t)x(t)$, with $P$ an unknown time-varying symmetric matrix. Differentiating,</p>
+
+\[\dot{p} = \dot{P}x + P\dot{x}\]
+
+<p>Substituting the adjoint equation on the left, the dynamics on the right, and $u^{*} = -\tfrac{1}{2}R^{-1}B^{\top}Px$:</p>
+
+\[-2Qx - A^{\top}Px = \dot{P}x + P\left(Ax - \tfrac{1}{2}BR^{-1}B^{\top}Px\right)\]
+
+<p>Collecting every term acting on $x(t)$:</p>
+
+\[\left[\dot{P} + PA + A^{\top}P - \tfrac{1}{2}PBR^{-1}B^{\top}P + 2Q\right]x = 0\]
+
+<p>Because this must hold for <em>any</em> trajectory $x(t)$, the bracket vanishes identically, yielding the <strong>Riccati Differential Equation</strong> and the resulting state-feedback law:</p>
+
+\[\dot{P} = -PA - A^{\top}P + \tfrac{1}{2}PBR^{-1}B^{\top}P - 2Q\]
+
+\[u^{*}(t) = -K(t)x(t), \qquad K(t) = \tfrac{1}{2}R^{-1}B^{\top}P(t), \qquad P(t_f) = 2Q_f\]
+
+<h3 id="how-each-part-deviates">How Each Part Deviates</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Part</th>
+      <th>Cost $L$</th>
+      <th>Final time</th>
+      <th>Endpoint</th>
+      <th>Plant</th>
+      <th>Consequence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>I</strong> — Regulation</td>
+      <td>$x^{\top}Qx + u^{\top}Ru$</td>
+      <td>Fixed</td>
+      <td>Free, penalized by $Q_f$</td>
+      <td>LTI / LTV</td>
+      <td>Base case. Riccati sweep applies directly.</td>
+    </tr>
+    <tr>
+      <td><strong>II</strong> — Tracking</td>
+      <td>$(x-x_{\text{ref}})^{\top}Q(x-x_{\text{ref}}) + u^{\top}Ru$</td>
+      <td>Fixed</td>
+      <td>Free, <strong>no</strong> terminal cost</td>
+      <td>LTI</td>
+      <td>Adds affine forcing → auxiliary vector $s(t)$, feedforward term.</td>
+    </tr>
+    <tr>
+      <td><strong>III-A</strong> — Ascent</td>
+      <td>$1$</td>
+      <td><strong>Free</strong></td>
+      <td>Fixed manifold</td>
+      <td>LTV</td>
+      <td>Cost loses $u$-dependence → bang–bang control, $H \equiv 0$.</td>
+    </tr>
+    <tr>
+      <td><strong>III-B</strong> — Landing</td>
+      <td>$x^{\top}Qx + u^{\top}Ru$</td>
+      <td><strong>Free</strong></td>
+      <td><strong>Constrained manifold</strong></td>
+      <td>LTV</td>
+      <td>Transversality gains multipliers $\nu_j$; $H(t_f)=0$ closes the system.</td>
+    </tr>
+    <tr>
+      <td><strong>IV</strong> — Nonlinear</td>
+      <td>$x^{\top}Qx + u^{\top}Ru$</td>
+      <td>Fixed</td>
+      <td>Free</td>
+      <td><strong>Nonlinear</strong></td>
+      <td>Riccati substitution invalid; full 14-state TPBVP by collocation.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The pattern is worth stating plainly: <strong>the adjoint and stationarity conditions never change form.</strong> What changes is (a) whether $L$ retains a $u$-dependence — losing it collapses the stationarity condition into a sign test on a switching function — and (b) what the terminal boundary supplies, which is either a gradient of a terminal cost, zero, or a span of constraint gradients.</p>
+
+<h2 id="iii-numerical-methodology">III. Numerical Methodology</h2>
+
+<p><strong>Linear systems (Parts I &amp; II).</strong> <code class="language-plaintext highlighter-rouge">scipy.integrate.solve_ivp</code> integrates the Riccati equation backward in time to generate the feedback gain matrix $K(t)$. An interpolator is then applied to this gain during the forward-pass simulation of the state trajectory.</p>
+
+<p><strong>Nonlinear TPBVPs (Parts III &amp; IV).</strong> The Riccati substitution no longer applies once the problem is nonlinear, so the coupled state/costate system arising from PMP is solved directly.</p>
+
+<ul>
+  <li><em>Part III</em> uses <strong>indirect single shooting</strong> on the free-final-time mission: the $2n$ canonical equations are integrated forward and a Newton iteration adjusts the unknown initial costate, the phase-switch time, and the final time until the manifold, transversality, and $H(t_f)=0$ residuals vanish.</li>
+  <li><em>Part IV</em> uses <strong>indirect collocation</strong> (<code class="language-plaintext highlighter-rouge">scipy.integrate.solve_bvp</code>) on the fixed-time problem: the 14 state/costate equations are discretized on a mesh and the optimal control is substituted in closed form from the stationarity conditions. Collocation is preferred here because it accepts a full state/costate trajectory as its initial guess, taken from the corresponding linearized LQR solution; this warm start lies close to the nonlinear extremal and lets the solver converge in a few mesh-refinement iterations.</li>
+</ul>
+
+<p><strong>Constraint enforcement.</strong> For control constraints, the linear LQR phases apply post-calculation saturation, clipping commanded $\delta T$ and $\tau$ to the actuator bounds. For the nonlinear PMP phases the control follows in closed form from stationarity and is then clipped to the same bounds inside the solver right-hand side. This is exactly Pontryagin’s pointwise minimization of $H$: for a control-affine Hamiltonian, the constrained minimizer is the unconstrained stationary control projected onto the admissible box.</p>
+
+<p>State constraints are harder. Adjoining $p_z \geq 0$ and $m \geq m_{\text{dry}}$ directly to the Hamiltonian creates severe analytical difficulties — jump discontinuities in the costates. The numerical workarounds are soft constraints (large penalties in $Q$ when the vehicle goes underground), event tracking (terminating the ODE solver on impact), or direct constraint arrays in an NLP solver.</p>
+
+<h2 id="iv-part-i--fixed-time-lqr-around-nominal-trajectories">IV. Part I — Fixed-Time LQR Around Nominal Trajectories</h2>
+
+<blockquote>
+  <p><strong>Deviation from base:</strong> none. This is the base case — fixed horizon, free terminal state penalized by $Q_f$, Riccati sweep applied directly.</p>
+</blockquote>
+
+<h3 id="linearization">Linearization</h3>
+
+<p>The plant is linearized as $\dot{x} = Ax + Bu$ with $A = \partial f/\partial x$ and $B = \partial f/\partial u$, evaluated about two different trims.</p>
+
+<p><strong>Hover.</strong> Constant mass $m_0$ gives an LTI plant:</p>
+
+\[A_{\text{hover}} = \begin{bmatrix}
+0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;g&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;-\frac{g}{m_0}\\
+0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0
+\end{bmatrix}, \qquad
+B_{\text{hover}} = \begin{bmatrix}
+0&amp;0\\ 0&amp;0\\ 0&amp;0\\ \frac{1}{m_0}&amp;0\\ 0&amp;0\\ 0&amp;I^{-1}\\ -\alpha&amp;0
+\end{bmatrix}\]
+
+<p><strong>Descent.</strong> Substituting the mass schedule $m^{<em>}(t) = m_0 e^{-\alpha g t}$ produces an LTV plant with the same structure, but with $1/m_0$ replaced by $1/m^{</em>}(t)$ in both $A$ and $B$. The single structural difference is that control authority now grows as propellant is spent.</p>
+
+<h3 id="cost-tuning">Cost Tuning</h3>
+
+<p>Heuristic presets were swept on the hover LTI plant to reflect the underlying control intuition: <code class="language-plaintext highlighter-rouge">pos_heavy</code> and <code class="language-plaintext highlighter-rouge">att_heavy</code> tighten position and attitude transients at the cost of higher $\int u^{\top}Ru\,dt$; <code class="language-plaintext highlighter-rouge">cheap_th</code> and <code class="language-plaintext highlighter-rouge">exp_trq</code> isolate thrust- versus torque-dominated effort; <code class="language-plaintext highlighter-rouge">balanced</code> is the baseline used in later parts.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Preset</th>
+      <th>$Q = \mathrm{diag}(\cdot)$</th>
+      <th>$R$</th>
+      <th>$Q_f = \mathrm{diag}(\cdot)$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">balanced</code></td>
+      <td>(1, 1, 0.5, 0.5, 10, 5, 0.01)</td>
+      <td>(0.1, 1)</td>
+      <td>(10, 10, 1, 1, 50, 20, 0.1)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pos_heavy</code></td>
+      <td>(20, 20, 2, 2, 5, 2, 0.01)</td>
+      <td>(0.1, 1)</td>
+      <td>(50, 50, 5, 5, 20, 10, 0.1)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">att_heavy</code></td>
+      <td>(1, 1, 0.5, 0.5, 50, 25, 0.01)</td>
+      <td>(0.1, 2)</td>
+      <td>(10, 10, 1, 1, 100, 50, 0.1)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cheap_th</code></td>
+      <td>(1, 1, 0.5, 0.5, 10, 5, 0.01)</td>
+      <td>(0.01, 1)</td>
+      <td>(10, 10, 1, 1, 50, 20, 0.1)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">exp_trq</code></td>
+      <td>(1, 1, 0.5, 0.5, 10, 5, 0.01)</td>
+      <td>(0.1, 10)</td>
+      <td>(10, 10, 1, 1, 50, 20, 0.1)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">scaled_id</code></td>
+      <td>(10⁻², 10⁻², 0.04, 0.04, 25, 4, 1)</td>
+      <td>(1, 1)</td>
+      <td>same as $Q$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-01-cost-sweep.png" alt="Figure 1: Cost preset sweep on the hover LTI plant" />
+  <figcaption class="figure-caption">Figure 1: Cost preset sweep on the hover LTI plant</figcaption>
+</figure>
+
+<p><br /></p>
+
+<h3 id="controllability-analysis">Controllability Analysis</h3>
+
+<p>Two complementary tools were used. The <strong>algebraic controllability matrix</strong> checks structural control authority for a frozen-time snapshot of the plant; with $n = 7$ states,</p>
+
+\[\mathcal{C} = \begin{bmatrix} B &amp; AB &amp; A^2B &amp; \cdots &amp; A^6B \end{bmatrix} \in \mathbb{R}^{7 \times 14}\]
+
+<p>The <strong>finite-horizon controllability Gramian</strong> quantifies <em>how expensive</em> that authority is:</p>
+
+\[W_c(0,t_f) = \int_0^{t_f} \Phi(0,\tau)B(\tau)B(\tau)^{\top}\Phi(0,\tau)^{\top}\,d\tau\]
+
+<p>Rather than form the state transition matrix explicitly, $W_c$ is computed by integrating its differential form, and the minimum control energy required to reach a state deviation $x_f$ follows directly:</p>
+
+\[\dot{W_c}(t) = A(t)W_c(t) + W_c(t)A(t)^{\top} + B(t)B(t)^{\top}, \qquad E = x_f^{\top}W_c^{-1}x_f\]
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-02-gramian.png" alt="Figure 2: Controllability Gramian and horizontal controllability proxy" />
+  <figcaption class="figure-caption">Figure 2: Controllability Gramian and horizontal controllability proxy</figcaption>
+</figure>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>rank($\mathcal{C}$)</th>
+      <th>$\sigma_1$</th>
+      <th>$\sigma_6$</th>
+      <th>$\sigma_7$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hover LTI ($t = 0$ s)</td>
+      <td>7/7</td>
+      <td>0.98</td>
+      <td>0.0489</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Descent LTV ($t = 0$ s)</td>
+      <td>7/7</td>
+      <td>0.98</td>
+      <td>0.0489</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Hover LTI ($t = 15$ s)</td>
+      <td>7/7</td>
+      <td>0.98</td>
+      <td>0.0489</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Descent LTV ($t = 15$ s)</td>
+      <td>7/7</td>
+      <td>0.98</td>
+      <td>0.1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Both trims are algebraically full rank, but rank alone is misleading. Controllable energy in the weakest meaningful mode shrinks as $t_f - t$ shrinks, especially for horizontal motion. The descent LTV plant at $t = 15$ s shows larger $B$-column entries for $v_z$ and weaker indirect authority on $p_x$ — horizontal acceleration enters only through attitude coupling — which is the physical origin of the “weakly controllable” label.</p>
+
+<h3 id="analysis">Analysis</h3>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-03-ic-sensitivity.png" alt="Figure 3: Sensitivity to initial condition error" />
+  <figcaption class="figure-caption">Figure 3: Sensitivity to initial condition error</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>At small perturbations, descent can perform worse — a weak plant combined with the wrong linearization point. At large perturbations hover overtakes it, since the hover LTI model may be overly optimistic at large scaling $\alpha$: the linear model stays fixed while the state explores larger deviations.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-04-transient.png" alt="Figure 4: Transient behavior across the trajectory" />
+  <figcaption class="figure-caption">Figure 4: Transient behavior across the trajectory</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>Swings in $p_x$ and $\theta$ indicate structural difficulty; even the nominally controllable hover trim struggles, which the Gramian analysis had already flagged as expensive to correct. The gap between trims is clearest in $p_z$, driven by the mass/thrust schedule and the changing trim point.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-05-optimal-trajectories.png" alt="Figure 5: Optimal solution trajectories versus time — states and control histories" />
+  <figcaption class="figure-caption">Figure 5: Optimal solution trajectories versus time — states and control histories</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-06-mission-plane.png" alt="Figure 6: Mission-plane trajectory ($p_x$ vs $p_z$) with attitude vectors at sampled positions" />
+  <figcaption class="figure-caption">Figure 6: Mission-plane trajectory ($p_x$ vs $p_z$) with attitude vectors at sampled positions</figcaption>
+</figure>
+
+<p><br /></p>
+
+<h3 id="validation">Validation</h3>
+
+<p>Because this phase uses the Riccati sweep rather than a shooting solver, optimality is validated by verifying the backward-pass terminal conditions and forward-pass tracking convergence.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Target</th>
+      <th>Computed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$\lVert P(t_f) - Q_f \rVert_\infty$</td>
+      <td>0</td>
+      <td>1.22 × 10⁻¹⁴</td>
+    </tr>
+    <tr>
+      <td>$\lVert e(t_f) \rVert_\infty$</td>
+      <td>0</td>
+      <td>4.51 × 10⁻⁶</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="v-part-ii--optimal-trajectory-tracking">V. Part II — Optimal Trajectory Tracking</h2>
+
+<blockquote>
+  <p><strong>Deviation from base:</strong> the running cost penalizes deviation from a reference, $(x - x_{\text{ref}})^{\top}Q(x - x_{\text{ref}})$, and there is no terminal cost. The first change makes the costate equation <em>affine</em> rather than linear; the second sends the terminal costate to zero.</p>
+</blockquote>
+
+<h3 id="formulation">Formulation</h3>
+
+\[J = \int_0^{t_f}\left[(x-x_{\text{ref}})^{\top}Q(x-x_{\text{ref}}) + u^{\top}Ru\right]dt\]
+
+<p>The Hamiltonian and stationarity condition carry over unchanged. Only the adjoint equation picks up the reference term, and transversality collapses:</p>
+
+\[\dot{p} = -2Q(x - x_{\text{ref}}) - A^{\top}p, \qquad p(t_f) = \left.\frac{\partial \varphi}{\partial x}\right|_{t_f} = 0 \quad (\varphi \equiv 0)\]
+
+<h3 id="why-the-riccati-substitution-must-be-extended">Why the Riccati Substitution Must Be Extended</h3>
+
+<p>The forcing term $2Qx_{\text{ref}}$ is independent of $x$, so the pure ansatz $p = Px$ can no longer absorb it — a linear-in-$x$ form cannot represent an affine equation. The substitution is therefore augmented with an auxiliary vector:</p>
+
+\[p(t) = P(t)x(t) + s(t)\]
+
+<p>Repeating the base derivation with this ansatz and grouping terms gives <em>two</em> brackets, one proportional to $x(t)$ and one constant:</p>
+
+\[\underbrace{\left[\dot{P} + PA + A^{\top}P - \tfrac{1}{2}PBR^{-1}B^{\top}P + 2Q\right]}_{\text{identical to base case}}x(t)
++ \underbrace{\left[\dot{s} + A^{\top}s - \tfrac{1}{2}PBR^{-1}B^{\top}s - 2Qx_{\text{ref}}\right]}_{\text{new}} = 0\]
+
+<p>Both brackets must vanish independently. The first recovers the same Riccati equation as Part I; the second is new:</p>
+
+\[\dot{s} = -\left(A^{\top} - \tfrac{1}{2}PBR^{-1}B^{\top}\right)s + 2Qx_{\text{ref}}\]
+
+<p>Since $p(t_f) = P(t_f)x(t_f) + s(t_f) = 0$ must hold for an arbitrary terminal state, both pieces integrate backward from homogeneous terminal conditions $P(t_f) = 0$, $s(t_f) = 0$, reflecting the absence of any terminal penalty.</p>
+
+<p>Substituting back splits the control cleanly into feedback and feedforward:</p>
+
+\[u^{*}(t) = -\tfrac{1}{2}R^{-1}B^{\top}P(t)x(t) - \tfrac{1}{2}R^{-1}B^{\top}s(t) \;=\; -K(t)x(t) + u_{ff}(t)\]
+
+<p>$K(t)x(t)$ stabilizes the vehicle and kills deviations; $u_{ff}(t)$ anticipates the control effort the reference itself demands.</p>
+
+<h3 id="scenario">Scenario</h3>
+
+<p>The reference $x_{\text{ref}}(t)$ is one of the optimal regulation trajectories recorded in Part I — a damped maneuver settling to hover trim. To produce a nontrivial transient, the controller is initialized at</p>
+
+\[x_0^{\text{trk}} = \begin{bmatrix} -12 &amp; 15 &amp; -4 &amp; 3 &amp; -0.25 &amp; 0.4 &amp; -0.8 \end{bmatrix}^{\top}\]
+
+<p>deviating from the reference start by $\Delta p_x \approx 17$ m and $\Delta\theta \approx 0.33$ rad. Because the hover linearization is altitude-invariant ($p_z$ is decoupled and absent from every right-hand side), the maneuver is executed about a hover point $h = 12$ m above the pad; this leaves $A$, $B$, $x_{\text{ref}}$, and the feedback law unchanged while the absolute altitude $p_z = h + p_z^{\text{dev}}$ enforces the ground constraint. Minimum absolute altitude is 11.6 m (reference) and 10.0 m (tracker), with mass margin above 12 kg throughout.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-07-reference-trajectory.png" alt="Figure 7: Recorded Part I optimal trajectory used as the reference" />
+  <figcaption class="figure-caption">Figure 7: Recorded Part I optimal trajectory used as the reference</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-08-tracking-performance.png" alt="Figure 8: Tracking performance" />
+  <figcaption class="figure-caption">Figure 8: Tracking performance</figcaption>
+</figure>
+
+<p><br /></p>
+
+<h3 id="analysis-1">Analysis</h3>
+
+<p>The tracker starts with state error $\lVert e(0) \rVert \approx 19.9$, peaks at $\lVert e \rVert \approx 26.2$ near $t = 1.6$ s as it first accelerates toward the reference, and the cost-weighted error decays to within 10% of its peak by $t \approx 6.9$ s. The residual terminal error $\lVert e(t_f) \rVert \approx 1.38$ is concentrated in the vertical and mass channels ($\lvert e_{p_z} \rvert \approx 1.16$, $\lvert e_{v_z} \rvert \approx 0.67$, $\lvert e_m \rvert \approx 0.32$), while horizontal and attitude errors are driven to $O(10^{-3})$.</p>
+
+<p>This residual is an expected feature of the fixed-horizon, free-final-state problem with no terminal cost. As $t \to t_f$, both $K(t)$ and $s(t)$ decay, so the controller “relaxes” near $t_f$ and the weakly penalized vertical/mass states drift slightly.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-09-tracker-convergence.png" alt="Figure 9: Closed-loop convergence of the tracker onto the reference, with attitude arrows and the ground constraint" />
+  <figcaption class="figure-caption">Figure 9: Closed-loop convergence of the tracker onto the reference, with attitude arrows and the ground constraint</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-10-transient-response.png" alt="Figure 10: Transient response — cost-balanced tracking error" />
+  <figcaption class="figure-caption">Figure 10: Transient response — cost-balanced tracking error</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-11-control-decomposition.png" alt="Figure 11: Transient control decomposition into feedback and feedforward components" />
+  <figcaption class="figure-caption">Figure 11: Transient control decomposition into feedback and feedforward components</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>Scalar tracking error decays monotonically in the weighted norm. Because the target is moving rather than zero, there is no mid-horizon rebound; position errors decay slowly and dominate, while attitude error stays small throughout. The control splits as $u^{*}(t) = -K(t)e(t) + u_{ff}(t)$, with the feedback term dominating the transient and the feedforward term small and slowly varying, since the reference is itself a decaying signal. The torque channel uses nearly full authority at $t = 0$ ($\tau \approx 29.6$ N·m against the ±30 N·m bound) to arrest attitude error, but no channel saturates over the horizon.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-12-control-effort.png" alt="Figure 12: Control effort — tracker versus reference plan" />
+  <figcaption class="figure-caption">Figure 12: Control effort — tracker versus reference plan</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>Relative to the smooth reference plan, rejoining from the displaced initial state is expensive: the tracker expends $\int u^{\top}Ru\,dt \approx 1041$ versus $\approx 86$ for the reference, a <strong>12× increase</strong> concentrated in the first few seconds. Peak thrust deviation reaches $\delta T \approx 92$ N, within the +104 N headroom to $T_{\max}$, confirming that the chosen weights keep the catch-up maneuver feasible without thrust saturation. Once error is nulled, the tracking control collapses onto the reference control.</p>
+
+<h3 id="robustness">Robustness</h3>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-13-robustness-ic.png" alt="Figure 13: Robustness to initial-condition deviations — terminal error and tracking cost as the initial offset is scaled" />
+  <figcaption class="figure-caption">Figure 13: Robustness to initial-condition deviations — terminal error and tracking cost as the initial offset is scaled</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-14-robustness-reference.png" alt="Figure 14: Sensitivity to a perturbed reference plan, scored against the true reference" />
+  <figcaption class="figure-caption">Figure 14: Sensitivity to a perturbed reference plan, scored against the true reference</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>Sweeping the initial offset by a factor $\alpha$ confirms the structure of the linear tracking law: terminal error grows essentially linearly in $\alpha$ (slope $\approx 1.18$), consistent with superposition of the closed-loop transition map, while tracking cost grows quadratically, since the cost is a quadratic form in the deviation. There is no threshold or instability over the tested range — the degradation is graceful.</p>
+
+<p>Corrupting the reference used to build the feedforward with zero-mean noise of level $\sigma$ tells a different story. Terminal error is only mildly affected (1.38 at $\sigma = 0$ to 1.50 at $\sigma = 0.30$) because the feedback term rejects high-frequency reference error, but tracking cost degrades markedly (≈3150 to ≈6810, a <strong>2.2× increase</strong>) as the controller wastes effort chasing a corrupted plan.</p>
+
+<p>This exposes a structural limitation: <strong>the law is non-causal.</strong> $s(t)$ comes from a backward integration requiring the entire future $x_{\text{ref}}(\tau)$ on $[t, t_f]$. Without that preview only $u = -K(t)e(t)$ remains — stable, but lagging and costlier. A causal fix would replan online (receding-horizon MPC) or generate $x_{\text{ref}}$ from a predictive model.</p>
+
+<h3 id="validation-1">Validation</h3>
+
+<p>Because Part II has no terminal cost and a free final state, optimality is certified against the PMP necessary conditions rather than terminal convergence.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Target</th>
+      <th>Computed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$\lVert P(t_f) \rVert_\infty$ (Riccati terminal)</td>
+      <td>0</td>
+      <td>1.0 × 10⁻¹⁴</td>
+    </tr>
+    <tr>
+      <td>$\lVert s(t_f) \rVert_\infty$ (feedforward terminal)</td>
+      <td>0</td>
+      <td>1.6 × 10⁻¹⁷</td>
+    </tr>
+    <tr>
+      <td>$\max_t \lVert Ru + B^{\top}\lambda \rVert$ (stationarity)</td>
+      <td>0</td>
+      <td>1.1 × 10⁻¹⁴</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The terminal tracking error is not required to vanish for this free-final-state problem; its value is a result, not a residual.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-15-hamiltonian-partII.png" alt="Figure 15: Hamiltonian consistency — constant for the autonomous reference plan, time-varying for the tracking problem" />
+  <figcaption class="figure-caption">Figure 15: Hamiltonian consistency — constant for the autonomous reference plan, time-varying for the tracking problem</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>For the autonomous reference plan $H$ is constant to $\sim 10^{-4}$, whereas for the tracking problem $H$ is <em>intentionally</em> time-varying: explicit dependence on $x_{\text{ref}}(t)$ makes $\partial H/\partial t \neq 0$. The relevant optimality certificate for tracking is therefore the stationarity/costate residual, not constancy of $H$.</p>
+
+<h2 id="vi-part-iii--the-mission-problem">VI. Part III — The Mission Problem</h2>
+
+<blockquote>
+  <p><strong>Deviation from base:</strong> the final time becomes <em>free</em>, which adds the closure condition $H(t_f) = 0$. Phase A additionally strips $u$ out of the cost entirely; Phase B additionally constrains the endpoint to a manifold, which adds multiplier terms to transversality.</p>
+</blockquote>
+
+<p>The mission is two-phase: a minimum-time ascent to a rendezvous state, followed by an optimal return-and-land.</p>
+
+<h3 id="phase-a--minimum-time-ascent">Phase A — Minimum-Time Ascent</h3>
+
+\[J_A = \int_0^{t_1} 1\,dt = t_1\]
+
+<p>With $L = 1$, the Hamiltonian loses all $u$-dependence in the cost:</p>
+
+\[H_A = 1 + p^{\top}Ax + p^{\top}Bu, \qquad \dot{p} = -A^{\top}p\]
+
+<p><strong>This is the structural break.</strong> $\partial H_A/\partial u = B^{\top}p$ is now independent of $u$, so stationarity cannot solve for $u^{*}$ — there is no interior minimum. Minimizing $H$ pointwise instead drives each channel to whichever bound reduces $H$, governed by the <strong>switching function</strong> $S(t) = B^{\top}p(t)$:</p>
+
+\[u_i^{*}(t) = \begin{cases}
+U_{\max,i} &amp; \text{if } S_i(t) &lt; 0 \\
+U_{\min,i} &amp; \text{if } S_i(t) &gt; 0
+\end{cases}\]
+
+<p>The control is bang–bang. No singular arcs arise on thrust, since $S_{\delta T}$ has one sign change. The torque channel is structurally singular for vertical ascent ($S_\tau = p_\omega/I \equiv 0$ with $\theta = \omega = 0$), so $\tau^{*} = 0$ throughout.</p>
+
+<p>The ascent drives the vehicle to a prescribed rendezvous state with the first six components fixed at $t_1$ and terminal mass left free, so the corresponding costate vanishes by transversality. Because $t_1$ is free, the minimum-time condition closes the system:</p>
+
+\[x_i(t_1) = x_{\text{sky},i},\ \ i \in \{p_x,p_z,v_x,v_z,\theta,\omega\}, \qquad p_m(t_1) = 0, \qquad H_A(t_1) = 0\]
+
+<p>Note that $H_A \equiv 0$ holds along the <em>entire</em> arc, not just at $t_1$ — a useful numerical check.</p>
+
+<p><strong>Implementation.</strong> Phase A is solved by indirect single shooting in <code class="language-plaintext highlighter-rouge">mission.py</code>. The decision vector is $Z = [p(0);\, t_1] \in \mathbb{R}^8$; each candidate is propagated forward with <code class="language-plaintext highlighter-rouge">solve_ivp</code> (RK45) on the 14-dimensional state–costate system using the bang–bang law, and the eight residuals are driven below $10^{-5}$ by <code class="language-plaintext highlighter-rouge">scipy.optimize.least_squares</code> with 12 random multi-starts and $t_1 \in [0.3, 5]$ s. The rendezvous is $x_{\text{sky}} = (0, 8, 0, v_{z,\text{sky}}, 0, 0, 0)^{\top}$ in hover-deviation coordinates, with $v_{z,\text{sky}} \in {-2, 0, +2}$ m/s for the terminal-velocity comparison.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-16-phaseA-ascent.png" alt="Figure 16: Phase A minimum-time ascent for terminal vertical velocities −2, 0, +2 m/s — altitude, vertical velocity, bang–bang thrust deviation, and switching function" />
+  <figcaption class="figure-caption">Figure 16: Phase A minimum-time ascent for terminal vertical velocities −2, 0, +2 m/s — altitude, vertical velocity, bang–bang thrust deviation, and switching function</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>Every case exhibits exactly one thrust switch: maximum $\delta T$ accelerates upward until $S_{\delta T}$ changes sign, then minimum thrust completes the rendezvous. Thrust saturates because time appears linearly in $J_A$ with no control penalty. Ascent time depends strongly on $v_{z,\text{sky}}$ — $t_1 = 2.39$, 2.16, and 1.98 s for −2, 0, and +2 m/s — and the switch occurs late in the arc (≈59–71% of $t_1$), so deceleration to target speed is back-loaded. Propellant use is nearly unchanged (≈2.08 kg) because the maneuver is short; mass depletion over ~2 s is too small to materially change $1/m$ and control authority.</p>
+
+<h3 id="phase-b--return-and-land">Phase B — Return and Land</h3>
+
+<p>Phase B begins where Phase A ends, so $x(0) = x_1$. The cost returns to quadratic form, which means the unconstrained control law and adjoint equations are <strong>identical to Part I</strong>:</p>
+
+\[J_B = \int_0^{t_f}\left(x^{\top}Qx + u^{\top}Ru\right)dt, \qquad
+u^{*} = -\tfrac{1}{2}R^{-1}B^{\top}p, \qquad
+\dot{p} = -2Qx - A^{\top}p\]
+
+<p>Two things change. First, $t_f$ is free, so PMP imposes $H_B(t_f) = 0$. Second — and this is the substantive addition — the endpoint is confined to a manifold, so transversality gains a multiplier term for each active constraint:</p>
+
+\[p(t_f) = \left.\frac{\partial \varphi}{\partial x}\right|_{t_f} + \sum_j \nu_j \nabla h_j(x(t_f))\]
+
+<p>The interpretation is geometric: the terminal costate is free to have any component <em>normal</em> to the manifold (absorbed by the multipliers) but is pinned in every direction <em>tangent</em> to it.</p>
+
+<p><strong>Manifold 1 — pinpoint landing on flat ground.</strong></p>
+
+\[h_1 = p_z = 0, \qquad h_2 = v_z = 0, \qquad h_3 = \theta = 0\]
+
+<p>The gradients are the corresponding unit vectors, so each constrained costate simply picks up its own multiplier, and the four unconstrained costates ($p_{p_x}, p_{v_x}, p_\omega, p_m$) reduce to $\partial\varphi/\partial x$.</p>
+
+<p><strong>Manifold 2 — landing on a circular platform.</strong> The altitude fix is replaced by a sphere:</p>
+
+\[h_1 = (p_x - p_c)^2 + p_z^2 - r^2 = 0, \qquad h_2 = v_z = 0, \qquad h_3 = \theta = 0\]
+
+<p>Now $\nabla h_1 = [2(p_x - p_c),\ 2p_z,\ 0,0,0,0,0]^{\top}$ <strong>couples $p_x$ and $p_z$</strong>, spanning two dimensions instead of one:</p>
+
+\[p_{p_x}(t_f) = \frac{\partial\varphi}{\partial p_x} + 2\nu_1(p_x(t_f) - p_c), \qquad
+p_{p_z}(t_f) = \frac{\partial\varphi}{\partial p_z} + 2\nu_1 p_z(t_f)\]
+
+<p>The unknown multiplier $\nu_1$ is eliminated by dividing these two equations (with $\partial\varphi/\partial x = 0$), which yields a clean <strong>collinearity condition</strong> passed directly to the solver:</p>
+
+\[\frac{p_{p_x}(t_f)}{p_{p_z}(t_f)} = \frac{p_x(t_f) - p_c}{p_z(t_f)}\]
+
+<p>Physically: the position costate must align with the outward normal of the sphere at touchdown.</p>
+
+<p><strong>Implementation.</strong> The combined state–costate system with the saturated stationarity law is mapped onto $s \in [0,1]$ via $t = t_1 + s(t_f - t_1)$, with the unknown duration entering as a free parameter. The split boundary conditions are the handoff $x(t_1) = x_1$, seven manifold endpoint and transversality residuals, and the free-time closure $H_B(t_f) = 0$ — fifteen conditions for fourteen states plus the parameter. The platform is centred at $(p_c, 0) = (0,0)$ so that M1 lands at $(0,0)$ and M2 at the apex $(0,r)$, sharing the same horizontal footprint and isolating the effect of manifold geometry.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:52%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-17-trajectory-M1.png" alt="Figure 17: M1 — flat-ground mission plane, ascent plus landing with attitude shown. Touchdown at the origin; the descent is very nearly vertical over the shared footprint." />
+  <figcaption class="figure-caption">Figure 17: M1 — flat-ground mission plane, ascent plus landing with attitude shown. Touchdown at the origin; the descent is very nearly vertical over the shared footprint.</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:62%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-18-trajectory-M2.png" alt="Figure 18: M2 — circular-platform mission plane. The sphere constraint (dotted) forces a bowed approach intercepting the surface along its outward normal at the apex." />
+  <figcaption class="figure-caption">Figure 18: M2 — circular-platform mission plane. The sphere constraint (dotted) forces a bowed approach intercepting the surface along its outward normal at the apex.</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-19-switching-function.png" alt="Figure 19: Phase A switching function and full mission control histories for M1 and M2; the dotted line marks the Phase A/B handoff" />
+  <figcaption class="figure-caption">Figure 19: Phase A switching function and full mission control histories for M1 and M2; the dotted line marks the Phase A/B handoff</figcaption>
+</figure>
+
+<p><br /></p>
+
+<h3 id="manifold-comparison">Manifold Comparison</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>M1 (flat)</th>
+      <th>M2 (platform)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ascent time $t_1$ [s]</td>
+      <td>2.158</td>
+      <td>2.158</td>
+    </tr>
+    <tr>
+      <td>Landing time $t_f$ [s]</td>
+      <td>8.097</td>
+      <td>7.315</td>
+    </tr>
+    <tr>
+      <td>Phase B energy $\int u^{\top}Ru\,dt$</td>
+      <td>215.7</td>
+      <td>526.2</td>
+    </tr>
+    <tr>
+      <td>Touchdown $(p_x, p_z)$ [m]</td>
+      <td>(0, 0)</td>
+      <td>(0, 5)</td>
+    </tr>
+    <tr>
+      <td>Shooting $\lVert \text{res} \rVert_\infty$</td>
+      <td>6.2 × 10⁻⁸</td>
+      <td>6.2 × 10⁻⁸</td>
+    </tr>
+    <tr>
+      <td>Terminal manifold $\lVert \text{res} \rVert_\infty$</td>
+      <td>7.0 × 10⁻²¹</td>
+      <td>1.1 × 10⁻¹⁴</td>
+    </tr>
+    <tr>
+      <td>$H_A$ drift (min-time, ≡ 0)</td>
+      <td>2.9 × 10⁻⁹</td>
+      <td>2.9 × 10⁻⁹</td>
+    </tr>
+    <tr>
+      <td>$H_B$ drift (free-time, ≡ 0)</td>
+      <td>9.7 × 10⁻¹²</td>
+      <td>9.6 × 10⁻¹¹</td>
+    </tr>
+    <tr>
+      <td>Min. altitude $p_z$ [m]</td>
+      <td>0.000</td>
+      <td>0.000</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-20-manifold-comparison.png" alt="Figure 20: M1 vs M2 comparison across landing time, Phase B duration, control energy, thrust switches, feasibility, and terminal sensitivity" />
+  <figcaption class="figure-caption">Figure 20: M1 vs M2 comparison across landing time, Phase B duration, control energy, thrust switches, feasibility, and terminal sensitivity</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p><strong>Landing time.</strong> M2 completes sooner — 7.32 s versus 8.10 s — because touchdown at the platform apex $(0,5)$ m avoids the long final vertical flare required to reach $p_z = 0$ on flat ground.</p>
+
+<p><strong>Energy.</strong> Despite the shorter clock time, M2 costs ≈2.4× more control energy. The lofted descent arc and stronger horizontal–vertical coordination dominate the budget.</p>
+
+<p><strong>Switching structure.</strong> Phase A is identical in both cases. Phase B uses smooth saturated costate feedback in both manifolds — no further bang–bang arcs — with M2 displaying larger mid-descent $\delta T$ and $\tau$ activity to steer onto the curved approach.</p>
+
+<p><strong>Terminal sensitivity.</strong> Perturbing the handoff state by ±0.05 on each component raises the worst-case terminal residual to ~51 for M1 but ~1.9 × 10³ for M2. The sphere constraint and collinearity condition tightly couple position and costate at touchdown, making M2 far more sensitive.</p>
+
+<p>The geometric explanation ties it together: M1’s flat manifold allows a nearly vertical descent, while M2’s sphere forces a bowed trajectory that must intercept the surface along its outward normal. Transversality requires the position costate to align with that normal, which demands sustained lateral thrust and attitude correction through Phase B.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-21-hamiltonian-partIII.png" alt="Figure 21: Hamiltonian consistency across the mission — H_A ≡ 0 on Phase A (minimum time) and H_B ≡ 0 on Phase B (free final time), both to numerical tolerance" />
+  <figcaption class="figure-caption">Figure 21: Hamiltonian consistency across the mission — H_A ≡ 0 on Phase A (minimum time) and H_B ≡ 0 on Phase B (free final time), both to numerical tolerance</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>Both phases are free-final-time problems, so PMP requires the Hamiltonian to vanish identically rather than merely stay constant. Phase A holds $H_A \equiv 0$ to $O(10^{-9})$ and Phase B holds $H_B \equiv 0$ to $O(10^{-11})$, confirming the free-time transversality closure in both manifolds.</p>
+
+<h2 id="vii-part-iv--nonlinear-optimal-control-near-hover">VII. Part IV — Nonlinear Optimal Control Near Hover</h2>
+
+<blockquote>
+  <p><strong>Deviation from base:</strong> the plant is the <em>full nonlinear</em> model. The Riccati substitution assumed linear dynamics and is now invalid; the coupled 14-state TPBVP must be solved directly.</p>
+</blockquote>
+
+<h3 id="formulation-1">Formulation</h3>
+
+\[\min_u \int_0^{t_f}\left(x^{\top}Qx + u^{\top}Ru\right)dt\]
+
+<p>subject to the nonlinear EOM of Section I, anchored at a known $x(0) = x_0$. Adjoining the nonlinear dynamics with costate $p$:</p>
+
+\[H = x^{\top}Qx + u^{\top}Ru + p_1 v_x + p_2 v_z - p_3\frac{T}{m}\sin\theta + p_4\left(\frac{T}{m}\cos\theta - g\right) + p_5\omega + p_6\frac{\tau}{I} - p_7\alpha T\]
+
+<p>The adjoint equations follow from $\dot{p} = -\partial H/\partial x$. Unlike the linear case they are no longer a fixed matrix product — the attitude and mass channels pick up genuine coupling:</p>
+
+\[\begin{aligned}
+\dot{p}_1 &amp;= -2Q_{11}p_x &amp; \dot{p}_5 &amp;= -2Q_{55}\theta + \frac{T}{m}\left(p_3\cos\theta + p_4\sin\theta\right) \\
+\dot{p}_2 &amp;= -2Q_{22}p_z &amp; \dot{p}_6 &amp;= -2Q_{66}\omega - p_5 \\
+\dot{p}_3 &amp;= -2Q_{33}v_x - p_1 &amp; \dot{p}_7 &amp;= -2Q_{77}m + \frac{T}{m^2}\left(p_4\cos\theta - p_3\sin\theta\right) \\
+\dot{p}_4 &amp;= -2Q_{44}v_z - p_2
+\end{aligned}\]
+
+<p>The $\dot{p}_5$ and $\dot{p}_7$ equations are where the nonlinearity lives: pitch feeds back through the thrust resolution, and mass feeds back through $T/m^2$.</p>
+
+<p>Stationarity still gives closed-form controls, now saturated to the actuator bounds expressed in deviation form:</p>
+
+\[\delta T^{*} = \mathrm{sat}\left[\frac{1}{2R_{11}}\left(p_3\frac{\sin\theta}{m} - p_4\frac{\cos\theta}{m} + p_7\alpha\right)\right], \qquad
+\tau^{*} = \mathrm{sat}\left[-\frac{p_6}{2IR_{22}}\right]\]
+
+<p>Substituting these back into the 7 state and 7 adjoint equations creates a deeply coupled system of <strong>14 nonlinear first-order ODEs</strong>, solved simultaneously on $t \in [0, t_f]$ subject to split boundary conditions $x(0) = x_0$ and $p(t_f) = 2Q_f x(t_f)$.</p>
+
+<h3 id="numerical-implementation">Numerical Implementation</h3>
+
+<p>The problem is solved in hover-deviation coordinates so the linearized solutions of previous parts serve directly as the nonlinear warm start. Three scenarios share a common $x_0 = [1,\ 1.5,\ 0.4,\ -0.25,\ 0.12,\ 0,\ 0.05]^{\top}$ and horizon:</p>
+
+<ol>
+  <li><strong>LQR on the linear plant</strong> — backward Riccati sweep from Part I, integrated forward on $\dot{x} = Ax + Bu$.</li>
+  <li><strong>LQR on the nonlinear plant</strong> — the same time-varying gain applied to the full nonlinear EOM with fixed-step RK4 and clipped control. This isolates the modeling error incurred by using a linear law on the true plant.</li>
+  <li><strong>Nonlinear PMP / TPBVP</strong> — the coupled 14-state system solved by collocation with control substituted in closed form from stationarity.</li>
+</ol>
+
+<p><em>Restriction to near-hover.</em> True hover is not an equilibrium of a variable-mass vehicle — holding $T = mg$ continuously depletes mass at $\dot{m} = -\alpha m g$ — so the horizon is kept short at $t_f = 4$ s with 201 uniform nodes. This keeps the trajectory near hover and the mass safely above $m_{\text{dry}}$.</p>
+
+<p><em>Warm start and costate scaling.</em> The collocation guess uses the Scenario 1 state history with costate guess $p(t) = 2P(t)x(t)$; the factor of two maps the $\tfrac{1}{2}$-scaled Riccati costate to the un-scaled running cost used here. Convergence is declared at a collocation tolerance of $10^{-6}$.</p>
+
+<h3 id="analysis-2">Analysis</h3>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-22-nonlinear-states.png" alt="Figure 22: State trajectories for the three scenarios" />
+  <figcaption class="figure-caption">Figure 22: State trajectories for the three scenarios</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-23-nonlinear-mission-plane.png" alt="Figure 23: Mission plane with attitude vectors" />
+  <figcaption class="figure-caption">Figure 23: Mission plane with attitude vectors</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-24-thrust-torque.png" alt="Figure 24: Thrust and torque histories" />
+  <figcaption class="figure-caption">Figure 24: Thrust and torque histories</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>Scenarios (1) and (2) agree early but diverge as $\theta$ and $m$ evolve; the nonlinear PMP solution trims peak $p_z$ and $\theta$ by exploiting the $\sin\theta$ and $T/m$ coupling that the linear law cannot see. The linear law over-commands on the true plant, raising control effort $J_u$ from 13.2 to 42.9, while PMP recovers 39.4 (≈8% savings) and lowers total $J$ by <strong>41%</strong> versus Scenario 2.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-25-control-effort-cost.png" alt="Figure 25: Control effort and total cost across the three scenarios" />
+  <figcaption class="figure-caption">Figure 25: Control effort and total cost across the three scenarios</figcaption>
+</figure>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-26-pitch-sweep.png" alt="Figure 26: Control effort and PMP savings versus scaled initial pitch" />
+  <figcaption class="figure-caption">Figure 26: Control effort and PMP savings versus scaled initial pitch</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>Terminal norms tighten under PMP, collocation converges in few refinements from the LQR seed, and the PMP advantage grows with initial pitch. The linear approximation remains accurate for small attitude and mass deviations over 4 s; it breaks down once thrust–gravity resolution and mass depletion accumulate.</p>
+
+<h3 id="validation-2">Validation</h3>
+
+<p>Part IV is a fixed-final-time, free-endpoint problem with autonomous hover-trim dynamics, so the Hamiltonian must remain <strong>constant</strong> along the optimal trajectory — but unlike the free-final-time mission of Part III, that constant is not required to vanish.</p>
+
+<p><br /></p>
+
+<figure class="custom-figure" style="width:75%;">
+  <img src="/assets/media/optimal-control-lander_media/fig-27-hamiltonian-partIV.png" alt="Figure 27: Hamiltonian evolution for the three scenarios — the nonlinear PMP solution holds H constant, whereas the LQR law on the nonlinear plant drifts" />
+  <figcaption class="figure-caption">Figure 27: Hamiltonian evolution for the three scenarios — the nonlinear PMP solution holds H constant, whereas the LQR law on the nonlinear plant drifts</figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>The nonlinear PMP solution holds $H$ constant to a drift of $O(10^{-9})$ about $H(t_f) \approx 34.7$. By contrast, applying the linear LQR law to the nonlinear plant produces a Hamiltonian that drifts by $O(10^2)$ over the same horizon — a direct, quantitative certificate that the linear law is <strong>not</strong> an extremal of the nonlinear problem.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Condition</th>
+      <th>Residual</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Initial</td>
+      <td>$x(0) = x_0$ ($L_\infty$)</td>
+      <td>3.9 × 10⁻²⁶</td>
+    </tr>
+    <tr>
+      <td>Transversality</td>
+      <td>$p_{p_z}(t_f) = 2Q_{f,22}\,p_z(t_f)$</td>
+      <td>1.8 × 10⁻¹⁵</td>
+    </tr>
+    <tr>
+      <td>Transversality</td>
+      <td>$p_\theta(t_f) = 2Q_{f,55}\,\theta(t_f)$</td>
+      <td>8.9 × 10⁻¹⁶</td>
+    </tr>
+    <tr>
+      <td>Transversality</td>
+      <td>$p_\omega(t_f) = 2Q_{f,66}\,\omega(t_f)$</td>
+      <td>5.6 × 10⁻¹⁷</td>
+    </tr>
+    <tr>
+      <td>Transversality</td>
+      <td>$p(t_f) = 2Q_f x(t_f)$ ($L_\infty$)</td>
+      <td>1.8 × 10⁻¹⁵</td>
+    </tr>
+    <tr>
+      <td>Hamiltonian</td>
+      <td>$H(t)$ drift (autonomous, fixed $t_f$)</td>
+      <td>1.4 × 10⁻⁹</td>
+    </tr>
+    <tr>
+      <td>Collocation</td>
+      <td>Interior RMS defect (219 nodes)</td>
+      <td>9.7 × 10⁻⁷</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Both the global $L_\infty$ boundary residual of 1.8 × 10⁻¹⁵ and the maximum interior collocation residual of 9.7 × 10⁻⁷ on a converged 219-node mesh fall within solver tolerance, confirming that the computed solution satisfies the necessary optimality conditions to numerical precision.</p>
+
+<h2 id="references">References</h2>
+
+<hr />
+
+<p><br /></p>
+
+<p><a href="https://github.com/nzge/optimal-control-lander">Repository</a></p>
+
+<p><strong>Nathan Ge</strong><br />
+Department of Mechanical and Aerospace Engineering<br />
+University of California, Los Angeles<br />
+Email: nzge@g.ucla.edu</p>
+
+<p><strong>Acknowledgment</strong>  <br />
+The author thanks Professor Shahriar Talebi for guidance and instruction throughout the MAE 270C Optimal Control course. Their insights into optimal control theory formed the foundation of this project.</p>
+
+<!-- Hidden references trigger the footnote rendering -->
+<p><span id="hidden-references"> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup></span></p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>D. Liberzon, <em>Calculus of Variations and Optimal Control Theory: A Concise Introduction</em>. Princeton University Press, 2012. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>A. E. Bryson and Y.-C. Ho, <em>Applied Optimal Control</em>. Routledge, 2018. [Online]. Available: <a href="https://doi.org/10.1201/9781315137667">https://doi.org/10.1201/9781315137667</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>D. E. Kirk, <em>Optimal Control Theory: An Introduction</em>. Courier Corporation, 2004. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>B. Acikmese and S. R. Ploen, “Convex programming approach to powered descent guidance for Mars landing,” <em>Journal of Guidance, Control, and Dynamics</em>, vol. 30, no. 5, pp. 1353–1366, 2007. [Online]. Available: <a href="https://doi.org/10.2514/1.27553">https://doi.org/10.2514/1.27553</a> <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
     </article>
   </div>

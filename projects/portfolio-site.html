@@ -5,6 +5,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Theme bootstrap. Must run before first paint, otherwise a light-mode
+       visitor gets a black flash while the stylesheet and menu.js load.
+       Dark is the default, so we only ever set the attribute for light. -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('nz-theme') === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) { /* storage blocked; fall back to dark */ }
+    })();
+  </script>
   <title>Nathan Ge - Portfolio Site</title>
   <meta name="description" content="Static website powered by Jekyll">
   
@@ -58,21 +71,30 @@
 
   <button id="backToTop" title="Back to top">↑</button>
 
-  <div class="btn" id="toggle-btn">
+  <div class="btn" id="toggle-btn" role="button" tabindex="0"
+     aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
   <div id="hamburger">
     <span></span>
   </div>
 </div>
 
-<!-- <div class="overlay">
-  <svg viewBox="0 0 1000 1000"> 
-    <path d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
-  </svg>
-</div>  -->
+<div class="menu-panel" id="site-menu" role="menu" aria-hidden="true">
 
-<div class="menu">
+  <div class="menu-row">
+    <span class="menu-row-label">
+      <i class="fa-regular fa-moon" aria-hidden="true"></i>
+      <span id="theme-label">Dark</span>
+    </span>
+
+    <label class="theme-switch" for="theme-toggle">
+      <input type="checkbox" id="theme-toggle" role="switch"
+             aria-label="Toggle light mode">
+      <span class="theme-slider"></span>
+    </label>
+  </div>
 
 </div>
+
 
   <body>  
     <script src="/assets/js/slideshow.js"></script>
@@ -239,6 +261,19 @@ Also includes storage of miscellaneous media (gifs, background images, icons/fav
 <span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="n">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;!--</span> <span class="n">Theme</span> <span class="n">bootstrap</span><span class="p">.</span> <span class="n">Must</span> <span class="n">run</span> <span class="n">before</span> <span class="n">first</span> <span class="n">paint</span><span class="p">,</span> <span class="n">otherwise</span> <span class="n">a</span> <span class="n">light</span><span class="o">-</span><span class="n">mode</span>
+       <span class="n">visitor</span> <span class="n">gets</span> <span class="n">a</span> <span class="n">black</span> <span class="n">flash</span> <span class="k">while</span> <span class="n">the</span> <span class="n">stylesheet</span> <span class="n">and</span> <span class="n">menu</span><span class="p">.</span><span class="n">js</span> <span class="n">load</span><span class="p">.</span>
+       <span class="n">Dark</span> <span class="n">is</span> <span class="n">the</span> <span class="k">default</span><span class="p">,</span> <span class="n">so</span> <span class="n">we</span> <span class="n">only</span> <span class="n">ever</span> <span class="n">set</span> <span class="n">the</span> <span class="n">attribute</span> <span class="k">for</span> <span class="n">light</span><span class="p">.</span> <span class="o">--&gt;</span>
+  <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="p">(</span><span class="n">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">try</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">localStorage</span><span class="p">.</span><span class="n">getItem</span><span class="p">(</span><span class="err">'</span><span class="n">nz</span><span class="o">-</span><span class="n">theme</span><span class="err">'</span><span class="p">)</span> <span class="o">===</span> <span class="err">'</span><span class="n">light</span><span class="err">'</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">document</span><span class="p">.</span><span class="n">documentElement</span><span class="p">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="err">'</span><span class="n">data</span><span class="o">-</span><span class="n">theme</span><span class="err">'</span><span class="p">,</span> <span class="err">'</span><span class="n">light</span><span class="err">'</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* storage blocked; fall back to dark */</span> <span class="p">}</span>
+    <span class="p">})();</span>
+  <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Nathan</span> <span class="n">Ge</span> <span class="o">-</span> <span class="n">Portfolio</span> <span class="n">Site</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s">"description"</span> <span class="n">content</span><span class="o">=</span><span class="s">"Static website powered by Jekyll"</span><span class="o">&gt;</span>
   

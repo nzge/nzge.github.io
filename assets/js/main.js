@@ -1,11 +1,23 @@
-//At the document ready event
+// WOW.js must be initialised EXACTLY ONCE per page.
+//
+// This previously ran on both DOMContentLoaded and window.load, creating two
+// WOW instances. Each instance attaches its own scroll listener and its own
+// MutationObserver over the same .wow elements, so they fight: instance A
+// reveals a box, instance B's sync pass resets it back to hidden, A reveals it
+// again. That ping-pong is the stuttering multi-replay seen on /work.
+//
+// The guard also covers the case where this script is included twice.
 document.addEventListener("DOMContentLoaded", function () {
-  new WOW().init();
-});
+  if (window.__wowInitialised) return;
+  if (typeof WOW === "undefined") return;
 
-//also at the window load event
-jQuery(window).on('load', function(){
-  new WOW().init(); 
+  window.__wowInitialised = true;
+
+  new WOW({
+    live: false   // no MutationObserver: the project grid re-appends the same
+                  // nodes when sorted, which WOW would otherwise treat as new
+                  // elements and re-animate.
+  }).init();
 });
 
 
