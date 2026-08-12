@@ -57,8 +57,9 @@
   --theme-btn-text:     #ffffff;
   --theme-btn-hover:    #555555;
 
-  /* Monochrome menu icons are authored black; invert them onto dark. */
-  --theme-icon-invert:  1;
+  /* Monochrome menu icons are authored black; invert them onto dark.
+     Stored as a complete filter value so Sass never parses `invert()`. */
+  --theme-icon-filter:  invert(1);
 
   color-scheme: dark;
 }
@@ -101,7 +102,7 @@
   --theme-btn-text:     #f5f3ee;
   --theme-btn-hover:    #45413a;
 
-  --theme-icon-invert:  0;
+  --theme-icon-filter:  none;
 
   color-scheme: light;
 }

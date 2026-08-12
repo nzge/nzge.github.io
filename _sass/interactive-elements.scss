@@ -198,7 +198,12 @@ select {
       width: 24px;
       height: 24px;
       cursor: pointer;
-      filter: invert(var(--theme-icon-invert)); // monochrome icons flip with the theme
+      // The whole filter value lives in the token. Writing
+      // `invert(var(--theme-icon-invert))` here fails under libsass
+      // (jekyll-sass-converter 1.x), which evaluates `invert()` as the Sass
+      // colour function and rejects a var() argument. Dart Sass passes it
+      // through, so this only breaks in CI.
+      filter: var(--theme-icon-filter);
       transition: transform 0.2s;
 
       &:hover {
