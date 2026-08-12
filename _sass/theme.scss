@@ -118,4 +118,20 @@ html {
   html * {
     transition-duration: 0.01ms !important;
   }
+
+  /* Scroll-reveal elements are deliberate content, not decoration, so they
+     keep their authored duration even when the OS asks to reduce motion.
+     animate.css forces `animation-duration: 1ms !important` here, which
+     outranks the inline duration WOW writes; .wow.animate__animated (0,2,0)
+     beats its .animate__animated (0,1,0) and wins that back.
+
+     --animate-duration is set per element from data-wow-duration by
+     assets/js/main.js, so each element keeps its own timing.
+
+     This intentionally overrides an OS accessibility preference for these
+     elements. To honour it instead, delete this block -- the fade will then
+     be instant for users who have reduced motion enabled. */
+  .wow.animate__animated {
+    animation-duration: var(--animate-duration) !important;
+  }
 }

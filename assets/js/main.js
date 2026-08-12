@@ -13,6 +13,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.__wowInitialised = true;
 
+  // Mirror data-wow-duration into animate.css's own --animate-duration
+  // custom property on each element.
+  //
+  // WOW applies the duration as an inline style, but animate.css declares
+  //   @media (prefers-reduced-motion: reduce), print {
+  //     .animate__animated { animation-duration: 1ms !important }
+  //   }
+  // and !important in a stylesheet outranks a normal inline style, so the
+  // authored duration was being discarded down to 1ms. The paired CSS rule
+  // in _sass/theme.scss reinstates it, and reads this property so each
+  // element keeps its own stated duration rather than a single global value.
+  document.querySelectorAll('.wow[data-wow-duration]').forEach(function (el) {
+    el.style.setProperty('--animate-duration', el.getAttribute('data-wow-duration'));
+  });
+
   new WOW({
     live: false,  // no MutationObserver: the project grid re-appends the same
                   // nodes when sorted, which WOW would otherwise treat as new
