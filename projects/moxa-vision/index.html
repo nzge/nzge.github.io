@@ -1,0 +1,1858 @@
+<title>moxa-vision Wiring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<style>
+:root {
+  --ground:      #e9edf1;
+  --surface:     #ffffff;
+  --surface-2:   #f2f6f9;
+  --ink:         #121a22;
+  --ink-2:       #43566a;
+  --muted:       #6d7f90;
+  --line:        #ccd7e1;
+  --line-strong: #a4b5c4;
+  --accent:      #0d6f7d;
+  --accent-soft: #d6ecef;
+  --band:        #dde5ec;
+  --band-ink:    #7c8d9c;
+
+  --lane-target: #a85c16;
+  --lane-wire:   #5850bf;
+  --lane-host:   #0d6f7d;
+  --lane-view:   #2c7550;
+  --lane-build:  #7a6448;
+
+  --shadow: 0 1px 2px rgba(18,26,34,.06), 0 6px 18px rgba(18,26,34,.06);
+
+  --f-cjk:     "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB";
+  --f-display: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", var(--f-cjk), sans-serif;
+  --f-prose:   "Source Serif 4", Georgia, "Times New Roman", var(--f-cjk), serif;
+  --f-mono:    "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, var(--f-cjk), monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:      #0d1319;
+    --surface:     #151d25;
+    --surface-2:   #1a232c;
+    --ink:         #dfe8ef;
+    --ink-2:       #a6b7c5;
+    --muted:       #7d8f9e;
+    --line:        #29353f;
+    --line-strong: #46596a;
+    --accent:      #45c2d1;
+    --accent-soft: #10333a;
+    --band:        #131c24;
+    --band-ink:    #5d707f;
+
+    --lane-target: #e0913f;
+    --lane-wire:   #9d97f2;
+    --lane-host:   #45c2d1;
+    --lane-view:   #62bb8b;
+    --lane-build:  #b8a389;
+
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.32);
+  }
+}
+
+:root[data-theme="dark"] {
+  --ground:      #0d1319;
+  --surface:     #151d25;
+  --surface-2:   #1a232c;
+  --ink:         #dfe8ef;
+  --ink-2:       #a6b7c5;
+  --muted:       #7d8f9e;
+  --line:        #29353f;
+  --line-strong: #46596a;
+  --accent:      #45c2d1;
+  --accent-soft: #10333a;
+  --band:        #131c24;
+  --band-ink:    #5d707f;
+
+  --lane-target: #e0913f;
+  --lane-wire:   #9d97f2;
+  --lane-host:   #45c2d1;
+  --lane-view:   #62bb8b;
+  --lane-build:  #b8a389;
+
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.32);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--f-display);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  position: relative;
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 28px 22px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- masthead ---------- */
+
+.langbar {
+  position: absolute;
+  top: 26px;
+  right: 22px;
+  z-index: 5;
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.langbtn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  line-height: 1.35;
+}
+
+.langbtn[aria-pressed="true"] {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+.langbtn:hover { color: var(--ink); }
+.langbtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 18px;
+  padding-top: 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+h1 {
+  font-size: clamp(28px, 4.4vw, 42px);
+  font-weight: 700;
+  letter-spacing: -.025em;
+  line-height: 1.02;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.lede {
+  font-family: var(--f-prose);
+  font-size: 15.5px;
+  color: var(--ink-2);
+  max-width: 56ch;
+  margin: 10px 0 0;
+}
+
+.tally {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.tally div { display: flex; flex-direction: column; gap: 2px; }
+
+.tally .n {
+  font-family: var(--f-mono);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.tally .k {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- toolbar ---------- */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.tabs { display: flex; gap: 4px; padding: 3px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 9px; }
+
+.tab {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ink-2);
+  font-family: var(--f-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -.005em;
+  padding: 7px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tab[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+.tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.spacer { flex: 1 1 auto; }
+
+.zoomers { display: flex; gap: 4px; }
+
+.btn {
+  appearance: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+  border-radius: 7px;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 11px;
+  cursor: pointer;
+  min-width: 34px;
+}
+.btn:hover { border-color: var(--line-strong); color: var(--ink); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.hint {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .01em;
+}
+
+/* ---------- stage ---------- */
+
+.stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 384px;
+  gap: 18px;
+  align-items: start;
+}
+
+.canvas-shell {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  height: clamp(520px, 74vh, 860px);
+  touch-action: none;
+}
+
+svg.graph { width: 100%; height: 100%; display: block; cursor: grab; user-select: none; }
+svg.graph.dragging { cursor: grabbing; }
+
+/* band */
+.band-rect { fill: var(--band); stroke: none; rx: 10; }
+.band-label {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  fill: var(--band-ink);
+}
+.band-sub {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: .05em;
+  fill: var(--band-ink);
+}
+
+/* edges */
+.edge { fill: none; stroke: var(--line-strong); stroke-width: 1.6; }
+.edge.dashed { stroke-dasharray: 5 4; }
+.edge.hot { stroke-width: 2.6; }
+.arrow { fill: var(--line-strong); }
+.arrow.hot { }
+
+.edge-hit { fill: none; stroke: transparent; stroke-width: 18; cursor: pointer; }
+
+.edge-label {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  font-weight: 500;
+  fill: var(--muted);
+  pointer-events: none;
+}
+.edge-label-bg { fill: var(--surface); }
+
+/* nodes */
+.node { cursor: pointer; }
+.node rect.body {
+  fill: var(--surface);
+  stroke: var(--line-strong);
+  stroke-width: 1.4;
+  rx: 8;
+}
+.node.standalone rect.body { stroke-dasharray: 4 3; }
+.node rect.stripe { rx: 2; }
+.node text.title {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  font-weight: 700;
+  fill: var(--ink);
+  letter-spacing: -.01em;
+}
+.node text.sub {
+  font-family: var(--f-display);
+  font-size: 10.5px;
+  font-weight: 500;
+  fill: var(--muted);
+}
+.node:hover rect.body { stroke: var(--accent); }
+.node:focus-visible rect.body { stroke: var(--accent); stroke-width: 2.4; }
+.node:focus { outline: none; }
+.node.selected rect.body { stroke: var(--accent); stroke-width: 2.4; }
+.node.selected rect.glow { fill: var(--accent-soft); rx: 11; }
+
+.faded { opacity: .17; }
+
+/* ---------- panel ---------- */
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: clamp(520px, 74vh, 860px);
+  overflow-y: auto;
+}
+
+.panel .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.chip {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background: var(--surface-2);
+}
+.chip.lane { border-color: currentColor; }
+
+.panel h2 {
+  font-family: var(--f-mono);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  margin: 0;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.panel .path {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+  margin: -8px 0 0;
+}
+
+.panel p.desc {
+  font-family: var(--f-prose);
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+.sect-h {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 8px;
+  padding-top: 3px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+ul.syms { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+ul.syms li {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+ul.syms li b { color: var(--ink); font-weight: 700; }
+ul.syms li span { font-family: var(--f-display); color: var(--muted); font-size: 11.5px; }
+
+ul.conns { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+ul.conns li { display: flex; gap: 9px; align-items: flex-start; }
+ul.conns .dir {
+  font-family: var(--f-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  flex: 0 0 auto;
+  line-height: 1.35;
+}
+ul.conns .who {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink);
+  display: block;
+  overflow-wrap: anywhere;
+}
+ul.conns .why {
+  font-family: var(--f-display);
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.45;
+  display: block;
+}
+ul.conns button {
+  appearance: none; background: none; border: 0; padding: 0; margin: 0;
+  text-align: left; cursor: pointer;
+}
+ul.conns button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+.empty {
+  font-family: var(--f-prose);
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.empty b { font-family: var(--f-display); font-weight: 600; color: var(--ink-2); }
+
+/* ---------- reading order ---------- */
+
+.reading {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.reading > h3 {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  margin: 0 0 4px;
+}
+
+.reading > p {
+  font-family: var(--f-prose);
+  color: var(--ink-2);
+  margin: 0 0 20px;
+  max-width: 68ch;
+  font-size: 15px;
+}
+
+ol.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
+  gap: 2px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+ol.steps li {
+  background: var(--surface);
+  padding: 15px 16px 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+ol.steps .num {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--accent);
+}
+
+ol.steps .file {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+ol.steps .look {
+  font-family: var(--f-prose);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+footer {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (max-width: 1080px) {
+  .stage { grid-template-columns: minmax(0, 1fr); }
+  .panel { max-height: none; }
+  .canvas-shell { height: clamp(440px, 62vh, 620px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+
+<div class="wrap">
+
+  <div class="langbar" role="group" aria-label="Language / &#x8BED;&#x8A00;">
+    <button class="langbtn" id="lang-en" data-lang="en" aria-pressed="true">EN</button>
+    <button class="langbtn" id="lang-zh" data-lang="zh" aria-pressed="false">&#x4E2D;&#x6587;</button>
+  </div>
+
+  <header class="masthead">
+    <div>
+      <p class="eyebrow" id="ui-eyebrow">Stereo capture &#x00B7; Pi &#x2192; laptop &#x2192; browser</p>
+      <h1>moxa-vision Wiring</h1>
+      <p class="lede" id="ui-lede">Every file in the repo, what it actually does, and the named function or socket
+      that connects it to the next one. Click a box to open its dossier; click a wire to read the relation.</p>
+    </div>
+    <div class="tally">
+      <div><span class="n">7</span><span class="k" id="ui-k0">files on the stream path</span></div>
+      <div><span class="n">1,530</span><span class="k" id="ui-k1">lines of real code</span></div>
+      <div><span class="n">4</span><span class="k" id="ui-k2">channels, one socket</span></div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="tabs" role="tablist" aria-label="Graph view">
+      <button class="tab" id="tab-runtime" role="tab" aria-selected="true" aria-controls="canvas">Runtime path</button>
+      <button class="tab" id="tab-build" role="tab" aria-selected="false" aria-controls="canvas">Build &amp; ops</button>
+    </div>
+    <span class="hint" id="viewhint">Drag to pan &#x00B7; scroll to zoom</span>
+    <span class="spacer"></span>
+    <div class="zoomers">
+      <button class="btn" id="zoom-out" aria-label="Zoom out">&#x2212;</button>
+      <button class="btn" id="zoom-in" aria-label="Zoom in">+</button>
+      <button class="btn" id="zoom-fit">Fit</button>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="canvas-shell">
+      <svg class="graph" id="canvas" role="application" aria-label="Project dependency graph"></svg>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </div>
+
+  <section class="reading">
+    <h3 id="ui-readingH">A reading order that actually works</h3>
+    <p id="ui-readingP">Follow one frame from the sensor to the screen. Each file below only makes sense once the one
+    before it does, so read them in this order rather than opening whichever looks scariest. Strip the
+    bilingual comments while reading with <code style="font-family:var(--f-mono);font-size:12.5px">grep -vE '^\s*//' &lt;file&gt;</code>
+    &#x2014; the code underneath is a third of the line count.</p>
+    <ol class="steps" id="steps"></ol>
+  </section>
+
+  <footer id="ui-footer">
+    Generated from the repo itself: <code>#include</code> graph, <code>add_executable</code> /
+    <code>target_link_libraries</code> in CMakeLists.txt, and the call sites of each library's public
+    functions. Line counts are total / non-comment non-blank.<br>
+    Dashed boxes have no code edges &#x2014; they stand alone. Dashed wires run opposite to the main data flow.
+  </footer>
+
+</div>
+
+<script>
+/* ============================================================
+   DATA
+   ============================================================ */
+
+const LANES = {
+  target: { color: "var(--lane-target)", label: "TARGET \u2014 Raspberry Pi, aarch64, cross-compiled" },
+  wire:   { color: "var(--lane-wire)",   label: "THE WIRE \u2014 one TCP socket, full duplex" },
+  host:   { color: "var(--lane-host)",   label: "HOST \u2014 laptop, native build, never deployed" },
+  view:   { color: "var(--lane-view)",   label: "VIEW \u2014 any browser on the LAN" },
+  build:  { color: "var(--lane-build)",  label: "BUILD & OPS" }
+};
+
+const RUNTIME_BANDS = [
+  { x: 24, y: 44,  w: 912, h: 196, lane: "target", label: "TARGET \u00b7 RASPBERRY PI (aarch64)", sub: "cross-compiled, deployed to ~/moxa-vision/bin" },
+  { x: 24, y: 264, w: 912, h: 112, lane: "wire",   label: "THE WIRE", sub: "one TCP socket on :9000 \u2014 frames down, control up" },
+  { x: 24, y: 400, w: 912, h: 252, lane: "host",   label: "HOST \u00b7 LAPTOP (native)", sub: "one process: stream_server" },
+  { x: 24, y: 676, w: 912, h: 104, lane: "view",   label: "VIEW \u00b7 BROWSER", sub: "no build step \u2014 the page ships inside the server binary" }
+];
+
+const BUILD_BANDS = [
+  { x: 24, y: 44,  w: 912, h: 140, lane: "build", label: "1 \u00b7 PREPARE THE TWO MACHINES", sub: "run once per machine" },
+  { x: 24, y: 212, w: 912, h: 140, lane: "build", label: "2 \u00b7 CLONE THE TARGET FILESYSTEM", sub: "the sysroot the cross-linker links against" },
+  { x: 24, y: 380, w: 912, h: 216, lane: "build", label: "3 \u00b7 CONFIGURE & COMPILE", sub: "cmake, driven by one wrapper script" },
+  { x: 24, y: 624, w: 912, h: 140, lane: "build", label: "4 \u00b7 RUN & COLLECT", sub: "start both ends, pull results back" }
+];
+
+const N = {}; // id -> node
+
+function node(id, o) { N[id] = Object.assign({ id, w: 176, h: 56 }, o); return N[id]; }
+
+/* ---------- runtime nodes ---------- */
+
+node("sdk", {
+  view: "runtime", lane: "target", x: 48, y: 72,
+  title: "metasense/", sub: "vendor SDK (third_party)",
+  path: "cpp/third_party/metasense/", role: "Vendor code", machine: "Pi",
+  lines: "usb.cpp + headers", code: "not yours",
+  desc: "The camera manufacturer's UVC driver and control API. It knows how to enumerate the 04cc:0017 device over libusb, pull IR / RGB / depth buffers off it, and poke the on-camera registers that hold the SGBM stereo-matching parameters and the IR laser current. Nothing here is yours \u2014 the whole point of lib/camera is that this is the only corner of the repo allowed to include it.",
+  syms: [
+    ["abh::depth_picture_capture", "the grab-a-frame object"],
+    ["metasense_control.h", "register read/write for laser + SGBM"],
+    ["usb.h / libusb-1.0", "the transport underneath both"]
+  ]
+});
+
+node("camera", {
+  view: "runtime", lane: "target", x: 264, y: 72,
+  title: "lib/camera", sub: "acu_camera \u00b7 the SDK firewall",
+  path: "cpp/lib/camera/camera.cpp \u00b7 camera.hpp", role: "Static library", machine: "Pi only",
+  lines: "789 + 189", code: "~264",
+  desc: "Wraps the vendor SDK behind a small pimpl class so the rest of the project never sees a vendor header. Everything camera-shaped lives here: opening the device, grabbing whichever of the three sensors produced a new buffer this tick, writing the laser and exposure registers, and the two image transforms \u2014 turning raw 16-bit depth into a colorized picture, and warping depth onto the RGB frame to make the fusion view. If the camera browns out under the laser's 1 A draw, reset_device() is the recovery path.",
+  syms: [
+    ["pi::Camera::open(fps)", "claim the device, start streaming"],
+    ["Camera::grab() \u2192 Grab", "ir / rgb / depth + three _new flags"],
+    ["set_ir_laser(u8)", "0 = off, 127 = full current"],
+    ["set_sgbm / get_sgbm", "read + write stereo matcher params"],
+    ["fuse_rgbd(depth, rgb)", "the FUSION quadrant"],
+    ["colorize_depth(depth)", "static \u2014 16-bit \u2192 false colour"],
+    ["reset_device()", "USB re-enumeration after a brown-out"]
+  ]
+});
+
+node("quad", {
+  view: "runtime", lane: "target", x: 480, y: 72,
+  title: "quad_sender", sub: "the Pi executable",
+  path: "cpp/src/target/quad_sender.cpp", role: "Executable (deployed)", machine: "Pi",
+  lines: "1,062", code: "~283",
+  desc: "The only program that runs on the Pi in normal operation. It opens the camera with exponential backoff (because the camera often isn't ready at boot), dials the laptop, and then loops: grab \u2192 JPEG-encode whichever channels are new \u2192 push each one down the socket tagged with its stream_id. A second thread on the same socket reads control messages coming back the other way, so the laptop can toggle the laser or retune SGBM without a reconnect. Both loops sit inside a reconnect loop \u2014 pull the network cable and it reconnects on its own.",
+  syms: [
+    ["main()", "arg parsing, camera open w/ backoff, connect loop"],
+    ["control_loop(fd, cam)", "second thread \u2014 recv_control() \u2192 cam.set_*()"],
+    ["encode_jpeg(mat, q=80)", "cv::imencode into a byte vector"],
+    ["send_jpeg(fd, id, seq, jpeg)", "fills a FrameHeader and sends it"],
+    ["--host / --fps / --no-fusion", "plus nine --sgbm-* tuning flags"]
+  ]
+});
+
+node("mcap", {
+  view: "runtime", lane: "target", x: 48, y: 172, w: 176, h: 48,
+  title: "metasense_capture", sub: "capture straight to disk",
+  path: "cpp/src/target/metasense_capture.cpp", role: "Executable (deployed)", machine: "Pi",
+  lines: "623", code: "~122",
+  desc: "The older, pre-library path: it talks to the vendor SDK directly and writes frames to files on the Pi instead of streaming them. Useful when you want ground-truth captures to look at offline, or to prove the camera works without any networking in the picture. Pair it with cpp/scripts/camera/pull_captures.sh to rsync the results back.",
+  syms: [["main()", "open device, grab N frames, write to ./captures"]]
+});
+
+node("main", {
+  view: "runtime", lane: "target", x: 264, y: 172, w: 176, h: 48,
+  title: "main", sub: "linalg self-test + preview",
+  path: "cpp/src/target/acu_vision.cpp", role: "Executable (deployed)", machine: "Pi",
+  lines: "541", code: "~94",
+  desc: "A scaffolding binary from before the streaming work. It prints which linear-algebra backend got compiled in, solves a tiny least-squares system to prove that backend actually works, then opens a V4L2 node for a preview window if there's a DISPLAY. Its real job today is proving the cross-compile and the target's OpenCV / Armadillo install are sound.",
+  syms: [["report_linalg_backend()", "prints backend, solves y = 2x + 1"]]
+});
+
+node("linalg", {
+  view: "runtime", lane: "target", x: 480, y: 172, w: 176, h: 48,
+  title: "linalg.hpp", sub: "shared, header-only",
+  path: "cpp/include/linalg.hpp", role: "Header (both machines)", machine: "Pi + laptop",
+  lines: "177", code: "~45",
+  desc: "One header with a compile-time switch: if ACU_HAVE_ARMADILLO is defined it solves with Armadillo on OpenBLAS, otherwise it falls back to cv::solve with SVD. Same signature either way, so callers never branch. This is why the host build passes --no-armadillo and still links \u2014 it's the seam that lets one codebase target two very differently-provisioned machines.",
+  syms: [
+    ["acu::backend_name()", "which implementation got compiled in"],
+    ["acu::solve_least_squares(A,b,rows,cols)", "x = (A\u1d40A)\u207b\u00b9A\u1d40b"]
+  ]
+});
+
+node("udptest", {
+  view: "runtime", lane: "target", x: 700, y: 172, w: 176, h: 48, standalone: true,
+  title: "udp_sender_test", sub: "stub \u2014 hello world",
+  path: "cpp/src/target/network_test.cpp", role: "Executable (deployed)", machine: "Pi",
+  lines: "76", code: "~7",
+  desc: "A placeholder. main() prints \"Hello World\" and returns. It exists so the CMake target and the header slot are already wired up if you ever want a UDP variant of the transport \u2014 nothing calls into it and nothing depends on it today."
+});
+
+node("protocol", {
+  view: "runtime", lane: "wire", x: 700, y: 288, w: 196, h: 64,
+  title: "lib/protocol", sub: "acu_protocol \u00b7 the contract",
+  path: "cpp/lib/protocol/frame_protocol.hpp", role: "Header-only INTERFACE lib", machine: "Both",
+  lines: "1,025", code: "~251",
+  desc: "The single file both machines agree on, and the one to read first. It defines the 24-byte frame header (magic MCAF, version, stream_id, seq, ms timestamp, JPEG length), big-endian put/get helpers so byte order never depends on the compiler, and the loops that guarantee a full read or write across a stream socket. On top of that sit two more message types sharing the same socket: 5-byte CTL control messages going up to the Pi, and META messages coming back down carrying ACKs and current SGBM values. Because all three are distinguished by their leading magic word, the receiver reads four bytes first and only then decides what it's looking at.",
+  syms: [
+    ["StreamId", "IR=0, DEPTH=1, FUSION=2, RGB=3"],
+    ["FrameHeader", "24 bytes, big-endian on the wire"],
+    ["send_all / recv_all", "loop until n bytes moved or the socket dies"],
+    ["send_frame / recv_frame", "header + JPEG payload"],
+    ["recv_magic \u2192 *_after_magic", "peek 4 bytes, then dispatch by type"],
+    ["send_control / recv_control", "'CTL' + opcode + len + payload"],
+    ["send_meta / MetaMsg", "'MACU' + kind + len \u2014 Pi \u2192 laptop replies"],
+    ["SgbmWire + to/from_wire", "24-byte little-endian param blob"]
+  ]
+});
+
+node("stream_server", {
+  view: "runtime", lane: "host", x: 48, y: 432,
+  title: "stream_server", sub: "the laptop executable",
+  path: "cpp/src/host/stream_server.cpp", role: "Executable (native)", machine: "Laptop",
+  lines: "492", code: "~71",
+  desc: "Deliberately tiny \u2014 it owns no logic, only threads. It binds two listening sockets (9000 for the Pi, 8080 for browsers), hands the first to run_ingress on a detached thread, then sits in an accept loop spawning one detached thread per browser connection. Its other job is dying gracefully: on Ctrl-C it reaches for the live Pi socket and sends a SHUTDOWN control message first, so the laser doesn't stay on after you kill the server.",
+  syms: [
+    ["main()", "two listeners, one ingress thread, accept loop"],
+    ["make_listener(port)", "socket + SO_REUSEADDR + bind + listen"],
+    ["on_shutdown_signal()", "SIGINT \u2192 tell the Pi to power the laser down"]
+  ]
+});
+
+node("ingress", {
+  view: "runtime", lane: "host", x: 264, y: 432,
+  title: "lib/ingress", sub: "acu_ingress \u00b7 demux",
+  path: "cpp/lib/ingress/ingress.cpp \u00b7 ingress.hpp", role: "Static library", machine: "Laptop",
+  lines: "248 + 74", code: "~63",
+  desc: "The Pi-facing half of the server, and the smallest real file in the project. Its loop is four lines of logic: read a magic word, and depending on which one it is either read a frame and publish it into the shared store under its stream_id, or read a META message and push it out to every connected browser socket. Anything else means the stream desynced, so it drops the connection and waits for the Pi to redial. It also parks the live socket fd in an atomic so other threads can send control messages back up it.",
+  syms: [
+    ["run_ingress(listen_fd)", "accept loop, one thread per connection"],
+    ["ingress_loop(fd)", "recv_magic \u2192 publish() or ws_broadcast()"],
+    ["current_ingress_fd()", "atomic \u2014 lets http.cpp reach the Pi"]
+  ]
+});
+
+node("store", {
+  view: "runtime", lane: "host", x: 480, y: 432,
+  title: "lib/store", sub: "acu_store \u00b7 the seam",
+  path: "cpp/lib/store/store.hpp", role: "Header-only INTERFACE lib", machine: "Laptop",
+  lines: "213", code: "~46",
+  desc: "Four slots \u2014 one per channel \u2014 each holding the single most recent JPEG, a sequence number, and a rolling one-second frame count. This is the only place the ingress thread and the browser threads touch the same memory, and it's the reason neither has to know the other exists: ingress calls publish(), each browser thread blocks in wait_frame() until the sequence number changes. Late browsers get the current frame, not a backlog, so a slow tab can never stall the Pi.",
+  syms: [
+    ["StreamStore", "mutex + condvar + jpeg + seq + fps window"],
+    ["g_store[STREAM_COUNT]", "four slots, one per channel"],
+    ["publish(id, jpeg&&)", "move in, bump seq, notify_all"],
+    ["wait_frame(id, out, last_seq)", "blocks until seq != last_seq"],
+    ["fps_of(id)", "what /status reports"]
+  ]
+});
+
+node("http", {
+  view: "runtime", lane: "host", x: 372, y: 556,
+  title: "lib/http", sub: "acu_http \u00b7 browser-facing",
+  path: "cpp/lib/http/http.cpp \u00b7 http.hpp", role: "Static library", machine: "Laptop",
+  lines: "1,590 + 71", code: "~554",
+  desc: "The biggest file, and about half of it is the web page itself, held in a raw string literal. The C++ side is a hand-rolled HTTP server: it routes a request line to one of five handlers, and for /stream/* it never returns \u2014 it sits in wait_frame() and writes each new JPEG as another multipart/x-mixed-replace part, which is what makes the images move without any JavaScript. It also implements just enough of the WebSocket protocol by hand (the SHA-1/base64 handshake, frame masking, a broadcast list) to push SGBM values back to the page as the camera reports them.",
+  syms: [
+    ["handle_http_client(fd)", "read request \u2192 route \u2192 one handler"],
+    ["stream_mjpeg(fd, id)", "the infinite multipart loop"],
+    ["send_status(fd)", "/status \u2192 per-stream FPS as JSON"],
+    ["handle_control(path)", "/control/* \u2192 send_control() up the Pi socket"],
+    ["ws_serve / ws_broadcast", "hand-rolled WebSocket, meta push"],
+    ["kIndexHtml", "the whole UI, as a raw string literal"]
+  ]
+});
+
+node("calib", {
+  view: "runtime", lane: "host", x: 700, y: 432, w: 176, h: 48, standalone: true,
+  title: "calibration_tool", sub: "stub \u2014 hello world",
+  path: "cpp/src/host/calibration.cpp \u00b7 calibration.hpp", role: "Executable (native)", machine: "Laptop",
+  lines: "92 + 37", code: "~7",
+  desc: "Reserved space. main() prints \"Hello World\". The CMake target links acu_common so OpenCV and the linalg header are already available the day you start writing stereo calibration \u2014 see docs/calibration_scaffolding.md for what's planned."
+});
+
+node("page", {
+  view: "runtime", lane: "view", x: 480, y: 700,
+  title: "kIndexHtml", sub: "the quad view (inside http.cpp)",
+  path: "cpp/lib/http/http.cpp \u2014 R\"HTML( ... )HTML\"", role: "Embedded web page", machine: "Browser",
+  lines: "~250 of http.cpp", code: "HTML + JS",
+  desc: "Not a file \u2014 a raw string literal compiled into the server binary, which is why there is no web build step and no static directory to deploy. It draws the 2\u00d72 grid as four plain <img> tags pointed at /stream/*, polls /status once a second for the FPS readouts, fires /control/ir?value=N when you click the laser buttons, and holds a WebSocket open for live SGBM tuning.",
+  syms: [
+    ["<img src=\"/stream/ir\">", "\u00d74 \u2014 MJPEG needs no JS at all"],
+    ["poll() every 1000 ms", "GET /status \u2192 FPS numbers"],
+    ["setIR(v) / shutdown()", "fetch /control/ir, /control/shutdown"],
+    ["wsConnect() / applyTuning()", "live SGBM push over WebSocket"]
+  ]
+});
+
+/* ---------- build nodes ---------- */
+
+node("setup_host", {
+  view: "build", lane: "build", x: 48, y: 76, w: 196, h: 48,
+  title: "setup_host_env.sh", sub: "laptop, run once",
+  path: "cpp/scripts/setup/setup_host_env.sh", role: "Setup script", machine: "Laptop",
+  lines: "105", code: "~35",
+  desc: "apt-installs everything the laptop needs to build for a machine that isn't it: cmake, ninja, the aarch64-linux-gnu cross toolchain, plus rsync and ssh for the sysroot clone. On a non-Debian host it prints the equivalent package list and exits rather than guessing."
+});
+
+node("setup_target", {
+  view: "build", lane: "build", x: 288, y: 76, w: 196, h: 48,
+  title: "setup_target_env.sh", sub: "run on the Pi",
+  path: "cpp/scripts/setup/setup_target_env.sh", role: "Setup script", machine: "Pi",
+  lines: "143", code: "~45",
+  desc: "apt-installs the -dev packages the cross-link needs to find headers and .so files for: OpenCV, OpenBLAS/LAPACK, Armadillo, libuvc, libusb \u2014 plus the diagnostics you'll actually want on the board (v4l-utils, tcpdump, iperf3, gdbserver). Order matters: this has to run before you clone the filesystem, because the clone is what your linker will link against."
+});
+
+node("clear_target", {
+  view: "build", lane: "build", x: 528, y: 76, w: 196, h: 48,
+  title: "clear_target_env.sh", sub: "the undo",
+  path: "cpp/scripts/setup/clear_target_env.sh", role: "Setup script", machine: "Pi",
+  lines: "15", code: "~5",
+  desc: "Removes what setup_target_env.sh installed, so you can prove a build works against a clean board rather than one carrying leftovers from earlier experiments."
+});
+
+node("agents", {
+  view: "build", lane: "build", x: 764, y: 76, w: 172, h: 48, standalone: true,
+  title: "AGENTS.md", sub: "the comment doctrine",
+  path: "AGENTS.md", role: "Repo law", machine: "\u2014",
+  lines: "\u2014", code: "\u2014",
+  desc: "The rule that every line of code in this repo carries an English and a Chinese comment above it, and every file, class and function carries a block comment. It's why the line counts look enormous next to the amount of code \u2014 roughly two thirds of most files is explanation. When reading, strip it: grep -vE '^\\s*//' on any file gives you the code alone."
+});
+
+node("pull_sysroot", {
+  view: "build", lane: "build", x: 48, y: 244, w: 196, h: 48,
+  title: "pull_sysroot.sh", sub: "clone the Pi's filesystem",
+  path: "cpp/scripts/compile/pull_sysroot.sh", role: "Toolchain script", machine: "Laptop",
+  lines: "279", code: "~95",
+  desc: "Resolves the board's ssh alias, then rsyncs /usr/include, /usr/lib and /lib off the Pi into ~/sysroots/<board>. That local copy is what the cross-compiler resolves #include <opencv2/...> against and what the cross-linker links against \u2014 get it wrong and you get symbols that exist on your laptop but not on the board."
+});
+
+node("fix_symlinks", {
+  view: "build", lane: "build", x: 288, y: 244, w: 196, h: 48,
+  title: "fix_symlinks.sh", sub: "make links relative",
+  path: "cpp/scripts/compile/fix_symlinks.sh", role: "Toolchain script", machine: "Laptop",
+  lines: "139", code: "~50",
+  desc: "A copied filesystem is full of absolute symlinks like /usr/lib/libfoo.so \u2192 /lib/aarch64-linux-gnu/libfoo.so. On your laptop those resolve to your laptop's libraries \u2014 silently, and wrongly. This walks every symlink under the sysroot and rewrites it relative, so it can only ever point back inside the clone."
+});
+
+node("check_sysroot", {
+  view: "build", lane: "build", x: 528, y: 244, w: 196, h: 48,
+  title: "check_sysroot.sh", sub: "5-point pre-flight",
+  path: "cpp/scripts/compile/check_sysroot.sh", role: "Toolchain script", machine: "Laptop",
+  lines: "449", code: "~160",
+  desc: "The most valuable script in the repo when things go wrong. It auto-detects the triplet, then checks five things: no symlink escapes the sysroot, the expected libraries are present, pkg-config files exist, the ELF class is really aarch64, and the GLIBC/GLIBCXX/CXXABI versions the sysroot provides. build.sh refuses to cross-compile until this passes."
+});
+
+node("buildsh", {
+  view: "build", lane: "build", x: 48, y: 412, w: 196, h: 48,
+  title: "build.sh", sub: "the one command you run",
+  path: "cpp/scripts/compile/build.sh", role: "Build wrapper", machine: "Laptop",
+  lines: "321", code: "~98",
+  desc: "Takes a board name \u2014 `host` for a native build, anything else for a cross build \u2014 plus --clean, --deploy, --no-armadillo, --static-cxx. For a cross build it locates the sysroot, runs the pre-flight, points CMake at the cross toolchain file, and after linking does the thing CMake won't: reads the version symbols the new binary demands and checks each one against what the target's libraries actually provide, so ABI mismatches fail here rather than as a cryptic loader error on the Pi.",
+  syms: [
+    ["./cpp/scripts/compile/build.sh host --no-armadillo", "the laptop server"],
+    ["./cpp/scripts/compile/build.sh pi --deploy", "cross-compile, then rsync to the board"],
+    ["verify_abi()", "readelf -V, required vs provided"]
+  ]
+});
+
+node("crossmk", {
+  view: "build", lane: "build", x: 288, y: 412, w: 196, h: 48,
+  title: "cross.cmake", sub: "toolchain file",
+  path: "cpp/toolchains/cross.cmake", role: "CMake toolchain", machine: "Laptop",
+  lines: "\u2014", code: "\u2014",
+  desc: "Tells CMake it is not building for this machine: sets the system name and processor to aarch64 Linux, names the cross compilers, points CMAKE_SYSROOT at the clone, and \u2014 the part that matters \u2014 sets the FIND_ROOT_PATH modes so find_package searches only inside the sysroot and never picks up a laptop library by accident."
+});
+
+node("cmakelists", {
+  view: "build", lane: "build", x: 288, y: 500, w: 196, h: 48,
+  title: "CMakeLists.txt", sub: "root \u2014 targets & options",
+  path: "cpp/CMakeLists.txt", role: "Build definition", machine: "Both",
+  lines: "715", code: "~188",
+  desc: "Defines acu_common, the INTERFACE target carrying OpenCV, pthreads and optionally Armadillo, so no individual target repeats that list. Then it declares every executable and links each to only the libraries it truly needs \u2014 which is why the host build never even configures the Pi-only camera target. ACU_DEPLOY adds the post-build rsync to the board; ACU_USE_ARMADILLO and ACU_STATIC_CXX are the two escape hatches build.sh exposes.",
+  syms: [
+    ["acu_common (INTERFACE)", "OpenCV + Threads + optional Armadillo"],
+    ["metasense_uvc (STATIC)", "the vendored usb.cpp, Pi builds only"],
+    ["ACU_DEPLOY / ACU_USE_ARMADILLO", "the two flags build.sh forwards"]
+  ]
+});
+
+node("libcmake", {
+  view: "build", lane: "build", x: 528, y: 500, w: 196, h: 48,
+  title: "lib/CMakeLists.txt", sub: "one add_subdirectory per lib",
+  path: "cpp/lib/CMakeLists.txt + 5 children", role: "Build definition", machine: "Both",
+  lines: "\u2014", code: "\u2014",
+  desc: "Each lib/<name>/ owns its own CMakeLists and declares its own target, which is what keeps the pseudo-library boundary real rather than a folder convention. Adding a library is one add_subdirectory line here and one CMakeLists in the new folder."
+});
+
+node("libtargets", {
+  view: "build", lane: "build", x: 764, y: 500, w: 172, h: 48,
+  title: "5 lib targets", sub: "acu_protocol, store, ingress, http, camera",
+  path: "cpp/lib/*/CMakeLists.txt", role: "Library targets", machine: "Both",
+  lines: "\u2014", code: "\u2014",
+  desc: "acu_protocol and acu_store are INTERFACE targets \u2014 header-only, nothing is compiled, they just carry include paths. acu_ingress, acu_http and acu_camera are STATIC. Only acu_camera pulls in metasense_uvc, and only on Pi builds, which is the mechanism that keeps the vendor SDK out of the laptop binary entirely."
+});
+
+node("exetargets", {
+  view: "build", lane: "build", x: 764, y: 412, w: 172, h: 48,
+  title: "7 executables", sub: "5 target-side, 2 host-side",
+  path: "cpp/src/target/* \u00b7 src/host/*", role: "Executable targets", machine: "Both",
+  lines: "\u2014", code: "\u2014",
+  desc: "Pi: quad_sender, metasense_capture, main, udp_sender_test. Laptop: stream_server, calibration_tool. Each links only what it needs \u2014 quad_sender takes acu_camera and acu_protocol; stream_server takes acu_ingress, acu_http and acu_protocol; the two stubs take just acu_common."
+});
+
+node("runstream", {
+  view: "build", lane: "build", x: 48, y: 656, w: 196, h: 48,
+  title: "run_stream.sh", sub: "brings up both ends",
+  path: "cpp/scripts/camera/run_stream.sh", role: "Orchestration script", machine: "Laptop",
+  lines: "223", code: "~66",
+  desc: "The everyday command. It builds both sides, kills any stale sender on the board, then checks lsusb for 04cc before doing anything else \u2014 because the failure you'll hit most is the camera browning out under the laser's draw and vanishing from the bus, and this tells you that in one line instead of thirty seconds of confusing logs. Then it starts the server locally, starts quad_sender inside a tmux session on the Pi, and verifies it actually stayed alive. `--stop` tears both ends down cleanly.",
+  syms: [
+    ["./cpp/scripts/camera/run_stream.sh pi", "build, deploy, launch both ends"],
+    ["./cpp/scripts/camera/run_stream.sh pi --stop", "control/exit + pkill on both machines"],
+    ["--no-build", "reuse existing binaries"]
+  ]
+});
+
+node("pullcaps", {
+  view: "build", lane: "build", x: 288, y: 656, w: 196, h: 48, standalone: true,
+  title: "pull_captures.sh", sub: "rsync frames back",
+  path: "cpp/scripts/camera/pull_captures.sh", role: "Utility script", machine: "Laptop",
+  lines: "55", code: "~10",
+  desc: "Ten lines: rsync <board>:captures/ into ./captures. Nothing depends on it \u2014 it's the companion to metasense_capture, for when you want frames on disk to inspect offline rather than a live stream."
+});
+
+/* ---------- edges ---------- */
+
+const EDGES = [
+  // runtime
+  { v:"runtime", a:"sdk", b:"camera", in:"left", label:"vendor headers", lx: 244, ly: 146,
+    d:"M 224 100 L 264 100",
+    why:"camera.cpp is the only file in the project that includes metasense_control.h and depth_picture_capture.h. Every other file talks to the camera through pi::Camera instead." },
+
+  { v:"runtime", a:"sdk", b:"mcap", in:"top", label:"direct",
+    d:"M 136 128 L 136 172",
+    why:"metasense_capture predates lib/camera and calls the SDK itself. Useful to know when you're comparing the two: it's the same API, without the wrapper." },
+
+  { v:"runtime", a:"camera", b:"quad", in:"left", label:"pi::Camera", lx: 460, ly: 146,
+    d:"M 440 100 L 480 100",
+    why:"quad_sender constructs one pi::Camera, then only ever calls open(), grab(), the set_*() register writers, fuse_rgbd() and colorize_depth(). That handful of methods is the whole camera surface it sees." },
+
+  { v:"runtime", a:"linalg", b:"main", in:"right", label:"solve", lx: 460, ly: 234,
+    d:"M 480 196 L 440 196",
+    why:"acu_vision.cpp calls acu::solve_least_squares to self-test whichever backend got compiled in. Nothing on the streaming path uses linalg at all." },
+
+  { v:"runtime", a:"protocol", b:"quad", in:"right", label:"send_frame \u00b7 recv_control", lx: 700, ly: 152,
+    lx: 700, ly: 176,
+    d:"M 760 288 C 760 200 720 100 656 100",
+    why:"quad_sender fills a FrameHeader, hands it to send_frame(), and its control thread blocks in recv_control(). It never writes a byte to the socket by hand." },
+
+  { v:"runtime", a:"quad", b:"ingress", in:"top", label:"4 JPEG streams \u00b7 muxed by stream_id",
+    lx: 372, ly: 262,
+    d:"M 520 128 C 440 240 300 280 300 432",
+    why:"One TCP connection carries all four channels. Each frame is prefixed with its stream_id, so the receiver knows which quadrant it belongs to \u2014 no second socket, no ports to keep track of, and the channels can never drift out of order relative to each other." },
+
+  { v:"runtime", a:"ingress", b:"quad", in:"bottom", dashed:true, label:"CTL up the same socket",
+    lx: 594, ly: 262,
+    d:"M 400 432 C 400 300 616 260 616 128",
+    why:"TCP is full duplex, so the laser toggle and the SGBM sliders travel back up the connection the frames come down. This is why there is no separate control port and no reconnect when you click a button." },
+
+  { v:"runtime", a:"protocol", b:"ingress", in:"right", label:"recv_magic",
+    d:"M 700 320 C 600 320 540 460 440 460",
+    why:"ingress reads four bytes, compares them against kFrameMagic and kMetaMagic, and only then calls the matching *_after_magic reader. That's the whole demultiplexer." },
+
+  { v:"runtime", a:"protocol", b:"store", in:"right", label:"FrameHeader",
+    d:"M 760 352 C 760 420 720 460 656 460",
+    why:"store.hpp sizes its slot array from acunet::STREAM_COUNT and uses acunet::now_ms() for the FPS window \u2014 the protocol header is where the notion of 'four channels' is defined." },
+
+  { v:"runtime", a:"protocol", b:"http", in:"right", label:"send_control \u00b7 MetaMsg", lx: 700, ly: 530,
+    d:"M 820 352 C 820 520 660 584 548 584",
+    why:"http.cpp turns a /control/ir URL into a send_control() call, and turns an incoming MetaMsg into a WebSocket push. Both message formats live in frame_protocol.hpp." },
+
+  { v:"runtime", a:"ingress", b:"store", in:"left", label:"publish()", lx: 460, ly: 424,
+    d:"M 440 460 L 480 460",
+    why:"The handoff. ingress moves the JPEG into the slot for its stream_id, bumps the sequence number and notifies everyone waiting. After this line the ingress thread has no idea who reads the frame." },
+
+  { v:"runtime", a:"store", b:"http", in:"top", label:"wait_frame()",
+    d:"M 568 488 C 568 530 540 556 500 556",
+    why:"Each browser's MJPEG thread blocks on the condition variable until the sequence number moves, copies the frame out, and writes it. A tab that can't keep up simply misses frames \u2014 it can never slow the Pi down." },
+
+  { v:"runtime", a:"ingress", b:"http", in:"top", label:"ws_broadcast()",
+    d:"M 352 488 C 352 530 380 556 420 556",
+    why:"When the Pi sends back an ACK or its current SGBM values, ingress calls straight into http.cpp to fan that out to every open WebSocket. This is the one place the two libraries call each other directly." },
+
+  { v:"runtime", a:"http", b:"ingress", in:"left", dashed:true, label:"current_ingress_fd()",
+    lx: 232, ly: 574,
+    d:"M 372 596 C 296 596 228 560 228 496 C 228 490 244 496 264 496",
+    why:"To send a control message, http.cpp needs the Pi's socket \u2014 which belongs to a thread it has no reference to. ingress parks that fd in an atomic and hands it out through this one accessor." },
+
+  { v:"runtime", a:"stream_server", b:"ingress", in:"left", label:"detached thread", lx: 244, ly: 512,
+    d:"M 224 460 L 264 460",
+    why:"std::thread(server::run_ingress, ingress_fd).detach() \u2014 one line in main(). The server never touches the Pi connection again after that." },
+
+  { v:"runtime", a:"stream_server", b:"http", in:"left", label:"thread per client",
+    d:"M 136 488 C 136 608 260 608 372 608",
+    why:"The accept loop spawns a detached handle_http_client thread for every browser connection. Simple, and it works because each MJPEG stream needs to block indefinitely anyway." },
+
+  { v:"runtime", a:"http", b:"page", in:"top", label:"multipart/x-mixed-replace",
+    d:"M 440 612 C 440 670 490 700 540 700",
+    why:"The server keeps the response open forever and writes a new JPEG part whenever a frame lands. The browser swaps the image in place \u2014 this is why a plain <img> tag animates with no JavaScript involved." },
+
+  { v:"runtime", a:"page", b:"http", in:"bottom", dashed:true, label:"/status \u00b7 /control/*",
+    lx: 336, ly: 662,
+    d:"M 480 728 C 390 736 400 660 400 612",
+    why:"The page polls /status once a second for the FPS numbers and fires /control/ir?value=N on a button press. Those are ordinary fetches \u2014 only the video uses the never-ending response." },
+
+  // build
+  { v:"build", a:"setup_host", b:"pull_sysroot", in:"top", label:"needs rsync + toolchain",
+    d:"M 146 124 L 146 244",
+    why:"pull_sysroot.sh is rsync over ssh, and nothing it fetches is useful without a cross compiler to point at it. Run the host setup first." },
+
+  { v:"build", a:"setup_target", b:"pull_sysroot", in:"top", label:"before you clone",
+    lx: 216, ly: 176,
+    d:"M 288 100 C 232 100 196 180 196 244",
+    why:"The clone captures whatever is installed on the board at that moment. Install the -dev packages first or the sysroot arrives missing exactly the headers you need." },
+
+  { v:"build", a:"setup_target", b:"clear_target", in:"left", label:"undo", lx: 506, ly: 142,
+    d:"M 484 100 L 528 100",
+    why:"Removes what the setup installed, for proving a build works from a clean board." },
+
+  { v:"build", a:"pull_sysroot", b:"fix_symlinks", in:"left", label:"then rewrite links", lx: 266, ly: 310,
+    d:"M 244 268 L 288 268",
+    why:"A fresh clone is full of absolute symlinks pointing at your laptop's real /usr/lib. Until they're relative, the cross-linker will happily link against your host libraries and produce a binary that dies on the board." },
+
+  { v:"build", a:"fix_symlinks", b:"check_sysroot", in:"left", label:"then verify", lx: 506, ly: 310,
+    d:"M 484 268 L 528 268",
+    why:"Confirms the rewrite worked and the sysroot is complete before you spend time on a build that would fail at link." },
+
+  { v:"build", a:"buildsh", b:"check_sysroot", in:"bottom", label:"pre-flight, aborts on fail",
+    lx: 400, ly: 344,
+    d:"M 146 412 C 146 358 420 356 626 292",
+    why:"Every cross build runs the check first and refuses to continue if it fails. That's the difference between a clear 'your sysroot is missing libstdc++' and forty lines of linker noise." },
+
+  { v:"build", a:"buildsh", b:"crossmk", in:"left", label:"-DCMAKE_TOOLCHAIN_FILE", lx: 266, ly: 480,
+    d:"M 244 436 L 288 436",
+    why:"Passed only when the board argument isn't `host`. The native build gets no toolchain file at all, which is what makes one script serve both." },
+
+  { v:"build", a:"buildsh", b:"cmakelists", in:"left", label:"cmake -S . -B builds/build-<board>",
+    lx: 200, ly: 500,
+    d:"M 146 460 C 146 524 220 524 288 524",
+    why:"Separate build directory per board, so a host build and a Pi build coexist without clobbering each other's cache." },
+
+  { v:"build", a:"crossmk", b:"cmakelists", in:"top", label:"sets sysroot + find modes",
+    d:"M 386 460 L 386 500",
+    why:"CMake reads the toolchain file before anything else, so every find_package() in the root CMakeLists is already constrained to search inside the sysroot." },
+
+  { v:"build", a:"cmakelists", b:"libcmake", in:"left", label:"add_subdirectory(lib)", lx: 506, ly: 568,
+    d:"M 484 524 L 528 524",
+    why:"One line pulls in all five pseudo-libraries; each declares its own target and its own dependencies." },
+
+  { v:"build", a:"libcmake", b:"libtargets", in:"left", label:"add_library \u00d75", lx: 744, ly: 568,
+    d:"M 724 524 L 764 524",
+    why:"Two INTERFACE targets (header-only) and three STATIC ones." },
+
+  { v:"build", a:"cmakelists", b:"exetargets", in:"left", label:"add_executable \u00d77",
+    lx: 560, ly: 452,
+    d:"M 386 500 C 520 476 640 436 764 436",
+    why:"Target-side executables are declared inside a guard so the host build skips them entirely \u2014 the laptop never tries to compile anything that needs the vendor SDK." },
+
+  { v:"build", a:"libtargets", b:"exetargets", in:"bottom", label:"target_link_libraries",
+    d:"M 850 500 L 850 460",
+    why:"Each executable names only the libraries it uses. That list is the most reliable dependency documentation in the repo \u2014 it can't drift, because a wrong one won't link." },
+
+  { v:"build", a:"runstream", b:"buildsh", in:"bottom", label:"host build, then --deploy",
+    lx: 152, ly: 560,
+    d:"M 146 656 L 146 460",
+    why:"run_stream.sh calls build.sh twice \u2014 once for the laptop server, once for the board with --deploy \u2014 unless you pass --no-build to reuse what's already there." }
+];
+
+const STEPS = [
+  { file:"cpp/lib/protocol/frame_protocol.hpp", look:"Start here. 24 bytes, big-endian, three message types on one socket. Everything downstream is a consequence of this file." },
+  { file:"cpp/src/target/quad_sender.cpp", look:"main() and control_loop(). Watch one frame get grabbed, encoded, and sent \u2014 then notice the second thread reading the other direction." },
+  { file:"cpp/lib/ingress/ingress.cpp", look:"Sixty lines. Read a magic word, dispatch. Once this clicks, the whole receive side is obvious." },
+  { file:"cpp/lib/store/store.hpp", look:"The seam. Two functions and a condition variable are the entire reason the Pi thread and the browser threads never block each other." },
+  { file:"cpp/lib/http/http.cpp \u2014 stream_mjpeg()", look:"Skip the rest of the file. This one function explains why a plain <img> tag animates." },
+  { file:"cpp/lib/camera/camera.cpp", look:"Last, not first. It's the messiest file because hardware is messy \u2014 but by now you know exactly what quad_sender asks of it." },
+  { file:"cpp/scripts/compile/check_sysroot.sh", look:"Not code you wrote to run, but the file that will save you when a cross build fails for reasons that look like magic." }
+];
+
+/* ============================================================
+   CHINESE STRING TABLE
+   Structure lives in the EN data above; this only overrides words.
+   File names, C++ symbols and URL paths are never translated.
+   ============================================================ */
+
+const ZH = {
+
+ui: {
+  eyebrow: "\u7acb\u4f53\u91c7\u96c6 \u00b7 \u6811\u8393\u6d3e \u2192 \u7b14\u8bb0\u672c \u2192 \u6d4f\u89c8\u5668",
+  lede: "\u4ed3\u5e93\u91cc\u7684\u6bcf\u4e2a\u6587\u4ef6\u3001\u5b83\u5b9e\u9645\u505a\u4ec0\u4e48\uff0c\u4ee5\u53ca\u628a\u5b83\u8fde\u5230\u4e0b\u4e00\u4e2a\u6587\u4ef6\u7684\u90a3\u4e2a\u5177\u540d\u51fd\u6570\u6216\u5957\u63a5\u5b57\u3002\u70b9\u51fb\u65b9\u6846\u53ef\u6253\u5f00\u5b83\u7684\u8be6\u60c5\uff1b\u70b9\u51fb\u8fde\u7ebf\u53ef\u8bfb\u5230\u4e8c\u8005\u7684\u5173\u7cfb\u3002",
+  tally: ["\u63a8\u6d41\u8def\u5f84\u4e0a\u7684\u6587\u4ef6", "\u5b9e\u9645\u4ee3\u7801\u884c\u6570", "\u56db\u8def\u901a\u9053\uff0c\u4e00\u6761\u5957\u63a5\u5b57"],
+  tabRuntime: "\u8fd0\u884c\u94fe\u8def",
+  tabBuild: "\u6784\u5efa\u4e0e\u8fd0\u7ef4",
+  hintRuntime: "\u62d6\u52a8\u5e73\u79fb \u00b7 \u6eda\u8f6e\u7f29\u653e",
+  hintBuild: "\u4ece\u5de6\u5230\u53f3\uff0c\u5c31\u662f\u4f60\u8fd0\u884c\u5b83\u4eec\u7684\u987a\u5e8f",
+  fit: "\u9002\u5e94",
+  readingH: "\u4e00\u6761\u771f\u6b63\u7ba1\u7528\u7684\u9605\u8bfb\u987a\u5e8f",
+  readingP: "\u8ddf\u7740\u4e00\u5e27\u753b\u9762\u4ece\u4f20\u611f\u5668\u8d70\u5230\u5c4f\u5e55\u3002\u4e0b\u9762\u6bcf\u4e2a\u6587\u4ef6\u90fd\u8981\u7b49\u524d\u4e00\u4e2a\u901a\u4e86\u624d\u8bb2\u5f97\u901a\uff0c\u6240\u4ee5\u8bf7\u6309\u6b64\u987a\u5e8f\u8bfb\uff0c\u800c\u4e0d\u662f\u6311\u770b\u8d77\u6765\u6700\u5413\u4eba\u7684\u90a3\u4e2a\u5148\u6253\u5f00\u3002\u9605\u8bfb\u65f6\u7528 <code>grep -vE '^\\s*//' &lt;file&gt;</code> \u628a\u53cc\u8bed\u6ce8\u91ca\u5265\u6389 \u2014\u2014 \u5e95\u4e0b\u7684\u4ee3\u7801\u53ea\u6709\u884c\u6570\u7684\u4e09\u5206\u4e4b\u4e00\u3002",
+  footer: "\u7531\u4ed3\u5e93\u672c\u8eab\u751f\u6210\uff1a<code>#include</code> \u5173\u7cfb\u56fe\u3001CMakeLists.txt \u4e2d\u7684 <code>add_executable</code> / <code>target_link_libraries</code>\uff0c\u4ee5\u53ca\u6bcf\u4e2a\u5e93\u516c\u5f00\u51fd\u6570\u7684\u8c03\u7528\u70b9\u3002\u884c\u6570\u4e3a\u300c\u603b\u884c\u6570 / \u975e\u6ce8\u91ca\u975e\u7a7a\u884c\u300d\u3002<br>\u865a\u7ebf\u65b9\u6846\u6ca1\u6709\u4efb\u4f55\u4ee3\u7801\u8fde\u63a5 \u2014\u2014 \u5b83\u4eec\u72ec\u7acb\u5b58\u5728\u3002\u865a\u7ebf\u8fde\u7ebf\u7684\u65b9\u5411\u4e0e\u4e3b\u6570\u636e\u6d41\u76f8\u53cd\u3002<br><a href=\"https://nzge.github.io/projects/moxa-vision.html\">\u5173\u4e8e\u672c\u9879\u76ee</a>",
+  dossier: "\u8be6\u60c5",
+  emptyLead: "\u6311\u4e00\u4e2a\u65b9\u6846\uff0c\u8bfb\u5b83\u505a\u4ec0\u4e48\u3001\u5176\u4e2d\u503c\u5f97\u77e5\u9053\u7684\u51fd\u6570\uff0c\u4ee5\u53ca\u5b83\u63a5\u89e6\u5230\u7684\u6bcf\u4e00\u4e2a\u5176\u4ed6\u6587\u4ef6\u3002\u6311\u4e00\u6761<b>\u8fde\u7ebf</b>\uff0c\u8bfb\u771f\u6b63\u8de8\u8d8a\u5b83\u7684\u662f\u4ec0\u4e48 \u2014\u2014 \u4e00\u4e2a\u51fd\u6570\u540d\u3001\u4e00\u6761\u5957\u63a5\u5b57\uff0c\u6216\u4e00\u5757\u5171\u4eab\u7f13\u51b2\u533a\u3002",
+  legendH: "\u5982\u4f55\u8bfb\u8fd9\u5f20\u56fe",
+  legend: [
+    ["\u5b9e\u7ebf", "\u4e0e\u6570\u636e\u540c\u5411 \u2014\u2014 \u4ece\u76f8\u673a\u5230\u6d4f\u89c8\u5668\uff0c\u6216\u4ece\u73af\u5883\u51c6\u5907\u5230\u6784\u5efa\u3002"],
+    ["\u865a\u7ebf", "\u4e0e\u6570\u636e\u53cd\u5411 \u2014\u2014 \u63a7\u5236\u6d88\u606f\u3001\u56de\u8c03\u3001\u62c6\u5378\u6d41\u7a0b\u3002"],
+    ["\u865a\u7ebf\u65b9\u6846", "\u6ca1\u6709\u4efb\u4f55\u4e1c\u897f\u8fde\u5230\u5b83\u3002\u4e00\u4e2a\u5360\u4f4d\u7a0b\u5e8f\uff0c\u6216\u4e00\u4e2a\u72ec\u7acb\u5de5\u5177\u3002"],
+    ["\u5f69\u8272\u810a\u6761", "\u8be5\u6587\u4ef6\u8fd0\u884c\u5728\u54ea\u53f0\u673a\u5668\u4e0a\u3002"]
+  ],
+  worthKnowing: "\u503c\u5f97\u77e5\u9053\u7684",
+  connections: "\u8fde\u63a5\u5173\u7cfb",
+  noConnections: "\u65e0\u3002\u6ca1\u6709\u6587\u4ef6\u5305\u542b\u5b83\uff0c\u5b83\u4e5f\u4e0d\u5305\u542b\u4f60\u5199\u7684\u4efb\u4f55\u4e1c\u897f \u2014\u2014 \u5b83\u5728\u4ed3\u5e93\u91cc\u72ec\u7acb\u5b58\u5728\u3002",
+  dataFlow: "\u6570\u636e\u6d41\u5411",
+  reverseFlow: "\u53cd\u5411",
+  bothEnds: "\u4e24\u7aef",
+  step: "\u7b2c",
+  stepSuffix: "\u6b65",
+  linesLabel: (t, c) => {
+    const head = /^[\d,]+$/.test(String(t)) ? `${t} \u884c` : String(t);
+    if (!c) return head;
+    const cn = String(c).replace(/^~/, "");
+    return head + (/^[\d,]+$/.test(cn) ? ` \u00b7 \u4ee3\u7801\u7ea6 ${cn} \u884c` : ` \u00b7 ${cn}`);
+  }
+},
+
+bands: {
+  runtime: [
+    { label: "\u76ee\u6807\u7aef \u00b7 \u6811\u8393\u6d3e\uff08aarch64\uff09", sub: "\u4ea4\u53c9\u7f16\u8bd1\uff0c\u90e8\u7f72\u5230 ~/moxa-vision/bin" },
+    { label: "\u94fe\u8def", sub: "\u4e00\u6761 TCP \u5957\u63a5\u5b57\uff08:9000\uff09\u2014\u2014 \u5e27\u4e0b\u884c\uff0c\u63a7\u5236\u4e0a\u884c" },
+    { label: "\u4e3b\u673a\u7aef \u00b7 \u7b14\u8bb0\u672c\uff08\u672c\u673a\u7f16\u8bd1\uff09", sub: "\u5355\u4e00\u8fdb\u7a0b\uff1astream_server" },
+    { label: "\u89c6\u56fe \u00b7 \u6d4f\u89c8\u5668", sub: "\u65e0\u6784\u5efa\u6b65\u9aa4 \u2014\u2014 \u9875\u9762\u5185\u5d4c\u5728\u670d\u52a1\u5668\u4e8c\u8fdb\u5236\u91cc" }
+  ],
+  build: [
+    { label: "1 \u00b7 \u51c6\u5907\u4e24\u53f0\u673a\u5668", sub: "\u6bcf\u53f0\u673a\u5668\u8fd0\u884c\u4e00\u6b21" },
+    { label: "2 \u00b7 \u514b\u9686\u76ee\u6807\u6587\u4ef6\u7cfb\u7edf", sub: "\u4ea4\u53c9\u94fe\u63a5\u5668\u6240\u4f9d\u8d56\u7684 sysroot" },
+    { label: "3 \u00b7 \u914d\u7f6e\u4e0e\u7f16\u8bd1", sub: "\u7531\u4e00\u4e2a\u5305\u88c5\u811a\u672c\u9a71\u52a8\u7684 cmake" },
+    { label: "4 \u00b7 \u8fd0\u884c\u4e0e\u6536\u96c6", sub: "\u542f\u52a8\u4e24\u7aef\uff0c\u53d6\u56de\u7ed3\u679c" }
+  ]
+},
+
+nodes: {
+  sdk: {
+    sub: "\u5382\u5546 SDK\uff08third_party\uff09", role: "\u5382\u5546\u4ee3\u7801", machine: "\u6811\u8393\u6d3e",
+    lines: "usb.cpp + \u5934\u6587\u4ef6", code: "\u4e0d\u662f\u4f60\u5199\u7684",
+    desc: "\u76f8\u673a\u5382\u5546\u63d0\u4f9b\u7684 UVC \u9a71\u52a8\u4e0e\u63a7\u5236 API\u3002\u5b83\u77e5\u9053\u5982\u4f55\u901a\u8fc7 libusb \u679a\u4e3e 04cc:0017 \u8bbe\u5907\u3001\u4ece\u4e2d\u53d6\u51fa IR / RGB / \u6df1\u5ea6\u7f13\u51b2\u533a\uff0c\u5e76\u8bfb\u5199\u76f8\u673a\u4e0a\u4fdd\u5b58 SGBM \u7acb\u4f53\u5339\u914d\u53c2\u6570\u4e0e\u7ea2\u5916\u6fc0\u5149\u7535\u6d41\u7684\u5bc4\u5b58\u5668\u3002\u8fd9\u91cc\u6ca1\u6709\u4e00\u884c\u662f\u4f60\u5199\u7684 \u2014\u2014 lib/camera \u5b58\u5728\u7684\u5168\u90e8\u610f\u4e49\uff0c\u5c31\u662f\u8ba9\u8fd9\u4e2a\u89d2\u843d\u6210\u4e3a\u4ed3\u5e93\u4e2d\u552f\u4e00\u5141\u8bb8\u5305\u542b\u5b83\u7684\u5730\u65b9\u3002",
+    syms: [["abh::depth_picture_capture", "\u53d6\u5e27\u5bf9\u8c61"], ["metasense_control.h", "\u6fc0\u5149\u4e0e SGBM \u7684\u5bc4\u5b58\u5668\u8bfb\u5199"], ["usb.h / libusb-1.0", "\u4e8c\u8005\u4e4b\u4e0b\u7684\u4f20\u8f93\u5c42"]]
+  },
+  camera: {
+    sub: "acu_camera \u00b7 SDK \u9694\u79bb\u5c42", role: "\u9759\u6001\u5e93", machine: "\u4ec5\u6811\u8393\u6d3e",
+    desc: "\u7528\u4e00\u4e2a\u5c0f\u5de7\u7684 pimpl \u7c7b\u628a\u5382\u5546 SDK \u5305\u8d77\u6765\uff0c\u4f7f\u9879\u76ee\u5176\u4f59\u90e8\u5206\u6c38\u8fdc\u770b\u4e0d\u5230\u5382\u5546\u5934\u6587\u4ef6\u3002\u6240\u6709\u4e0e\u76f8\u673a\u76f8\u5173\u7684\u4e8b\u90fd\u5728\u8fd9\u91cc\uff1a\u6253\u5f00\u8bbe\u5907\u3001\u6293\u53d6\u672c\u8f6e\u4e2d\u4ea7\u751f\u4e86\u65b0\u6570\u636e\u7684\u90a3\u51e0\u8def\u4f20\u611f\u5668\u3001\u5199\u5165\u6fc0\u5149\u4e0e\u66dd\u5149\u5bc4\u5b58\u5668\uff0c\u4ee5\u53ca\u4e24\u79cd\u56fe\u50cf\u53d8\u6362 \u2014\u2014 \u628a 16 \u4f4d\u539f\u59cb\u6df1\u5ea6\u8f6c\u6210\u5f69\u8272\u56fe\uff0c\u4ee5\u53ca\u628a\u6df1\u5ea6\u6295\u5f71\u5230 RGB \u5e27\u4e0a\u751f\u6210\u878d\u5408\u89c6\u56fe\u3002\u82e5\u76f8\u673a\u5728\u6fc0\u5149 1 A \u7684\u7535\u6d41\u4e0b\u6389\u7535\uff0creset_device() \u5c31\u662f\u6062\u590d\u8def\u5f84\u3002",
+    syms: [["pi::Camera::open(fps)", "\u5360\u7528\u8bbe\u5907\u5e76\u5f00\u59cb\u51fa\u6d41"], ["Camera::grab() \u2192 Grab", "ir / rgb / depth \u52a0\u4e09\u4e2a _new \u6807\u5fd7"], ["set_ir_laser(u8)", "0 = \u5173\u95ed\uff0c127 = \u6ee1\u529f\u7387"], ["set_sgbm / get_sgbm", "\u8bfb\u5199\u7acb\u4f53\u5339\u914d\u53c2\u6570"], ["fuse_rgbd(depth, rgb)", "\u878d\u5408\u8c61\u9650"], ["colorize_depth(depth)", "\u9759\u6001\u51fd\u6570 \u2014\u2014 16 \u4f4d\u8f6c\u4f2a\u5f69"], ["reset_device()", "\u6389\u7535\u540e\u91cd\u65b0\u679a\u4e3e USB"]]
+  },
+  quad: {
+    sub: "\u6811\u8393\u6d3e\u4e0a\u7684\u53ef\u6267\u884c\u7a0b\u5e8f", role: "\u53ef\u6267\u884c\u7a0b\u5e8f\uff08\u90e8\u7f72\uff09", machine: "\u6811\u8393\u6d3e",
+    desc: "\u6b63\u5e38\u8fd0\u884c\u65f6\uff0c\u8fd9\u662f\u6811\u8393\u6d3e\u4e0a\u552f\u4e00\u5728\u8dd1\u7684\u7a0b\u5e8f\u3002\u5b83\u4ee5\u6307\u6570\u9000\u907f\u65b9\u5f0f\u6253\u5f00\u76f8\u673a\uff08\u56e0\u4e3a\u76f8\u673a\u5728\u5f00\u673a\u65f6\u5e38\u5e38\u8fd8\u6ca1\u51c6\u5907\u597d\uff09\uff0c\u62e8\u53f7\u8fde\u4e0a\u7b14\u8bb0\u672c\uff0c\u7136\u540e\u5faa\u73af\uff1a\u6293\u5e27 \u2192 \u628a\u6709\u65b0\u6570\u636e\u7684\u901a\u9053\u7f16\u6210 JPEG \u2192 \u6bcf\u4e00\u8def\u90fd\u5e26\u4e0a\u81ea\u5df1\u7684 stream_id \u63a8\u4e0b\u5957\u63a5\u5b57\u3002\u53e6\u4e00\u4e2a\u7ebf\u7a0b\u5728\u540c\u4e00\u6761\u5957\u63a5\u5b57\u4e0a\u8bfb\u53d6\u53cd\u65b9\u5411\u6765\u7684\u63a7\u5236\u6d88\u606f\uff0c\u56e0\u6b64\u7b14\u8bb0\u672c\u65e0\u9700\u91cd\u8fde\u5c31\u80fd\u5207\u6362\u6fc0\u5149\u6216\u91cd\u8c03 SGBM\u3002\u4e24\u4e2a\u5faa\u73af\u90fd\u5957\u5728\u4e00\u4e2a\u91cd\u8fde\u5faa\u73af\u91cc \u2014\u2014 \u62d4\u6389\u7f51\u7ebf\uff0c\u5b83\u4f1a\u81ea\u5df1\u8fde\u56de\u6765\u3002",
+    syms: [["main()", "\u53c2\u6570\u89e3\u6790\u3001\u5e26\u9000\u907f\u7684\u76f8\u673a\u6253\u5f00\u3001\u8fde\u63a5\u5faa\u73af"], ["control_loop(fd, cam)", "\u7b2c\u4e8c\u4e2a\u7ebf\u7a0b \u2014\u2014 recv_control() \u2192 cam.set_*()"], ["encode_jpeg(mat, q=80)", "cv::imencode \u7f16\u7801\u5230\u5b57\u8282\u6570\u7ec4"], ["send_jpeg(fd, id, seq, jpeg)", "\u586b\u597d FrameHeader \u540e\u53d1\u9001"], ["--host / --fps / --no-fusion", "\u53e6\u6709\u4e5d\u4e2a --sgbm-* \u8c03\u53c2\u5f00\u5173"]]
+  },
+  mcap: {
+    sub: "\u76f4\u63a5\u6293\u5e27\u5b58\u76d8", role: "\u53ef\u6267\u884c\u7a0b\u5e8f\uff08\u90e8\u7f72\uff09", machine: "\u6811\u8393\u6d3e",
+    desc: "\u66f4\u65e9\u7684\u3001\u5148\u4e8e\u5e93\u5b58\u5728\u7684\u8def\u5f84\uff1a\u5b83\u76f4\u63a5\u8c03\u7528\u5382\u5546 SDK\uff0c\u628a\u5e27\u5199\u6210\u6811\u8393\u6d3e\u4e0a\u7684\u6587\u4ef6\uff0c\u800c\u4e0d\u662f\u63a8\u6d41\u51fa\u53bb\u3002\u5f53\u4f60\u60f3\u8981\u4e00\u6279\u53ef\u79bb\u7ebf\u67e5\u770b\u7684\u771f\u503c\u91c7\u96c6\uff0c\u6216\u60f3\u5728\u5b8c\u5168\u4e0d\u6d89\u53ca\u7f51\u7edc\u7684\u524d\u63d0\u4e0b\u9a8c\u8bc1\u76f8\u673a\u662f\u5426\u6b63\u5e38\u65f6\u5f88\u6709\u7528\u3002\u914d\u5408 cpp/scripts/camera/pull_captures.sh \u53ef\u4ee5\u628a\u7ed3\u679c rsync \u56de\u6765\u3002",
+    syms: [["main()", "\u6253\u5f00\u8bbe\u5907\u3001\u6293 N \u5e27\u3001\u5199\u5165 ./captures"]]
+  },
+  main: {
+    sub: "\u7ebf\u6027\u4ee3\u6570\u81ea\u68c0 + \u9884\u89c8", role: "\u53ef\u6267\u884c\u7a0b\u5e8f\uff08\u90e8\u7f72\uff09", machine: "\u6811\u8393\u6d3e",
+    desc: "\u63a8\u6d41\u5de5\u4f5c\u4e4b\u524d\u7559\u4e0b\u7684\u811a\u624b\u67b6\u7a0b\u5e8f\u3002\u5b83\u6253\u5370\u51fa\u7f16\u8bd1\u8fdb\u6765\u7684\u662f\u54ea\u4e2a\u7ebf\u6027\u4ee3\u6570\u540e\u7aef\uff0c\u89e3\u4e00\u4e2a\u5f88\u5c0f\u7684\u6700\u5c0f\u4e8c\u4e58\u95ee\u9898\u4ee5\u8bc1\u660e\u8be5\u540e\u7aef\u786e\u5b9e\u53ef\u7528\uff0c\u7136\u540e\u5728\u6709 DISPLAY \u65f6\u6253\u5f00\u4e00\u4e2a V4L2 \u8282\u70b9\u663e\u793a\u9884\u89c8\u7a97\u53e3\u3002\u5b83\u4eca\u5929\u7684\u771f\u5b9e\u804c\u8d23\uff0c\u662f\u9a8c\u8bc1\u4ea4\u53c9\u7f16\u8bd1\u4ee5\u53ca\u76ee\u6807\u673a\u4e0a\u7684 OpenCV / Armadillo \u5b89\u88c5\u662f\u5426\u5065\u5168\u3002",
+    syms: [["report_linalg_backend()", "\u6253\u5370\u540e\u7aef\uff0c\u6c42\u89e3 y = 2x + 1"]]
+  },
+  linalg: {
+    sub: "\u4e24\u7aef\u5171\u4eab\uff0c\u4ec5\u5934\u6587\u4ef6", role: "\u5934\u6587\u4ef6\uff08\u4e24\u7aef\u5171\u7528\uff09", machine: "\u6811\u8393\u6d3e + \u7b14\u8bb0\u672c",
+    desc: "\u4e00\u4e2a\u5934\u6587\u4ef6\u52a0\u4e00\u4e2a\u7f16\u8bd1\u671f\u5f00\u5173\uff1a\u5b9a\u4e49\u4e86 ACU_HAVE_ARMADILLO \u5c31\u7528\u57fa\u4e8e OpenBLAS \u7684 Armadillo \u6c42\u89e3\uff0c\u5426\u5219\u56de\u9000\u5230\u5e26 SVD \u7684 cv::solve\u3002\u4e24\u6761\u8def\u5f84\u7b7e\u540d\u76f8\u540c\uff0c\u8c03\u7528\u65b9\u65e0\u9700\u5206\u652f\u3002\u8fd9\u6b63\u662f\u4e3b\u673a\u7aef\u6784\u5efa\u4f20\u5165 --no-armadillo \u4ecd\u80fd\u94fe\u63a5\u901a\u8fc7\u7684\u539f\u56e0 \u2014\u2014 \u5b83\u662f\u8ba9\u540c\u4e00\u4efd\u4ee3\u7801\u540c\u65f6\u670d\u52a1\u4e24\u53f0\u914d\u7f6e\u8fe5\u5f02\u7684\u673a\u5668\u7684\u90a3\u9053\u63a5\u7f1d\u3002",
+    syms: [["acu::backend_name()", "\u7f16\u8bd1\u8fdb\u6765\u7684\u662f\u54ea\u4e2a\u5b9e\u73b0"], ["acu::solve_least_squares(A,b,rows,cols)", "x = (A\u1d40A)\u207b\u00b9A\u1d40b"]]
+  },
+  udptest: {
+    sub: "\u5360\u4f4d\u7a0b\u5e8f \u2014\u2014 hello world", role: "\u53ef\u6267\u884c\u7a0b\u5e8f\uff08\u90e8\u7f72\uff09", machine: "\u6811\u8393\u6d3e",
+    desc: "\u4e00\u4e2a\u5360\u4f4d\u7a0b\u5e8f\u3002main() \u6253\u5370 \"Hello World\" \u7136\u540e\u8fd4\u56de\u3002\u5b83\u7684\u5b58\u5728\u53ea\u662f\u4e3a\u4e86\u5728\u4f60\u65e5\u540e\u60f3\u505a\u4e00\u4e2a UDP \u7248\u4f20\u8f93\u5c42\u65f6\uff0cCMake \u76ee\u6807\u4e0e\u5934\u6587\u4ef6\u4f4d\u7f6e\u5df2\u7ecf\u5c31\u7eea \u2014\u2014 \u76ee\u524d\u6ca1\u6709\u4efb\u4f55\u4e1c\u897f\u8c03\u7528\u5b83\uff0c\u4e5f\u6ca1\u6709\u4efb\u4f55\u4e1c\u897f\u4f9d\u8d56\u5b83\u3002"
+  },
+  protocol: {
+    sub: "acu_protocol \u00b7 \u901a\u4fe1\u5951\u7ea6", role: "\u4ec5\u5934\u6587\u4ef6 INTERFACE \u5e93", machine: "\u4e24\u7aef",
+    desc: "\u4e24\u53f0\u673a\u5668\u8fbe\u6210\u4e00\u81f4\u7684\u552f\u4e00\u4e00\u4e2a\u6587\u4ef6\uff0c\u4e5f\u662f\u6700\u8be5\u5148\u8bfb\u7684\u4e00\u4e2a\u3002\u5b83\u5b9a\u4e49\u4e86 24 \u5b57\u8282\u7684\u5e27\u5934\uff08magic MCAF\u3001\u7248\u672c\u3001stream_id\u3001\u5e8f\u53f7\u3001\u6beb\u79d2\u65f6\u95f4\u6233\u3001JPEG \u957f\u5ea6\uff09\u3001\u5927\u7aef\u8bfb\u5199\u8f85\u52a9\u51fd\u6570\uff08\u4f7f\u5b57\u8282\u5e8f\u6c38\u4e0d\u4f9d\u8d56\u7f16\u8bd1\u5668\uff09\uff0c\u4ee5\u53ca\u4fdd\u8bc1\u5728\u6d41\u5f0f\u5957\u63a5\u5b57\u4e0a\u5b8c\u6574\u8bfb\u6ee1\u6216\u5199\u5b8c\u7684\u5faa\u73af\u3002\u5728\u6b64\u4e4b\u4e0a\uff0c\u540c\u4e00\u6761\u5957\u63a5\u5b57\u8fd8\u627f\u8f7d\u53e6\u5916\u4e24\u7c7b\u6d88\u606f\uff1a\u4e0a\u884c\u5230\u6811\u8393\u6d3e\u7684 5 \u5b57\u8282 CTL \u63a7\u5236\u6d88\u606f\uff0c\u4ee5\u53ca\u4e0b\u884c\u56de\u6765\u3001\u643a\u5e26 ACK \u4e0e\u5f53\u524d SGBM \u6570\u503c\u7684 META \u6d88\u606f\u3002\u7531\u4e8e\u4e09\u8005\u9760\u5f00\u5934\u7684 magic \u5b57\u533a\u5206\uff0c\u63a5\u6536\u65b9\u5148\u8bfb\u56db\u4e2a\u5b57\u8282\uff0c\u7136\u540e\u624d\u51b3\u5b9a\u81ea\u5df1\u9762\u5bf9\u7684\u662f\u4ec0\u4e48\u3002",
+    syms: [["StreamId", "IR=0, DEPTH=1, FUSION=2, RGB=3"], ["FrameHeader", "24 \u5b57\u8282\uff0c\u7ebf\u4e0a\u4e3a\u5927\u7aef\u5e8f"], ["send_all / recv_all", "\u5faa\u73af\u76f4\u5230\u642c\u5b8c n \u5b57\u8282\u6216\u5957\u63a5\u5b57\u65ad\u5f00"], ["send_frame / recv_frame", "\u5e27\u5934\u52a0 JPEG \u8d1f\u8f7d"], ["recv_magic \u2192 *_after_magic", "\u5148\u7aa5 4 \u5b57\u8282\uff0c\u518d\u6309\u7c7b\u578b\u5206\u53d1"], ["send_control / recv_control", "'CTL' + \u64cd\u4f5c\u7801 + \u957f\u5ea6 + \u8d1f\u8f7d"], ["send_meta / MetaMsg", "'MACU' + \u7c7b\u578b + \u957f\u5ea6 \u2014\u2014 \u6811\u8393\u6d3e\u56de\u7b14\u8bb0\u672c"], ["SgbmWire + to/from_wire", "24 \u5b57\u8282\u5c0f\u7aef\u53c2\u6570\u5757"]]
+  },
+  stream_server: {
+    sub: "\u7b14\u8bb0\u672c\u4e0a\u7684\u53ef\u6267\u884c\u7a0b\u5e8f", role: "\u53ef\u6267\u884c\u7a0b\u5e8f\uff08\u672c\u673a\u7f16\u8bd1\uff09", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u523b\u610f\u5199\u5f97\u6781\u5c0f \u2014\u2014 \u5b83\u4e0d\u627f\u8f7d\u4efb\u4f55\u903b\u8f91\uff0c\u53ea\u8d1f\u8d23\u7ebf\u7a0b\u3002\u5b83\u7ed1\u5b9a\u4e24\u4e2a\u76d1\u542c\u5957\u63a5\u5b57\uff089000 \u7ed9\u6811\u8393\u6d3e\uff0c8080 \u7ed9\u6d4f\u89c8\u5668\uff09\uff0c\u628a\u524d\u8005\u4ea4\u7ed9\u4e00\u4e2a\u5206\u79bb\u7ebf\u7a0b\u4e0a\u7684 run_ingress\uff0c\u7136\u540e\u81ea\u5df1\u5f85\u5728 accept \u5faa\u73af\u91cc\uff0c\u4e3a\u6bcf\u4e2a\u6d4f\u89c8\u5668\u8fde\u63a5\u6d3e\u751f\u4e00\u4e2a\u5206\u79bb\u7ebf\u7a0b\u3002\u5b83\u7684\u53e6\u4e00\u9879\u804c\u8d23\u662f\u4f53\u9762\u5730\u9000\u51fa\uff1a\u6309\u4e0b Ctrl-C \u65f6\uff0c\u5b83\u4f1a\u5148\u6293\u4f4f\u5f53\u524d\u4e0e\u6811\u8393\u6d3e\u76f8\u8fde\u7684\u5957\u63a5\u5b57\u53d1\u51fa SHUTDOWN \u63a7\u5236\u6d88\u606f\uff0c\u8fd9\u6837\u6740\u6389\u670d\u52a1\u5668\u4e4b\u540e\u6fc0\u5149\u4e0d\u4f1a\u7ee7\u7eed\u4eae\u7740\u3002",
+    syms: [["main()", "\u4e24\u4e2a\u76d1\u542c\u5668\u3001\u4e00\u4e2a ingress \u7ebf\u7a0b\u3001accept \u5faa\u73af"], ["make_listener(port)", "socket + SO_REUSEADDR + bind + listen"], ["on_shutdown_signal()", "SIGINT \u2192 \u901a\u77e5\u6811\u8393\u6d3e\u5173\u95ed\u6fc0\u5149"]]
+  },
+  ingress: {
+    sub: "acu_ingress \u00b7 \u6309\u6d41\u5206\u53d1", role: "\u9759\u6001\u5e93", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u670d\u52a1\u5668\u9762\u5411\u6811\u8393\u6d3e\u7684\u90a3\u4e00\u534a\uff0c\u4e5f\u662f\u9879\u76ee\u4e2d\u6700\u5c0f\u7684\u4e00\u4e2a\u771f\u6b63\u6709\u5185\u5bb9\u7684\u6587\u4ef6\u3002\u5b83\u7684\u5faa\u73af\u53ea\u6709\u56db\u884c\u903b\u8f91\uff1a\u8bfb\u4e00\u4e2a magic \u5b57\uff0c\u7136\u540e\u89c6\u5176\u53d6\u503c\uff0c\u8981\u4e48\u8bfb\u5165\u4e00\u5e27\u5e76\u6309 stream_id \u53d1\u5e03\u5230\u5171\u4eab\u7f13\u51b2\u533a\uff0c\u8981\u4e48\u8bfb\u5165\u4e00\u6761 META \u6d88\u606f\u5e76\u63a8\u7ed9\u6240\u6709\u5df2\u8fde\u63a5\u7684\u6d4f\u89c8\u5668\u5957\u63a5\u5b57\u3002\u51fa\u73b0\u5176\u4ed6\u53d6\u503c\u5c31\u610f\u5473\u7740\u6d41\u5df2\u5931\u6b65\uff0c\u4e8e\u662f\u5b83\u65ad\u5f00\u8fde\u63a5\u3001\u7b49\u5f85\u6811\u8393\u6d3e\u91cd\u62e8\u3002\u5b83\u8fd8\u628a\u5f53\u524d\u5957\u63a5\u5b57 fd \u5b58\u8fdb\u4e00\u4e2a\u539f\u5b50\u53d8\u91cf\uff0c\u597d\u8ba9\u5176\u4ed6\u7ebf\u7a0b\u80fd\u6cbf\u5b83\u628a\u63a7\u5236\u6d88\u606f\u9001\u56de\u53bb\u3002",
+    syms: [["run_ingress(listen_fd)", "accept \u5faa\u73af\uff0c\u6bcf\u6761\u8fde\u63a5\u4e00\u4e2a\u7ebf\u7a0b"], ["ingress_loop(fd)", "recv_magic \u2192 publish() \u6216 ws_broadcast()"], ["current_ingress_fd()", "\u539f\u5b50\u53d8\u91cf \u2014\u2014 \u8ba9 http.cpp \u591f\u5f97\u7740\u6811\u8393\u6d3e"]]
+  },
+  store: {
+    sub: "acu_store \u00b7 \u4e24\u4fa7\u7684\u63a5\u7f1d", role: "\u4ec5\u5934\u6587\u4ef6 INTERFACE \u5e93", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u56db\u4e2a\u69fd\u4f4d \u2014\u2014 \u6bcf\u8def\u901a\u9053\u4e00\u4e2a \u2014\u2014 \u5404\u81ea\u4fdd\u5b58\u6700\u65b0\u7684\u90a3\u4e00\u5f20 JPEG\u3001\u4e00\u4e2a\u5e8f\u53f7\uff0c\u4ee5\u53ca\u4e00\u4e2a\u4e00\u79d2\u6eda\u52a8\u7a97\u53e3\u7684\u5e27\u8ba1\u6570\u3002\u8fd9\u662f\u63a5\u6536\u7ebf\u7a0b\u4e0e\u6d4f\u89c8\u5668\u7ebf\u7a0b\u552f\u4e00\u5171\u540c\u89e6\u78b0\u7684\u5185\u5b58\uff0c\u4e5f\u6b63\u662f\u4e8c\u8005\u65e0\u9700\u77e5\u9053\u5bf9\u65b9\u5b58\u5728\u7684\u539f\u56e0\uff1aingress \u8c03\u7528 publish()\uff0c\u6bcf\u4e2a\u6d4f\u89c8\u5668\u7ebf\u7a0b\u963b\u585e\u5728 wait_frame() \u4e0a\u76f4\u5230\u5e8f\u53f7\u53d8\u5316\u3002\u540e\u5230\u7684\u6d4f\u89c8\u5668\u62ff\u5230\u7684\u662f\u5f53\u524d\u5e27\u800c\u4e0d\u662f\u79ef\u538b\u961f\u5217\uff0c\u56e0\u6b64\u4e00\u4e2a\u5361\u987f\u7684\u6807\u7b7e\u9875\u6c38\u8fdc\u62d6\u4e0d\u6162\u6811\u8393\u6d3e\u3002",
+    syms: [["StreamStore", "\u4e92\u65a5\u91cf + \u6761\u4ef6\u53d8\u91cf + jpeg + \u5e8f\u53f7 + \u5e27\u7387\u7a97\u53e3"], ["g_store[STREAM_COUNT]", "\u56db\u4e2a\u69fd\u4f4d\uff0c\u6bcf\u8def\u901a\u9053\u4e00\u4e2a"], ["publish(id, jpeg&&)", "\u79fb\u52a8\u5199\u5165\u3001\u5e8f\u53f7\u81ea\u589e\u3001notify_all"], ["wait_frame(id, out, last_seq)", "\u963b\u585e\u76f4\u5230 seq != last_seq"], ["fps_of(id)", "/status \u4e0a\u62a5\u7684\u6570\u503c"]]
+  },
+  http: {
+    sub: "acu_http \u00b7 \u9762\u5411\u6d4f\u89c8\u5668", role: "\u9759\u6001\u5e93", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u6700\u5927\u7684\u4e00\u4e2a\u6587\u4ef6\uff0c\u5176\u4e2d\u7ea6\u6709\u4e00\u534a\u662f\u7f51\u9875\u672c\u8eab\uff0c\u88c5\u5728\u4e00\u4e2a\u539f\u59cb\u5b57\u7b26\u4e32\u5b57\u9762\u91cf\u91cc\u3002C++ \u90a3\u4e00\u4fa7\u662f\u624b\u5199\u7684 HTTP \u670d\u52a1\u5668\uff1a\u5b83\u628a\u8bf7\u6c42\u884c\u8def\u7531\u5230\u4e94\u4e2a\u5904\u7406\u51fd\u6570\u4e4b\u4e00\uff0c\u800c\u5bf9 /stream/* \u5219\u6c38\u4e0d\u8fd4\u56de \u2014\u2014 \u5b83\u5750\u5728 wait_frame() \u91cc\uff0c\u6bcf\u6765\u4e00\u5f20\u65b0 JPEG \u5c31\u4f5c\u4e3a\u53c8\u4e00\u4e2a multipart/x-mixed-replace \u5206\u6bb5\u5199\u51fa\u53bb\uff0c\u8fd9\u6b63\u662f\u753b\u9762\u65e0\u9700\u4efb\u4f55 JavaScript \u4e5f\u4f1a\u52a8\u7684\u539f\u56e0\u3002\u5b83\u8fd8\u624b\u5de5\u5b9e\u73b0\u4e86\u521a\u597d\u591f\u7528\u7684 WebSocket \u534f\u8bae\uff08SHA-1/base64 \u63e1\u624b\u3001\u5e27\u63a9\u7801\u3001\u5e7f\u64ad\u5217\u8868\uff09\uff0c\u4ee5\u4fbf\u5728\u76f8\u673a\u4e0a\u62a5\u65f6\u628a SGBM \u6570\u503c\u63a8\u56de\u9875\u9762\u3002",
+    syms: [["handle_http_client(fd)", "\u8bfb\u8bf7\u6c42 \u2192 \u8def\u7531 \u2192 \u5355\u4e2a\u5904\u7406\u51fd\u6570"], ["stream_mjpeg(fd, id)", "\u6c38\u4e0d\u7ed3\u675f\u7684 multipart \u5faa\u73af"], ["send_status(fd)", "/status \u2192 \u5404\u8def\u5e27\u7387\u7684 JSON"], ["handle_control(path)", "/control/* \u2192 \u6cbf\u6811\u8393\u6d3e\u5957\u63a5\u5b57 send_control()"], ["ws_serve / ws_broadcast", "\u624b\u5199 WebSocket\uff0c\u63a8\u9001 meta"], ["kIndexHtml", "\u6574\u4e2a\u754c\u9762\uff0c\u4f5c\u4e3a\u539f\u59cb\u5b57\u7b26\u4e32\u5b57\u9762\u91cf"]]
+  },
+  calib: {
+    sub: "\u5360\u4f4d\u7a0b\u5e8f \u2014\u2014 hello world", role: "\u53ef\u6267\u884c\u7a0b\u5e8f\uff08\u672c\u673a\u7f16\u8bd1\uff09", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u9884\u7559\u4f4d\u7f6e\u3002main() \u6253\u5370 \"Hello World\"\u3002\u8be5 CMake \u76ee\u6807\u5df2\u94fe\u63a5 acu_common\uff0c\u56e0\u6b64\u4f60\u7740\u624b\u5199\u7acb\u4f53\u6807\u5b9a\u7684\u90a3\u5929\uff0cOpenCV \u4e0e\u7ebf\u6027\u4ee3\u6570\u5934\u6587\u4ef6\u5df2\u7ecf\u5c31\u4f4d \u2014\u2014 \u89c4\u5212\u5185\u5bb9\u89c1 docs/calibration_scaffolding.md\u3002"
+  },
+  page: {
+    sub: "\u56db\u5bab\u683c\u9875\u9762\uff08\u5185\u5d4c\u4e8e http.cpp\uff09", role: "\u5185\u5d4c\u7f51\u9875", machine: "\u6d4f\u89c8\u5668",
+    lines: "http.cpp \u4e2d\u7ea6 250 \u884c", code: "HTML + JS",
+    desc: "\u5b83\u4e0d\u662f\u4e00\u4e2a\u6587\u4ef6\uff0c\u800c\u662f\u7f16\u8bd1\u8fdb\u670d\u52a1\u5668\u4e8c\u8fdb\u5236\u91cc\u7684\u4e00\u4e2a\u539f\u59cb\u5b57\u7b26\u4e32\u5b57\u9762\u91cf \u2014\u2014 \u8fd9\u6b63\u662f\u4e3a\u4ec0\u4e48\u6ca1\u6709\u7f51\u9875\u6784\u5efa\u6b65\u9aa4\uff0c\u4e5f\u6ca1\u6709\u9700\u8981\u90e8\u7f72\u7684\u9759\u6001\u76ee\u5f55\u3002\u5b83\u7528\u56db\u4e2a\u666e\u901a\u7684 <img> \u6807\u7b7e\u6307\u5411 /stream/* \u753b\u51fa 2\u00d72 \u5bab\u683c\uff0c\u6bcf\u79d2\u8f6e\u8be2\u4e00\u6b21 /status \u66f4\u65b0\u5e27\u7387\u8bfb\u6570\uff0c\u70b9\u51fb\u6fc0\u5149\u6309\u94ae\u65f6\u53d1\u51fa /control/ir?value=N\uff0c\u5e76\u4fdd\u6301\u4e00\u6761 WebSocket \u7528\u4e8e\u5b9e\u65f6\u8c03 SGBM\u3002",
+    syms: [["<img src=\"/stream/ir\">", "\u5171\u56db\u4e2a \u2014\u2014 MJPEG \u5b8c\u5168\u4e0d\u9700\u8981 JS"], ["poll() \u6bcf 1000 \u6beb\u79d2", "GET /status \u2192 \u5e27\u7387\u6570\u503c"], ["setIR(v) / shutdown()", "fetch /control/ir\u3001/control/shutdown"], ["wsConnect() / applyTuning()", "\u7ecf WebSocket \u5b9e\u65f6\u63a8\u9001 SGBM"]]
+  },
+  setup_host: {
+    sub: "\u7b14\u8bb0\u672c\uff0c\u53ea\u9700\u8fd0\u884c\u4e00\u6b21", role: "\u73af\u5883\u811a\u672c", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u7528 apt \u88c5\u4e0a\u7b14\u8bb0\u672c\u4e3a\u300c\u53e6\u4e00\u53f0\u673a\u5668\u300d\u6784\u5efa\u6240\u9700\u8981\u7684\u4e00\u5207\uff1acmake\u3001ninja\u3001aarch64-linux-gnu \u4ea4\u53c9\u5de5\u5177\u94fe\uff0c\u4ee5\u53ca\u514b\u9686 sysroot \u7528\u7684 rsync \u4e0e ssh\u3002\u5728\u975e Debian \u4e3b\u673a\u4e0a\uff0c\u5b83\u4f1a\u6253\u5370\u7b49\u4ef7\u7684\u8f6f\u4ef6\u5305\u6e05\u5355\u7136\u540e\u9000\u51fa\uff0c\u800c\u4e0d\u662f\u81ea\u4f5c\u806a\u660e\u5730\u731c\u6d4b\u3002"
+  },
+  setup_target: {
+    sub: "\u5728\u6811\u8393\u6d3e\u4e0a\u8fd0\u884c", role: "\u73af\u5883\u811a\u672c", machine: "\u6811\u8393\u6d3e",
+    desc: "\u7528 apt \u88c5\u4e0a\u4ea4\u53c9\u94fe\u63a5\u65f6\u9700\u8981\u636e\u4ee5\u627e\u5230\u5934\u6587\u4ef6\u4e0e .so \u7684\u90a3\u4e9b -dev \u5305\uff1aOpenCV\u3001OpenBLAS/LAPACK\u3001Armadillo\u3001libuvc\u3001libusb \u2014\u2014 \u5916\u52a0\u4f60\u5728\u677f\u5b50\u4e0a\u771f\u6b63\u4f1a\u7528\u5230\u7684\u8bca\u65ad\u5de5\u5177\uff08v4l-utils\u3001tcpdump\u3001iperf3\u3001gdbserver\uff09\u3002\u987a\u5e8f\u5f88\u91cd\u8981\uff1a\u5b83\u5fc5\u987b\u5728\u4f60\u514b\u9686\u6587\u4ef6\u7cfb\u7edf\u4e4b\u524d\u8fd0\u884c\uff0c\u56e0\u4e3a\u90a3\u4efd\u514b\u9686\u6b63\u662f\u4f60\u7684\u94fe\u63a5\u5668\u5c06\u8981\u94fe\u63a5\u7684\u4e1c\u897f\u3002"
+  },
+  clear_target: {
+    sub: "\u64a4\u9500\u4e0a\u4e00\u6b65\u7684\u5b89\u88c5", role: "\u73af\u5883\u811a\u672c", machine: "\u6811\u8393\u6d3e",
+    desc: "\u79fb\u9664 setup_target_env.sh \u88c5\u4e0a\u7684\u4e1c\u897f\uff0c\u597d\u8ba9\u4f60\u80fd\u5728\u4e00\u5757\u5e72\u51c0\u7684\u677f\u5b50\u4e0a\u9a8c\u8bc1\u6784\u5efa\uff0c\u800c\u4e0d\u662f\u5728\u4e00\u5757\u6b8b\u7559\u7740\u65e9\u5148\u8bd5\u9a8c\u75d5\u8ff9\u7684\u677f\u5b50\u4e0a\u3002"
+  },
+  agents: {
+    sub: "\u5168\u4ed3\u5e93\u6ce8\u91ca\u51c6\u5219", role: "\u4ed3\u5e93\u51c6\u5219", machine: "\u2014",
+    desc: "\u8be5\u51c6\u5219\u89c4\u5b9a\uff1a\u672c\u4ed3\u5e93\u4e2d\u6bcf\u4e00\u884c\u4ee3\u7801\u4e0a\u65b9\u90fd\u8981\u6709\u4e00\u6761\u82f1\u6587\u6ce8\u91ca\u548c\u4e00\u6761\u4e2d\u6587\u6ce8\u91ca\uff0c\u6bcf\u4e2a\u6587\u4ef6\u3001\u7c7b\u4e0e\u51fd\u6570\u90fd\u8981\u6709\u5757\u6ce8\u91ca\u3002\u8fd9\u6b63\u662f\u884c\u6570\u770b\u8d77\u6765\u8fdc\u5927\u4e8e\u5b9e\u9645\u4ee3\u7801\u91cf\u7684\u539f\u56e0 \u2014\u2014 \u591a\u6570\u6587\u4ef6\u91cc\u7ea6\u6709\u4e09\u5206\u4e4b\u4e8c\u662f\u89e3\u91ca\u3002\u9605\u8bfb\u65f6\u628a\u5b83\u5265\u6389\u5373\u53ef\uff1a\u5bf9\u4efb\u610f\u6587\u4ef6\u6267\u884c grep -vE '^\\s*//' \u5c31\u53ea\u5269\u4e0b\u4ee3\u7801\u3002"
+  },
+  pull_sysroot: {
+    sub: "\u514b\u9686\u6811\u8393\u6d3e\u7684\u6587\u4ef6\u7cfb\u7edf", role: "\u5de5\u5177\u94fe\u811a\u672c", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u89e3\u6790\u677f\u5b50\u7684 ssh \u522b\u540d\uff0c\u7136\u540e\u7528 rsync \u628a\u6811\u8393\u6d3e\u4e0a\u7684 /usr/include\u3001/usr/lib \u4e0e /lib \u62c9\u5230 ~/sysroots/<board>\u3002\u90a3\u4efd\u672c\u5730\u526f\u672c\uff0c\u5c31\u662f\u4ea4\u53c9\u7f16\u8bd1\u5668\u89e3\u6790 #include <opencv2/...> \u65f6\u6240\u4f9d\u636e\u7684\u4e1c\u897f\uff0c\u4e5f\u662f\u4ea4\u53c9\u94fe\u63a5\u5668\u5b9e\u9645\u94fe\u63a5\u7684\u4e1c\u897f \u2014\u2014 \u5f04\u9519\u4e86\uff0c\u4f60\u5f97\u5230\u7684\u7b26\u53f7\u4f1a\u300c\u5728\u4f60\u7684\u7b14\u8bb0\u672c\u4e0a\u5b58\u5728\uff0c\u5728\u677f\u5b50\u4e0a\u4e0d\u5b58\u5728\u300d\u3002"
+  },
+  fix_symlinks: {
+    sub: "\u628a\u7b26\u53f7\u94fe\u63a5\u6539\u6210\u76f8\u5bf9\u8def\u5f84", role: "\u5de5\u5177\u94fe\u811a\u672c", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u590d\u5236\u6765\u7684\u6587\u4ef6\u7cfb\u7edf\u91cc\u6ee1\u662f\u5f62\u5982 /usr/lib/libfoo.so \u2192 /lib/aarch64-linux-gnu/libfoo.so \u7684\u7edd\u5bf9\u7b26\u53f7\u94fe\u63a5\u3002\u5728\u4f60\u7684\u7b14\u8bb0\u672c\u4e0a\uff0c\u5b83\u4eec\u4f1a\u9759\u9ed8\u5730\u3001\u9519\u8bef\u5730\u89e3\u6790\u5230\u4f60\u7b14\u8bb0\u672c\u81ea\u5df1\u7684\u5e93\u4e0a\u3002\u672c\u811a\u672c\u904d\u5386 sysroot \u4e0b\u7684\u6bcf\u4e00\u4e2a\u7b26\u53f7\u94fe\u63a5\u5e76\u5c06\u5176\u6539\u5199\u4e3a\u76f8\u5bf9\u8def\u5f84\uff0c\u4f7f\u5b83\u53ea\u53ef\u80fd\u6307\u56de\u514b\u9686\u5185\u90e8\u3002"
+  },
+  check_sysroot: {
+    sub: "\u4e94\u9879\u9884\u68c0", role: "\u5de5\u5177\u94fe\u811a\u672c", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u51fa\u95ee\u9898\u65f6\uff0c\u8fd9\u662f\u4ed3\u5e93\u91cc\u6700\u6709\u4ef7\u503c\u7684\u811a\u672c\u3002\u5b83\u5148\u81ea\u52a8\u8bc6\u522b\u4e09\u5143\u7ec4\uff0c\u7136\u540e\u68c0\u67e5\u4e94\u4ef6\u4e8b\uff1a\u6ca1\u6709\u7b26\u53f7\u94fe\u63a5\u9003\u51fa sysroot\u3001\u9884\u671f\u7684\u5e93\u90fd\u5728\u3001pkg-config \u6587\u4ef6\u5b58\u5728\u3001ELF \u7c7b\u522b\u786e\u5b9e\u662f aarch64\uff0c\u4ee5\u53ca sysroot \u63d0\u4f9b\u7684 GLIBC/GLIBCXX/CXXABI \u7248\u672c\u3002\u6b64\u9879\u4e0d\u901a\u8fc7\uff0cbuild.sh \u5c31\u62d2\u7edd\u4ea4\u53c9\u7f16\u8bd1\u3002"
+  },
+  buildsh: {
+    sub: "\u552f\u4e00\u9700\u8981\u4f60\u6572\u7684\u547d\u4ee4", role: "\u6784\u5efa\u5305\u88c5\u811a\u672c", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u63a5\u53d7\u4e00\u4e2a\u677f\u540d \u2014\u2014 `host` \u8868\u793a\u672c\u673a\u6784\u5efa\uff0c\u5176\u4ed6\u4efb\u4f55\u503c\u8868\u793a\u4ea4\u53c9\u6784\u5efa \u2014\u2014 \u5916\u52a0 --clean\u3001--deploy\u3001--no-armadillo\u3001--static-cxx\u3002\u4ea4\u53c9\u6784\u5efa\u65f6\uff0c\u5b83\u4f1a\u5b9a\u4f4d sysroot\u3001\u8dd1\u9884\u68c0\u3001\u8ba9 CMake \u6307\u5411\u4ea4\u53c9\u5de5\u5177\u94fe\u6587\u4ef6\uff0c\u5e76\u5728\u94fe\u63a5\u4e4b\u540e\u505a\u4e00\u4ef6 CMake \u4e0d\u4f1a\u505a\u7684\u4e8b\uff1a\u8bfb\u51fa\u65b0\u4e8c\u8fdb\u5236\u6240\u8981\u6c42\u7684\u7248\u672c\u7b26\u53f7\uff0c\u9010\u4e2a\u5bf9\u7167\u76ee\u6807\u673a\u7684\u5e93\u5b9e\u9645\u63d0\u4f9b\u7684\u7b26\u53f7\uff0c\u4f7f ABI \u4e0d\u5339\u914d\u5728\u6b64\u5904\u5931\u8d25\uff0c\u800c\u4e0d\u662f\u5728\u6811\u8393\u6d3e\u4e0a\u53d8\u6210\u4e00\u6761\u6666\u6da9\u7684\u52a0\u8f7d\u5668\u9519\u8bef\u3002",
+    syms: [["./cpp/scripts/compile/build.sh host --no-armadillo", "\u7b14\u8bb0\u672c\u4e0a\u7684\u670d\u52a1\u5668"], ["./cpp/scripts/compile/build.sh pi --deploy", "\u4ea4\u53c9\u7f16\u8bd1\uff0c\u7136\u540e rsync \u5230\u677f\u5b50"], ["verify_abi()", "readelf -V\uff0c\u9700\u6c42\u5bf9\u7167\u4f9b\u7ed9"]]
+  },
+  crossmk: {
+    sub: "\u4ea4\u53c9\u7f16\u8bd1\u5de5\u5177\u94fe\u6587\u4ef6", role: "CMake \u5de5\u5177\u94fe", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u544a\u8bc9 CMake \u5b83\u4e0d\u662f\u5728\u4e3a\u672c\u673a\u6784\u5efa\uff1a\u628a\u7cfb\u7edf\u540d\u4e0e\u5904\u7406\u5668\u8bbe\u4e3a aarch64 Linux\uff0c\u6307\u660e\u4ea4\u53c9\u7f16\u8bd1\u5668\uff0c\u4ee4 CMAKE_SYSROOT \u6307\u5411\u90a3\u4efd\u514b\u9686\uff0c\u4ee5\u53ca\u6700\u5173\u952e\u7684\u4e00\u70b9 \u2014\u2014 \u8bbe\u7f6e FIND_ROOT_PATH \u6a21\u5f0f\uff0c\u4f7f find_package \u53ea\u5728 sysroot \u5185\u90e8\u641c\u7d22\uff0c\u7edd\u4e0d\u4f1a\u8bef\u53d6\u7b14\u8bb0\u672c\u4e0a\u7684\u5e93\u3002"
+  },
+  cmakelists: {
+    sub: "\u6839\u6587\u4ef6 \u2014\u2014 \u76ee\u6807\u4e0e\u9009\u9879", role: "\u6784\u5efa\u5b9a\u4e49", machine: "\u4e24\u7aef",
+    desc: "\u5b9a\u4e49 acu_common \u2014\u2014 \u4e00\u4e2a\u643a\u5e26 OpenCV\u3001pthreads \u4ee5\u53ca\u53ef\u9009 Armadillo \u7684 INTERFACE \u76ee\u6807\uff0c\u4ece\u800c\u514d\u53bb\u6bcf\u4e2a\u76ee\u6807\u91cd\u590d\u5199\u8fd9\u4efd\u6e05\u5355\u3002\u968f\u540e\u5b83\u58f0\u660e\u6bcf\u4e2a\u53ef\u6267\u884c\u7a0b\u5e8f\uff0c\u5e76\u53ea\u94fe\u63a5\u5404\u81ea\u771f\u6b63\u9700\u8981\u7684\u5e93 \u2014\u2014 \u8fd9\u6b63\u662f\u4e3b\u673a\u7aef\u6784\u5efa\u8fde\u300c\u4ec5\u6811\u8393\u6d3e\u53ef\u7528\u300d\u7684\u76f8\u673a\u76ee\u6807\u90fd\u4e0d\u4f1a\u53bb\u914d\u7f6e\u7684\u539f\u56e0\u3002ACU_DEPLOY \u8ffd\u52a0\u6784\u5efa\u540e rsync \u5230\u677f\u5b50\u7684\u6b65\u9aa4\uff1bACU_USE_ARMADILLO \u4e0e ACU_STATIC_CXX \u5219\u662f build.sh \u66b4\u9732\u51fa\u6765\u7684\u4e24\u4e2a\u9003\u751f\u53e3\u3002",
+    syms: [["acu_common (INTERFACE)", "OpenCV + Threads + \u53ef\u9009 Armadillo"], ["metasense_uvc (STATIC)", "\u968f\u9644\u7684 usb.cpp\uff0c\u4ec5\u6811\u8393\u6d3e\u6784\u5efa"], ["ACU_DEPLOY / ACU_USE_ARMADILLO", "build.sh \u8f6c\u53d1\u7684\u4e24\u4e2a\u5f00\u5173"]]
+  },
+  libcmake: {
+    sub: "\u6bcf\u4e2a\u5e93\u4e00\u6761 add_subdirectory", role: "\u6784\u5efa\u5b9a\u4e49", machine: "\u4e24\u7aef",
+    desc: "\u6bcf\u4e2a lib/<name>/ \u90fd\u62e5\u6709\u81ea\u5df1\u7684 CMakeLists \u5e76\u58f0\u660e\u81ea\u5df1\u7684\u76ee\u6807\uff0c\u8fd9\u6b63\u662f\u8ba9\u300c\u4f2a\u5e93\u300d\u8fb9\u754c\u6210\u4e3a\u771f\u5b9e\u8fb9\u754c\u3001\u800c\u4e0d\u53ea\u662f\u4e00\u79cd\u76ee\u5f55\u7ea6\u5b9a\u7684\u539f\u56e0\u3002\u65b0\u589e\u4e00\u4e2a\u5e93\uff0c\u5c31\u662f\u5728\u8fd9\u91cc\u52a0\u4e00\u884c add_subdirectory\uff0c\u518d\u5728\u65b0\u76ee\u5f55\u91cc\u653e\u4e00\u4e2a CMakeLists\u3002"
+  },
+  libtargets: {
+    sub: "acu_protocol, store, ingress, http, camera", role: "\u5e93\u76ee\u6807", machine: "\u4e24\u7aef",
+    desc: "acu_protocol \u4e0e acu_store \u662f INTERFACE \u76ee\u6807 \u2014\u2014 \u4ec5\u5934\u6587\u4ef6\uff0c\u4e0d\u7f16\u8bd1\u4efb\u4f55\u4e1c\u897f\uff0c\u53ea\u8d1f\u8d23\u643a\u5e26\u5305\u542b\u8def\u5f84\u3002acu_ingress\u3001acu_http \u4e0e acu_camera \u662f STATIC\u3002\u53ea\u6709 acu_camera \u4f1a\u62c9\u5165 metasense_uvc\uff0c\u4e14\u4ec5\u5728\u6811\u8393\u6d3e\u6784\u5efa\u65f6\u5982\u6b64 \u2014\u2014 \u6b63\u662f\u8fd9\u4e00\u673a\u5236\uff0c\u628a\u5382\u5546 SDK \u5b8c\u5168\u6321\u5728\u4e86\u7b14\u8bb0\u672c\u7aef\u7684\u4e8c\u8fdb\u5236\u4e4b\u5916\u3002"
+  },
+  exetargets: {
+    sub: "\u677f\u7aef 5 \u4e2a\uff0c\u4e3b\u673a\u7aef 2 \u4e2a", role: "\u53ef\u6267\u884c\u76ee\u6807", machine: "\u4e24\u7aef",
+    desc: "\u6811\u8393\u6d3e\uff1aquad_sender\u3001metasense_capture\u3001main\u3001udp_sender_test\u3002\u7b14\u8bb0\u672c\uff1astream_server\u3001calibration_tool\u3002\u6bcf\u4e2a\u90fd\u53ea\u94fe\u63a5\u81ea\u5df1\u9700\u8981\u7684\u4e1c\u897f \u2014\u2014 quad_sender \u53d6 acu_camera \u4e0e acu_protocol\uff1bstream_server \u53d6 acu_ingress\u3001acu_http \u4e0e acu_protocol\uff1b\u4e24\u4e2a\u5360\u4f4d\u7a0b\u5e8f\u53ea\u53d6 acu_common\u3002"
+  },
+  runstream: {
+    sub: "\u540c\u65f6\u62c9\u8d77\u4e24\u7aef", role: "\u7f16\u6392\u811a\u672c", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u65e5\u5e38\u7528\u7684\u90a3\u6761\u547d\u4ee4\u3002\u5b83\u5148\u6784\u5efa\u4e24\u7aef\uff0c\u6740\u6389\u677f\u5b50\u4e0a\u6b8b\u7559\u7684\u53d1\u9001\u8fdb\u7a0b\uff0c\u7136\u540e\u5728\u505a\u4efb\u4f55\u5176\u4ed6\u4e8b\u4e4b\u524d\u5148\u7528 lsusb \u68c0\u67e5 04cc \u2014\u2014 \u56e0\u4e3a\u4f60\u6700\u5e38\u649e\u4e0a\u7684\u6545\u969c\uff0c\u5c31\u662f\u76f8\u673a\u5728\u6fc0\u5149\u7535\u6d41\u4e0b\u6389\u7535\u5e76\u4ece\u603b\u7ebf\u4e0a\u6d88\u5931\uff0c\u800c\u8fd9\u4e00\u6b65\u7528\u4e00\u884c\u5b57\u544a\u8bc9\u4f60\uff0c\u80dc\u8fc7\u4e09\u5341\u79d2\u6478\u4e0d\u7740\u5934\u8111\u7684\u65e5\u5fd7\u3002\u63a5\u7740\u5b83\u5728\u672c\u5730\u542f\u52a8\u670d\u52a1\u5668\uff0c\u5728\u6811\u8393\u6d3e\u7684\u4e00\u4e2a tmux \u4f1a\u8bdd\u91cc\u542f\u52a8 quad_sender\uff0c\u5e76\u786e\u8ba4\u5b83\u786e\u5b9e\u8fd8\u6d3b\u7740\u3002--stop \u4f1a\u5e72\u51c0\u5730\u5173\u6389\u4e24\u7aef\u3002",
+    syms: [["./cpp/scripts/camera/run_stream.sh pi", "\u6784\u5efa\u3001\u90e8\u7f72\u3001\u62c9\u8d77\u4e24\u7aef"], ["./cpp/scripts/camera/run_stream.sh pi --stop", "\u4e24\u53f0\u673a\u5668\u4e0a\u6267\u884c control/exit \u4e0e pkill"], ["--no-build", "\u590d\u7528\u5df2\u6709\u7684\u4e8c\u8fdb\u5236"]]
+  },
+  pullcaps: {
+    sub: "\u7528 rsync \u53d6\u56de\u5e27", role: "\u5b9e\u7528\u811a\u672c", machine: "\u7b14\u8bb0\u672c",
+    desc: "\u5341\u884c\uff1a\u628a <board>:captures/ rsync \u5230 ./captures\u3002\u6ca1\u6709\u4efb\u4f55\u4e1c\u897f\u4f9d\u8d56\u5b83 \u2014\u2014 \u5b83\u662f metasense_capture \u7684\u642d\u6863\uff0c\u4f9b\u4f60\u60f3\u628a\u5e27\u5b58\u5230\u78c1\u76d8\u4e0a\u79bb\u7ebf\u67e5\u770b\u3001\u800c\u975e\u770b\u5b9e\u65f6\u6d41\u65f6\u4f7f\u7528\u3002"
+  }
+},
+
+edges: {
+  0:  { label: "\u5382\u5546\u5934\u6587\u4ef6", why: "camera.cpp \u662f\u9879\u76ee\u4e2d\u552f\u4e00\u5305\u542b metasense_control.h \u4e0e depth_picture_capture.h \u7684\u6587\u4ef6\u3002\u5176\u4ed6\u6240\u6709\u6587\u4ef6\u90fd\u53ea\u901a\u8fc7 pi::Camera \u4e0e\u76f8\u673a\u6253\u4ea4\u9053\u3002" },
+  1:  { label: "\u76f4\u63a5\u8c03\u7528", why: "metasense_capture \u65e9\u4e8e lib/camera\uff0c\u5b83\u81ea\u5df1\u8c03\u7528 SDK\u3002\u5bf9\u6bd4\u4e24\u8005\u65f6\u503c\u5f97\u77e5\u9053\u8fd9\u4e00\u70b9\uff1a\u540c\u6837\u7684 API\uff0c\u53ea\u662f\u6ca1\u6709\u90a3\u5c42\u5305\u88c5\u3002" },
+  2:  { why: "quad_sender \u53ea\u6784\u9020\u4e00\u4e2a pi::Camera\uff0c\u7136\u540e\u53ea\u8c03\u7528 open()\u3001grab()\u3001\u51e0\u4e2a set_*() \u5bc4\u5b58\u5668\u5199\u5165\u51fd\u6570\u3001fuse_rgbd() \u4e0e colorize_depth()\u3002\u8fd9\u4e00\u5c0f\u628a\u65b9\u6cd5\uff0c\u5c31\u662f\u5b83\u6240\u770b\u5230\u7684\u76f8\u673a\u5168\u8c8c\u3002" },
+  3:  { label: "\u6c42\u89e3\u6700\u5c0f\u4e8c\u4e58", why: "acu_vision.cpp \u8c03\u7528 acu::solve_least_squares \u6765\u81ea\u68c0\u7f16\u8bd1\u8fdb\u6765\u7684\u540e\u7aef\u3002\u63a8\u6d41\u8def\u5f84\u4e0a\u5b8c\u5168\u4e0d\u4f7f\u7528 linalg\u3002" },
+  4:  { why: "quad_sender \u586b\u597d\u4e00\u4e2a FrameHeader \u4ea4\u7ed9 send_frame()\uff0c\u5b83\u7684\u63a7\u5236\u7ebf\u7a0b\u5219\u963b\u585e\u5728 recv_control() \u4e0a\u3002\u5b83\u4ece\u4e0d\u4eb2\u624b\u5f80\u5957\u63a5\u5b57\u91cc\u5199\u4e00\u4e2a\u5b57\u8282\u3002" },
+  5:  { label: "4 \u8def JPEG \u6d41 \u00b7 \u6309 stream_id \u590d\u7528", why: "\u4e00\u6761 TCP \u8fde\u63a5\u627f\u8f7d\u5168\u90e8\u56db\u8def\u901a\u9053\u3002\u6bcf\u4e00\u5e27\u524d\u9762\u90fd\u5e26\u7740\u81ea\u5df1\u7684 stream_id\uff0c\u63a5\u6536\u65b9\u636e\u6b64\u77e5\u9053\u5b83\u5c5e\u4e8e\u54ea\u4e2a\u8c61\u9650 \u2014\u2014 \u65e0\u9700\u7b2c\u4e8c\u6761\u5957\u63a5\u5b57\uff0c\u65e0\u9700\u518d\u8bb0\u4e00\u4e2a\u7aef\u53e3\uff0c\u800c\u4e14\u5404\u901a\u9053\u4e4b\u95f4\u6c38\u8fdc\u4e0d\u4f1a\u9519\u4f4d\u3002" },
+  6:  { label: "CTL \u6cbf\u540c\u4e00\u5957\u63a5\u5b57\u4e0a\u884c", why: "TCP \u662f\u5168\u53cc\u5de5\u7684\uff0c\u56e0\u6b64\u6fc0\u5149\u5f00\u5173\u4e0e SGBM \u6ed1\u5757\u662f\u6cbf\u7740\u5e27\u4e0b\u884c\u7684\u90a3\u6761\u8fde\u63a5\u53cd\u5411\u9001\u4e0a\u53bb\u7684\u3002\u8fd9\u6b63\u662f\u6ca1\u6709\u5355\u72ec\u7684\u63a7\u5236\u7aef\u53e3\u3001\u70b9\u6309\u94ae\u4e5f\u4e0d\u4f1a\u91cd\u8fde\u7684\u539f\u56e0\u3002" },
+  7:  { why: "ingress \u8bfb\u56db\u4e2a\u5b57\u8282\uff0c\u62ff\u5b83\u4e0e kFrameMagic \u548c kMetaMagic \u6bd4\u5bf9\uff0c\u7136\u540e\u624d\u8c03\u7528\u5bf9\u5e94\u7684 *_after_magic \u8bfb\u53d6\u51fd\u6570\u3002\u6574\u4e2a\u5206\u6d41\u5668\u5c31\u8fd9\u4e48\u591a\u3002" },
+  8:  { why: "store.hpp \u7528 acunet::STREAM_COUNT \u51b3\u5b9a\u69fd\u4f4d\u6570\u7ec4\u7684\u5927\u5c0f\uff0c\u5e76\u7528 acunet::now_ms() \u8ba1\u7b97\u5e27\u7387\u7a97\u53e3 \u2014\u2014 \u300c\u56db\u8def\u901a\u9053\u300d\u8fd9\u4e2a\u6982\u5ff5\u672c\u8eab\u5c31\u5b9a\u4e49\u5728\u534f\u8bae\u5934\u91cc\u3002" },
+  9:  { why: "http.cpp \u628a\u4e00\u4e2a /control/ir \u7684 URL \u53d8\u6210\u4e00\u6b21 send_control() \u8c03\u7528\uff0c\u53c8\u628a\u6536\u5230\u7684 MetaMsg \u53d8\u6210\u4e00\u6b21 WebSocket \u63a8\u9001\u3002\u4e24\u79cd\u6d88\u606f\u683c\u5f0f\u90fd\u4f4f\u5728 frame_protocol.hpp \u91cc\u3002" },
+  10: { why: "\u4ea4\u63a5\u70b9\u3002ingress \u628a JPEG \u79fb\u5165\u5176 stream_id \u5bf9\u5e94\u7684\u69fd\u4f4d\u3001\u5e8f\u53f7\u81ea\u589e\uff0c\u5e76\u5524\u9192\u6240\u6709\u7b49\u5f85\u8005\u3002\u8fc7\u4e86\u8fd9\u4e00\u884c\uff0cingress \u7ebf\u7a0b\u5c31\u5b8c\u5168\u4e0d\u77e5\u9053\u662f\u8c01\u8bfb\u8d70\u4e86\u8fd9\u4e00\u5e27\u3002" },
+  11: { why: "\u6bcf\u4e2a\u6d4f\u89c8\u5668\u7684 MJPEG \u7ebf\u7a0b\u963b\u585e\u5728\u6761\u4ef6\u53d8\u91cf\u4e0a\uff0c\u76f4\u5230\u5e8f\u53f7\u53d8\u52a8\uff0c\u7136\u540e\u628a\u5e27\u62f7\u51fa\u6765\u5199\u51fa\u53bb\u3002\u8ddf\u4e0d\u4e0a\u7684\u6807\u7b7e\u9875\u53ea\u662f\u6f0f\u6389\u51e0\u5e27 \u2014\u2014 \u5b83\u6c38\u8fdc\u62d6\u4e0d\u6162\u6811\u8393\u6d3e\u3002" },
+  12: { why: "\u5f53\u6811\u8393\u6d3e\u56de\u9001\u4e00\u4e2a ACK \u6216\u5f53\u524d\u7684 SGBM \u6570\u503c\u65f6\uff0cingress \u76f4\u63a5\u8c03\u8fdb http.cpp\uff0c\u628a\u5b83\u6247\u51fa\u7ed9\u6bcf\u4e00\u6761\u6253\u5f00\u7684 WebSocket\u3002\u8fd9\u662f\u4e24\u4e2a\u5e93\u4e4b\u95f4\u552f\u4e00\u4e00\u5904\u76f4\u63a5\u4e92\u76f8\u8c03\u7528\u7684\u5730\u65b9\u3002" },
+  13: { why: "\u8981\u53d1\u4e00\u6761\u63a7\u5236\u6d88\u606f\uff0chttp.cpp \u9700\u8981\u6811\u8393\u6d3e\u90a3\u6761\u5957\u63a5\u5b57 \u2014\u2014 \u800c\u5b83\u5bf9\u6301\u6709\u8be5\u5957\u63a5\u5b57\u7684\u7ebf\u7a0b\u6ca1\u6709\u4efb\u4f55\u5f15\u7528\u3002ingress \u628a\u90a3\u4e2a fd \u5b58\u8fdb\u4e00\u4e2a\u539f\u5b50\u53d8\u91cf\uff0c\u5e76\u53ea\u901a\u8fc7\u8fd9\u4e00\u4e2a\u8bbf\u95ee\u51fd\u6570\u4ea4\u51fa\u53bb\u3002" },
+  14: { label: "\u5206\u79bb\u7ebf\u7a0b", why: "std::thread(server::run_ingress, ingress_fd).detach() \u2014\u2014 main() \u91cc\u7684\u4e00\u884c\u3002\u6b64\u540e\u670d\u52a1\u5668\u518d\u4e5f\u4e0d\u78b0\u6811\u8393\u6d3e\u8fd9\u6761\u8fde\u63a5\u3002" },
+  15: { label: "\u6bcf\u4e2a\u5ba2\u6237\u7aef\u4e00\u4e2a\u7ebf\u7a0b", why: "accept \u5faa\u73af\u4e3a\u6bcf\u4e00\u4e2a\u6d4f\u89c8\u5668\u8fde\u63a5\u6d3e\u751f\u4e00\u4e2a\u5206\u79bb\u7684 handle_http_client \u7ebf\u7a0b\u3002\u505a\u6cd5\u6734\u7d20\uff0c\u4f46\u884c\u5f97\u901a\uff0c\u56e0\u4e3a\u6bcf\u6761 MJPEG \u6d41\u672c\u6765\u5c31\u9700\u8981\u65e0\u9650\u671f\u963b\u585e\u3002" },
+  16: { why: "\u670d\u52a1\u5668\u8ba9\u54cd\u5e94\u6c38\u8fdc\u5f00\u7740\uff0c\u6bcf\u6765\u4e00\u5e27\u5c31\u5199\u51fa\u4e00\u4e2a\u65b0\u7684 JPEG \u5206\u6bb5\u3002\u6d4f\u89c8\u5668\u5c31\u5730\u628a\u56fe\u7247\u6362\u6389 \u2014\u2014 \u8fd9\u6b63\u662f\u4e00\u4e2a\u666e\u901a\u7684 <img> \u6807\u7b7e\u5728\u5b8c\u5168\u6ca1\u6709 JavaScript \u53c2\u4e0e\u7684\u60c5\u51b5\u4e0b\u4e5f\u4f1a\u52a8\u7684\u539f\u56e0\u3002" },
+  17: { why: "\u9875\u9762\u6bcf\u79d2\u8f6e\u8be2\u4e00\u6b21 /status \u53d6\u5e27\u7387\u6570\u503c\uff0c\u6309\u4e0b\u6309\u94ae\u65f6\u53d1\u51fa /control/ir?value=N\u3002\u8fd9\u4e9b\u90fd\u662f\u666e\u901a\u7684 fetch \u2014\u2014 \u53ea\u6709\u89c6\u9891\u7528\u5230\u4e86\u90a3\u6761\u6c38\u4e0d\u7ed3\u675f\u7684\u54cd\u5e94\u3002" },
+  18: { label: "\u9700\u8981 rsync \u4e0e\u5de5\u5177\u94fe", why: "pull_sysroot.sh \u672c\u8d28\u662f ssh \u4e0a\u7684 rsync\uff0c\u800c\u5b83\u53d6\u56de\u6765\u7684\u4e1c\u897f\uff0c\u82e5\u6ca1\u6709\u4e00\u4e2a\u4ea4\u53c9\u7f16\u8bd1\u5668\u53bb\u6307\u5411\u5b83\u5c31\u6beb\u65e0\u7528\u5904\u3002\u5148\u8dd1\u4e3b\u673a\u7aef\u7684\u73af\u5883\u5b89\u88c5\u3002" },
+  19: { label: "\u514b\u9686\u4e4b\u524d\u5148\u88c5\u597d", why: "\u514b\u9686\u6293\u53d6\u7684\u662f\u677f\u5b50\u5728\u90a3\u4e00\u523b\u5df2\u88c5\u597d\u7684\u5185\u5bb9\u3002\u5148\u88c5 -dev \u5305\uff0c\u5426\u5219\u4f60\u62ff\u5230\u7684 sysroot \u6070\u597d\u7f3a\u4e86\u4f60\u9700\u8981\u7684\u90a3\u4e9b\u5934\u6587\u4ef6\u3002" },
+  20: { label: "\u64a4\u9500", why: "\u79fb\u9664\u8be5\u73af\u5883\u5b89\u88c5\u88c5\u4e0a\u7684\u5185\u5bb9\uff0c\u7528\u4e8e\u9a8c\u8bc1\u6784\u5efa\u80fd\u5426\u5728\u4e00\u5757\u5e72\u51c0\u7684\u677f\u5b50\u4e0a\u5b8c\u6210\u3002" },
+  21: { label: "\u63a5\u7740\u91cd\u5199\u94fe\u63a5", why: "\u521a\u514b\u9686\u51fa\u6765\u7684\u76ee\u5f55\u91cc\u6ee1\u662f\u6307\u5411\u4f60\u7b14\u8bb0\u672c\u771f\u5b9e /usr/lib \u7684\u7edd\u5bf9\u7b26\u53f7\u94fe\u63a5\u3002\u5728\u628a\u5b83\u4eec\u6539\u6210\u76f8\u5bf9\u8def\u5f84\u4e4b\u524d\uff0c\u4ea4\u53c9\u94fe\u63a5\u5668\u4f1a\u5fc3\u5b89\u7406\u5f97\u5730\u94fe\u63a5\u5230\u4f60\u7684\u4e3b\u673a\u5e93\u4e0a\uff0c\u4ea7\u51fa\u4e00\u4e2a\u5728\u677f\u5b50\u4e0a\u4e00\u8dd1\u5c31\u6b7b\u7684\u4e8c\u8fdb\u5236\u3002" },
+  22: { label: "\u63a5\u7740\u6821\u9a8c", why: "\u786e\u8ba4\u91cd\u5199\u751f\u6548\u3001sysroot \u5b8c\u6574\uff0c\u514d\u5f97\u4f60\u628a\u65f6\u95f4\u82b1\u5728\u4e00\u6b21\u6ce8\u5b9a\u5728\u94fe\u63a5\u9636\u6bb5\u5931\u8d25\u7684\u6784\u5efa\u4e0a\u3002" },
+  23: { label: "\u9884\u68c0\uff0c\u5931\u8d25\u5373\u4e2d\u6b62", why: "\u6bcf\u6b21\u4ea4\u53c9\u6784\u5efa\u90fd\u5148\u8dd1\u8fd9\u9879\u68c0\u67e5\uff0c\u4e0d\u901a\u8fc7\u5c31\u62d2\u7edd\u7ee7\u7eed\u3002\u8fd9\u6b63\u662f\u300c\u4f60\u7684 sysroot \u7f3a\u5c11 libstdc++\u300d\u8fd9\u6837\u4e00\u53e5\u6e05\u695a\u7684\u8bdd\uff0c\u4e0e\u56db\u5341\u884c\u94fe\u63a5\u5668\u566a\u97f3\u4e4b\u95f4\u7684\u5dee\u522b\u3002" },
+  24: { why: "\u4ec5\u5f53\u677f\u540d\u4e0d\u662f host \u65f6\u624d\u4f20\u5165\u3002\u672c\u673a\u6784\u5efa\u6839\u672c\u4e0d\u5e26\u5de5\u5177\u94fe\u6587\u4ef6\uff0c\u8fd9\u6b63\u662f\u4e00\u4e2a\u811a\u672c\u80fd\u540c\u65f6\u670d\u52a1\u4e24\u8005\u7684\u539f\u56e0\u3002" },
+  25: { why: "\u6bcf\u5757\u677f\u5b50\u4e00\u4e2a\u72ec\u7acb\u7684\u6784\u5efa\u76ee\u5f55\uff0c\u56e0\u6b64\u4e3b\u673a\u7aef\u6784\u5efa\u4e0e\u6811\u8393\u6d3e\u6784\u5efa\u53ef\u4ee5\u5171\u5b58\uff0c\u4e0d\u4f1a\u4e92\u76f8\u7834\u574f\u7f13\u5b58\u3002" },
+  26: { label: "\u8bbe\u5b9a sysroot \u4e0e\u67e5\u627e\u6a21\u5f0f", why: "CMake \u5728\u505a\u5176\u4ed6\u4efb\u4f55\u4e8b\u4e4b\u524d\u5148\u8bfb\u5de5\u5177\u94fe\u6587\u4ef6\uff0c\u56e0\u6b64\u6839 CMakeLists \u91cc\u7684\u6bcf\u4e00\u6b21 find_package() \u90fd\u5df2\u7ecf\u88ab\u9650\u5b9a\u5728 sysroot \u5185\u90e8\u641c\u7d22\u3002" },
+  27: { why: "\u4e00\u884c\u5c31\u628a\u4e94\u4e2a\u4f2a\u5e93\u5168\u90e8\u5f15\u5165\uff1b\u6bcf\u4e2a\u5e93\u5404\u81ea\u58f0\u660e\u81ea\u5df1\u7684\u76ee\u6807\u4e0e\u4f9d\u8d56\u3002" },
+  28: { why: "\u4e24\u4e2a INTERFACE \u76ee\u6807\uff08\u4ec5\u5934\u6587\u4ef6\uff09\u548c\u4e09\u4e2a STATIC \u76ee\u6807\u3002" },
+  29: { why: "\u677f\u7aef\u7684\u53ef\u6267\u884c\u7a0b\u5e8f\u58f0\u660e\u5728\u4e00\u4e2a\u6761\u4ef6\u4fdd\u62a4\u91cc\uff0c\u56e0\u6b64\u4e3b\u673a\u7aef\u6784\u5efa\u4f1a\u5b8c\u5168\u8df3\u8fc7\u5b83\u4eec \u2014\u2014 \u7b14\u8bb0\u672c\u6c38\u8fdc\u4e0d\u4f1a\u53bb\u7f16\u8bd1\u4efb\u4f55\u9700\u8981\u5382\u5546 SDK \u7684\u4e1c\u897f\u3002" },
+  30: { why: "\u6bcf\u4e2a\u53ef\u6267\u884c\u7a0b\u5e8f\u53ea\u5199\u51fa\u81ea\u5df1\u7528\u5230\u7684\u5e93\u3002\u8fd9\u4efd\u6e05\u5355\u662f\u672c\u4ed3\u5e93\u91cc\u6700\u53ef\u9760\u7684\u4f9d\u8d56\u6587\u6863 \u2014\u2014 \u5b83\u4e0d\u53ef\u80fd\u8fc7\u65f6\uff0c\u56e0\u4e3a\u5199\u9519\u4e86\u5c31\u94fe\u63a5\u4e0d\u8fc7\u3002" },
+  31: { label: "\u5148\u6784\u5efa\u4e3b\u673a\u7aef\uff0c\u518d --deploy", why: "run_stream.sh \u4f1a\u8c03\u7528 build.sh \u4e24\u6b21 \u2014\u2014 \u4e00\u6b21\u4e3a\u7b14\u8bb0\u672c\u4e0a\u7684\u670d\u52a1\u5668\uff0c\u4e00\u6b21\u5e26 --deploy \u4e3a\u677f\u5b50 \u2014\u2014 \u9664\u975e\u4f60\u4f20\u4e86 --no-build \u6765\u590d\u7528\u5df2\u6709\u7684\u4ea7\u7269\u3002" }
+},
+
+steps: [
+  { look: "\u4ece\u8fd9\u91cc\u5f00\u59cb\u300224 \u5b57\u8282\u3001\u5927\u7aef\u5e8f\u3001\u4e00\u6761\u5957\u63a5\u5b57\u4e0a\u4e09\u7c7b\u6d88\u606f\u3002\u4e0b\u6e38\u7684\u4e00\u5207\u90fd\u662f\u8fd9\u4e2a\u6587\u4ef6\u7684\u63a8\u8bba\u3002" },
+  { look: "main() \u4e0e control_loop()\u3002\u770b\u7740\u4e00\u5e27\u88ab\u6293\u53d6\u3001\u7f16\u7801\u3001\u53d1\u51fa \u2014\u2014 \u7136\u540e\u6ce8\u610f\u90a3\u4e2a\u53cd\u5411\u8bfb\u53d6\u7684\u7b2c\u4e8c\u7ebf\u7a0b\u3002" },
+  { look: "\u516d\u5341\u884c\u3002\u8bfb\u4e00\u4e2a magic \u5b57\uff0c\u7136\u540e\u5206\u53d1\u3002\u8fd9\u91cc\u4e00\u901a\uff0c\u6574\u4e2a\u63a5\u6536\u4fa7\u5c31\u4e00\u76ee\u4e86\u7136\u3002" },
+  { look: "\u63a5\u7f1d\u6240\u5728\u3002\u4e24\u4e2a\u51fd\u6570\u52a0\u4e00\u4e2a\u6761\u4ef6\u53d8\u91cf\uff0c\u5c31\u662f\u6811\u8393\u6d3e\u7ebf\u7a0b\u4e0e\u6d4f\u89c8\u5668\u7ebf\u7a0b\u4e92\u4e0d\u963b\u585e\u7684\u5168\u90e8\u539f\u56e0\u3002" },
+  { look: "\u6587\u4ef6\u5176\u4f59\u90e8\u5206\u5148\u8df3\u8fc7\u3002\u4ec5\u8fd9\u4e00\u4e2a\u51fd\u6570\u5c31\u89e3\u91ca\u4e86\u4e3a\u4ec0\u4e48\u4e00\u4e2a\u666e\u901a\u7684 <img> \u6807\u7b7e\u4f1a\u52a8\u3002" },
+  { look: "\u653e\u5230\u6700\u540e\uff0c\u800c\u4e0d\u662f\u6700\u524d\u3002\u5b83\u662f\u6700\u6742\u4e71\u7684\u4e00\u4e2a\u6587\u4ef6\uff0c\u56e0\u4e3a\u786c\u4ef6\u672c\u5c31\u6742\u4e71 \u2014\u2014 \u4f46\u5230\u8fd9\u65f6\u4f60\u5df2\u7ecf\u6e05\u695a quad_sender \u7a76\u7adf\u5411\u5b83\u8981\u4ec0\u4e48\u4e86\u3002" },
+  { look: "\u5b83\u4e0d\u662f\u4f60\u5199\u6765\u8fd0\u884c\u7684\u4ee3\u7801\uff0c\u800c\u662f\u5f53\u4ea4\u53c9\u6784\u5efa\u4ee5\u770b\u4f3c\u7384\u5b66\u7684\u7406\u7531\u5931\u8d25\u65f6\uff0c\u6551\u4f60\u4e8e\u6c34\u706b\u7684\u90a3\u4e2a\u6587\u4ef6\u3002" }
+]
+
+};
+
+/* ============================================================
+   LANGUAGE
+   ============================================================ */
+
+const EN_UI = {
+  eyebrow: "Stereo capture \u00b7 Pi \u2192 laptop \u2192 browser",
+  lede: "Every file in the repo, what it actually does, and the named function or socket that connects it to the next one. Click a box to open its dossier; click a wire to read the relation.",
+  tally: ["files on the stream path", "lines of real code", "channels, one socket"],
+  tabRuntime: "Runtime path",
+  tabBuild: "Build &amp; ops",
+  hintRuntime: "Drag to pan \u00b7 scroll to zoom",
+  hintBuild: "Left to right is the order you run them",
+  fit: "Fit",
+  readingH: "A reading order that actually works",
+  readingP: "Follow one frame from the sensor to the screen. Each file below only makes sense once the one before it does, so read them in this order rather than opening whichever looks scariest. Strip the bilingual comments while reading with <code>grep -vE '^\\s*//' &lt;file&gt;</code> \u2014 the code underneath is a third of the line count.",
+  footer: "Generated from the repo itself: <code>#include</code> graph, <code>add_executable</code> / <code>target_link_libraries</code> in CMakeLists.txt, and the call sites of each library's public functions. Line counts are total / non-comment non-blank.<br>Dashed boxes have no code edges \u2014 they stand alone. Dashed wires run opposite to the main data flow.<br><a href=\"https://nzge.github.io/projects/moxa-vision.html\">About this project</a>",
+  dossier: "Dossier",
+  emptyLead: "Pick a box to read what that file does, the functions worth knowing in it, and every other file it touches. Pick a <b>wire</b> to read what actually crosses it \u2014 a function name, a socket, or a shared buffer.",
+  legendH: "Reading the diagram",
+  legend: [
+    ["Solid wire", "Runs with the data \u2014 camera to browser, or setup to build."],
+    ["Dashed wire", "Runs the other way \u2014 control messages, callbacks, teardown."],
+    ["Dashed box", "Nothing links to it. A stub or a standalone utility."],
+    ["Coloured spine", "Which machine the file runs on."]
+  ],
+  worthKnowing: "Worth knowing",
+  connections: "Connections",
+  noConnections: "None. Nothing includes it and it includes nothing of yours \u2014 it stands alone in the repo.",
+  dataFlow: "Data flow",
+  reverseFlow: "Reverse direction",
+  bothEnds: "Both ends",
+  step: "STEP",
+  stepSuffix: "",
+  linesLabel: (t, c) => {
+    // Only call it a line count when it actually is one: a couple of entries
+    // carry prose here ("usb.cpp + headers", "not yours") and must read plainly.
+    const head = /^[\d,]+$/.test(String(t)) ? `${t} lines` : String(t);
+    if (!c) return head;
+    return head + (/^~?[\d,]+$/.test(String(c)) ? ` \u00b7 ${c} code` : ` \u00b7 ${c}`);
+  }
+};
+
+/* Language starts from a saved choice, else the browser's own preference. */
+let LANG = (() => {
+  try {
+    const saved = localStorage.getItem("acu-lang");
+    if (saved === "zh" || saved === "en") return saved;
+  } catch (err) { /* private mode: fall through */ }
+  return String(navigator.language || "").toLowerCase().startsWith("zh") ? "zh" : "en";
+})();
+
+const isZH = () => LANG === "zh";
+/* U(): the chrome strings for the active language. */
+const U = () => (isZH() ? ZH.ui : EN_UI);
+/* tn/te/tb: a node, edge or band merged with its translation. Structure and
+   identifiers come from the English record; only worded fields are overridden,
+   so a missing translation degrades to English rather than to nothing. */
+const tn = (n) => (isZH() && ZH.nodes[n.id] ? Object.assign({}, n, ZH.nodes[n.id]) : n);
+const te = (e) => {
+  if (!isZH()) return e;
+  const o = ZH.edges[EDGES.indexOf(e)];
+  return o ? Object.assign({}, e, o) : e;
+};
+const tb = (view, i, b) => (isZH() && ZH.bands[view] && ZH.bands[view][i]
+  ? Object.assign({}, b, ZH.bands[view][i]) : b);
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+
+const SVGNS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("canvas");
+const panel = document.getElementById("panel");
+
+let view = "runtime";
+let selected = null;
+let tf = { x: 0, y: 0, k: 1 };
+let root, gEdges, gNodes, gLabels;
+
+function el(name, attrs, parent) {
+  const n = document.createElementNS(SVGNS, name);
+  for (const k in attrs) {
+    if (k === "text") n.textContent = attrs[k];
+    else n.setAttribute(k, attrs[k]);
+  }
+  if (parent) parent.appendChild(n);
+  return n;
+}
+
+function activeEdges() { return EDGES.filter(e => e.v === view); }
+function activeNodes() { return Object.values(N).filter(n => n.view === view); }
+function bands() {
+  const list = view === "runtime" ? RUNTIME_BANDS : BUILD_BANDS;
+  return list.map((b, i) => Object.assign({}, b, { _view: view, _i: i }));
+}
+
+function arrowPath(x, y, dir) {
+  const s = 5.4;
+  if (dir === "left")   return `M ${x} ${y} l ${-s*1.5} ${-s} l 0 ${s*2} z`;
+  if (dir === "right")  return `M ${x} ${y} l ${s*1.5} ${-s} l 0 ${s*2} z`;
+  if (dir === "top")    return `M ${x} ${y} l ${-s} ${-s*1.5} l ${s*2} 0 z`;
+  return `M ${x} ${y} l ${-s} ${s*1.5} l ${s*2} 0 z`;
+}
+
+/* entry point on the target node, given which side the wire enters */
+function endPoint(e) {
+  // parse the final coordinate pair of the path
+  const nums = e.d.match(/-?\d+(\.\d+)?/g).map(Number);
+  return { x: nums[nums.length - 2], y: nums[nums.length - 1] };
+}
+
+function render() {
+  svg.textContent = "";
+  const vb = "0 0 960 800";
+  svg.setAttribute("viewBox", vb);
+  root = el("g", { id: "root" }, svg);
+
+  // bands
+  const gBands = el("g", {}, root);
+  bands().forEach(b => {
+    el("rect", { class: "band-rect", x: b.x, y: b.y, width: b.w, height: b.h, rx: 10 }, gBands);
+    // Label and caption share one baseline near the band's top edge; a second
+    // line would collide with the first row of node boxes below it.
+    const cap = tb(b._view, b._i, b);
+    const t = el("text", { class: "band-label", x: b.x + 14, y: b.y + 17 }, gBands);
+    t.setAttribute("fill", LANES[b.lane].color);
+    t.setAttribute("opacity", ".9");
+    el("tspan", { text: cap.label }, t);
+    el("tspan", { class: "band-sub", dx: 12, text: cap.sub }, t);
+  });
+
+  gEdges = el("g", {}, root);
+  gNodes = el("g", {}, root);
+  // Labels go last so they paint over the boxes rather than under them.
+  gLabels = el("g", {}, root);
+
+  activeEdges().forEach((e, i) => {
+    const g = el("g", { class: "edge-group", "data-edge": i }, gEdges);
+    el("path", { class: "edge" + (e.dashed ? " dashed" : ""), d: e.d }, g);
+    const p = endPoint(e);
+    el("path", { class: "arrow", d: arrowPath(p.x, p.y, e.in) }, g);
+    const hit = el("path", { class: "edge-hit", d: e.d }, g);
+    hit.addEventListener("click", ev => { ev.stopPropagation(); selectEdge(e); });
+
+    // label
+    if (e.label) {
+      const lp = labelPoint(e);
+      const lg = el("g", { class: "edge-label-group" }, gLabels);
+      const bg = el("rect", { class: "edge-label-bg", rx: 3 }, lg);
+      const tx = el("text", { class: "edge-label", x: lp.x, y: lp.y, "text-anchor": "middle", text: te(e).label }, lg);
+      e._lg = lg;
+      requestAnimationFrame(() => {
+        try {
+          const bb = tx.getBBox();
+          bg.setAttribute("x", bb.x - 4); bg.setAttribute("y", bb.y - 1.5);
+          bg.setAttribute("width", bb.width + 8); bg.setAttribute("height", bb.height + 3);
+        } catch (err) { /* not yet laid out */ }
+      });
+    }
+    e._g = g;
+  });
+
+  activeNodes().forEach(n => {
+    const g = el("g", {
+      class: "node" + (n.standalone ? " standalone" : ""),
+      tabindex: "0", role: "button",
+      "aria-label": n.title + " \u2014 " + tn(n).role
+    }, gNodes);
+    el("rect", { class: "glow", x: n.x - 4, y: n.y - 4, width: n.w + 8, height: n.h + 8, fill: "none" }, g);
+    el("rect", { class: "body", x: n.x, y: n.y, width: n.w, height: n.h }, g);
+    const stripe = el("rect", { class: "stripe", x: n.x, y: n.y + 10, width: 3, height: n.h - 20 }, g);
+    stripe.setAttribute("fill", LANES[n.lane].color);
+    const two = n.h > 50;
+    const ty = two ? n.y + 24 : n.y + 20;
+    // The title is the file or target name and is never translated; only the
+    // second line changes language.
+    el("text", { class: "title", x: n.x + 14, y: ty, text: n.title }, g);
+    el("text", { class: "sub", x: n.x + 14, y: ty + 15, text: tn(n).sub }, g);
+    g.addEventListener("click", ev => { ev.stopPropagation(); selectNode(n.id); });
+    g.addEventListener("keydown", ev => {
+      if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); selectNode(n.id); }
+    });
+    n._g = g;
+  });
+
+  applyTransform();
+  fit();
+}
+
+function labelPoint(e) {
+  if (e.lx !== undefined) return { x: e.lx, y: e.ly };
+  const nums = e.d.match(/-?\d+(\.\d+)?/g).map(Number);
+  const x0 = nums[0], y0 = nums[1];
+  const x1 = nums[nums.length - 2], y1 = nums[nums.length - 1];
+  return { x: (x0 + x1) / 2, y: (y0 + y1) / 2 - 7 };
+}
+
+/* ---------- transform ---------- */
+
+function applyTransform() {
+  root.setAttribute("transform", `translate(${tf.x} ${tf.y}) scale(${tf.k})`);
+}
+
+function fit() {
+  tf = { x: 0, y: 0, k: 1 };
+  applyTransform();
+}
+
+svg.addEventListener("wheel", ev => {
+  ev.preventDefault();
+  const rect = svg.getBoundingClientRect();
+  const sx = (ev.clientX - rect.left) / rect.width * 960;
+  const sy = (ev.clientY - rect.top) / rect.height * 800;
+  const factor = ev.deltaY < 0 ? 1.12 : 1 / 1.12;
+  const k2 = Math.min(3.2, Math.max(0.45, tf.k * factor));
+  const r = k2 / tf.k;
+  tf.x = sx - (sx - tf.x) * r;
+  tf.y = sy - (sy - tf.y) * r;
+  tf.k = k2;
+  applyTransform();
+}, { passive: false });
+
+svg.addEventListener("click", ev => {
+  if (ev.target.closest(".node") || ev.target.classList.contains("edge-hit")) return;
+  selectNode(null);
+});
+
+let drag = null;
+svg.addEventListener("pointerdown", ev => {
+  if (ev.target.closest(".node") || ev.target.classList.contains("edge-hit")) return;
+  drag = { x: ev.clientX, y: ev.clientY, tx: tf.x, ty: tf.y };
+  svg.classList.add("dragging");
+  svg.setPointerCapture(ev.pointerId);
+});
+svg.addEventListener("pointermove", ev => {
+  if (!drag) return;
+  const rect = svg.getBoundingClientRect();
+  const sc = 960 / rect.width;
+  tf.x = drag.tx + (ev.clientX - drag.x) * sc;
+  tf.y = drag.ty + (ev.clientY - drag.y) * sc;
+  applyTransform();
+});
+["pointerup", "pointercancel", "pointerleave"].forEach(t =>
+  svg.addEventListener(t, () => { drag = null; svg.classList.remove("dragging"); }));
+
+function zoomBy(f) {
+  const k2 = Math.min(3.2, Math.max(0.45, tf.k * f));
+  const r = k2 / tf.k;
+  tf.x = 480 - (480 - tf.x) * r;
+  tf.y = 400 - (400 - tf.y) * r;
+  tf.k = k2;
+  applyTransform();
+}
+document.getElementById("zoom-in").onclick = () => zoomBy(1.2);
+document.getElementById("zoom-out").onclick = () => zoomBy(1 / 1.2);
+document.getElementById("zoom-fit").onclick = fit;
+
+/* ---------- selection ---------- */
+
+function connectionsOf(id) {
+  const out = [], inc = [];
+  activeEdges().forEach(e => {
+    if (e.a === id) out.push(e);
+    if (e.b === id) inc.push(e);
+  });
+  return { out, inc };
+}
+
+function highlight(ids, edges) {
+  activeNodes().forEach(n => n._g.classList.toggle("faded", ids && !ids.has(n.id)));
+  activeEdges().forEach(e => {
+    const on = !edges || edges.has(e);
+    e._g.classList.toggle("faded", !on);
+    if (e._lg) e._lg.classList.toggle("faded", !on);
+    e._g.querySelector(".edge").classList.toggle("hot", !!edges && on);
+  });
+}
+
+function selectNode(id) {
+  selected = id;
+  activeNodes().forEach(n => n._g.classList.toggle("selected", n.id === id));
+  if (!id) { highlight(null, null); renderEmpty(); return; }
+  const { out, inc } = connectionsOf(id);
+  const ids = new Set([id]);
+  const es = new Set();
+  out.forEach(e => { ids.add(e.b); es.add(e); });
+  inc.forEach(e => { ids.add(e.a); es.add(e); });
+  highlight(ids, es);
+  renderNode(N[id], out, inc);
+}
+
+function selectEdge(e) {
+  selected = null;
+  activeNodes().forEach(n => n._g.classList.remove("selected"));
+  highlight(new Set([e.a, e.b]), new Set([e]));
+  renderEdge(e);
+}
+
+/* ---------- panel ---------- */
+
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+function renderEmpty() {
+  const u = U();
+  panel.innerHTML = `
+    <p class="eyebrow">${u.dossier}</p>
+    <p class="empty">${u.emptyLead}</p>
+    <p class="sect-h">${u.legendH}</p>
+    <ul class="syms">` +
+    u.legend.map(([k, v]) => `<li><b>${esc(k)}</b><br><span>${esc(v)}</span></li>`).join("") +
+    `</ul>`;
+}
+
+function renderNode(n0, out, inc) {
+  const n = tn(n0);
+  const u = U();
+  const lane = LANES[n.lane].color;
+  const hasLines = n.lines && n.lines !== "\u2014";
+  const hasCode = n.code && n.code !== "\u2014";
+  let h = `
+    <div class="chips">
+      <span class="chip lane" style="color:${lane}">${esc(n.machine)}</span>
+      <span class="chip">${esc(n.role)}</span>
+      ${hasLines ? `<span class="chip">${esc(u.linesLabel(n.lines, hasCode ? n.code : ""))}</span>` : ""}
+    </div>
+    <h2>${esc(n.title)}</h2>
+    <p class="path">${esc(n.path)}</p>
+    <p class="desc">${esc(n.desc)}</p>`;
+
+  if (n.syms && n.syms.length) {
+    h += `<div><p class="sect-h">${u.worthKnowing}</p><ul class="syms">` +
+      n.syms.map(s => `<li><b>${esc(s[0])}</b><br><span>${esc(s[1])}</span></li>`).join("") +
+      `</ul></div>`;
+  }
+
+  if (out.length || inc.length) {
+    h += `<div><p class="sect-h">${u.connections}</p><ul class="conns">` +
+      inc.map(e => connRow("\u2190", N[e.a].title, te(e).why, EDGES.indexOf(e))).join("") +
+      out.map(e => connRow("\u2192", N[e.b].title, te(e).why, EDGES.indexOf(e))).join("") +
+      `</ul></div>`;
+  } else {
+    h += `<div><p class="sect-h">${u.connections}</p><p class="empty">${u.noConnections}</p></div>`;
+  }
+
+  panel.innerHTML = h;
+  panel.scrollTop = 0;
+  panel.querySelectorAll("button[data-e]").forEach(b => {
+    b.onclick = () => selectEdge(EDGES[+b.dataset.e]);
+  });
+}
+
+function connRow(dir, who, why, idx) {
+  return `<li><span class="dir">${dir}</span><button data-e="${idx}">
+    <span class="who">${esc(who)}</span><span class="why">${esc(why)}</span></button></li>`;
+}
+
+function renderEdge(e0) {
+  const e = te(e0);
+  const u = U();
+  panel.innerHTML = `
+    <div class="chips"><span class="chip">${e.dashed ? u.reverseFlow : u.dataFlow}</span></div>
+    <h2>${esc(N[e.a].title)} <span style="color:var(--accent)">\u2192</span> ${esc(N[e.b].title)}</h2>
+    <p class="path">${esc(e.label || "")}</p>
+    <p class="desc">${esc(e.why)}</p>
+    <div><p class="sect-h">${u.bothEnds}</p><ul class="conns">
+      <li><span class="dir">A</span><button data-n="${e.a}"><span class="who">${esc(N[e.a].title)}</span>
+        <span class="why">${esc(N[e.a].path)}</span></button></li>
+      <li><span class="dir">B</span><button data-n="${e.b}"><span class="who">${esc(N[e.b].title)}</span>
+        <span class="why">${esc(N[e.b].path)}</span></button></li>
+    </ul></div>`;
+  panel.scrollTop = 0;
+  panel.querySelectorAll("button[data-n]").forEach(b => {
+    b.onclick = () => selectNode(b.dataset.n);
+  });
+}
+
+/* ---------- tabs ---------- */
+
+const tabR = document.getElementById("tab-runtime");
+const tabB = document.getElementById("tab-build");
+const hint = document.getElementById("viewhint");
+
+function setView(v) {
+  view = v;
+  tabR.setAttribute("aria-selected", v === "runtime");
+  tabB.setAttribute("aria-selected", v === "build");
+  hint.textContent = v === "runtime" ? U().hintRuntime : U().hintBuild;
+  render();
+  renderEmpty();
+}
+tabR.onclick = () => setView("runtime");
+tabB.onclick = () => setView("build");
+
+/* ---------- steps ---------- */
+
+/* File names are identifiers and stay in English; only the note translates. */
+function renderSteps() {
+  const u = U();
+  document.getElementById("steps").innerHTML = STEPS.map((s, i) => {
+    const look = (isZH() && ZH.steps[i] && ZH.steps[i].look) || s.look;
+    const num = u.stepSuffix
+      ? `${u.step} ${String(i + 1).padStart(2, "0")} ${u.stepSuffix}`
+      : `${u.step} ${String(i + 1).padStart(2, "0")}`;
+    return `
+  <li>
+    <span class="num">${esc(num)}</span>
+    <span class="file">${esc(s.file)}</span>
+    <span class="look">${esc(look)}</span>
+  </li>`;
+  }).join("");
+}
+
+/* ---------- static chrome ---------- */
+
+/* Repaints every string that lives in the markup rather than in the graph
+   data. Called once at start-up and again on every language switch. */
+function paintChrome() {
+  const u = U();
+  const set = (id, html) => {
+    const node = document.getElementById(id);
+    if (node) node.innerHTML = html;
+  };
+  set("ui-eyebrow", u.eyebrow);
+  set("ui-lede", u.lede);
+  set("ui-k0", u.tally[0]);
+  set("ui-k1", u.tally[1]);
+  set("ui-k2", u.tally[2]);
+  set("tab-runtime", u.tabRuntime);
+  set("tab-build", u.tabBuild);
+  set("zoom-fit", u.fit);
+  set("ui-readingH", u.readingH);
+  set("ui-readingP", u.readingP);
+  set("ui-footer", u.footer);
+  hint.textContent = view === "runtime" ? u.hintRuntime : u.hintBuild;
+  // Tell the browser (and screen readers) which language the page is in.
+  document.documentElement.setAttribute("lang", isZH() ? "zh-Hans" : "en");
+}
+
+/* ---------- language toggle ---------- */
+
+const langEn = document.getElementById("lang-en");
+const langZh = document.getElementById("lang-zh");
+
+function setLang(next) {
+  LANG = next;
+  try { localStorage.setItem("acu-lang", next); } catch (err) { /* private mode */ }
+  langEn.setAttribute("aria-pressed", String(next === "en"));
+  langZh.setAttribute("aria-pressed", String(next === "zh"));
+  paintChrome();
+  renderSteps();
+  // Rebuild the canvas: box subtitles and every wire label change language.
+  render();
+  // The dossier is rebuilt too - keep the current selection if there is one.
+  if (selected) selectNode(selected); else renderEmpty();
+}
+langEn.onclick = () => setLang("en");
+langZh.onclick = () => setLang("zh");
+
+/* ---------- go ---------- */
+
+paintChrome();
+renderSteps();
+langEn.setAttribute("aria-pressed", String(!isZH()));
+langZh.setAttribute("aria-pressed", String(isZH()));
+render();
+renderEmpty();
+
+/* Edge-label backing plates are sized from getBBox(), which is wrong until the
+   webfont lands. Re-measure once fonts settle. */
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => {
+    activeEdges().forEach(e => {
+      if (!e._lg) return;
+      const tx = e._lg.querySelector(".edge-label");
+      const bg = e._lg.querySelector(".edge-label-bg");
+      if (!tx || !bg) return;
+      try {
+        const bb = tx.getBBox();
+        bg.setAttribute("x", bb.x - 4); bg.setAttribute("y", bb.y - 1.5);
+        bg.setAttribute("width", bb.width + 8); bg.setAttribute("height", bb.height + 3);
+      } catch (err) { /* ignore */ }
+    });
+  });
+}
+</script>
