@@ -1,4 +1,4 @@
-<title>moxa-vision Wiring</title>
+<title>acu-vision Wiring</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
@@ -574,7 +574,7 @@ footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; 
   <header class="masthead">
     <div>
       <p class="eyebrow" id="ui-eyebrow">Stereo capture &#x00B7; Pi &#x2192; laptop &#x2192; browser</p>
-      <h1>moxa-vision Wiring</h1>
+      <h1>acu-vision Wiring</h1>
       <p class="lede" id="ui-lede">Every file in the repo, what it actually does, and the named function or socket
       that connects it to the next one. Click a box to open its dossier; click a wire to read the relation.</p>
     </div>
@@ -638,7 +638,7 @@ const LANES = {
 };
 
 const RUNTIME_BANDS = [
-  { x: 24, y: 44,  w: 912, h: 196, lane: "target", label: "TARGET \u00b7 RASPBERRY PI (aarch64)", sub: "cross-compiled, deployed to ~/moxa-vision/bin" },
+  { x: 24, y: 44,  w: 912, h: 196, lane: "target", label: "TARGET \u00b7 RASPBERRY PI (aarch64)", sub: "cross-compiled, deployed to ~/acu-vision/bin" },
   { x: 24, y: 264, w: 912, h: 112, lane: "wire",   label: "THE WIRE", sub: "one TCP socket on :9000 \u2014 frames down, control up" },
   { x: 24, y: 400, w: 912, h: 252, lane: "host",   label: "HOST \u00b7 LAPTOP (native)", sub: "one process: stream_server" },
   { x: 24, y: 676, w: 912, h: 104, lane: "view",   label: "VIEW \u00b7 BROWSER", sub: "no build step \u2014 the page ships inside the server binary" }
@@ -1147,7 +1147,7 @@ ui: {
   fit: "\u9002\u5e94",
   readingH: "\u4e00\u6761\u771f\u6b63\u7ba1\u7528\u7684\u9605\u8bfb\u987a\u5e8f",
   readingP: "\u8ddf\u7740\u4e00\u5e27\u753b\u9762\u4ece\u4f20\u611f\u5668\u8d70\u5230\u5c4f\u5e55\u3002\u4e0b\u9762\u6bcf\u4e2a\u6587\u4ef6\u90fd\u8981\u7b49\u524d\u4e00\u4e2a\u901a\u4e86\u624d\u8bb2\u5f97\u901a\uff0c\u6240\u4ee5\u8bf7\u6309\u6b64\u987a\u5e8f\u8bfb\uff0c\u800c\u4e0d\u662f\u6311\u770b\u8d77\u6765\u6700\u5413\u4eba\u7684\u90a3\u4e2a\u5148\u6253\u5f00\u3002\u9605\u8bfb\u65f6\u7528 <code>grep -vE '^\\s*//' &lt;file&gt;</code> \u628a\u53cc\u8bed\u6ce8\u91ca\u5265\u6389 \u2014\u2014 \u5e95\u4e0b\u7684\u4ee3\u7801\u53ea\u6709\u884c\u6570\u7684\u4e09\u5206\u4e4b\u4e00\u3002",
-  footer: "\u7531\u4ed3\u5e93\u672c\u8eab\u751f\u6210\uff1a<code>#include</code> \u5173\u7cfb\u56fe\u3001CMakeLists.txt \u4e2d\u7684 <code>add_executable</code> / <code>target_link_libraries</code>\uff0c\u4ee5\u53ca\u6bcf\u4e2a\u5e93\u516c\u5f00\u51fd\u6570\u7684\u8c03\u7528\u70b9\u3002\u884c\u6570\u4e3a\u300c\u603b\u884c\u6570 / \u975e\u6ce8\u91ca\u975e\u7a7a\u884c\u300d\u3002<br>\u865a\u7ebf\u65b9\u6846\u6ca1\u6709\u4efb\u4f55\u4ee3\u7801\u8fde\u63a5 \u2014\u2014 \u5b83\u4eec\u72ec\u7acb\u5b58\u5728\u3002\u865a\u7ebf\u8fde\u7ebf\u7684\u65b9\u5411\u4e0e\u4e3b\u6570\u636e\u6d41\u76f8\u53cd\u3002<br><a href=\"https://nzge.github.io/projects/moxa-vision.html\">\u5173\u4e8e\u672c\u9879\u76ee</a>",
+  footer: "\u7531\u4ed3\u5e93\u672c\u8eab\u751f\u6210\uff1a<code>#include</code> \u5173\u7cfb\u56fe\u3001CMakeLists.txt \u4e2d\u7684 <code>add_executable</code> / <code>target_link_libraries</code>\uff0c\u4ee5\u53ca\u6bcf\u4e2a\u5e93\u516c\u5f00\u51fd\u6570\u7684\u8c03\u7528\u70b9\u3002\u884c\u6570\u4e3a\u300c\u603b\u884c\u6570 / \u975e\u6ce8\u91ca\u975e\u7a7a\u884c\u300d\u3002<br>\u865a\u7ebf\u65b9\u6846\u6ca1\u6709\u4efb\u4f55\u4ee3\u7801\u8fde\u63a5 \u2014\u2014 \u5b83\u4eec\u72ec\u7acb\u5b58\u5728\u3002\u865a\u7ebf\u8fde\u7ebf\u7684\u65b9\u5411\u4e0e\u4e3b\u6570\u636e\u6d41\u76f8\u53cd\u3002<br><a href=\"https://nzge.github.io/projects/acu-vision.html\">\u5173\u4e8e\u672c\u9879\u76ee</a>",
   dossier: "\u8be6\u60c5",
   emptyLead: "\u6311\u4e00\u4e2a\u65b9\u6846\uff0c\u8bfb\u5b83\u505a\u4ec0\u4e48\u3001\u5176\u4e2d\u503c\u5f97\u77e5\u9053\u7684\u51fd\u6570\uff0c\u4ee5\u53ca\u5b83\u63a5\u89e6\u5230\u7684\u6bcf\u4e00\u4e2a\u5176\u4ed6\u6587\u4ef6\u3002\u6311\u4e00\u6761<b>\u8fde\u7ebf</b>\uff0c\u8bfb\u771f\u6b63\u8de8\u8d8a\u5b83\u7684\u662f\u4ec0\u4e48 \u2014\u2014 \u4e00\u4e2a\u51fd\u6570\u540d\u3001\u4e00\u6761\u5957\u63a5\u5b57\uff0c\u6216\u4e00\u5757\u5171\u4eab\u7f13\u51b2\u533a\u3002",
   legendH: "\u5982\u4f55\u8bfb\u8fd9\u5f20\u56fe",
@@ -1175,7 +1175,7 @@ ui: {
 
 bands: {
   runtime: [
-    { label: "\u76ee\u6807\u7aef \u00b7 \u6811\u8393\u6d3e\uff08aarch64\uff09", sub: "\u4ea4\u53c9\u7f16\u8bd1\uff0c\u90e8\u7f72\u5230 ~/moxa-vision/bin" },
+    { label: "\u76ee\u6807\u7aef \u00b7 \u6811\u8393\u6d3e\uff08aarch64\uff09", sub: "\u4ea4\u53c9\u7f16\u8bd1\uff0c\u90e8\u7f72\u5230 ~/acu-vision/bin" },
     { label: "\u94fe\u8def", sub: "\u4e00\u6761 TCP \u5957\u63a5\u5b57\uff08:9000\uff09\u2014\u2014 \u5e27\u4e0b\u884c\uff0c\u63a7\u5236\u4e0a\u884c" },
     { label: "\u4e3b\u673a\u7aef \u00b7 \u7b14\u8bb0\u672c\uff08\u672c\u673a\u7f16\u8bd1\uff09", sub: "\u5355\u4e00\u8fdb\u7a0b\uff1astream_server" },
     { label: "\u89c6\u56fe \u00b7 \u6d4f\u89c8\u5668", sub: "\u65e0\u6784\u5efa\u6b65\u9aa4 \u2014\u2014 \u9875\u9762\u5185\u5d4c\u5728\u670d\u52a1\u5668\u4e8c\u8fdb\u5236\u91cc" }
@@ -1386,7 +1386,7 @@ const EN_UI = {
   fit: "Fit",
   readingH: "A reading order that actually works",
   readingP: "Follow one frame from the sensor to the screen. Each file below only makes sense once the one before it does, so read them in this order rather than opening whichever looks scariest. Strip the bilingual comments while reading with <code>grep -vE '^\\s*//' &lt;file&gt;</code> \u2014 the code underneath is a third of the line count.",
-  footer: "Generated from the repo itself: <code>#include</code> graph, <code>add_executable</code> / <code>target_link_libraries</code> in CMakeLists.txt, and the call sites of each library's public functions. Line counts are total / non-comment non-blank.<br>Dashed boxes have no code edges \u2014 they stand alone. Dashed wires run opposite to the main data flow.<br><a href=\"https://nzge.github.io/projects/moxa-vision.html\">About this project</a>",
+  footer: "Generated from the repo itself: <code>#include</code> graph, <code>add_executable</code> / <code>target_link_libraries</code> in CMakeLists.txt, and the call sites of each library's public functions. Line counts are total / non-comment non-blank.<br>Dashed boxes have no code edges \u2014 they stand alone. Dashed wires run opposite to the main data flow.<br><a href=\"https://nzge.github.io/projects/acu-vision.html\">About this project</a>",
   dossier: "Dossier",
   emptyLead: "Pick a box to read what that file does, the functions worth knowing in it, and every other file it touches. Pick a <b>wire</b> to read what actually crosses it \u2014 a function name, a socket, or a shared buffer.",
   legendH: "Reading the diagram",
