@@ -1,3 +1,8 @@
+---
+author: nzge
+type: blog
+---
+
 think like a programmer. everyone needs to
 
 
