@@ -2,7 +2,7 @@
 layout: project
 category: "professional"
 title: "acu-vision"
-date: 2028-08-13
+date: 2026-08-13
 image: "acu-vision.png"
 description: "Acupoint-localization stereo vision system"
 ---
