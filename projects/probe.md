@@ -29,6 +29,13 @@ toc: true
 
 **Project objective:** Design and manufacture a high-precision fixture for an OCT (Optical Coherence Tomography) probe system used with a Zeiss microscope in a dual-sensing array configuration. The fixture must accommodate two probes: one directed orthogonally at the observed target (the eye), and another redirected via an optical element (e.g., mirror or lens) to intersect the same target region. This setup is intended for laparoscopic ophthalmic procedures, requiring micron-level alignment accuracy, mechanical stability, and compatibility with existing surgical and imaging systems.
 
+## Background
+
+The OCT informs axial depth (z), whereas the Zeiss microscope informs laterial (x,y) positioning.
+
+The mechanical Remote Center of Motion (RCM) is an invisible pivot point that must be perfectly aligned with the surgical incision to prevent tearing the tissue.
+
+
 ## OCT Holder
 
 ![Alt text](/assets/media/oct-holder_media/oct-holder_v3.png){: 
@@ -36,7 +43,7 @@ style="width:100%;display: block; margin: auto;"}
 
 | Component | Description |
 |---|---|
-| OCT Probe | |
+| Thorlabs Telesto II (Model No. 1060LR) | Objective Lens: Thorlabs LSM04BB Light Source: Broadband superluminescent diode with a central wavelength of 1060 nm.  Lens Specifications: A focal length of 54 mm, a lateral resolution of 25 μm, and a 10 × 10 mm field of view.  Imaging Capabilities: An axial resolution of 9.18 μm and an imaging depth of 9.4 mm in air.   |
 | Maxon - DC Motor - Gearhead Motor w/Encoder - Type # 47.022.022-00.19-189 | |
 | [LAUNCHXL-F28379D](https://www.ti.com/tool/LAUNCHXL-F28379D) | F28379D LaunchPad™ development kit for C4000™ Delfino™ MCU |
 | [Ball Bearing 20 mm Shaft Diameter](https://www.mcmaster.com/5972K215/) | |
@@ -55,6 +62,8 @@ Idle
 ![Alt text](/assets/media/oct-holder_media/oct-holder_v3 (idle).png){: 
 style="width:100%;display: block; margin: auto;"}
 
+### Static Calculations
+
 ### Design for Manufacturing
 ![Alt text](/assets/media/oct-holder_media/zeiss-bracket_v4.png){: 
 style="width:100%;display: block; margin: auto;"}
@@ -69,7 +78,7 @@ style="width:100%;display: block; margin: auto;"}
 
  Component | Description 
 ---|---
- Zeiss | Microscope 
+ Zeiss PENTERO-800S | Microscope 
  Lens |  
  Magnets |  
 
