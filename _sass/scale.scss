@@ -1,0 +1,72 @@
+/*--------------- Global Scale ---------------
+
+   The page renders at 80% on a maximised laptop or desktop window -- the
+   "Chrome at 80% zoom" look -- and eases back to 100% by phone width so body
+   copy never falls below its authored 16px. It is ONE continuous curve rather
+   than three stepped tiers, so dragging a window never produces a visible
+   jump, and the page keeps its proportions at every width in between.
+
+     >= 1280px  ->  0.80      (laptop / desktop, maximised)
+        1024px  ->  0.864
+         834px  ->  0.911     (tablet portrait)
+         768px  ->  0.928
+     <=  480px  ->  1.00      (phone)
+
+   `zoom` is the only property that can scale a layout built on absolute
+   pixels. These stylesheets hold ~209 px values against 7 rem, so changing
+   the root font-size would move almost nothing. zoom scales layout, type,
+   borders and fixed-position chrome together, exactly as browser zoom does,
+   and -- unlike transform: scale() -- it keeps everything in normal flow.
+
+   scale(w) = 1.12 - 0.00025w, clamped to [0.8, 1].
+
+   CSS cannot mix vw into a unitless number, so the curve is carried as a
+   LENGTH (1.12rem - 0.4vw, which is scale x 1rem) and divided back down by
+   1rem to recover the number. The plain `zoom: 0.8` in front of it is a
+   parse-time fallback: a browser that rejects length-over-length division in
+   calc() drops the second declaration and keeps a flat 80%.
+
+   Sass never sees the arithmetic -- `1.12rem - 0.4vw` would be an
+   "Incompatible units" error under Ruby Sass 3.x (jekyll-sass-converter
+   1.5.2), so the whole expression is held as an unquoted string. Same reason
+   --theme-icon-filter stores a complete filter value in theme.scss.
+-------------------------------------------- */
+
+$scale-curve: "clamp(0.8rem, 1.12rem - 0.4vw, 1rem)";
+
+// The scale itself, as a unitless number, for `zoom`.
+$scale: unquote("calc(#{$scale-curve} / 1rem)");
+
+// Viewport units do NOT participate in zoom -- they keep resolving against
+// the real viewport and are then scaled down with everything else, so a
+// `100vh` block would only cover 80% of the window. Dividing by the scale
+// puts it back. Use this in place of 100vh.
+//
+// There is deliberately no $vw-full counterpart. A full-width box should use
+// `width: 100%`, which resolves against the initial containing block and so
+// excludes the vertical scrollbar; 100vw includes it, and the compensated
+// form measured 15px wider than the content box, scrolling the page
+// sideways on every homepage load.
+$vh-full: unquote("calc(100vh / (#{$scale-curve} / 1rem))");
+
+/*--------------- Breakpoints ---------------
+
+   Media queries are evaluated against the REAL viewport, which zoom does not
+   touch. Since content now occupies less width than it used to, each
+   breakpoint is restated at the window width where the scaled layout reaches
+   the width the unscaled layout used to break at -- the fixed point of
+   b = original x scale(b):
+
+     768px -> 722px      750px -> 705px      480px -> 480px
+
+   480px is unchanged because the curve has already reached 1.0 by then.
+-------------------------------------------- */
+
+$bp-md: 722px;   // was 768px
+$bp-sm: 705px;   // was 750px
+$bp-xs: 480px;   // was 480px -- scale is 1.0 here, so it does not move
+
+:root {
+  zoom: 0.8;
+  zoom: $scale;
+}

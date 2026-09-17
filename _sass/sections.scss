@@ -45,6 +45,25 @@ header {
   background-color: transparent;
   color: var(--theme-text);
   padding: 10px 20px;
+
+  /* The project layout's "Repo" link was never styled, so it fell through to
+     the UA default (#0000EE, and #551A8B once visited) -- unreadable on the
+     dark theme. It borrows the markdown link tokens rather than --theme-link
+     because those are the pair that clears 4.5:1 in BOTH themes, and it sits
+     on the same page as the prose links it now matches. */
+  a {
+    color: var(--md-link);
+    transition: color 0.35s ease;
+
+    &:visited {
+      color: var(--md-link);
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--md-link-hover);
+    }
+  }
 }
 
 /*--------------- Footer --------------- */
@@ -99,7 +118,9 @@ footer {
 
 /*--------------- Hero Section --------------- */
 .hero {
-  height: 100vh;
+  // Scale-compensated: a raw 100vh would only cover 80% of the window once
+  // the root zoom is applied. See _sass/scale.scss.
+  height: $vh-full;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,7 +133,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $bp-md) {
   .header {
     h1 {
       font-size: 26px;

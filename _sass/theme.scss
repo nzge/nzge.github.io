@@ -4,14 +4,15 @@
    value below is the colour that was previously hardcoded — switching
    the toggle off reproduces the original design exactly.
 
-   Light overrides page chrome only (background, text, rules, links,
-   menu). Code blocks intentionally stay on the Dracula palette in both
-   themes; dark code on a light page is a deliberate choice, not an
-   oversight.
+   Light overrides page chrome (background, text, rules, links, menu) and
+   the markdown prose on project pages. Fenced code blocks intentionally
+   stay on the Dracula palette in both themes; dark code on a light page is
+   a deliberate choice, not an oversight.
 
-   Tokens are namespaced --theme-* to avoid colliding with the older
-   --bg / --link-color / --overlay-bg declarations in
-   interactive-elements.scss.
+   Page-chrome tokens are namespaced --theme-* to avoid colliding with the
+   older --bg / --link-color / --overlay-bg declarations in
+   interactive-elements.scss; --md-* covers .markdown-body, consumed by
+   dracula-text.scss.
 -------------------------------------------- */
 
 :root {
@@ -61,6 +62,28 @@
      Stored as a complete filter value so Sass never parses `invert()`. */
   --theme-icon-filter:  invert(1);
 
+  /* --- markdown prose: project pages (.markdown-body) ---
+     Dark keeps the Dracula values these rules were authored with, so the
+     native look is unchanged. Light darkens each hue instead of dropping
+     it, so headings keep their identity and clear 4.5:1 on --theme-bg.
+     Fenced code blocks are not tokenised: they stay Dracula in both
+     themes, per the note at the top of this file. */
+  --md-text:         #f8f8f2;
+  --md-quote:        #6272a4;
+  --md-h1:           #bd93f9;
+  --md-h2:           #5d76cb;
+  --md-h3:           #5ecfe9;
+  --md-h4:           #50fa7b;
+  --md-h5:           #fdec8b;
+  --md-h6:           #fda58b;
+  --md-link:         #50838f;
+  --md-link-hover:   #50fa7b;
+  --md-rule:         #44475a;
+  --md-fill:         rgba(255, 255, 255, 0.03);
+  --md-th-bg:        #282a36;
+  --md-td-bg:        #1e1f29;
+  --md-td-alt-bg:    #232531;
+
   color-scheme: dark;
 }
 
@@ -103,6 +126,22 @@
   --theme-btn-hover:    #45413a;
 
   --theme-icon-filter:  none;
+
+  --md-text:         #171614;
+  --md-quote:        #4d5a80;
+  --md-h1:           #5b34a8;
+  --md-h2:           #2f4f9e;
+  --md-h3:           #0f6377;
+  --md-h4:           #14713a;
+  --md-h5:           #7d6100;
+  --md-h6:           #a8431f;
+  --md-link:         #1f5c85;
+  --md-link-hover:   #c8431d;
+  --md-rule:         #b9b5ac;
+  --md-fill:         rgba(23, 22, 20, 0.04);
+  --md-th-bg:        #e4e0d6;
+  --md-td-bg:        #faf9f6;
+  --md-td-alt-bg:    #eeebe3;
 
   color-scheme: light;
 }

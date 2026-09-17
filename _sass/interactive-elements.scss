@@ -74,7 +74,7 @@ $dropdown-text: var(--theme-text);
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: $bp-sm) {
   .menu {
     display: block;
     position: absolute;
@@ -289,8 +289,8 @@ select {
 
 .overlay{
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;              // percentage, not 100vw: excludes the scrollbar
+  height: $vh-full;         // scale-compensated, see _sass/scale.scss
   top: 0;
   left: 0;
   z-index: -1;
@@ -344,7 +344,7 @@ svg path {
                 visibility 0s linear 0s;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: $bp-xs) {
     right: 1em;
     left: auto;
     min-width: 190px;

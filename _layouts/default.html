@@ -1,14 +1,18 @@
-<html {% if page.effect == "dynamic" %} class="dynamic-bg" {% endif %}> 
+<!DOCTYPE html>
+<html lang="en"{% if page.effect == "dynamic" %} class="dynamic-bg"{% endif %}>
   {% include head.html %}
 
-  <button id="backToTop" title="Back to top">↑</button>
+  <body>
+    <!-- Nested explicitly. The parser already recovered all of this into the
+         body when the doctype sat in the wrong place; the DOM order is
+         unchanged, the page just renders in standards mode now. -->
+    <button id="backToTop" title="Back to top">↑</button>
 
-  {% include menu.html %}
+    {% include menu.html %}
 
-  <body>  
     <script src="/assets/js/slideshow.js"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-    
+
     {% include navbar.html %}
 
     {{ content }}
@@ -19,4 +23,3 @@
   </body>
 
 </html>
-

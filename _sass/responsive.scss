@@ -1,0 +1,228 @@
+/*--------------- Responsive ---------------
+
+   Adaptive fixes only. Nothing here changes how a page looks at a width
+   where it already worked: every rule either binds only when content would
+   otherwise overflow its container (the max-width: 100% group), or sits
+   inside a narrow-width media query.
+
+   Breakpoints come from _sass/scale.scss so they stay in step with the
+   global scale. Imported last so these rules win ties against the partials
+   they correct.
+------------------------------------------ */
+
+/* --- Media never outgrows its container -------------------------------
+   Figures carry an inline `width` from the figure-style include parameter,
+   which beats any stylesheet rule -- but `max-width` is a different
+   property, so it still constrains them. The slideshow's own
+   `.slideshow-container .mySlides img` rule is more specific than these and
+   keeps its 100%/100% sizing. */
+.markdown-body,
+.project,
+.container {
+  img,
+  svg,
+  video,
+  canvas,
+  iframe,
+  model-viewer {
+    max-width: 100%;
+  }
+}
+
+.markdown-body img {
+  height: auto;
+}
+
+.custom-figure {
+  max-width: 100%;
+}
+
+/* Long unbroken strings -- URLs, part numbers, file paths -- are the other
+   common source of a horizontal scrollbar. This only acts on words that
+   would otherwise overflow. */
+.markdown-body {
+  overflow-wrap: break-word;
+}
+
+/* Favicon links are `display: inline-flex`, which will not wrap: a long
+   label runs straight past the right edge on a phone (measured 430px wide in
+   a 375px viewport). Capping the container and letting the label drop to its
+   own line fixes it, and changes nothing at a width where it already fits. */
+a.icon {
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+/* --- Tables ------------------------------------------------------------
+   A wide table is the one piece of prose that cannot reflow. Below the
+   medium breakpoint it becomes its own scroll container so the page itself
+   never scrolls sideways. `display: block` is what makes overflow apply to
+   a table; the cells keep their own layout inside it. */
+@media (max-width: $bp-md) {
+  .markdown-body table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* --- Last-resort containment ------------------------------------------
+   The rules above fix the causes of horizontal overflow, and they take a
+   375px viewport from 535px of sideways scroll down to 79px. The remainder
+   could not be attributed to any element: nothing unclipped extends past
+   the viewport, the only content beyond it sits inside the tables own
+   scroll container, and removing the tables, slideshow, TOC, code blocks,
+   figures and model-viewers individually changes nothing.
+
+   'clip' rather than 'hidden' on purpose: it does not create a scroll
+   container, so position: sticky and scroll anchoring keep working. It has
+   to be on both html and body -- on either one alone the value propagates
+   to the viewport and the page still scrolls. Scoped to narrow widths so
+   desktop is untouched. */
+@media (max-width: $bp-md) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
+/* --- Table of contents ------------------------------------------------
+   Every nesting level adds the UA list indent of 40px, and this TOC runs
+   four deep: on a 320px screen that is most of the viewport spent on
+   indentation alone, and the deepest entries end up past the right edge.
+   A smaller, em-based step keeps the hierarchy legible without the
+   overflow. */
+@media (max-width: $bp-md) {
+  .toc-box {
+    overflow-wrap: break-word;
+
+    ul,
+    ol {
+      padding-left: 1.25em;
+    }
+  }
+}
+
+/* --- Slideshow ---------------------------------------------------------
+   A flat 500px is most of a phone screen and leaves wide letterboxing on a
+   narrow viewport, because the slides are object-fit: scale-down. Swapping
+   to an aspect ratio keeps the same framing at every width. */
+@media (max-width: $bp-md) {
+  .slideshow-container {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* --- Navigation --------------------------------------------------------
+   The navbar is `position: fixed`, and the existing max-width rule stacks it
+   (`display: block`), which on a phone makes it tall enough to sit on top of
+   the page content -- html/body only reserve 50px for it. The hamburger
+   panel holds just the theme toggle, so these links are the only navigation
+   and cannot simply be hidden.
+
+   Taking it out of fixed positioning at narrow widths keeps the stacked
+   arrangement exactly as designed, and lets it occupy real space instead of
+   overlapping. The matching 50px offset comes off at the same time. */
+@media (max-width: $bp-sm) {
+  .navbar {
+    position: static;
+  }
+
+  html,
+  body {
+    margin-top: 0;
+  }
+
+  /* The list keeps a UA `padding-left: 40px` that costs real width on a
+     phone. Dropping it, and tightening the items, takes the stacked navbar
+     from three wrapped rows down to two. The right padding clears the
+     hamburger, which stays pinned to the top-right. */
+  .nav-select {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 4.5rem;
+  }
+
+  .nav-item {
+    padding: 12px 6px;
+    margin-right: 8px;
+  }
+}
+
+/* --- Phone ------------------------------------------------------------- */
+@media (max-width: $bp-xs) {
+  /* h2 at 3em is 48px, which eats most of a 360px line. These keep the
+     established size hierarchy -- h1 < h2, h3 below both -- just tightened
+     to the viewport. */
+  .markdown-body {
+    h1 { font-size: 2em; }
+    h2 { font-size: 2.3em; }
+    h3 { font-size: 1.6em; }
+    h4 { font-size: 1.3em; }
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .toc-box {
+    margin: 16px 0 3em;
+  }
+
+  #backToTop {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  #toggle-btn {
+    margin: 1em;
+  }
+
+  .menu-panel {
+    top: calc(1em + 58px);
+  }
+
+  blockquote.callout-warn,
+  blockquote.callout-info {
+    margin: 1em 0;
+  }
+
+  .markdown-body blockquote {
+    margin-left: 0;
+  }
+}
+
+/* --- Touch ------------------------------------------------------------
+   Pointer-based, not width-based: a touch laptop needs this and a narrow
+   desktop window does not. The slideshow dots are 15px, well under the 44px
+   minimum, so the hit area is grown with a pseudo-element rather than by
+   making the dots visibly bigger. */
+@media (hover: none) and (pointer: coarse) {
+  .dot {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 44px;
+      height: 44px;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .slideshow-container {
+    .prev,
+    .next {
+      padding: 16px 12px;
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

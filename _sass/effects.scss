@@ -27,7 +27,7 @@
 }
 
 // Using a media query to override the typewriter keyframe for smaller screens
-@media (max-width: 768px) {
+@media (max-width: $bp-md) {
   @keyframes typewriter {
     from { width: 0; }
     to { width: 17em; }
@@ -43,8 +43,14 @@
 }
 
 .dynamic-bg {
-  width: 100vw;
-  height: 100vh;
+  // This sits on <html>, the element the zoom is on. Width stays a
+  // percentage: 100vw counts the vertical scrollbar, so the compensated form
+  // came out 15px wider than the content box and scrolled the page sideways.
+  // A percentage resolves against the initial containing block, which does
+  // not include the scrollbar. Height still needs compensating -- see
+  // _sass/scale.scss.
+  width: 100%;
+  height: $vh-full;
   background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
   background-size: 400% 400%;
   animation: gradientAnimation 10s ease infinite;

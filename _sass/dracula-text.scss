@@ -2,7 +2,7 @@
 .markdown-body {
   // Base text styles
   font-family: 'Roboto Mono', monospace;
-  color: #f8f8f2; // A light foreground (Dracula-inspired)
+  color: var(--md-text); // Dracula-inspired light foreground on dark, near-black on light
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -12,12 +12,12 @@
     margin: 1em 0 0.5em;
     font-weight: bold;
   }
-  h1 { font-size: 2.5em; margin: 1em 0 0.5em; color: #bd93f9; }
-  h2 { font-size: 3em; margin: 2em 0 0.5em; color: #5d76cb; }
-  h3 { font-size: 2em; margin: 1em 0 0.5em; color: #5ecfe9; }
-  h4 { font-size: 1.5em; margin: 1.5em 0 0.5em; color: #50fa7b; }
-  h5 { font-size: 1.2em; margin: 1em 0 0.5em; color: #fdec8b; }
-  h6 { font-size: 1em; margin: 0.25em 0 0.25em; color: #fda58b; }
+  h1 { font-size: 2.5em; margin: 1em 0 0.5em; color: var(--md-h1); }
+  h2 { font-size: 3em; margin: 2em 0 0.5em; color: var(--md-h2); }
+  h3 { font-size: 2em; margin: 1em 0 0.5em; color: var(--md-h3); }
+  h4 { font-size: 1.5em; margin: 1.5em 0 0.5em; color: var(--md-h4); }
+  h5 { font-size: 1.2em; margin: 1em 0 0.5em; color: var(--md-h5); }
+  h6 { font-size: 1em; margin: 0.25em 0 0.25em; color: var(--md-h6); }
 
   // Paragraphs
   p {
@@ -26,27 +26,29 @@
 
   // Links
   a {
-    color: #50838f;
+    color: var(--md-link);
     &:hover {
-      color: #50fa7b;
+      color: var(--md-link-hover);
     }
   }
 
   // Blockquotes
   blockquote {
-    background: rgba(255, 255, 255, 0.03); // slight highlight
-    border-left: 4px solid #44475a;
+    background: var(--md-fill); // slight highlight
+    border-left: 4px solid var(--md-rule);
     padding-left: 1em;
     padding-bottom: 0.25em;
     padding-right: 1em;
     margin: 1em 0 1em 1em;
     font-style: italic;
-    color: #6272a4;
+    color: var(--md-quote);
 
     &::before {
       content: '';
     }
   
+    // Callouts carry their own fixed palette: each is already dark-on-light,
+    // so it reads the same in both themes and stays out of the tokens.
     &.callout-warn {
       border-left: 4px solid red;
       background: #fff2f2;
@@ -85,32 +87,53 @@
   }
 
    // TABLES
+   // `line-height: normal` is pinned deliberately. Before the document shell
+   // was corrected these pages rendered in quirks mode, where a <table> does
+   // not inherit line-height (or colour) from an ancestor -- cells sat at
+   // `normal` while the surrounding prose used 1.6. Standards mode inherits
+   // properly, which would grow every row by roughly 20%. Pinning keeps
+   // tables exactly as they look today; remove the two declarations below to
+   // let them take the prose rhythm instead.
    table {
     width: 100%;
     margin: 2em auto;
     border-collapse: collapse;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.03); // slight highlight
-    border: 1px solid #44475a;
+    background-color: var(--md-fill); // slight highlight
+    border: 1px solid var(--md-rule);
+    line-height: normal;
   }
 
   th, td {
-    border: 1px solid #44475a;
+    border: 1px solid var(--md-rule);
     padding: 12px 15px;
+    line-height: normal;
   }
 
   th {
-    background-color: #282a36;
-    color: #f8f8f2;
+    background-color: var(--md-th-bg);
+    color: var(--md-text);
     font-weight: bold;
   }
 
   td {
-    background-color: #1e1f29;
-    color: #f8f8f2;
+    background-color: var(--md-td-bg);
+    color: var(--md-text);
   }
 
   tr:nth-child(even) td {
-    background-color: #232531; // subtle alternate row color
+    background-color: var(--md-td-alt-bg); // subtle alternate row color
+  }
+
+  // Cross-fade prose along with the page rather than snapping partway through
+  // the html transition in theme.scss. Listed explicitly, and kept to prose,
+  // so hover states elsewhere (slideshow arrows, buttons) stay instant. The
+  // reduced-motion guard in theme.scss already covers these rules.
+  &,
+  h1, h2, h3, h4, h5, h6,
+  p, li, a, blockquote,
+  table, th, td {
+    transition: color 0.35s ease, background-color 0.35s ease,
+                border-color 0.35s ease;
   }
 }
