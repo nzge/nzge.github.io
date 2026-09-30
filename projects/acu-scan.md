@@ -9,17 +9,13 @@ description: "RGB-D 3D reconstruction of the body surface"
 
 ## Depth reconstruction pipeline
 
-A hand-held RGB-D sweep turned into a measured 3D surface. Built for acupoint
-localization, where the treatment system has to know where a point on the body
-actually *is* in space — to millimetre accuracy — using a scanner that can only
-ever see one side of it.
+A hand-held RGB-D sweep turned into a measured 3D surface. 
 
-[Interactive scan viewer →](/projects/acu-scan/)
+where a point on the body actually *is* in space to millimetre accuracy using a top-down scanner path ( hand-held serpentine sweep, not a turntable. )
 
-Three reconstruction methods run against the same captures, so they can be
-compared directly instead of argued about. Everything on that page is orbitable:
-the TSDF results as surfaces, and the surfel map both as a point cloud and as an
-orbitable disc surface.
+[Interactive scan viewer](/projects/acu-scan/)
+
+
 
 ### Methods
 
@@ -43,10 +39,13 @@ own precision, roughly four times below the voxel it replaces.
 
 ### Capture
 
-A hand-held serpentine sweep, not a turntable. The sensor is an Orbbec Gemini 215:
-active stereo at 850 nm, a **0.20–0.70 m** working band, and a rated spatial
-precision under 0.5 mm at 0.30 m. Because stereo error grows as `Z²`, standoff is
-the dominant accuracy lever — moving from 0.30 m to 0.70 m costs a factor of 5.4.
+Hardware
+The sensor is an Orbbec Gemini 215:
+- active stereo at 850 nm
+- a **0.20–0.70 m** working band
+- rated spatial precision under 0.5 mm at 0.30 m
+
+because stereo error grows as `Z²`, standoff is the dominant accuracy lever — moving from 0.30 m to 0.70 m costs a factor of 5.4.
 
 Frames are packed losslessly at capture time: FFV1 for depth (bit-exact against
 the raw samples) and lossless x265 for colour, which took a 49-frame capture from
@@ -57,8 +56,18 @@ of its ticks, so intervals with poor coverage are discarded rather than trusted.
 ### What limits the accuracy
 
 Every error term here is engineerable and none of them is the algorithm:
-sensor noise, subsurface scattering where near-infrared light penetrates skin,
-registration drift, breathing motion, and thermal drift. At millimetre targets the
-physics of the measurement — not the reconstruction — is the hard part. That is
-why the pipeline refuses to infer geometry it cannot see: the surface it reports
-is only ever surface that was actually measured.
+- sensor noise
+- subsurface scattering where near-infrared light penetrates skin
+- registration drift
+- breathing motion
+- thermal drift
+
+At millimetre targets the physics of the measurement — not the reconstruction — is the hard part. That is
+why the pipeline refuses to infer geometry it cannot see: the surface it reports is only ever surface that was actually measured.
+
+
+### Segmentation
+
+
+
+## References
