@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "professional"
+category: "大医匠"
 title: "acu-bsp"
 date: 2026-09-17
 image: "acu-bsp.png"
