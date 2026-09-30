@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="acu-bsp custom image structure: pinned Yocto layers to bitbake to rootfs to wic image">
+  <style>
+    .kicker { font-family: "DejaVu Sans Mono", monospace; font-size: 21px; letter-spacing: 3.4px; fill: #7d8f9e; }
+    .meta   { font-family: "DejaVu Sans Mono", monospace; font-size: 20px; fill: #7d8f9e; }
+    .colhead{ font-family: "DejaVu Sans", sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 2.6px; fill: #dfe8ef; }
+    .colsub { font-family: "DejaVu Sans Mono", monospace; font-size: 17px; fill: #5d707f; }
+    .bname  { font-family: "DejaVu Sans Mono", monospace; font-size: 24px; fill: #dfe8ef; }
+    .bdet   { font-family: "DejaVu Sans Mono", monospace; font-size: 17px; fill: #7d8f9e; }
+    .panelhead { font-family: "DejaVu Sans Mono", monospace; font-size: 26px; fill: #dfe8ef; }
+    .big    { font-family: "DejaVu Sans", sans-serif; font-size: 62px; font-weight: 700; fill: #9d97f2; }
+    .fact   { font-family: "DejaVu Sans Mono", monospace; font-size: 18px; fill: #a6b7c5; }
+    .chip   { font-family: "DejaVu Sans Mono", monospace; font-size: 20px; fill: #dfe8ef; }
+    .outlab { font-family: "DejaVu Sans", sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 3px; fill: #b8a389; }
+    .outname{ font-family: "DejaVu Sans Mono", monospace; font-size: 30px; fill: #dfe8ef; }
+    .outdet { font-family: "DejaVu Sans Mono", monospace; font-size: 20px; fill: #a6b7c5; }
+    .status { font-family: "DejaVu Sans Mono", monospace; font-size: 19px; fill: #5d707f; }
+  </style>
+
+  <rect width="1600" height="1000" fill="#0d1319"/>
+
+  <!-- header -->
+  <text class="kicker" x="70" y="78">CUSTOM IMAGE — REPRODUCIBLE FROM PINNED LAYERS</text>
+  <text class="meta" x="1530" y="78" text-anchor="end">IDO-SBC3568-V1B · RK3568 · linux 5.10.160 (non-RT, NPU)</text>
+  <line x1="70" y1="110" x2="1530" y2="110" stroke="#29353f" stroke-width="1"/>
+
+  <!-- column 1: layers -->
+  <text class="colhead" x="70" y="172">1 · LAYERS</text>
+  <text class="colsub" x="70" y="200">kas · scarthgap, commit-pinned</text>
+
+  <rect x="70" y="230" width="420" height="68" rx="10" fill="#151d25" stroke="#29353f"/>
+  <text class="bname" x="92" y="262">poky</text>
+  <text class="bdet" x="92" y="286">77d1feb · patches applied</text>
+
+  <rect x="70" y="314" width="420" height="68" rx="10" fill="#151d25" stroke="#29353f"/>
+  <text class="bname" x="92" y="346">meta-openembedded</text>
+  <text class="bdet" x="92" y="370">b5874ea · meta-oe only</text>
+
+  <rect x="70" y="398" width="420" height="68" rx="10" fill="#151d25" stroke="#29353f"/>
+  <text class="bname" x="92" y="430">meta-arm</text>
+  <text class="bdet" x="92" y="454">0a4b911 · rockchip depends on it</text>
+
+  <rect x="70" y="482" width="420" height="68" rx="10" fill="#151d25" stroke="#29353f"/>
+  <text class="bname" x="92" y="514">meta-rockchip</text>
+  <text class="bdet" x="92" y="538">9690180 · rk3568 support</text>
+
+  <rect x="70" y="566" width="420" height="68" rx="10" fill="#10333a" stroke="#45c2d1" stroke-width="2"/>
+  <text class="bname" x="92" y="598" fill="#45c2d1">meta-ido-sbc3568</text>
+  <text class="bdet" x="92" y="622" fill="#a6b7c5">machine · kernel · wifi · image</text>
+
+  <!-- arrow 1 -->
+  <line x1="500" y1="432" x2="546" y2="432" stroke="#46596a" stroke-width="2"/>
+  <polygon points="546,424 560,432 546,440" fill="#46596a"/>
+
+  <!-- column 2: bitbake -->
+  <text class="colhead" x="560" y="172">2 · BITBAKE</text>
+  <text class="colsub" x="560" y="200">one build, 2026-09-21</text>
+
+  <rect x="560" y="230" width="340" height="404" rx="12" fill="#151d25" stroke="#29353f"/>
+  <text class="panelhead" x="582" y="274">bitbake</text>
+  <text class="big" x="582" y="352">5,183</text>
+  <text class="fact" x="582" y="384">tasks attempted</text>
+  <text class="fact" x="582" y="410" fill="#62bb8b">all succeeded</text>
+  <line x1="582" y1="438" x2="878" y2="438" stroke="#29353f"/>
+  <text class="bdet" x="582" y="470">2 patches pinned into poky</text>
+  <text class="bdet" x="582" y="496">(AppArmor userns sanity)</text>
+  <text class="bdet" x="582" y="528">sstate + downloads cached</text>
+  <text class="bdet" x="582" y="554">outside the repo (~/yocto)</text>
+  <text class="bdet" x="582" y="590">resumes after a kill:</text>
+  <text class="bdet" x="582" y="616">only the interrupted task</text>
+
+  <!-- arrow 2 -->
+  <line x1="910" y1="432" x2="976" y2="432" stroke="#46596a" stroke-width="2"/>
+  <polygon points="976,424 990,432 976,440" fill="#46596a"/>
+
+  <!-- column 3: rootfs -->
+  <text class="colhead" x="990" y="172">3 · ROOTFS</text>
+  <text class="colsub" x="990" y="200">acu-vision-image 1.0-r0</text>
+
+  <rect x="990" y="230" width="540" height="404" rx="12" fill="#151d25" stroke="#29353f"/>
+  <rect x="1012" y="252" width="496" height="44" rx="8" fill="#1a232c" stroke="#29353f"/>
+  <text class="chip" x="1030" y="281">core-image — bootable base</text>
+  <rect x="1012" y="306" width="496" height="44" rx="8" fill="#1a232c" stroke="#29353f"/>
+  <text class="chip" x="1030" y="335">ssh-server-openssh</text>
+  <rect x="1012" y="360" width="496" height="44" rx="8" fill="#1a232c" stroke="#29353f"/>
+  <text class="chip" x="1030" y="389">debug-tweaks — bring-up only</text>
+  <rect x="1012" y="414" width="496" height="44" rx="8" fill="#1a232c" stroke="#29353f"/>
+  <text class="chip" x="1030" y="443">kernel-modules</text>
+  <rect x="1012" y="468" width="496" height="44" rx="8" fill="#1a232c" stroke="#29353f"/>
+  <text class="chip" x="1030" y="497">acu-wifi — AP6256 fw + profiles</text>
+  <text class="bdet" x="1012" y="548" fill="#a6b7c5">133 packages installed in the manifest</text>
+  <text class="bdet" x="1012" y="580">camera userspace (Orbbec SDK) and the</text>
+  <text class="bdet" x="1012" y="606">acu-vision apps come after first boot</text>
+
+  <!-- vertical arrow to output -->
+  <line x1="1260" y1="638" x2="1260" y2="670" stroke="#46596a" stroke-width="2"/>
+  <polygon points="1252,670 1260,684 1268,670" fill="#46596a"/>
+
+  <!-- output strip -->
+  <rect x="70" y="690" width="1460" height="185" rx="12" fill="#151d25" stroke="#29353f"/>
+  <text class="outlab" x="100" y="742">OUTPUT</text>
+  <text class="outname" x="100" y="794">acu-vision-image-ido-sbc3568-v1b.rootfs.wic</text>
+  <text class="outdet" x="100" y="836">185 MB (185,254,912 bytes) · GPT: loader1 idbloader + TPL · loader2 u-boot.itb · rootfsA ext4</text>
+  <text class="outdet" x="1500" y="742" text-anchor="end" fill="#7d8f9e">deploy/images/ido-sbc3568-v1b/</text>
+  <text class="outdet" x="1500" y="790" text-anchor="end" fill="#7d8f9e">+ wic.bmap · fitImage · extlinux.conf</text>
+
+  <!-- honest status -->
+  <text class="status" x="70" y="925">image built &amp; deployed from the pinned layers above</text>
+  <text class="status" x="1530" y="925" text-anchor="end">first boot on the lab board: pending</text>
+</svg>
