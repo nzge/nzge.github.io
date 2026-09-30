@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "professional"
+category: "大医匠"
 title: "acu-scan"
 date: 2026-09-21
 image: "acu-scan.png"

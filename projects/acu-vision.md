@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "professional"
+category: "大医匠"
 title: "acu-vision"
 date: 2026-08-13
 image: "acu-vision.png"
