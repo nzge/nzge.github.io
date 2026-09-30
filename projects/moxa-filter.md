@@ -1,6 +1,6 @@
 ---
 layout: project
-category: "professional"
+category: "大医匠"
 title: "moxa-filter"
 date: 2026-08-26
 image: "moxa-filter.gif"
