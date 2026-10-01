@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     el.style.setProperty('--animate-duration', el.getAttribute('data-wow-duration'));
   });
 
-  new WOW({
+  const wow = new WOW({
     live: false,  // no MutationObserver: the project grid re-appends the same
                   // nodes when sorted, which WOW would otherwise treat as new
                   // elements and re-animate.
@@ -46,7 +46,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // Belt and braces: nothing should mutate classes once the animation has
     // played. Elements are meant to appear exactly once on scroll.
     resetAnimation: false
-  }).init();
+  });
+
+  // <html> carries `zoom` (see _sass/scale.scss). WOW's own offsetTop sums
+  // offsetTop values, which Chrome reports in UNzoomed px, and compares them
+  // to pageYOffset, which is real px -- so every box looks ~1/zoom (25% at 0.8)
+  // further down the page than it is. The last cards and the footer then
+  // compute below the bottom of the page and are never revealed, staying
+  // visibility:hidden. The bounding rect is zoom-correct.
+  wow.offsetTop = function (el) {
+    return el.getBoundingClientRect().top + window.pageYOffset;
+  };
+
+  wow.init();
 });
 
 
