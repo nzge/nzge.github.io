@@ -54,18 +54,19 @@ layout: default
     {% assign projects = site.pages | where: "category", category_type %}
     <!-- Liquid sorting based on date, from newest to oldest by default -->
     {% assign sorted_projects = projects | sort: 'date' | reverse %}
-    {% for project in sorted_projects %}
-      <div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="{{ project.title }}" data-date="{{ project.date | date: '%Y-%m-%d' }}">
-        <a href="{{ project.url }}" class="project-link">
-          <h3>{{ project.title }}</h3>
-          <img src="/assets/media/{{ project.image }}" alt="{{ project.title }}">
-        </a>
-        <p>{{ project.date | date: '%Y-%m-%d' }}</p>
-        <p>{{ project.description }}</p>
-        {% if project.status %}
-              <p>project status: {{ project.status }}</p>
-        {% endif %} 
-      </div>
+    <!-- status: ideation (nothing physical yet) is split out and pinned below the rest -->
+    {% assign realized = sorted_projects | where_exp: "p", "p.status != 'ideation'" %}
+    {% assign ideas = sorted_projects | where: "status", "ideation" %}
+    {% for project in realized %}
+      {% include project-card.html project=project %}
     {% endfor %}
   </section>
+  {% if ideas.size > 0 %}
+    <hr class="ideation-divider">
+    <section id="ideation">
+      {% for project in ideas %}
+        {% include project-card.html project=project %}
+      {% endfor %}
+    </section>
+  {% endif %}
 </div>

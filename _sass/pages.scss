@@ -77,8 +77,16 @@ form {
   }
 }
 
+/* Divider between realized projects and `status: ideation` ones */
+.ideation-divider {
+  max-width: 850px;
+  margin: 40px auto 20px;
+  border: 0;
+  border-top: 1px solid var(--theme-panel-brd);
+}
+
 .project-link {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   color: var(--theme-link); // Default link color
   text-decoration: none;
 

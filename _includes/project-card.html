@@ -1,0 +1,14 @@
+<div class="project wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-title="{{ include.project.title }}" data-date="{{ include.project.date | date: '%Y-%m-%d' }}">
+  <a href="{{ include.project.url }}" class="project-link">
+    <h3>{{ include.project.title }}</h3>
+    <img src="/assets/media/{{ include.project.image }}" alt="{{ include.project.title }}">
+  </a>
+  {% if include.project.link %}
+    <a href="{{ include.project.link.url }}" target="_blank" rel="noopener">{{ include.project.link.label }}</a>
+  {% endif %}
+  <p>{{ include.project.date | date: '%Y-%m-%d' }}</p>
+  <p>{{ include.project.description }}</p>
+  {% if include.project.status %}
+    <p>project status: {{ include.project.status }}</p>
+  {% endif %}
+</div>

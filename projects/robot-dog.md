@@ -5,6 +5,7 @@ title: "Robot Dog"
 date: 2025-05-10
 image: "placeholder.jpg"
 description: "A dog robot"
+status: ideation
 repo: "https://github.com/nzge/robot-dog"
 toc: true
 ---
