@@ -6,6 +6,18 @@ description: "my personal stats"
 
 <div class="container">
   <div class="go-back" onclick="goBack()">Go Back</div>
+
+  <div class="container">
+	Current Books:
+	- SciFi: Foundations Isaac Asimov 
+	- Philosophy: Crime and Punishment (Dostoevsky)
+	- Technical: Programming in Scala
+
+	Current Calisthenics Skill: Handstand
+	Current Guitar Song: Halloween By Novo Amor
+	Current Piano Song: Yellow Jacket By Shaun Martin
+
+  </div>
   <br>
 	<div class="container" style="text-align: center;">
 		<img src="https://duolingo-stats-card.vercel.app/api?username=naythun_&theme=github-dark&sort=xp" 
